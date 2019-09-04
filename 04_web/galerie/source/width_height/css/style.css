@@ -1,0 +1,21 @@
+html { /* Applique le fond "planche de bois" sur toute la page */
+	background: fixed center / cover url('../img/fond.jpg');
+}
+
+figure { /* Ajoute un fond blanc aux éléments figure */
+	background: #FFFFFF;
+	width: 280px;
+}
+
+figure img {
+	width: 100%;
+}
+
+main {
+	width: 900px;
+	max-width: 80%;
+}
+
+footer {
+	background: #FFFFFF;
+}
