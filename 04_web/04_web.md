@@ -100,19 +100,19 @@ page.
 
 \section{Notre plan de page}
 Notre plan de page sera le suivant :
-\dirtree{%TODO faire un arbre avec tickz ?
-.1 html.
-.2 head (voir partie 1).
-.2 body.
-.3 header.
-.4 h1.
-.3 main.
-.4 figure.
-.5 img.
-.5 figcaption.
-.4 ….
-.3 footer.
-}
+```
+html
+├ head (voir partie 1)
+╰ body
+  ├ header
+  │ ╰ h1
+  ├ main
+  │ ├ figure
+  │ │ ├ img
+  │ │ ╰ figcaption
+  │ ╰ …
+  ╰ footer
+```
 Je vous laisse essayer de créer le document HTML correspondant. Une fois que
 vous aurez fait de votre mieux vous pourrez regarder la correction.
 
@@ -134,11 +134,11 @@ fermer.
 Le CSS est un langage basé sur les sélecteurs. Une fois qu’on a sélectionné un
 ou plusieurs éléments HTML avec les sélecteurs, on peut modifier son apparence
 en changeant ses attributs.
-\begin{alltt}
-\colorbox{blue!30}{sélecteur} \{
-        \colorbox{green!30}{attribut}: \colorbox{red!30}{valeur};
-\}
-\end{alltt}
+```
+sélecteur {
+        attribut: valeur;
+}
+```
 
 \subsubsection{Les unités de mesure}
 Tout au long de ce chapitre je vais utiliser différentes unités de mesures. En

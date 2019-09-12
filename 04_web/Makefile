@@ -1,8 +1,20 @@
-all: subject.pdf
+.PHONY: all
 
-subject.pdf: subject_content.tex old_template.tex
-	latexmk -xelatex -shell-escape -pdf old_template.tex
-	mv old_template.pdf subject.pdf
+SUBJECT = 04_web
 
+all: ${SUBJECT}.pdf ${SUBJECT}.tex
+
+%.tex: %.md
+	pandoc --template ../template/gcc.tex 		\
+		--no-highlight 				\
+		--lua-filter=../template/minted.lua	\
+		-s -t latex $^ > $@
+
+%.pdf: %.tex
+	latexmk -pdf -shell-escape -xelatex $^
+
+.PHONY: clean
 clean:
-	latexmk -C
+	latexmk -C ${SUBJECT}.tex
+	${RM} ${SUBJECT}.tex
+	${RM} -rf _minted-${SUBJECT}
