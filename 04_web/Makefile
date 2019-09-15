@@ -1,8 +1,10 @@
 .PHONY: all
 
-SUBJECT = 04_web
+SUBJECTS = 04_web 04_web_boni
 
-all: ${SUBJECT}.pdf ${SUBJECT}.tex
+all: $(SUBJECTS:=.pdf) $(SUBJECTS:=.tex)
+
+$(SUBJECTS): %.pdf: %.tex
 
 %.tex: %.md
 	pandoc --template ../template/gcc.tex 		\
@@ -15,6 +17,6 @@ all: ${SUBJECT}.pdf ${SUBJECT}.tex
 
 .PHONY: clean
 clean:
-	latexmk -C ${SUBJECT}.tex
-	${RM} ${SUBJECT}.tex
-	${RM} -rf _minted-${SUBJECT}
+	latexmk -C ${SUBJECTS:=.tex}
+	${RM} ${SUBJECTS:=.tex}
+	${RM} -rf ${SUBJECTS:%=_minted-%}
