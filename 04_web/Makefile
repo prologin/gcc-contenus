@@ -4,8 +4,6 @@ SUBJECTS = 04_web 04_web_boni
 
 all: $(SUBJECTS:=.pdf) $(SUBJECTS:=.tex)
 
-$(SUBJECTS): %.pdf: %.tex
-
 %.tex: %.md
 	pandoc --template ../template/gcc.tex 		\
 		--no-highlight 				\
