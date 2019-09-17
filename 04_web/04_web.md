@@ -68,6 +68,8 @@ page.
 
 # Les balises
 
+Pour ce TP nous aurons besoin de ces quelques balises :
+
 - `<h1>, <h2>, …, <h6>` : Les balises h nous permettent d’écrire des titres de
 section. Le chiffre indique le niveau du titre. Généralement, `<h1>` est le
 titre de la page, `<h2>` le sous-titre, etc...
@@ -80,26 +82,27 @@ d’insérer des illustrations, avec possiblement des légendes.
 - `<footer>` La balise footer (pied de page) va contenir le pied de page, ici
 notre copyright.
 - `<img>` Les balises img vont nous permettre d’insérer les photos sur notre
-page. Pour dire quelle image il faut afficher, on a besoin de l’attribut src :
-`<img src="img/1.JPG" alt="Un arbre enneigé.">`. Ces balises sont un peu
-spéciales : elles n'ont pas besoin d'être fermées. À noter que pour pour
-permettre aux mal-voyants de visiter votre site, il est obligatoire d’ajouter un
-attribut alt, contenant une description de la photo.
+page.\
+Pour dire quelle image il faut afficher, on a besoin de l’attribut src :\
+`<img src="img/1.JPG" alt="Un arbre enneigé.">`\
+Ces balises sont un peu spéciales : elles n'ont pas besoin d'être fermées. À
+noter que pour pour permettre aux mal-voyants de visiter votre site, il est
+obligatoire d’ajouter un attribut alt, contenant une description de la photo.
 
 # Notre plan de page
 Notre plan de page sera le suivant :
 ```
 html
-├ head (voir partie 1)
-╰ body
-  ├ header
-  │ ╰ h1
-  ├ main
-  │ ├ figure
-  │ │ ├ img
-  │ │ ╰ figcaption
-  │ ╰ …
-  ╰ footer
++ head (voir partie 1)
+` body
+  + header
+  | ╰ h1
+  + main
+  | + figure
+  | | + img
+  | | ` figcaption
+  | ` …
+  ` footer
 ```
 Je vous laisse essayer de créer le document HTML correspondant. Une fois que
 vous aurez fait de votre mieux vous pourrez regarder la correction.
@@ -129,14 +132,18 @@ sélecteur {
 ```
 
 ### Les unités de mesure
+
 Tout au long de ce chapitre je vais utiliser différentes unités de mesures. En
 voici quelques unes :
-\begin{description}
-	\item[px] L'unité px permet de définir la taille d'un élément en pixels.
-	C'est cette même unité que vous utiliserez dans le projet python.
-	\item[\%] Les pourcentages permettent de définir la taille d'un élément
-	en fonction de la taille de son élément parent.
-\end{description}
+
+px
+: L'unité px permet de définir la taille d'un élément en pixels. C'est cette
+même unité que vous utiliserez dans le projet python.
+
+\%
+: Les pourcentages permettent de définir la taille d'un élément en fonction de
+la taille de son élément parent.
+
 ### Les sélecteurs
 Nous allons voir 2 types de sélecteurs. Ces différents sélecteurs pourront être
 combinés les uns avec les autres pour être plus précis.
@@ -158,15 +165,17 @@ ainsi qu'aux éléments img survolés, le sélecteur final sera `h1, img:hover`.
 ## Les couleurs
 Les couleurs sont représentées dans un format spécial en CSS. Pour nous aider à
 nous y retrouver plus facilement, des outils comme
-\href{https://duckduckgo.com/?q=color+picker\&t=ffab\&ia=answer}{le sélecteur de couleur DuckDuckGo} sont là.
-\paragraph{}
+[le sélecteur de couleur DuckDuckGo](https://duckduckgo.com/?q=color+picker\&t=ffab\&ia=answer) sont là.
+
+
 \begin{center}\includegraphics[width=.8\linewidth]{img/ddgo_color_picker.png}\end{center}
-Cet outil nous permet de récupérer le code \colorbox{blue!30}{hexadécimal} des
-couleurs ainsi que leur représentation \colorbox{red!30}{RGB}. Nous ne verrons
-pour l'instant que la représentation hexadécimale.
+
+Cet outil nous permet de récupérer le code hexadécimal (en bleu) des couleurs
+ainsi que leur représentation RGB (en rouge). Nous ne verrons pour l'instant que
+la représentation hexadécimale.
 
 Le code hexadécimal peut être utilisé tel quel dans le code CSS.
-\paragraph{}
+
 Un petit exemple : on va faire en sorte que le texte des figcaptions soit rouge.
 
 ``` {.css}
@@ -185,12 +194,12 @@ Maintenant que nous avons vu comment sélectionner les balises que nous
 souhaitons modifier, nous allons voir comment changer leur attributs pour
 modifier leur taille, leur position et leurs couleurs.
 
-\paragraph{color}
-L'attribut color permet de changer la couleur du texte. Elle prend en argument
+color
+: L'attribut color permet de changer la couleur du texte. Elle prend en argument
 une couleur, qui sera appliqué à cet élément ainsi qu'à tout ses sous-éléments.
 
-\paragraph{background}
-L'attribut background permet quand à lui de changer la couleur de fond d'un
+background
+: L'attribut background permet quand à lui de changer la couleur de fond d'un
 élément.
 
 ``` {.css}
@@ -231,8 +240,8 @@ le fond du footer. Vous devrez appliquer un fond blanc aux éléments figure et
 footer, et copier le code pour le fond de la page afin d'obtenir ce résultat :
 \begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_background.png}\end{center}
 
-\paragraph{width et height}
-Les attributs width (largeur) et height (hauteur) permettent de faire en sorte
+width et height
+: Les attributs width (largeur) et height (hauteur) permettent de faire en sorte
 qu'un élément ait une certaine taille.
 
 Il existe aussi min-height, max-height,
@@ -258,19 +267,21 @@ si la fenêtre est trop petite, 80% max
 ```
 
 
-Pour le moment nous ne changerons que 3 largeurs : la largeur de main, que vous
+Pour le moment nous ne changerons que 3 largeurs : la largeur de main, que vous
 avez eu en exemple, la largeur de figure que nous définirons à 280px, et enfin
 la largeur des éléments img dans des figure, que nous définirons à 100\%.
+
 \begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_width.png}\end{center}
 
-\paragraph{padding et margin}
-Ces deux attributs permettent de modifier la "marge" et le "remplissage" des
+padding et margin
+: Ces deux attributs permettent de modifier la "marge" et le "remplissage" des
 éléments. Pour mieux comprendre à quoi correspondent la marge et le remplissage,
 voici un diagramme réalisé par les contributeurs Mozilla, disponible
-\href{https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Le_mod%C3%A8le_de_bo%C3%AEte}{à l'addresse suivante}.
+[à l'addresse suivante](https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Le_mod%C3%A8le_de_bo%C3%AEte).
+
 \begin{center}\includegraphics[width=.8\linewidth]{img/box_model.png}\end{center}
 
-Ici, j'utilise des marges et du padding pour le pied de page :
+Ici, j'utilise des marges et du padding pour le pied de page :
 ``` {.css}
 footer {
     ...
@@ -306,15 +317,18 @@ Ici vous devrez:
 
 \begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_padding.png}\end{center}
 
-\paragraph{text-align}
-L'attribut text-align permet de choisir comment sera aligné le texte. Par défaut
-text-align a pour valeur "left" car en français le texte va de gauche à droite.
+text-align
+: L'attribut text-align permet de choisir comment sera aligné le texte. Par
+défaut text-align a pour valeur "left" car en français le texte va de gauche à
+droite.
 
 Ici, vous ajouterez "text-align: center" à l'élément header, au footer et aux
 éléments figure figcaption.
+
 \begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_text-align.png}\end{center}
 
 # La fin! (?)
+
 Félicitations, vous avez terminé ce TP !
 
 Pour aller plus loin, une partie bonus existe, demandez aux organisateurs de
