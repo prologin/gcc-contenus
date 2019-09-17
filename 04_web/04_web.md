@@ -1,41 +1,40 @@
-\section{Introduction}
+---
+title: HTML et CSS
+date: 2019
+---
+
+# Introduction
 Ce TP va vous apprendre à créer une page HTML basique, puis à la personnaliser
 avec du CSS. Vous devriez obtenir le résultat suivant :
 
 \begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_text-align.png}\end{center}
 
-\subsection{Fonctionnement du TP}
+## Fonctionnement du TP
 Les solutions de chaque partie de ce TP se trouvent dans le dossier source.
 Cependant le but n'est pas que vous copiez la solution sans comprendre, mais
 plutôt que vous essayiez de faire comme la solution, et si vous n'y arrivez pas,
 la solution est là pour vous débloquer.
 
-\subsection{Un peu de vocabulaire pour mieux se comprendre}
-\begin{description}
-	\item[Le HTML] Le HTML est le langage utilisé pour écrire des pages web.
-		Ici nous allons voir une petite partie du HTML5, la dernière
-		version du HTML.
-	\item[Le CSS] Le CSS est un langage complémentaire au HTML. Il permet de
-		définir comment les différentes parties de la page vont
-		s’afficher, en changeant la taille, la couleur et d’autres
-		propriétés des éléments de la page. Ici nous utiliserons une
-		partie du CSS3.
-	\item[Les balises] Les balises permettent de séparer en différentes
-		sections les pages HTML. Elles se présentent sous la forme
-		suivante : \mintinline{html}{<nom> </nom>} . Ici
-		\mintinline{html}{<nom>} ouvre la section, et
-		\mintinline{html}{</nom>} la ferme.
-	\item[Les attributs] Certaines balises peuvent avoir des attributs. Une
-		balise « a » avec un attribut « href » ayant pour valeur
-		« gcc.prologin.org » s’écrira de la façon suivante :
-		\mintinline{html}{<a href="gcc.prologin.org">Le site de GCC!</a>}
-\end{description}
+## Un peu de vocabulaire pour mieux se comprendre
 
-\section{HTML de base}
+- **Le HTML :** Le HTML est le langage utilisé pour écrire des pages web. Ici
+nous allons voir une petite partie du HTML5, la dernière version du HTML.
+- **Le CSS :** Le CSS est un langage complémentaire au HTML. Il permet de
+définir comment les différentes parties de la page vont s’afficher, en changeant
+la taille, la couleur et d’autres propriétés des éléments de la page. Ici nous
+utiliserons une partie du CSS3.
+- **Les balises :** Les balises permettent de séparer en différentes sections
+les pages HTML. Elles se présentent sous la forme suivante : `<nom> </nom>`. Ici
+`<nom>` ouvre la section, et `</nom>` la ferme.
+- **Les attributs :** Certaines balises peuvent avoir des attributs. Une balise
+`<a>` avec un attribut « href » ayant pour valeur « gcc.prologin.org » s’écrira
+de la façon suivante : `<a href="gcc.prologin.org">Le site de GCC!</a>`
+
+# HTML de base
 Pour commencer toutes pages HTML valides, il faut au moins le code suivant :
 
-\begin{minipage}{0.50\textwidth}
-\begin{minted}{html}
+
+``` {.html}
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -46,10 +45,10 @@ Pour commencer toutes pages HTML valides, il faut au moins le code suivant :
     Corps de la page
   </body>
 </html>
-\end{minted}
-\end{minipage}
-\begin{minipage}{0.50\textwidth}
-\begin{minted}{text}
+```
+
+
+``` {.text}
 Il s’agit d’une page HTML5
 Début du document HTML
   Début de la section « head »
@@ -60,45 +59,34 @@ Début du document HTML
     Contenu de la page
   Fin du corps de la page
 Fin document HTML
-\end{minted}
-\end{minipage}
+```
+
 
 La section « head » contient des informations comme le titre de la page, le
 thème CSS, ou encore l'encodage, qui nous permet d'écrire des accents dans la
 page.
 
-\section{Les balises}
-\begin{description}
-	\item[\mintinline{html}{<h1>, <h2>, …, <h6>}] Les balises h nous
-		permettent d’écrire des titres de section. Le chiffre indique
-		le niveau du titre. Généralement, \mintinline{html}{<h1>} est
-		le titre de la page, \mintinline{html}{<h2>} le sous-titre,
-		etc...
-	\item[\mintinline{html}{<header>}] La balise header (entête) va nous
-		permettre de mettre le titre, le logo ou encore les différents
-		liens de notre site.
-	\item[\mintinline{html}{<main>}] La balise main (principal en anglais)
-		va contenir le corps de notre page, ici nos photos.
-	\item[\mintinline{html}{<figure> et <figcaption>}] Les balises figure
-		et figcaption ont pour but d’insérer des illustrations, avec
-		possiblement des légendes.
-	\item[\mintinline{html}{<footer>}] La balise footer (pied de page) va
-		contenir le pied de page, ici notre copyright.
-	\item[\mintinline{html}{<img>}] Les balises img vont nous permettre
-		d’insérer les photos sur notre page. Pour dire quelle image il
-		faut afficher, on a besoin de l’attribut src :
+# Les balises
 
-		\mintinline{html}{<img src="img/1.JPG" alt="Un arbre enneigé.">}
+- `<h1>, <h2>, …, <h6>` : Les balises h nous permettent d’écrire des titres de
+section. Le chiffre indique le niveau du titre. Généralement, `<h1>` est le
+titre de la page, `<h2>` le sous-titre, etc...
+- `<header>` : La balise header (entête) va nous permettre de mettre le titre,
+le logo ou encore les différents liens de notre site.
+- `<main>` : La balise main (principal en anglais) va contenir le corps de notre
+page, ici nos photos.
+- `<figure>` et `<figcaption>` : Les balises figure et figcaption ont pour but
+d’insérer des illustrations, avec possiblement des légendes.
+- `<footer>` La balise footer (pied de page) va contenir le pied de page, ici
+notre copyright.
+- `<img>` Les balises img vont nous permettre d’insérer les photos sur notre
+page. Pour dire quelle image il faut afficher, on a besoin de l’attribut src :
+`<img src="img/1.JPG" alt="Un arbre enneigé.">`. Ces balises sont un peu
+spéciales : elles n'ont pas besoin d'être fermées. À noter que pour pour
+permettre aux mal-voyants de visiter votre site, il est obligatoire d’ajouter un
+attribut alt, contenant une description de la photo.
 
-		Ces balises sont un peu spéciales : elles n'ont pas besoin
-		d'être fermées.
-
-		À noter que pour pour permettre aux mal-voyants de visiter votre
-		site, il est obligatoire d’ajouter un attribut alt, contenant
-		une description de la photo.
-\end{description}
-
-\section{Notre plan de page}
+# Notre plan de page
 Notre plan de page sera le suivant :
 ```
 html
@@ -119,18 +107,18 @@ vous aurez fait de votre mieux vous pourrez regarder la correction.
 Vous devriez arriver au résultat suivant :
 \begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_html.png}\end{center}
 
-\section{Du CSS pour sauver nos yeux}
-\subsection{Insérer du CSS dans la page}
+# Du CSS pour sauver nos yeux
+## Insérer du CSS dans la page
 Pour insérer du CSS dans une page, nous écrirons notre CSS dans un nouveau
 fichier, « style.css », dans le dossier « css ».
 Pour dire à notre page HTML d’utiliser ce document CSS, il faut ajouter dans la
 balise head la balise suivante :
 
-\mintinline{html}{<link rel="stylesheet" src="css/style.css">}
+`<link rel="stylesheet" src="css/style.css">`
 
-Comme pour les balises \mintinline{html}{<img>}, il n'est pas nécessaire les
+Comme pour les balises `<img>`, il n'est pas nécessaire les
 fermer.
-\subsection{Écriture du CSS}
+## Écriture du CSS
 Le CSS est un langage basé sur les sélecteurs. Une fois qu’on a sélectionné un
 ou plusieurs éléments HTML avec les sélecteurs, on peut modifier son apparence
 en changeant ses attributs.
@@ -140,7 +128,7 @@ sélecteur {
 }
 ```
 
-\subsubsection{Les unités de mesure}
+### Les unités de mesure
 Tout au long de ce chapitre je vais utiliser différentes unités de mesures. En
 voici quelques unes :
 \begin{description}
@@ -149,27 +137,25 @@ voici quelques unes :
 	\item[\%] Les pourcentages permettent de définir la taille d'un élément
 	en fonction de la taille de son élément parent.
 \end{description}
-\subsubsection{Les sélecteurs}
+### Les sélecteurs
 Nous allons voir 2 types de sélecteurs. Ces différents sélecteurs pourront être
 combinés les uns avec les autres pour être plus précis.
-\begin{enumerate}
-	\item Les sélecteurs d’éléments : Pour sélectionner un type d'élément,
-		par exemple les balises img, il suffit d'écrire le nom de la
-		balise
-	\item Le sélecteur de survol : Pour faire en sorte de détecter la souris
-		et changer l’apparence d’un élément quand la souris est dessus,
-		il faut rajouter le sélecteur \mintinline{css}{:hover}.
-\end{enumerate}
+
+- Les sélecteurs d’éléments : Pour sélectionner un type d'élément, par exemple
+les balises img, il suffit d'écrire le nom de la balise.
+- Le sélecteur de survol : Pour faire en sorte de détecter la souris et changer
+l’apparence d’un élément quand la souris est dessus, il faut rajouter le
+sélecteur `:hover`.
+
 Pour combiner les sélecteurs, il suffit de les juxtaposer. Par exemple pour
 sélectionner une image quand elle est survolée, le sélecteur final sera
-\mintinline{css}{img:hover}
+`img:hover`.
 
 Pour sélectionner plusieurs éléments différents, il faut séparer les sélecteurs
 par une virgule. Par exemple pour appliquer les mêmes propriétés aux éléments h1
-ainsi qu'aux éléments img survolés, le sélecteur final sera
-\mintinline{css}{h1, img:hover}.
+ainsi qu'aux éléments img survolés, le sélecteur final sera `h1, img:hover`.
 
-\subsection{Les couleurs}
+## Les couleurs
 Les couleurs sont représentées dans un format spécial en CSS. Pour nous aider à
 nous y retrouver plus facilement, des outils comme
 \href{https://duckduckgo.com/?q=color+picker\&t=ffab\&ia=answer}{le sélecteur de couleur DuckDuckGo} sont là.
@@ -183,22 +169,18 @@ Le code hexadécimal peut être utilisé tel quel dans le code CSS.
 \paragraph{}
 Un petit exemple : on va faire en sorte que le texte des figcaptions soit rouge.
 
-\begin{minipage}{0.40\textwidth}
-\begin{minted}{css}
+``` {.css}
 figcaption {
-  color: #FF0000;
+  color: \#FF0000;
 }
-\end{minted}
-\end{minipage}
-\begin{minipage}{0.60\textwidth}
-\begin{minted}{text}
+```
+``` {.text}
 On sélectionne les éléments figcaption
   On leur applique une couleur rouge
 On ferme le bloc
-\end{minted}
-\end{minipage}
+```
 
-\subsubsection{Les attributs}
+### Les attributs
 Maintenant que nous avons vu comment sélectionner les balises que nous
 souhaitons modifier, nous allons voir comment changer leur attributs pour
 modifier leur taille, leur position et leurs couleurs.
@@ -211,26 +193,21 @@ une couleur, qui sera appliqué à cet élément ainsi qu'à tout ses sous-élé
 L'attribut background permet quand à lui de changer la couleur de fond d'un
 élément.
 
-\begin{minipage}{0.40\textwidth}
-\begin{minted}{css}
+``` {.css}
 figure {
   background: #008AFF;
 }
-\end{minted}
-\end{minipage}
-\begin{minipage}{0.60\textwidth}
-\begin{minted}{text}
+```
+``` {.text}
 On sélectionne les élements figure
   On leur applique un fond couleur cyan
 Fin du bloc
-\end{minted}
-\end{minipage}
+```
 
 L'attribut background peut aussi définir une image de fond, par exemple, le site
 final utilise le code suivant :
 
-\begin{minipage}{0.40\textwidth}
-\begin{minted}{css}
+``` {.css}
 html {
   background:
       fixed
@@ -238,10 +215,8 @@ html {
       url('../img/fond.jpg')
     ;
 }
-\end{minted}
-\end{minipage}
-\begin{minipage}{0.60\textwidth}
-\begin{minted}{text}
+```
+``` {.text}
 On sélectionne le document HTML entier
   On va modifier le fond
       Le fond ne bougera pas avec la page
@@ -249,8 +224,7 @@ On sélectionne le document HTML entier
       L'image qu'on veut afficher
     Fin de la modification du fond
 On ferme le bloc
-\end{minted}
-\end{minipage}
+```
 
 Ici nous ne changerons que 3 fonds : le fond de la page, le fond des figures et
 le fond du footer. Vous devrez appliquer un fond blanc aux éléments figure et
@@ -267,22 +241,22 @@ et maximum pour les éléments.
 
 Par exemple, dans le code final, l'élément main contient ces attributs :
 
-\begin{minipage}{0.35\textwidth}
-\begin{minted}{css}
+
+``` {.css}
 main {
   width: 900px;
   max-width: 80%;
 }
-\end{minted}
-\end{minipage}
-\begin{minipage}{0.65\textwidth}
-\begin{minted}{text}
+```
+
+
+``` {.text}
 
 largeur de base de 900px
 si la fenêtre est trop petite, 80% max
 
-\end{minted}
-\end{minipage}
+```
+
 
 Pour le moment nous ne changerons que 3 largeurs : la largeur de main, que vous
 avez eu en exemple, la largeur de figure que nous définirons à 280px, et enfin
@@ -297,14 +271,14 @@ voici un diagramme réalisé par les contributeurs Mozilla, disponible
 \begin{center}\includegraphics[width=.8\linewidth]{img/box_model.png}\end{center}
 
 Ici, j'utilise des marges et du padding pour le pied de page :
-\begin{minted}{css}
+``` {.css}
 footer {
     ...
     padding: 20px;
     margin-top: 30px;
     ...
 }
-\end{minted}
+```
 Ce code permet de rajouter du remplissage tout autours du texte du pied de page,
 et de rajouter une marge afin de séparer les photos du pied de page.
 
@@ -312,24 +286,24 @@ et de rajouter une marge afin de séparer les photos du pied de page.
 Il existe aussi -left (gauche) -right (droite) et -bottom (bas).
 
 Les marges peuvent aussi être utilisées pour centrer un élément sur la page :
-\begin{minted}{css}
+``` {.css}
 main {
     ...
     margin-left: auto;
     margin-right: auto;
 }
-\end{minted}
+```
 En indiquant que la marge gauche et droite doivent être calculées
 automatiquement, l'élément se retrouve centré horizontalement.
 
 Ici vous devrez:
-\begin{enumerate}
-	\item Mettre les marges de l'élément body à 0
-	\item Centrer horizontalement l'élément main (comme dans l'exemple)
-	\item Ajouter un padding de 10px aux éléments figure
-	\item Ajouter un padding de 20px au footer, et aussi un margin-top de
-	30px
-\end{enumerate}
+
+- Mettre les marges de l'élément body à 0
+- Centrer horizontalement l'élément main (comme dans l'exemple)
+- Ajouter un padding de 10px aux éléments figure
+- Ajouter un padding de 20px au footer, et aussi un margin-top de
+30px
+
 \begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_padding.png}\end{center}
 
 \paragraph{text-align}
@@ -340,7 +314,7 @@ Ici, vous ajouterez "text-align: center" à l'élément header, au footer et aux
 éléments figure figcaption.
 \begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_text-align.png}\end{center}
 
-\section{La fin! (?)}
+# La fin! (?)
 Félicitations, vous avez terminé ce TP !
 
 Pour aller plus loin, une partie bonus existe, demandez aux organisateurs de
