@@ -114,7 +114,14 @@ valeurs numériques avec leur écriture naturelle, et qu'on peut utiliser les
 opérations classiques: `+`, `-`, `*` (multiplication), `/` (division) et `**`(
 (puissance).
 
-**TODO**: exemple
+```python
+x = 3 * 4        # x vaut 12
+y = x // 2       # y vaut 6 (`//` est une division pour laquelle on attend
+                 #           un résultat sans virgule)
+z = 3 ** 2       # z vaut 9
+x = (x - y) + z  # x vaut maintenant 15
+
+```
 
 ##### Chaines de caractère
 
@@ -257,8 +264,6 @@ while button_a.get_presses() == 0:
 display.scroll("fini !")
 ```
 
-**TODO**: exos funs ! (maintenant on peut)
-
 #### Exercice
 
 Modifie ton jeu pour que la partie recommence tant que le joueur n'a pas
@@ -272,12 +277,54 @@ affiche une barre de progression, la barre doit être pleine quand il a appuyé
 20 fois sur le bouton. À la fin, le jeu affiche le temps qu'il a fallu pour
 atteindre les 20 appuis.
 
+Voici un exemple de comment mesurer un temps, en secondes en utilisant le
+module `time` de Python:
+
+```python
+import time
+from microbit import *
+
+# enregistre l'instant de début d'execution du programme
+debut = time.time()
+
+# simule un programme qui prend 2.5 secondes à s'executer
+sleep(2500)
+
+# calcul du temps écoulé (en secondes)
+duree = time.time() - debut
+
+# affiche le temps écoulé (2 chiffres après la virgule)
+display.scroll('%.2f' % duree)
+```
+
 **TODO**: expliquer comment compter le temps
 
 Les conditions: `if` ... `elif` ... `else`
 ------------------------------------------
 
+L'instruction `if` permet de décider de n'exécuter un morceau de code que
+lorsqu'une condition est vraie. Pour se faire la syntaxe est d'écrire `if
+condition:` suivi d'un bloc de code indenté. Le bloc de code en question ne
+sera alors exécuté que si `condition` s'évalue à `True`. Pour simplifier, un
+`if` peut être suivi d'un ou plusieurs `else:` qui exécute un bloc de code
+uniquement si la condition du `if` était fausse.
 
+Voici un exemple simple pour illustrer:
+
+```python
+import random
+from microbit import *
+
+x = random.randint(0, 100)  # assigne un nombre aléatoire à x
+
+if x < 50:
+    display.scroll('x est inférieur à 50')
+else:
+    display.scroll('x est supérieur à 50')
+```
+
+Ou un exemple légèrement plus poussé qui permet de lier les boutons du
+`micro:bit` à des diodes:
 
 ```python
 from microbit import *
@@ -302,6 +349,15 @@ while True:
 
 Les fonctions
 =============
+
+
+Projets
+=======
+
+**TODO**: Je crois qu'il y en a pas mal qui ne demandent pas à savoir utiliser
+de liste dans les idées du TP microbit, on peut les réutiliser, elles ont déjà
+pas mal de trucs à digérer c'est le moment de les lancer dans un truc perso je
+pense.
 
 
 Références `micro:bit`
