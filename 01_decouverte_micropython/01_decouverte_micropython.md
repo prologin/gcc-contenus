@@ -3,9 +3,34 @@ title: Découverte de Python via microbit
 date: 2019
 ---
 
- - **TODO**: une petite introduction à ce qu'est `micro:bit` ...
- - **TODO**: petit tuto de setup du `micro:bit` ...
+Mais qu'est-ce qu'un micro:bit
+===============================
+Un `mico:bit` c'est une carte électronique de la taille d'une carte bancaire.
+Sur cette carte on peut lancer des programmes (des jeux par exemple). Les 
+programmes peuvent intéragir avec les composants de la carte tels que la matrice
+de leds, les boutons de la carte, le module radio et même l'accéléromètre (qui
+permet de détecter les mouvements de la carte). Nous allons écrire nos propres
+programmes en Python qui s'éxécuteront sur les `micro:bit`.
 
+Notre environnement de travail
+===============================
+Pour commencer à programmer nos `micro:bit`, il nous faut un environnement de
+travail : un IDE. Pendant ce stage nous travaillerons sur `https://python.microbit.org`
+mais sachez qu'il existe plein d'IDEs différents comme par exemple `Mu editor`.
+Pour vous rendre sur notre IDE, rien de plus simple :
+
+- ouvrez Google Chrome
+- tapez `python.microbit.org` dans la barre d'adresse (celle en haut de l'écran)
+- et voilà, vous pouvez commencer à écrire du Python!
+
+Si vous fermez l'onglet `python.microbit.org` sans avoir enregistré,
+tout votre travail sera perdu. Prenez donc le réflexe de cliquer sur
+le bouton save pour enregistrer.
+
+Pour transférer votre programme sur le `micro:bit` cliquez sur `Download`,
+cliquez sur `micro:bit` sur la colonne de gauche de la fenêtre qui vient de s'ouvrir,
+et enfin cliquez sur enregistrer, et... voilà votre programme est désormais dans votre
+carte `micro:bit`.
 
 Notre premier programme
 =======================
