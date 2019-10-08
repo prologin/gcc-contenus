@@ -90,35 +90,6 @@ print(L)
 
 Cela affiche `[42, 42, 42, ..., 42, 42]`.
 
-On peut aussi écrire :
-
-```python
-L = [42 for i in range (100)]
-print(L)
-```
-
-**i** ira donc de 0 à 99, et on obtiendra exactement la même chose qu'avec
-l'exemple précédent.
-
-Maintenant, regardez cet exemple :
-
-```python
-n = 5
-L = [i * 2 for i in range(n)]
-print(L)
-```
-
-On obtient : `[0, 2, 4, 6, 8]`.
-
-Il est même possible d’ajouter des conditions sur **i** :
-
-```python
-n = 5
-L = [i * 2 for i in range(n) if i * 2 > 5]
-```
-
-On obtient `[6, 8]`, soit les nombres dont le double est supérieur à 5.
-
 Une fois votre liste de nombres créée, vous aimeriez sûrement la trier.  Pour
 cela, on utilise la méthode **sort()**. Par exemple :
 
