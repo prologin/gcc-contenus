@@ -2,7 +2,7 @@
 
 SUBJECT = 01_decouverte_micropython
 
-all: ${SUBJECT}.pdf ${SUBJECT}.tex
+all: figures ${SUBJECT}.pdf ${SUBJECT}.tex
 
 %.tex: %.md
 	pandoc --template ../template/gcc.tex 		\
@@ -12,6 +12,10 @@ all: ${SUBJECT}.pdf ${SUBJECT}.tex
 
 %.pdf: %.tex
 	latexmk -pdf -shell-escape -xelatex $^
+
+.PHONY: figures
+figures:
+	${MAKE} -C $@
 
 .PHONY: clean
 clean:
