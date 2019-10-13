@@ -8,7 +8,7 @@ date: 2019
 Tous les ordinateurs ne sont rien d'autres que des composants électroniques qui
 exécutent des instructions. Lorsque vous ouvrez un navigateur internet, votre
 ordinateur exécute les instructions du logiciel utilisé, qu'on appelle aussi
-**programme**. Le but de ce stage est de vous faire découvrir comment nous
+**programme**. Le but de cet atelier est de vous faire découvrir comment nous
 pouvons créer nos propres programmes, et pour cela il nous faut un moyen
 d'écrire ces instructions : un **langage de programmation**.
 
@@ -17,24 +17,24 @@ milliers de langue dans le monde ! Certains sont plus connus que d'autres et
 nous allons vous faire découvrir Python, un langage facile à prendre en main
 mais très puissant.
 
-## Mais qu'est-ce qu'un micro:bit
+## Qu'est-ce qu'un `micro:bit` ?
 
-Pour ce stage, nous allons utiliser un micro:bit, c'est un micro contrôleur de
-la taille d'une carte bancaire. Nous pouvons écrire des programmes et les lancer
-dessus, ainsi qu'interagir avec ses composants : l'écran de LED, les boutons,
-l'accéléromètre (pour détecter des mouvements), etc.
+Pour cet atelier, nous allons utiliser un `micro:bit`, c'est un micro contrôleur
+de la taille d'une carte bancaire. Nous pouvons écrire des programmes et les
+lancer dessus, ainsi qu'interagir avec ses composants : l'écran de LED, les
+boutons, l'accéléromètre (pour détecter des mouvements), etc.
 
 Vous pourrez garder les micro contrôleurs avec vous, et continuer à écrire vos
-propos programmes en Python dessus après le stage !
+propres programmes en Python dessus après l'atelier !
 
 ## Notre environnement de travail
 
 Pour écrire nos programmes, nous utiliserons le site web :
 <https://python.microbit.org/>
 
-Si vous fermez l'onglet <https://python.microbit.org> sans avoir enregistré,
-tout votre travail sera **perdu**. Prenez donc le réflexe de cliquer sur le
-bouton `Save` pour enregistrer régulièrement !
+Si vous fermez l'onglet sans avoir enregistré, tout votre travail sera
+**perdu**. Prenez donc le réflexe de cliquer sur le bouton `Save` pour
+enregistrer régulièrement !
 
 Pour transférer votre programme sur le `micro:bit` cliquez sur `Download`,
 cliquez sur `micro:bit` sur la colonne de gauche de la fenêtre qui vient de
@@ -83,9 +83,26 @@ Ligne à ligne voilà ce que signifie ce programme:
 5. La suite du programme se répète : on allume les diodes des colonnes numéro 1,
    2, 3 puis 4.
 
+Une manière d'expliquer du code directement dans le programme est d'utiliser des
+**commentaires** :
+
+```python
+from microbit import *
+
+# Ceci est un commentaire
+
+# La ligne suivante va allumer le pixel situé à la colonne 0 et la ligne 2
+display.set_pixel(0, 2, 9)
+# La ligne suivante va attendre 500ms
+sleep(500)
+```
+
+Tout ce qui est écrit après un `#` sera totalement ignoré par Python, ces
+commentaires sont uniquement à destination des programmeurs, c'est-à-dire vous !
+
 **TODO**: quelques remarques sur la rigueur de la syntaxe
 
-#Les variables
+# Les variables
 
 Pour l'instant nous avons seulement vu comment créer un programme qui exécute
 une liste d'instructions assez bêtement, qui donneront toujours exactement le
@@ -124,12 +141,27 @@ y = 5
 y = 2 * y
 x = x + y
 
-display.scroll(x)  # affiche 13 sur l'écran à diodes
+display.scroll(x)
 ```
 
 ![](figures/variables.pdf)
 
-**TODO**: commentaire en Python ?
+Ce programme affichera donc 13 sur l'écran à diodes de votre `micro:bit`.
+
+#### Exercice
+
+Qu'affiche le code suivant sur le `micro:bit` :
+
+```python
+from microbit import *
+
+a = 12
+b = a + 3
+x = b - 5
+x = x * 2
+
+display.scroll(x)
+```
 
 ## Types de variables
 
@@ -143,11 +175,19 @@ valeurs numériques avec leur écriture naturelle, et qu'on peut utiliser les
 opérations classiques: `+`, `-`, `*` (multiplication), et `/` (division).
 
 ```python
-x = 3 * 4        # x vaut 12
-y = x / 2        # y vaut 6.0
-z = 8 + 1        # z vaut 9
-x = (x - y) + z  # x vaut maintenant 15.0
+x = 3 * 4
+y = x / 2
+z = 8 + 1
 ```
+
+Ici `x` vaut 12, `y` vaut 6.0, et `z` vaut 9. Nous pouvons aussi combiner
+plusieurs opérations ensemble, par exemple :
+
+```python
+a = (x - y) + z
+```
+
+En reprenant les valeurs précédentes, on obtiendrait `a` valant 15.0.
 
 ##### Chaines de caractère
 
@@ -184,7 +224,6 @@ Enfin, il est possible de manipuler les valeurs booléennes avec les opérateurs
  - `not a` vaut `True` si et seulement si `a` vaut `False`;
  - `a and b` vaut `True` si et seulement si `a` **et** `b` valent `True`;
  - `a or b` vaut `True` si et seulement si `a` **ou** `b` valent `True`.
-
 
 ### Exemples
 
