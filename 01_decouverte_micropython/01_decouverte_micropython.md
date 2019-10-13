@@ -1,41 +1,49 @@
 ---
-title: Découverte de Python via microbit
+title: Découverte de Python
 date: 2019
 ---
 
-Mais qu'est-ce qu'un micro:bit
-===============================
-Un `mico:bit` c'est une carte électronique de la taille d'une carte bancaire.
-Sur cette carte on peut lancer des programmes (des jeux par exemple). Les 
-programmes peuvent intéragir avec les composants de la carte tels que la matrice
-de leds, les boutons de la carte, le module radio et même l'accéléromètre (qui
-permet de détecter les mouvements de la carte). Nous allons écrire nos propres
-programmes en Python qui s'éxécuteront sur les `micro:bit`.
+# Introduction à la programmation
 
-Notre environnement de travail
-===============================
-Pour commencer à programmer nos `micro:bit`, il nous faut un environnement de
-travail : un IDE. Pendant ce stage nous travaillerons sur `https://python.microbit.org`
-mais sachez qu'il existe plein d'IDEs différents comme par exemple `Mu editor`.
-Pour vous rendre sur notre IDE, rien de plus simple :
+Tous les ordinateurs ne sont rien d'autres que des composants électroniques qui
+exécutent des instructions. Lorsque vous ouvrez un navigateur internet, votre
+ordinateur exécute les instructions du logiciel utilisé, qu'on appelle aussi
+**programme**. Le but de ce stage est de vous faire découvrir comment nous
+pouvons créer nos propres programmes, et pour cela il nous faut un moyen
+d'écrire ces instructions : un **langage de programmation**.
 
-- ouvrez Google Chrome
-- tapez `python.microbit.org` dans la barre d'adresse (celle en haut de l'écran)
-- et voilà, vous pouvez commencer à écrire du Python!
+Il existe énormément de langage de programmation, tout comme il existe des
+milliers de langue dans le monde ! Certains sont plus connus que d'autres et
+nous allons vous faire découvrir Python, un langage facile à prendre en main
+mais très puissant.
 
-Si vous fermez l'onglet `python.microbit.org` sans avoir enregistré,
-tout votre travail sera perdu. Prenez donc le réflexe de cliquer sur
-le bouton save pour enregistrer.
+## Mais qu'est-ce qu'un micro:bit
+
+Pour ce stage, nous allons utiliser un micro:bit, c'est un micro contrôleur de
+la taille d'une carte bancaire. Nous pouvons écrire des programmes et les lancer
+dessus, ainsi qu'interagir avec ses composants : l'écran de LED, les boutons,
+l'accéléromètre (pour détecter des mouvements), etc.
+
+Vous pourrez garder les micro contrôleurs avec vous, et continuer à écrire vos
+propos programmes en Python dessus après le stage !
+
+## Notre environnement de travail
+
+Pour écrire nos programmes, nous utiliserons le site web :
+<https://python.microbit.org/>
+
+Si vous fermez l'onglet <https://python.microbit.org> sans avoir enregistré,
+tout votre travail sera **perdu**. Prenez donc le réflexe de cliquer sur le
+bouton `Save` pour enregistrer régulièrement !
 
 Pour transférer votre programme sur le `micro:bit` cliquez sur `Download`,
-cliquez sur `micro:bit` sur la colonne de gauche de la fenêtre qui vient de s'ouvrir,
-et enfin cliquez sur enregistrer, et... voilà votre programme est désormais dans votre
-carte `micro:bit`.
+cliquez sur `micro:bit` sur la colonne de gauche de la fenêtre qui vient de
+s'ouvrir, et enfin cliquez sur `Enregistrer`. Voilà votre programme est
+désormais dans votre carte `micro:bit`.
 
-Notre premier programme
-=======================
+# Notre premier programme
 
-Un programme en python est constitué d'une série d'instruction à exécuter par
+Un programme en Python est constitué d'une série d'instruction à exécuter par
 un ordinateur (dans notre cas, le `micro:bit`). Chaque instruction doit être
 écrite sur une nouvelle ligne, et le programme sera lu par l'ordinateur de haut
 en bas. Commençons par analyser un premier exemple de programme:
@@ -59,41 +67,38 @@ diode centrale de ton `micro:bit`.
 
 Ligne à ligne voilà ce que signifie ce programme:
 
- 1. `from microbit import *` permet d'indiquer que dans la suite du programme,
-    on va avoir besoin de toutes les fonctionnalités relative à l'utilisation
-    du `micro:bit`. Ici, toutes les instructions qui suivent ne seraient pas
-    valide sans cette ligne.
- 2. Une ligne vide n'a aucun effet, il ne faut pas hésiter à s'en servir pour
-    espacer son programme (on peut ainsi séparer des morceaux de codes, à la
-    manière dont on sépare des paragraphes dans du texte).
- 3. `display.set_pixel(0, 2, 9)` allume le pixel situé sur la colonne n°0 et la
-    ligne n°2. Le dernier paramètre (9) indique la luminosité de la diode entre
-    0 (diode éteinte) et 9 (pleine puissance).
- 4. `sleep(500)` met l'exécution du programme en pause pendant 500
-    millisecondes. Essayes de supprimer cette ligne, le programme s'execute
-    tellement vite que tu n'as pas le temps de voir qu'une diode s'allume avant
-    l'autre!
- 5. La suite du programme se répète : on allume les diodes des colonnes numéro
-    1, 2, 3 puis 4.
+1. `from microbit import *` permet d'indiquer que dans la suite du programme, on
+   va avoir besoin de toutes les fonctionnalités relative à l'utilisation du
+   `micro:bit`. Ici, toutes les instructions qui suivent ne seraient pas valide
+   sans cette ligne.
+2. Une ligne vide n'a aucun effet, il ne faut pas hésiter à s'en servir pour
+   espacer son programme (on peut ainsi séparer des morceaux de codes, à la
+   manière dont on sépare des paragraphes dans du texte).
+3. `display.set_pixel(0, 2, 9)` allume le pixel situé sur la colonne n°0 et la
+   ligne n°2. Le dernier paramètre (9) indique la luminosité de la diode entre 0
+   (diode éteinte) et 9 (pleine puissance).
+4. `sleep(500)` met l'exécution du programme en pause pendant 500 millisecondes.
+   Essayes de supprimer cette ligne, le programme s'exécute tellement vite que
+   tu n'as pas le temps de voir qu'une diode s'allume avant l'autre !
+5. La suite du programme se répète : on allume les diodes des colonnes numéro 1,
+   2, 3 puis 4.
 
 **TODO**: quelques remarques sur la rigueur de la syntaxe
 
-Les variables
-=============
+#Les variables
 
-Pour l'instant on a seulement vu comment créer un programme qui exécute une
-liste d'instructions assez bêtement, qui donneront toujours exactement le même
-résultat. On va voir que les ordinateurs (et donc le `micro:bit` aussi) ont une
-mémoire que l'on peut manipuler dans un programme pour que celui-ci agisse
+Pour l'instant nous avons seulement vu comment créer un programme qui exécute
+une liste d'instructions assez bêtement, qui donneront toujours exactement le
+même résultat. Cependant, les ordinateurs (et donc votre `micro:bit` aussi) ont
+une mémoire que l'on peut manipuler dans un programme pour que celui-ci agisse
 différemment en fonction de ce qu'il a retenu dans sa mémoire.
 
-Une *variable* est un morceau de la mémoire dans lequel on va pouvoir
-enregistrer des valeurs. Quand on créé une variable, on commence par lui
-choisir un nom qui va ensuite pouvoir être utilisé pour lire ou modifier la
-valeur qui est enregistrée dans la variable.
+Une **variable** est un morceau de la mémoire dans lequel on va pouvoir
+enregistrer des valeurs. Quand on crée une variable, on commence par lui choisir
+un nom qui va ensuite pouvoir être utilisé pour lire ou modifier la valeur qui
+est enregistrée dans la variable.
 
-Utilisation des variables
--------------------------
+## Utilisation des variables
 
 Pour **créer une variable** il suffit d'écrire `nom_de_la_variable =
 valeur_initiale`, par exemple: `nombre_de_patates = 42`.
@@ -124,28 +129,24 @@ display.scroll(x)  # affiche 13 sur l'écran à diodes
 
 ![](figures/variables.pdf)
 
+**TODO**: commentaire en Python ?
 
-### Types de variables
+## Types de variables
 
 Les valeurs stockées dans des variables peuvent être diverses, comme des
-nombres, du texte ou un ensemble de valeurs, on verra peut-être même plus tard
-qu'en décrivant au programme ce que c'est, les variables peuvent stocker des
-pokémons.
+nombres, du texte ou un ensemble de valeurs.
 
 ##### Nombres
 
 C'est le type de variable le plus courant, on a déjà vu qu'on peut créer des
 valeurs numériques avec leur écriture naturelle, et qu'on peut utiliser les
-opérations classiques: `+`, `-`, `*` (multiplication), `/` (division) et `**`(
-(puissance).
+opérations classiques: `+`, `-`, `*` (multiplication), et `/` (division).
 
 ```python
 x = 3 * 4        # x vaut 12
-y = x // 2       # y vaut 6 (`//` est une division pour laquelle on attend
-                 #           un résultat sans virgule)
-z = 3 ** 2       # z vaut 9
-x = (x - y) + z  # x vaut maintenant 15
-
+y = x / 2        # y vaut 6.0
+z = 8 + 1        # z vaut 9
+x = (x - y) + z  # x vaut maintenant 15.0
 ```
 
 ##### Chaines de caractère
@@ -164,15 +165,15 @@ from microbit import *
 
 nombre_de_patates = 42
 texte = "Il y a " + str(nombre_de_patates) + " patates !"
-display.scroll(texte)  # Affiche `Il y a 42 patates !` sur l'écran
+display.scroll(texte)  # Affiche "Il y a 42 patates !" sur l'écran
 ```
 
 ##### Booléens
 
-Enfin, les booléens servent à exprimer le vrai ou le faux. Ils n'y a que deux
+Enfin, les booléens servent à exprimer le vrai ou le faux. Il n'y a que deux
 valeurs possibles pour ce type de variables: `True` (vrai) et `False` (faux).
 
-Des valeurs booléennes sont renvoyées par les opérations de comparaisons: `==`
+Des valeurs booléennes sont renvoyées par les opérations de comparaisons : `==`
 (égalité), `!=` (différence), `<`, `>` (les inégalités strictes), `<=` et `>=`
 (les inégalités larges). Par exemple `1 < 2` vaut `True` mais `3 != 3` faut
 `False`.
@@ -185,8 +186,7 @@ Enfin, il est possible de manipuler les valeurs booléennes avec les opérateurs
  - `a or b` vaut `True` si et seulement si `a` **ou** `b` valent `True`.
 
 
-Exemples
---------
+### Exemples
 
 On peut récupérer le nombre d'appuis qui ont été fait sur un bouton du
 `micro:bit` en utilisant les fonctions `button_a.get_presses()` et
@@ -218,26 +218,27 @@ a = button_a.get_presses() # récupère le nombre d'appuis
 display.scroll("Score: " + str(a))
 ```
 
-### Exercice: calculatrice
+### Exercice : calculatrice
 
 En t'inspirant de l'exemple précédent, écris un programme qui donne le résultat
 de la multiplication de deux nombres. Pour récupérer la valeur des deux nombres
 tu peux donner quelques secondes à l'utilisateur pour appuyer le bon nombre de
 fois sur chaque bouton. Par exemple, si pendant ce temps, tu appuies 3 fois sur
-le bouton de gauche et 7 fois sur celui de droite, le programme affichera "3 *
-7 = 21" sur l'écran.
+le bouton de gauche et 7 fois sur celui de droite, le programme affichera `3 * 7
+= 21` sur l'écran.
 
+# Les boucles
 
-Les boucles et conditions
-=========================
+Imaginons que nous souhaitions exécuter notre programme de calculatrice
+plusieurs fois d'affilée, pour demander différentes opérations à l'utilisateur.
+Une manière de faire cela sera de tout simplement recopier le programme de
+calculatrice plusieurs fois, mais tu te doutes bien que cela n'est pas la
+meilleure façon de faire. Pour résoudre ce problème, nous pouvons utiliser des
+boucles qui vont se charger de **répéter un bout de code** plusieurs fois.
 
-**TODO**: intro
+## La boucle `for`
 
-
-La boucle `for`
----------------
-
-La boucle *for* sert à répéter plusieurs fois le même morceau d'un programme.
+La boucle **for** sert à répéter plusieurs fois le même morceau d'un programme.
 Elle s'utilise comme suit:
 
 ```python
@@ -253,7 +254,7 @@ for colonne in range(5):
 display.scroll("fini !")
 ```
 
-Remarques comme les lignes 4 à 7 sont décalées vers la droite, cette
+Remarque comme les lignes 4 à 7 sont décalées vers la droite, cette
 transformation permet d'identifier le morceau du programme qui est concerné par
 la boucle. À chaque fois que tu écris un `for`, la ligne suivante doit être
 décalée vers la droite, et le morceau de code qui sera répété par cette boucle
@@ -264,15 +265,13 @@ droite.
 
 #### Exercice
 
-Modifies ta barre de chargement pour qu'au lieu d'allumer les diodes d'un coup
+Modifie ta barre de chargement pour qu'au lieu d'allumer les diodes d'un coup
 (avec une intensité de 9), elles s'allument en douceur (en faisant
 progressivement varier l'intensité de 0 à 9).
 
+## La boucle `while`
 
-La boucle `while`
------------------
-
-La boucle *while* sert à répéter un morceau de programme tant qu'une
+La boucle **while** sert à répéter un morceau de programme tant qu'une
 affirmation est vraie. Elle s'utilise comme suit:
 
 ```python
@@ -280,7 +279,7 @@ from microbit import *
 
 while button_a.get_presses() == 0:
     # Ce qui suit va être exécuté tant que le bouton de gauche n'a pas été
-    # pressée.
+    # pressé.
     display.set_pixel(2, 2, 9)  # Allume la diode
     sleep(500)
     display.set_pixel(2, 2, 0)  # Éteint la diode avant de recommencer
@@ -291,9 +290,9 @@ display.scroll("fini !")
 
 #### Exercice
 
-Modifie ton jeu pour que la partie recommence tant que le joueur n'a pas
-atteint un score de 20, une fois qu'il a atteint ce score tu peux afficher une
-image de victoire avec l'instruction `display.show(Image.HAPPY)`.
+Modifie ton jeu pour que la partie recommence tant que le joueur n'a pas atteint
+un score de 20, une fois qu'il a atteint ce score tu peux afficher une image de
+victoire avec l'instruction `display.show(Image.HAPPY)`.
 
 #### Exercice
 
@@ -324,15 +323,14 @@ display.scroll('%.2f' % duree)
 
 **TODO**: expliquer comment compter le temps
 
-Les conditions: `if` ... `elif` ... `else`
-------------------------------------------
+## Les conditions: `if` ... `elif` ... `else`
 
 L'instruction `if` permet de décider de n'exécuter un morceau de code que
 lorsqu'une condition est vraie. Pour se faire la syntaxe est d'écrire `if
-condition:` suivi d'un bloc de code indenté. Le bloc de code en question ne
-sera alors exécuté que si `condition` s'évalue à `True`. Pour simplifier, un
-`if` peut être suivi d'un ou plusieurs `else:` qui exécute un bloc de code
-uniquement si la condition du `if` était fausse.
+condition:` suivi d'un bloc de code indenté. Le bloc de code en question ne sera
+alors exécuté que si `condition` s'évalue à `True`. Pour simplifier, un `if`
+peut être suivi d'un ou plusieurs `else:` qui exécute un bloc de code uniquement
+si la condition du `if` était fausse.
 
 Voici un exemple simple pour illustrer:
 
@@ -372,10 +370,6 @@ while True:
         display.set_pixel(3, 2, 0)
 ```
 
-Les fonctions
-=============
-
-
 Projets
 =======
 
@@ -388,4 +382,16 @@ pense.
 Références `micro:bit`
 ======================
 
-**TODO**
+
+Continuer la programmation chez vous
+====================================
+
+Si vous souhaitez installer un logiciel de programmation sur votre ordinateur
+plutôt que d'utiliser un site web, nous vous recommandons fortement [Mu
+editor](https://codewith.mu/), facile à utiliser et possède un mode spécial pour
+les `micro:bit`.
+
+- france ioi
+- gcc
+- prologin
+
