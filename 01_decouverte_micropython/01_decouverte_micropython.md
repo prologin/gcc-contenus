@@ -393,6 +393,57 @@ while True:
 Projets
 =======
 
+À partir de maintenant, place à la créativité ! 
+Le but est que vous réalisiez un petit projet de votre choix. Si vous avez une 
+idée précise, vous pouvez vous lancez et les organisateurs vous aideront. 
+N'hésitez pas à aller regarder la section suivante qui détaille comment
+utiliser toutes les fonctionnalités du microbit pour trouver des idées.
+Mais si vous n'avez pas d'idées nous vous proposons quelques projets possibles, 
+que vous pouvez modifier comme vous le voulez:
+
+## Projet Tamagochi
+
+Il s'agit de programmer un petit jeu ou on doit prendre soin d'un animal. Il a
+une jauge de faim (stockée dans une variable) qui diminue régulièrement (toutes
+les 5 secondes par exemple) et
+qu'on nourri en appuyant sur le bouton A ou B, ce qui augmente sa jauge de
+faim. Il part avec une faim à 24, et s'il arrive à une faim de -12, il meurt et
+on a perdu. Sur l'écran on affiche un smiley très content s'il a plus 20 à sa
+jauge de faim, s'il a plus de 5 un smiley content, s'il a entre 5 et moins 5
+smiley triste et s'il a moins de moins 5 à sa jauge de faim, smiley énervé. En
+bonus, si on le secoue il perd d'un coup 4 point de jauge de faim.
+
+Pour avoir à la fois un affichage qui change rapidement (quand on le nourri on
+veut voir le changement de smiley rapidement) et pouvoir faire diminuer sa
+jauge de faim régulièrement, nous allons avoir besoin d'une structure un peu
+spéciale. On va consacrer un variable `temps` au fait de compter combien de
+demi secondes sont passés. Et quand 10 demies secondes seront passées, on
+diminue la jauge de faim. Cela nous donne la structure de code suivante (les 
+phrases en rouge sont les choses que vous devez remplacer).
+
+```python
+temps = 0
+temps_précédent = 0
+"autres déclarations de variables"
+while "le tamagoch est en vie" :
+    sleep(500)
+    temps = temps + 1 # Une demie seconde est passée 
+    if "le bouton A ou B a été appuyé" :
+        "la jauge de faim augmente"
+    if "le tamagochi est secoué":
+        "la jauge de faim diminue"
+    if temps == temps_precedent + 10: # 5 secondes sont passées
+        "la jauge de faim est diminuée"
+        temps_precedent = temps
+    "on affiche le smiley qui correspond à la jauge de faim"
+```
+
+## Projet bulle à niveau
+
+## Projet jeu d'agilité
+
+## Bonus: Projet jeu des 20 questions ?
+
 Références `micro:bit`
 ======================
 
