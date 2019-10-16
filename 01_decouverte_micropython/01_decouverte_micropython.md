@@ -440,9 +440,42 @@ while "le tamagoch est en vie" :
 
 ## Projet bulle à niveau
 
+Il s'agit d'afficher une bulle d'air (représentée par un pixel) qui se déplace 
+dans de l'eau, en fonction de comment le microbit est penché. 
+Si le microbit est penché vers la droite la bulle sera à gauche de l'écran,si 
+on penche à gauche elle sera à droite etc.
+
+Pour faire ce projet, il faut toutes les demies secondes changer l'affichage de
+la bulle en fonction des données de l'accéléromètre, pour savoir comment
+utiliser l'accéléromètre, consultez les explications sur les capteurs de la
+section suivante ! Il vous faudra sauvegarder la position de votre bulle dans
+des variables et toutes les demies secondes éteindre la diode correspondant à
+leur position, mettre à jour la position en fonction des données du capteur, et
+allumer la diode correspondant à cette nouvelle position.
+
+
 ## Projet jeu d'agilité
 
-## Bonus: Projet jeu des 20 questions ?
+Ici on veut faire un jeu d'agilité ou le microbit nous indique des action à
+faire (penchez le microbit à droite, à gauche, secouez le, appuyer sur A,...),
+ou on perd si on ne fait pas l'action assez vite, et qui nous affiche quand on
+a perdu, le score, le nombre de mouvement qu'on a réussi à faire d'affilée.
+
+Pour que le jeu soit intéressant, les mouvements sont demandés sans un ordre
+aléatoire, et pour cela on va avoir besoin de générer des nombre au hasard.
+Pour cela, il faut rajouter tout en haut du fichier, juste après le `from
+microbit import *`, `from radom import randint`. Après on peut utiliser la
+fonction `randint(a,b)` qui nous donne un nombre entier entre a et b inclus.
+`r = random(1,6)` nous permet donc de stocker dans la variable `r` un nombre
+aléatoire entre 1 et 6 (inclus).
+En fonction de r on pourra décider quel mouvement on souhaite, par exemple, si 
+r égal 1, on veut qu'il penche à gauche, on le dit au joueur en affichant une
+flèche vers la gauche, on laisse un peu de temps au joueur pour réagir, puis
+on teste s'il a bien penché à gauche. Pour tester les si le joueur fait tel ou
+tel mouvement vous aurez besoin de lire la partie "capteur" de la section
+suivante.
+
+
 
 Références `micro:bit`
 ======================
@@ -450,7 +483,7 @@ Références `micro:bit`
 Cette section détaille comment utiliser diverse fonctionnalités du `micro:bit`,
 si tu souhaites aller encore plus loin on peut trouver des information plus
 complète sur la documentation officielle en ligne trouvable ici:
-<https://bbcmicrobitmicropython.readthedocs.io/en/latest/>.
+[https://bbcmicrobitmicropython.readthedocs.io/en/latest/](https://bbcmicrobitmicropython.readthedocs.io/en/latest/).
 
 Pour utiliser toutes ces fonctions il est nécessaire de les importer depuis le
 module `micro:bit` en ajoutant `from microbit import *` au début de ton
@@ -495,7 +528,7 @@ d'utiliser une image parmi la liste prédéfini: `Image.HEART`, `Image.HAPPY`,
 `Image.SMILE`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus
 complète peut être trouvée ici:
 
-<https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes>
+[https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes](https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes)
 
 ```python
 display.show(Image.HAPPY)  # affiche un smiley
@@ -612,35 +645,49 @@ une chaine de caractère parmi les suivantes:
  - `"3g"`, `"6g"`, `"8g"`
  - `"shake"` - secoué
 
-À noter qu'il existe aussi des fonctions `accelerometer.is_gesture(nom)` et
+Il existe aussi des fonctions `accelerometer.is_gesture(nom)` et
 `accelerometer.was_gesture(nom)` qui fonctionnent de façon similaire à
 `button_a.is_pressed()` et `button_a.was_pressed()`.
 
+Pour les mouvent haut, bas, gauche et droite, la fonction `accelerometer.current_gesture()`
+peut être assez imprécise et nous vous recommandons de plutôt utiliser
+`accelerometer.get_x()` et `accelerometer.get_y()` (fonction suivante).
+
 ```python
-# si le micro:bit est tourné vers la droite ou la gauche, affiche la direction
+# Si le micro:bit est face contre ciel, on affiche un smiley content.
 
-if accelerometer.current_gesture() == 'right':
-    display.show(Image.ARROW_E)
+if accelerometer.current_gesture() == 'face up':
+    display.show(Image.HAPPY)
 
-if accelerometer.current_gesture() == 'left':
-    display.show(Image.ARROW_W)
+if accelerometer.current_gesture() == 'face down':
+    display.show(Image.SAD)
 ```
 
 ### `accelerometer.get_x()` (pour `x`, `y` ou `z`) - accéléromètre
 
 Retourne l'accélération suivant l'axe x (existe aussi pour `y` et `z`).
+L'axe x correspond à l'axe gauche-droite, x est positif vers la droite et
+négatif vers la gauche. L'axe y correspond à l'axe haut-bas du microbit, si y
+est positif le microbit est penché vers l'avant, s'il est négatif il est penché
+vers l'arrière. L'axe z correspond à l'axe de la hauteur à la quelle se trouve
+le microbit.
+
+Si le microbit est a l'horizontal, x est proche de 0, mais l'accelerometre
+est très sensible donc x vaut rarement 0,
+On considère donc que s'il est entre -100 et 100, il est à l'horizontal. 
+C'est une valeur arbitraire, on peut la changer pour plus ou moins de sensibilité.
 
 ```python
-# L'attraction terrestre crée une accélération de 9.81 m/s vers le sol
-# Ce qui suit suppose que le micro:bit reste horizontal
+# On affiche une fleche dans la direction ou le micrbit est penché.
 
 while True:
-    if accelerometer.get_z() > 9.81:
-        # Le micro:bit est poussé vers le haut
-        display.show(Image.HAPPY)
-    else:
-        # Le micro:bit est poussé vers le bas, il tombe peut-être ?
-        display.show(Image.SAD)
+    x = accelerometer.get_x()
+    if x > 100:
+        # Le micro:bit est penché vers la droite
+        display.show(Image.ARROW_E)
+    if x < -100:
+        # Le micro:bit est penché vers la gauche
+        display.show(Image.ARROW_W)
 ```
 
 Radio
