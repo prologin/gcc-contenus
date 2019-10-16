@@ -100,7 +100,6 @@ sleep(500)
 Tout ce qui est écrit après un `#` sera totalement ignoré par Python, ces
 commentaires sont uniquement à destination des programmeurs, c'est-à-dire vous !
 
-**TODO**: quelques remarques sur la rigueur de la syntaxe
 
 # Les variables
 
@@ -285,7 +284,7 @@ from microbit import *
 
 for colonne in range(5):
     # Ce qui suit va être répété 10 fois, une variable `colonne` est créée,
-    # qui va prendre les valeurs 0, 1, 2, ..., puis 9.
+    # qui va prendre les valeurs 0, 1, 2, 3 puis 4.
     display.set_pixel(colonne, 2, 9)
     sleep(500)
 
@@ -421,6 +420,253 @@ pense.
 Références `micro:bit`
 ======================
 
+Cette section détaille comment utiliser diverse fonctionnalités du `micro:bit`,
+si tu souhaites aller encore plus loin on peut trouver des information plus
+complète sur la documentation officielle en ligne trouvable ici:
+[https://bbcmicrobitmicropython.readthedocs.io/en/latest/](https://bbcmicrobitmicropython.readthedocs.io/en/latest/).
+
+Pour utiliser toutes ces fonctions il est nécessaire de les importer depuis le
+module `micro:bit` en ajoutant `from microbit import *` au début de ton
+programme.
+
+L'écran
+-------
+
+### `display.clear()` - effacer l'écran
+
+```python
+display.clear()  # l'écran est maintenant éteint
+```
+
+### `display.set_pixel(x, y, value)` - allumer/éteindre un pixel
+
+Change la luminosité d'une diode pour une valeur allant de 0 (diode éteinte), à
+9 (luminosité maximale).
+
+La diode est identifiée par sa colonne `x` et sa ligne `y` numérotés de 0 à 4.
+
+```python
+display.set_pixel(2, 2, 9)  # allume la diode centrale
+display.set_pixel(0, 0, 5)  # allume à moitié la diode d'en haut à gauche
+display.set_pixel(4, 4, 0)  # éteint la diode d'en bas à droite
+```
+
+### `display.get_pixel(x, y)` - calcule la luminosité d'un pixel
+
+Réciproquement à `display.set_pixel(x, y, value)`, récupère la valeur de
+luminosité d'une diode identifiée par sa colonne `x` et sa ligne `y`.
+
+```python
+display.set_pixel(2, 2, 9)  # allume la diode centrale
+x = display.get_pixel(2, 2)  # `x` vaut maintenant 9
+```
+
+### `display.show(image)` - afficher une image
+
+Cette fonction sert à afficher une image, le plus simple est généralement
+d'utiliser une image parmi la liste prédéfini: `Image.HEART`, `Image.HAPPY`,
+`Image.SMILE`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus
+complète peut être trouvée ici:
+
+[https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes](https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes)
+
+```python
+display.show(Image.HAPPY)  # affiche un smiley
+display.show(Image.HEART)  # affiche un coeur
+```
+
+Il est aussi possible de dessiner soi-même une image à partir d'un texte en
+séparant les ligne avec `:` et assignant une luminosité entre 0 et 9 à chaque
+diode:
+
+```python
+bateau = Image('05050:'
+               '05050:'
+               '05050:'
+               '99999:'
+               '09990')
+
+# Affiche une image qui ressemblera à peu près à ça:
+#        x x
+#        x x
+#        x x
+#       OOOOO
+#        OOO
+display.show(bateau)
+```
+
+### `display.scroll(texte)` - afficher du texte
+
+Fait défiler le texte donné en entrée.
+
+```python
+display.scroll('Salut tous le monde !')  # affiche `Salut [...] !`
+display.scroll(42)  # en réalité ça ne fonctionne pas qu'avec le texte !
+```
+
+Les boutons
+-----------
+
+Il y a deux boutons sur le `micro:bit`, ils seront appelé `button_a` et
+`button_b` et toute fonction qui peut être appelée pour l'un peut aussi être
+appelée par l'autre.
+
+### `button_a.is_pressed()` - état du bouton
+
+Retourne `True` si le bouton est actuellement enfoncé.
+
+```python
+while True:
+    if button_b.is_pressed():
+        # Allume la diode centrale si le bouton de droite est enfoncé
+        display.set_pixel(2, 2, 9)
+    else:
+        # Éteint la diode si le bouton de droite n'est plus enfoncé
+        display.set_pixel(2, 2, 0)
+```
+
+### `button_a.was_pressed()` - le bouton a été enfoncé
+
+Retourne `True` si le bouton a été enfoncé depuis la dernière fois que cette
+fonction a été appelée.
+
+```python
+display.scroll('Appuyez sur le bouton de gauche pour arrêter le programme')
+
+# Si le bouton n'a pas été enfoncé pendant que le texte défilait, on peut
+# continuer le programme
+if not button_a.was_pressed():
+    display.scroll('Et bien continuons le programme ...')
+    # ...
+```
+
+### `button_a.get_presses()` - nombre d'appuis sur le bouton
+
+Retourne le nombre total d'appuis sur le boutons depuis la dernière fois que
+cette fonction a été appelée.
+
+```python
+sleep(5000)
+nb_appuis = button_b.get_presses()
+display.scroll(
+    'Vous avez appuyé '
+    + str(nb_appuis)
+    + ' fois sur le bouton b en 5 secondes.'
+)
+```
+
+Capteurs (boussole, accéléromètre)
+--------
+
+### `compass.heading()` - boussole
+
+Retourne l'angle du `micro:bit` par rapport au nord (en degrés, donc de 0 à
+360).
+
+```python
+angle = compass.heading()
+
+if 170 <= angle <= 190:
+    display.scroll('Le micro:bit est dirigé vers le sud')
+```
+
+### `accelerometer.current_gesture()` - geste / position
+
+Retourne le nom du mouvement actuellement appliqué au `micro:bit`. Ce nom est
+une chaine de caractère parmi les suivantes:
+
+ - `"up"` - haut
+ - `"down"` - bas
+ - `"left"` - gauche
+ - `"right"` - droite
+ - `"face up"` - à l'endroit
+ - `"face down"` - à l'envers
+ - `"freefall"` - chute libre
+ - `"3g"`, `"6g"`, `"8g"`
+ - `"shake"` - secoué
+
+À noter qu'il existe aussi des fonctions `accelerometer.is_gesture(nom)` et
+`accelerometer.was_gesture(nom)` qui fonctionnent de façon similaire à
+`button_a.is_pressed()` et `button_a.was_pressed()`.
+
+```python
+# si le micro:bit est tourné vers la droite ou la gauche, affiche la direction
+
+if accelerometer.current_gesture() == 'right':
+    display.show(Image.ARROW_E)
+
+if accelerometer.current_gesture() == 'left':
+    display.show(Image.ARROW_W)
+```
+
+### `accelerometer.get_x()` (pour `x`, `y` ou `z`) - accéléromètre
+
+Retourne l'accélération suivant l'axe x (existe aussi pour `y` et `z`).
+
+```python
+# L'attraction terrestre crée une accélération de 9.81 m/s vers le sol
+# Ce qui suit suppose que le micro:bit reste horizontal
+
+while True:
+    if accelerometer.get_z() > 9.81:
+        # Le micro:bit est poussé vers le haut
+        display.show(Image.HAPPY)
+    else:
+        # Le micro:bit est poussé vers le bas, il tombe peut-être ?
+        display.show(Image.SAD)
+```
+
+Radio
+-----
+
+### `radio.on()` - allume la radio
+
+Cette fonction doit être appelée car la radio consomme pas mal d'énergie.
+
+### `radio.send(message)` - envoyer un message
+
+Envoie un message sur le canal de radio.
+
+```python
+radio.on()
+radio.send('Salut, ça va ?')
+```
+
+### `radio.receive()` - recevoir un message
+
+Retourne un message reçu sur le canal de radio. Si aucun nouveau message n'a
+été reçu, retourne `None`.
+
+```python
+radio.on()
+message = None
+
+# Attends jusqu'à avoir reçu un message
+while message is None:
+    message = radio.receive()
+
+display.scroll(message)
+```
+
+### `radio.config(...)` - paramétrer la radio
+
+Permet de changer différent paramètres de la radio:
+
+ - `length`: la taille maximale d'un message, au maximum 251 (défaut: 32)
+ - `queue`: le nombre maximal de messages en attente d'être lu avec la fonction
+            `radio.receive()` (défaut: 3)
+ - `channel`: le canal de communication à utiliser, la radio ne peut
+              communiquer qu'avec des `micro:bit` qui utilisent le même
+              paramètre, entre 0 et 83 (défaut: 7)
+
+```python
+radio.config(channel=42, length=251)
+radio.send(
+    'Wow, maintenant je peut envoyer des messages super longs sur le channel '
+    '42, c\'est vraiment génial d\'avoir cette chance ! '
+    'Merci radio.config() !'
+)
+```
 
 Continuer la programmation chez vous
 ====================================
@@ -428,7 +674,7 @@ Continuer la programmation chez vous
 Si vous souhaitez installer un logiciel de programmation sur votre ordinateur
 plutôt que d'utiliser un site web, nous vous recommandons vraiment [Mu
 editor](https://codewith.mu/) ([https://codewith.mu/](https://codewith.mu/)),
-disponible sur Mac, Windows et Linux, facile à utiliser et possède un mode 
+disponible sur Mac, Windows et Linux, facile à utiliser et possède un mode
 spécial pour les `micro:bit`.
 
 Ce TP couvre les bases essentielles de la programmation,pour continuer nous
