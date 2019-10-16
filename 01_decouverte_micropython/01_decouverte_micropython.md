@@ -6,25 +6,26 @@ date: 2019
 # Introduction à la programmation
 
 Tous les ordinateurs ne sont rien d'autres que des composants électroniques qui
-exécutent des instructions. Lorsque vous ouvrez un navigateur internet, votre
+exécutent des instructions. Lorsque tu ouvres un navigateur internet, ton
 ordinateur exécute les instructions du logiciel utilisé, qu'on appelle aussi
-**programme**. Le but de cet atelier est de vous faire découvrir comment nous
+**programme**. Le but de cet atelier est de te faire découvrir comment nous
 pouvons créer nos propres programmes, et pour cela il nous faut un moyen
 d'écrire ces instructions : un **langage de programmation**.
 
 Il existe énormément de langage de programmation, tout comme il existe des
 milliers de langue dans le monde ! Certains sont plus connus que d'autres et
-nous allons vous faire découvrir Python, un langage facile à prendre en main
-mais très puissant.
+nous allons te faire découvrir Python, un langage facile à prendre en main mais
+très puissant.
 
 ## Qu'est-ce qu'un `micro:bit` ?
 
-Pour cet atelier, nous allons utiliser un `micro:bit`, c'est un micro contrôleur
-de la taille d'une carte bancaire. Nous pouvons écrire des programmes et les
-lancer dessus, ainsi qu'interagir avec ses composants : l'écran de LED, les
-boutons, l'accéléromètre (pour détecter des mouvements), etc.
+Pour cet atelier, nous allons utiliser un `micro:bit`, c'est un micro
+contrôleur de la taille d'une carte bancaire. Nous pouvons écrire des
+programmes et les lancer dessus, ainsi qu'interagir avec ses composants :
+l'écran de LED, les boutons, l'accéléromètre (pour détecter des mouvements),
+etc.
 
-Vous pourrez garder les micro contrôleurs avec vous, et continuer à écrire vos
+Tu peux garder les micro contrôleurs avec toi, et continuer à écrire vos
 propres programmes en Python dessus après l'atelier !
 
 ## Notre environnement de travail
@@ -32,14 +33,14 @@ propres programmes en Python dessus après l'atelier !
 Pour écrire nos programmes, nous utiliserons le site web :
 <https://python.microbit.org/>
 
-Si vous fermez l'onglet sans avoir enregistré, tout votre travail sera
-**perdu**. Prenez donc le réflexe de cliquer sur le bouton `Save` pour
-enregistrer régulièrement !
+Si tu fermes l'onglet sans avoir enregistré, tout ton travail sera **perdu**.
+Prends donc le réflexe de cliquer sur le bouton `Save` pour enregistrer
+régulièrement !
 
-Pour transférer votre programme sur le `micro:bit` cliquez sur `Download`,
+Pour transférer ton programme sur le `micro:bit` cliques sur `Download`,
 cliquez sur `micro:bit` sur la colonne de gauche de la fenêtre qui vient de
-s'ouvrir, et enfin cliquez sur `Enregistrer`. Voilà votre programme est
-désormais dans votre carte `micro:bit`.
+s'ouvrir, et enfin cliques sur `Enregistrer`. Voilà ton programme est désormais
+dans ta carte `micro:bit`.
 
 # Notre premier programme
 
@@ -98,14 +99,14 @@ sleep(500)
 ```
 
 Tout ce qui est écrit après un `#` sera totalement ignoré par Python, ces
-commentaires sont uniquement à destination des programmeurs, c'est-à-dire vous !
+commentaires sont uniquement à destination des programmeurs, c'est-à-dire toi !
 
 
 # Les variables
 
 Pour l'instant nous avons seulement vu comment créer un programme qui exécute
 une liste d'instructions assez bêtement, qui donneront toujours exactement le
-même résultat. Cependant, les ordinateurs (et donc votre `micro:bit` aussi) ont
+même résultat. Cependant, les ordinateurs (et donc ton `micro:bit` aussi) ont
 une mémoire que l'on peut manipuler dans un programme pour que celui-ci agisse
 différemment en fonction de ce qu'il a retenu dans sa mémoire.
 
@@ -145,7 +146,7 @@ display.scroll(x)
 
 ![](figures/variables.pdf)
 
-Ce programme affichera donc 13 sur l'écran à diodes de votre `micro:bit`.
+Ce programme affichera donc 13 sur l'écran à diodes de ton `micro:bit`.
 
 #### Exercice
 
@@ -334,32 +335,13 @@ victoire avec l'instruction `display.show(Image.HAPPY)`.
 
 #### Exercice
 
-*(je ne sait pas si c'est une bonne idée)*: Modifie ton jeu pour qu'il
-affiche une barre de progression, la barre doit être pleine quand il a appuyé
-20 fois sur le bouton. À la fin, le jeu affiche le temps qu'il a fallu pour
-atteindre les 20 appuis.
+Modifie ton jeu pour qu'il affiche une barre de progression, la barre doit être
+pleine quand il a appuyé 20 fois sur le bouton. À la fin, le jeu affiche le
+temps qu'il a fallu pour atteindre les 20 appuis.
 
-Voici un exemple de comment mesurer un temps, en secondes en utilisant le
-module `time` de Python:
-
-```python
-import time
-from microbit import *
-
-# enregistre l'instant de début d'execution du programme
-debut = time.time()
-
-# simule un programme qui prend 2.5 secondes à s'executer
-sleep(2500)
-
-# calcul du temps écoulé (en secondes)
-duree = time.time() - debut
-
-# affiche le temps écoulé (2 chiffres après la virgule)
-display.scroll('%.2f' % duree)
-```
-
-**TODO**: expliquer comment compter le temps
+La fonction `running_time()` retourne le nombre de millisecondes qui se sont
+écoulé depuis le début de ton programme, tu peux donc t'en servir pour calculer
+le score du joueur.
 
 ## Les conditions: `if` ... `elif` ... `else`
 
@@ -410,12 +392,6 @@ while True:
 
 Projets
 =======
-
-**TODO**: Je crois qu'il y en a pas mal qui ne demandent pas à savoir utiliser
-de liste dans les idées du TP microbit, on peut les réutiliser, elles ont déjà
-pas mal de trucs à digérer c'est le moment de les lancer dans un truc perso je
-pense.
-
 
 Références `micro:bit`
 ======================
@@ -668,32 +644,32 @@ radio.send(
 )
 ```
 
-Continuer la programmation chez vous
-====================================
+Continuer la programmation chez toi
+===================================
 
-Si vous souhaitez installer un logiciel de programmation sur votre ordinateur
-plutôt que d'utiliser un site web, nous vous recommandons vraiment [Mu
+Si tu souhaites installer un logiciel de programmation sur ton ordinateur
+plutôt que d'utiliser un site web, nous te recommandons vraiment [Mu
 editor](https://codewith.mu/) ([https://codewith.mu/](https://codewith.mu/)),
 disponible sur Mac, Windows et Linux, facile à utiliser et possède un mode
 spécial pour les `micro:bit`.
 
-Ce TP couvre les bases essentielles de la programmation,pour continuer nous
-vous conseillons les ressources suivante:
+Ce TP couvre les bases essentielles de la programmation,pour continuer nous te
+conseillons les ressources suivante:
 
 - France ioi ([http://www.france-ioi.org/](http://www.france-ioi.org/)): C'est
   un site d'entrainement à la programmation qui propose des leçons suivis de
   problèmes à résoudre, la difficulté y est très progressive.
-- Girls Can Code! : Nous organisons des stages courts et des stages longs, Tous
+- Girls Can Code! : Nous organisons des stages courts et des stages longs, tous
   les TPs des stages sont disponibles sur Github
   ([https://github.com/prologin/gcc-resources](https://github.com/prologin/gcc-resources))
   et bientôt ils seront détaillés dans une nouvelle section de notre site
   ([https://gcc.prologin.org/](https://gcc.prologin.org/)).
 - Prologin: c'est un concours d'informatique pour les moins de 20 ans que nous
   organisons en plus des stages Girls Can Code!. Candidater ou s'entrainer sur
-  les archives peut être un bon moyen de continuer à programmer. Si vous êtes
-  sélectionné les épreuves régionales peuvent être l'occasion de revoir les
-  organisateurs que vous avez rencontrés et la finale est un super événement,
-  mais ce n'est pas facile !
+  les archives peut être un bon moyen de continuer à programmer. Si tu es
+  sélectionnée les épreuves régionales seront l'occasion de revoir les
+  organisateurs que tu as rencontré et la finale est un super événement, mais
+  ce n'est pas facile !
 
 Si un domaine de l'informatique t'intéresse en particulier n'hésite pas à
 demander aux organisateurs des références plus spécifiques.
