@@ -426,11 +426,30 @@ Continuer la programmation chez vous
 ====================================
 
 Si vous souhaitez installer un logiciel de programmation sur votre ordinateur
-plutôt que d'utiliser un site web, nous vous recommandons fortement [Mu
-editor](https://codewith.mu/), facile à utiliser et possède un mode spécial pour
-les `micro:bit`.
+plutôt que d'utiliser un site web, nous vous recommandons vraiment [Mu
+editor](https://codewith.mu/) ([https://codewith.mu/](https://codewith.mu/)),
+disponible sur Mac, Windows et Linux, facile à utiliser et possède un mode 
+spécial pour les `micro:bit`.
 
-- france ioi
-- gcc
-- prologin
+Ce TP couvre les bases essentielles de la programmation,pour continuer nous
+vous conseillons les ressources suivante:
 
+- France ioi ([http://www.france-ioi.org/](http://www.france-ioi.org/)): C'est
+  un site d'entrainement à la programmation qui propose des leçons suivis de
+  problèmes à résoudre, la difficulté y est très progressive.
+- Girls Can Code! : Nous organisons des stages courts et des stages longs, Tous
+  les TPs des stages sont disponibles sur Github
+  ([https://github.com/prologin/gcc-resources](https://github.com/prologin/gcc-resources))
+  et bientôt ils seront détaillés dans une nouvelle section de notre site
+  ([https://gcc.prologin.org/](https://gcc.prologin.org/)).
+- Prologin: c'est un concours d'informatique pour les moins de 20 ans que nous
+  organisons en plus des stages Girls Can Code!. Candidater ou s'entrainer sur
+  les archives peut être un bon moyen de continuer à programmer. Si vous êtes
+  sélectionné les épreuves régionales peuvent être l'occasion de revoir les
+  organisateurs que vous avez rencontrés et la finale est un super événement,
+  mais ce n'est pas facile !
+
+Si un domaine de l'informatique t'intéresse en particulier n'hésite pas à
+demander aux organisateurs des références plus spécifiques.
+
+Bonne Continuation!
