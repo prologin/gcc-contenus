@@ -742,7 +742,7 @@ radio.send(
 )
 ```
 
-Continuer la programmation chez toi
+Continuer la programmation chez soi
 ===================================
 
 Si tu souhaites installer un logiciel de programmation sur ton ordinateur
