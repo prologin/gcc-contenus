@@ -399,7 +399,7 @@ Références `micro:bit`
 Cette section détaille comment utiliser diverse fonctionnalités du `micro:bit`,
 si tu souhaites aller encore plus loin on peut trouver des information plus
 complète sur la documentation officielle en ligne trouvable ici:
-[https://bbcmicrobitmicropython.readthedocs.io/en/latest/](https://bbcmicrobitmicropython.readthedocs.io/en/latest/).
+<https://bbcmicrobitmicropython.readthedocs.io/en/latest/>.
 
 Pour utiliser toutes ces fonctions il est nécessaire de les importer depuis le
 module `micro:bit` en ajoutant `from microbit import *` au début de ton
@@ -444,7 +444,7 @@ d'utiliser une image parmi la liste prédéfini: `Image.HEART`, `Image.HAPPY`,
 `Image.SMILE`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus
 complète peut être trouvée ici:
 
-[https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes](https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes)
+<https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes>
 
 ```python
 display.show(Image.HAPPY)  # affiche un smiley
