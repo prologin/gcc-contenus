@@ -19,14 +19,13 @@ très puissant.
 
 ## Qu'est-ce qu'un `micro:bit` ?
 
-Pour cet atelier, nous allons utiliser un `micro:bit`, c'est un micro
-contrôleur de la taille d'une carte bancaire. Nous pouvons écrire des
-programmes et les lancer dessus, ainsi qu'interagir avec ses composants :
-l'écran de LED, les boutons, l'accéléromètre (pour détecter des mouvements),
-etc.
+Pour cet atelier, nous allons utiliser un `micro:bit`, c'est un microcontrôleur
+de la taille d'une carte bancaire. Nous pouvons écrire des programmes et les
+lancer dessus, ainsi qu'interagir avec ses composants : l'écran de LED, les
+boutons, l'accéléromètre (pour détecter des mouvements), etc.
 
-Tu peux garder les micro contrôleurs avec toi, et continuer à écrire vos
-propres programmes en Python dessus après l'atelier !
+Tu peux garder les microcontrôleurs avec toi, et continuer à écrire tes propres
+programmes en Python dessus après l'atelier !
 
 ## Notre environnement de travail
 
@@ -37,17 +36,17 @@ Si tu fermes l'onglet sans avoir enregistré, tout ton travail sera **perdu**.
 Prends donc le réflexe de cliquer sur le bouton `Save` pour enregistrer
 régulièrement !
 
-Pour transférer ton programme sur le `micro:bit` cliques sur `Download`,
-cliquez sur `micro:bit` sur la colonne de gauche de la fenêtre qui vient de
-s'ouvrir, et enfin cliques sur `Enregistrer`. Voilà ton programme est désormais
-dans ta carte `micro:bit`.
+Pour transférer ton programme sur le `micro:bit` clique sur `Download`, puis sur
+`micro:bit` sur la colonne de gauche de la fenêtre qui vient de s'ouvrir, et
+enfin clique sur `Enregistrer`. Voilà ton programme est désormais dans ta carte
+`micro:bit`.
 
 # Notre premier programme
 
-Un programme en Python est constitué d'une série d'instruction à exécuter par
-un ordinateur (dans notre cas, le `micro:bit`). Chaque instruction doit être
-écrite sur une nouvelle ligne, et le programme sera lu par l'ordinateur de haut
-en bas. Commençons par analyser un premier exemple de programme:
+Un programme en Python est constitué d'une série d'instruction à exécuter par un
+ordinateur (dans notre cas, le `micro:bit`). Chaque instruction doit être écrite
+sur une nouvelle ligne, et le programme sera lu par l'ordinateur de haut en bas.
+Commençons par analyser un premier exemple de programme :
 
 ```python
 from microbit import *
@@ -66,11 +65,11 @@ display.set_pixel(4, 2, 9)
 Si tu testes ce programme, il affiche une barre de chargement sur la ligne de
 diode centrale de ton `micro:bit`.
 
-Ligne à ligne voilà ce que signifie ce programme:
+Ligne à ligne voilà ce que signifie ce programme :
 
 1. `from microbit import *` permet d'indiquer que dans la suite du programme, on
    va avoir besoin de toutes les fonctionnalités relative à l'utilisation du
-   `micro:bit`. Ici, toutes les instructions qui suivent ne seraient pas valide
+   `micro:bit`. Ici, toutes les instructions qui suivent ne seraient pas valides
    sans cette ligne.
 2. Une ligne vide n'a aucun effet, il ne faut pas hésiter à s'en servir pour
    espacer son programme (on peut ainsi séparer des morceaux de codes, à la
@@ -79,8 +78,8 @@ Ligne à ligne voilà ce que signifie ce programme:
    ligne n°2. Le dernier paramètre (9) indique la luminosité de la diode entre 0
    (diode éteinte) et 9 (pleine puissance).
 4. `sleep(500)` met l'exécution du programme en pause pendant 500 millisecondes.
-   Essayes de supprimer cette ligne, le programme s'exécute tellement vite que
-   tu n'as pas le temps de voir qu'une diode s'allume avant l'autre !
+   Essaye de supprimer cette ligne, le programme s'exécute tellement vite que tu
+   n'as pas le temps de voir qu'une diode s'allume avant l'autre !
 5. La suite du programme se répète : on allume les diodes des colonnes numéro 1,
    2, 3 puis 4.
 
@@ -118,7 +117,7 @@ est enregistrée dans la variable.
 ## Utilisation des variables
 
 Pour **créer une variable** il suffit d'écrire `nom_de_la_variable =
-valeur_initiale`, par exemple: `nombre_de_patates = 42`.
+valeur_initiale`, par exemple : `nombre_de_patates = 42`.
 
 Ensuite on peut **réutiliser la valeur** stockée dans la variable en
 l'identifiant par son nom, par exemple on peut créer une nouvelle variable
@@ -131,7 +130,7 @@ exemple on peut augmenter de 1 la valeur stockée dans une variable :
 
 Voici un exemple de programme complet que tu peux tester sur ton `micro:bit`
 suivi d'un petit schéma qui représente ce qui est enregistré dans les variables
-après chaque ligne du programme:
+après chaque ligne du programme :
 
 ```python
 from microbit import *
@@ -172,7 +171,7 @@ nombres, du texte ou un ensemble de valeurs.
 
 C'est le type de variable le plus courant, on a déjà vu qu'on peut créer des
 valeurs numériques avec leur écriture naturelle, et qu'on peut utiliser les
-opérations classiques: `+`, `-`, `*` (multiplication), et `/` (division).
+opérations classiques : `+`, `-`, `*` (multiplication), et `/` (division).
 
 ```python
 x = 3 * 4
@@ -191,9 +190,9 @@ En reprenant les valeurs précédentes, on obtiendrait `a` valant 15.0.
 
 ##### Chaines de caractère
 
-On peut créer du texte en mettant son contenu entre guillemets (par exemple:
+On peut créer du texte en mettant son contenu entre guillemets (par exemple :
 `mon_texte = "Bonjour tous le monde !"`). On peut aussi concaténer des morceaux
-de textes entre eux avec l'opérateur `+` (par exemple: `mon_texte = mon_texte +
+de textes entre eux avec l'opérateur `+` (par exemple : `mon_texte = mon_texte +
 "!!"`).
 
 À noter qu'il est souvent très pratique de convertir un nombre en texte pour
@@ -211,15 +210,15 @@ display.scroll(texte)  # Affiche "Il y a 42 patates !" sur l'écran
 ##### Booléens
 
 Enfin, les booléens servent à exprimer le vrai ou le faux. Il n'y a que deux
-valeurs possibles pour ce type de variables: `True` (vrai) et `False` (faux).
+valeurs possibles pour ce type de variables : `True` (vrai) et `False` (faux).
 
 Des valeurs booléennes sont renvoyées par les opérations de comparaisons : `==`
 (égalité), `!=` (différence), `<`, `>` (les inégalités strictes), `<=` et `>=`
-(les inégalités larges). Par exemple `1 < 2` vaut `True` mais `3 != 3` faut
+(les inégalités larges). Par exemple `1 < 2` vaut `True` mais `3 != 3` vaut
 `False`.
 
 Enfin, il est possible de manipuler les valeurs booléennes avec les opérateurs
-`not`, `and` et `or`:
+`not`, `and` et `or` :
 
  - `not a` vaut `True` si et seulement si `a` vaut `False`;
  - `a and b` vaut `True` si et seulement si `a` **et** `b` valent `True`;
@@ -227,7 +226,7 @@ Enfin, il est possible de manipuler les valeurs booléennes avec les opérateurs
 
 ### Exemples
 
-On peut récupérer le nombre d'appuis qui ont été fait sur un bouton du
+On peut récupérer le nombre d'appuis qui ont été faits sur un bouton du
 `micro:bit` en utilisant les fonctions `button_a.get_presses()` et
 `button_b.get_presses()` pour le second bouton.
 
@@ -278,7 +277,7 @@ boucles qui vont se charger de **répéter un bout de code** plusieurs fois.
 ## La boucle `for`
 
 La boucle **for** sert à répéter plusieurs fois le même morceau d'un programme.
-Elle s'utilise comme suit:
+Elle s'utilise comme suit :
 
 ```python
 from microbit import *
@@ -311,7 +310,7 @@ progressivement varier l'intensité de 0 à 9).
 ## La boucle `while`
 
 La boucle **while** sert à répéter un morceau de programme tant qu'une
-affirmation est vraie. Elle s'utilise comme suit:
+affirmation est vraie. Elle s'utilise comme suit :
 
 ```python
 from microbit import *
@@ -340,10 +339,10 @@ pleine quand il a appuyé 20 fois sur le bouton. À la fin, le jeu affiche le
 temps qu'il a fallu pour atteindre les 20 appuis.
 
 La fonction `running_time()` retourne le nombre de millisecondes qui se sont
-écoulé depuis le début de ton programme, tu peux donc t'en servir pour calculer
-le score du joueur.
+écoulées depuis le début de ton programme, tu peux donc t'en servir pour
+calculer le score du joueur.
 
-## Les conditions: `if` ... `elif` ... `else`
+## Les conditions : `if` ... `elif` ... `else`
 
 L'instruction `if` permet de décider de n'exécuter un morceau de code que
 lorsqu'une condition est vraie. Pour se faire la syntaxe est d'écrire `if
@@ -352,7 +351,7 @@ alors exécuté que si `condition` s'évalue à `True`. Pour simplifier, un `if`
 peut être suivi d'un ou plusieurs `else:` qui exécute un bloc de code uniquement
 si la condition du `if` était fausse.
 
-Voici un exemple simple pour illustrer:
+Voici un exemple simple pour illustrer :
 
 ```python
 import random
@@ -367,7 +366,7 @@ else:
 ```
 
 Ou un exemple légèrement plus poussé qui permet de lier les boutons du
-`micro:bit` à des diodes:
+`micro:bit` à des diodes :
 
 ```python
 from microbit import *
@@ -390,36 +389,36 @@ while True:
         display.set_pixel(3, 2, 0)
 ```
 
-Projets
-=======
+# Projets
 
-À partir de maintenant, place à la créativité ! 
-Le but est que vous réalisiez un petit projet de votre choix. Si vous avez une 
-idée précise, vous pouvez vous lancez et les organisateurs vous aideront. 
-N'hésitez pas à aller regarder la section suivante qui détaille comment
-utiliser toutes les fonctionnalités du microbit pour trouver des idées.
-Mais si vous n'avez pas d'idées nous vous proposons quelques projets possibles, 
-que vous pouvez modifier comme vous le voulez:
+À partir de maintenant, place à la créativité.
+
+Le but est que tu réalises un petit projet de ton choix. Si tu as une idée
+précise, tu peux te lancer et les organisateurs t'aideront !  N'hésite pas à
+aller regarder la section suivante qui détaille comment utiliser toutes les
+fonctionnalités du `micro:bit` pour trouver des idées.  Mais si tu es à court
+d'idées, voici quelques projets possibles, que tu peux modifier comme tu le
+souhaites :
 
 ## Projet Tamagochi
 
-Il s'agit de programmer un petit jeu ou on doit prendre soin d'un animal. Il a
+Il s'agit de programmer un petit jeu où l'on doit prendre soin d'un animal. Il a
 une jauge de faim (stockée dans une variable) qui diminue régulièrement (toutes
-les 5 secondes par exemple) et
-qu'on nourri en appuyant sur le bouton A ou B, ce qui augmente sa jauge de
-faim. Il part avec une faim à 24, et s'il arrive à une faim de -12, il meurt et
-on a perdu. Sur l'écran on affiche un smiley très content s'il a plus 20 à sa
-jauge de faim, s'il a plus de 5 un smiley content, s'il a entre 5 et moins 5
-smiley triste et s'il a moins de moins 5 à sa jauge de faim, smiley énervé. En
-bonus, si on le secoue il perd d'un coup 4 point de jauge de faim.
+les 5 secondes par exemple) et qu'on nourrit en appuyant sur le bouton A ou B,
+ce qui augmente sa jauge de faim. Il part avec une faim à 24, et s'il arrive à
+une faim de -12, il meurt et on a perdu. Sur l'écran on affiche un smiley très
+content s'il a plus 20 à sa jauge de faim, s'il a plus de 5 un smiley content,
+s'il a entre 5 et moins 5 smiley triste et s'il a moins de moins 5 à sa jauge de
+faim, smiley énervé. En bonus, si on le secoue il perd d'un coup 4 point de
+jauge de faim.
 
-Pour avoir à la fois un affichage qui change rapidement (quand on le nourri on
-veut voir le changement de smiley rapidement) et pouvoir faire diminuer sa
-jauge de faim régulièrement, nous allons avoir besoin d'une structure un peu
-spéciale. On va consacrer un variable `temps` au fait de compter combien de
-demi secondes sont passés. Et quand 10 demies secondes seront passées, on
-diminue la jauge de faim. Cela nous donne la structure de code suivante (les 
-phrases en rouge sont les choses que vous devez remplacer).
+Pour avoir à la fois un affichage qui change rapidement (quand on le nourrit on
+veut voir le changement de smiley rapidement) et pouvoir faire diminuer sa jauge
+de faim régulièrement, nous allons avoir besoin d'une structure un peu spéciale.
+On va consacrer une variable `temps` au fait de compter combien de demi secondes
+sont passées. Lorsque 10 demies secondes seront passées, on diminue la jauge de
+faim. Cela nous donne la structure de code suivante (les phrases en rouge sont
+les choses que vous devez remplacer).
 
 ```python
 temps = 0
@@ -427,23 +426,23 @@ temps_précédent = 0
 "autres déclarations de variables"
 while "le tamagoch est en vie" :
     sleep(500)
-    temps = temps + 1 # Une demie seconde est passée 
+    temps = temps + 1 # Une demie seconde est passée
     if "le bouton A ou B a été appuyé" :
         "la jauge de faim augmente"
     if "le tamagochi est secoué":
         "la jauge de faim diminue"
-    if temps == temps_precedent + 10: # 5 secondes sont passées
+    if temps == temps_précédent + 10: # 5 secondes sont passées
         "la jauge de faim est diminuée"
-        temps_precedent = temps
+        temps_précédent = temps
     "on affiche le smiley qui correspond à la jauge de faim"
 ```
 
 ## Projet bulle à niveau
 
-Il s'agit d'afficher une bulle d'air (représentée par un pixel) qui se déplace 
-dans de l'eau, en fonction de comment le microbit est penché. 
-Si le microbit est penché vers la droite la bulle sera à gauche de l'écran,si 
-on penche à gauche elle sera à droite etc.
+Il s'agit d'afficher une bulle d'air (représentée par un pixel) qui se déplace
+dans de l'eau, en fonction de comment le `micro:bit` est penché.  Si le
+`micro:bit` est penché vers la droite la bulle sera à gauche de l'écran, et
+inversement si on penche à gauche elle sera à droite.
 
 Pour faire ce projet, il faut toutes les demies secondes changer l'affichage de
 la bulle en fonction des données de l'accéléromètre, pour savoir comment
@@ -453,35 +452,31 @@ des variables et toutes les demies secondes éteindre la diode correspondant à
 leur position, mettre à jour la position en fonction des données du capteur, et
 allumer la diode correspondant à cette nouvelle position.
 
-
 ## Projet jeu d'agilité
 
-Ici on veut faire un jeu d'agilité ou le microbit nous indique des action à
-faire (penchez le microbit à droite, à gauche, secouez le, appuyer sur A,...),
-ou on perd si on ne fait pas l'action assez vite, et qui nous affiche quand on
-a perdu, le score, le nombre de mouvement qu'on a réussi à faire d'affilée.
+Ici on veut faire un jeu d'agilité où le `micro:bit` nous indique des actions à
+faire (penchez à droite, à gauche, secouer, appuyer sur A,...), et on perd si on
+ne fait pas l'action assez vite. Dans ce cas l'écran affiche "Perdu" ainsi que
+le score (qui correspond au nombre de mouvement réussi).
 
-Pour que le jeu soit intéressant, les mouvements sont demandés sans un ordre
-aléatoire, et pour cela on va avoir besoin de générer des nombre au hasard.
-Pour cela, il faut rajouter tout en haut du fichier, juste après le `from
-microbit import *`, `from radom import randint`. Après on peut utiliser la
-fonction `randint(a,b)` qui nous donne un nombre entier entre a et b inclus.
-`r = random(1,6)` nous permet donc de stocker dans la variable `r` un nombre
-aléatoire entre 1 et 6 (inclus).
-En fonction de r on pourra décider quel mouvement on souhaite, par exemple, si 
-r égal 1, on veut qu'il penche à gauche, on le dit au joueur en affichant une
-flèche vers la gauche, on laisse un peu de temps au joueur pour réagir, puis
-on teste s'il a bien penché à gauche. Pour tester les si le joueur fait tel ou
-tel mouvement vous aurez besoin de lire la partie "capteur" de la section
-suivante.
+Pour que le jeu soit intéressant, les mouvements sont demandés dans un ordre
+aléatoire, et pour cela nous devons générer des nombres au hasard.  Il faut
+rajouter tout en haut du fichier, juste après le `from microbit import *`, `from
+radom import randint`. Après on peut utiliser la fonction `randint(a, b)` qui
+nous donne un nombre entier aléatoire entre a et b inclus.  `r = random(1, 6)`
+nous permet donc de stocker dans la variable `r` un nombre aléatoire entre 1 et
+6 (inclus).
 
+En fonction de `r` on pourra décider quel mouvement on souhaite, par exemple si
+`r == 1`, on veut qu'il penche à gauche, on le dit au joueur en affichant une
+flèche vers la gauche, on laisse un peu de temps au joueur pour réagir, puis on
+teste s'il a bien penché à gauche. Pour tester si le joueur fait tel ou tel
+mouvement vous aurez besoin de lire la partie "capteur" de la section suivante.
 
-
-Références `micro:bit`
-======================
+# Références `micro:bit`
 
 Cette section détaille comment utiliser diverse fonctionnalités du `micro:bit`,
-si tu souhaites aller encore plus loin on peut trouver des information plus
+si tu souhaites aller encore plus loin on peut trouver des informations plus
 complète sur la documentation officielle en ligne trouvable ici:
 [https://bbcmicrobitmicropython.readthedocs.io/en/latest/](https://bbcmicrobitmicropython.readthedocs.io/en/latest/).
 
@@ -489,8 +484,7 @@ Pour utiliser toutes ces fonctions il est nécessaire de les importer depuis le
 module `micro:bit` en ajoutant `from microbit import *` au début de ton
 programme.
 
-L'écran
--------
+## L'écran
 
 ### `display.clear()` - effacer l'écran
 
@@ -503,7 +497,7 @@ display.clear()  # l'écran est maintenant éteint
 Change la luminosité d'une diode pour une valeur allant de 0 (diode éteinte), à
 9 (luminosité maximale).
 
-La diode est identifiée par sa colonne `x` et sa ligne `y` numérotés de 0 à 4.
+La diode est identifiée par sa colonne `x` et sa ligne `y` numérotée de 0 à 4.
 
 ```python
 display.set_pixel(2, 2, 9)  # allume la diode centrale
@@ -524,11 +518,11 @@ x = display.get_pixel(2, 2)  # `x` vaut maintenant 9
 ### `display.show(image)` - afficher une image
 
 Cette fonction sert à afficher une image, le plus simple est généralement
-d'utiliser une image parmi la liste prédéfini: `Image.HEART`, `Image.HAPPY`,
-`Image.SMILE`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus
-complète peut être trouvée ici:
+d'utiliser une image parmi la liste prédéfinie : `Image.HEART`, `Image.HAPPY`,
+`Image.SMILE`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus complète
+peut être trouvée ici :
 
-[https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes](https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes)
+<https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes)>
 
 ```python
 display.show(Image.HAPPY)  # affiche un smiley
@@ -537,7 +531,7 @@ display.show(Image.HEART)  # affiche un coeur
 
 Il est aussi possible de dessiner soi-même une image à partir d'un texte en
 séparant les ligne avec `:` et assignant une luminosité entre 0 et 9 à chaque
-diode:
+diode :
 
 ```python
 bateau = Image('05050:'
@@ -564,10 +558,9 @@ display.scroll('Salut tous le monde !')  # affiche `Salut [...] !`
 display.scroll(42)  # en réalité ça ne fonctionne pas qu'avec le texte !
 ```
 
-Les boutons
------------
+## Les boutons
 
-Il y a deux boutons sur le `micro:bit`, ils seront appelé `button_a` et
+Il y a deux boutons sur le `micro:bit`, ils seront appelés `button_a` et
 `button_b` et toute fonction qui peut être appelée pour l'un peut aussi être
 appelée par l'autre.
 
@@ -602,7 +595,7 @@ if not button_a.was_pressed():
 
 ### `button_a.get_presses()` - nombre d'appuis sur le bouton
 
-Retourne le nombre total d'appuis sur le boutons depuis la dernière fois que
+Retourne le nombre total d'appuis sur le bouton depuis la dernière fois que
 cette fonction a été appelée.
 
 ```python
@@ -615,8 +608,7 @@ display.scroll(
 )
 ```
 
-Capteurs (boussole, accéléromètre)
---------
+## Capteurs (boussole, accéléromètre)
 
 ### `compass.heading()` - boussole
 
@@ -633,7 +625,7 @@ if 170 <= angle <= 190:
 ### `accelerometer.current_gesture()` - geste / position
 
 Retourne le nom du mouvement actuellement appliqué au `micro:bit`. Ce nom est
-une chaine de caractère parmi les suivantes:
+une chaîne de caractère parmi les suivantes :
 
  - `"up"` - haut
  - `"down"` - bas
@@ -649,9 +641,10 @@ Il existe aussi des fonctions `accelerometer.is_gesture(nom)` et
 `accelerometer.was_gesture(nom)` qui fonctionnent de façon similaire à
 `button_a.is_pressed()` et `button_a.was_pressed()`.
 
-Pour les mouvent haut, bas, gauche et droite, la fonction `accelerometer.current_gesture()`
-peut être assez imprécise et nous vous recommandons de plutôt utiliser
-`accelerometer.get_x()` et `accelerometer.get_y()` (fonction suivante).
+Pour les mouvements haut, bas, gauche et droite, la fonction
+`accelerometer.current_gesture()` peut être assez imprécise et nous vous
+recommandons de plutôt utiliser `accelerometer.get_x()` et
+`accelerometer.get_y()` (fonction suivante).
 
 ```python
 # Si le micro:bit est face contre ciel, on affiche un smiley content.
@@ -665,20 +658,20 @@ if accelerometer.current_gesture() == 'face down':
 
 ### `accelerometer.get_x()` (pour `x`, `y` ou `z`) - accéléromètre
 
-Retourne l'accélération suivant l'axe x (existe aussi pour `y` et `z`).
-L'axe x correspond à l'axe gauche-droite, x est positif vers la droite et
-négatif vers la gauche. L'axe y correspond à l'axe haut-bas du microbit, si y
-est positif le microbit est penché vers l'avant, s'il est négatif il est penché
-vers l'arrière. L'axe z correspond à l'axe de la hauteur à la quelle se trouve
-le microbit.
+Retourne l'accélération suivant l'axe x (existe aussi pour `y` et `z`).  L'axe x
+correspond à l'axe gauche-droite, x est positif vers la droite et négatif vers
+la gauche. L'axe y correspond à l'axe haut-bas du `micro:bit`, si y est positif
+le `micro:bit` est penché vers l'avant, s'il est négatif il est penché vers
+l'arrière.  L'axe z correspond à l'axe de la hauteur à laquelle se trouve le
+`micro:bit`.
 
-Si le microbit est a l'horizontal, x est proche de 0, mais l'accelerometre
-est très sensible donc x vaut rarement 0,
-On considère donc que s'il est entre -100 et 100, il est à l'horizontal. 
-C'est une valeur arbitraire, on peut la changer pour plus ou moins de sensibilité.
+Si le `micro:bit` est à l'horizontal, x est proche de 0, mais l'accéléromètre
+est très sensible donc x vaut rarement 0, On considère donc que s'il est entre
+-100 et 100, il est à l'horizontal. C'est une valeur arbitraire, on peut la
+changer pour plus ou moins de sensibilité.
 
 ```python
-# On affiche une fleche dans la direction ou le micrbit est penché.
+# On affiche une flèche dans la direction où le microbit est penché.
 
 while True:
     x = accelerometer.get_x()
@@ -690,8 +683,7 @@ while True:
         display.show(Image.ARROW_W)
 ```
 
-Radio
------
+## Radio
 
 ### `radio.on()` - allume la radio
 
@@ -708,8 +700,8 @@ radio.send('Salut, ça va ?')
 
 ### `radio.receive()` - recevoir un message
 
-Retourne un message reçu sur le canal de radio. Si aucun nouveau message n'a
-été reçu, retourne `None`.
+Retourne un message reçu sur le canal de radio. Si aucun nouveau message n'a été
+reçu, retourne `None`.
 
 ```python
 radio.on()
@@ -724,26 +716,25 @@ display.scroll(message)
 
 ### `radio.config(...)` - paramétrer la radio
 
-Permet de changer différent paramètres de la radio:
+Permet de changer différent paramètres de la radio :
 
- - `length`: la taille maximale d'un message, au maximum 251 (défaut: 32)
- - `queue`: le nombre maximal de messages en attente d'être lu avec la fonction
-            `radio.receive()` (défaut: 3)
- - `channel`: le canal de communication à utiliser, la radio ne peut
-              communiquer qu'avec des `micro:bit` qui utilisent le même
-              paramètre, entre 0 et 83 (défaut: 7)
+ - `length` : la taille maximale d'un message, au maximum 251 (défaut: 32)
+ - `queue` : le nombre maximal de messages en attente d'être lu avec la fonction
+   `radio.receive()` (défaut: 3)
+ - `channel` : le canal de communication à utiliser, la radio ne peut
+   communiquer qu'avec des `micro:bit` qui utilisent le même paramètre, entre 0
+   et 83 (défaut: 7)
 
 ```python
 radio.config(channel=42, length=251)
 radio.send(
-    'Wow, maintenant je peut envoyer des messages super longs sur le channel '
-    '42, c\'est vraiment génial d\'avoir cette chance ! '
-    'Merci radio.config() !'
+    "Wow, maintenant je peux envoyer des messages super longs sur le channel "
+    "42, c'est vraiment génial d'avoir cette chance ! "
+    "Merci radio.config() !"
 )
 ```
 
-Continuer la programmation chez soi
-===================================
+# Continuer la programmation chez soi
 
 Si tu souhaites installer un logiciel de programmation sur ton ordinateur
 plutôt que d'utiliser un site web, nous te recommandons vraiment [Mu
@@ -751,25 +742,25 @@ editor](https://codewith.mu/) ([https://codewith.mu/](https://codewith.mu/)),
 disponible sur Mac, Windows et Linux, facile à utiliser et possède un mode
 spécial pour les `micro:bit`.
 
-Ce TP couvre les bases essentielles de la programmation,pour continuer nous te
-conseillons les ressources suivante:
+Ce TP couvre les bases essentielles de la programmation, pour continuer nous te
+conseillons les ressources suivantes :
 
-- France ioi ([http://www.france-ioi.org/](http://www.france-ioi.org/)): C'est
-  un site d'entrainement à la programmation qui propose des leçons suivis de
+- France ioi ([http://www.france-ioi.org/](http://www.france-ioi.org/)) : un
+  site d'entrainement à la programmation qui propose des leçons suivis de
   problèmes à résoudre, la difficulté y est très progressive.
 - Girls Can Code! : Nous organisons des stages courts et des stages longs, tous
-  les TPs des stages sont disponibles sur Github
-  ([https://github.com/prologin/gcc-resources](https://github.com/prologin/gcc-resources))
-  et bientôt ils seront détaillés dans une nouvelle section de notre site
-  ([https://gcc.prologin.org/](https://gcc.prologin.org/)).
-- Prologin: c'est un concours d'informatique pour les moins de 20 ans que nous
-  organisons en plus des stages Girls Can Code!. Candidater ou s'entrainer sur
-  les archives peut être un bon moyen de continuer à programmer. Si tu es
+  les TPs des stages sont disponibles ici :
+  https://github.com/prologin/gcc-resources et bientôt ils seront détaillés dans
+  une nouvelle section de notre site :
+  [https://gcc.prologin.org/](https://gcc.prologin.org/).
+- Prologin: un concours d'informatique pour les moins de 20 ans que nous
+  organisons en plus des stages Girls Can Code!. Candidater ou s'entraîner sur
+  les archives peuvent être un bon moyen de continuer à programmer. Si tu es
   sélectionnée les épreuves régionales seront l'occasion de revoir les
-  organisateurs que tu as rencontré et la finale est un super événement, mais
-  ce n'est pas facile !
+  organisateurs que tu as rencontré et la finale est un super événement, mais ce
+  n'est pas facile !
 
 Si un domaine de l'informatique t'intéresse en particulier n'hésite pas à
 demander aux organisateurs des références plus spécifiques.
 
-Bonne Continuation!
+Bonne continuation !
