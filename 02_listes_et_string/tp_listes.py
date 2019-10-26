@@ -6,9 +6,12 @@
 
 def init_list(n):
     '''
-    stocke les entiers de 1 à n compris dans une liste et la retourne.
+    stocke les entiers de 0 à n compris dans une liste et la retourne.
     '''
-    return [i for i in range (n + 1)]
+    L = []
+    for i in range(n + 1):
+        L.append(i)
+    return L
 
 #ex2
 
@@ -93,11 +96,11 @@ def fact(n):
 
 def double(L):
     '''
-        teste si la liste contient deux entiers identiques consecutifs.
+    teste si la liste contient deux entiers identiques consecutifs.
     '''
     i = 1
     while i < len(L)-1:
-        if L[i-1] == L[i]:
+        if L[i - 1] == L[i]:
             return True
         i += 1
     return False
@@ -114,9 +117,9 @@ def palindrome(s):
     '''
     i = 0
     n = len(s)
-    while (i < n//2) and (s[i] == s[n-i-1]):
-        i = i+1
-    return (i == n//2)
+    while (i < n // 2) and (s[i] == s[n - i - 1]):
+        i = i + 1
+    return (i == n // 2)
 
 #ex2
 
@@ -143,8 +146,8 @@ def trier(L):
     length = len(L)
     for i in range(length):
         for j in range(0, length - i - 1):
-            if L[j] > L[j+1] :
-                L[j], L[j+1] = L[j+1], L[j]
+            if L[j] > L[j + 1] :
+                L[j], L[j + 1] = L[j + 1], L[j]
     return L
 
 #ex2
