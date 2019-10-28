@@ -326,24 +326,6 @@ while button_a.get_presses() == 0:
 display.scroll("fini !")
 ```
 
-On peut sortir de la boucle en utilisant l'instruction **break**, comme montré
-ci-dessous :
-
-```python
-from microbit import *
-
-score = 0
-while True:
-    if button_a.was_pressed():
-        score = score + 1
-    if score == 5:
-        break
-display.scroll("fini !")
-```
-
-Ce code va attendre que l'utilisateur appuie 5 fois sur le bouton A avant de
-quitter la boucle infinie.
-
 #### Exercice
 
 Modifie ton jeu pour que la partie recommence tant que le joueur n'a pas atteint
