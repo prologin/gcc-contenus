@@ -283,7 +283,7 @@ Elle s'utilise comme suit :
 from microbit import *
 
 for colonne in range(5):
-    # Ce qui suit va être répété 10 fois, une variable `colonne` est créée,
+    # Ce qui suit va être répété 5 fois, une variable `colonne` est créée,
     # qui va prendre les valeurs 0, 1, 2, 3 puis 4.
     display.set_pixel(colonne, 2, 9)
     sleep(500)
@@ -354,10 +354,10 @@ si la condition du `if` était fausse.
 Voici un exemple simple pour illustrer :
 
 ```python
-import random
+from random import randint
 from microbit import *
 
-x = random.randint(0, 100)  # assigne un nombre aléatoire à x
+x = randint(0, 100)  # assigne un nombre aléatoire à x
 
 if x < 50:
     display.scroll('x est inférieur à 50')
@@ -462,8 +462,8 @@ le score (qui correspond au nombre de mouvement réussi).
 Pour que le jeu soit intéressant, les mouvements sont demandés dans un ordre
 aléatoire, et pour cela nous devons générer des nombres au hasard.  Il faut
 rajouter tout en haut du fichier, juste après le `from microbit import *`, `from
-radom import randint`. Après on peut utiliser la fonction `randint(a, b)` qui
-nous donne un nombre entier aléatoire entre a et b inclus.  `r = random(1, 6)`
+random import randint`. Après on peut utiliser la fonction `randint(a, b)` qui
+nous donne un nombre entier aléatoire entre a et b inclus.  `r = randint(1, 6)`
 nous permet donc de stocker dans la variable `r` un nombre aléatoire entre 1 et
 6 (inclus).
 
@@ -684,6 +684,16 @@ while True:
 ```
 
 ## Radio
+
+Pour utiliser le module de radio il faut ajouter en haut de votre fichier :
+`import radio`, votre code doit donc commencer par :
+
+```python
+import radio
+from microbit import *
+
+# Votre code ici !
+```
 
 ### `radio.on()` - allume la radio
 
