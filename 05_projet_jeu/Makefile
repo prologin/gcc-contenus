@@ -1,8 +1,8 @@
-all: subject.pdf
+all: 05_projet_jeu.pdf
 
-subject.pdf: subject_content.tex old_template.tex
+05_projet_jeu.pdf: subject_content.tex old_template.tex
 	latexmk -xelatex -shell-escape -pdf old_template.tex
-	mv old_template.pdf subject.pdf
+	mv old_template.pdf 05_projet_jeu.pdf
 
 clean:
 	latexmk -C
