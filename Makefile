@@ -11,10 +11,9 @@ TARGETS = \
 
 COLLECT_DIR = build
 
-all: $(TARGETS)
-	mkdir -p $(COLLECT_DIR)
+all: $(addprefix $(COLLECT_DIR)/, $(TARGETS))
 
-%.pdf:
-	echo $*
+$(COLLECT_DIR)/%.pdf:
 	make -C $*
-	cp $*/$*.pdf $(COLLECT_DIR)
+	mkdir -p $(COLLECT_DIR)
+	cp $*/$*.pdf $@
