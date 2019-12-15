@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 """
     Inits a matrix of size lines x cols with all slots set at value
 """
@@ -41,29 +43,29 @@ def replaceCrater(M, visitedMap, i, j):
     visitedMap[i][j] = True
 
     if M[i + 1][j] == '#' and visitedMap[i + 1][j] == False:
-        replaceCratere(M, visitedMap, i + 1, j)
+        replaceCrater(M, visitedMap, i + 1, j)
     if M[i - 1][j] == '#' and visitedMap[i - 1][j] == False:
-        replaceCratere(M, visitedMap, i - 1, j)
+        replaceCrater(M, visitedMap, i - 1, j)
     if M[i][j + 1] == '#' and visitedMap[i][j + 1] == False:
-        replaceCratere(M, visitedMap, i, j + 1)
+        replaceCrater(M, visitedMap, i, j + 1)
     if M[i][j - 1] == '#' and visitedMap[i][j - 1] == False:
-        replaceCratere(M, visitedMap, i, j - 1)
+        replaceCrater(M, visitedMap, i, j - 1)
 
     if M[i + 1][j + 1] == '#' and visitedMap[i + 1][j + 1] == False:
-        replaceCratere(M, visitedMap, i + 1, j + 1)
+        replaceCrater(M, visitedMap, i + 1, j + 1)
     if M[i - 1][j + 1] == '#' and visitedMap[i + 1][j + 1] == False:
-        replaceCratere(M, visitedMap, i - 1, j + 1)
+        replaceCrater(M, visitedMap, i - 1, j + 1)
     if M[i - 1][j - 1] == '#' and visitedMap[i + 1][j - 1] == False:
-        replaceCratere(M, visitedMap, i - 1, j - 1)
+        replaceCrater(M, visitedMap, i - 1, j - 1)
     if M[i + 1][j - 1] == '#' and visitedMap[i + 1][j - 1] == False:
-        replaceCratere(M, visitedMap, i + 1, j - 1)
+        replaceCrater(M, visitedMap, i + 1, j - 1)
 
 """
     Counts the number of craters on the map
 """
 def craters(M):
 
-    nbCrateres = 0
+    nbCraters = 0
 
     n = len(M)
     m = len(M[0])
@@ -79,13 +81,17 @@ def craters(M):
                 replaceCrater(M, visitedMap, i, j)
                 nbCraters += 1
 
-    return nbCrateres
+    return nbCraters
 
 """
     Displays the number of craters of the loaded map
 """
 if __name__ == "__main__":
 
-    marsMap = loadMap("mars1.map")
-    nbCrateres = craters(marsMap)
+    if len(sys.argv) != 2:
+        print("Usage: ./craters.py [map-file-to-test]")
+        quit()
+
+    marsMap = loadMap(sys.argv[1])
+    nbCraters = craters(marsMap)
     print(nbCraters)
