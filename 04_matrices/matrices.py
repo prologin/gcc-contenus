@@ -1,3 +1,7 @@
+'''
+Exercice 1 : initialiser une matrice
+'''
+
 def initMat(lines, cols, value):
 
     M = []
@@ -9,31 +13,57 @@ def initMat(lines, cols, value):
 
     return M
 
+'''
+Exercice 2 : afficher une matrice
+'''
+
 def printMat(M):
 
-    l = len(M)
-    c = len(M[0])
+    lines = len(M)
+    cols = len(M[0])
 
-    for i in range(l):
-        for j in range(c):
+    for i in range(lines):
+        for j in range(cols):
             print(M[i][j], end="")
 
-        print() #saut à la ligne
+        print()
+
+'''
+Exercice 3 : laissons une trace
+'''
+
+def trace(m):
+
+    trace = 0
+    longueurLigne = len(M[0])
+
+    for i in range(longueurLigne):
+        trace += m[i][i]
+
+    return trace
+
+'''
+Exercice 4 : ajoutons deux matrices
+'''
 
 def addMat(A, B):
 
-    (l, c) = (len(A), len(A[0]))
+    (lines, cols) = (len(A), len(A[0]))
 
-    if (l, c) != (len(A), len(B[0])):
+    if (lines, cols) != (len(A), len(B[0])):
         raise Exception("Invalid dimensions")
 
     M = []
 
-    for i in range(l):
+    for i in range(lines):
         M.append([])
 
-        for j in range(c):
-            M[i].append(A[i][j]+B[i][j])
+        for j in range(cols):
+            M[i].append(A[i][j] + B[i][j])
+
+'''
+Exercice 5 : symetrie sur la diagonale
+'''
 
 def symmetricDiag(M):
 
@@ -59,11 +89,16 @@ def symmetricDiag(M):
 
     return ok
 
-def maxL(L):
+'''
+Exercice 6 : minimax
+'''
+
+def maxList(L):
 
     maxi = L[0]
 
     for i in range(len(L)):
+
         if L[i] > maxi:
             maxi = L[i]
 
@@ -78,10 +113,11 @@ def mini(a, b):
 
 def minimax(M):
 
-    mnm = maxL(M[0])
+    mnm = maxListe(M[0])
 
     for i in range(len(M))
-        mnm = mini(mnm, maxL(M[i]))
+
+        mnm = mini(mnm, maxListe(M[i]))
 
     return mnm
 
