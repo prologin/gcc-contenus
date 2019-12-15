@@ -15,13 +15,13 @@ se trouve le bug, car bug il y aura !
 Avec ce sujet vous seront fournis plusieurs fichiers tests vous permettant de
 vérifier que votre code fonctionne.
 
-Pour être certains que tout cela se passe dans les règles de l'art, il vous
-faudra respecter quelques règles :
+Pour être certain que votre travail est correct, et que vous puissiez le tester,
+il vous faudra respecter quelques règles :
 
-- Nommer votre fichier *tp_listes.py*, toutes vos fonctions devront se trouver
+- Nommer votre fichier *matrices.py*, toutes vos fonctions devront se trouver
   dans ce fichier
 - Respecter les noms de fonctions précisés dans les énoncés suivants
-- Exécuter le fichier test avec `./tests.py` dans le terminal
+- Exécuter le fichier test avec `./tests-matrices.py` dans le terminal
 
 
 ## Pratiquons !
@@ -29,17 +29,32 @@ faudra respecter quelques règles :
 
 ### Exercice 1 : initialiser une matrice
 
-**But :** écrire la fonction `init(lignes, cols, val)` qui cree une matrice de
+**But** : écrire la fonction `initMat(lignes, cols, val)` qui cree une matrice de
 dimensions 'lignes' par 'cols' et met chaque case de cette matrice a la valeur
 'val'.
 
+**Exemple** :
+
+```python
+initMat(3, 2, 42)
+```
+
+creera la matrice
+
+```
+42 42
+42 42
+42 42
+```
+
+
 ### Exercice 2 : afficher une matrice
 
-**But :** écrire la fonction `afficher(m)` qui affichera la matrice prise en
+**But** : écrire la fonction `printMat(m)` qui affichera la matrice prise en
 parametre en separant chaque terme affiche par un espace, et un retour a la
 ligne en fin de ligne de matrice.
 
-**Exemple:**
+**Exemple** :
 
 ```python
 m = [
@@ -47,7 +62,8 @@ m = [
         [4, 5, 6],
         [7, 8, 9]
     ]
-afficher(m)
+
+printMat(m)
 ```
 
 affichera
@@ -58,14 +74,13 @@ affichera
 7 8 9
 ```
 
+
 ### Exercice 3 : laissons une trace
 
-**But :** écrire la fonction `trace(m, n)` qui prend une matrice carree en
+**But** : écrire la fonction `trace(m)` qui prend une matrice carree en
 parametre, calcule la somme des elements sur sa diagonale et la renvoit.
 
-**Exemple :**
-
-Soit la matrice m
+**Exemple** :
 
 ```python
 m = [
@@ -73,23 +88,25 @@ m = [
         [4, 5, 6],
         [7, 8, 9]
     ]
+
 printf(trace(m))
 ```
+
 affichera `15`.
 
 
 ### Exercice 4 : ajoutons deux matrices !
 
-**But :** écrire la fonction `ajouter(a, b)` qui ajoute les valeurs des deux
+**But** : écrire la fonction `addMat(a, b)` qui ajoute les valeurs des deux
 matrices a et b **si et seulement si** elles sont de memes dimensions.
-Dans le cas inverse, votre fonction doit renvoyer la valeur 'None'.
+Dans le cas inverse, votre fonction doit renvoyer la valeur `None`.
 
-*_Tips_: pour ajouter deux matrices de memes tailles, on ajoute simplement les
+*__Tips__ : pour ajouter deux matrices de memes tailles, on ajoute simplement les
 valeurs des cases qui se situent au meme endroit, et ca pour chaque case.
 La matrice resultante de l'addition aura donc les memes dimensions que les deux
 matrices prises en parametres.*
 
-**Exemple :**
+**Exemple** :
 
 ```python
 a = [
@@ -105,6 +122,7 @@ b = [
     ]
 
 resultat = ajouter(a, b)
+
 afficher(resultat)
 ```
 
@@ -116,12 +134,13 @@ affichera
 14 16 18
 ```
 
+
 ### Exercice 5 : symetrie sur la diagonale
 
-**But**: ecrire la fonction `sym_diago(m)` qui renvoie True si la matrice est
-symetrique par rapport a l'axe de sa diagonale, False sinon.
+**But** : ecrire la fonction `symmetricDiag(m)` qui renvoie `True` si la matrice
+est symetrique par rapport a l'axe de sa diagonale, `False` sinon.
 
-**Exemple :**
+**Exemple** :
 
 ```python
 m = [
@@ -129,6 +148,7 @@ m = [
         [2, 1, 8],
         [5, 8, 1]
     ]
+
 print(sym_diago(m))
 ```
 
@@ -140,13 +160,40 @@ a = [
         [4, 5, 6],
         [7, 8, 9]
     ]
+
 print(sym_diago(a))
 ```
 
 affichera `False`.
 
 
-### Exercice 7: les crateres de Mars
+### Exercice 6 : minimax
+
+**But**: ecrire la fonction `minimax(m)` qui determine la valeur minimale parmi
+les maximums de chaque ligne de la matrice passee en parametre.
+
+**Exemple** :
+
+```python
+m = [
+        [11, 42, 39],
+        [12, 15, 86],
+        [98, 56, 27]
+    ]
+
+print(minimax(m))
+```
+
+affichera `42`.
+
+*__Tips__ : il faut diviser le probleme, et ecrire plusieurs fonctions
+differentes pour trouver une solution efficace a cet exercice. Par exemple, on
+peut ecrire une fonction qui permet de determiner le maximum d'une seule ligne,
+une fonction qui stocke ces maximums dans une liste, et une fonction qui permet
+de trouver le minimum parmi tous ces maximum.*
+
+
+### Exercice 7 : les crateres de Mars
 
 On represente une partie de la planete Mars vue de haut dans une matrice.
 Les anneaux au sol formes par des crateres sont representes par des '#'.
@@ -156,3 +203,4 @@ Par exemple:
 [insert image here]
 
 Sur ce terrain de Mars, il y a 3 crateres.
+
