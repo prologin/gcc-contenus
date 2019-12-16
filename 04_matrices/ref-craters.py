@@ -2,6 +2,7 @@
 
 import sys
 
+
 """
     Inits a matrix of size lines x cols with all slots set at value
 """
@@ -20,6 +21,7 @@ def init(lines, cols, value):
 
     return visitedMap
 
+
 """
     Creates a matrix from a txt file
 """
@@ -35,6 +37,7 @@ def loadMap(filename):
 
     return M;
 
+
 """
     Visits the whole crater
 """
@@ -42,23 +45,11 @@ def replaceCrater(M, visitedMap, i, j):
 
     visitedMap[i][j] = True
 
-    if M[i + 1][j] == '#' and visitedMap[i + 1][j] == False:
-        replaceCrater(M, visitedMap, i + 1, j)
-    if M[i - 1][j] == '#' and visitedMap[i - 1][j] == False:
-        replaceCrater(M, visitedMap, i - 1, j)
-    if M[i][j + 1] == '#' and visitedMap[i][j + 1] == False:
-        replaceCrater(M, visitedMap, i, j + 1)
-    if M[i][j - 1] == '#' and visitedMap[i][j - 1] == False:
-        replaceCrater(M, visitedMap, i, j - 1)
+    for k in range(-1, 2):
+        for l in range(-1, 2):
+            if M[i + k][j + l] == '#' and visitedMap[i + k][j + l] == False:
+                replaceCrater(M, visitedMap, i + k, j + l)
 
-    if M[i + 1][j + 1] == '#' and visitedMap[i + 1][j + 1] == False:
-        replaceCrater(M, visitedMap, i + 1, j + 1)
-    if M[i - 1][j + 1] == '#' and visitedMap[i + 1][j + 1] == False:
-        replaceCrater(M, visitedMap, i - 1, j + 1)
-    if M[i - 1][j - 1] == '#' and visitedMap[i + 1][j - 1] == False:
-        replaceCrater(M, visitedMap, i - 1, j - 1)
-    if M[i + 1][j - 1] == '#' and visitedMap[i + 1][j - 1] == False:
-        replaceCrater(M, visitedMap, i + 1, j - 1)
 
 """
     Counts the number of craters on the map
@@ -73,15 +64,14 @@ def craters(M):
     visitedMap = init(n, m, False)
 
     for i in range(n):
-
         for j in range(m):
-
             if M[i][j] == '#' and visitedMap[i][j] == False:
                 visitedMap[i][j] = True
                 replaceCrater(M, visitedMap, i, j)
                 nbCraters += 1
 
     return nbCraters
+
 
 """
     Displays the number of craters of the loaded map
