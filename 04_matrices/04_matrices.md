@@ -78,7 +78,8 @@ affichera
 ### Exercice 3 : laisser une trace
 
 **But** : écrire la fonction `trace(m)` qui prend une matrice carree en
-parametre, calcule la somme des elements sur sa diagonale et la renvoit.
+parametre, calcule la somme des elements sur sa diagonale (du coin en haut a
+gauche, au coin en bas a droite) et la renvoie.
 
 **Exemple** :
 
@@ -86,7 +87,7 @@ parametre, calcule la somme des elements sur sa diagonale et la renvoit.
 m = [
         [1, 2, 3],
         [4, 5, 6],
-        [7, 8, 9]
+        [2, 8, 9]
     ]
 
 printf(trace(m))
@@ -121,9 +122,9 @@ b = [
         [7, 8, 9]
     ]
 
-resultat = ajouter(a, b)
+resultat = addMat(a, b)
 
-afficher(resultat)
+printMat(resultat)
 ```
 
 affichera
@@ -138,7 +139,8 @@ affichera
 ### Exercice 5 : symetrie sur la diagonale
 
 **But** : ecrire la fonction `symmetricDiag(m)` qui renvoie `True` si la matrice
-est symetrique par rapport a l'axe de sa diagonale, `False` sinon.
+est symetrique par rapport a l'axe de sa diagonale (du coin en haut a gauche, a
+son coin en bas a droite), `False` sinon.
 
 **Exemple** :
 
@@ -239,6 +241,10 @@ manipulation de fichier en python.
 
 Sur cette partie de la Lune, il y a 3 crateres. Votre fonction `craters` devrait
 alors renvoyer la valeur`3`.
+
+A noter : par soucis de simplicite, aucun bout de cratere ne peut se trouver
+sur les bords de la matrice. Autrement dit, pas de '#' sur la premiere ligne,
+premiere colonne, derniere ligne et derniere colonne de la matrice.
 
 *_Tips_ : reflechissez a une solution par vous-meme, et apres cela n'hesitez pas
 a demander a un.e organisat.eur.rice de vous donner un petit coup de pouce !*
