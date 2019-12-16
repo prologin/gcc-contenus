@@ -6,10 +6,10 @@ def initMat(lines, cols, value):
 
     M = []
 
-    for i in range(l):
+    for i in range(lines):
         M.append([])
-        for j in range(c):
-            M[i].append(v)
+        for j in range(cols):
+            M[i].append(value)
 
     return M
 
@@ -24,26 +24,29 @@ def printMat(M):
 
     for i in range(lines):
         for j in range(cols):
-            print(M[i][j], end="")
+            print(M[i][j], end=" ")
 
         print()
 
 '''
-Exercice 3 : laissons une trace
+Exercice 3 : laisser une trace
 '''
 
-def trace(m):
+def trace(M):
 
     trace = 0
     longueurLigne = len(M[0])
 
+    if longueurLigne != len(M):
+        return None;
+
     for i in range(longueurLigne):
-        trace += m[i][i]
+        trace += M[i][i]
 
     return trace
 
 '''
-Exercice 4 : ajoutons deux matrices
+Exercice 4 : ajouter deux matrices
 '''
 
 def addMat(A, B):
@@ -51,13 +54,15 @@ def addMat(A, B):
     (lines, cols) = (len(A), len(A[0]))
 
     if (lines, cols) != (len(A), len(B[0])):
-        raise Exception("Invalid dimensions")
+        return None
 
     M = initMat(lines, cols, 0)
 
     for i in range(lines):
         for j in range(cols):
             M[i][j] = A[i][j] + B[i][j]
+
+    return M
 
 '''
 Exercice 5 : symetrie sur la diagonale
@@ -72,19 +77,18 @@ def symmetricDiag(M):
         return False
 
     i = 0
-    ok = True
 
-    while i < l and ok:
+    while i < l:
         j = 0
-        while j < c and ok:
+        while j < c:
             if M[i][j] != M[j][i]:
-                ok = False
+                return False
 
             j += 1
 
         i += 1
 
-    return ok
+    return True
 
 '''
 Exercice 6 : minimax
@@ -102,17 +106,17 @@ def maxList(L):
 
 def mini(a, b):
 
-    if (a < b)
+    if (a < b):
         return a
-    else
+    else:
         return b
 
 def minimax(M):
 
-    mnm = maxListe(M[0])
+    mnm = maxList(M[0])
 
-    for i in range(len(M))
-        mnm = mini(mnm, maxListe(M[i]))
+    for i in range(len(M)):
+        mnm = mini(mnm, maxList(M[i]))
 
     return mnm
 
