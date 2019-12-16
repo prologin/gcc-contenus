@@ -8,14 +8,14 @@ objet.
 
 Nous encourageons vivement la réutilisation, modification et amélioration de
 ce contenu pédagogique. En particulier si vous souhaitez vous servir de ces
-sujets pour des cours ou pour monter un club d'informatique, faites le sans
+sujets pour des cours ou pour monter un club d'informatique, faites-le sans
 scrupules !
 
 Chaque dossier correspond à un sujet et contient au minimum :
 
 - `nom_de_sujet.md`: c'est ce qui contient le texte du sujet au format Markdown, 
-  Vous pouvez le visualiser directement depuis Github mais il peut manquer des 
-  images (ou qu'elles s'affichent en trop grand). Ça peut être un bon moyen 
+  Vous pouvez le visualiser directement depuis Github mais il se peut qu'il manque des 
+  images (ou qu'elles s'affichent en trop grand). Cela peut être un bon moyen 
   pour regarder rapidement ce contenu mais nous ne donnons pas les sujets sous 
   cette forme.
   Nous générons un fichier latex à partir du Markdown et il est ensuite
