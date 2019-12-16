@@ -5,7 +5,8 @@ date: 2019
 
 ## Introduction aux matrices
 
-
+Matrice = liste de listes
+Definir matrice carree
 
 ## Testez votre code!
 
@@ -77,9 +78,11 @@ affichera
 
 ### Exercice 3 : laisser une trace
 
-**But** : écrire la fonction `trace(m)` qui prend une matrice carree en
-parametre, calcule la somme des elements sur sa diagonale (du coin en haut a
-gauche, au coin en bas a droite) et la renvoie.
+**But** : écrire la fonction `trace(m)` qui prend une matrice en parametre,
+calcule la somme des elements sur sa diagonale (du coin en haut a gauche, au
+coin en bas a droite) et la renvoie.
+
+Si la matrice n'est pas carree, votre fonction doit renvoyer `None`.
 
 **Exemple** :
 
