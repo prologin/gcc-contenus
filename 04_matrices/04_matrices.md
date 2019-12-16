@@ -200,6 +200,7 @@ Les cercles dans la matrice representent les crateres formes a la surface de la
 Lune. Ces cercles sont dessines avec des '#'.
 Tout le reste de la surface de la Lune est represente par des '.'.
 
+
 **But** : ecrire la fonction `craters(m)` qui compte le nombre de crateres
 dessines dans la matrice passee en argument.
 
@@ -237,4 +238,7 @@ manipulation de fichier en python.
 ```
 
 Sur cette partie de la Lune, il y a 3 crateres. Votre fonction `craters` devrait
-alors renvoyer la valeur `3`.
+alors renvoyer la valeur`3`.
+
+*_Tips_ : reflechissez a une solution par vous-meme, et apres cela n'hesitez pas
+a demander a un.e organisat.eur.rice de vous donner un petit coup de pouce !*
