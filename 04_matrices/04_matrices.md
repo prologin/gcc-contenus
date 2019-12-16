@@ -75,7 +75,7 @@ affichera
 ```
 
 
-### Exercice 3 : laissons une trace
+### Exercice 3 : laisser une trace
 
 **But** : écrire la fonction `trace(m)` qui prend une matrice carree en
 parametre, calcule la somme des elements sur sa diagonale et la renvoit.
@@ -95,7 +95,7 @@ printf(trace(m))
 affichera `15`.
 
 
-### Exercice 4 : ajoutons deux matrices !
+### Exercice 4 : ajouter deux matrices
 
 **But** : écrire la fonction `addMat(a, b)` qui ajoute les valeurs des deux
 matrices a et b **si et seulement si** elles sont de memes dimensions.
