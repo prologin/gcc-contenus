@@ -92,6 +92,6 @@ if __name__ == "__main__":
         print("Usage: ./craters.py [map-file-to-test]")
         quit()
 
-    marsMap = loadMap(sys.argv[1])
-    nbCraters = craters(marsMap)
+    moonMap = loadMap(sys.argv[1])
+    nbCraters = craters(moonMap)
     print(nbCraters)
