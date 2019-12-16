@@ -53,13 +53,11 @@ def addMat(A, B):
     if (lines, cols) != (len(A), len(B[0])):
         raise Exception("Invalid dimensions")
 
-    M = []
+    M = initMat(lines, cols, 0)
 
     for i in range(lines):
-        M.append([])
-
         for j in range(cols):
-            M[i].append(A[i][j] + B[i][j])
+            M[i][j] = A[i][j] + B[i][j]
 
 '''
 Exercice 5 : symetrie sur la diagonale
@@ -78,7 +76,6 @@ def symmetricDiag(M):
 
     while i < l and ok:
         j = 0
-
         while j < c and ok:
             if M[i][j] != M[j][i]:
                 ok = False
@@ -98,7 +95,6 @@ def maxList(L):
     maxi = L[0]
 
     for i in range(len(L)):
-
         if L[i] > maxi:
             maxi = L[i]
 
@@ -116,7 +112,6 @@ def minimax(M):
     mnm = maxListe(M[0])
 
     for i in range(len(M))
-
         mnm = mini(mnm, maxListe(M[i]))
 
     return mnm
