@@ -6,7 +6,7 @@ import sys
 """
     Inits a matrix of size lines x cols with all slots set at value
 """
-def init(lines, cols, value):
+def initMat(lines, cols, value):
 
     visitedMap = []
 
@@ -45,6 +45,12 @@ def replaceCrater(M, visitedMap, i, j):
 
     visitedMap[i][j] = True
 
+    if i < 0 or i >= len(M):
+        return
+
+    if j < 0 or j >= len(M[0]):
+        return
+
     for k in range(-1, 2):
         for l in range(-1, 2):
             if M[i + k][j + l] == '#' and visitedMap[i + k][j + l] == False:
@@ -61,12 +67,11 @@ def craters(M):
     n = len(M)
     m = len(M[0])
 
-    visitedMap = init(n, m, False)
+    visitedMap = initMat(n, m, False)
 
     for i in range(n):
         for j in range(m):
             if M[i][j] == '#' and visitedMap[i][j] == False:
-                visitedMap[i][j] = True
                 replaceCrater(M, visitedMap, i, j)
                 nbCraters += 1
 
