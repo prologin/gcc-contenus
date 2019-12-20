@@ -5,20 +5,96 @@ date: 2019
 
 ## Introduction aux matrices
 
-Matrice = liste de listes
-Definir matrice carree
+Une matrice est un tableau a deux dimensions, une sorte de grille, dans laquelle
+chaque case est accessible grace a ses coordonnees.
+
+Toutes les lignes de la matrice doivent avoir la meme longueur.
+
+En python, les matrices sont representees par une liste de listes.
+Une grosse liste qui est elle-meme la matrice et qui contient chaque ligne de la
+matrice.
+De cette facon, comme pour les listes, les indices dans les matrices commencent
+a 0.
+
+
+--- | --- | ---
+1 | 2 | 3
+4 | 5 | 6
+7 | 8 | 9
+
+
+Dans cette matrice, la valeur 5 se trouve aux coordonnees (1, 1).
+La valeur 1 se trouve alors aux coordonnees (0, 0).
+La valeur 9 se trouve aux coordonnees (2, 2)
+
+Une matrice est dite carree si son nombre de colonnes est egal a son nombre de
+lignes. Une matrice 3x3 est carree, une matrice 4x5 ne l'est pas.
+
+
+Alors en python, ca donne quoi ?
+
+Pour creer la matrice, on cree simplement une liste:
+
+```python
+M = []
+```
+
+puis pour y ajouter une ligne, on va `append` (ajouter dans la liste) a cette
+liste... une autre liste vide !
+
+```python
+M = []
+M.append([])
+```
+
+Notre matrice contient maintenant une ligne.
+
+Pour ajouter des valeurs a cette ligne, on peut faire
+
+```python
+M[0].append(1) #on ajoute 1 a la ligne 0 de la matrice
+M[0].append(2)
+M[0].append(3)
+```
+
+A present, notre matrice contient une seule ligne, qui contient les valeurs 1, 2
+et 3.
+
+Pour avoir une seconde ligne qui contient les valeurs 4, 5 et 6, on peut soit
+faire comme au-dessus
+
+```python
+M.append([]) #pour ajouter une deuxieme ligne vide apres la premiere ligne
+M[1].append(4) #on ajoute 4 a la ligne 1 de la matrice
+M[1].append(5)
+M[1].append(6)
+```
+
+soit plus efficacement,
+
+```python
+M.append([4, 5, 6])
+```
+
+Maintenant, notre matrice M ressemble a
+
+--- | --- | ---
+1 | 2 | 3
+4 | 5 | 6
+
+
+Pour acceder a la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
+coordonnees (1, 2).
+
+Vous avez maintenant tous les outils pour vous lancer dans les exercices !
+Bon courage et n'hesitez pas a poser des questions !
 
 ## Testez votre code!
 
-Testez votre code le plus régulièrement possible. C'est important pour savoir où
-se trouve le bug, car bug il y aura !
+Avec ce sujet est fourni un fichier vous permettant de vérifier que votre code
+fonctionne comme il devrait.
 
-Avec ce sujet vous sera fourni un fichier test vous permettant de vérifier que
-votre code fonctionne.
-
-Pour être certain que votre travail est correct, et que vous puissiez le tester,
-il vous faudra respecter quelques règles :
-
+Pour que la verification se passe bien, il faudra
 - Nommer votre fichier *matrices.py*, toutes vos fonctions devront se trouver
   dans ce fichier
 - Respecter les noms de fonctions précisés dans les énoncés suivants
@@ -30,9 +106,9 @@ il vous faudra respecter quelques règles :
 
 ### Exercice 1 : initialiser une matrice
 
-**But** : écrire la fonction `initMat(lignes, cols, val)` qui crée une matrice de
-dimensions 'lignes' par 'cols' et met chaque case de cette matrice à la valeur
-'val'.
+**But** : écrire la fonction `initMat(lignes, cols, val)` qui crée une matrice
+de dimensions 'lignes' par 'cols' et met chaque case de cette matrice à la
+valeur 'val'.
 
 **Exemple** :
 
@@ -105,8 +181,8 @@ affichera `15`.
 matrices a et b **si et seulement si** elles sont de mêmes dimensions.
 Dans le cas inverse, votre fonction doit renvoyer la valeur `None`.
 
-*__Tips__ : pour ajouter deux matrices de mêmes tailles, on ajoute simplement les
-valeurs des cases qui se situent au même endroit, et cela pour chaque case.
+*__Tips__ : pour ajouter deux matrices de mêmes tailles, on ajoute simplement
+les valeurs des cases qui se situent au même endroit, et cela pour chaque case.
 La matrice résultante de l'addition aura donc les mêmes dimensions que les deux
 matrices prises en paramètres.*
 
