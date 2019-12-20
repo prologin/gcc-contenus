@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 
-import matrices as tp
+import sys, importlib
+
+tp = sys.argv[1]
+if tp[-3:] == ".py":
+    tp = tp[:-3]
+tp = importlib.import_module(tp)
+
 
 m1 = [
         [1,2,3],
