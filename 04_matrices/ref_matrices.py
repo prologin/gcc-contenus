@@ -1,4 +1,21 @@
 '''
+Exercice 0 : rechercher dans une matrice
+'''
+
+def searchMat(M, val):
+
+    lines = len(M)
+    cols = len(M[0])
+
+    for i in range(lines):
+        for j in range(cols):
+            if M[i][j] == val:
+                return i
+
+    return -1
+
+
+'''
 Exercice 1 : initialiser une matrice
 '''
 
