@@ -6,40 +6,40 @@ date: 2019
 ## Introduction aux matrices
 
 Une matrice est un tableau a deux dimensions, une sorte de grille, dans laquelle
-chaque case est accessible grace a ses coordonnees.
+chaque case est accessible grâce à ses coordonnées.
 
-Toutes les lignes de la matrice doivent avoir la meme longueur.
+Toutes les lignes de la matrice doivent avoir la même longueur.
 
-En python, les matrices sont representees par une liste de listes.
-Une grosse liste qui est elle-meme la matrice et qui contient chaque ligne de la
+En python, les matrices sont représentées par une liste de listes.
+Une grosse liste qui est elle-même la matrice et qui contient chaque ligne de la
 matrice.
 De cette facon, comme pour les listes, les indices dans les matrices commencent
-a 0.
+à 0.
 
+```
+1  2  3
+4  5  6
+7  8  9
+```
 
---- | --- | ---
-1 | 2 | 3
-4 | 5 | 6
-7 | 8 | 9
+Dans cette matrice, la valeur 5 se trouve aux coordonnées (1, 1).
+La valeur 1 se trouve alors aux coordonnées (0, 0).
+La valeur 9 se trouve aux coordonnées (2, 2)
 
-
-Dans cette matrice, la valeur 5 se trouve aux coordonnees (1, 1).
-La valeur 1 se trouve alors aux coordonnees (0, 0).
-La valeur 9 se trouve aux coordonnees (2, 2)
-
-Une matrice est dite carree si son nombre de colonnes est egal a son nombre de
-lignes. Une matrice 3x3 est carree, une matrice 4x5 ne l'est pas.
+Une matrice est dite carrée si son nombre de colonnes est égal à son nombre de
+lignes. Une matrice de 3 lignes par 3 colonnes est carrée, une matrice de 4
+lignes par 5 colonnes ne l'est pas.
 
 
 Alors en python, ca donne quoi ?
 
-Pour creer la matrice, on cree simplement une liste:
+Pour créer la matrice, on crée simplement une liste:
 
 ```python
 M = []
 ```
 
-puis pour y ajouter une ligne, on va `append` (ajouter dans la liste) a cette
+puis pour y ajouter une ligne, on va `append` (ajouter dans la liste) à cette
 liste... une autre liste vide !
 
 ```python
@@ -49,7 +49,7 @@ M.append([])
 
 Notre matrice contient maintenant une ligne.
 
-Pour ajouter des valeurs a cette ligne, on peut faire
+Pour ajouter des valeurs à cette ligne, on peut faire
 
 ```python
 M[0].append(1) #on ajoute 1 a la ligne 0 de la matrice
@@ -57,7 +57,7 @@ M[0].append(2)
 M[0].append(3)
 ```
 
-A present, notre matrice contient une seule ligne, qui contient les valeurs 1, 2
+A présent, notre matrice contient une seule ligne, qui contient les valeurs 1, 2
 et 3.
 
 Pour avoir une seconde ligne qui contient les valeurs 4, 5 et 6, on peut soit
@@ -76,32 +76,51 @@ soit plus efficacement,
 M.append([4, 5, 6])
 ```
 
-Maintenant, notre matrice M ressemble a
+Maintenant, notre matrice M ressemble à
 
---- | --- | ---
-1 | 2 | 3
-4 | 5 | 6
+```
+1  2  3
+4  5  6
+```
 
-
-Pour acceder a la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
-coordonnees (1, 2).
+Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
+coordonnées (1, 2).
 
 Vous avez maintenant tous les outils pour vous lancer dans les exercices !
-Bon courage et n'hesitez pas a poser des questions !
+Bon courage et n'hésitez pas à poser des questions !
 
 ## Testez votre code!
 
 Avec ce sujet est fourni un fichier vous permettant de vérifier que votre code
 fonctionne comme il devrait.
 
-Pour que la verification se passe bien, il faudra
-- Nommer votre fichier *matrices.py*, toutes vos fonctions devront se trouver
-  dans ce fichier
+Pour que la vérification se passe bien, il faudra
 - Respecter les noms de fonctions précisés dans les énoncés suivants
-- Exécuter le fichier test avec `./tests-matrices.py` dans le terminal
+- Lancer les tests avec `./tests-matrices.py <votre-fichier>` dans le terminal
 
 
 ## Pratiquons !
+
+
+### Exercice 0 : rechercher dans une matrice
+
+**But** : écrire la fonction `searchMat(M, val)` qui renvoie l'indice de la
+ligne à laquelle se trouve la valeur `val` recherchée, ou -1 si la valeur n'est
+pas présente dans la matrice.
+
+**Exemple** :
+
+```python
+m = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+
+print(searchMat(M, 8)
+```
+
+affichera `2`.
 
 
 ### Exercice 1 : initialiser une matrice
