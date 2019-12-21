@@ -47,6 +47,18 @@ def test(f, inp, out):
         print(e, "\033[0;31m [K0] \033[0m")
 
 
+# Exercice 0 : rechercher dans une matrice
+try:
+    test(tp.searchMat, [m1, 1], 0)
+    test(tp.searchMat, [m1, 5], 1)
+    test(tp.searchMat, [m1, 8], 2)
+    test(tp.searchMat, [m1, 42], -1)
+except Exception as e:
+    print(e)
+
+print()
+
+
 # Exercice 1 : initialiser une matrice
 try:
     test(tp.initMat, [3, 2, 42], [[42,42],[42,42],[42,42]])
