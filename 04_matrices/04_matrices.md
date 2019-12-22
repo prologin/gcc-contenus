@@ -341,6 +341,34 @@ une fonction qui stocke ces maximums dans une liste, et une fonction qui permet
 de trouver le minimum parmi tous ces maximum.*
 
 
+### Exercice 0: une faim de loup
+
+On représente le terrain de chasse d'un loup dans une matrice.
+Le caractère 'M' représente un mouton, le caractere 'L' représente le loup.
+Le loup ne peut manger que les moutons qui se situent autour de lui directement.
+
+
+**But** : écrire la fonction `eat(M)` qui prend une matrice représentant le
+terrain en paramètre et renvoie le nombre de moutons que va pouvoir manger le
+loup.
+
+**Exemple** :
+
+```
+..................
+..M...............
+.............M....
+......M...........
+....ML............
+.....M............
+..M........M......
+..................
+```
+
+Votre fonction `eat` doit renvoyer `3` sur cette matrice, car il y a trois
+moutons sur les cases adjacentes au loup.
+
+
 ### Exercice 7 : les cratères de la Lune
 
 On représente une partie de la Lune vue de haut dans une matrice.
