@@ -26,10 +26,6 @@ Dans cette matrice, la valeur 5 se trouve aux coordonnées (1, 1).
 La valeur 1 se trouve alors aux coordonnées (0, 0).
 La valeur 9 se trouve aux coordonnées (2, 2)
 
-Une matrice est dite carrée si son nombre de colonnes est égal à son nombre de
-lignes. Une matrice de 3 lignes par 3 colonnes est carrée, une matrice de 4
-lignes par 5 colonnes ne l'est pas.
-
 
 Alors en python, ca donne quoi ?
 
@@ -86,6 +82,16 @@ Maintenant, notre matrice M ressemble à
 Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
 coordonnées (1, 2).
 
+On peut calculer la hauteur de la matrice (nombre de lignes) dans la matrice M,
+en utilisant
+`len(M)`, qui correspond à la longueur de la liste principale qui constitue la
+matrice.
+
+De la même facon, on peut calculer la largeur de la matrice en faisant
+`len(M[0])` qui correspond à la longueur de la première ligne de la matrice.
+Le fait que ce soit la première ligne n'a pas tant d'importance, mais on est
+certain que cette ligne existe a priori.
+
 Vous avez maintenant tous les outils pour vous lancer dans les exercices !
 Bon courage et n'hésitez pas à poser des questions !
 
@@ -102,11 +108,34 @@ Pour que la vérification se passe bien, il faudra
 ## Pratiquons !
 
 
-### Exercice 0 : rechercher dans une matrice
+### Exercice 0 : présence dans une matrice
 
-**But** : écrire la fonction `searchMat(M, val)` qui renvoie l'indice de la
-ligne à laquelle se trouve la valeur `val` recherchée, ou -1 si la valeur n'est
-pas présente dans la matrice.
+**But** : écrire la fonction `isInMat(M, val)` qui renvoie `True` si la valeur
+val est presente dans la matrice, `False` sinon.
+
+**Exemple** :
+
+```python
+m = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+
+print(isInMat(M, 8)
+```
+
+affichera `True`.
+
+
+### Exercice 0 : coordonnées dans une matrice
+
+**But** : écrire la fonction `searchMat(M, val)` qui renvoie une liste contenant
+deux éléments, l'indice de la ligne et l'indice de la colonne sur lesquelles se
+trouve la valeur recherchée.
+
+On admet que l'élément recherché n'est présent qu'une seule fois dans la
+matrice.
 
 **Exemple** :
 
@@ -120,7 +149,29 @@ m = [
 print(searchMat(M, 8)
 ```
 
-affichera `2`.
+affichera `[2, 1]` car 8 se situe sur la ligne 2 et la colonne 1.
+
+
+### Exercice 0 : toutes les coordonnees !
+
+**But** : écrire la fonction `searchAllMat(M, val)` qui renvoie une liste
+contenant tous les duos de coordonnees sur lesquelles on peut voir la valeur
+recherchee.
+
+**Exemple** :
+
+```python
+m = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [2, 8, 9]
+    ]
+
+print(searchMat(M, 2)
+```
+
+affichera `[[0, 1], [2, 0]]` car il y a un 2 sur la ligne 0 et la colonne 1, et
+un autre sur la ligne 2 et la colonne 0.
 
 
 ### Exercice 1 : initialiser une matrice
@@ -171,13 +222,10 @@ affichera
 ```
 
 
-### Exercice 3 : laisser une trace
+### Exercice 3 : somme des éléments de la matrice
 
-**But** : écrire la fonction `trace(m)` qui prend une matrice en paramètre,
-calcule la somme des éléments sur sa diagonale (du coin en haut à gauche, au
-coin en bas à droite) et la renvoie.
-
-Si la matrice n'est pas carrée, votre fonction doit renvoyer `None`.
+**But** : écrire la fonction `somme(m)` qui prend une matrice en paramètre,
+et renvoie la somme de tous ses éléments.
 
 **Exemple** :
 
@@ -188,10 +236,10 @@ m = [
         [2, 8, 9]
     ]
 
-printf(trace(m))
+printf(somme(m))
 ```
 
-affichera `15`.
+affichera `40`.
 
 
 ### Exercice 4 : ajouter deux matrices
@@ -339,9 +387,7 @@ manipulation de fichier en python.
 Sur cette partie de la Lune, il y a 3 cratères. Votre fonction `craters` devrait
 alors renvoyer la valeur `3`.
 
-A noter : par soucis de simplicité, aucun bout de cratère ne peut se trouver
-sur les bords de la matrice. Autrement dit, pas de '#' sur la première ligne,
-première colonne, dernière ligne et dernière colonne de la matrice.
+On admet que deux cratères ne peuvent pas se toucher.
 
-*_Tips_ : réfléchissez à une solution par vous-même, et apres cela n'hésitez pas
+*_Tips_ : réfléchissez à une solution par vous-même, et après cela n'hésitez pas
 à demander à un.e organisat.eur.rice de vous donner un petit coup de pouce !*
