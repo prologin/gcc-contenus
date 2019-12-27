@@ -1,8 +1,8 @@
 '''
-Exercice 0 : rechercher dans une matrice
+Exercice 1 : présence dans une matrice
 '''
 
-def searchMat(M, val):
+def is_in_matrix(M, val):
 
     lines = len(M)
     cols = len(M[0])
@@ -10,31 +10,64 @@ def searchMat(M, val):
     for i in range(lines):
         for j in range(cols):
             if M[i][j] == val:
-                return i
+                return True
 
-    return -1
+    return False
 
 
 '''
-Exercice 1 : initialiser une matrice
+Exercice 2 : coordonnées dans une matrice
 '''
 
-def initMat(lines, cols, value):
+def search_matrix(M, val):
 
-    M = []
+    lines = len(M)
+    cols = len(M[0])
 
     for i in range(lines):
-        M.append([])
         for j in range(cols):
-            M[i].append(value)
+            if M[i][j] == val:
+                return [i, j]
+
+
+'''
+Exercice 3 : toutes les coordonnées !
+'''
+
+def search_all(M, val):
+
+    coord = []
+
+    lines = len(M)
+    cols = len(M[0])
+
+    for i in range(lines):
+        for j in range(cols):
+            if M[i][j] == val:
+                coord.append([i, j])
+
+    return coord
+
+
+'''
+Exercice 4 : initialiser une matrice
+'''
+def set_matrix(lines, cols, val):
+
+    M = [[0 for i in range(cols)] for j in range(lines)]
+
+    for i in range(lines):
+        for j in range(cols):
+            M[i][j] = val
 
     return M
 
+
 '''
-Exercice 2 : afficher une matrice
+Exercice 5 : afficher une matrice
 '''
 
-def printMat(M):
+def print_matrix(M):
 
     lines = len(M)
     cols = len(M[0])
@@ -45,35 +78,36 @@ def printMat(M):
 
         print()
 
-'''
-Exercice 3 : laisser une trace
-'''
-
-def trace(M):
-
-    trace = 0
-    longueurLigne = len(M[0])
-
-    if longueurLigne != len(M):
-        return None;
-
-    for i in range(longueurLigne):
-        trace += M[i][i]
-
-    return trace
 
 '''
-Exercice 4 : ajouter deux matrices
+Exercice 6 : somme des éléments de la matrice
 '''
 
-def addMat(A, B):
+def sum_matrix(M):
+
+    sum = 0
+
+    lines = len(M)
+    cols = len(M[0])
+
+    for i in range(lines):
+        for j in range(cols):
+            sum += M[i][j]
+
+    return sum
+
+'''
+Exercice 7 : ajouter deux matrices
+'''
+
+def add_matrix(A, B):
 
     (lines, cols) = (len(A), len(A[0]))
 
     if (lines, cols) != (len(A), len(B[0])):
         return None
 
-    M = initMat(lines, cols, 0)
+    M = set_matrix(lines, cols, 0)
 
     for i in range(lines):
         for j in range(cols):
@@ -82,7 +116,7 @@ def addMat(A, B):
     return M
 
 '''
-Exercice 5 : symetrie sur la diagonale
+Exercice 8 : symetrie sur la diagonale
 '''
 
 def symmetricDiag(M):
@@ -108,7 +142,7 @@ def symmetricDiag(M):
     return True
 
 '''
-Exercice 6 : minimax
+Exercice 9 : minimax
 '''
 
 def maxList(L):
@@ -137,3 +171,71 @@ def minimax(M):
 
     return mnm
 
+
+'''
+Exercice 10 : une faim de loup
+'''
+
+def eat(M):
+
+    (lines, cols) = (len(M), len(M[0]))
+
+    res = 0
+
+    for i in range(lines):
+        for j in range(cols):
+            if M[i][j] == 'L':
+                for k in range(-1, 2):
+                    for l in range(-1, 2):
+                        if i + k < 0 or i + k >= len(M):
+                            continue
+                        if j + l < 0 or j + l >= len(M[0]):
+                            continue
+                        if M[i + k][j + l] == 'M':
+                            res += 1
+                return res
+
+    return res
+
+'''
+Exercice 11 : les cratères de la Lune
+'''
+
+'''
+    Visits the whole crater
+'''
+def replaceCrater(M, visitedMap, i, j):
+
+    visitedMap[i][j] = True
+
+    if i < 0 or i >= len(M):
+        return
+
+    if j < 0 or j >= len(M[0]):
+        return
+
+    for k in range(-1, 2):
+        for l in range(-1, 2):
+            if M[i + k][j + l] == '#' and visitedMap[i + k][j + l] == False:
+                replaceCrater(M, visitedMap, i + k, j + l)
+
+
+'''
+    Counts the number of craters on the map
+'''
+def craters(M):
+
+    nbCraters = 0
+
+    n = len(M)
+    m = len(M[0])
+
+    visitedMap = set_matrix(n, m, False)
+
+    for i in range(n):
+        for j in range(m):
+            if M[i][j] == '#' and visitedMap[i][j] == False:
+                replaceCrater(M, visitedMap, i, j)
+                nbCraters += 1
+
+    return nbCraters
