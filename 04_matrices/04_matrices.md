@@ -5,7 +5,7 @@ date: 2019
 
 ## Introduction aux matrices
 
-Une matrice est un tableau a deux dimensions, une sorte de grille, dans laquelle
+Une matrice est un tableau à deux dimensions, une sorte de grille, dans laquelle
 chaque case est accessible grâce à ses coordonnées.
 
 Toutes les lignes de la matrice doivent avoir la même longueur.
@@ -27,60 +27,23 @@ La valeur 1 se trouve alors aux coordonnées (0, 0).
 La valeur 9 se trouve aux coordonnées (2, 2)
 
 
-Alors en python, ca donne quoi ?
+### Alors en python, ca donne quoi ?
 
-Pour créer la matrice, on crée simplement une liste:
+**Initialiser une matrice**
 
-```python
-M = []
-```
-
-puis pour y ajouter une ligne, on va `append` (ajouter dans la liste) à cette
-liste... une autre liste vide !
+On peut initialiser une matrice de taille 3 lignes par 2 colonnes remplie de 0
+avec
 
 ```python
-M = []
-M.append([])
+M = [[0 for i in range(2)] for j in range(3)]
 ```
 
-Notre matrice contient maintenant une ligne.
+**Parcourir une matrice**
 
-Pour ajouter des valeurs à cette ligne, on peut faire
-
-```python
-M[0].append(1) #on ajoute 1 a la ligne 0 de la matrice
-M[0].append(2)
-M[0].append(3)
-```
-
-A présent, notre matrice contient une seule ligne, qui contient les valeurs 1, 2
-et 3.
-
-Pour avoir une seconde ligne qui contient les valeurs 4, 5 et 6, on peut soit
-faire comme au-dessus
-
-```python
-M.append([]) #pour ajouter une deuxieme ligne vide apres la premiere ligne
-M[1].append(4) #on ajoute 4 a la ligne 1 de la matrice
-M[1].append(5)
-M[1].append(6)
-```
-
-soit plus efficacement,
-
-```python
-M.append([4, 5, 6])
-```
-
-Maintenant, notre matrice M ressemble à
-
-```
-1  2  3
-4  5  6
-```
-
-Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
-coordonnées (1, 2).
+Pour parcourir une matrice, le plus simple est de manipuler deux boucles
+`for` imbriquées. La première doit aller de 0 jusqu'au nombre de lignes, et
+celle à l'intérieur doit aller de 0 jusqu'à la largeur d'une ligne de la
+matrice.
 
 On peut calculer la hauteur de la matrice (nombre de lignes) dans la matrice M,
 en utilisant
@@ -91,6 +54,28 @@ De la même facon, on peut calculer la largeur de la matrice en faisant
 `len(M[0])` qui correspond à la longueur de la première ligne de la matrice.
 Le fait que ce soit la première ligne n'a pas tant d'importance, mais on est
 certain que cette ligne existe a priori.
+
+**Manipuler une matrice**
+
+Soit la matrice M
+
+```
+1  2  3
+4  5  6
+7  8  9
+```
+
+Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
+coordonnées (1, 2).
+
+On peut aussi changer la valeur d'une case directement.
+Par exemple, la valeur dans le coin supérieur gauche peut être mise a 42 avec
+
+```python
+M[0][0] = 42
+```
+
+On peut acceder a toute la premiere ligne de la matrice
 
 Vous avez maintenant tous les outils pour vous lancer dans les exercices !
 Bon courage et n'hésitez pas à poser des questions !
@@ -110,43 +95,72 @@ Pour que la vérification se passe bien, il faudra
 
 ### Exercice 0 : présence dans une matrice
 
-**But** : écrire la fonction `isInMat(M, val)` qui renvoie `True` si la valeur
-val est presente dans la matrice, `False` sinon.
+On représente une prairie dans une matrice.
+Le caractère 'M' représente un mouton. On souhaite savoir s'il y a au moins un
+mouton dans la prairie, soit au moins une fois le caractère 'M' dans la matrice.
+
+
+**But** : écrire la fonction `is_in_matrix(M, val)` qui renvoie `True` si la
+valeur 'val' est présente dans la matrice, `False` sinon.
 
 **Exemple** :
 
 ```python
-m = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
+prairie = [
+
+        [1,  1 , 1],
+        [1,  1 , 1],
+        [1, 'M', 1]
+
     ]
 
-print(isInMat(M, 8)
+print(is_in_matrix(prairie, 'M'))
 ```
 
-affichera `True`.
+affichera `True`
+
+et
+
+```python
+prairie_vide = [
+
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+
+    ]
+
+print(is_in_matrix(prairie_vide, 'M'))
+```
+
+affichera `False`.
 
 
 ### Exercice 0 : coordonnées dans une matrice
 
-**But** : écrire la fonction `searchMat(M, val)` qui renvoie une liste contenant
-deux éléments, l'indice de la ligne et l'indice de la colonne sur lesquelles se
-trouve la valeur recherchée.
+On représente encore une prairie dans une matrice, et on cherche toujours le
+mouton sauf que cette fois on veut connaitre sa position exacte !
 
-On admet que l'élément recherché n'est présent qu'une seule fois dans la
+
+**But** : écrire la fonction `search_matrix(M, val)` qui renvoie une liste
+contenant deux éléments, l'indice de la ligne et l'indice de la colonne sur
+lesquelles se trouve la valeur recherchée 'val'.
+
+On admet que l'élément recherché **est présent une seule fois** dans la
 matrice.
 
 **Exemple** :
 
 ```python
-m = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
+prairie = [
+
+        [1,  1 , 1],
+        [1,  1 , 1],
+        [1, 'M', 1]
+
     ]
 
-print(searchMat(M, 8)
+print(search_matrix(prairie, 'M')
 ```
 
 affichera `[2, 1]` car 8 se situe sur la ligne 2 et la colonne 1.
@@ -154,36 +168,50 @@ affichera `[2, 1]` car 8 se situe sur la ligne 2 et la colonne 1.
 
 ### Exercice 0 : toutes les coordonnees !
 
-**But** : écrire la fonction `searchAllMat(M, val)` qui renvoie une liste
-contenant tous les duos de coordonnees sur lesquelles on peut voir la valeur
-recherchee.
+Cette fois-ci, la matrice qui représente la prairie peut contenir plusieurs
+moutons 'M'.
+On veut alors savoir toutes les positions des moutons.
+
+
+**But** : écrire la fonction `search_all(M, val)` qui renvoie une liste
+contenant tous les duos de coordonnées sur lesquelles on peut trouver la valeur
+recherchée 'val'.
 
 **Exemple** :
 
 ```python
-m = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [2, 8, 9]
+prairie = [
+
+        [1,  1 , 'M'],
+        [1,  1 ,  1 ],
+        [1, 'M',  1 ]
+
     ]
 
-print(searchMat(M, 2)
+print(search_all(prairie, 'M'))
 ```
 
-affichera `[[0, 1], [2, 0]]` car il y a un 2 sur la ligne 0 et la colonne 1, et
-un autre sur la ligne 2 et la colonne 0.
+affichera `[[0, 2], [2, 1]]` car il y a un 'M' sur la ligne 0 et la colonne 2,
+et un autre sur la ligne 2 et la colonne 1.
 
 
 ### Exercice 1 : initialiser une matrice
 
-**But** : écrire la fonction `initMat(lignes, cols, val)` qui crée une matrice
-de dimensions 'lignes' par 'cols' et met chaque case de cette matrice à la
-valeur 'val'.
+**But** : écrire la fonction `set_matrix(lines, cols, val)` qui crée une matrice de
+dimensions 'lignes' par 'cols', parcourt la matrice et met chaque case de cette
+matrice à la valeur 'val'.
+
+*__Tips : rappelez-vous, on peut initialiser une matrice de taille 5 par 5
+remplie de 0 avec*
+
+```python
+M = [[0 for i in range(5)] for j in range(5)]
+```
 
 **Exemple** :
 
 ```python
-initMat(3, 2, 42)
+set_matrix(3, 2, 42)
 ```
 
 créera la matrice
@@ -197,20 +225,20 @@ créera la matrice
 
 ### Exercice 2 : afficher une matrice
 
-**But** : écrire la fonction `printMat(m)` qui affichera la matrice prise en
+**But** : écrire la fonction `print_matrix(M)` qui affichera la matrice prise en
 paramètre en séparant chaque terme affiché par un espace, et un retour à la
 ligne en fin de ligne de matrice.
 
 **Exemple** :
 
 ```python
-m = [
+M = [
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9]
     ]
 
-printMat(m)
+print_matrix(M)
 ```
 
 affichera
@@ -224,19 +252,19 @@ affichera
 
 ### Exercice 3 : somme des éléments de la matrice
 
-**But** : écrire la fonction `somme(m)` qui prend une matrice en paramètre,
+**But** : écrire la fonction `sum_matrix(M)` qui prend une matrice en paramètre,
 et renvoie la somme de tous ses éléments.
 
 **Exemple** :
 
 ```python
-m = [
+M = [
         [1, 2, 3],
         [4, 5, 6],
         [2, 8, 9]
     ]
 
-printf(somme(m))
+print(sum_matrix(M))
 ```
 
 affichera `40`.
@@ -244,7 +272,7 @@ affichera `40`.
 
 ### Exercice 4 : ajouter deux matrices
 
-**But** : écrire la fonction `addMat(a, b)` qui ajoute les valeurs des deux
+**But** : écrire la fonction `add_matrix(a, b)` qui ajoute les valeurs des deux
 matrices a et b **si et seulement si** elles sont de mêmes dimensions.
 Dans le cas inverse, votre fonction doit renvoyer la valeur `None`.
 
@@ -257,18 +285,18 @@ matrices prises en paramètres.*
 
 ```python
 a = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
+        [1, 2],
+        [4, 5],
+        [7, 8]
     ]
 
 b = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
+        [1, 2],
+        [4, 5],
+        [7, 8]
     ]
 
-resultat = addMat(a, b)
+resultat = add_matrix(a, b)
 
 printMat(resultat)
 ```
@@ -276,15 +304,15 @@ printMat(resultat)
 affichera
 
 ```python
-2 4 6
-8 10 12
-14 16 18
+2 4 
+8 10 
+14 16 
 ```
 
 
 ### Exercice 5 : symétrie sur la diagonale
 
-**But** : écrire la fonction `symmetricDiag(m)` qui renvoie `True` si la matrice
+**But** : écrire la fonction `sym_diago(m)` qui renvoie `True` si la matrice
 est symétrique par rapport à l'axe de sa diagonale (du coin en haut à gauche, à
 son coin en bas à droite), `False` sinon.
 
@@ -337,8 +365,7 @@ affichera `42`.
 *__Tips__ : il faut diviser le problème et écrire plusieurs fonctions
 différentes pour trouver une solution efficace à cet exercice. Par exemple, on
 peut écrire une fonction qui permet de déterminer le maximum d'une seule ligne,
-une fonction qui stocke ces maximums dans une liste, et une fonction qui permet
-de trouver le minimum parmi tous ces maximum.*
+et une fonction qui permet de trouver le minimum parmi tous ces maximum.*
 
 
 ### Exercice 0: une faim de loup
