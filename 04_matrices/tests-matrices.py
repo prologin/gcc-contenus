@@ -2,6 +2,9 @@
 
 import sys, importlib
 
+if len(sys.argv) == 1:
+    print("Usage: " + sys.argv[0] + " <your_code>")
+    sys.exit(2)
 
 tp = sys.argv[1]
 if tp[-3:] == ".py":
@@ -193,3 +196,5 @@ except Exception as e:
     print(e)
 
 print()
+
+sys.exit(0)
