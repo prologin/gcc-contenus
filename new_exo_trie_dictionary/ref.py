@@ -1,16 +1,17 @@
+import re   # for bonus
+
+
 class Node:
     def __init__(self, char):
         self.char = char
         self.children = []
         self.is_end_word = False
 
-
     def add_child_at(self, index, child):
         if index > len(self.children):
             return False
         self.children.insert(index, child)
         return True
-
 
     def insert_char(self, char):
         nb_children = len(self.children)
@@ -28,13 +29,11 @@ class Node:
         self.add_child_at(nb_children, Node(char))
         return self.children[nb_children]
 
-
     def get_child(self, char):
         for child in self.children:
             if child.char == char:
                 return child
         return None
-
 
     def print_chars(self, prefix):
         word = prefix + self.char
@@ -45,7 +44,6 @@ class Node:
         for child in self.children:
             child.print_chars(word)
 
-
     def __repr__(self):
         return self.char
 
@@ -53,7 +51,6 @@ class Node:
 class Dict:
     def __init__(self):
         self.root = Node('')
-
 
     def add_word(self, word):
         current_node = self.root
@@ -66,7 +63,6 @@ class Dict:
             current_node = node_letter
         current_node.is_end_word = True
 
-
     def exists(self, word):
         current_node = self.root
 
@@ -77,9 +73,46 @@ class Dict:
 
         return current_node.is_end_word
 
-
     def print_words(self):
         self.root.print_chars("")
+
+    ############ BONUS ############
+    # Add all words from file in dico
+    # one word per line
+    def add_file(self, filename):
+        f = open(filename, "r")
+        if not f:
+            print(f"Cannot find file '{filename}'")
+
+        for line in f:
+            self.add_word(line.strip())
+
+        f.close()
+
+
+######## BONUS ########
+def check_file_with_dico(filename, dico):
+    f = open(filename, "r")
+    if not f:
+        print(f"Cannot find file '{filename}'")
+
+    bad_words = []
+
+    regex = "\.|'|\"|,|:|;|\n|\r| |!|\?|<|>|\[|\]|{|}|=|\+|%|/|\*"
+    words = re.split(regex, f.read())
+    for word in words:
+        if word != '' and not dico.exists(word):
+            bad_words.append(word)
+
+    f.close()
+
+    if not bad_words:
+        print("Tous les mots sont dans le dictionnaire")
+        return
+
+    print("Ces mots ne sont pas dans le dictionnaire:")
+    for word in bad_words:
+        print(f"- {word}")
 
 
 def main():
@@ -93,6 +126,10 @@ def main():
             word = input("Quel mot dois-je ajouter au dictionnaire ?\n")
             d.add_word(word)
 
+        elif word == "import":      # bonus
+            filename = input("Quel fichier est le dictionnaire à importer ?\n")
+            d.add_file(filename)
+
         elif word == "test" or word == "exist":
             word = input("Quel mot dois-je tester ?\n")
             if d.exists(word):
@@ -100,11 +137,16 @@ def main():
             else:
                 print("Ce mot n'est pas dans le dictionnaire.")
 
+        elif word == "check":       # bonus
+            filename = input("Quel fichier dois-je vérifier ?\n")
+            check_file_with_dico(filename, d)
+
         elif word == "print":
             d.print_words()
 
         else:
-            print("Mauvaise commande: utilisez \"exit\", \"add\", \"test\", \"print\"")
+            print("Mauvaise commande: utilisez \"exit\", \"add\", \"test\",",
+                  "\"print\" et en bonus: \"import\", \"check\"")
 
 
 if __name__ == "__main__":
