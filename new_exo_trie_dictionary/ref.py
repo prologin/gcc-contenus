@@ -1,4 +1,5 @@
-import re   # for bonus
+import re       # for bonus
+import getkey   # for bonus
 
 
 class Node:
@@ -35,14 +36,17 @@ class Node:
                 return child
         return None
 
-    def print_chars(self, prefix):
+    def get_chars(self, prefix):
         word = prefix + self.char
+        words = []
 
         if self.is_end_word:
-            print(word)
+            words.append(word)
 
         for child in self.children:
-            child.print_chars(word)
+            words += child.get_chars(word)
+
+        return words
 
     def __repr__(self):
         return self.char
@@ -74,7 +78,9 @@ class Dict:
         return current_node.is_end_word
 
     def print_words(self):
-        self.root.print_chars("")
+        words = self.root.get_chars("")
+        for w in words:
+            print(w)
 
     ############ BONUS ############
     # Add all words from file in dico
@@ -88,6 +94,21 @@ class Dict:
             self.add_word(line.strip())
 
         f.close()
+
+    ############ BONUS #############
+    # Get words with a given prefix
+    def get_words_from_prefix(self, prefix):
+        current_node = self.root
+
+        for letter in prefix:
+            node_letter = current_node.get_child(letter)
+            if not node_letter:
+                return []
+
+            current_node = node_letter
+
+        words = current_node.get_chars(prefix[:-1])
+        return words
 
 
 ######## BONUS ########
@@ -113,6 +134,36 @@ def check_file_with_dico(filename, dico):
     print("Ces mots ne sont pas dans le dictionnaire:")
     for word in bad_words:
         print(f"- {word}")
+
+
+########## BONUS ###########
+def autocomplete(dico):
+    def get_last_word(line):
+        words = line.split(' ')
+        return words[-1]
+
+    line = ""
+    while True:
+        key = getkey.getkey()
+
+        if key == getkey.keys.ENTER:
+            print()
+            line = ""
+        elif key == getkey.keys.BACKSPACE:
+            line = line[:-1]
+
+        elif key == getkey.keys.TAB:
+            prefix = get_last_word(line)
+            words = dico.get_words_from_prefix(prefix)
+            if len(words) == 1:
+                line += words[0][len(prefix):]
+            elif len(words) > 1:
+                print("\r", " - ".join(words), " " * 30, sep='')
+
+        else:
+            line += key
+
+        print(f"\r{line}", end='')
 
 
 def main():
@@ -144,9 +195,12 @@ def main():
         elif word == "print":
             d.print_words()
 
+        elif word == "autocomplete":
+            autocomplete(d)
+
         else:
             print("Mauvaise commande: utilisez \"exit\", \"add\", \"test\",",
-                  "\"print\" et en bonus: \"import\", \"check\"")
+                  "\"print\" et en bonus: \"import\", \"check\", \"autocomplete\"")
 
 
 if __name__ == "__main__":
