@@ -122,7 +122,7 @@ def check_file_with_dico(filename, dico):
     regex = "\.|'|\"|,|:|;|\n|\r| |!|\?|<|>|\[|\]|{|}|=|\+|%|/|\*"
     words = re.split(regex, f.read())
     for word in words:
-        if word != '' and not dico.exists(word):
+        if word != '' and not word in bad_words and not dico.exists(word):
             bad_words.append(word)
 
     f.close()
