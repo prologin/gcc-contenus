@@ -200,7 +200,7 @@ et un autre sur la ligne 2 et la colonne 1.
 de dimensions 'lignes' par 'cols', parcourt la matrice et met chaque case de
 cette matrice à la valeur 'val'.
 
-*__Tips : rappelez-vous, on peut initialiser une matrice de taille 5 par 5
+*__Tips__ : rappelez-vous, on peut initialiser une matrice de taille 5 par 5
 remplie de 0 avec*
 
 ```python
