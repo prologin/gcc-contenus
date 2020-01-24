@@ -3,7 +3,7 @@
 import sys, importlib
 
 if len(sys.argv) == 1:
-    print("Usage: " + sys.argv[0] + " <your_code>")
+    print("Usage: " + sys.argv[0] + " <ton_fichier>")
     sys.exit(2)
 
 tp = sys.argv[1]
@@ -35,7 +35,8 @@ def test(f, inp, out):
             if f.__name__ == "eat" or f.__name__ == "craters":
                 print(f"\033[0;31m[K0]\033[0m Recu : {res} | Attendu : {out}")
             else:
-                print(f"{f.__name__}({inpp}) = {res} | Attendu : {out} \033[0;31m[KO]\033[0m")
+                print(f"{f.__name__}({inpp}) = {res} | Attendu : {out}", end="")
+                print(f" \033[0;31m[KO]\033[0m")
 
     except Exception as e:
         print(e, "\033[0;31m[K0]\033[0m")
