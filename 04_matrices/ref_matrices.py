@@ -54,13 +54,7 @@ Exercice 4 : initialiser une matrice
 '''
 def set_matrix(lines, cols, val):
 
-    M = [[0 for i in range(cols)] for j in range(lines)]
-
-    for i in range(lines):
-        for j in range(cols):
-            M[i][j] = val
-
-    return M
+    return [[val for i in range(cols)] for j in range(lines)]
 
 
 '''
@@ -104,7 +98,7 @@ def add_matrix(A, B):
 
     (lines, cols) = (len(A), len(A[0]))
 
-    if (lines, cols) != (len(A), len(B[0])):
+    if (lines, cols) != (len(B), len(B[0])):
         return None
 
     M = set_matrix(lines, cols, 0)
@@ -121,17 +115,25 @@ Exercice 8 : symetrie sur la diagonale
 
 def symmetricDiag(M):
 
-    l = len(M)
-    c = len(M[0])
+    lines = len(M)
+    cols = len(M[0])
 
-    if l != c:
+    if lines != cols:
         return False
 
+    for i in range(lines):
+        for j in range(cols):
+            if (M[i][j] != M[j][i]):
+                return False
+
+    return True
+
+    """
     i = 0
 
-    while i < l:
+    while i < lines:
         j = 0
-        while j < c:
+        while j < cols:
             if M[i][j] != M[j][i]:
                 return False
 
@@ -140,6 +142,7 @@ def symmetricDiag(M):
         i += 1
 
     return True
+    """
 
 '''
 Exercice 9 : minimax
