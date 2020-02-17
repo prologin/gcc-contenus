@@ -1,6 +1,7 @@
 ---
 title: Matrices
 date: 2019
+author: Tanguy Segarra
 ---
 
 ## Introduction aux matrices
@@ -10,8 +11,8 @@ chaque case est accessible grâce à ses coordonnées.
 
 Toutes les lignes de la matrice doivent avoir la même longueur.
 
-En python, les matrices sont représentées par une liste de listes.
-Une grosse liste qui est elle-même la matrice et qui contient chaque ligne de la
+En python, les matrices sont représentées par une liste de listes : soit une
+grande liste qui est elle-même la matrice et qui contient chaque ligne de la
 matrice.
 De cette facon, comme pour les listes, les indices dans les matrices commencent
 à 0.
@@ -34,6 +35,19 @@ La valeur 9 se trouve aux coordonnées (2, 2)
 On peut initialiser une matrice de taille 3 lignes par 2 colonnes remplie de 0
 avec
 
+On peut créer une matrice en manipulant la methode de liste `.append()` et
+embriquant deux boucles comme cela :
+
+```python
+M = []
+for i in range(3):
+    M.append([])
+    for j in range(2):
+        M[i].append(0)
+```
+
+ou alors de facon plus rapide et "pythonesque" :
+
 ```python
 M = [[0 for i in range(2)] for j in range(3)]
 ```
@@ -52,7 +66,7 @@ constitue la matrice.
 De la même facon, on peut calculer la largeur de la matrice en faisant
 `len(M[0])` qui correspond à la longueur de la première ligne de la matrice.
 Le fait que ce soit la première ligne n'a pas tant d'importance, mais on est
-certain que cette ligne existe a priori.
+certain que cette ligne existe à priori.
 
 **Manipuler une matrice**
 
@@ -68,7 +82,7 @@ Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
 coordonnées (1, 2).
 
 On peut aussi changer la valeur d'une case directement.
-Par exemple, la valeur dans le coin supérieur gauche peut être mise a 42 avec
+Par exemple, la valeur dans le coin supérieur gauche peut être mise à 42 avec
 
 ```python
 M[0][0] = 42
@@ -96,10 +110,11 @@ Pour que la vérification se passe bien, il faudra
 
 On représente une prairie dans une matrice.
 Le caractère 'M' représente un mouton. On souhaite savoir s'il y a au moins un
-mouton dans la prairie, soit au moins une fois le caractère 'M' dans la matrice.
+mouton dans la prairie P, soit au moins une fois le caractère 'M' dans la
+matrice.
 
 
-**But** : écrire la fonction `is_in_matrix(M, val)` qui renvoie `True` si la
+**But** : écrire la fonction `is_in_matrix(P, val)` qui renvoie `True` si la
 valeur 'val' est présente dans la matrice, `False` sinon.
 
 **Exemple** :
@@ -137,11 +152,11 @@ affichera `False`.
 
 ### Exercice 2 : coordonnées dans une matrice
 
-On représente encore une prairie dans une matrice, et on cherche toujours le
-mouton sauf que cette fois on veut connaitre sa position exacte !
+On représente encore une prairie P dans une matrice, et on cherche toujours le
+mouton 'M' sauf que cette fois on veut connaitre sa position exacte !
 
 
-**But** : écrire la fonction `search_matrix(M, val)` qui renvoie une liste
+**But** : écrire la fonction `search_matrix(P, val)` qui renvoie une liste
 contenant deux éléments, l'indice de la ligne et l'indice de la colonne sur
 lesquelles se trouve la valeur recherchée 'val'.
 
@@ -167,12 +182,12 @@ affichera `[2, 1]` car 8 se situe sur la ligne 2 et la colonne 1.
 
 ### Exercice 3 : toutes les coordonnées !
 
-Cette fois-ci, la matrice qui représente la prairie peut contenir plusieurs
+Cette fois-ci, la matrice qui représente la prairie P peut contenir plusieurs
 moutons 'M'.
 On veut alors savoir toutes les positions des moutons.
 
 
-**But** : écrire la fonction `search_all(M, val)` qui renvoie une liste
+**But** : écrire la fonction `search_all(P, val)` qui renvoie une liste
 contenant tous les duos de coordonnées sur lesquelles on peut trouver la valeur
 recherchée 'val'.
 
@@ -197,7 +212,7 @@ et un autre sur la ligne 2 et la colonne 1.
 ### Exercice 4 : initialiser une matrice
 
 **But** : écrire la fonction `set_matrix(lines, cols, val)` qui crée une matrice
-de dimensions 'lignes' par 'cols', parcourt la matrice et met chaque case de
+de dimensions 'lines' par 'cols', parcourt la matrice et met chaque case de
 cette matrice à la valeur 'val'.
 
 *__Tips__ : rappelez-vous, on peut initialiser une matrice de taille 5 par 5
@@ -272,10 +287,9 @@ affichera `40`.
 ### Exercice 7 : ajouter deux matrices
 
 **But** : écrire la fonction `add_matrix(a, b)` qui ajoute les valeurs des deux
-matrices a et b **si et seulement si** elles sont de mêmes dimensions.
-Dans le cas inverse, votre fonction doit renvoyer la valeur `None`.
-
-//FIXME ou alors on renvoie `False` simplement pour signifier que ca a rate
+matrices a et b dans une nouvelle matrice **si et seulement si** elles sont de
+mêmes dimensions.  Si les dimensions sont invalides, votre fonction doit
+renvoyer la valeur `None`, au lieu de renvoyer la matrice nouvellement créée.
 
 *__Tips__ : `None` est la valeur qui représente littéralement RIEN. On s'en sert
 souvent pour dire qu'il est impossible de faire ce qui est demandé donc on ne
@@ -376,12 +390,12 @@ et une fonction qui permet de trouver le minimum parmi tous ces maximum.*
 
 ### Exercice 10 : une faim de loup
 
-On représente le terrain de chasse d'un loup dans une matrice.
+On représente le terrain de chasse d'un loup dans une matrice P.
 Le caractère 'M' représente un mouton, le caractere 'L' représente le loup.
 Un '.' représente simplement une case du terrain qui est vide.
 Le loup ne peut manger que les moutons qui se situent autour de lui directement.
 
-**But** : écrire la fonction `eat(M)` qui prend une matrice représentant le
+**But** : écrire la fonction `eat(P)` qui prend une matrice représentant le
 terrain en paramètre et renvoie le nombre de moutons que va pouvoir manger le
 loup.
 
@@ -400,6 +414,9 @@ loup.
 
 Votre fonction `eat` doit renvoyer `3` sur cette matrice, car il y a trois
 moutons sur les cases adjacentes au loup.
+
+*__Tips__: on appelle cases adjacentes les 8 cases qui se trouvent autour de la
+case cible.*
 
 Si la matrice ne contient pas de loup, ou pas de moutons, ou aucun des deux,
 alors votre fonction doit renvoyer `0`.
