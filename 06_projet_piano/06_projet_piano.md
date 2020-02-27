@@ -41,7 +41,7 @@ Pour pouvoir mettre en place nous allons avoir besoin de trois types de données
 simples:
 
 * les nombres entiers comme `42`, `0` ou `-1`.
-* les chaînes de caractères comme `"ordinateur"` ou `"Girl can code!"`.
+* les chaînes de caractères comme `"ordinateur"` ou `"Girls can code!"`.
 * les booléens: `True` ou `False`.
 
 ### Les variables
@@ -75,10 +75,12 @@ ceci_est_faux2 = (mon_entier > quarante_trois)
 Au cours de notre programme nous allons devoir effectuer ou non des actions en
 fonction d'une condition qui pourra être vraie ou fausse. Par exemple nous
 aurons sûrement envie de pouvoir jouer une note musicale si une touche est
-appuyée sur le clavier. Pour pouvoir nous pouvons utiliser les mots-clés
+appuyée sur le clavier. Pour cela nous pouvons utiliser les mots-clés
 suivants: `if`, `elif` et `else`.
 
 Prenez l'exemple suivant:
+
+\newpage
 
 ```python
 
@@ -105,12 +107,12 @@ condition3 est fausse.
 
 ### Les boucles
 
-Parfois, il devient nécessaire de pouvoir executer du code plusieurs fois
-d'affilée pour reussir à atteindre notre but. On pourrait imaginer une
-situation où on voudrait afficher et un décompte un nombre en particulier. Pour
-ce faire, il faudrait avoir une variable qu'on initialise en lui donnant une
-valeur initiale de 0 avant de la faire augmenter par palier de `1` jusqu'au
-nombre voulu en affichant le résultat à chaque fois.
+Parfois, il devient nécessaire de pouvoir exécuter du code plusieurs fois
+d'affilée pour réussir à atteindre notre but. On pourrait imaginer une
+situation où on voudrait le décompte d'un nombre en particulier. Pour ce faire,
+il faudrait avoir une variable qu'on initialise en lui donnant une valeur
+initiale de 0 avant de la faire augmenter par palier de `1` jusqu'au nombre
+voulu en affichant le résultat à chaque fois.
 
 La boucle `while` permet de représenter la situation. En supposant qu'on
 veuille compter jusqu'à 42 on pourrait écrire le code suivant:
@@ -119,12 +121,12 @@ veuille compter jusqu'à 42 on pourrait écrire le code suivant:
 
 mon_compteur = 0
 while compteur < 43:
-    print(mon_compteur)
+    print(mon_compteur) # affiche la valeur actuelle du compteur
     mon_compteur = mon_compteur + 1
 
 ```
 
-Si on connaît déjà le nombre de fois qu'on veut executer le code dans le corps
+Si on connaît déjà le nombre de fois qu'on veut exécuter le code dans le corps
 de la boucle, on peut aussi utiliser une boucle `for` comme suit:
 
 ```python
@@ -135,7 +137,7 @@ for mon_compteur in range(43):
 ```
 
 Dans les deux cas, en rentrant dans le corps de la boucle la variable
-`mon_compteur` aura pour valeurs succésives 0, 1, 2, 3 ... 41, 42.
+`mon_compteur` aura pour valeurs successives 0, 1, 2, 3 ... 41, 42.
 
 ### Les fonctions
 
@@ -145,7 +147,7 @@ fonctions.
 
 Voici un exemple de définition de fonction simple:
 
-```
+```python
 
 mon_entier = 21
 
@@ -167,7 +169,7 @@ doubler_mon_entier()
 
 Les fonctions peuvent aussi prendre des paramètres comme par exemple:
 
-```
+```python
 
 # La définition de la fonction qui prend des paramètres
 def regarder_si_plus_de_42(entier):
@@ -179,6 +181,7 @@ def regarder_si_plus_de_42(entier):
         print('Plus petit que 42 !')
 
 # Trois appels de cette fonction
+
 regarder_si_plus_de_42(100)
 # Affiche 'Plus grand que 42 !'
 
@@ -220,20 +223,23 @@ son...), et le _corps_, où on va exécuter le même chose en boucle.
 
 ### La structure globale du programme
 
-Comme dit précdemment, notre programme va être divisé en deux parties:
-l'_initialisation_ et le _corps_.
+Abordons donc ces deux parties : l'_initialisation_ puis le _corps_.
+
+#### L'_initialisation_
+
+##### Quelques variables utiles:
 
 Lors de l'_initialisation_, nous allons préparer tout pour que notre piano
 puisse afficher les touches enfoncées et jouer du son.
 
-Avant tout, nous allons avoir besoin de quelque variables pour notre piano:
+Avant tout, nous allons avoir besoin de quelques variables pour notre piano:
 
 * 5 couleurs pour l'affichage
 * le nombre de notes contenues dans un octave (nombre de touches avant que le
   clavier ne se répète)
 * l'octave dans lequel on veut que les sons soient jouées (plus ou moins grave,
   je vous conseille 4)
-* le volume avec lequel on veut jouer (entre 0 et 124)
+* le volume avec lequel on veut jouer (entre `0` et `127`)
 
 Les couleurs dans `pygame` sont représentées par des *tuples* de trois valeurs
 entre `0` et `255` qui correspondent à l'intensité en rouge, vert et bleu.
@@ -243,22 +249,22 @@ Par exemple, la couleur noire correspond à `(0, 0, 0)` et le blanc à `(255,
 
 On pourrait donc initialiser nos variables comme suit:
 
-```
+```python
 
 # La couleur du fond
-color_gris  = (127, 127, 127)
+couleur_gris  = (127, 127, 127)
 
 # La couleur des touches blanches
-color_blanc = (255, 255, 255)
+couleur_blanc = (255, 255, 255)
 
 # La couleur des touches noires
-color_noir = (0, 0, 0)
+couleur_noir = (0, 0, 0)
 
 # La couleur des touches blanches enfoncées
-color_rouge = (255, 0, 0)
+couleur_rouge = (255, 0, 0)
 
 # La couleur des touches noires enfoncées
-color_bleu = (0, 0, 255)
+couleur_bleu = (0, 0, 255)
 
 # Le nombre de notes
 nombre_de_notes = 12
@@ -267,9 +273,11 @@ nombre_de_notes = 12
 octave = 4
 
 # Le volume
-volume = 124
+volume = 127
 
 ```
+
+##### Initialiser `pygame`:
 
 Ensuite, pour pouvoir utiliser `pygame`, il faut importer les deux parties
 dont on va avoir besoin:
@@ -286,18 +294,123 @@ fonctions qu'on peut appeler dès le début de notre programme comme suit:
 
 ```python
 
-# Pour le son
+# Pour initialiser le son
 pygame.midi.init()
 
-# Pour l'affichage
+# Pour initialiser l'affichage
 pygame.display.init()
 
 ```
 
-#### Du bruit
+##### Un dictionnaire pour nos touches:
 
-Faire les fonctions qui allument une note.
+Afin de pouvoir stocker et mettre à jour l'état de notre clavier, nous allons
+utiliser un dictionnaire.
 
-#### Du silence
+Lorsqu'on va demander à `pygame` quelles touches sont enfoncées, il va nous
+répondre en appelant les touches par les noms utilisés par `pygame`.
 
-Faire les fonctions qui éteignent une note.
+Il semble donc logique d'utiliser ces noms comme _clés_ pour notre
+dictionnaire.
+
+En ce qui concerne les _valeurs_ associées à ces _clés_, nous allons vouloir
+stocker plusieurs informations:
+
+* le numéro qui correspond à la note (pour pouvoir jouer le son correspondant)
+* un booléen nous indiquant si la touche est noire ou blanche
+* un booléen nous indiquant si la touche est enfoncée
+
+Afin de pouvoir stocker toutes ces informations dans le dictionnaire, nous
+allons utiliser un _tuple_ pour valeur dans le dictionnaire.
+
+L'initialisation de nos touches de piano pourrait ressembler à ceci pour un
+clavier AZERTY:
+
+```python
+
+etat_des_touches = {
+        pygame.K_q: (12, False, False),  # C0
+        pygame.K_z: (13, True,  False),  # C#/Db0
+        pygame.K_s: (14, False, False),  # D0
+        pygame.K_e: (15, True, False),   # D#/Eb0
+        pygame.K_d: (16, False,  False), # E0
+        pygame.K_f: (17, False, False),  # F0
+        pygame.K_t: (18, True,  False),  # F#/Gb0
+        pygame.K_g: (19, False, False),  # G0
+        pygame.K_y: (20, True, False),   # G#/Ab0
+        pygame.K_h: (21, False,  False), # A0
+        pygame.K_u: (22, True, False),   # A#/Bb0
+        pygame.K_j: (23, False,  False), # B0
+}
+
+```
+
+#### Le corps de notre programme
+
+Une fois l'_initialisation_ finie, nous allons rentrer dans le _corps_ de notre
+prgramme.
+
+Ce _corps_ va prendre la forme d'une boucle qui va tourner tant que notre
+programme est en route.
+
+Si l'on suppose dans un premier temps que notre clavier ne va jamais s'arrêter
+et que nous sommes donc dans une boucle infinie, nous pouvons décrire le
+contenu du _corps_ comme suit:
+
+\newpage
+
+```
+
+pour toujours:
+    pour chaque évènement dans les évènements récupérés par pygame:
+        si c'est un appui de touche:
+            traiter la touche enfoncee
+        sinon si c'est un lâché de touche:
+            taiter la touche lâchée
+    redessiner l'écran
+
+```
+
+#### Afficher notre clavier
+
+Dans la boucle décrite dans la section précédente, nous redessinons la fenêtre
+correspondant de notre programme à chaque tour.
+
+Nous allons donc devoir écrire une fonction qui prend en paramètre une fenêtre
+`pygame` et qui dessine notre clavier dedans à partir de l'état des touches
+décrit dans le dictionnaire `etat_des_touches`.
+
+Afin de dessiner notre clavier, nous allons avoir besoin dessiner des
+rectangles pour representer les touches.
+
+En réalité, nous allons avoir besoin de dessiner deux types de rectangles,
+décalés sur notre clavier: un type de rectangle pour les touches blanches et un
+type de rectangle pour les touches noires.
+
+#### Que la musique soit
+
+Comme nous l'avons vu précedemment, qu'il s'agisse d'une touche enfoncée ou
+relevée, `pygame` va nous dire quelle touche est en cause dans l'évènement
+qu'il reçoit.
+
+De plus `pygame` nous fournit deux fonctions utiles pour gérer le son:
+
+* `note_on(note, volume)` pour allumer une note
+* `note_off(note)` pour eteindre une note
+
+Toutes les fonctions que nous allons écrire qui concernent la lecture ou
+l'arrêt d'une note vont donc prendre un paramètre la touche concernée et en
+faire quelque chose.
+
+Nous allons avoir besoin de deux fonctions: `allumer_touche` et
+`eteindre_touche`.
+
+##### Exercice
+
+Ecrivez une fonction `allumer_touche` qui prend en paramètre une touche et
+lance le son correspondant à cette touche en mettant à jour l'état de la touche
+en question dans notre dictionnaire `etat_des_touches`.
+
+Ecrivez une fonction `eteindre_touche` qui prend en paramètre une touche et
+arrête le son correspondant à cette touche en mettant à jour l'état de la
+touche en question dans notre dictionnaire `etat_des_touches`.
