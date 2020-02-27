@@ -365,8 +365,10 @@ affichera `False`.
 
 ### Exercice 9 : minimax
 
-**But**: écrire la fonction `minimax(m)` qui détermine la valeur minimale parmi
-les maximums de chaque ligne de la matrice passée en paramètre.
+**But**: écrire la fonction `minimax(m)` qui calcule les maximums de chaque
+ligne de la matrice passée en paramètre puis renvoie la valeur minimum entre
+ces maximums.
+
 
 **Exemple** :
 
