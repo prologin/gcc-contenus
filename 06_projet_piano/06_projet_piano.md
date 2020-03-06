@@ -33,12 +33,12 @@ TODO: expliquer des bêtises sur la musique:
 ## Rappels
 
 Afin de nous préparer pour le projet d'aujourd'hui, nous allons revoir certains
-éléments qui ont été vu dans les sujets prédents.
+éléments qui ont été vu dans les sujets précédents.
 
 ### Les types simples
 
-Pour pouvoir mettre en place nous allons avoir besoin de trois types de données
-simples:
+Pour pouvoir mettre en place notre piano, nous allons utiliser trois différents
+types de données:
 
 * les nombres entiers comme `42`, `0` ou `-1`.
 * les chaînes de caractères comme `"ordinateur"` ou `"Girls can code!"`.
@@ -141,7 +141,7 @@ Dans les deux cas, en rentrant dans le corps de la boucle la variable
 
 ### Les fonctions
 
-De la même manière qu'on peut associer un nom à de la donnée en utilisant une
+De la même manière qu'on peut associer un nom à une donnée en utilisant une
 variable, il est possible d'associer un nom à des petits bouts de code: des
 fonctions.
 
@@ -217,9 +217,9 @@ Explications et petits exos/fonctions auxiliaires à écrire sur les dictionnair
 
 Nous pouvons enfin commencer à travailler sur notre piano. Comme pour beaucoup
 de programmes, notre code va être divisé en deux grosses parties:
-l'_initialisation_, où on va préparer tout ce qu'il faut dans notre programme
-(ouvrir une fenêtre, dessiner le piano initial, préparer la sortie pour le
-son...), et le _corps_, où on va exécuter le même chose en boucle.
+l'_initialisation_, où on va préparer tout ce dont on a besoin dans notre
+programme (ouvrir une fenêtre, dessiner le piano initial, préparer la sortie
+pour le son...), et le _corps_, où on va exécuter le même chose en boucle.
 
 ### La structure globale du programme
 
@@ -230,7 +230,7 @@ Abordons donc ces deux parties : l'_initialisation_ puis le _corps_.
 ##### Quelques variables utiles:
 
 Lors de l'_initialisation_, nous allons préparer tout pour que notre piano
-puisse afficher les touches enfoncées et jouer du son.
+puisse afficher les touches et jouer du son.
 
 Avant tout, nous allons avoir besoin de quelques variables pour notre piano:
 
@@ -290,7 +290,7 @@ import pygame.display
 ```
 
 Pour initialiser ces deux systèmes (affichage et son), `pygame` fournit deux
-fonctions qu'on peut appeler dès le début de notre programme comme suit:
+fonctions qu'on peut appeler au tout début de notre programme comme suit:
 
 ```python
 
@@ -329,18 +329,18 @@ clavier AZERTY:
 ```python
 
 etat_des_touches = {
-        pygame.K_q: (12, False, False),  # C0
-        pygame.K_z: (13, True,  False),  # C#/Db0
-        pygame.K_s: (14, False, False),  # D0
-        pygame.K_e: (15, True, False),   # D#/Eb0
-        pygame.K_d: (16, False,  False), # E0
-        pygame.K_f: (17, False, False),  # F0
-        pygame.K_t: (18, True,  False),  # F#/Gb0
-        pygame.K_g: (19, False, False),  # G0
-        pygame.K_y: (20, True, False),   # G#/Ab0
-        pygame.K_h: (21, False,  False), # A0
-        pygame.K_u: (22, True, False),   # A#/Bb0
-        pygame.K_j: (23, False,  False), # B0
+        pygame.K_q: (12, False, False),  # C0       ( Do  )
+        pygame.K_z: (13, True,  False),  # C#/Db0   ( Do# )
+        pygame.K_s: (14, False, False),  # D0       ( Ré  )
+        pygame.K_e: (15, True, False),   # D#/Eb0   ( Ré# )
+        pygame.K_d: (16, False,  False), # E0       ( Mi  )
+        pygame.K_f: (17, False, False),  # F0       ( Fa  )
+        pygame.K_t: (18, True,  False),  # F#/Gb0   ( Fa# )
+        pygame.K_g: (19, False, False),  # G0       ( Sol )
+        pygame.K_y: (20, True, False),   # G#/Ab0   ( Sol#)
+        pygame.K_h: (21, False,  False), # A0       ( La  )
+        pygame.K_u: (22, True, False),   # A#/Bb0   ( La# )
+        pygame.K_j: (23, False,  False), # B0       ( Si  )
 }
 
 ```
@@ -366,7 +366,7 @@ pour toujours:
         si c'est un appui de touche:
             traiter la touche enfoncee
         sinon si c'est un lâché de touche:
-            taiter la touche lâchée
+            traiter la touche lâchée
     redessiner l'écran
 
 ```
@@ -390,7 +390,7 @@ type de rectangle pour les touches noires.
 #### Que la musique soit
 
 Comme nous l'avons vu précedemment, qu'il s'agisse d'une touche enfoncée ou
-relevée, `pygame` va nous dire quelle touche est en cause dans l'évènement
+relevée, `pygame` va nous dire l'état des touches dans l'évènement
 qu'il reçoit.
 
 De plus `pygame` nous fournit deux fonctions utiles pour gérer le son:
