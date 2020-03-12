@@ -9,4 +9,4 @@ bouche `while`, et finalement il introduit au concept de fonction.  Toutes ces
 découvertes se font dans le but de créer un programme qui compte les points
 dans un tournoi de sport.
 
-Il ne nécessite pas plus qu'un éditeur et interpréteur de python.
+Il ne nécessite pas plus qu'un éditeur et interpréteur de Python.
