@@ -25,7 +25,7 @@ Chaque dossier correspond à un sujet et contient au minimum :
   génère à la fois le fichier latex et le pdf.
 - `README.md` C'est un fichier qui décrit le principe du TP et les éventuelles
   mises en place nécessaires.
-- (optionnel) `notes_orga.rst` il s'agit de conseils pour les encadrants qui
+- (optionnel) `notes_orga.md` il s'agit de conseils pour les encadrants qui
   dirigent le sujet. On y précise les points délicats du TP et des conseils
   pédagogiques.
 
