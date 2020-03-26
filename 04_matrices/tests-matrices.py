@@ -106,8 +106,6 @@ except Exception as e:
 
 print()
 
-print()
-
 
 # Exercice 4 : initialiser une matrice
 print("Exercice 4 : initialiser une matrice")
@@ -123,8 +121,21 @@ except Exception as e:
 print()
 
 
-# Exercice 6 : somme des éléments de la matrice
-print("Exercice 6 : somme des éléments de la matrice")
+# Exercice 5 : compter les moutons...
+print("Exercice 5 : compter les moutons...")
+try:
+    test(tp.count, [mDiag, 1], 3)
+    test(tp.count, [m2, 42], 6)
+    test(tp.count, [mDiag, 69], 0)
+
+except Exception as e:
+    print(e)
+
+print()
+
+
+# Exercice 7 : somme des éléments de la matrice
+print("Exercice 7 : somme des éléments de la matrice")
 try:
     test(tp.sum_matrix, [m1], 45)
     test(tp.sum_matrix, [m2], 252)
@@ -136,8 +147,8 @@ except Exception as e:
 print()
 
 
-# Exercice 7 : ajouter deux matrices
-print("Exercice 7 : ajouter deux matrices")
+# Exercice 8 : ajouter deux matrices
+print("Exercice 8 : ajouter deux matrices")
 try:
     test(tp.add_matrix, [m1, m1], [[2,4,6],[8,10,12],[14,16,18]])
     test(tp.add_matrix, [m1, m2], None)
@@ -148,8 +159,8 @@ except Exception as e:
 print()
 
 
-# Exercice 8 : symetrie sur la diagonale
-print("Exercice 8 : symetrie sur la diagonale")
+# Exercice 9 : symetrie sur la diagonale
+print("Exercice 9 : symetrie sur la diagonale")
 try:
     test(tp.symmetricDiag, [m1], False)
     test(tp.symmetricDiag, [mDiag], True)
@@ -160,8 +171,8 @@ except Exception as e:
 print()
 
 
-# Exercice 9 : minimax
-print("Exercice 9 : minimax")
+# Exercice 10 : minimax
+print("Exercice 10 : minimax")
 try:
     test(tp.minimax, [mnm], 42)
 
@@ -171,8 +182,8 @@ except Exception as e:
 print()
 
 
-# Exercice 10 : une faim de loup
-print("Exercice 10 : une faim de loup")
+# Exercice 11 : une faim de loup
+print("Exercice 12 : une faim de loup")
 try:
     test(tp.eat, [load_map("maps/wolf1.map")], 3)
     test(tp.eat, [load_map("maps/wolf2.map")], 0)
@@ -184,8 +195,8 @@ except Exception as e:
 print()
 
 
-# Exercice 11 : les cratères de la Lune
-print("Exercice 11 : les cratères de la Lune")
+# Exercice 12 : les cratères de la Lune
+print("Exercice 12 : les cratères de la Lune")
 try:
     test(tp.craters, [load_map("maps/moon1.map")], 0)
     test(tp.craters, [load_map("maps/moon2.map")], 1)

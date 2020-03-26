@@ -53,8 +53,31 @@ def search_all(M, val):
 Exercice 4 : initialiser une matrice
 '''
 def set_matrix(lines, cols, val):
+    matrix = []
+    for lig in range(lines):
+        line = []
+        for col in range(cols):
+            line.append(val)
+        matrix.append(line)
 
-    return [[val for i in range(cols)] for j in range(lines)]
+    return matrix
+
+
+'''
+Exercice 5 : compter les moutons
+'''
+def count(P, val):
+
+    count = 0
+    lines = len(P)
+    cols = len(P[0])
+
+    for i in range(lines):
+        for j in range(cols):
+            if P[i][j] == val:
+                count += 1
+
+    return count
 
 
 '''
