@@ -39,11 +39,14 @@ On peut créer une matrice en manipulant la methode de liste `.append()` et
 embriquant deux boucles comme cela :
 
 ```python
-M = []
-for i in range(3):
-    M.append([])
-    for j in range(2):
-        M[i].append(0)
+matrice = []
+nb_lignes = 3
+nb_colonnes = 2
+for lig in range(nb_lignes):
+    ligne = []
+    for col in range(nb_colonnes):
+        ligne.append(0)
+    matrice.append(ligne)
 ```
 
 ou alors de facon plus rapide et "pythonesque" :
@@ -105,6 +108,11 @@ Pour que la vérification se passe bien, il faudra
 
 ## Pratiquons !
 
+Pour certains de ces exercices, on représente le terrain de chasse d'un loup
+dans une matrice P.  Le caractère 'M' représente alors un mouton, et le
+caractere 'L' représente le loup.  Un '.' représente simplement une case du
+terrain qui est vide, de l'herbe !  Le loup ne peut manger que les moutons qui
+se situent autour de lui directement.
 
 ### Exercice 1 : présence dans une matrice
 
@@ -122,9 +130,9 @@ valeur 'val' est présente dans la matrice, `False` sinon.
 ```python
 prairie = [
 
-        [1,  1 , 1],
-        [1,  1 , 1],
-        [1, 'M', 1]
+        ['.', '.', '.'],
+        ['.', '.', '.'],
+        ['.', 'M', '.']
 
     ]
 
@@ -138,9 +146,9 @@ et
 ```python
 prairie_vide = [
 
-        [1, 1, 1],
-        [1, 1, 1],
-        [1, 1, 1]
+        ['.', '.', '.'],
+        ['.', '.', '.'],
+        ['.', '.', '.']
 
     ]
 
@@ -168,9 +176,9 @@ matrice.
 ```python
 prairie = [
 
-        [1,  1 , 1],
-        [1,  1 , 1],
-        [1, 'M', 1]
+        ['.', '.', '.'],
+        ['.', '.', '.'],
+        ['.', 'M', '.']
 
     ]
 
@@ -196,9 +204,9 @@ recherchée 'val'.
 ```python
 prairie = [
 
-        [1,  1 , 'M'],
-        [1,  1 ,  1 ],
-        [1, 'M',  1 ]
+        ['.', '.', 'M'],
+        ['.', '.', '.'],
+        ['.', 'M', '.']
 
     ]
 
@@ -209,23 +217,40 @@ affichera `[[0, 2], [2, 1]]` car il y a un 'M' sur la ligne 0 et la colonne 2,
 et un autre sur la ligne 2 et la colonne 1.
 
 
-### Exercice 4 : initialiser une matrice
+### Exercice 4 : compter les moutons...
 
-**But** : écrire la fonction `set_matrix(lines, cols, val)` qui crée une matrice
-de dimensions 'lines' par 'cols', parcourt la matrice et met chaque case de
-cette matrice à la valeur 'val'.
+On veut savoir combien de moutons se trouvent dans la prairie.
 
-*__Tips__ : rappelez-vous, on peut initialiser une matrice de taille 5 par 5
-remplie de 0 avec*
-
-```python
-M = [[0 for i in range(5)] for j in range(5)]
-```
+**But** : écrire la fonction `count(P, val)` qui renvoie le nombre de fois ou
+est presente la valeur `val` dans la matrice P.
 
 **Exemple** :
 
 ```python
-set_matrix(3, 2, 42)
+prairie = [
+
+        ['.', '.', 'M'],
+        ['.', '.', '.'],
+        ['.', 'M', '.']
+
+    ]
+
+print(count(prairie, 'M'))
+```
+
+affichera `2`.
+
+
+### Exercice 5 : initialiser une matrice
+
+**But** : écrire la fonction `init_matrix(lines, cols, val)` qui crée une
+matrice de dimensions 'lines' par 'cols', parcourt la matrice et met chaque
+case de cette matrice à la valeur 'val'.
+
+**Exemple** :
+
+```python
+init_matrix(3, 2, 42)
 ```
 
 créera la matrice
@@ -237,7 +262,7 @@ créera la matrice
 ```
 
 
-### Exercice 5 : afficher une matrice
+### Exercice 6 : afficher une matrice
 
 **But** : écrire la fonction `print_matrix(M)` qui affichera la matrice prise en
 paramètre en séparant chaque terme affiché par un espace, et un retour à la
@@ -248,8 +273,7 @@ ligne en fin de ligne de matrice.
 ```python
 M = [
         [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
+        [4, 5, 6]
     ]
 
 print_matrix(M)
@@ -260,11 +284,10 @@ affichera
 ```python
 1 2 3
 4 5 6
-7 8 9
 ```
 
 
-### Exercice 6 : somme des éléments de la matrice
+### Exercice 7 : somme des éléments de la matrice
 
 **But** : écrire la fonction `sum_matrix(M)` qui prend une matrice en paramètre,
 et renvoie la somme de tous ses éléments.
@@ -273,18 +296,18 @@ et renvoie la somme de tous ses éléments.
 
 ```python
 M = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [2, 8, 9]
+        [1, 2],
+        [4, 5],
+        [2, 8]
     ]
 
 print(sum_matrix(M))
 ```
 
-affichera `40`.
+affichera `22`.
 
 
-### Exercice 7 : ajouter deux matrices
+### Exercice 8 : ajouter deux matrices
 
 **But** : écrire la fonction `add_matrix(a, b)` qui ajoute les valeurs des deux
 matrices a et b dans une nouvelle matrice **si et seulement si** elles sont de
@@ -330,7 +353,7 @@ affichera
 ```
 
 
-### Exercice 8 : symétrie sur la diagonale
+### Exercice 9 : symétrie sur la diagonale
 
 **But** : écrire la fonction `sym_diago(m)` qui renvoie `True` si la matrice
 est symétrique par rapport à l'axe de sa diagonale (du coin en haut à gauche, à
@@ -363,7 +386,7 @@ print(sym_diago(a))
 affichera `False`.
 
 
-### Exercice 9 : minimax
+### Exercice 10 : minimax
 
 **But**: écrire la fonction `minimax(m)` qui calcule les maximums de chaque
 ligne de la matrice passée en paramètre puis renvoie la valeur minimum entre
@@ -390,12 +413,8 @@ peut écrire une fonction qui permet de déterminer le maximum d'une seule ligne
 et une fonction qui permet de trouver le minimum parmi tous ces maximum.*
 
 
-### Exercice 10 : une faim de loup
+### Exercice 11 : une faim de loup
 
-On représente le terrain de chasse d'un loup dans une matrice P.
-Le caractère 'M' représente un mouton, le caractere 'L' représente le loup.
-Un '.' représente simplement une case du terrain qui est vide.
-Le loup ne peut manger que les moutons qui se situent autour de lui directement.
 
 **But** : écrire la fonction `eat(P)` qui prend une matrice représentant le
 terrain en paramètre et renvoie le nombre de moutons que va pouvoir manger le
@@ -424,7 +443,7 @@ Si la matrice ne contient pas de loup, ou pas de moutons, ou aucun des deux,
 alors votre fonction doit renvoyer `0`.
 
 
-### Exercice 11 : les cratères de la Lune
+### Exercice 12 : les cratères de la Lune
 
 On représente une partie de la Lune vue de haut dans une matrice.
 Les cercles dans la matrice représentent les cratères formés à la surface de la
