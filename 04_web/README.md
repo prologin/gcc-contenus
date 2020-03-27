@@ -10,8 +10,8 @@ fonctionnalités du HTML5 et du CSS3 pour réussir à créer sa propre page HTML
 personnalisée.
 
 De plus, un TP bonus existe pour aller plus loin. Il présente les filtres, les
-grilles, et plusieurs détails plus poussés de CSS qui pourrait rendre votre page
-encore plus unique.
+grilles, et plusieurs détails plus poussés de CSS qui pourraient rendre votre
+page encore plus unique.
 
-Pour ce TP, vous n'aurez besoin qu'un éditeur de texte pour pouvoir écrire le
+Pour ce TP, vous n'aurez besoin que d'un éditeur de texte pour pouvoir écrire le
 code en utilisant du HTML5 et du CSS3.

@@ -6,6 +6,5 @@ programmes dessus. Il vous guide dans l’utilisation des microbits en expliquan
 comment l’affichage fonctionne, et comment les différents événements et
 mouvements sont détectés.
 
-Pour pouvoir le tester, vous devez être muni d’un microbit et utilisez la
+Pour pouvoir le tester, vous devez être muni d’un microbit et utiliser la
 bibliothèque microbit.
-
