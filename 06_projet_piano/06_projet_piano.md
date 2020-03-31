@@ -195,7 +195,77 @@ regarder_si_plus_de_42(23)
 
 ### Les imports
 
-TODO
+Lorsque l'on veut faire appel à des fonctions, méthodes ou classes d'autres bibliothèques (ou module), on voudrait ne pas avoir à écrire nous même la fonction, ou à la copier-coller... C'est à ça que servent les import !
+
+```
+import math
+```
+
+Dit à notre programme Python de charger la bibliothèque math, et nous donne accès aux fonctions qui ont été écrites dans cette bibliothèque.
+
+On peut renommer le module _math_ en faisant :
+
+```
+import math as m
+```
+
+Cependant, ces deux méthodes d'import sont généralement déconseillées : si vous avez besoin d'une fonction, vous ne voulez pas forcément importer toute la bibliothèque ! En effet, imaginons que l'on ait besoin de la fonction sqrt(x), qui renvoie la racine carrée de x, et qui provient de la bibliothèque _math_, vous n'avez pas envie que toutes les autres fonctions soient chargées, mais seulement la (ou les) fonction dont vous avez besoin !
+
+Pour ce faire, on écrit :
+
+```
+from math import sqrt
+```
+
+Une dernière chose à savoir, et vous l'avez peut-être déjà vu dans certains codes en Python :
+
+```
+if __name__ == "__main__":
+    # le point d'entrée de notre programme
+```
+
+Cette condition permet de séparer les appels de notre programme "voulus", des imports de notre programme : lorsqu'on lance notre code avec `python <fichier.py>`, on veut que notre code soit executé, mais lorsqu'on importe notre code (et donc nos fonctions, classes, etc.), on ne veut pas que le code soit executé avant que le développeur appelle explicitement la fonction de notre code.
+
+C'est pour cela qu'au lieu d'avoir :
+
+```
+class Test:
+    def __init__(self, ...):
+        # des choses
+    
+    def methode(self, ...):
+        # des choses
+
+def fonction(params):
+    # des choses
+
+def fonction_que_lon_veut_lancer(args):
+    # des choses
+
+fonction_que_lon_veut_lancer(params)
+```
+
+On préfère avoir :
+
+```
+class Test:
+    def __init__(self, ...):
+        # des choses
+    
+    def methode(self, ...):
+        # des choses
+
+def fonction(params):
+    # des choses
+
+def fonction_que_lon_veut_lancer(args):
+    # des choses
+
+if __name__ == "__main__":
+    fonction_que_lon_veut_lancer(params)
+```
+
+En pratique, et dans nos TP, cela ne fait aucune différence, mais c'est une bonne chose à savoir, et une bonne habitude à prendre !
 
 ## Nouvelles notions
 
@@ -205,9 +275,146 @@ On va avoir besoin de plus que ces notions là.
 
 Explication rapide du setup MIDI et la gestion de la fenêtre.
 
-### Les tuples
+### Les classes
 
-Explications et petits exos/fonctions auxiliaires à écrire sur les tuples.
+
+Note : Si vous avez déjà fait le TP sur les objets, le chapitre qui suit ne sera qu'un rappel pour vous !
+
+Une classe, en Python, est un moyen de créer un modèle pour des données. Elle nous permet de regrouper des données ensemble, en leur donnant un nom.
+
+Disons que nous voulons faire une liste des personnes de notre classe. On veut par exemple trier nos camarades selon leur âge. Avec une liste, c'est très simple :
+
+```
+age = [16, 15, 14, 16, 17, 15]
+age.sort() # on trie la liste
+print(age)
+```
+
+Nous donnera :
+
+```
+[14, 15, 15, 16, 16, 17]
+```
+
+Cependant, on remarque que nous n'avons aucun moyen d'identifier une personne en particulier ! Il serait possible d'utiliser des variables et des listes pour chacun.e de nos camarades, mais on se rend vite compte que c'est très long, et pas vraiment intéressant !
+
+C'est là où les classes rentrent en jeu : elles permettent de "classer" des données, de leur donner un type particulier, que l'on aura imaginé pour un problème donné.
+
+On veut donc avoir l'âge de la personne **et** son prénom (pour pouvoir la différencier des autres !).
+
+En Python ça donne :
+
+```
+class Camarade:
+    def __init__(self, prenom, age):
+        self.prenom = prenom
+        self.age = age
+```
+
+Expliquons un peu ce code :
+
+On déclare une nouvelle classe que l'on appelle "Camarade", c'est ce nom que l'on utilisera après pour faire appel à notre nouvelle classe. (**ligne 1**)
+
+Pour pouvoir initialiser un nouvel objet de la classe _Camarade_ (on parle aussi d'instancier la classe _Camarade_), on utilise une fonction spéciale en Python : _\_\_init\_\__. On appelle les fonctions d'une classe **méthodes**. La méthode _\_\_init\_\__ est un constructeur : elle nous permet de construire, avec des données de base, un type (ou modèle) plus complexe. Ici, avec le prenom et l'âge de l'un.e de nos camarades, on va créer un **objet** _Camarade_. (**ligne 2**)
+
+Les **lignes 3 et 4** permettent d'affecter les arguments du constructeur _prenom_ et _age_ aux variables internes de l'objet _Camarade_ que l'on est en train de créer. Ces variables internes sont appelées **attributs** d'une classe.
+
+L'utilisation du mot clef _self_ permet de savoir que l'on parle de l'object courant d'une classe.
+
+Plus précisement, lorsque l'on écrit :
+
+```
+self.prenom = prenom
+self.age = age
+```
+
+On explicite au programme Python que l'attribut _prenom_ prend la valeur de l'argument _prenom_ et que l'attribut _age_ prend la valeur de l'argument _age_.
+
+Avec tout ça, on peut maintenant créer un objet _Camarade_ comme suit :
+
+```
+Tanguy = Camarade("Tanguy", 20)
+```
+
+On aimerait pouvoir faire :
+
+```
+print(Tanguy)
+```
+
+Malheureusement, cela n'a pas le résultat que l'on pourrait attendre ! Et c'est normal ! Une fois executé, le programme va simplement nous dire que la variable _Tanguy_ est un objet de la classe _Camarade_.
+
+Il nous faut donc une nouvelle méthode pour la classe _Camarade_ pour nous afficher les informations d'un objet _Camarade_. Reprennons notre code et ajoutons une méthode informations(self) qui affiche les informations d'un _Camarade_.
+
+```
+class Camarade:
+    def __init__(self, prenom, age):
+        self.prenom = prenom
+        self.age = age
+    
+    def informations(self):
+        print("Je suis " + self.prenom + " et j'ai " + str(self.age) + " ans.")
+```
+
+Note : str(self.age) transforme l'age (un entier) en une chaîne de caractères.
+
+Comme les types usuels (c'est-à-dire **int**, **str**, etc.), on peut faire des listes de _Camarade_.
+
+```
+Tanguy = Camarade("Tanguy", 20)
+Garance = Camarade("Garance", 21)
+
+liste_camarades = [Tanguy, Garance]
+```
+
+Ensuite, on peut itérer sur chacun des éléments de la liste comme d'habitude :
+
+```
+for camarade in liste_camarades:
+    camarade.informations()
+```
+
+Et voilà ! Vous savez désormais créer vos propres classes et leur ajouter des attributs et méthodes, à vous de jouer maintenant !
+
+Exercice 1 :
+
+En utilisant la classe Camarade vue au dessus, ajouter un attribut nom, qui correspond au nom de famille de la personne. Mettre à jour la méthode informations(self) pour afficher le nom de famille.
+
+
+Exercice 2 :
+
+En utilisant la classe Camarade vue au dessus, ajouter une méthode est_plus_grand_que(self, other) qui affiche un texte en fonction de si le camarade est plus âgé que l'autre camarade.
+
+Par exemple, en prenant Tanguy et Garance, déclarés plus haut, on a :
+
+```
+Tanguy.est_plus_grand_que(Garance)
+# doit être affiché : "Tanguy est plus petit.e que Garance"
+Garance.est_plus_grand_que(Tanguy)
+# doit être affiché : "Garance est plus grand.e que Tanguy"
+Tanguy.est_plus_grand_que(Tanguy)
+# doit être affiché : "Tanguy a le même âge que Tanguy"
+```
+
+Exercice 3 :
+
+En utilisant la classe Camarade vue au dessus, écrire une méthode tri_camarades(liste) permettant de trier une liste de Camarades en fonction de leur âge (croissant). Afin de pouvoir afficher des listes, écrire une méthode afficher_liste(liste) qui affiche le prenom des camarades dans la liste.
+
+```
+Tanguy = Camarade("Tanguy", 20)
+Garance = Camarade("Garance", 21)
+Maya = Camarade("Maya", 20)
+
+liste_camarades = [Tanguy, Garance, Maya]
+
+afficher_liste(liste_camarades)
+# doit être affiché : ["Tanguy", "Garance", "Maya"]
+tri_camarades(liste_camarades)
+afficher_liste(liste_camarades)
+# doit être affiché : ["Tanguy", "Maya", "Garance"]
+```
+
+Note : la solution la plus simple serait d'utiliser la méthode spéciale _\_\_lt\_\_(self, other)_ qui existe dans Python, et qui vous permettra d'utiliser la méthode sort() ! Mais libre à vous de nous supprendre avec un autre algorithme de tri ! :)
 
 ### Les dictionnaires
 
