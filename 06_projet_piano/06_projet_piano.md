@@ -203,13 +203,20 @@ import math
 
 Dit à notre programme Python de charger la bibliothèque math, et nous donne accès aux fonctions qui ont été écrites dans cette bibliothèque.
 
-On peut renommer le module _math_ en faisant :
+On peut renommer le module _math_ en `m` en faisant :
 
 ```
 import math as m
 ```
 
-Cependant, ces deux méthodes d'import sont généralement déconseillées : si vous avez besoin d'une fonction, vous ne voulez pas forcément importer toute la bibliothèque ! En effet, imaginons que l'on ait besoin de la fonction sqrt(x), qui renvoie la racine carrée de x, et qui provient de la bibliothèque _math_, vous n'avez pas envie que toutes les autres fonctions soient chargées, mais seulement la (ou les) fonction dont vous avez besoin !
+On peut le renommer autrement en changeant ce qu'il y a après `as`.
+
+Cependant, ces deux méthodes d'import sont généralement déconseillées si vous
+n'avez besoin que d'une fonction : vous ne voulez pas forcément importer toute
+la bibliothèque ! En effet, imaginons que l'on ait seulement besoin de la
+fonction sqrt(x), qui renvoie la racine carrée de x, et qui provient de la
+bibliothèque _math_, vous n'avez pas envie que toutes les autres fonctions
+soient chargées, mais seulement la (ou les) fonction dont vous avez besoin !
 
 Pour ce faire, on écrit :
 
@@ -245,22 +252,9 @@ def fonction_que_lon_veut_lancer(args):
 fonction_que_lon_veut_lancer(params)
 ```
 
-On préfère avoir :
+On préfère avoir cette condition autour de `fonction_que_lon_veut_lancer` :
 
 ```
-class Test:
-    def __init__(self, ...):
-        # des choses
-    
-    def methode(self, ...):
-        # des choses
-
-def fonction(params):
-    # des choses
-
-def fonction_que_lon_veut_lancer(args):
-    # des choses
-
 if __name__ == "__main__":
     fonction_que_lon_veut_lancer(params)
 ```
