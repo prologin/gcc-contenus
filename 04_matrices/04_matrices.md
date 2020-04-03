@@ -28,12 +28,21 @@ La valeur 1 se trouve alors aux coordonnées (0, 0).
 La valeur 9 se trouve aux coordonnées (2, 2)
 
 
+![](figures/1.svg)
+
+
 ### Alors en python, ca donne quoi ?
 
 **Initialiser une matrice**
 
 On peut initialiser une matrice de taille 3 lignes par 2 colonnes remplie de 0
 avec
+
+```python
+matrice = [[0,0],
+           [0,0],
+           [0,0]]
+```
 
 On peut créer une matrice en manipulant la methode de liste `.append()` et
 embriquant deux boucles comme cela :
@@ -83,6 +92,8 @@ Soit la matrice M
 
 Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
 coordonnées (1, 2).
+
+![](figures/2.svg)
 
 On peut aussi changer la valeur d'une case directement.
 Par exemple, la valeur dans le coin supérieur gauche peut être mise à 42 avec
@@ -138,6 +149,8 @@ prairie = [
 
 print(is_in_matrix(prairie, 'M'))
 ```
+
+![](figures/3.svg)
 
 affichera `True`
 
@@ -237,6 +250,7 @@ prairie = [
 
 print(count(prairie, 'M'))
 ```
+
 
 affichera `2`.
 
