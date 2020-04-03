@@ -57,7 +57,7 @@ M = [[0 for i in range(2)] for j in range(3)]
 
 **Parcourir une matrice**
 
-Pour parcourir une matrice, le plus simple est de manipuler deux boucles
+Pour parcourir une matrice, le plus simple est d'utiliser deux boucles
 `for` imbriquées. La première doit aller de 0 jusqu'au nombre de lignes, et
 celle à l'intérieur doit aller de 0 jusqu'à la largeur d'une ligne de la
 matrice.
@@ -347,9 +347,9 @@ printMat(resultat)
 affichera
 
 ```python
-2 4 
-8 10 
-14 16 
+2 4
+8 10
+14 16
 ```
 
 
@@ -418,7 +418,8 @@ et une fonction qui permet de trouver le minimum parmi tous ces maximum.*
 
 **But** : écrire la fonction `eat(P)` qui prend une matrice représentant le
 terrain en paramètre et renvoie le nombre de moutons que va pouvoir manger le
-loup.
+loup. Le loup me manger tous les moutons sur les cases adjacantes : les 8 cases
+ qui se trouvent autour de la case cible.
 
 **Exemple** :
 
@@ -435,9 +436,6 @@ loup.
 
 Votre fonction `eat` doit renvoyer `3` sur cette matrice, car il y a trois
 moutons sur les cases adjacentes au loup.
-
-*__Tips__: on appelle cases adjacentes les 8 cases qui se trouvent autour de la
-case cible.*
 
 Si la matrice ne contient pas de loup, ou pas de moutons, ou aucun des deux,
 alors votre fonction doit renvoyer `0`.
