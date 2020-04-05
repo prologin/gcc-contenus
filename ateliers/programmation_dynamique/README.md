@@ -4,7 +4,9 @@ Atelier réalisé durant GCC! 2018 à Paris en Août, car plusieurs participante
 intéressées par l'algorithmique voulaient savoir ce qu'était la programmation
 dynamique. Groupe de 5-6 filles.
 
-L'article utilisé comme support : https://haltode.fr/algo/general/approche/dynamique.html
+L'article utilisé comme support :
+https://haltode.fr/algo/general/approche/dynamique.html (cf le pdf
+`programmation_dynamique.pdf` de l'article)
 
 Dans un premier temps on pose un problème aux filles avec des vraies données
 (dans l'article c'est de remplir un cargo pour l'ISS). Le but est de les faire
