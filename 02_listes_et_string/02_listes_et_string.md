@@ -329,7 +329,7 @@ def facto(n):
 
 #### Tic tac tic tac ...
 
-**But** : écrire la fonction `tictac(n)` qui affiche le décompte de n jusqu'à 0,
+**But :**  écrire la fonction `tictac(n)` qui affiche le décompte de n jusqu'à 0,
 puis affiche "Boum!", de façon récursive ! C'est à dire que la fonction
 s'appelle elle-même.
 
