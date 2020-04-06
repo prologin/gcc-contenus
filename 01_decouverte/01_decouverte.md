@@ -31,13 +31,13 @@ programme.
 Contenu du fichier `score.py` :
 
 ``` {.python}
-print("Bonjour!")
+print("Bonjour !")
 ```
 
 Résultat à l'exécution dans la console :
 
 ``` {.text}
-Bonjour!
+Bonjour !
 ```
 
 Elle remarque ensuite qu'en écrivant plusieurs lignes à la suite, elles
@@ -49,12 +49,12 @@ s'en sert généralement pour laisser des commentaires dans son code :
 print("Bonjour,")
 # print("Ceci ne va pas être affiché")
 # C'est juste pour l'exemple !
-print("Bienvenue au stage informatique GCC !")
+print("Bienvenue au stage informatique GCC! !")
 ```
 
 ``` {.text}
 Bonjour,
-Bienvenue au stage informatique GCC !
+Bienvenue au stage informatique GCC! !
 ```
 
 Mais à un moment, elle découvre que si elle oublie certains éléments, le
@@ -285,7 +285,7 @@ if n < 0:
 ```
 
 Ce programme attend un nombre de l'utilisateur. Si ce nombre est négatif, il
-affiche le nombre est négatif ! . Sinon, il n'affiche rien.
+affiche «le nombre est négatif !». Sinon, il n'affiche rien.
 
 Alice se demande comment faire si elle veut tester deux conditions en même
 temps. Par exemple, si elle se pose la question : *Un bonbon **ou** un sort ?* .
@@ -340,7 +340,7 @@ elif TEST3:
     # ce que je fais si tous les tests précédents sont faux
     # et le test 3 est vrai
 # (il peut y avoir autant de elif que nécessaire)
-else :
+else:
     # ce que je fais sinon
 
 # ce que je fais après dans tous les cas
@@ -441,7 +441,7 @@ Je ne veux pas compter les points du match 3
 
 Pour un nombre `n` de fois, on va dire que la variable `i` prend les valeurs
 `0`, `1`, ..., `n-2` et `n-1`. Mais attention, la variable n'a pas besoin de
-s'appeler `i`! Son nom n'a pas d'importance, à part pour la mentionner dans la
+s'appeler `i` ! Son nom n'a pas d'importance, à part pour la mentionner dans la
 boucle.
 
 Si je veux répéter un nombre `n` fois un bout de code, on écrira selon le schéma
@@ -483,7 +483,7 @@ avec seulement des boucles `for`. Effectivement, il existe une boucle, similaire
 à la boucle `for`, plus adaptée pour faire cela : la boucle `while`, qui se
 traduit en français par *tant que*.
 
-On s'en servira comme cela:
+On s'en servira comme cela :
 
 ``` {.python}
 while condition: # tant que la condition est vraie
@@ -527,7 +527,7 @@ print("2+2 = 4")
 
 Maintenant, essaies d'écrire un programme qui demande qui a marqué le point tant
 que la manche n'est pas finie (personne n'a atteint 6 points) et annonce le
-gagnant à la fin:
+gagnant à la fin :
 
 ``` {.text}
 1
@@ -668,7 +668,7 @@ score_j1 = 0
 score_j2 = 0
 
 for i in range(nb_manches):
-    score = int(input("Quel est le score à atteindre ?"))
+    score = int(input("Quel est le score à atteindre ? "))
     gagnant = manche(score)
 
     if gagnant == 1:
