@@ -114,7 +114,7 @@ SyntaxError: invalid syntax
 
 Les erreurs apparaissent lorsqu'on a fait une faute en écrivant notre programme.
 Il est important d'apprendre à les comprendre pour trouver les fautes et les
-corriger. Notamment quand il y a une erreur, il y a toujours une ligne precisée,
+corriger. Notamment quand il y a une erreur, il y a toujours une ligne précisée,
 ce qui peut te donner une idée d'où se trouve la faute.
 
 #### Exercice 1
@@ -217,7 +217,7 @@ nombre = int(input())
 Tu peux maintenant écrire le programme qui récupère le total des points de
 l'équipe et les points qu'elle a marqués, et affiche le nouveau total.
 
-Par exemple si je lance le programme, que j'écris `5` puis `2`, le programmme
+Par exemple si je lance le programme, que j'écris `5` puis `2`, le programme
 devra écrire `7`, car $5 + 2 = 7$. Mon terminal ressemblera alors à :
 
 ``` {.text}
@@ -320,12 +320,12 @@ le test du `if`, et le décalage des lignes suivantes. Ce décalage s'appelle
 programme, si le test est vrai. On le crée avec la touche *tab* ou des espaces.
 
 Cette structure peut avoir d'autres parties : un *si* peut être suivi d'un
-*sinon* (`else`) et ce qui suit le *sinon* ne sera executé que si le test du
-*si* est faux ! Un peu comme je pourrais dire *Si j'ai mes chausettes, je mets
+*sinon* (`else`) et ce qui suit le *sinon* ne sera exécuté que si le test du
+*si* est faux ! Un peu comme je pourrais dire *Si j'ai mes chaussettes, je mets
 mes chaussures, sinon je mets mes chaussettes.* . Et puis il y a une troisième
 possibilité, les *sinon si* (`elif`): on exécute ce qui suit le *sinon si*
 seulement si tous les tests précédents étaient faux et celui là est vrai. Un peu
-comme je pourrais dire *Si j'ai mes chausettes, je mets mes chaussures, sinon si
+comme je pourrais dire *Si j'ai mes chaussettes, je mets mes chaussures, sinon si
 j'ai des sandales je les mets, sinon je mets des chaussettes.* .
 
 Avec l'indentation, le schéma reste toujours :
