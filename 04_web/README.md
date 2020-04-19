@@ -11,7 +11,8 @@ personnalisée.
 
 De plus, un TP bonus existe pour aller plus loin. Il présente les filtres, les
 grilles, et plusieurs détails plus poussés de CSS qui pourraient rendre votre
-page encore plus unique.
+page encore plus sophistiquée et personnalisée.
 
 Pour ce TP, vous n'aurez besoin que d'un éditeur de texte pour pouvoir écrire le
-code en utilisant du HTML5 et du CSS3.
+code en utilisant du HTML5 et du CSS3 et d'un navigateur (pour ouvrir la page
+web).

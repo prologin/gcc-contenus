@@ -15,4 +15,6 @@ pour créer les règles du jeu, et les actions.
 La troisième partie est une extension de la précédente. Elle continue à lister
 des fonctions disponibles, moins essentielles, de la bibliothèque Pygame.
 
-Ce TP utilise la bibliothèque Pygame pour pouvoir créer le jeu en Python3. 
+Ce TP utilise la bibliothèque Pygame pour pouvoir créer le jeu en Python3. Nous
+recommandons d'utiliser [Mu editor](https://codewith.mu/), puisque la bibliothèque Pygame y est
+installée automatiquement.
