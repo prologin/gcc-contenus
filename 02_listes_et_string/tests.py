@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 
-import tp_listes as tp
+import sys, importlib
+
+tp = sys.argv[1]
+if tp[-3:] == ".py":
+    tp = tp[:-3]
+tp = importlib.import_module(tp)
+
+
 
 def test(f, inp, out):
     inpp = ", ".join(str(x) for x in inp)

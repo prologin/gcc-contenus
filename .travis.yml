@@ -1,0 +1,19 @@
+addons:
+  apt:
+    packages:
+     - texlive-full
+     - python-pygments
+
+before_install:
+  - wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
+  - sudo dpkg -i pandoc-2.7.3-1-amd64.deb
+
+script: make
+
+deploy:
+ - provider: pages
+   local_dir: build
+   skip_cleanup: true
+   github_token: $GITHUB_TOKEN
+   on:
+     branch: master

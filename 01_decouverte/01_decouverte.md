@@ -31,13 +31,13 @@ programme.
 Contenu du fichier `score.py` :
 
 ``` {.python}
-print("Bonjour!")
+print("Bonjour !")
 ```
 
 Résultat à l'exécution dans la console :
 
 ``` {.text}
-Bonjour!
+Bonjour !
 ```
 
 Elle remarque ensuite qu'en écrivant plusieurs lignes à la suite, elles
@@ -49,12 +49,12 @@ s'en sert généralement pour laisser des commentaires dans son code :
 print("Bonjour,")
 # print("Ceci ne va pas être affiché")
 # C'est juste pour l'exemple !
-print("Bienvenue au stage informatique GCC !")
+print("Bienvenue au stage informatique GCC! !")
 ```
 
 ``` {.text}
 Bonjour,
-Bienvenue au stage informatique GCC !
+Bienvenue au stage informatique GCC! !
 ```
 
 Mais à un moment, elle découvre que si elle oublie certains éléments, le
@@ -114,7 +114,7 @@ SyntaxError: invalid syntax
 
 Les erreurs apparaissent lorsqu'on a fait une faute en écrivant notre programme.
 Il est important d'apprendre à les comprendre pour trouver les fautes et les
-corriger. Notamment quand il y a une erreur, il y a toujours une ligne precisée,
+corriger. Notamment quand il y a une erreur, il y a toujours une ligne précisée,
 ce qui peut te donner une idée d'où se trouve la faute.
 
 #### Exercice 1
@@ -217,7 +217,7 @@ nombre = int(input())
 Tu peux maintenant écrire le programme qui récupère le total des points de
 l'équipe et les points qu'elle a marqués, et affiche le nouveau total.
 
-Par exemple si je lance le programme, que j'écris `5` puis `2`, le programmme
+Par exemple si je lance le programme, que j'écris `5` puis `2`, le programme
 devra écrire `7`, car $5 + 2 = 7$. Mon terminal ressemblera alors à :
 
 ``` {.text}
@@ -285,7 +285,7 @@ if n < 0:
 ```
 
 Ce programme attend un nombre de l'utilisateur. Si ce nombre est négatif, il
-affiche le nombre est négatif ! . Sinon, il n'affiche rien.
+affiche «le nombre est négatif !». Sinon, il n'affiche rien.
 
 Alice se demande comment faire si elle veut tester deux conditions en même
 temps. Par exemple, si elle se pose la question : *Un bonbon **ou** un sort ?* .
@@ -320,12 +320,12 @@ le test du `if`, et le décalage des lignes suivantes. Ce décalage s'appelle
 programme, si le test est vrai. On le crée avec la touche *tab* ou des espaces.
 
 Cette structure peut avoir d'autres parties : un *si* peut être suivi d'un
-*sinon* (`else`) et ce qui suit le *sinon* ne sera executé que si le test du
-*si* est faux ! Un peu comme je pourrais dire *Si j'ai mes chausettes, je mets
+*sinon* (`else`) et ce qui suit le *sinon* ne sera exécuté que si le test du
+*si* est faux ! Un peu comme je pourrais dire *Si j'ai mes chaussettes, je mets
 mes chaussures, sinon je mets mes chaussettes.* . Et puis il y a une troisième
 possibilité, les *sinon si* (`elif`): on exécute ce qui suit le *sinon si*
 seulement si tous les tests précédents étaient faux et celui là est vrai. Un peu
-comme je pourrais dire *Si j'ai mes chausettes, je mets mes chaussures, sinon si
+comme je pourrais dire *Si j'ai mes chaussettes, je mets mes chaussures, sinon si
 j'ai des sandales je les mets, sinon je mets des chaussettes.* .
 
 Avec l'indentation, le schéma reste toujours :
@@ -340,7 +340,7 @@ elif TEST3:
     # ce que je fais si tous les tests précédents sont faux
     # et le test 3 est vrai
 # (il peut y avoir autant de elif que nécessaire)
-else :
+else:
     # ce que je fais sinon
 
 # ce que je fais après dans tous les cas
@@ -441,7 +441,7 @@ Je ne veux pas compter les points du match 3
 
 Pour un nombre `n` de fois, on va dire que la variable `i` prend les valeurs
 `0`, `1`, ..., `n-2` et `n-1`. Mais attention, la variable n'a pas besoin de
-s'appeler `i`! Son nom n'a pas d'importance, à part pour la mentionner dans la
+s'appeler `i` ! Son nom n'a pas d'importance, à part pour la mentionner dans la
 boucle.
 
 Si je veux répéter un nombre `n` fois un bout de code, on écrira selon le schéma
@@ -483,7 +483,7 @@ avec seulement des boucles `for`. Effectivement, il existe une boucle, similaire
 à la boucle `for`, plus adaptée pour faire cela : la boucle `while`, qui se
 traduit en français par *tant que*.
 
-On s'en servira comme cela:
+On s'en servira comme cela :
 
 ``` {.python}
 while condition: # tant que la condition est vraie
@@ -527,7 +527,7 @@ print("2+2 = 4")
 
 Maintenant, essaies d'écrire un programme qui demande qui a marqué le point tant
 que la manche n'est pas finie (personne n'a atteint 6 points) et annonce le
-gagnant à la fin:
+gagnant à la fin :
 
 ``` {.text}
 1
@@ -668,7 +668,7 @@ score_j1 = 0
 score_j2 = 0
 
 for i in range(nb_manches):
-    score = int(input("Quel est le score à atteindre ?"))
+    score = int(input("Quel est le score à atteindre ? "))
     gagnant = manche(score)
 
     if gagnant == 1:
