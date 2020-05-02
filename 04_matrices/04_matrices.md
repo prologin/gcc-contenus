@@ -432,8 +432,8 @@ et une fonction qui permet de trouver le minimum parmi tous ces maximum.*
 
 **But** : écrire la fonction `eat(P)` qui prend une matrice représentant le
 terrain en paramètre et renvoie le nombre de moutons que va pouvoir manger le
-loup. Le loup me manger tous les moutons sur les cases adjacantes : les 8 cases
- qui se trouvent autour de la case cible.
+loup. Le loup ne peut manger que les moutons sur les cases adjacentes : les 8
+cases qui se trouvent autour de la case cible.
 
 **Exemple** :
 
