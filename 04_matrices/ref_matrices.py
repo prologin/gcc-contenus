@@ -52,6 +52,7 @@ def search_all(M, val):
 '''
 Exercice 4 : initialiser une matrice
 '''
+
 def set_matrix(lines, cols, val):
     matrix = []
     for lig in range(lines):
@@ -66,6 +67,7 @@ def set_matrix(lines, cols, val):
 '''
 Exercice 5 : compter les moutons
 '''
+
 def count(P, val):
 
     count = 0
@@ -151,22 +153,6 @@ def symmetricDiag(M):
 
     return True
 
-    """
-    i = 0
-
-    while i < lines:
-        j = 0
-        while j < cols:
-            if M[i][j] != M[j][i]:
-                return False
-
-            j += 1
-
-        i += 1
-
-    return True
-    """
-
 '''
 Exercice 9 : minimax
 '''
@@ -227,11 +213,10 @@ def eat(M):
 Exercice 11 : les cratères de la Lune
 '''
 
-'''
-    Visits the whole crater
-'''
 def replaceCrater(M, visitedMap, i, j):
-
+    '''
+    Visits the whole crater
+    '''
     visitedMap[i][j] = True
 
     if i < 0 or i >= len(M):
@@ -246,11 +231,10 @@ def replaceCrater(M, visitedMap, i, j):
                 replaceCrater(M, visitedMap, i + k, j + l)
 
 
-'''
-    Counts the number of craters on the map
-'''
 def craters(M):
-
+    """
+    Counts the number of craters on the map
+    """
     nbCraters = 0
 
     n = len(M)
