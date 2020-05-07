@@ -74,7 +74,7 @@ Pour tourner, nous appelons les fonctions `left` et `right` pour tourner
 respectivement a gauche et a droite, en indiauqnt le nombre de degrees
 qu'il faut tourner.
 
-Par exemple, `avancer` puis `tourner de 90 degrees` puis `avancer`
+Par exemple, _avancer_ puis _tourner de 90 degrees_ puis _avancer_
 donnerait le code suivant :
 
 ```python
@@ -95,10 +95,8 @@ Pour tourner dans l'autre sens, il suffit d'ecrire `rotate(-90)`
 
 Avec notre nouvel outil, essayons de reproduire le dessin suivant:
 
-_image
-        __
-     __|  |__
-_
+![Ligne carree](simple_square.png){width=6cm height=2cm}
+\ 
 
 Il faut avancer, tourner a gauche, avancer, tourner a droite, avancer,
 tourner a gauche et en fin avancer a nouveau.
@@ -145,7 +143,8 @@ Par exemple, nous pouvons prendre notre ligne carree que nous avons
 construit precedemment, et pour chaque ligne qui la constitue, dessiner une
 ligne carre au lieu.  Nous aurions donc la fractale suivante :
 
-_image 1 iteration -> 2 iterations -> 3 iterations -> ... -> n iterations_
+![Iterations image 1 iteration -> 2 iterations -> 3 iterations -> ... -> n iterations](square_iterations.png){width=15cm height=2cm}
+\ 
 
 Nous pouvons penser que pour cela, il faudrait ecrire le code suivant :
 
@@ -196,7 +195,8 @@ Le flocon de Koch est une fractale assez connue. Comme son nom l'implique,
 l'image finale d'une construction de cette fractale ressemble a un joli
 flocon de neige.
 
-_image du flocon_
+![Etoile](star.png){width=6cm height=6cm}
+\ 
 
 C'est en realite une fractale qui est dessinnee 5 fois. Elle est assez
 facile a faire comme nous avons fait notre fractale bassee sur les lignes
@@ -233,11 +233,9 @@ TODO
 ### L'eponge
 
 TODO
-''
 faire une fonction qui ecrit un carre (ca nous simplifiera la vie)
 une fonction un peu plus complexe : dessiner sur le carre du milieu,
-    puis re-iterer sur tous carres autours.
-''
+puis re-iterer sur tous carres autours.
 
 Pour rendre le trace de l'image encore plus rapide, vous pouvez mettre la
 ligne `tracer(..., 0)` a cote de la ligne `speed(0)` en remplacant les
@@ -251,11 +249,10 @@ TODO
 ## Dessiner un arbre
 
 TODO
-''
 avancer, tourner a gauche, appeler la fonction, tourner a droite,
 appeler la fonction, revenir en arriere
-''
 
+\newpage
 ## Reference turtle
 
 TODO
