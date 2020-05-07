@@ -25,34 +25,8 @@ def pentagon(length : float, iterations : int):
         draw_line(length, iterations)
         right(72)
 
-def line(length, iterations):
-    if iterations == 0:
-        return
-    forward(length / 3)
-
-    right(30)
-    line(length / 2, iterations - 1)
-    left(60)
-    line(length / 2, iterations - 1)
-    right(30)
-
-    forward(2 * length / 3)
-    backward(length)
-
-
-def lines(length, iterations):
-    for i in range(10):
-        line(length, iterations)
-        left(36)
-
 length = 500
 iterations = 3
-
-pendown()
-left(90)
-lines(length * 0.850650808, iterations)
-right(90)
-penup()
 
 goto( -length / 2, length * 0.68891909)
 pendown()

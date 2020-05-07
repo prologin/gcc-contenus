@@ -5,6 +5,7 @@ from turtle import *
 speed(0)
 penup()
 colormode(255)
+tracer(250, 0)
 
 def tree(length : float, iterations : int, r : int, g : int, b : int):
     color(r, g, b)

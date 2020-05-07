@@ -29,5 +29,6 @@ b = 0
 pencolor(r, g, b)
 pendown()
 draw_line(length, iterations)
+penup()
 
 input()
