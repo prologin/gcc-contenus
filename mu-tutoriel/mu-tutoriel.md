@@ -103,6 +103,7 @@ D'ailleurs, pour les plus curieux, REPL signifie:
 * Loop back / Boucler sur la première étape pour traiter de nouvelles commandes.
 
 Par exemple :
+
 ![repl-example](resources/repl-example.png)
 
 ### Le bouton 'Graphique'
@@ -136,9 +137,9 @@ Le bouton `Thème` permet de changer le thème visuel de Mu.
 
 Il en existe trois différents:
 * Lumineux : l'aspect par défaut du logiciel, texte en noir sur fond blanc ;
-Sombre : texte en blanc sur fond noir. On vous conseille d'utiliser celui-ci car
-il permet de moins fatiguer (et abimer) vos yeux quand vous passez beaucoup de
-temps à coder.
+* Sombre : texte en blanc sur fond noir. On vous conseille d'utiliser celui-ci
+car il permet de moins fatiguer (et abimer) vos yeux quand vous passez beaucoup
+de temps à coder.
 * Eclipse : c'est le même que le thème sombre, sauf que la console, le REPL ou
 les graphiques sont en thème lumineux.
 
@@ -170,7 +171,7 @@ on vous conseille plutôt de faire bien attention quand vous codez !
 
 ![help](resources/help.png)
 
-Le bouton 'Aide' ouvre une page web sur votre navigateur mais n'apporte pas
+Le bouton `Aide` ouvre une page web sur votre navigateur mais n'apporte pas
 d'aide pour coder en Python, uniquement pour vous montrer comment mieux utiliser
 le logiciel.
 
