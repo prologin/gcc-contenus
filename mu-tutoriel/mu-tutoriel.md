@@ -4,15 +4,17 @@ Mu est un éditeur de texte pour développer en Python.
 Il est complet mais reste minimaliste pour que tout le monde puisse le prendre
 en main facilement.
 
+Vous pouvez le télécharger [ici](https://codewith.mu/en/download).
+
 Ce tutoriel présente toutes les fonctionnalités du logiciel, une par une pour
 que vous puissez vous y retrouvez facilement !
 
 ## Au démarrage
 
-Au démarrage, Mu devrait vous demander dans quel mode, vous souhaitez
+Au démarrage, Mu devrait vous demander dans quel mode vous souhaitez
 développer. Vous trouverez une présentation plus détaillée des différents modes
 plus bas, mais sachez qu'il est préférable de commencer par le mode `Python3` le
-temps de decouvrir et bien maîtriser le language.
+temps de découvrir et bien maîtriser le language.
 
 Cliquez donc sur `Python3` et validez.
 
@@ -119,7 +121,7 @@ débute donc oubliez-le !
 
 ![zoomin](resources/zoom-in.png)
 
-Le bouton `Zoomer` permet comme son nom l'indique de grossir la taille du texte
+Le bouton `Zoomer` permet comme son nom l'indique d'agrandir la taille du texte
 dans l'éditeur. Aussi simple que ça !
 
 ### Le bouton 'Dé-zoomer'
@@ -136,11 +138,11 @@ taille du texte dans l'éditeur.
 Le bouton `Thème` permet de changer le thème visuel de Mu.
 
 Il en existe trois différents:
-* Lumineux : l'aspect par défaut du logiciel, texte en noir sur fond blanc ;
-* Sombre : texte en blanc sur fond noir. On vous conseille d'utiliser celui-ci
+* **Lumineux** : l'aspect par défaut du logiciel, texte en noir sur fond blanc ;
+* **Sombre** : texte en blanc sur fond noir. On vous conseille d'utiliser celui-ci
 car il permet de moins fatiguer (et abimer) vos yeux quand vous passez beaucoup
 de temps à coder.
-* Eclipse : c'est le même que le thème sombre, sauf que la console, le REPL ou
+* **Eclipse** : c'est le même que le thème sombre, sauf que la console, le REPL ou
 les graphiques sont en thème lumineux.
 
 ### Le bouton 'Vérifier'
@@ -175,7 +177,7 @@ Le bouton `Aide` ouvre une page web sur votre navigateur mais n'apporte pas
 d'aide pour coder en Python, uniquement pour vous montrer comment mieux utiliser
 le logiciel.
 
-Ce document que vous lisez et ici pour remplacer cela étant donné que les
+Ce document que vous lisez est ici pour remplacer cela étant donné que les
 développeurs de Mu Editor n'ont pas prit la peine de développer une page d'aide
 pour les francophones.
 
