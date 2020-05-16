@@ -9,7 +9,7 @@ class Node:
         self.is_end_word = False
 
     def add_child_at(self, index, child):
-        if index > len(self.children):
+        if index < 0 or index > len(self.children):
             return False
         self.children.insert(index, child)
         return True
