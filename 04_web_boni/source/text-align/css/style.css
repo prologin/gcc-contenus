@@ -1,0 +1,39 @@
+html { /* Applique le fond "planche de bois" sur toute la page */
+	background: fixed center / cover url('../img/fond.jpg');
+}
+
+body { /* On supprime les marges pas défaut de body*/
+	margin: 0;
+}
+
+header {
+	text-align: center;
+}
+
+figure { /* Ajoute un fond blanc aux éléments figure */
+	background: #FFFFFF;
+	width: 280px;
+	padding: 10px;
+}
+
+figure img {
+	width: 100%;
+}
+
+figure figcaption {
+	text-align: center;
+}
+
+main {
+	width: 900px;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer {
+	background: #FFFFFF;
+	padding: 20px;
+	margin-top: 30px;
+	text-align: center;
+}

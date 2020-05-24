@@ -6,6 +6,7 @@ TARGETS = \
 	03_reseau.pdf \
 	04_objet.pdf \
 	04_web.pdf \
+	04_web_boni.pdf \
 	05_projet_jeu.pdf \
 	05_projet_microbit.pdf \
 	bonus_python_avance.pdf \
