@@ -87,6 +87,8 @@ console qui s'est ouverte en bas de votre écran.
 
 ![debug](resources/debug.png)
 
+Cette partie arrive bientôt. D'ici là, n'hésitez pas à nous demander !
+
 ### Le bouton 'REPL'
 
 ![repl](resources/repl.png)
