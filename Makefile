@@ -1,4 +1,5 @@
 TARGETS = \
+	00_mu-tutoriel.pdf \
 	01_decouverte_micropython.pdf \
 	01_decouverte.pdf \
 	01_decouverte_micropython.pdf \
