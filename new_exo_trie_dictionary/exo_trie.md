@@ -10,6 +10,48 @@ Pré-requis: avoir vu les listes et les classes
 * Qu'est ce que c'est (vocabulaire)
 * A quoi ça sert
 
+## Qu'est ce que c'est un arbre ?
+
+Un _arbre_ est une structure de donnée qui est représentable sous la forme
+d’une hiérarchie qui ressemble fortement à celle d’un arbre tel qu’on les
+connaît dans les parcs et les forêts.
+
+[photo d'arbre et d'arbre info]
+
+Avant de discuter les nombreuses situations dans lesquelles les arbres sont
+utiles, il est très important de comprendre le vocabulaire qui leur est
+attribué.
+
+Chaque élément de l’arbre s’appelle un _nœud_ et a la possibilité d’avoir un ou
+plusieurs _fils_. Le nœud est donc un point de départ d’une ou plusieurs
+branches. Pour expliquer la relation entre les nœuds, on utilise les
+terminologies de la généalogie et donc un nœud est relié à son fils par une
+_arête_ et est caractérisé de _parent_.
+
+On peut également distinguer différentes catégories de nœuds:
+* La _racine_ est le premier nœud, sans parent.
+* Les _feuilles_ (dit aussi nœuds _externes_) sont les nœuds qui ne possèdent
+pas de fils.
+* Les nœuds _internes_ sont tous les nœuds qui possèdent un ou plusieurs fils.
+
+Les prochains termes sont également utilisés pour décrire les arbres:
+* La _profondeur_ est la distance (donc le nombre d'arête) de la racine vers
+un nœud.
+* La _hauteur_ est la profondeur maximale de l’arbre et donc la distance avec
+la feuille la plus profonde de l’arbre.
+* La _taille_ est le nombre de nœud que l'arbre contient.
+
+Enfin, un arbre est dit _étiqueté_ si ses nœuds contiennent des valeurs. Cette
+spécificité est très efficace pour pouvoir stocker des valeurs et des données,
+comme on le verra au fur et à mesure de ce TP.
+
+Il est important de noter qu’il y a pleins de définitions d’arbres plus
+spécifiques. Par exemple, il existe des arbres binaires où chaque nœud à au
+plus deux fils. Mais tous ont le même vocabulaire de base qui a été présenté
+au-dessus.
+
+## Leur utilisation
+
 # Introduction aux Tries
 
 * Explication de la structure, cas spécifique des arbres
