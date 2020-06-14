@@ -89,7 +89,7 @@ class Humain:
         self.nom = nom # Ceci est un autre attribut
 
     def info(self): # Ceci est une méthode
-        print("Mon nom est " + self.nom + " et j'ai " + self.age + " ans.")
+        print("Mon nom est " + self.nom + " et j'ai " + str(self.age) + " ans.")
 
     def anniversaire(self): # Ceci est une autre méthode
         self.age += 1
@@ -224,7 +224,7 @@ class Poisson(Animal):
         self.color = color # Un poisson a une couleur
 
     def nager(self): # Un poisson peut nager
-        print(">=o J'ai " + self.age + " ans")
+        print(">=o Je nage, je nage !")
 
 chien = Chien(2, "Rantamplan")
 chien.manger()
