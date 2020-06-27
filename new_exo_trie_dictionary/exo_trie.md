@@ -29,12 +29,14 @@ terminologies de la généalogie et donc un nœud est relié à son fils par une
 _arête_ et est caractérisé de _parent_.
 
 On peut également distinguer différentes catégories de nœuds:
+
 * La _racine_ est le premier nœud, sans parent.
 * Les _feuilles_ (dit aussi nœuds _externes_) sont les nœuds qui ne possèdent
 pas de fils.
 * Les nœuds _internes_ sont tous les nœuds qui possèdent un ou plusieurs fils.
 
 Les prochains termes sont également utilisés pour décrire les arbres:
+
 * La _profondeur_ est la distance (donc le nombre d'arête) de la racine vers
 un nœud.
 * La _hauteur_ est la profondeur maximale de l’arbre et donc la distance avec
@@ -102,20 +104,26 @@ On appelle cette fonction `insert_char`, qui prend en paramètre un caractère
 ```python
 def insert_char(self, char)
 ```
-Lors de l'ajout du caractère, nous avons 2 situations:  
+Lors de l'ajout du caractère, nous avons 2 situations:
+
 - soit le noeud n'est pas présent dans les fils auquel cas il faut le créer
- et l'ajouter  
-- soit le noeud est déjà présent  
+ et l'ajouter
+- soit le noeud est déjà présent
+
 On va donc parcourir les fils et comparer leur caractère à celui qu'on veut
 ajouter.  
 Pour récupérer le caractère d'un fils, il suffit d'accéder à son attribut,
 par exemple:
 ```python
 # si l'attribut de `Node` représentant la liste de fils est `children`
->>> child = node.children[0] # `child` est le premier fils du noeud `node`
+>>> child = node.children[0]
+```
+`child` est le premier fils du noeud `node` et de la classe `Node`
 
-# on récupère son caractère en faisant
->>> child.char # si l'attribut de `Node` représentant le caractère est `char`
+On récupère son caractère en faisant:
+```python
+# si l'attribut de `Node` représentant le caractère est `char`
+>>> child.char
 
 # ce qui est équivalent à
 >>> node.children[0].char
@@ -175,15 +183,15 @@ On a la `root`, ou point d'entrée de l'arbre (le cercle le plus haut) qui ne
 contient pas de caractère, il nous permet d'accéder aux premières lettres des
 mots.
 
-Puis, nous avons la première ligne, les initiales: 'a', 'l', 'p'. Le
+Puis, nous avons la première ligne, les initiales: `a`, `l`, `p`. Le
 dictionnaire contient 4 mots mais 2 d'entre eux ont la même initiale, ce qui
-nous donne 3 noeuds dans l'arbre.
+nous donne 3 noeuds au premier étage de l'arbre.
 
-Le noeud qui contient la lettre 'a' est coloré en bleu, ce qui signifie la fin
-du mot donc que le booléen du noeud 'a' est à `True`. Ainsi, nous retrouvons
+Le noeud qui contient la lettre `a` est coloré en bleu, ce qui signifie la fin
+du mot donc que le booléen du noeud `a` est à `True`. Ainsi, nous retrouvons
 le mot "a".
 
-Le noeud avec la lettre 'l' a deux fils, il est utilisé pour construire 2 mots:
+Le noeud avec la lettre `l` a deux fils, il est utilisé pour construire 2 mots:
 "la" et "le".
 
 Et on continue ainsi jusqu'à la fin.  
@@ -198,18 +206,18 @@ programme.
 
 D'après le schéma ci-dessus, on en conclut que suivre une branche revient à
 écrire un mot. Prenons la dernière branche par exemple, elle contient les noeuds
-'p', 'y', 't', 'h', 'o', 'n', qui représente le mot "python".
+`p`, `y`, `t`, `h`, `o`, `n`, qui représente le mot "python".
 
 Ainsi, pour donner les mots de notre dictionnaire, il suffit de suivre toutes
 les branches. C'est ce qu'on fait avec un `dfs` ou depth-first search (parcours
-en profondeur en français), c'est un algorithme récursif qui passe sur tous les
+en profondeur en français). C'est un algorithme récursif qui passe sur tous les
 noeuds de l'arbre. Plus particulièrement, nous allons utiliser un parcours en
 profondeur préfixe, puisqu'il commence par le permier fils et nous permet de
 garder l'ordre des noeuds, le dictionnaire affiché sera donc dans l'ordre
 lexicographique.
 
 Pour expliquer simplement, l'algorithme commence par descendre sur le premier
-fils, s'occupe de l'arbre de celui-ci, puis de passe au deuxième fils, etc.
+fils, s'occupe de son sous arbre, puis de passe au deuxième fils, etc.
 
 Voici l'algorithme:
 ```
@@ -224,66 +232,116 @@ algorithme, nous pouvons l'exécuter sur l'arbre précédent:
 
 - on commence avec `A` = la root de l'arbre, le noeud tout en haut
 - ligne 2: on visite ce noeud, nous allons expliquer plus tard quoi faire ici
-- ligne 3: une boucle sur les fils de `A`: on commence donc avec `F` = le premier
-fils: le noeud avec la lettre 'a'.
-- ligne 4: on appelle recursivement la fonction `visiterPréfixe` sur ce noeud
-- on revient donc à la ligne 1 avec l'arbre `A` = le noeud 'a'.
+- ligne 3: une boucle sur les fils de `A`: on commence donc avec `F` = le
+premier fils: le noeud avec la lettre `a`.
+- ligne 4: on appelle récursivement la fonction `visiterPréfixe` sur ce noeud
+- on revient donc à la ligne 1 avec l'arbre `A` = le noeud `a`.
 - ligne 2: visiter le noeud
-- ligne 3: une boucle sur les fils du noeud 'a' mais 'a' n'a pas de fils donc la
-fonction s'arrête ici et on revient à l'appel de celui lorsque `A` = la root et
-`F` = le noeud 'a' à la ligne 4.
-- le contenu de la boucle sur `F` est fini donc on revient à la ligne 3 avec `F` =
-le prochain fils de `A`, ici le noeud 'l'.
+- ligne 3: une boucle sur les fils du noeud `a`, mais `a` n'a pas de fils donc
+la fonction s'arrête ici et on revient à l'appel de celui-ci lorsque `A` = la
+root et `F` = le noeud `a`, à la ligne 4.
+- le contenu de la boucle sur `F` est fini donc on revient à la ligne 3 avec
+`F` = le prochain fils de `A`, ici le noeud `l`.
 - on appelle récursivement la fonction `visiterPréfixe` sur ce noeud
 - on est maintenant au début de la fonction `visiterPréfixe` avec `A` = le noeud
-'l'.
-- on passe plus rapidement, on va à la boucle sur les fils: le noeud 'l' = `A` a
+`l`.
+- on passe plus rapidement: on va à la boucle sur les fils: le noeud `l` = `A` a
 plusieurs fils, donc on rentre dans la boucle
-- `F` = le premier fils = le noeud 'a', on appelle la fonction `visiterPréfixe`
+- `F` = le premier fils = le noeud `a`, on appelle la fonction `visiterPréfixe`
 dessus
 - ce noeud n'a pas de fils donc on ne rentre pas dans la boucle et on revient
-à l'appel de la fonction ligne 4 avec `A` = noeud 'l' et `F` = noeud 'a'
-- on passe au fils suivant, `F` = noeud 'e' et on appelle la fonction sur celui-ci
+à l'appel de la fonction ligne 4 avec `A` = noeud `l` et `F` = noeud `a`
+- on passe au fils suivant, `F` = noeud `e` et on appelle la fonction sur celui-ci
 - ce noeud n'ayant pas de fils, on ne rentre pas dans la boucle et on revient
-à la ligne 4 avec `A` = le noeud 'l' et `F` = le noeud 'e'.
+à la ligne 4 avec `A` = le noeud `l` et `F` = le noeud `e`.
 - `A` n'ayant plus de fils à parcourir, on revient à l'appel précédent avec `A` =
-la root et `F` = le noeud 'l'
-- on passe au fils suivant de la root: `F` = noeud 'p' et on appelle la fonction
+la root et `F` = le noeud `l`
+- on passe au fils suivant de la root: `F` = noeud `p` et on appelle la fonction
 `visiterPréfixe` sur celui-ci
-- on a `A` = le noeud 'p', il possède un fils donc on appelle la fonction sur le
-noeud 'y'
-- on a `A` = le noeud 'y', il possède un fils donc on appelle la fonction sur le
-noeud 't'
-- on a `A` = le noeud 't', il possède un fils donc on appelle la fonction sur le
-noeud 'h'
-- on a `A` = le noeud 'h', il possède un fils donc on appelle la fonction sur le
-noeud 'o'
-- on a `A` = le noeud 'o', il possède un fils donc on appelle la fonction sur le
-noeud 'n'
-- le noeud 'n' n'a pas de fils, on revient sur l'appel précédent
-- le noeud 'o' n'a plus de fils à visiter, on revient sur l'appel précédent
-- et ainsi de suite jusqu'à revenir avec `A` = la root et `F` = le noeud 'p'
+- on a `A` = le noeud `p`, il possède un fils donc on appelle la fonction sur le
+noeud `y`
+- on a `A` = le noeud `y`, il possède un fils donc on appelle la fonction sur le
+noeud `t`
+- on a `A` = le noeud `t`, il possède un fils donc on appelle la fonction sur le
+noeud `h`
+- on a `A` = le noeud `h`, il possède un fils donc on appelle la fonction sur le
+noeud `o`
+- on a `A` = le noeud `o`, il possède un fils donc on appelle la fonction sur le
+noeud `n`
+- le noeud `n` n'a pas de fils, on revient sur l'appel précédent
+- le noeud `o` n'a plus de fils à visiter, on revient sur l'appel précédent
+- et ainsi de suite jusqu'à revenir avec `A` = la root et `F` = le noeud `p`
 - le noeud root n'ayant plus de fils à visiter, on sort de l'algorithme.
 
-Pour résumer, nous sommes passer sur les noeuds de l'arbre avec l'ordre:
-
-- root
-- 'a'
-- 'l'
-- 'a'
-- 'e'
-- 'p'
-- 'y'
-- 't'
-- 'h'
-- 'o'
-- 'n'
-
-On peut representer l'ordre de cet algorithme peut être vu comme:  
-![Prefix](dfs_prefix.png){width=5cm height=4cm}
+Pour résumer, nous sommes passé sur les noeuds de l'arbre dans le même ordre
+que ces flèches numérotées:  
+![Prefix](dict_dfs.png){width=8cm height=10cm}
 
 ### Concrètement
 
+On reprend notre classe `Node`, l'algorithme se traduit par:
+```python
+def parcours(root):
+    visit(root) # une action à faire sur le noeud courant
+    for child in root.children:
+        parcours(child)
+```
+
+Par exemple, si nous voulons afficher les noeuds dans l'ordre de visite:
+```python
+def display(root):
+    print(root.char)
+    for child in root.children:
+        display(child)
+
+
+>>> display(trie) # trie étant la root de l'arbre précédent
+
+a
+l
+a
+e
+p
+y
+t
+h
+o
+n
+```
+
+Pour que vous puissez tester plus rapidement, voici le code pour créer l'arbre:
+```python
+root = Node('')
+
+a1 = Node('a')
+# raccroche le fils `a1` à son parent `root`
+root.children.append(a1) # première branche
+
+l = Node('l')
+a2 = Node('a')
+l.children.append(a2)
+
+e = Node('e')
+l.children.append(e)
+
+root.children.append(l) # deuxième branche
+
+p = Node('p')
+y = Node('y')
+t = Node('t')
+h = Node('h')
+o = Node('o')
+n = Node('n')
+o.children.append(n)
+h.children.append(o)
+t.children.append(h)
+y.children.append(t)
+p.children.append(y)
+
+root.children.append(p) # troisième branche
+
+display(root)
+```
 
 ## Recherche d'un mot
 
