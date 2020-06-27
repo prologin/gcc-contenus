@@ -381,6 +381,66 @@ Résultat attendu pour l'arbre précédent:
 "python"
 ```
 
+### Récupérer les mots
+
+Sur le même principe, on peut créer une fonction qui récupère la liste des mots
+présents dans le dictionnaire.
+
+Contrairement aux fonctions précédentes, celle-ci doit retourner un objet: une
+liste. Si on se rappelle l'algorithme de parcours, après l'appel récursif à la
+fonction, on devra en plus récupérer la valeur de retour de celle-ci. Ce qui
+nous donne, pour une liste:
+```python
+def parcours(root):
+    res = []
+    visit(root) # une action à faire sur le noeud courant
+    for child in root.children:
+        res_child = parcours(child)
+        res += res_child # fusionne les listes
+    return res # retourne la liste formée
+```
+
+Conseil: Pour ajouter un élément à la fin d'une liste, on peut utiliser la
+méthode `append`.  
+Ex:
+```python
+>>> l = []
+>>> l
+[]
+>>> l.append("a")
+>>> l
+["a"]
+>>> l.append("prolo")
+>>> l
+["a", "prolo"]
+```
+
+La fonction s'appellera `get_words` et s'utilisera comme ceci:
+```python
+>>> get_words(root, "") # root étant l'arbre précédent
+["a", "la", "le", "python"]
+```
+
+
+On peut même l'intégrer dans la classe `Node` puisqu'on l'appelle récursivement
+sur les noeuds:
+```python
+def get_words(self, prefix="")
+```
+Il suffira de remplacer les occurences de `root` dans l'algorithme par `self`.
+
+Le fait d'écrire `prefix=""` dans le prototype de la fonction permet de
+spécifier la valeur par défaut du paramètre `prefix`, la fonction peut ainsi
+être appelée en omettant ce paramètre.  
+Ex:
+```python
+>>> root.get_words("") # prefix est donné explicitement
+["a", "la", "le", "python"]
+# ce qui est équivalent à
+>>> root.get_words() # prefix prend sa valeur par défaut: ""
+["a", "la", "le", "python"]
+```
+
 ## Recherche d'un mot
 
 ## Création du dictionnaire
