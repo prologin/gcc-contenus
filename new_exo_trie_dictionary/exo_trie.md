@@ -343,6 +343,44 @@ root.children.append(p) # troisième branche
 display(root)
 ```
 
+### Afficher des mots
+
+L'affichage précédent permet de comprendre l'algorithme mais on arrive pas à
+lire les mots directement. On va donc modifier la fonction précédente pour
+afficher le mot entièrement, une fois le noeud contenant la dernière lettre
+visitée.
+
+Pour cela, il nous suffit de reconstruire le mot lors de la descente, et de
+l'afficher lorsque le booléen représentant la fin du mot est à `True`.  
+Il faudra que la fonction prenne un second paramètre: la chaine de caractères
+correspondant au début du mot.
+```python
+def display(root, word)
+```
+
+Conseil: on peut composer une chaine de caractères en faisant simplement une
+somme.  
+Ex:
+```python
+>>> "l" + "e"
+"le"
+
+>>> "" + "a"
+"a"
+
+>>> "pyt" + "h"
+"pyth"
+```
+
+Résultat attendu pour l'arbre précédent:
+```python
+>>> display(root, "")
+"a"
+"la"
+"le"
+"python"
+```
+
 ## Recherche d'un mot
 
 ## Création du dictionnaire
