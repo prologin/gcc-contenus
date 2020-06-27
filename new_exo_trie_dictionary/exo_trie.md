@@ -71,7 +71,8 @@ Le caractère est donné en paramètre, la liste de fils est initialisée vide, 
 la plupart du temps, le mot n'est pas terminé donc on initialisera le booléen
 à `False`.
 ```python
-def __init__(self, char)
+class Node:
+    def __init__(self, char)
 ```
 
 ## Insertion
@@ -82,7 +83,10 @@ On va donc lui donner une autre méthode, `add_child_at`. Elle prendra en
 paramètre un entier qui représente la position où l'on veut ajouter un noeud
 dans la liste de fils et le noeud en question.
 ```python
-def add_child_at(self, index, child_node)
+class Node:
+    # méthodes précédentes
+
+    def add_child_at(self, index, child_node)
 ```
 Je vous conseille de regarder les fonctions sur les listes, elle vous permettra
 d'ajouter le noeud dans la liste très simplement.  
@@ -102,7 +106,10 @@ bon emplacement.
 On appelle cette fonction `insert_char`, qui prend en paramètre un caractère
 à ajouter dans les fils du noeud courant.
 ```python
-def insert_char(self, char)
+class Node:
+    # méthodes précédentes
+
+    def insert_char(self, char)
 ```
 Lors de l'ajout du caractère, nous avons 2 situations:
 
@@ -425,7 +432,10 @@ La fonction s'appellera `get_words` et s'utilisera comme ceci:
 On peut même l'intégrer dans la classe `Node` puisqu'on l'appelle récursivement
 sur les noeuds:
 ```python
-def get_words(self, prefix="")
+class Node:
+    # méthodes précédentes
+
+    def get_words(self, prefix="")
 ```
 Il suffira de remplacer les occurences de `root` dans l'algorithme par `self`.
 
@@ -442,6 +452,58 @@ Ex:
 ```
 
 ## Recherche d'un mot
+
+En utilisant les fonctions précédentes, il serait facile de trouver un mot dans
+notre dictionnaire. Il suffirait de récupérer la liste de mots avec `get_words`
+et de comparer chaque mot avec celui qu'on cherche, mais on perdrait l'intérêt
+de notre structure `Trie` qui permet une recherche beaucoup plus rapide.
+
+Chercher un mot avec notre structure est en fait assez simple, il suffit de
+suivre les lettres dans l'ordre, en suivant les liens parent-fils.  
+Par exemple, dans notre arbre précédent, pour chercher le mot "le":
+
+- on cherche dans les fils de la `root`, si un noeud possède la lettre `l`
+- il est présent donc on rappelle recursivement la fonction, en retirant une
+lettre au mot recherché
+- on est donc sur le noeud `l` et on cherche le mot "e"
+- le noeud `l` possède un fils avec la lettre `e` donc on appelle récursivement
+la fonction dessus
+- on est sur le noeud `e` et on cherche le mot ""
+- le mot est vide donc il nous suffit de vérifier le booléen représentant la fin
+du mot pour savoir si le mot est bien présent dans notre dictionnaire
+
+Si un des caractères n'était pas trouvé, le mot ne serait pas présent dans
+notre dictionnaire.
+
+Cette fonction récursive doit nous renseigner sur oui ou non le mot est présent
+dans le dictionnaire, elle doit donc retourner un booléen.  
+Ce booléen est mis à `True` si le mot est trouvé et est remonté à l'utilisateur
+en récupérant la valeur de retour de l'appel récursif.
+
+Ex:
+```python
+def exists(root, word)
+
+>>> exists(root, "le") # root étant l'arbre précédent
+True
+>>> exists(root, "la")
+True
+>>> exists(root, "lu")
+False
+>>> exists(root, "l")
+False # car le booléen de fin de mot du noeud `l` est à `False`
+>>> exists(root, "e")
+False # car le noeud `root` ne possède pas de fils avec la lettre `e`
+```
+
+On peut également intégrer la fonction `exists` à la classe `Node`:
+```python
+class Node:
+    # méthodes précédentes
+
+    def exists(self, word)
+```
+Et en remplaçant `root` par `self` dans la fonction.
 
 ## Création du dictionnaire
 
