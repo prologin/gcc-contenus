@@ -698,10 +698,74 @@ précedemment, on a donc:
 
 Si vous avez aimé créer ce dictionnaire, on vous propose de rajouter des
 fonctionnalités pour jouer un peu plus avec !  
-Tous les bonus sont indépendants, donc vous pouvez choisir de commencer par
+Tous les bonii sont indépendants, donc vous pouvez choisir de commencer par
 celui que vous voulez.
 
-* Spell Checker sur un fichier donné => affiche les fautes
-* Initialisation du dictionnaire à partir d'un fichier de texte
-* Recherche dichotomique
-* Autocomplétion lorsque l'utilisateur écrit
+Attention: Vous serez un peu moins guidé dans les bonus, donc n'hésitez pas
+à demander encore plus d'aide aux encadrants.
+
+## Initialisation du dictionnaire à partir d'un fichier de texte
+
+Pour réaliser ce bonus, vous allez devoir lire un fichier et ajouter les mots
+qu'il contient à votre dictionnaire. Le fichier contient un mot par ligne.  
+Ex:
+```
+a
+le
+python
+la
+```
+Ce fichier permet de créer l'arbre utilisé tout au long de ce sujet.
+
+Conseil:
+
+- Vous pouvez lire un fichier en utilisant la fonction `open`. Cherchez comment
+elle s'utilise dans la documentation python. Il ne faut pas oubliez de fermer
+le fichier lorsqu'on n'en a plus besoin.
+- Vous pouvez récupérer les lignes du fichier une fois ouvert avec la méthode
+`readlines`.
+- Vous pouvez retirer le `\n` des chaines de caractères, qui permet de sauter
+une ligne dans le fichier d'origine, avec la méthode `strip` des chaines de
+caractères.
+
+## Spell Checker sur un fichier donné => affiche les fautes
+
+Le but de ce bonus est de lire le texte d'un fichier et de vérifier que chaque
+mot existe. Si un mot n'existe pas, on le renseigne à l'utilisateur. Si tous
+les mots existent, on affiche le message "Tous les mots sont dans le
+dictionnaire".
+
+Conseil:
+
+- Vous pouvez lire un fichier en utilisant la fonction `open`. Cherchez comment
+elle s'utilise dans la documentation python. Il ne faut pas oubliez de fermer
+le fichier lorsqu'on n'en a plus besoin.
+- split avec regex: re.split, la regex: "\.|'|\"|,|:|;|\n|\r| |!|\?|<|>|\[|\]|{|}|=|\+|%|/|\*"
+[TODO]
+
+## Recherche dichotomique
+
+Ce bonus est purement algorithmique. Il permet une recherche encore plus rapide
+des mots dans le dictionnaire.
+
+Le principe de la dichotomie est le suivant:
+
+- On compare la valeur cherchée à la valeur centrale de la liste ou du tableau
+- Si les 2 valeurs est égales, on a trouvé l'élément qu'on cherchait, on le
+retourne
+- Si la valeur cherchée est inférieure à la valeur centrale, on continue de
+chercher sur la première partie du tableau
+- Si la valeur cherchée est supérieure à la valeur centrale, on continue de
+chercher sur la deuxième partie du tableau
+- On continue jusqu'à trouver l'élément que l'on cherche.
+
+Cet algorithme pourra être utilisé à chaque recherche du caractère suivant dans
+la liste de fils d'un noeud.
+
+## Autocomplétion lorsque l'utilisateur écrit
+
+Probablement le plus dur des bonii présentés. Le but est de permettre à
+l'utilisateur d'écrire plus facilement en lui proposant les mots contenus dans
+le dictionnaire qui commencent par les lettres écrites.
+
+[TODO]
