@@ -740,7 +740,10 @@ Conseil:
 - Vous pouvez lire un fichier en utilisant la fonction `open`. Cherchez comment
 elle s'utilise dans la documentation python. Il ne faut pas oubliez de fermer
 le fichier lorsqu'on n'en a plus besoin.
-- split avec regex: re.split, la regex: "\.|'|\"|,|:|;|\n|\r| |!|\?|<|>|\[|\]|{|}|=|\+|%|/|\*"
+- split avec regex: re.split, la regex:
+```python
+"\.|'|\"|,|:|;|\n|\r| |!|\?|<|>|\[|\]|{|}|=|\+|%|/|\*"
+```
 [TODO]
 
 ## Recherche dichotomique
