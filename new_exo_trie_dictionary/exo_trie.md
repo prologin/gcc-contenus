@@ -163,13 +163,11 @@ partie qui nous intéresse: le spell checker (vérificateur d'orthographe).
 Le but principal de cet exercice est de vérifier l'orthographe des mots donnés
 en entrée par l'utilisateur.
 
-* Fonctions basiques:
-    - créer le dictionnaire et y rajouter des mots
-    - afficher le dictionnaire
-    - rechercher si un mot est dans le dictionnaire, est ce qu'il existe
-=> Dict
+On va implémenter des fonctions basiques comme:
 
-* Explications: Création + Parcours + Recherche
+- créer le dictionnaire et y rajouter des mots
+- afficher le dictionnaire
+- rechercher si un mot est dans le dictionnaire, est ce qu'il existe
 
 ## Parcours du dictionnaire
 
@@ -542,7 +540,7 @@ noeud qui représente la fin du mot à `True`.
 Exemple: Dans l'arbre précédent, on veut ajouter le mot "liste".
 
 Donc de l'arbre  
-![Trie](trie_minimalist.png){width=4cm height=8cm}
+![Trie1](trie_minimalist.png){width=4cm height=8cm}
 
 On passera à:  
 ![Trie2](trie2.png){width=4.8cm height=8cm}
@@ -578,14 +576,14 @@ lui créer une petite interface. Elle peut prendre simplement la forme de
 quelques phrases écrites dans la console.
 
 Par exemple, votre programme pourrait agir ainsi:
-```shell
+```
 42sh$ ./my_dict.py # le nom de votre fichier
 Entrez votre commande: # message affiché par votre programme
-help # message donné par l'utilisateur pour demander la liste des commandes possibles
-- exit
-- add
-- exist
-- display
+help # message de l'utilisateur pour demander la liste des commandes disponibles
+- exit: quitter le programme
+- add: ajouter un mot
+- exist: vérifier qu'un mot existe
+- display: afficher les mots du dictionnaire
 
 Entrez votre commande:
 add
@@ -656,7 +654,8 @@ print("Bonjour !")
 name = input("Quel est ton nom ?\n")
 print("Enchanté " + name)
 ```
-```shell
+
+```
 42sh$ ./program.py # on lance le code ci dessus
 Bonjour !
 Quel est ton nom ?
@@ -744,7 +743,7 @@ le fichier lorsqu'on n'en a plus besoin.
 ```python
 "\.|'|\"|,|:|;|\n|\r| |!|\?|<|>|\[|\]|{|}|=|\+|%|/|\*"
 ```
-[TODO]
+// TODO
 
 ## Recherche dichotomique
 
@@ -771,4 +770,4 @@ Probablement le plus dur des bonii présentés. Le but est de permettre à
 l'utilisateur d'écrire plus facilement en lui proposant les mots contenus dans
 le dictionnaire qui commencent par les lettres écrites.
 
-[TODO]
+// TODO
