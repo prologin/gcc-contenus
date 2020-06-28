@@ -3,7 +3,7 @@ title: Trie Data Structures
 date: 2020
 ---
 
-Pré-requis: avoir vu les listes et les classes
+Pré-requis: avoir vite fait vu les listes, les fonctions, les conditions et les classes
 
 # Cours sur la structure d'arbre
 
@@ -318,27 +318,27 @@ n
 
 Pour que vous puissez tester plus rapidement, voici le code pour créer l'arbre:
 ```python
-root = Node('')
+root = Node("")
 
-a1 = Node('a')
+a1 = Node("a")
 # raccroche le fils `a1` à son parent `root`
 root.children.append(a1) # première branche
 
-l = Node('l')
-a2 = Node('a')
+l = Node("l")
+a2 = Node("a")
 l.children.append(a2)
 
-e = Node('e')
+e = Node("e")
 l.children.append(e)
 
 root.children.append(l) # deuxième branche
 
-p = Node('p')
-y = Node('y')
-t = Node('t')
-h = Node('h')
-o = Node('o')
-n = Node('n')
+p = Node("p")
+y = Node("y")
+t = Node("t")
+h = Node("h")
+o = Node("o")
+n = Node("n")
 o.children.append(n)
 h.children.append(o)
 t.children.append(h)
@@ -507,12 +507,201 @@ Et en remplaçant `root` par `self` dans la fonction.
 
 ## Création du dictionnaire
 
+Depuis le début, on fait tout avec le classe `Node`, c'est très pratique grâce
+à sa structure, mais notre but étant de créer un dictionnaire, c'est peut-être
+pas assez explicite seulement avec une classe. On va donc définir la classe
+`Dict` qui aura pour seul attribut la racine de notre dictionnaire.
 
-* Ajouter une command line au main
+Si on nomme cet attribut `root`, cela nous donne:
+```python
+class Dict:
+    def __init__(self):
+        self.root = Node("")
+```
+Comme dit précédemment la racine de l'arbre ne sert qu'a contenir les initiales
+des mots, on l'initialise donc avec la chaine de caractères vide.
+
+### Ajout d'un mot
+
+On commence toujours avec un arbre vide, donc l'ajout des premiers mots revient
+à créer un noeud par lettre et de les relier (comme dans l'exemple de l'arbre
+créé pour tester la fonction `display`).
+
+Mais ensuite, on voudra ajouter des mots lorsque la première partie sera déjà
+présente dans l'arbre, donc il faut d'abord vérifier pour chaque lettre si le
+noeud existe:
+
+- si oui, on descend sur ce noeud et on cherche la prochaine lettre
+- si non, on crée le noeud avec la lettre en question, on l'ajoute dans la
+liste de fils du noeud précédent, et on descend sur le noeud pour continuer
+l'ajout
+
+Une fois sur le noeud contenant la dernière lettre, on mettra le booléen du
+noeud qui représente la fin du mot à `True`.
+
+Exemple: Dans l'arbre précédent, on veut ajouter le mot "liste".
+
+Donc de l'arbre  
+![Trie](trie_minimalist.png){width=4cm height=8cm}
+
+On passera à:  
+![Trie2](trie2.png){width=4.8cm height=8cm}
+
+Avec les étapes:
+
+- on veut ajouter `liste`, on regarde d'abord si la `root` possède un fils avec
+la lettre `l`
+- ce noeud existe donc on cherche le reste du mot: "iste", au niveau de ce noeud
+- on regarde si le noeud `l` possède un fils avec la lettre `i`
+- ce noeud n'existe pas, donc on le crée et on ajoute le noeud dans les fils du
+noeud `l`
+- on cherche ensuite le reste du mot: "ste", au niveau de ce noeud
+- le noeud `i` ne possède pas de fils, donc on crée le noeud `s` et on l'ajoute
+- et ainsi de suite jusqu'au noeud `e`
+- le noeud `e` est créé et ajouté aux fils du noeud `t`, le reste du mot est ""
+donc on n'a plus de lettre à ajouter, on met le bouléen fin de mot du noeud `e`
+à True
+
+La fonction s'appellera `add_word`, prendra en paramètre un mot et sera une
+méthode de la classe `Dict`.  
+Pour vous aider et découper le problème en sous parties, vous pouvez créer la
+méthode `get_child` de la classe `Node` qui cherche un caractère dans les fils
+du noeud, et retournerait le fils en question s'il est trouvé, `None` sinon.  
+Enfin, on se servira de la méthode `insert_char` écrite précédemment, qui crée
+un noeud avec la lettre donnée en paramètre et l'ajoute à la liste de fils.
+
+
+## Dernière étape: le main
+
+Pour permettre à l'utilisateur d'utiliser vos fonctions, il est préférable de
+lui créer une petite interface. Elle peut prendre simplement la forme de
+quelques phrases écrites dans la console.
+
+Par exemple, votre programme pourrait agir ainsi:
+```shell
+42sh$ ./my_dict.py # le nom de votre fichier
+Entrez votre commande: # message affiché par votre programme
+help # message donné par l'utilisateur pour demander la liste des commandes possibles
+- exit
+- add
+- exist
+- display
+
+Entrez votre commande:
+add
+Quel mot ajouter ?
+gcc
+
+Entrez votre commande:
+display
+"gcc"
+
+Entrez votre commande:
+exit
+42sh$ # Vous avez quitté le programme
+```
+
+Vous pouvez ajouter toutes sortes de commandes, il vous suffit de les ajouter
+à la liste de celles affichées après la commande `help` pour renseigner à
+l'utilisateur qu'elles existent.
+
+Une interface utilisateur prend souvent la forme d'une boucle infinie, qui
+répète donc les mêmes actions. Il faut permettre à l'utilisateur de quand même
+quitter votre programme avec une action de sortie, ici `exit`. Cette action va
+simplement arrêter la boucle, avec le mot clé `break`.
+
+Petit rappel sur les boucles:  
+On peut créer une boucle avec le mot clé `while` ou avec le mot clé `for`.  
+On a déjà vu une première utilisateur du mot clé `for` avec l'algorithme de
+parcours d'arbre.  
+Pour l'interface utilisateur, il sera plus simple d'utiliser un `while`.  
+Ce mot clé définit une boucle qui s'exécute "tant que" le booléen qui suit le
+mot clé s'évaluera à `True`.  
+Par exemple:
+```python
+>>> while True:
+        print("a") # s'exécutera indéfiniment
+>>> while False:
+        print("b") # ne s'exécutera jamais
+>>> i = 0
+>>> while i < 3:
+        print(i)
+        i += 1
+0
+1
+2
+# s'arrête lorsque i = 3
+```
+On peut également stopper la boucle sans modifier sa condition:
+```python
+>>> i = 0
+>>> while i < 5: # condition: i < 5
+        print(i)
+        if (i == 2)
+            break # stop la boucle
+        i += 1
+0
+1
+2
+```
+
+Conseil:  
+Pour afficher une phrase, un entier ou autre à l'utilisateur, on utilise la
+fonction `print`.  
+Pour récupérer le message entré par l'utilisateur, on utilise la fonction
+`input`.  
+Exemple:
+```python
+print("Bonjour !")
+name = input("Quel est ton nom ?\n")
+print("Enchanté " + name)
+```
+```shell
+42sh$ ./program.py # on lance le code ci dessus
+Bonjour !
+Quel est ton nom ?
+Marie # écrit par l'utilisateur
+Enchanté Marie
+```
+
+
+Conseil 2:  
+En python, il est simple de comparer des chaînes de caractères, on peut
+utiliser les opérateurs logiques: `==`, `<`, `>`. L'ordre utilisé est l'ordre
+lexicographique:
+```python
+>>> "a" < "b"
+True
+>>> "b" < "a"
+False
+>>> "ab" < "b"
+True
+>>> "abcdef" < "g"
+True
+>>> "ab" == "ab"
+True
+>>> "ab" == "a"
+False
+>>> "ab" == "ba"
+False
+```
+
+
+On vous recommande de créer une commande pour chaque fonction écrite
+précedemment, on a donc:
+
+- ajouter un mot au dictionnaire
+- tester si un mot existe
+- afficher la liste de mots contenu dans le dictionnaire
 
 # Bonii
 
-* Recherche dichotomique
-* Initialisation du dictionnaire à partir d'un fichier de texte
+Si vous avez aimé créer ce dictionnaire, on vous propose de rajouter des
+fonctionnalités pour jouer un peu plus avec !  
+Tous les bonus sont indépendants, donc vous pouvez choisir de commencer par
+celui que vous voulez.
+
 * Spell Checker sur un fichier donné => affiche les fautes
+* Initialisation du dictionnaire à partir d'un fichier de texte
+* Recherche dichotomique
 * Autocomplétion lorsque l'utilisateur écrit
