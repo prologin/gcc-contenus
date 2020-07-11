@@ -56,8 +56,23 @@ au-dessus.
 
 # Introduction aux Tries
 
-* Explication de la structure, cas spécifique des arbres
-* Les guider pour l'implem en python => Node
+Un `Trie` est un cas particulier de la structure de données d'arbre (`Tree`).  
+Il peut servir à implémenter des algorithmes de compression, de correction
+orthographique, etc. en l'utilisant pour stocker un dictionnaire.
+
+Par exemple:  
+![Trie](trie_minimalist.png){width=4.5cm height=8cm}
+
+Ce `Trie` représente le dictionnaire:
+
+- "a"
+- "la"
+- "le"
+- "python"
+
+
+Nous allons dans cet exercice implémenter cette structure et l'utiliser comme
+correcteur orthographique.
 
 ## Création
 
@@ -174,7 +189,8 @@ On va implémenter des fonctions basiques comme:
 Pour pouvoir vérifier l'orthographe de mots, nous avons besoin comparer les
 mots présents dans le dictionnaire avec ceux de l'utilisateur.  
 
-Prenons comme exemple un dictionnaire minimaliste qui contient les mots:
+Prenons comme exemple le dictionnaire minimaliste utilisé précédemment, qui
+contient les mots:
 
 * "a"
 * "le"
@@ -727,7 +743,7 @@ le fichier lorsqu'on n'en a plus besoin.
 une ligne dans le fichier d'origine, avec la méthode `strip` des chaines de
 caractères.
 
-## Spell Checker sur un fichier donné => affiche les fautes
+## Spell Checker sur un fichier donné
 
 Le but de ce bonus est de lire le texte d'un fichier et de vérifier que chaque
 mot existe. Si un mot n'existe pas, on le renseigne à l'utilisateur. Si tous
@@ -739,11 +755,15 @@ Conseil:
 - Vous pouvez lire un fichier en utilisant la fonction `open`. Cherchez comment
 elle s'utilise dans la documentation python. Il ne faut pas oubliez de fermer
 le fichier lorsqu'on n'en a plus besoin.
-- split avec regex: re.split, la regex:
+- Vous pouvez séparer les mots du fichier en utilisant le module `re` qui
+permet d'utiliser les expressions régulières (motif qui décrit un ensemble de
+chaînes de caractères, par exemple le mot "a.b" peut être décrit par
+"[a-z]\.[a-z]": une lettre puis un '.', puis une lettre).
+Voici l'expression contenant les différents caractères susceptibles de séparer
+les mots:
 ```python
 "\.|'|\"|,|:|;|\n|\r| |!|\?|<|>|\[|\]|{|}|=|\+|%|/|\*"
 ```
-// TODO
 
 ## Recherche dichotomique
 
@@ -770,4 +790,20 @@ Probablement le plus dur des bonii présentés. Le but est de permettre à
 l'utilisateur d'écrire plus facilement en lui proposant les mots contenus dans
 le dictionnaire qui commencent par les lettres écrites.
 
-// TODO
+On va vouloir:
+
+- Terminer la ligne lorsque l'utilisateur appuie sur `Enter`,
+- Il peut y avoir plusieurs mots sur la même ligne,
+- Pouvoir supprimer la dernière lettre lorsqu'on appui sur `Backspace`,
+- Afficher des suggestions (s'il existe des mots dans le dictionnaire
+commençant par le mot écrit par l'utilisateur), séparées par " - " s'il en
+existe plusieurs.
+
+Conseil:
+
+- Utilisez le module python `getkey` qui permet de récupérer les touches
+entrées par l'utilisateur (notamment la fonction `getkey()` et `keys.ENTER` etc)
+- Le caractère `\r` permet de revenir au début de la ligne lors de l'affichage
+
+Si vous avez compris la structure de `Trie`, récupérer les mots qui ont le même
+préfixe devrait être rapide.

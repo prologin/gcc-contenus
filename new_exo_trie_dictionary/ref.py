@@ -195,7 +195,7 @@ def main():
         elif word == "print":
             d.print_words()
 
-        elif word == "autocomplete":
+        elif word == "autocomplete": # bonus
             autocomplete(d)
 
         else:
