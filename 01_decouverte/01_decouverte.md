@@ -180,9 +180,9 @@ print(score_total)
 ```
 
 Plus précisément, elle veut écrire un programme qui attend de l'utilisateur (on
-dit aussi qui prend en entrée ) le nombre de points qu'a l'équipe en ce moment,
+dit aussi qui prend en entrée) le nombre de points qu'a l'équipe en ce moment,
 puis prend en entrée le nombre de points marqués, et ensuite affiche dans le
-terminal (on dit aussi qu'il écrit en sortie ) le nouveau total.
+terminal (on dit aussi qu'il écrit en sortie) le nouveau total.
 
 Pour cela, son programme va devoir récupérer des entiers. Une façon de le faire
 est à l'aide de la fonction `int`. Cette fonction permet de convertir ce que
@@ -456,7 +456,7 @@ for i in range(n):
 
 #### Exercice 4
 
-Alice et toi êtes désormais armées pour écrire une fonction qui demande d'abord
+Alice et toi êtes désormais prêtes pour écrire une fonction qui demande d'abord
 le nombre de manches, puis les résultats des manches, et enfin le programme
 annonçant le vainqueur du match :
 
@@ -518,14 +518,14 @@ resultat = 0
 while resultat != 4:
     # /!\ on voulait probablement utiliser la
     # variable `resultat`  et non pas `entree`
-    entree = int(input("Que vaut 2+2 ? "))
+    entree = int(input("Que vaut 2+2 ?"))
 
 print("2+2 = 4")
 ```
 
 #### Exercice 5
 
-Maintenant, essaies d'écrire un programme qui demande qui a marqué le point tant
+Maintenant, essaie d'écrire un programme qui demande qui a marqué le point tant
 que la manche n'est pas finie (personne n'a atteint 6 points) et annonce le
 gagnant à la fin :
 
@@ -549,7 +549,7 @@ demander à jouer un nombre variable de manches dans un même match. Pour cela, 
 va utiliser un nouvel outil, les *fonctions*. Une fonction, c'est un bout de
 code qui prend en entrée des choses, et donne en sortie d'autres choses. En
 fait, ce n'est pas la première fois que l'on utilise des fonctions : `print` et
-`input` étaient des fonctions.  Alice a aussi vu en cours de math des fonctions
+`input` étaient des fonctions.  Alice a aussi vu en cours de maths des fonctions
 , comme $f(x) = 2x + 1$, et se dit qu'on pourrait l'écrire en informatique aussi
 ! Ici, l'entrée est un premier nombre, et la sortie un autre nombre, égal au
 premier multiplié par deux, et auquel on a ajouté 1. En Python, on peut l'écrire
