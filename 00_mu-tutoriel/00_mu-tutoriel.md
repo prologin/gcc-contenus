@@ -1,5 +1,9 @@
-# Comment utiliser Mu Editor ?
+---
+title: Mu Editor
+date: 2020
+---
 
+## Comment utiliser Mu Editor ?
 Mu est un éditeur de texte pour développer en Python.
 Il est complet mais reste minimaliste pour que tout le monde puisse le prendre
 en main facilement.
@@ -18,18 +22,19 @@ temps de découvrir et bien maîtriser le language.
 
 Cliquez donc sur `Python3` et validez.
 
-![startup](resources/onstartup.png)
+\begin{center}\includegraphics[width=0.85\linewidth]{resources/onstartup.png}\end{center}
 
 ## La barre d'outils
 
 Mu Editor possède une barre remplie d'outils et de fonctionnalités pour vous
 permettre de faire à peu près tout ce qui est possible dans un éditeur de code.
 
-![toolbar](resources/toolbar.png)
+\begin{center}\includegraphics[width=0.8\linewidth]{resources/toolbar.png}\end{center}
+
 
 ### Le bouton 'Mode'
 
-![mode](resources/modes.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/modes.png}\end{center}
 
 Le bouton `Mode` permet de changer le mode dans lequel sera interprété votre
 programme Python.
@@ -53,7 +58,7 @@ temps d'apprendre le language.
 
 ### Le bouton 'Nouveau'
 
-![new](resources/new.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/new.png}\end{center}
 
 Le bouton `Nouveau` ouvre un nouvel onglet, dans lequel vous pourrez coder un
 autre bout de votre projet ou simplement autre chose.
@@ -61,7 +66,7 @@ Pensez à enregistrer le travail effectué dans ce nouvel onglet !
 
 ### Le bouton 'Charger'
 
-![load](resources/load.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/load.png}\end{center}
 
 Le bouton `Charger` vous permet d'ouvrir dans un nouvel onglet un fichier
 contenant du code Python, déjà présent sur votre ordinateur. Par exemple, quand
@@ -69,7 +74,7 @@ vous reprenez un projet pour y ajouter du code.
 
 ### Le bouton 'Enregistrer'
 
-![save](resources/save.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/save.png}\end{center}
 
 Le bouton `Enregistrer` vous permet d'enregistrer votre code (celui contenu dans
 l'onglet dans lequel vous codez actuellement) dans un fichier dont vous
@@ -81,7 +86,7 @@ Pensez à sauvegarder souvent !
 
 ### Le bouton 'Lancer'
 
-![run](resources/run.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/run.png}\end{center}
 
 Si votre programme n'a pas encore été enregistré, cliquez sur le bouton `Lancer`
 vous forcera à enregistrer votre fichier au préalable. Une fois cela fait, Mu
@@ -90,13 +95,13 @@ console qui s'est ouverte en bas de votre écran.
 
 ### Le bouton 'Déboguer'
 
-![debug](resources/debug.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/debug.png}\end{center}
 
 Cette partie arrive bientôt. D'ici là, n'hésitez pas à nous demander !
 
 ### Le bouton 'REPL'
 
-![repl](resources/repl.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/repl.png}\end{center}
 
 Un REPL (à prononcer REPEL) est un interpréteur interactif de Python.
 Vous pouvez y entrer du code Python "à la volée" et observer le résultat
@@ -117,11 +122,11 @@ D'ailleurs, pour les plus curieux, REPL signifie:
 
 Par exemple :
 
-![repl-example](resources/repl-example.png)
+\begin{center}\includegraphics[width=0.9\linewidth]{resources/repl-example.png}\end{center}
 
 ### Le bouton 'Graphique'
 
-![plotter](resources/plotter.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/plotter.png}\end{center}
 
 Le bouton `Graphique` permet de générer des graphiques grâce à du code Python.
 Cela est particulièrement utile quand on fait du traitement de données, ou des
@@ -130,21 +135,21 @@ débute donc oubliez-le !
 
 ### Le bouton 'Zoomer'
 
-![zoomin](resources/zoom-in.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/zoom-in.png}\end{center}
 
 Le bouton `Zoomer` permet comme son nom l'indique d'agrandir la taille du texte
 dans l'éditeur. Aussi simple que ça !
 
 ### Le bouton 'Dé-zoomer'
 
-![zoomout](resources/zoom-out.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/zoom-out.png}\end{center}
 
 Le bouton `Dé-zoomer` fait l'inverse du bouton `Zoomer` et permet de diminuer la
 taille du texte dans l'éditeur.
 
 ### Le bouton 'Thème'
 
-![theme](resources/theme.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/theme.png}\end{center}
 
 Le bouton `Thème` permet de changer le thème visuel de Mu.
 
@@ -161,7 +166,7 @@ les graphiques sont en thème lumineux.
 
 ### Le bouton 'Vérifier'
 
-![check](resources/check.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/check.png}\end{center}
 
 Le bouton `Vérifier` vous permet de passer une fois sur votre code pour chercher
 des erreurs de syntaxe, sans avoir besoin de lancer l'exécution de votre
@@ -177,7 +182,7 @@ corriger.
 
 ### Le bouton 'Tidy'
 
-![tidy](resources/tidy.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/tidy.png}\end{center}
 
 Le bouton `Tidy` permet d'aligner correctement les indentations dans votre code
 mais n'est pas toujours très fonctionnel et à du mal à détecter les erreurs donc
@@ -185,7 +190,7 @@ on vous conseille plutôt de faire bien attention quand vous codez !
 
 ### Le bouton 'Aide'
 
-![help](resources/help.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/help.png}\end{center}
 
 Le bouton `Aide` ouvre une page web sur votre navigateur mais n'apporte pas
 d'aide pour coder en Python, uniquement pour vous montrer comment mieux utiliser
@@ -197,7 +202,7 @@ pour les francophones.
 
 ### Le bouton 'Quitter'
 
-![quit](resources/quit.png){width=2cm height=2cm}
+\begin{center}\includegraphics[width=0.1\linewidth]{resources/quit.png}\end{center}
 
 Le bouton `Quitter` ferme directement le logiciel Mu Editor si votre travail a
 bien été enregistré, sinon vous demande si vous souhaitez enregistrer avant de
