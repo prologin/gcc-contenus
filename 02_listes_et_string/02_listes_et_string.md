@@ -124,7 +124,7 @@ entiers de 0 inclus à n inclus, et la retourne.
 
 **Exemple :** `init_list(5)` renvoie `[0, 1, 2, 3, 4, 5]`.
 
-### Exercice 2 : A la recherche de k
+### Exercice 2 : À la recherche de k
 
 **But :** écrire la fonction `is_in(k, L)` qui traverse la liste non triée L et
 retourne `True` si k est dans la liste, ou `False` autrement.
@@ -311,7 +311,7 @@ lui-même.
 Par exemple, pour une liste, on va d'abord appliquer un calcul sur le premier
 élément de la liste, puis rappeler notre fonction sur le **reste** de la liste.
 
-Si ce n'est toujours pas clair, n'hésites pas à appeler un organisateur, qui
+Si ce n'est toujours pas clair, n'hésite pas à appeler un organisateur, qui
 pourra t'expliquer ce que c'est, avec des schémas en plus !
 
 #### Factorielle
