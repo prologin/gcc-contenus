@@ -234,8 +234,8 @@ et un autre sur la ligne 2 et la colonne 1.
 
 On veut savoir combien de moutons se trouvent dans la prairie.
 
-**But** : écrire la fonction `count(P, val)` qui renvoie le nombre de fois ou
-est presente la valeur `val` dans la matrice P.
+**But** : écrire la fonction `count(P, val)` qui renvoie le nombre de fois où
+est présente la valeur `val` dans la matrice P.
 
 **Exemple** :
 
@@ -424,7 +424,7 @@ affichera `42`.
 *__Tips__ : il faut diviser le problème et écrire plusieurs fonctions
 différentes pour trouver une solution efficace à cet exercice. Par exemple, on
 peut écrire une fonction qui permet de déterminer le maximum d'une seule ligne,
-et une fonction qui permet de trouver le minimum parmi tous ces maximum.*
+et une fonction qui permet de trouver le minimum parmi tous ces maximums.*
 
 
 ### Exercice 11 : une faim de loup
