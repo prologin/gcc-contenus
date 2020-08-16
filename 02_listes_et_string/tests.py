@@ -2,6 +2,10 @@
 
 import sys, importlib
 
+if len(sys.argv) != 2:
+    print(f"Usage: {sys.argv[0]} [FILE]")
+    sys.exit(1)
+
 tp = sys.argv[1]
 if tp[-3:] == ".py":
     tp = tp[:-3]

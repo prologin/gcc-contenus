@@ -112,10 +112,10 @@ vérifier que votre code fonctionne.
 Pour être certains que tout cela se passe dans les règles de l'art, il vous
 faudra respecter quelques règles :
 
-- Nommer votre fichier *tp_listes.py*, toutes vos fonctions devront se trouver
-  dans ce fichier
+- Créer un fichier dans lesquel vous mettrez vos fonctions (*tp_listes.py* par exemple)
 - Respecter les noms de fonctions précisés dans les énoncés suivants
-- Exécuter le fichier test avec `./tests.py` dans le terminal
+- Exécuter le fichier test avec `./tests.py` suivi du nom de votre fichier dans le terminal
+  (`./tests.py tp_listes.py` par exemple)
 
 ### Exercice 1 : commençons par le commencement !
 
