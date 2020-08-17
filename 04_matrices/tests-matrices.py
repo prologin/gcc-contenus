@@ -110,10 +110,10 @@ print()
 # Exercice 4 : initialiser une matrice
 print("Exercice 4 : initialiser une matrice")
 try:
-    test(tp.set_matrix, [3, 2, 42], [[42,42],[42,42],[42,42]])
-    test(tp.set_matrix, [2, 2, 2], [[2,2],[2,2]])
-    test(tp.set_matrix, [0, 2, 1], [])
-    test(tp.set_matrix, [3, 0, 5], [[],[],[]])
+    test(tp.init_matrix, [3, 2, 42], [[42,42],[42,42],[42,42]])
+    test(tp.init_matrix, [2, 2, 2], [[2,2],[2,2]])
+    test(tp.init_matrix, [0, 2, 1], [])
+    test(tp.init_matrix, [3, 0, 5], [[],[],[]])
 
 except Exception as e:
     print(e)
@@ -162,8 +162,8 @@ print()
 # Exercice 9 : symetrie sur la diagonale
 print("Exercice 9 : symetrie sur la diagonale")
 try:
-    test(tp.symmetricDiag, [m1], False)
-    test(tp.symmetricDiag, [mDiag], True)
+    test(tp.sym_diago, [m1], False)
+    test(tp.sym_diago, [mDiag], True)
 
 except Exception as e:
     print(e)

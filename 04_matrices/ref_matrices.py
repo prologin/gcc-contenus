@@ -53,7 +53,7 @@ def search_all(M, val):
 Exercice 4 : initialiser une matrice
 '''
 
-def set_matrix(lines, cols, val):
+def init_matrix(lines, cols, val):
     matrix = []
     for lig in range(lines):
         line = []
@@ -126,7 +126,7 @@ def add_matrix(A, B):
     if (lines, cols) != (len(B), len(B[0])):
         return None
 
-    M = set_matrix(lines, cols, 0)
+    M = init_matrix(lines, cols, 0)
 
     for i in range(lines):
         for j in range(cols):
@@ -138,7 +138,7 @@ def add_matrix(A, B):
 Exercice 8 : symetrie sur la diagonale
 '''
 
-def symmetricDiag(M):
+def sym_diago(M):
 
     lines = len(M)
     cols = len(M[0])
@@ -157,7 +157,7 @@ def symmetricDiag(M):
 Exercice 9 : minimax
 '''
 
-def maxList(L):
+def max_list(L):
 
     maxi = L[0]
 
@@ -176,10 +176,10 @@ def mini(a, b):
 
 def minimax(M):
 
-    mnm = maxList(M[0])
+    mnm = max_list(M[0])
 
     for i in range(len(M)):
-        mnm = mini(mnm, maxList(M[i]))
+        mnm = mini(mnm, max_list(M[i]))
 
     return mnm
 
@@ -213,7 +213,7 @@ def eat(M):
 Exercice 11 : les cratères de la Lune
 '''
 
-def replaceCrater(M, visitedMap, i, j):
+def replace_crater(M, visitedMap, i, j):
     '''
     Visits the whole crater
     '''
@@ -228,7 +228,7 @@ def replaceCrater(M, visitedMap, i, j):
     for k in range(-1, 2):
         for l in range(-1, 2):
             if M[i + k][j + l] == '#' and visitedMap[i + k][j + l] == False:
-                replaceCrater(M, visitedMap, i + k, j + l)
+                replace_crater(M, visitedMap, i + k, j + l)
 
 
 def craters(M):
@@ -240,12 +240,12 @@ def craters(M):
     n = len(M)
     m = len(M[0])
 
-    visitedMap = set_matrix(n, m, False)
+    visitedMap = init_matrix(n, m, False)
 
     for i in range(n):
         for j in range(m):
             if M[i][j] == '#' and visitedMap[i][j] == False:
-                replaceCrater(M, visitedMap, i, j)
+                replace_crater(M, visitedMap, i, j)
                 nbCraters += 1
 
     return nbCraters

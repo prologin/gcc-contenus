@@ -90,7 +90,7 @@ symétrique par rapport à l'axe de sa diagonale (du coin en haut à gauche, à 
 coin en bas à droite), `False` sinon.
 '''
 
-def symmetricDiag(M):
+def sym_diago(M):
     pass
 
 '''
