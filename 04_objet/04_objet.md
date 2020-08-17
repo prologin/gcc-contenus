@@ -98,8 +98,10 @@ lea = Humain("Lea", 14)
 ```
 
 `lea.info()` affichera `Mon nom est Lea et j'ai 14 ans.` `lea.anniversaire()`
-augmente l'age de Lea de 1. Si on fait `lea.anniversaire()` puis `lea.info()` on
-obtient `Mon nom est Lea et j'ai 15 ans.`
+augmente l'âge de Léa de 1. Si on fait `lea.anniversaire()` puis `lea.info()` on
+obtient :
+
+`Mon nom est Lea et j'ai 15 ans.`
 
 # Attrapez les tous !
 
@@ -128,8 +130,10 @@ Pokémon.
 ### Exercice 4
 
 Créer une classe `Dresseur` qui a les attributs suivants :
+
  * Nom
  * Liste de Pokémons
+
 Le nom devra être passé en argument au constructeur, et la liste sera
 initialisée à vide.
 
