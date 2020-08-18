@@ -21,7 +21,7 @@ def load_map(filename):
     for l in lines:
         M.append(l)
 
-    return M;
+    return M
 
 def test(f, inp, out):
 

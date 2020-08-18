@@ -219,12 +219,6 @@ def replace_crater(M, visitedMap, i, j):
     '''
     visitedMap[i][j] = True
 
-    if i < 0 or i >= len(M):
-        return
-
-    if j < 0 or j >= len(M[0]):
-        return
-
     for k in range(-1, 2):
         for l in range(-1, 2):
             if M[i + k][j + l] == '#' and visitedMap[i + k][j + l] == False:
