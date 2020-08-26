@@ -1,8 +1,7 @@
 ---
 title: Créer son premier Bot pour discord en python
 date: 2020
-author:
-- Gabrielle Pauvert
+author: Gabrielle Pauvert
 ---
 
 Introduction
@@ -18,29 +17,22 @@ Tout d’abord, connectez vous sur le site de gestion des bots discord :
 
 Puis cliquez sur l’onglet `Applications` en haut à gauche.
 
-[comment]: ![image](ims/im1.png)
-<center>
-<img src="ims/im1.png" alt="centered image" width="500"/>
-</center>
+![Onglet Application](ims/im1.png){width=10cm height=6cm}
 
 Si vous ne possédez pas de compte discord, vous devez en créer un car cette action vous demandera de vous authentifier pour vous connecter à votre compte discord. Cliquez sur le bouton `New application` en haut à droite et entrez le nom de votre Bot pour le créer. Vous arrivez sur la page de votre bot, qui contient entre autres son identifiant (`ID`) dont vous aurez besoin pour la prochaine étape. Notez le quelque part, il servira !
 
-[comment]: ![image](ims/im2.png)
-<center>
-<img src="ims/im2.png" alt="centered image" width="500"/>
-</center>
+![ID du bot](ims/im2.png){width=12cm height=5cm}
 
 Cliquez ensuite sur l’onglet Bot à gauche puis sur `Add Bot`. Ici, vous
-verrez les informations de votre Bot, dont son pseudo (`username`) et son avatar que vous pourrez modifier selon vos envies, et surtout son token qui **doit toujours rester secret !** (sauf pour vous). Si votre token fuite (sur
+verrez les informations de votre Bot, dont son pseudo (`username`) et son avatar que vous pourrez modifier selon vos envies, et surtout son token qui **doit toujours rester secret !** [^1] (sauf pour vous). Si votre token fuite (sur
 internet par exemple), changez le ! Gardez le dans un coin, on va aussi en
 avoir besoin pour plus tard. Et ne vous inquiétez pas pour le token de mon bot sur l'image, je l'ai changé après avoir mis ça ici.
 
-[comment]: ![image](ims/im9.png)
-<center>
-<img src="ims/im9.png" alt="centered image" width="500"/>
-</center>
+![Token du bot](ims/im9.png){width=12cm height=5cm}
 
 Voilà, votre bot est créé. Il faut maintenant le connecter à discord et lui donner du code à lire et exécuter.
+
+[^1]: Si quelqu'un connaît votre token, il pourra parler à la place de votre bot et lui faire faire ce qu'il veut.
 
 
 Connecter son Bot
@@ -51,14 +43,12 @@ serveur discord créé pour l'occasion. Vous pourrez supprimer ce serveur à la 
 
 Ensuite, dans votre navigateur de recherche (par exemple firefox ou google chrome), tapez le lien suivant en remplaçant \[votre ID\] par l’ID de votre bot, sans guillemet. Normalement, vous avez noté cet ID dans un coin lors de la partie "Création du Bot".
 
-    https://discordapp.com/oauth2/authorize?client_id=[votre ID]&scope=bot&permissions=0
+    https://discordapp.com/oauth2/authorize?client_id=[votreID]&scope=bot&
+    permissions=0
 
 Vous devriez voir apparaître une page comme celle ci.
 
-[comment]: ![image](ims/im3.png)
-<center>
-<img src="ims/im3.png" alt="centered image" width="350"/>
-</center>
+![Page d'invitation du bot](ims/im3.png){width=6cm height=7cm}
 
 Sélectionnez le serveur dans lequel vous voulez inviter votre Bot, c'est à dire le serveur Test que nous venons de créer, et cliquez sur le bouton
 “Authorize”. Dans quelques instants, vous devriez voir votre Bot
@@ -80,7 +70,8 @@ exemple `bot.py`, et remplissez le de la manière suivante :
 import discord
 import asyncio
 from discord.ext import commands
-bot = commands.Bot(command_prefix='!', description="ce que vous voulez en description")
+bot = commands.Bot(command_prefix='!', description="ce que vous voulez en"
++"description")
 #vous pouvez changer la commande '!' en autre chose si vous le souhaitez
 
 @bot.event
@@ -90,7 +81,8 @@ async def on_ready():
 
 #ici figureront les commandes et instructions pour votre bot
 
-bot.run("token") #vous devez ici rentrer le token de votre bot, que vous avez trouvé plus haut.
+bot.run("token") #vous devez ici rentrer le token de votre bot,
+#que vous avez noté plus haut.
 ```
 
 Dans l’instruction `bot.run`, vous devez mettre entre guillemets `"` le vrai token de votre bot. Dans tout ce tuto, il figurera en clair sur votre fichier python, mais vous devrez le cacher si vous mettez votre code en ligne un jour
@@ -104,10 +96,7 @@ Exécutez votre fichier python contenant le code du Bot. Par exemple si votre fi
 
 Si tout se passe correctement, vous devriez obtenir ce résultat :
 
-[comment]: ![image](ims/im4.png)
-<center>
-<img src="ims/im4.png" alt="centered image" width="500"/>
-</center>
+![Connection du bot](ims/im4.png){width=9cm height=1.5cm}
 
 Le terminal vous affiche `Logged in as ...` car dans le fichier que vous venez de lancer se trouve l'instruction
 
@@ -142,10 +131,7 @@ Sauvegardez, et relancez votre bot dans le terminal. Vous devrez d'abord reprend
 
 Une fois votre bot relancé, retournez dans discord et tapez dans votre serveur de test la commande `!bonjour`. Votre Bot devrait vous répondre `hello world` comme ci-dessous.
 
-[comment]: ![image](ims/im5.png)
-<center>
-<img src="ims/im5.png" alt="centered image" width="400"/>
-</center>
+![La commande "bonjour"](ims/im5.png){width=7cm height=2.5cm}
 
 
 Réagir à un événement
@@ -169,20 +155,19 @@ async def on_message(msg):
         await msg.channel.send("J'ai perdu...")
 ```
 
-[comment]: ![image](ims/im6.png)
-<center>
-<img src="ims/im6.png" alt="centered image" width="300"/>
-</center>
+![Bot réagissant à un message](ims/im6.png){width=6cm height=2.5cm}
 
 Comme vous pouvez le voir, ici le bot n’attend pas qu’on s’adresse à lui
 par une commande, il reste tout le temps à l’écoute et exécute son code
 chaque fois qu’un message est posté. Si les conditions sont remplies,
 il envoie alors lui-même un message.
 
-Vous aurez peut-être remarqué les lignes étranges `@bot.event`, `@bot.command` et `@bot.listen()` qui commencent par des arobases. Il s'agit d'une notion compliquée de python qu'on appelle les décorateurs. Un décorateur sert à modifier le comportement d'une fonction qu'on définit juste en dessous. Ici les décorateurs servent comme boîte noire de discord, pour faire le lien entre le code et le bot.
+Vous aurez peut-être remarqué les lignes étranges `@bot.event`, `@bot.command` ainsi que `@bot.listen()` qui commencent par des arobases. Il s'agit d'une notion compliquée de python qu'on appelle les décorateurs. Un décorateur sert à modifier le comportement d'une fonction qu'on définit juste en dessous. Ici les décorateurs servent comme boîte noire de discord, pour faire le lien entre le code et le bot.
 
 Vous ne devez savoir que deux choses pour les utiliser correctement pour votre bot :
+
 - Si vous voulez coder une commande pour votre bot, vous allez avoir besoin de mettre la ligne `@bot.command(pass_context=True)` avant de définir la fonction de la commande. Ceci lui indiquera qu'il doit exécuter cette partie du code lorsque qu'on fait appel à lui avec un `!` suivi du nom de la fonction.
+
 - Si vous voulez que votre bot réagisse à un autre événement, vous devez mettre la ligne `@bot.listen()` avant de définir votre fonction. Ici, il saura qu'il doit rester à l'écoute. Mais de quoi ? De l'événement qui correspond au nom de votre fonction. Dans l'exemple ci-dessus, on lui a demandé d'exécuter son code à chaque fois que quelqu'un poste un message grâce à la fonction `on_message` qui prend en argument le message posté. Faites donc bien attention aux noms que vous donnez à vos fonctions et à leurs arguments, vous ne pouvez pas les choisir librement ici.
 
 Exercices
@@ -192,9 +177,7 @@ Exercices
 
 - [difficile !] Codez un jeu de devinette avec votre bot. Donnez un nombre à votre bot puis essayez de le trouver en proposant des nombres et en demandant à votre bot de vous indiquer si le nombre est plus ou moins grand.
 
-<center>
-<img src="ims/im10.png" alt="centered image" width="200"/>
-</center>
+![Jeu de devinette](ims/im10.png){width=4cm height=5.5cm}
 
 (Indication : pour récupérer la chaîne de caractère (string) correspondant au message de la commande, vous pouvez utiliser `ctx.message.content`.)
 
@@ -203,7 +186,7 @@ Exercices
 
 Ne lisez cette partie que si vous êtes à l'aise sur le reste ! Nous allons aborder des notions très avancées.
 
-Avant de vous laisser libre, détaillons un peu le fonctionnement de l'instruction `msg.channel.send` que l'on a rencontré plusieurs fois. Lorsqu'on écrit `msg.channel.send`, on manipule l'objet `msg`, le message qui a été envoyé par quelqu'un. Puis on récupère le salon dans lequel ce message a été envoyé `msg.channel`. Enfin, dans ce salon là, on demande au Bot d'envoyer un message `.send`.
+Avant de vous laisser libre, détaillons un peu le fonctionnement de l'instruction particulière `msg.channel.send` que l'on a rencontré plusieurs fois. Lorsqu'on écrit `msg.channel.send`, on manipule l'objet `msg`, le message qui a été envoyé par quelqu'un. Puis on récupère le salon dans lequel ce message a été envoyé `msg.channel`. Enfin, dans ce salon là, on demande au Bot d'envoyer un message `.send`.
 
 On dit alors que l'on fait de la programmation “orientée objet”, car l’on ne fait que manipuler des “objets” (ici le message `msg` ou encore son salon `msg.channel`) et leurs attributs. Les attributs sont repérés par des “.” et peuvent être des fonctions, des chaînes de caractères, d'autres objets etc. qui sont liés à l'objet. Par exemple, le `.channel` est encore un objet qui représente le salon et le `.send` est une fonction liée à l'objet salon, lui-même lié à l'objet message.
 
@@ -222,20 +205,14 @@ Pour voir les événements disponibles pour votre bot, vous pouvez vous référe
 Pour celles qui savent lire l'Anglais, vous y trouverez dans l’onglet `Event reference` une liste exhaustive de tous les événements pour lesquels vous pouvez demander à votre bot de
 faire quelque chose. Par exemple notre `on_message` est là :
 
-[comment]: ![image](ims/im7.png)
-<center>
-<img src="ims/im7.png" alt="centered image" width="800"/>
-</center>
+![Instruction on_message](ims/im7.png){width=13cm height=8cm}
 
 La doc renseigne aussi sur les actions que vous pouvez demander
 à votre Bot. Par exemple, nous lui avons demandé d’envoyer
 des messages dans des salons discord (channels en anglais) grâce à
 l’instruction `msg.channel.send`. Pour plus d'information, allez voir les onglets correspondants. Ici, c'est dans l’onglet `TextChannel` (objet salon) que vous trouverez les explications pour l'instruction `send` qui envoie un message dans un salon.
 
-[comment]: ![image](ims/im8.png)
-<center>
-<img src="ims/im8.png" alt="centered image" width="800"/>
-</center>
+![Instruction send](ims/im8.png){width=17cm height=10cm}
 
 ### Bon Courage !
 

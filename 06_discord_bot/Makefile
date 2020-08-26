@@ -5,7 +5,7 @@ SUBJECT = 06_discord_bot
 all: ${SUBJECT}.pdf ${SUBJECT}.tex
 
 %.tex: %.md
-	pandoc --template ../template/gcc.tex 		\
+	pandoc --template ./gcc_bot.tex 		\
 		--no-highlight 				\
 		--lua-filter=../template/minted.lua	\
 		-s -t latex $^ > $@
