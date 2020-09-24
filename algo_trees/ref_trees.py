@@ -2,9 +2,10 @@
 #   Binary Trees
 #
 
-'''
+"""
 Exercice 0 : definition de la classe arbre
-'''
+"""
+
 
 class BinTree:
     def __init__(self, key, left, right):
@@ -13,20 +14,22 @@ class BinTree:
         self.right = right
 
 
-'''
+"""
 Exercice 1 : tailler un arbre
-'''
+"""
+
 
 def size(tree):
-    if tree is None :
+    if tree is None:
         return 0
     else:
         return 1 + size(tree.left) + size(tree.right)
 
 
-'''
+"""
 Exercice 2 : prends de la hauteur !
-'''
+"""
+
 
 def height(tree):
     if tree is None:
@@ -35,9 +38,10 @@ def height(tree):
         return 1 + max(height(tree.left), height(tree.right))
 
 
-'''
+"""
 Exercice 3 : compter les feuilles de l'arbre
-'''
+"""
+
 
 def nb_leaves(tree):
     count = 0
@@ -55,9 +59,10 @@ def nb_leaves(tree):
     return count
 
 
-'''
+"""
 Exercice 4 : recherche dans un arbre
-'''
+"""
+
 
 def search(tree, x):
     if tree is None:
@@ -66,16 +71,13 @@ def search(tree, x):
         if x == tree.key:
             return True
         else:
-            res = search(tree.left, x)
-            if res is not False:
-                return res
-            else:
-                return search(tree.right, x)
+            return search(tree.left, x) or search(tree.right, x)
 
 
-'''
+"""
 Exercice 5 : sont-ils les memes arbres ?
-'''
+"""
+
 
 def equal(tree1, tree2):
     if tree1 is None:
@@ -88,9 +90,10 @@ def equal(tree1, tree2):
         return False
 
 
-'''
+"""
 Exercice 6 : verifier un sous-arbre
-'''
+"""
+
 
 def is_subtree(tree, subtree):
     if subtree is None:
@@ -101,21 +104,23 @@ def is_subtree(tree, subtree):
         if subtree.key == tree.key:
             return equal(subtree, tree)
         else:
-            return is_subtree(subtree, tree.left) or is_subtree(subtree, tree.right)
+            return is_subtree(subtree, tree.left) or is_subtree(
+                subtree, tree.right
+            )
 
 
-'''
+"""
 Exercice 7 : dans le miroir
-'''
+"""
+
 
 def __symmetric(tree1, tree2):
     if tree1 is None and tree2 is None:
         return True
     elif tree1.key == tree2.key:
-        sym = __symmetric (tree1.left, tree2.right)
-        if sym:
-            sym = __symmetric(tree1.right, tree2.left)
-        return sym
+        return __symmetric(tree1.left, tree2.right) and __symmetric(
+            tree1.right, tree2.left
+        )
     else:
         return False
 
@@ -124,28 +129,32 @@ def symmetric(tree):
     if tree is None:
         return True
     else:
-        return (__symmetric(tree.left, tree.right))
+        return __symmetric(tree.left, tree.right)
 
 
 #
 #   Binary Search Trees
 #
 
-'''
+"""
 Exercice 1 : detecter un BST
-'''
+"""
 
-def __testBST(tree, inf, sup):
+
+def __is_bst(tree, inf, sup):
     if tree is None:
         return True
     else:
-        return tree.key > inf and tree.key <= sup \
-            and __testBST(tree.left, inf, tree.key) \
-            and __testBST(tree.right, tree.key, sup)
+        return (
+            tree.key > inf
+            and tree.key <= sup
+            and __is_bst(tree.left, inf, tree.key)
+            and __is_bst(tree.right, tree.key, sup)
+        )
 
 
-def testBST(B):
-    return __testBST(B, -float('inf'), float('inf'))
+def is_bst(tree):
+    return __is_bst(tree, -float("inf"), float("inf"))
 
 
 #
@@ -154,54 +163,58 @@ def testBST(B):
 
 # RECURSIVE
 
-'''
+"""
 Exercice 2 : trouver le minimum (iteratif et recursif)
-'''
+"""
 
-def minBST_rec(tree):
+
+def min_bst_rec(tree):
     if tree is None:
         return None
     else:
         if tree.left is None:
             return tree.key
         else:
-            return minBST_rec(tree.left)
+            return min_bst_rec(tree.left)
 
 
-def minBST_iter(B):
-    if B is None:
+def min_bst_iter(tree):
+    if tree is None:
         return None
     else:
-        while B.left is not None:
-            B = B.left
-        return B.key
+        while tree.left is not None:
+            tree = tree.left
+        return tree.key
 
 
-'''
+"""
 Exercice 2 (bonus) : trouver le maximum (iteratif et recursif)
-'''
+"""
 
-def maxBST_rec(B):
+
+def max_bst_rec(tree):
     if tree is None:
         return None
     else:
         if tree.right is None:
             return tree.key
         else:
-            return maxBST_rec(tree.right)
+            return max_bst_rec(tree.right)
 
 
-def maxBST_iter(B):
-    if B is None:
+def max_bst_iter(tree):
+    if tree is None:
         return None
     else:
-        while B.right is not None:
-            B = B.right
-        return B.key
+        while tree.right is not None:
+            tree = tree.right
+        return tree.key
 
-'''
+
+"""
 Exercice 3 : recherche dans un BST (iteratif et recursif)
-'''
+"""
+
 
 def search_rec(x, tree):
     if tree is None:
@@ -226,9 +239,10 @@ def search_iter(x, tree):
     return False
 
 
-'''
+"""
 Exercice 4 : inserer un element en feuille dans un BST (iteratif et recursif)
-'''
+"""
+
 
 def leaf_insert_rec(tree, key):
     if tree is None:
