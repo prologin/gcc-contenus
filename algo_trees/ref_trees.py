@@ -157,12 +157,6 @@ def is_bst(tree):
     return __is_bst(tree, -float("inf"), float("inf"))
 
 
-#
-#   Discover recursion
-#
-
-# RECURSIVE
-
 """
 Exercice 2 : trouver le minimum (iteratif et recursif)
 """
