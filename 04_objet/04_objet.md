@@ -155,8 +155,11 @@ Le dernier Pokémon en vie sera gagnant.
 
 Créer une fonction `duel` qui prend en argument deux dresseurs et affiche le
 vainqueur.
-Cette fonction devra faire combattre tous les Pokémons des dresseurs.
-Le dresseur ayant le plus de Pokémons victorieux est considéré gagnant.
+Cette fonction devra faire affronter les Pokémons des dresseurs selon leurs
+ordre dans la liste.
+Des que la vie d'un Pokémon passe à 0 ou moins, le Pokémon d'après est envoyé
+combattre.
+N'hésitez pas à réutiliser votre fonction `duel` !
 
 ### Exercice 8
 
