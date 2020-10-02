@@ -230,7 +230,7 @@ class Poisson(Animal):
     def nager(self): # Un poisson peut nager
         print(">=o Je nage, je nage !")
 
-chien = Chien(2, "Rantamplan")
+chien = Chien(2, "Rantanplan")
 chien.manger()
 chien.aboie()
 ```
