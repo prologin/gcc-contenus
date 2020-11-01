@@ -75,7 +75,7 @@ def search(tree, x):
 
 
 """
-Exercice 5 : sont-ils les memes arbres ?
+Exercice 5 : comparer deux arbres
 """
 
 
@@ -137,7 +137,7 @@ def symmetric(tree):
 #
 
 """
-Exercice 1 : detecter un BST
+Exercice 1 : detecter un ABR
 """
 
 
