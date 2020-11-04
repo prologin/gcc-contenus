@@ -183,8 +183,8 @@ Est-il possible de modifier le programme pour qu'il se termine lorsque le
 serveur a fini d'envoyer les données ? Essayez en vous connectant sur la même
 adresse, mais au port 2001. Ce serveur envoie un nombre aléatoire de messages.
 
-**NB**: lisez les messages de façon ininterrompue jusqu'à ce qu'un message soit vide
-ou contienne seulement un retour de ligne.
+**NB**: lisez les messages de façon ininterrompue jusqu'à ce qu'un message soit 
+vide ou contienne seulement un retour de ligne.
 
 # Écriture sur une socket
 
