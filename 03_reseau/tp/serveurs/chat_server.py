@@ -1,7 +1,12 @@
 import asyncio
+import time
 
 messages = []
 new_message = asyncio.Condition()
+
+# Rate limit = `RATE_MESSAGE` / `RATE_SECONDS`
+RATE_MESSAGE = 100
+RATE_SECONDS = 1
 
 
 async def _send_all(msg):
@@ -15,13 +20,27 @@ async def _handle_rclient(client_reader, client_writer):
     nickname = await client_reader.readline()
     nickname = nickname.decode('utf-8').strip()
     await _send_all('*** {} a rejoint la discussion'.format(nickname))
+    messages = 0
+    last_time = time.time()
 
     while True:
         msg = await client_reader.readline()
         msg = msg.decode('utf-8')
+
+        if messages == RATE_MESSAGE:
+            current_time = time.time()
+            if (current_time - last_time) < RATE_SECONDS:
+                await asyncio.sleep(RATE_SECONDS - (current_time - last_time))
+            messages = 0
+            last_time = current_time
+        messages += 1
+
+        # empty message, discarding
+        if (len(msg.strip()) == 0):
+            continue
         if not msg or msg[:5] == '/quit':
             break
-        await _send_all('<{}> {}'.format(nickname, msg.strip()))
+        await _send_all('<{}> {}'.format(nickname, msg))
 
     await _send_all('*** {} a quitté la discussion'.format(nickname))
 

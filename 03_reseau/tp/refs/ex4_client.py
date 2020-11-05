@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import socket
 
 tcpsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
