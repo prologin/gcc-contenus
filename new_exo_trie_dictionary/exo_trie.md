@@ -3,12 +3,7 @@ title: Trie Data Structures
 date: 2020
 ---
 
-Pré-requis: avoir vite fait vu les listes, les fonctions, les conditions et les classes
-
 # Cours sur la structure d'arbre
-
-* Qu'est ce que c'est (vocabulaire)
-* A quoi ça sert
 
 ## Qu'est ce que c'est un arbre ?
 
