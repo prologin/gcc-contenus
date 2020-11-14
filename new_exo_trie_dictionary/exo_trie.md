@@ -54,6 +54,13 @@ au-dessus.
 
 ## Leur utilisation
 
+Les arbres sont très utilisés en informatique car la complexité des algorithmes
+d'insertion et de recherche est généralement plus faible que celui des listes,
+et leur utilisation est assez simple.
+
+Ils permettent également de montrer la hiérarchie d'une situation, comme un
+arbre généalogique, ou le rangement de fichiers et dossiers sur un ordinateur.
+
 # Introduction aux Tries
 
 Un `Trie` est un cas particulier de la structure de données d'arbre (`Tree`).  
