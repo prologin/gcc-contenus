@@ -310,7 +310,7 @@ progressivement varier l'intensité de 0 à 9).
 ## La boucle `while`
 
 La boucle **while** sert à répéter un morceau de programme tant qu'une
-affirmation est vraie. Elle s'utilise comme suit :
+condition est vraie. Elle s'utilise comme suit :
 
 ```python
 from microbit import *
@@ -345,11 +345,12 @@ calculer le score du joueur.
 ## Les conditions : `if` ... `elif` ... `else`
 
 L'instruction `if` permet de décider de n'exécuter un morceau de code que
-lorsqu'une condition est vraie. Pour se faire la syntaxe est d'écrire `if
-condition:` suivi d'un bloc de code indenté. Le bloc de code en question ne sera
-alors exécuté que si `condition` s'évalue à `True`. Pour simplifier, un `if`
-peut être suivi d'un ou plusieurs `else:` qui exécute un bloc de code uniquement
-si la condition du `if` était fausse.
+lorsqu'une condition est vraie. Pour ce faire la syntaxe est : `if condition:`
+suivi d'un bloc de code indenté. Le bloc de code en question ne sera alors
+exécuté que si `condition` s'évalue à `True`. Un `if` peut être accompagné
+d'un `else` qui exécute un bloc de code uniquement si la condition du `if`
+était fausse. Enfin, il y a aussi le `elif` qui est la contraction du `else` et
+du `if`.
 
 Voici un exemple simple pour illustrer :
 
@@ -361,8 +362,10 @@ x = randint(0, 100)  # assigne un nombre aléatoire à x
 
 if x < 50:
     display.scroll('x est inférieur à 50')
+elif x < 80:
+    display.scroll('x est inférieur à 80')
 else:
-    display.scroll('x est supérieur à 50')
+    display.scroll('x est supérieur à 80')
 ```
 
 Ou un exemple légèrement plus poussé qui permet de lier les boutons du
@@ -560,9 +563,9 @@ display.scroll(42)  # en réalité ça ne fonctionne pas qu'avec le texte !
 
 ## Les boutons
 
-Il y a deux boutons sur le `micro:bit`, ils seront appelés `button_a` et
+Il y a deux boutons sur le `micro:bit`, ils sont appelés `button_a` et
 `button_b` et toute fonction qui peut être appelée pour l'un peut aussi être
-appelée par l'autre.
+appelée pour l'autre.
 
 ### `button_a.is_pressed()` - état du bouton
 
