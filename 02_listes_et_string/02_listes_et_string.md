@@ -28,7 +28,7 @@ Si on fait `len(L)` sur notre liste vide, on obtient 0 puisque notre liste ne
 contient pas d'éléments.
 
 Ensuite, **L.append(x)** ajoute l'élément x à la fin de la liste L.  On ajoute
-alors l'élément 'x' à la liste L avec `L.append('x')`. Maintenant, **len(L)**
+alors le caractère 'x' à la liste L avec `L.append('x')`. Maintenant, **len(L)**
 affiche 1 et `L = ['x']`.
 
 Également, `L[i]` accède à l'élément à la place i dans la liste L. Ainsi, si on
@@ -112,7 +112,7 @@ vérifier que votre code fonctionne.
 Pour être certains que tout cela se passe dans les règles de l'art, il vous
 faudra respecter quelques règles :
 
-- Créer un fichier dans lesquel vous mettrez vos fonctions (*tp_listes.py* par exemple)
+- Créer un fichier dans lequel vous mettrez vos fonctions (*tp_listes.py* par exemple)
 - Respecter les noms de fonctions précisés dans les énoncés suivants
 - Exécuter le fichier test avec `./tests.py` suivi du nom de votre fichier dans le terminal
   (`./tests.py tp_listes.py` par exemple)
@@ -196,7 +196,7 @@ Par exemple :
 ### Exercice 8 : double trouble
 
 **But :** écrire la fonction `double(L)` qui renvoie `True` si on peut trouver
-deux doubles **consécutifs** dans la liste L, ou `False` autrement.
+deux doublons **consécutifs** dans la liste L, ou `False` autrement.
 
 **Exemple :** `double([1, 2, 2, 3])` renvoie `True` et `double([1, 2, 3])`
 renvoie `False`.
@@ -208,7 +208,7 @@ lettres : des mots, des phrases, et vous les avez en fait déjà manipulées dan
 le TP précédent, notamment à l'aide de la fonction `print`.
 
 En anglais, on appelle les chaînes de caractères des "*strings*", et caractère
-devient "*character*" abrégé 'char'.
+devient "*character*" abrégé "*char*".
 
 En Python, les strings se matérialisent sous la forme de listes de caractères,
 et on retrouve les mêmes propriétés !
@@ -220,7 +220,7 @@ s = "Hello World!"
 print(s[0])
 ```
 
-Nous renverra `H`.
+Nous renverra 'H'.
 
 On peut aussi accéder à des morceaux de strings avec l'aide des crochets et deux
 points :
@@ -230,7 +230,7 @@ s = "girls can code"
 print(s[0:5])
 ```
 
-Nous renverra `girls`.
+Nous renverra "girls".
 
 On récupère donc le segment de chaîne entre l'indice 0 compris et l'indice 5
 exclu !
@@ -248,7 +248,7 @@ La phrase "Engage le jeu que je le gagne." de l'écrivain Alain Damasio est un
 palindrome.
 
 **But :** écrire la fonction `palindrome(s)` qui renvoie `True` si la chaîne de
-caractères 's' est un palindrome, et `False` autrement.
+caractères s est un palindrome, et `False` autrement.
 
 ### Exercice 2 : occurrences
 
@@ -268,41 +268,7 @@ ordonnées ! Pour ça, on utilise des algorithmes de tri.
 Tu peux t'intéresser aux algorithmes de tri à bulles, tri par sélection, tri
 rapide, ...
 
-### Exercice 2 : cherche Médor, cherche !
-
-Alors c'est bien d'avoir des listes bien remplies, mais parfois, on cherche à
-retrouver un élément stocké quelque part dans la liste.
-
-Un algorithme de recherche efficace sur listes **déjà triées** est l'algorithme
-de recherche dichotomique, *binary search* en anglais. Le principe est le même
-que quand on cherche un mot dans le dictionnaire : imaginons je cherche "pomme"
-et je vois à un endroit "poire" et plus loin "porte", je sais alors que "pomme"
-est entre les deux !
-
-**Principe :**
-
-```
-recherche_dichotomique_récursive(élément, liste_triée):
-   m = longueur de liste triée / 2 ;
-   si liste triée[m] = élément :
-       renvoyer m ;
-   si liste triée[m] > élément :
-       renvoyer recherche_dichotomique_récursive(élément, liste_triée[1:m]) ;
-   sinon :
-       renvoyer recherche_dichotomique_récursive(élément, liste_triée[m:l]) ;
-```
-
-Pour en savoir plus, tu peux aller sur cette page :
-<https://fr.wikipedia.org/wiki/Recherche_dichotomique>
-
-**But :** implémenter la fonction `bin_search(k, L)` qui prend en paramètre une
-liste *triée par ordre croissant* `L` et retourne la position de `e` dans la
-liste s'il y est présent, -1 sinon. Cette fonction devra implémenter une
-recherche dichotomique.
-
-**Exemple**: `bin_search(2, [1, 2, 3])` retourne `1`
-
-### Exercice 3 : Introduction à la Récursivité
+### Exercice 2 : Introduction à la Récursivité
 
 La récursivité est la propriété de pouvoir appliquer une même règle plusieurs
 fois en elle-même ; dans notre cas, écrire un algorithme qui va s'appeler
@@ -365,3 +331,37 @@ Algorithme récursif :
 
 Attention, ne testez pas votre fonction `fibo(n)` avec des nombres trop grands,
 cela prendrait beaucoup trop de temps !
+
+### Exercice 3 : cherche Médor, cherche !
+
+Alors c'est bien d'avoir des listes bien remplies, mais parfois, on cherche à
+retrouver un élément stocké quelque part dans la liste.
+
+Un algorithme de recherche efficace sur listes **déjà triées** est l'algorithme
+de recherche dichotomique, *binary search* en anglais. Le principe est le même
+que quand on cherche un mot dans le dictionnaire : imaginons je cherche "pomme"
+et je vois à un endroit "poire" et plus loin "porte", je sais alors que "pomme"
+est entre les deux !
+
+**Principe :**
+
+```
+recherche_dichotomique_récursive(élément, liste_triée):
+   m = longueur de liste triée / 2 ;
+   si liste triée[m] = élément :
+       renvoyer m ;
+   si liste triée[m] > élément :
+       renvoyer recherche_dichotomique_récursive(élément, liste_triée[1:m]) ;
+   sinon :
+       renvoyer recherche_dichotomique_récursive(élément, liste_triée[m:l]) ;
+```
+
+Pour en savoir plus, tu peux aller sur cette page :
+<https://fr.wikipedia.org/wiki/Recherche_dichotomique>
+
+**But :** implémenter la fonction `bin_search(k, L)` qui prend en paramètre une
+liste *triée par ordre croissant* `L` et retourne la position de `e` dans la
+liste s'il y est présent, -1 sinon. Cette fonction devra implémenter une
+recherche dichotomique.
+
+**Exemple**: `bin_search(2, [1, 2, 3])` retourne `1`
