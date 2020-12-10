@@ -395,6 +395,33 @@ while True:
         display.set_pixel(3, 2, 0)
 ```
 
+*Remarques :*
+
+- Un `if` n'est pas nécessairement accompagné d'un `else` (ou d'un `elif`).
+Dans ce cas, si sa condition est fausse, rien n'est exécuté
+- On peut ajouter autant de `elif` que l'on veut après un `if`
+
+*Tout est clair ?*
+
+Si tu as bien compris, tu devrais pouvoir dire la différence entre notre
+premier exemple et le code ci-dessous :
+
+```python
+from random import randint
+from microbit import *
+
+x = randint(0, 100)  # assigne un nombre aléatoire à x
+
+if x < 30:
+    display.scroll('x est inférieur à 30')
+if x < 50:
+    display.scroll('x est inférieur à 50')
+if x < 80:
+    display.scroll('x est inférieur à 80')
+if x > 80:
+    display.scroll('x est supérieur à 80')
+```
+
 # Projets
 
 À partir de maintenant, place à la créativité.
