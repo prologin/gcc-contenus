@@ -198,8 +198,10 @@ Par exemple :
 **But :** écrire la fonction `double(L)` qui renvoie `True` si on peut trouver
 deux doublons **consécutifs** dans la liste L, ou `False` autrement.
 
-**Exemple :** `double([1, 2, 2, 3])` renvoie `True` et `double([1, 2, 3])`
-renvoie `False`.
+**Exemple :** `double([1, 2, 2, 3])` renvoie `True` car il y a deux fois le
+chiffre 2 à la suite (en position 1 et 2) tandis que `double([1, 2, 3])` et
+`double([1, 2, 1])` renvoient `False` car il n'y a jamais deux nombres
+identiques consécutifs.
 
 # Introduction aux chaînes de caractères
 
@@ -248,12 +250,12 @@ La phrase "Engage le jeu que je le gagne." de l'écrivain Alain Damasio est un
 palindrome.
 
 **But :** écrire la fonction `palindrome(s)` qui renvoie `True` si la chaîne de
-caractères s est un palindrome, et `False` autrement.
+caractères `s` est un palindrome, et `False` autrement.
 
 ### Exercice 2 : occurrences
 
 **But :** écrire la fonction `count(c, s)` qui retourne le nombre de fois qu'on
-trouve le caractère c dans la chaîne s.
+trouve le caractère `c` dans la chaîne `s`.
 
 ## Bonus : un peu d'algorithmique !
 
