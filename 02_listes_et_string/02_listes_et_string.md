@@ -129,43 +129,45 @@ entiers de 0 inclus à n inclus, et la retourne.
 **But :** écrire la fonction `is_in(k, L)` qui traverse la liste non triée L et
 retourne `True` si k est dans la liste, ou `False` autrement.
 
-**Exemple :** `is_in(2, [1, 2, 3])` renvoie `True` et  `is_in(5, [1, 2, 3])`
-renvoie `False`.
+**Exemple :** `is_in(2, [1, 2, 3])` renvoie `True` (2 est dans la liste) et
+`is_in(5, [1, 2, 3])` renvoie `False` (5 n'est pas dans la liste).
 
 ### Exercice 3 : Où se trouve k ?
 
 **But :** écrire la fonction `pos(k, L)` qui retourne la position de k dans la
 liste si k est présent, ou -1 si k n'est pas dans la liste.
 
-**Exemple :** `pos(2, [3, 1, 2])` renvoie `2`.
+**Exemple :** `pos(2, [3, 1, 2])` renvoie `2` et `pos(2, [4, 5, 6])` renvoie
+-1. N'oublie pas que les indices commencent à 0.
 
 ### Exercice 4 : Maximum
 
 **But :** écrire la fonction `maximum(L)` qui retourne le plus grand des
 éléments de la liste non triée L.
 
-**Exemple :** `maximum([1, 2, 5, 3])` renvoie `5`.
+**Exemple :** `maximum([1, 2, 5, 3])` renvoie `5`, `maximum([12, 3, 8, 1])`
+renvoie `12`.
 
 **Bonus :** écrire la fonction qui retourne la position du maximum dans la liste
 non triée L.
 
-**Exemple :** `pos_max([1, 2, 5, 3])` renvoie `2`.
+**Exemple :** `pos_max([1, 2, 5, 3])` renvoie `2`, `maximum([12, 3, 8, 1])`
+renvoie `0`.
 
 ### Exercice 5 : Somme
 
 **But :** écrire la fonction `sum_list(L)` qui retourne la valeur de la somme de
 tous les éléments de la liste L.
 
-**Exemple :** `sum_list([1, 2, 3])` renvoie `6`.
+**Exemple :** `sum_list([1, 2, 3])` renvoie `6`, `sum_list([0, 1, 1, 0, 0])`
+renvoie `2`.
 
 ### Exercice 6 : ²
 
 **But :** écrire la fonction `square(L)` qui retourne une liste LS contenant les
 éléments de la liste L au carré (multipliés par eux-mêmes).
 
-Par exemple, `2² = 2 x 2 = 4`.
-
-Et le code suivant :
+**Exemple :** $2^2 = 2 * 2 = 4$ et le code suivant :
 
 ```python
 L = [1, 2, 3]
@@ -175,21 +177,23 @@ print(LS)
 
 Affiche `[1, 4, 9]`.
 
+Autre exemple, `square([2, 5, 6])` renvoie `[4, 25, 36]`.
+
 ### Exercice 7 : facto-quoi ?
 
 **But :** écrire la fonction `fact(n)` qui remplit une liste avec les valeurs
 factorielles de 0 à n et qui la retourne.
 
-En maths, la factorielle d'un entier n est le produit des nombres entiers
-strictement positifs inférieurs ou égaux à n. Cette opération est notée avec un
-point d'exclamation : `n!`.
+En maths, la factorielle d'un entier $n$ est le produit des nombres entiers
+strictement positifs inférieurs ou égaux à $n$. Cette opération est notée avec un
+point d'exclamation : $n!$.
 
-Par convention : 0! = 1.
+Par convention : $0! = 1$.
 
 Par exemple :
 
-- 3! = 3 x 2 x 1 = 6
-- 42! = 42 x 41 x 40 x ... x 3 x 2 x 1 = ? (à toi de nous dire !)
+- $3! = 3 * 2 * 1 = 6$
+- $42! = 42 * 41 * 40 * ... * 3 * 2 * 1 = ???$ (à toi de nous dire !)
 
 **Exemple :** `fact(4)` renvoie `[1, 1, 2, 6]`.
 
