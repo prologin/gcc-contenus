@@ -349,8 +349,9 @@ lorsqu'une condition est vraie. Pour ce faire la syntaxe est : `if condition:`
 suivi d'un bloc de code indenté. Le bloc de code en question ne sera alors
 exécuté que si `condition` s'évalue à `True`. Un `if` peut être accompagné
 d'un `else` qui exécute un bloc de code uniquement si la condition du `if`
-était fausse. Enfin, il y a aussi le `elif` qui est la contraction du `else` et
-du `if`.
+est fausse. Enfin, il y a aussi le `elif` qui est la contraction du `else` et
+du `if`. Le `elif` n'est exécuté que si sa condition est vraie et que les
+conditions précédentes sont fausses.
 
 Voici un exemple simple pour illustrer :
 
@@ -360,7 +361,9 @@ from microbit import *
 
 x = randint(0, 100)  # assigne un nombre aléatoire à x
 
-if x < 50:
+if x < 30:
+    display.scroll('x est inférieur à 30')
+elif x < 50:
     display.scroll('x est inférieur à 50')
 elif x < 80:
     display.scroll('x est inférieur à 80')
