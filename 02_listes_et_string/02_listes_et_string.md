@@ -250,9 +250,11 @@ print("Ceci est une
 nouvelle ligne")
 
 # Erreur !
-# Python considère, la plupart du temps, qu'une nouvelle ligne est une nouvelle
-# instruction.
+# Python considère, la plupart du temps, qu'une nouvelle ligne est
+# une nouvelle instruction.
 ```
+
+\pagebreak
 
 Le caractère `"` ou `'`, qui est interprété comme le caractère de fin d'une
 string.
@@ -261,8 +263,8 @@ string.
 print("Le canard m'a dit "Bonjour !"")
 
 # Erreur !
-# Python considère que si vous écrivez ", c'est pour indiquer que la string est
-# terminée.
+# Python considère que si vous écrivez ", c'est pour indiquer que la 
+# string est terminée.
 ```
 
 Pour pallier ce problème il existe une façon d'écrire les caractères spéciaux.
