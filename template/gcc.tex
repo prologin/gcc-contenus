@@ -30,7 +30,7 @@
 % Lists formatting
 % -- Redefine labelwidth for lists; otherwise, the enumerate package will cause
 % -- markers to extend beyond the left margin.
-\makeatletter\AtBeginDocument{%
+\makeatletter\AtBeginDocument{
   \renewcommand{\@listi}
     {\setlength{\labelwidth}{4em}}
 }\makeatother
@@ -49,11 +49,18 @@
 \newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
 
 % Web-style links
-\hypersetup{colorlinks,%
-citecolor=blue,%
-filecolor=blue,%
-linkcolor=blue,%
-urlcolor=blue}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\setminted{
+    breaklines=true,
+    samepage=true
+}
 
 \AtBeginEnvironment{minted}{
   \renewcommand{\fcolorbox}[4][]{#4}
