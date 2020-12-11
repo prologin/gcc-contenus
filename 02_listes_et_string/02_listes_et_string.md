@@ -222,6 +222,9 @@ print(s[0])
 
 Nous renverra `H`.
 
+Comme vous avez pu le voir, les strings s'écrivent entre guillemets `"` mais
+peuvent aussi s'écrire entre apostrophes `'`.
+
 On peut aussi accéder à des morceaux de strings avec l'aide des crochets et deux
 points :
 
@@ -234,6 +237,47 @@ Nous renverra `girls`.
 
 On récupère donc le segment de chaîne entre l'indice 0 compris et l'indice 5
 exclu !
+
+Les strings peuvent contenir des *caractères spéciaux*. Ces caractères sont
+similaires aux caractères normaux, mais ne peuvent pas s'écrire directement.
+
+Par exemple :
+
+Le caractère *sauter une ligne*, il ne peut pas vraiment s'écrire dans le code.
+
+```python
+print("Ceci est une
+nouvelle ligne")
+
+# Erreur !
+# Python considère, la plupart du temps, qu'une nouvelle ligne est une nouvelle
+# instruction.
+```
+
+* Le caractère `"` ou `'`, qui est interprété comme le caractère de fin d'une
+string.
+
+```python
+print("Le canard m'a dit "Bonjour !"")
+
+# Erreur !
+# Python considère que si vous ecrivez ", c'est pour indiquer que la string est
+# terminée.
+```
+
+Pour pallier ce problème il existe une façon d'écrire les caractères spéciaux.
+Cette façon consiste à écrire le caractère `\` suivi d'un autre caractère.
+
+```python
+print("Ceci est une\n nouvelle ligne")
+# \n permet de sauter une ligne
+
+print("Le canard m'a dit \"Bonjour !\"")
+# \" permet d'écire " sans terminer la string
+```
+
+Il existe d'autre caractères spéciaux comme *la tabulation* (`\t`) ou encore les
+emojis (`\u265E`).
 
 ### Exercice 1 : les palindromes!
 
