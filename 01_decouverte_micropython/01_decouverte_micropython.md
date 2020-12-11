@@ -29,17 +29,9 @@ programmes en Python dessus après l'atelier !
 
 ## Notre environnement de travail
 
-Pour écrire nos programmes, nous utiliserons le site web :
-<https://python.microbit.org/>
+Pour écrire nos programmes, nous utiliserons `Mu`, que vous avez pu découvrir dans le TP0.
 
-Si tu fermes l'onglet sans avoir enregistré, tout ton travail sera **perdu**.
-Prends donc le réflexe de cliquer sur le bouton `Save` pour enregistrer
-régulièrement !
-
-Pour transférer ton programme sur le `micro:bit` clique sur `Download`, puis sur
-`micro:bit` sur la colonne de gauche de la fenêtre qui vient de s'ouvrir, et
-enfin clique sur `Enregistrer`. Voilà ton programme est désormais dans ta carte
-`micro:bit`.
+Si tu n'as pas réussi à bien installer `Mu`, demande aux organisateurs de t'aider.
 
 # Notre premier programme
 
