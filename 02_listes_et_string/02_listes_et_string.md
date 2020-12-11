@@ -148,10 +148,10 @@ liste si k est présent, ou -1 si k n'est pas dans la liste.
 **Exemple :** `maximum([1, 2, 5, 3])` renvoie `5`, `maximum([12, 3, 8, 1])`
 renvoie `12`.
 
-**Bonus :** écrire la fonction qui retourne la position du maximum dans la liste
+**Bonus :** écrire la fonction `pos_max(L)` qui retourne la position du maximum dans la liste
 non triée L.
 
-**Exemple :** `pos_max([1, 2, 5, 3])` renvoie `2`, `maximum([12, 3, 8, 1])`
+**Exemple :** `pos_max([1, 2, 5, 3])` renvoie `2`, `pos_max([12, 3, 8, 1])`
 renvoie `0`.
 
 ### Exercice 5 : Somme
