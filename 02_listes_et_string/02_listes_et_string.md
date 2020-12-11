@@ -254,14 +254,14 @@ nouvelle ligne")
 # instruction.
 ```
 
-* Le caractère `"` ou `'`, qui est interprété comme le caractère de fin d'une
+Le caractère `"` ou `'`, qui est interprété comme le caractère de fin d'une
 string.
 
 ```python
 print("Le canard m'a dit "Bonjour !"")
 
 # Erreur !
-# Python considère que si vous ecrivez ", c'est pour indiquer que la string est
+# Python considère que si vous écrivez ", c'est pour indiquer que la string est
 # terminée.
 ```
 
@@ -273,11 +273,11 @@ print("Ceci est une\n nouvelle ligne")
 # \n permet de sauter une ligne
 
 print("Le canard m'a dit \"Bonjour !\"")
-# \" permet d'écire " sans terminer la string
+# \" permet d'écrire " sans terminer la string
 ```
 
-Il existe d'autre caractères spéciaux comme *la tabulation* (`\t`) ou encore les
-emojis (`\u265E`).
+Il existe d'autres caractères spéciaux comme *la tabulation* (qui permet
+d'insérer un grand espace avec `\t`) ou encore les emojis (`\u265E`).
 
 ### Exercice 1 : les palindromes!
 
