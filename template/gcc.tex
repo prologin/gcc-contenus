@@ -55,6 +55,10 @@ filecolor=blue,%
 linkcolor=blue,%
 urlcolor=blue}
 
+\AtBeginEnvironment{minted}{
+  \renewcommand{\fcolorbox}[4][]{#4}
+}
+
 % -- Custom GCC related config
 % Reduce minted space
 \setlength\partopsep{-\topsep}
