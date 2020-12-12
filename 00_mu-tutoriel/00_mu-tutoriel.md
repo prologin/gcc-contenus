@@ -22,6 +22,9 @@ temps de découvrir et bien maîtriser le language.
 
 Cliquez donc sur `Python3` et validez.
 
+Si vous faites un stage court, et que vous allez utiliser les microbits, alors
+choisissez le mode `BBC micro:bit`.
+
 \begin{center}\includegraphics[width=0.85\linewidth]{resources/onstartup.png}\end{center}
 
 ## La barre d'outils
