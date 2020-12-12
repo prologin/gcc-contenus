@@ -28,7 +28,7 @@ Si on fait `len(L)` sur notre liste vide, on obtient 0 puisque notre liste ne
 contient pas d'éléments.
 
 Ensuite, **L.append(x)** ajoute l'élément x à la fin de la liste L.  On ajoute
-alors l'élément 'x' à la liste L avec `L.append('x')`. Maintenant, **len(L)**
+alors le caractère 'x' à la liste L avec `L.append('x')`. Maintenant, **len(L)**
 affiche 1 et `L = ['x']`.
 
 Également, `L[i]` accède à l'élément à la place i dans la liste L. Ainsi, si on
@@ -112,7 +112,7 @@ vérifier que votre code fonctionne.
 Pour être certains que tout cela se passe dans les règles de l'art, il vous
 faudra respecter quelques règles :
 
-- Créer un fichier dans lesquel vous mettrez vos fonctions (*tp_listes.py* par exemple)
+- Créer un fichier dans lequel vous mettrez vos fonctions (*tp_listes.py* par exemple)
 - Respecter les noms de fonctions précisés dans les énoncés suivants
 - Exécuter le fichier test avec `./tests.py` suivi du nom de votre fichier dans le terminal
   (`./tests.py tp_listes.py` par exemple)
@@ -129,43 +129,45 @@ entiers de 0 inclus à n inclus, et la retourne.
 **But :** écrire la fonction `is_in(k, L)` qui traverse la liste non triée L et
 retourne `True` si k est dans la liste, ou `False` autrement.
 
-**Exemple :** `is_in(2, [1, 2, 3])` renvoie `True` et  `is_in(5, [1, 2, 3])`
-renvoie `False`.
+**Exemple :** `is_in(2, [1, 2, 3])` renvoie `True` (2 est dans la liste) et
+`is_in(5, [1, 2, 3])` renvoie `False` (5 n'est pas dans la liste).
 
 ### Exercice 3 : Où se trouve k ?
 
 **But :** écrire la fonction `pos(k, L)` qui retourne la position de k dans la
 liste si k est présent, ou -1 si k n'est pas dans la liste.
 
-**Exemple :** `pos(2, [3, 1, 2])` renvoie `2`.
+**Exemple :** `pos(2, [3, 1, 2])` renvoie `2` et `pos(2, [4, 5, 6])` renvoie
+-1. N'oublie pas que les indices commencent à 0.
 
 ### Exercice 4 : Maximum
 
 **But :** écrire la fonction `maximum(L)` qui retourne le plus grand des
 éléments de la liste non triée L.
 
-**Exemple :** `maximum([1, 2, 5, 3])` renvoie `5`.
+**Exemple :** `maximum([1, 2, 5, 3])` renvoie `5`, `maximum([12, 3, 8, 1])`
+renvoie `12`.
 
-**Bonus :** écrire la fonction qui retourne la position du maximum dans la liste
+**Bonus :** écrire la fonction `pos_max(L)` qui retourne la position du maximum dans la liste
 non triée L.
 
-**Exemple :** `pos_max([1, 2, 5, 3])` renvoie `2`.
+**Exemple :** `pos_max([1, 2, 5, 3])` renvoie `2`, `pos_max([12, 3, 8, 1])`
+renvoie `0`.
 
 ### Exercice 5 : Somme
 
 **But :** écrire la fonction `sum_list(L)` qui retourne la valeur de la somme de
 tous les éléments de la liste L.
 
-**Exemple :** `sum_list([1, 2, 3])` renvoie `6`.
+**Exemple :** `sum_list([1, 2, 3])` renvoie `6`, `sum_list([0, 1, 1, 0, 0])`
+renvoie `2`.
 
 ### Exercice 6 : ²
 
 **But :** écrire la fonction `square(L)` qui retourne une liste LS contenant les
 éléments de la liste L au carré (multipliés par eux-mêmes).
 
-Par exemple, `2² = 2 x 2 = 4`.
-
-Et le code suivant :
+**Exemple :** $2^2 = 2 * 2 = 4$ et le code suivant :
 
 ```python
 L = [1, 2, 3]
@@ -175,31 +177,35 @@ print(LS)
 
 Affiche `[1, 4, 9]`.
 
+Autre exemple, `square([2, 5, 6])` renvoie `[4, 25, 36]`.
+
 ### Exercice 7 : facto-quoi ?
 
 **But :** écrire la fonction `fact(n)` qui remplit une liste avec les valeurs
 factorielles de 0 à n et qui la retourne.
 
-En maths, la factorielle d'un entier n est le produit des nombres entiers
-strictement positifs inférieurs ou égaux à n. Cette opération est notée avec un
-point d'exclamation : `n!`.
+En maths, la factorielle d'un entier $n$ est le produit des nombres entiers
+strictement positifs inférieurs ou égaux à $n$. Cette opération est notée avec un
+point d'exclamation : $n!$.
 
-Par convention : 0! = 1.
+Par convention : $0! = 1$.
 
 Par exemple :
 
-- 3! = 3 x 2 x 1 = 6
-- 42! = 42 x 41 x 40 x ... x 3 x 2 x 1 = ? (à toi de nous dire !)
+- $3! = 3 * 2 * 1 = 6$
+- $42! = 42 * 41 * 40 * ... * 3 * 2 * 1 = ???$ (à toi de nous dire !)
 
 **Exemple :** `fact(4)` renvoie `[1, 1, 2, 6]`.
 
 ### Exercice 8 : double trouble
 
 **But :** écrire la fonction `double(L)` qui renvoie `True` si on peut trouver
-deux doubles **consécutifs** dans la liste L, ou `False` autrement.
+deux doublons **consécutifs** dans la liste L, ou `False` autrement.
 
-**Exemple :** `double([1, 2, 2, 3])` renvoie `True` et `double([1, 2, 3])`
-renvoie `False`.
+**Exemple :** `double([1, 2, 2, 3])` renvoie `True` car il y a deux fois le
+chiffre 2 à la suite (en position 1 et 2) tandis que `double([1, 2, 3])` et
+`double([1, 2, 1])` renvoient `False` car il n'y a jamais deux nombres
+identiques consécutifs.
 
 # Introduction aux chaînes de caractères
 
@@ -208,7 +214,7 @@ lettres : des mots, des phrases, et vous les avez en fait déjà manipulées dan
 le TP précédent, notamment à l'aide de la fonction `print`.
 
 En anglais, on appelle les chaînes de caractères des "*strings*", et caractère
-devient "*character*" abrégé 'char'.
+devient "*character*" abrégé "*char*".
 
 En Python, les strings se matérialisent sous la forme de listes de caractères,
 et on retrouve les mêmes propriétés !
@@ -220,7 +226,7 @@ s = "Hello World!"
 print(s[0])
 ```
 
-Nous renverra `H`.
+Nous renverra 'H'.
 
 Comme vous avez pu le voir, les strings s'écrivent entre guillemets `"` mais
 peuvent aussi s'écrire entre apostrophes `'`.
@@ -233,7 +239,7 @@ s = "girls can code"
 print(s[0:5])
 ```
 
-Nous renverra `girls`.
+Nous renverra "girls".
 
 On récupère donc le segment de chaîne entre l'indice 0 compris et l'indice 5
 exclu !
@@ -294,12 +300,12 @@ La phrase "Engage le jeu que je le gagne." de l'écrivain Alain Damasio est un
 palindrome.
 
 **But :** écrire la fonction `palindrome(s)` qui renvoie `True` si la chaîne de
-caractères 's' est un palindrome, et `False` autrement.
+caractères `s` est un palindrome, et `False` autrement.
 
 ### Exercice 2 : occurrences
 
 **But :** écrire la fonction `count(c, s)` qui retourne le nombre de fois qu'on
-trouve le caractère c dans la chaîne s.
+trouve le caractère `c` dans la chaîne `s`.
 
 ## Bonus : un peu d'algorithmique !
 
@@ -314,41 +320,7 @@ ordonnées ! Pour ça, on utilise des algorithmes de tri.
 Tu peux t'intéresser aux algorithmes de tri à bulles, tri par sélection, tri
 rapide, ...
 
-### Exercice 2 : cherche Médor, cherche !
-
-Alors c'est bien d'avoir des listes bien remplies, mais parfois, on cherche à
-retrouver un élément stocké quelque part dans la liste.
-
-Un algorithme de recherche efficace sur listes **déjà triées** est l'algorithme
-de recherche dichotomique, *binary search* en anglais. Le principe est le même
-que quand on cherche un mot dans le dictionnaire : imaginons je cherche "pomme"
-et je vois à un endroit "poire" et plus loin "porte", je sais alors que "pomme"
-est entre les deux !
-
-**Principe :**
-
-```
-recherche_dichotomique_récursive(élément, liste_triée):
-   m = longueur de liste triée / 2 ;
-   si liste triée[m] = élément :
-       renvoyer m ;
-   si liste triée[m] > élément :
-       renvoyer recherche_dichotomique_récursive(élément, liste_triée[1:m]) ;
-   sinon :
-       renvoyer recherche_dichotomique_récursive(élément, liste_triée[m:l]) ;
-```
-
-Pour en savoir plus, tu peux aller sur cette page :
-<https://fr.wikipedia.org/wiki/Recherche_dichotomique>
-
-**But :** implémenter la fonction `bin_search(k, L)` qui prend en paramètre une
-liste *triée par ordre croissant* `L` et retourne la position de `e` dans la
-liste s'il y est présent, -1 sinon. Cette fonction devra implémenter une
-recherche dichotomique.
-
-**Exemple**: `bin_search(2, [1, 2, 3])` retourne `1`
-
-### Exercice 3 : Introduction à la Récursivité
+### Exercice 2 : Introduction à la Récursivité
 
 La récursivité est la propriété de pouvoir appliquer une même règle plusieurs
 fois en elle-même ; dans notre cas, écrire un algorithme qui va s'appeler
@@ -411,3 +383,37 @@ Algorithme récursif :
 
 Attention, ne testez pas votre fonction `fibo(n)` avec des nombres trop grands,
 cela prendrait beaucoup trop de temps !
+
+### Exercice 3 : cherche Médor, cherche !
+
+Alors c'est bien d'avoir des listes bien remplies, mais parfois, on cherche à
+retrouver un élément stocké quelque part dans la liste.
+
+Un algorithme de recherche efficace sur listes **déjà triées** est l'algorithme
+de recherche dichotomique, *binary search* en anglais. Le principe est le même
+que quand on cherche un mot dans le dictionnaire : imaginons je cherche "pomme"
+et je vois à un endroit "poire" et plus loin "porte", je sais alors que "pomme"
+est entre les deux !
+
+**Principe :**
+
+```
+recherche_dichotomique_récursive(élément, liste_triée):
+   m = longueur de liste triée / 2 ;
+   si liste triée[m] = élément :
+       renvoyer m ;
+   si liste triée[m] > élément :
+       renvoyer recherche_dichotomique_récursive(élément, liste_triée[1:m]) ;
+   sinon :
+       renvoyer recherche_dichotomique_récursive(élément, liste_triée[m:l]) ;
+```
+
+Pour en savoir plus, tu peux aller sur cette page :
+<https://fr.wikipedia.org/wiki/Recherche_dichotomique>
+
+**But :** implémenter la fonction `bin_search(k, L)` qui prend en paramètre une
+liste *triée par ordre croissant* `L` et retourne la position de `e` dans la
+liste s'il y est présent, -1 sinon. Cette fonction devra implémenter une
+recherche dichotomique.
+
+**Exemple**: `bin_search(2, [1, 2, 3])` retourne `1`
