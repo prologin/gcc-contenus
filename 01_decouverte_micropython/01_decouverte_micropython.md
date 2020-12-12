@@ -1,6 +1,6 @@
 ---
 title: Découverte de Python
-date: 2019
+date: 2020
 ---
 
 # Introduction à la programmation
@@ -29,17 +29,9 @@ programmes en Python dessus après l'atelier !
 
 ## Notre environnement de travail
 
-Pour écrire nos programmes, nous utiliserons le site web :
-<https://python.microbit.org/>
+Pour écrire nos programmes, nous utiliserons `Mu`, que vous avez pu découvrir dans le TP0.
 
-Si tu fermes l'onglet sans avoir enregistré, tout ton travail sera **perdu**.
-Prends donc le réflexe de cliquer sur le bouton `Save` pour enregistrer
-régulièrement !
-
-Pour transférer ton programme sur le `micro:bit` clique sur `Download`, puis sur
-`micro:bit` sur la colonne de gauche de la fenêtre qui vient de s'ouvrir, et
-enfin clique sur `Enregistrer`. Voilà ton programme est désormais dans ta carte
-`micro:bit`.
+Si tu n'as pas réussi à bien installer `Mu`, demande aux organisateurs de t'aider.
 
 # Notre premier programme
 
@@ -310,7 +302,7 @@ progressivement varier l'intensité de 0 à 9).
 ## La boucle `while`
 
 La boucle **while** sert à répéter un morceau de programme tant qu'une
-affirmation est vraie. Elle s'utilise comme suit :
+condition est vraie. Elle s'utilise comme suit :
 
 ```python
 from microbit import *
@@ -345,11 +337,13 @@ calculer le score du joueur.
 ## Les conditions : `if` ... `elif` ... `else`
 
 L'instruction `if` permet de décider de n'exécuter un morceau de code que
-lorsqu'une condition est vraie. Pour se faire la syntaxe est d'écrire `if
-condition:` suivi d'un bloc de code indenté. Le bloc de code en question ne sera
-alors exécuté que si `condition` s'évalue à `True`. Pour simplifier, un `if`
-peut être suivi d'un ou plusieurs `else:` qui exécute un bloc de code uniquement
-si la condition du `if` était fausse.
+lorsqu'une condition est vraie. Pour ce faire la syntaxe est : `if condition:`
+suivi d'un bloc de code indenté. Le bloc de code en question ne sera alors
+exécuté que si `condition` s'évalue à `True`. Un `if` peut être accompagné
+d'un `else` qui exécute un bloc de code uniquement si la condition du `if`
+est fausse. Enfin, il y a aussi le `elif` qui est la contraction du `else` et
+du `if`. Le `elif` n'est exécuté que si sa condition est vraie et que les
+conditions précédentes sont fausses.
 
 Voici un exemple simple pour illustrer :
 
@@ -359,10 +353,14 @@ from microbit import *
 
 x = randint(0, 100)  # assigne un nombre aléatoire à x
 
-if x < 50:
+if x < 30:
+    display.scroll('x est inférieur à 30')
+elif x < 50:
     display.scroll('x est inférieur à 50')
+elif x < 80:
+    display.scroll('x est inférieur à 80')
 else:
-    display.scroll('x est supérieur à 50')
+    display.scroll('x est supérieur à 80')
 ```
 
 Ou un exemple légèrement plus poussé qui permet de lier les boutons du
@@ -387,6 +385,33 @@ while True:
     else:
         # Éteint la diode de droite sinon
         display.set_pixel(3, 2, 0)
+```
+
+*Remarques :*
+
+- Un `if` n'est pas nécessairement accompagné d'un `else` (ou d'un `elif`).
+Dans ce cas, si sa condition est fausse, rien n'est exécuté
+- On peut ajouter autant de `elif` que l'on veut après un `if`
+
+*Tout est clair ?*
+
+Si tu as bien compris, tu devrais pouvoir dire la différence entre notre
+premier exemple et le code ci-dessous :
+
+```python
+from random import randint
+from microbit import *
+
+x = randint(0, 100)  # assigne un nombre aléatoire à x
+
+if x < 30:
+    display.scroll('x est inférieur à 30')
+if x < 50:
+    display.scroll('x est inférieur à 50')
+if x < 80:
+    display.scroll('x est inférieur à 80')
+if x > 80:
+    display.scroll('x est supérieur à 80')
 ```
 
 # Projets
@@ -560,9 +585,9 @@ display.scroll(42)  # en réalité ça ne fonctionne pas qu'avec le texte !
 
 ## Les boutons
 
-Il y a deux boutons sur le `micro:bit`, ils seront appelés `button_a` et
+Il y a deux boutons sur le `micro:bit`, ils sont appelés `button_a` et
 `button_b` et toute fonction qui peut être appelée pour l'un peut aussi être
-appelée par l'autre.
+appelée pour l'autre.
 
 ### `button_a.is_pressed()` - état du bouton
 
