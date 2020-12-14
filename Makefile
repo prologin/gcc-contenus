@@ -41,3 +41,4 @@ clean:
 	for dir in $(DIRS); do \
 	    make clean -C $$dir; \
 	done
+	rm -rf $(COLLECT_DIR)
