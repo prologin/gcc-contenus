@@ -81,7 +81,14 @@ def wordCaesarMod(w, nb):
         res += letterCaesarMod(w[i], nb)
     return res
 
+def breakCaesar(msg):
+    for i in range(1, 27, 1):
+        print(wordCaesar(msg, i))
+
 #tests
+breakCaesar("Rovvy Gybvn")
+
+
 print(letterCaesar('a', 10))
 print(wordCaesar("test", 1))
 print(wordCaesar("Girls can code", 3))

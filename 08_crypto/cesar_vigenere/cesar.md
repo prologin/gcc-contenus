@@ -66,10 +66,70 @@ Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de
 
 >```chr(42)``` va donner ```*```
 
-## Décrypter un message...
+## Déchiffrer un message...
 ---
+Pour déchiffrer un message il suffit d'utiliser la clé inverse à celle utilisée pour chiffre. Par exemple:
+```py
+msg = stringCaesar("Hello World", 10)   # chiffre "Hello World", va donner "Rovvy Gybvn"
+stringCaesar(msg, -10)                  # déchiffre msg, va donner "Hello World"
+```
+
+Dans un premier temps, testez avec votre code pour observer le résultat obtenu.
 
 
 ## Bonus : conserver les lettres majuscules et minuscules du message original
 ---
+
+## Casser le chiffre de César
+---
+Il existe plusieurs méthodes pour casser le chiffre de César. On peut par exemple faire une analyse syntaxique qui va compter la proportion de chaque lettre dans le message chiffré et comparer par rapport à la fréquence connue des lettres dans la langue du message. En Français, à titre d'exemple, la lettre 'e' est la plus fréquente, ainsi la lettre la plus fréquente du message chiffré doit sans doute correspondre à un 'e'. Cette méthode est très efficace sur les messages longs, le problème est donc que sur les messages dits courts, elle ne sera pas d'un grande utilité. Ce n'est donc pas celle que vous allez implémenter, mais il est toujours intéressant de savoir qu'une telle méthode existe.
+
+La méthode que vous allez implémenter consiste en du brute force.
+
+>**Qu'est-ce que le brute force ?**  Pour faire simple, cela consiste à essayer toutes les combinaisons possibles. Dans notre cas, cela revient à essayer 26 possibilités, puisqu'il y a 26 lettres dans l'alphabet.
+
+Vous allez donc implémenter la fonction ```breakCaesar(msg)```. Elle prend en paramètre une chaine de caractère (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer ```charCaesar(c, d)``` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour ```breakCaesar("Rovvy Gybvn")```:
+```py
+Spwwz Hzcwo
+Tqxxa Iadxp
+Uryyb Jbeyq
+Vszzc Kcfzr
+Wtaad Ldgas
+Xubbe Mehbt
+Yvccf Nficu
+Zwddg Ogjdv
+Axeeh Phkew
+Byffi Qilfx
+Czggj Rjmgy
+Dahhk Sknhz
+Ebiil Tloia
+Fcjjm Umpjb
+Gdkkn Vnqkc
+Hello World     # message déchiffré !
+Ifmmp Xpsme
+Jgnnq Yqtnf
+Khoor Zruog
+Lipps Asvph
+Mjqqt Btwqi
+Nkrru Cuxrj
+Olssv Dvysk
+Pmttw Ewztl
+Qnuux Fxaum
+Rovvy Gybvn
+```
+
+Vous pouvez tout à fait améliorer l'affichage pour que cela soit davantage lisible !
+
+La fonction ```print()``` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractère, un nombre, une liste...). Par exemple :
+```py
+s = "Hello World"
+print(s)                # va afficher "Hello World" 
+print("Bonjour !")      # va afficher "Bonjour !"
+print(42)               # va afficher 42
+print()                 # renvoie à la ligne, n'affiche rien
+
+# N'hésitez pas à essayer de votre côté ! 
+```
+
+## Fin de la partie sur le chiffre de César !
 
