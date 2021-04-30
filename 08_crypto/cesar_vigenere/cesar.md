@@ -27,9 +27,9 @@ Par exemple, Z est la 26ème  lettre de l'alphabet. Si l'on applique un décalag
 
 D'autres exemples:
 
->Décalage de trois : **Girls Can Code** devient **Jluov fdq frgh**
+>Décalage de trois : **Girls Can Code!** devient **Jluov Fdq Frgh!**
 
->Décalage de dix : **Hello World** devient **Rovvy Hycvn**
+>Décalage de dix : **Hello World!** devient **Rovvy Gybvn!**
 
 Voilà donc le principe de base du chiffrement de César.
 
@@ -38,7 +38,7 @@ Voilà donc le principe de base du chiffrement de César.
 ---
 Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut en effet se dire que dans un premier temps, on va implémenter le chiffre de César pour qu'il ne soit appliqué que sur une lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, vous pouvez ne prendre en compte que les lettres majuscules ou minuscules si cela vous aide.
 
-Ainsi, il va falloir implémenter les fonctions ```charCaesar(c, d)``` et ```stringCaesar(s, d)```.
+Ainsi, il va falloir implémenter les fonctions ```letterCaesar(c, d)``` et ```textCaesar(s, d)```.
 
 ### La fonction ```charCaesar(c, d)```
 
