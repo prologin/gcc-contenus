@@ -38,17 +38,18 @@ Voilà donc le principe de base du chiffrement de César.
 ---
 Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut en effet se dire que dans un premier temps, on va implémenter le chiffre de César pour qu'il ne soit appliqué que sur une lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, vous pouvez ne prendre en compte que les lettres majuscules ou minuscules si cela vous aide.
 
-Ainsi, il va falloir implémenter les fonctions ```letterCaesar(c, d)``` et ```textCaesar(s, d)```.
+Ainsi, il va falloir implémenter les fonctions ```letterCaesar(l, d)``` et ```textCaesar(s, d)```.
 
-### La fonction ```charCaesar(c, d)```
+### La fonction ```letterCaesar(l, d)```
 
-Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre ```c``` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractèrer. Quant au paramètre ```d```, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
+Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre ```l``` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractèrer. Quant au paramètre ```d```, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
+>**Bonus:** essayez de gérer les majuscules, minuscules ainsi que la ponctuation.
 
-### La fonction ```stringCaesar(s, d)```
+### La fonction ```textCaesar(t, d)```
 
-Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre ```s``` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre ```d``` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
+Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre ```t``` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre ```d``` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
 
->**Tips :** pensez à prendre en compte les espaces, vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à ```%```)
+>**Tips :** pensez à prendre en compte les espaces, vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à ```%```).
 
 ## Quelques fonctions et notions utiles
 
@@ -63,17 +64,7 @@ Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de
 'OK'
 
 
-# La méthode upper() permet de tranformer une chaîne de caractères en majuscules
-
->>> s = 'hello World'
->>> s.upper()
-'HELLO WORLD'
-
->>> 'a'.upper()
-'A'
-
-
-# La fonction len() permet de connaître la longueur d'une chaîne de caractère
+# La fonction len() permet de connaître la longueur d'une chaîne de caractère.
 
 >>> len('Hello World')
 11
@@ -82,7 +73,7 @@ Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de
 4
 
 
-# Les fonctions ord() et chr() permettent de transformer un caractère en son code ASCII et vice-versa
+# Les fonctions ord() et chr() permettent de transformer un caractère en son code ASCII et vice-versa.
 
 >>> ord('A')
 65
@@ -90,6 +81,37 @@ Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de
 67
 >>> chr(65)
 'A'
+
+
+# La méthode upper() permet de tranformer une chaîne de caractères en majuscules.
+
+>>> s = 'hello World'
+>>> s.upper()
+'HELLO WORLD'
+>>> 'a'.upper()
+'A'
+
+# La méthode isalpha() permet de déterminer si un caractère est une lettre ou non.
+
+>>> c = '!'
+>>> c.isalpha()
+False
+>>> c = 'a'
+>>> c.isalpha()
+True
+
+
+# La méthode isupper() permet de savoir si un caractère est une majuscule ou non.
+
+>>> c = 'G'
+>>> c.isupper()
+True
+>>> c = "HELLO"
+>>> c.isupper()
+True
+>>> c = 'g'
+>>> c.isupper()
+False
 ```
 
 ## Déchiffrer un message
@@ -102,16 +124,12 @@ msg = stringCaesar("Hello World", 10)   # chiffre "Hello World", va donner "Rovv
 stringCaesar(msg, -10)                  # déchiffre msg, va donner "Hello World"
 ```
 
-Dans un premier temps, testez avec votre code pour observer le résultat obtenu.
-
-## Bonus : conserver les lettres majuscules et minuscules du message original
-
----
+Dans un premier temps, testez avec votre code pour observer le résultat obtenu. Puis, adaptez votre code pour prendre en compte les décalages négatifs.
 
 ## Casser le chiffre de César
 
 ---
-Il existe plusieurs méthodes pour casser le chiffre de César. On peut par exemple faire une analyse syntaxique qui va compter la proportion de chaque lettre dans le message chiffré et comparer par rapport à la fréquence connue des lettres dans la langue du message. En Français, à titre d'exemple, la lettre 'e' est la plus fréquente, ainsi la lettre la plus fréquente du message chiffré doit sans doute correspondre à un 'e'. Cette méthode est très efficace sur les messages longs, le problème est donc que sur les messages dits courts, elle ne sera pas d'un grande utilité. Ce n'est donc pas celle que vous allez implémenter, mais il est toujours intéressant de savoir qu'une telle méthode existe.
+Il existe plusieurs méthodes pour casser le chiffre de César. On peut par exemple faire une analyse fréquentielle qui va compter la proportion de chaque lettre dans le message chiffré et comparer par rapport à la fréquence connue des lettres dans la langue du message. En Français, à titre d'exemple, la lettre 'e' est la plus fréquente, ainsi la lettre la plus fréquente du message chiffré doit sans doute correspondre à un 'e'. Cette méthode est très efficace sur les messages longs, le problème est donc que sur les messages dits courts, elle ne sera pas d'un grande utilité. Ce n'est donc pas celle que vous allez implémenter, mais il est toujours intéressant de savoir qu'une telle méthode existe.
 
 La méthode que vous allez implémenter consiste en du brute force.
 
@@ -168,7 +186,7 @@ Bonjour !
 
 ### Challenge
 
-Essaye de décrypter ce message chiffré avec le code César !
+Essaye de décrypter ce message chiffré avec le chiffre de César !
 
 ```none
 C'RXV UV XCRTV T'VJK CR MZV
