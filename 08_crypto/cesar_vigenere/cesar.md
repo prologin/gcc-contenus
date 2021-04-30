@@ -1,10 +1,14 @@
 # Le chiffre de César
+
 _Prérequis : la table ascii_
-## Un peu d'histoire...
+
+## Un peu d'histoire
+
 ---
 Ce moyen de chiffrement doit son nom à Jules César, célèbre homme d'état romain. Il aurait utilisé pour certaines de ses communications secrètes, militaires notamment, un chiffrement par subsitution. Celui-ci utilisant un décalage d'une valeur trois.
 
 ## Qu'est-ce qu'un chiffrement par substitution ?
+
 ---
 Pour faire simple, cette méthode consiste à substituer la valeur d'une lettre par une lettre, un chiffre ou autre. Dans le cas du chiffrement de César, on substitue une lettre par une autre lettre. Par exemple, si l'on décide d'effectuer un décalage de trois, voici comment la valeur de chaque lettre va évoluer :
 
@@ -17,7 +21,7 @@ Voilà comment cela va se répercuter sur l'alphabet tout entier :
 |Alphabet|A B C D E F G H I J K L M N O P Q R S T U V W X Y Z|
 |Substitution|D E F G H I J K L M N O P Q R S T U V W X Y Z A B C|
 
-On observe donc que A (première lettre de l'alphabet) sera encodée par D (troisième lettre de l'alphabet), que B sera encodée par E, que C par F, etc. On remarque que X sera codé par A, Y par B et Z par C. Si le chiffre donné pour le décalage fait dépasser de l'alphabet, on revient au début. 
+On observe donc que A (première lettre de l'alphabet) sera encodée par D (troisième lettre de l'alphabet), que B sera encodée par E, que C par F, etc. On remarque que X sera codé par A, Y par B et Z par C. Si le chiffre donné pour le décalage fait dépasser de l'alphabet, on revient au début.
 
 Par exemple, Z est la 26ème  lettre de l'alphabet. Si l'on applique un décalage de deux, on a alors : 26 + 3 = 29. C'est plus qu'il n'y a de lettres dans l'alphabet. Pour revenir au début, il n'y a qu'à soustraire le nombre total de lettres dans l'alphabet : 29 - 26 = 3. La troisième lettre de l'alphabet est C. Z est donc codé par C.
 
@@ -29,46 +33,70 @@ D'autres exemples:
 
 Voilà donc le principe de base du chiffrement de César.
 
-## Place au code !
+## Place au code
+
 ---
 Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut en effet se dire que dans un premier temps, on va implémenter le chiffre de César pour qu'il ne soit appliqué que sur une lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, vous pouvez ne prendre en compte que les lettres majuscules ou minuscules si cela vous aide.
 
 Ainsi, il va falloir implémenter les fonctions ```charCaesar(c, d)``` et ```stringCaesar(s, d)```.
 
 ### La fonction ```charCaesar(c, d)```
+
 Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre ```c``` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractèrer. Quant au paramètre ```d```, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
 
 ### La fonction ```stringCaesar(s, d)```
+
 Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre ```s``` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre ```d``` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
 
 >**Tips :** pensez à prendre en compte les espaces, vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à ```%```)
 
-## Quelques fonctions et notions utiles...
+## Quelques fonctions et notions utiles
+
 ---
-- ```+``` va permettre de concaténer des caractères ou des chaînes de caractères. Exemple :
->```"Hello " + "World!"``` va donner ```"Hello World!"```
 
->```"O" + "K"``` va donner ```"OK"```
+```py
+# L'opérateur + permet, quand il est appliqué à des chaînes de caractères, de concaténer celles-ci. Exemples:
 
-- ```char.upper()``` va donner la lettre majuscule de "char". Exemple :
->Si ```c = 'a'``` alors ```c.upper()``` va donner ```'A'```
+>>> 'Hello' + 'World'
+'HelloWorld'
+>>> 'O' + 'K'
+'OK'
 
-- ```len()``` : permet d'obtenir la longueur d'une chaîne de caractères ou d'une liste. Exemple :
->```len("Hello World!")``` va donner ```12```
 
-- ```ord()``` : permet de passer d'un caractère à un nombre entier (selon la table ASCII), prend en paramètre un caractère. Exemple : 
->```ord('a')``` va donner ```97```
+# La méthode upper() permet de tranformer une chaîne de caractères en majuscules
 
->```ord('Z')``` va donner ```90```
+>>> s = 'hello World'
+>>> s.upper()
+'HELLO WORLD'
 
-- ```chr()``` : permet de passer d'un nombre entier à un caractère (selon la table ASCII), prend en paramètre un nombre entier. Exemple :
->```chr(97)``` va donner ```a```
+>>> 'a'.upper()
+'A'
 
->```chr(42)``` va donner ```*```
 
-## Déchiffrer un message...
+# La fonction len() permet de connaître la longueur d'une chaîne de caractère
+
+>>> len('Hello World')
+11
+>>> s = 'ABCD'
+>>> len(s)
+4
+
+
+# Les fonctions ord() et chr() permettent de transformer un caractère en son code ASCII et vice-versa
+
+>>> ord('A')
+65
+>>> ord('C')
+67
+>>> chr(65)
+'A'
+```
+
+## Déchiffrer un message
+
 ---
 Pour déchiffrer un message il suffit d'utiliser la clé inverse à celle utilisée pour chiffre. Par exemple:
+
 ```py
 msg = stringCaesar("Hello World", 10)   # chiffre "Hello World", va donner "Rovvy Gybvn"
 stringCaesar(msg, -10)                  # déchiffre msg, va donner "Hello World"
@@ -76,11 +104,12 @@ stringCaesar(msg, -10)                  # déchiffre msg, va donner "Hello World
 
 Dans un premier temps, testez avec votre code pour observer le résultat obtenu.
 
-
 ## Bonus : conserver les lettres majuscules et minuscules du message original
+
 ---
 
 ## Casser le chiffre de César
+
 ---
 Il existe plusieurs méthodes pour casser le chiffre de César. On peut par exemple faire une analyse syntaxique qui va compter la proportion de chaque lettre dans le message chiffré et comparer par rapport à la fréquence connue des lettres dans la langue du message. En Français, à titre d'exemple, la lettre 'e' est la plus fréquente, ainsi la lettre la plus fréquente du message chiffré doit sans doute correspondre à un 'e'. Cette méthode est très efficace sur les messages longs, le problème est donc que sur les messages dits courts, elle ne sera pas d'un grande utilité. Ce n'est donc pas celle que vous allez implémenter, mais il est toujours intéressant de savoir qu'une telle méthode existe.
 
@@ -89,6 +118,7 @@ La méthode que vous allez implémenter consiste en du brute force.
 >**Qu'est-ce que le brute force ?**  Pour faire simple, cela consiste à essayer toutes les combinaisons possibles. Dans notre cas, cela revient à essayer 26 possibilités, puisqu'il y a 26 lettres dans l'alphabet.
 
 Vous allez donc implémenter la fonction ```breakCaesar(msg)```. Elle prend en paramètre une chaine de caractère (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer ```charCaesar(c, d)``` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour ```breakCaesar("Rovvy Gybvn")```:
+
 ```py
 Spwwz Hzcwo
 Tqxxa Iadxp
@@ -121,15 +151,25 @@ Rovvy Gybvn
 Vous pouvez tout à fait améliorer l'affichage pour que cela soit davantage lisible !
 
 La fonction ```print()``` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractère, un nombre, une liste...). Par exemple :
-```py
-s = "Hello World"
-print(s)                # va afficher "Hello World" 
-print("Bonjour !")      # va afficher "Bonjour !"
-print(42)               # va afficher 42
-print()                 # renvoie à la ligne, n'affiche rien
 
+```py
+>>> s = "Hello World"
+>>>print(s)
+Hello World
+>>> print("Bonjour !")
+Bonjour !
+>>> print(42)
+42
+>>> print() # sans argument, print() affiche uniquement un retour à la ligne
+
+>>> 
 # N'hésitez pas à essayer de votre côté ! 
 ```
 
-## Fin de la partie sur le chiffre de César !
+### Challenge
 
+Essaye de décrypter ce message chiffré avec le code César !
+
+```none
+C'RXV UV XCRTV T'VJK CR MZV
+```
