@@ -5,14 +5,14 @@ _Prérequis : la table ascii_
 ## Un peu d'histoire
 
 ---
-Ce moyen de chiffrement doit son nom à Jules César, célèbre homme d'état romain. Il aurait utilisé pour certaines de ses communications secrètes, militaires notamment, un chiffrement par subsitution. Celui-ci utilisant un décalage d'une valeur trois.
+Ce moyen de chiffrement doit son nom à Jules César, célèbre homme d'état romain. Il aurait utilisé pour certaines de ses communications secrètes, militaires notamment, un chiffrement par substitution. Celui-ci utilisant un décalage d'une valeur trois.
 
 ## Qu'est-ce qu'un chiffrement par substitution ?
 
 ---
 Pour faire simple, cette méthode consiste à substituer la valeur d'une lettre par une lettre, un chiffre ou autre. Dans le cas du chiffrement de César, on substitue une lettre par une autre lettre. Par exemple, si l'on décide d'effectuer un décalage de trois, voici comment la valeur de chaque lettre va évoluer :
 
-![Image not loading](https://organiser-anniversaire.fr/wp-content/uploads/2011/05/codes.jpg)
+![Image not loading](../imgs/shifting.jpg)
 
 Voilà comment cela va se répercuter sur l'alphabet tout entier :
 

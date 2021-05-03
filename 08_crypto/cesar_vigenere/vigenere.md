@@ -43,7 +43,6 @@ Cette fonction a pour but de convertir la clé en une liste de décalages. Elle 
 
 Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. Elle prend en paramètre `t`, une chaîne de caractères, qui est le message à dissimuler. L'autre paramètre `k`, est aussi une chaîne de caractères et correspond à la clé.
 
-
 ## Annexe
 
 ### Sources
