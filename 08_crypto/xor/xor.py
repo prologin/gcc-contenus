@@ -55,7 +55,7 @@ def randomHexa(lenstr):
     return res
 
 #tests
-s = "Hello World !"
+s = "Hello World!"
 h = randomHexa(len(s))
 print("s = ",stringToHexa(s))
 print("h = ", h)
