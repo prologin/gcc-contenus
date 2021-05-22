@@ -1,6 +1,6 @@
 # Le chiffre de Vigenère
 
-_Prérequis : avoir fini la partie sur le chiffre de César_
+>Prérequis : avoir fini la partie sur le chiffre de César
 
 ## Un peu d'histoire
 

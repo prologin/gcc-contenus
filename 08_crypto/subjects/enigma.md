@@ -1,4 +1,4 @@
-# **TP cryptologie : Enigma**
+# **La machine Enigma**
 
 >Prérequis : maîtrise basique des classes et de l'opérateur modulo
 
@@ -13,7 +13,7 @@ Tu en as peut-être déjà entendu parler, Enigma est une machine de cryptologie
 La machine Enigma est composée de 3 parties mobiles appelées "rotors" (visibles sur la photo ci-dessous).
 Ces rotors associent une lettre de l'alphabet à une autre. Les trois rotors sont connectés les uns aux autres. Imaginons que l'on donne un **A** au premier rotor, celui-ci pourrait par exemple le transformer en **F**. Le second rotor transforme le **F** en **O** et le troisième transforme le **O** en **E**. *Note ici que les rotors n'appliquent pas un chiffre de César, si **A** devient **F** avec le premier rotor, cela ne veut pas dire que **B** deviendra **G**.*
 
-![Machine Enigma](../imgs/enigma.jpeg "Une machine Enigma")
+![Machine Enigma](imgs/enigma.jpeg "Une machine Enigma")
 
 En code, on peut représenter un rotor par une chaîne de 26 caractères.
 
@@ -37,7 +37,7 @@ Comme si cela n'était pas déjà assez compliqué, on rajoute une couche avec l
 
 Schéma de fonctionnement d'Enigma
 
-!["schéma fonctionnement"](../imgs/enigma_scheme.jpg "Schéma de fonctionnement")
+!["schéma fonctionnement"](imgs/enigma_scheme.jpg "Schéma de fonctionnement")
 
 >Si ces explications manquent de clarté, voici [un site très pratique pour visualiser le chemin d'une lettre dans le système](https://observablehq.com/@tmcw/enigma-machine)
 
