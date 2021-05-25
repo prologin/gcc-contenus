@@ -466,7 +466,7 @@ _Explication du binaire à ajouter ?_
 
 ### **L'hexadécimal**
 
-L'hexadécimal est un système d'écriture en base 16. Il utilise 16 symboles : les lettres de A à F (inclus) et les chiffres de 0 à 9 (inclus).
+L'hexadécimal est un système de comptage en base 16. Il utilise 16 symboles : les lettres de A à F (inclus) et les chiffres de 0 à 9 (inclus).
 
 À titre d'exemple, voici comment compter de 0 à 20 en hexadécimal :
 
@@ -490,7 +490,7 @@ Le XOR est un opérateur logique, on l'appelle également le **OU Exclusif** et 
 
 Table de vérité :
 
-- On définit A et B deux opérandes sur lesquelles on va appliquer XOR.
+- On définit A et B deux opérandes binaires sur lesquelles on va appliquer XOR.
 
 |A|B|A ⊕ B|
 |---|---|---|
@@ -570,8 +570,8 @@ Cette fonction va se charger de transformer une chaîne de caractères formée d
 
 Pour convertir une chaîne de caractères en hexadécimal. Il va falloir le faire lettre par lettre et appliquer quelques transformations à chacune des lettres :
 
-- Transformer la lettre en caractère ASCII (en nombre entier)
-- Convertir le caractère ASCII en hexadécimal
+- Calculer la valeur de la lettre dans la table ASCII (nombre entier)
+- Convertir la valeur ASCII en sa représentation hexadécimale (chaîne de caractères)
 - Adapter le résultat de l'étape précédente pour qu'il soit de longueur 2 (ajouter des 0 si besoin) et qu'il ne contienne que de l'hexadecimal (sans "0x", voir la fonction `hex()`expliquée plus bas)
 
 **Quelques fonctions utiles !**
@@ -586,7 +586,7 @@ Pour convertir une chaîne de caractères en hexadécimal. Il va falloir le fair
 >>> chr(65)
 'A'
 
-# La fonction hex() permet de convertir un nombre entier en base 10 en un nombre en base 16 (hexadecimal). Elle renvoie une chaîne de caractères.
+# La fonction hex() permet de convertir un nombre entier en base 10 en un nombre en base 16 (hexadecimal). Elle renvoie une chaîne de caractères avec "Ox" devant qui indique que la chaîne de caractères représente de l'hexadécimal.
 >>> hex(16)
 '0x10'
 >>> hex(42)
@@ -597,9 +597,13 @@ Pour convertir une chaîne de caractères en hexadécimal. Il va falloir le fair
 >>> s[4:]
 'tique'
 
-#La fonction zfill() prend en paramètre un nombre entier. Elle permet de rajouter des 0 au début d'une chaîne de caractères si la longueur de celle-ci est inférieure au paramètre donné à la fonction. 
+#La fonction zfill() prend en paramètre un nombre entier. 
+#Elle permet de rajouter des 0 au début d'une chaîne de caractères 
+#si la longueur de celle-ci est inférieure au paramètre donné à la fonction. 
 >>>'hello'.zfill(6)
 '0hello'
+>>> 'hello'.zfill(5) # Si le paramètre est inférieur ou égal à la taille de la chaîne de caractère, il n'y a pas de changement
+'hello'
 ```
 
 ### La fonction `msgXor(m, key)`
@@ -630,7 +634,7 @@ Pour appliquer XOR, voici les différentes étapes qu'il faudra implémenter:
 
 ### La fonction `hexaToString(hexa)`
 
-Cette fonction va se charger de convertir une chaîne de caractères en hexadecimal, en une chaîne de caractères de lettres, que l'on pourra lire et comprendre. Elle va donc renvoyer une chaîne de caractères. `hexaToString(hexa)` prend en paramètre `hexa`, une chaîne de caractères en hexadecimal.
+Cette fonction va se charger de convertir une chaîne de caractères de valeurs hexadécimales, en une chaîne de caractères de lettres, que l'on pourra lire et comprendre. Elle va donc renvoyer une chaîne de caractères. `hexaToString(hexa)` prend en paramètre `hexa`, une chaîne de caractères en hexadécimal.
 
 Les fonctions dont vous aurez besoin pour implémenter votre solution ont déjà été expliquées plus haut. Les étapes ne sont pas données mais vous pouvez les déduire des étapes de `stringToHexa()`.
 
