@@ -217,15 +217,15 @@ Résultat souhaité:
 
 La convolution consiste à utiliser une matrice sur une image pour appliquer un filtre. Cette matrice est souvent désignée par noyau, matrice de convolution, masque de convolution et d'autres.
 
-Comment utiliser la matrice de convolution ?
+> Comment utiliser la matrice de convolution ?
 
-La valeur de chaque pixel va être déterminée par ses pixels voisins. Il donc suffit de "superposer" la matrice sur une partie de l'image, puis de faire la somme pondérée des valeurs des pixels voisins, à l'aide de la matrice. On obtient ainsi la nouvelle valeur du pixel.
+La valeur de chaque pixel va être déterminée par ses pixels voisins. Donc il suffit de "superposer" la matrice sur une partie de l'image, puis de faire la somme pondérée des valeurs des pixels voisins, à l'aide de la matrice. On obtient ainsi la nouvelle valeur du pixel.
 
 Voici des exemples pour illustrer ces explications : 
 
 ![](figures/convolution1.PNG)
 
-Dans cette illustration, le pixel sélectionné est celui en bleu, de valeur 5. C'est la valeur de ce pixel qui changera en fonction du résultat de la somme pondérée. Les pixels voisins qui seront considérés dans la somme pondérée dépendent de la taille de la matrice, il sont grisés sur le schéma. Voici comment on effectuerait le calcul:
+Dans cette illustration, le pixel sélectionné est celui en bleu, de valeur 5. C'est la valeur de ce pixel qui changera en fonction du résultat de la somme pondérée. Les pixels voisins qui seront considérés dans la somme pondérée dépendent de la taille de la matrice, ils sont grisés sur le schéma. Voici comment on effectuerait le calcul:
 
 ```
 new = (-1)*3 + (-1)*8 + (-1)*11 + (-1)*6 + 8*5 + (-1)*8 + (-1)*3 + (-1)*2 + (-1)*6
@@ -235,9 +235,9 @@ new = -7
 On obtient donc `-7`. Problème : cette valeur n'est pas valide pour un pixel. En effet, il faut qu'elle soit comprise entre 0 et 255. 
 
 Ainsi, dans le cas où la valeur obtenue n'est pas comprise entre 0 et 255, voici la démarche à suivre :
-- si new < 0 alors new = 0
-- si new > 255 alors new = 255
-- si 0 < new < 255 alors new ne change pas
+- si `new < 0` alors `new = 0`
+- si `new > 255` alors `new = 255`
+- si `0 < new < 255` alors new ne change pas
 
 Dans cet exemple, la valeur que prendra le pixel en bleu sera 0.
 
@@ -260,7 +260,7 @@ Ainsi, la nouvelle valeur du pixel est 29.
 
 **But : Écrire la fonction `convolution(m, path, out)` qui applique la convolution et qui prend les paramètres suivants :**
 - `m` la matrice que l'on souhaite appliquer sur l'image
-- `path` la chaîne de caractères correspondant à l'image que l'on souhaite utiliser
+- `path` la chaîne de caractères correspondant au nom de l'image que l'on souhaite utiliser, dans le même dossier que le script python
 - `out` le nom que l'on désire donner à l'image de sortie (chaîne de caractères)
 
 > **Conseil :** vous pouvez écrire des fonctions supplémentaires vous aidant à vérifier si des coordonnées sont valides ou renvoyant forcément une valeur valide pour un pixel (entre 0 et 255).
