@@ -11,17 +11,21 @@
 
 _Prérequis : la table ASCII, modulo_
 
+### **La table ASCII**
+
+La table ascii (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
+
+![Ascii](../imgs/ascii.png "Table ASCII")
+
 ## Un peu d'histoire
 
----
-Ce moyen de chiffrement doit son nom à Jules César, célèbre homme d'état romain. Il aurait utilisé pour certaines de ses communications secrètes, militaires notamment, un chiffrement par substitution. Celui-ci utilisant un décalage d'une valeur trois.
+Ce moyen de chiffrement doit son nom à Jules César, célèbre homme d'état romain. Il aurait utilisé pour certaines de ses communications secrètes, militaires notamment, un chiffrement par substitution. 
 
 ## Qu'est-ce qu'un chiffrement par substitution ?
 
----
-Pour faire simple, cette méthode consiste à substituer la valeur d'une lettre par une lettre, un chiffre ou autre. Dans le cas du chiffrement de César, on substitue une lettre par une autre lettre. Par exemple, si l'on décide d'effectuer un décalage de trois, voici comment la valeur de chaque lettre va évoluer :
+Pour faire simple, cette méthode consiste à échanger un caractère par un autre. Dans le cas du chiffrement de César, on remplace une lettre par la lettre trois rangs plus à droite dans l'alphabet comme vous pouvez le voir sur la figure ci-dessous.
 
-![Image not loading](imgs/shifting.jpg)
+![Chiffre de César](imgs/shifting.jpg)
 
 Voilà comment cela va se répercuter sur l'alphabet tout entier :
 
@@ -30,39 +34,37 @@ Voilà comment cela va se répercuter sur l'alphabet tout entier :
 |Alphabet|A B C D E F G H I J K L M N O P Q R S T U V W X Y Z|
 |Substitution|D E F G H I J K L M N O P Q R S T U V W X Y Z A B C|
 
-On observe donc que A (première lettre de l'alphabet) sera encodée par D (troisième lettre de l'alphabet), que B sera encodée par E, que C par F, etc. On remarque que X sera codé par A, Y par B et Z par C. Si le chiffre donné pour le décalage fait dépasser de l'alphabet, on revient au début.
+On observe donc que A (première lettre de l'alphabet) sera remplacée par D (troisième lettre de l'alphabet), B par E, C par F, etc. Dès lors que le décalage fait sortir de l'alphabet, on retourne au début, c'est pourquoi X sera remplacé par A, Y par B et Z par C. 
 
-Par exemple, Z est la 26ème  lettre de l'alphabet. Si l'on applique un décalage de deux, on a alors : 26 + 3 = 29. C'est plus qu'il n'y a de lettres dans l'alphabet. Pour revenir au début, il n'y a qu'à soustraire le nombre total de lettres dans l'alphabet : 29 - 26 = 3. La troisième lettre de l'alphabet est C. Z est donc codé par C.
+Prenons l'exemple de Z, qui est la 26ème lettre de l'alphabet. Si l'on applique un décalage de trois, on a alors : 26 + 3 = 29. C'est plus qu'il n'y a de lettres dans l'alphabet. Pour revenir au début, il n'y a qu'à soustraire le nombre total de lettres dans l'alphabet : 29 - 26 = 3. La troisième lettre de l'alphabet est C, Z est donc remplacé par C.
 
 D'autres exemples:
 
->Décalage de trois : **Girls Can Code!** devient **Jluov Fdq Frgh!**
+- Décalage de trois : **Girls Can Code!** devient **Jluov Fdq Frgh!**
 
->Décalage de dix : **Hello World!** devient **Rovvy Gybvn!**
+- Décalage de dix : **Hello World!** devient **Rovvy Gybvn!**
 
 Voilà donc le principe de base du chiffrement de César.
 
 ## Place au code
 
----
-Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut en effet se dire que dans un premier temps, on va implémenter le chiffre de César pour qu'il ne soit appliqué que sur une lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, vous pouvez ne prendre en compte que les lettres majuscules ou minuscules si cela vous aide.
+Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut, dans un premier temps, appliquer le chiffrement à une seule lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, vous pouvez ne prendre en compte que les lettres majuscules ou minuscules si cela vous aide.
 
-Ainsi, il va falloir implémenter les fonctions ```letterCaesar(l, d)``` et ```textCaesar(s, d)```.
+Ainsi, il va falloir implémenter les fonctions `letterCaesar(l, d)` et `textCaesar(s, d)`.
 
 ### La fonction ```letterCaesar(l, d)```
 
-Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre ```l``` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractèrer. Quant au paramètre ```d```, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
->**Bonus:** essayez de gérer les majuscules, minuscules ainsi que la ponctuation.
+Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre `l` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractère. Quant au paramètre `d`, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
+
+>**Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à `%`).
+
+>**Bonus:** essayez de gérer les majuscules et minuscules.
 
 ### La fonction ```textCaesar(t, d)```
 
-Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre ```t``` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre ```d``` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
-
->**Tips :** pensez à prendre en compte les espaces, vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à ```%```).
+Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre `t` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre `d` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
 
 ## Quelques fonctions et notions utiles
-
----
 
 ```py
 # L'opérateur + permet, quand il est appliqué à des chaînes de caractères, de concaténer celles-ci. Exemples:
@@ -125,8 +127,7 @@ False
 
 ## Déchiffrer un message
 
----
-Pour déchiffrer un message il suffit d'utiliser la clé inverse à celle utilisée pour chiffre. Par exemple:
+Pour déchiffrer un message il suffit d'utiliser la clé inverse à celle utilisée pour chiffrer. Par exemple:
 
 ```py
 msg = stringCaesar("Hello World", 10)   # chiffre "Hello World", va donner "Rovvy Gybvn"
@@ -137,16 +138,15 @@ Dans un premier temps, testez avec votre code pour observer le résultat obtenu.
 
 ## Casser le chiffre de César
 
----
 Il existe plusieurs méthodes pour casser le chiffre de César. On peut par exemple faire une analyse fréquentielle qui va compter la proportion de chaque lettre dans le message chiffré et comparer par rapport à la fréquence connue des lettres dans la langue du message. En Français, à titre d'exemple, la lettre 'e' est la plus fréquente, ainsi la lettre la plus fréquente du message chiffré doit sans doute correspondre à un 'e'. Cette méthode est très efficace sur les messages longs, le problème est donc que sur les messages dits courts, elle ne sera pas d'un grande utilité. Ce n'est donc pas celle que vous allez implémenter, mais il est toujours intéressant de savoir qu'une telle méthode existe.
 
 La méthode que vous allez implémenter consiste en du brute force.
 
 >**Qu'est-ce que le brute force ?**  Pour faire simple, cela consiste à essayer toutes les combinaisons possibles. Dans notre cas, cela revient à essayer 26 possibilités, puisqu'il y a 26 lettres dans l'alphabet.
 
-Vous allez donc implémenter la fonction ```breakCaesar(msg)```. Elle prend en paramètre une chaine de caractère (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer ```charCaesar(c, d)``` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour ```breakCaesar("Rovvy Gybvn")```:
+Vous allez donc implémenter la fonction `breakCaesar(msg)`. Elle prend en paramètre une chaîne de caractère (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer `charCaesar(c, d)` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour `breakCaesar("Rovvy Gybvn")`:
 
-```py
+```text
 Spwwz Hzcwo
 Tqxxa Iadxp
 Uryyb Jbeyq
@@ -177,11 +177,11 @@ Rovvy Gybvn
 
 Vous pouvez tout à fait améliorer l'affichage pour que cela soit davantage lisible !
 
-La fonction ```print()``` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractère, un nombre, une liste...). Par exemple :
+La fonction `print()` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractère, un nombre, une liste...). Par exemple :
 
 ```py
 >>> s = "Hello World"
->>>print(s)
+>>> print(s)
 Hello World
 >>> print("Bonjour !")
 Bonjour !
@@ -197,8 +197,8 @@ Bonjour !
 
 Essaye de décrypter ce message chiffré avec le chiffre de César !
 
-```none
-C'RXV UV XCRTV T'VJK CR MZV
+```text
+YRF FGNTRF TVEYF PNA PBQR! P'RFG GEBC PBBY!
 ```
 
 # **Le chiffre de Vigenère**
@@ -207,14 +207,12 @@ _Prérequis : avoir fini la partie sur le chiffre de César_
 
 ## Un peu d'histoire
 
----
 _[insert] history fact here..._
 
 Le chiffre de Vigenère est une méthode de chiffrement par substitution imaginée au XVIe siècle par Blaise de Vigenère (ou peut-être pas, mais la méthode a néanmoins le nom de Vigenère). Le général prussien Friedrich Kasiski publie en 1863 une méthode permettant de casser ce chiffre.
 
 ## Principe du chiffre de Vigenère
 
----
 Cette méthode de chiffrement est assez similaire au chiffre de César que vous avez implémentée précedemment. La différence notable est que, pour Vigenère, on applique à chaque lettre du message un décalage différent. Celui-ci dépendant d'une clé donnée au préalable, correspondant à une chaîne de caractères.
 
 De la clé, on en déduit ensuite les décalages successifs à appliquer (on considère que a est la "0e" lettre de l'alphabet). Exemple avec la clé **"clef"** :
@@ -235,7 +233,6 @@ Message chiffré :   Ezqrgyx gdx xzxwg fqcyuzgexj ?
 
 ## À vos claviers
 
----
 Pour implémenter le chiffre de Vigenère, il va être plus simple de diviser le problème en sous-problèmes. Vous aurez également besoin de la fonction `letterCaesar(l, d)` réalisée dans la partie sur le chiffre de César.
 
 ### La fonction ```keyToOffset(k)```
@@ -410,7 +407,6 @@ Dans cette méthode de la classe Enigma, tu dois crypter la lettre donnée en pa
 
 **ATTENTION**: après avoir trouvé la lettre, il ne faut pas oublier de **modifier la position des rotors**.
 
----
 
 ### **Partie 2 : encode_message()**
 
@@ -441,7 +437,6 @@ Une fois implémentée, tu peux tester ton code de la manière suivante:
 
 Si tous fonctionne normalement, le programme devrait afficher la version chiffrée puis déchiffrée de ton message !
 
----
 
 ### **Partie 3 : Bonus**
 
@@ -460,8 +455,6 @@ Pour aller plus loin:
 
 ## Quelques rappels
 
----
-
 _Explication du binaire à ajouter ?_
 
 ### **L'hexadécimal**
@@ -470,7 +463,7 @@ L'hexadécimal est un système de comptage en base 16. Il utilise 16 symboles : 
 
 À titre d'exemple, voici comment compter de 0 à 20 en hexadécimal :
 
-```sh
+```text
 base 10 : 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 base 16 : 0 1 2 3 4 5 6 7 8 9  A  B  C  D  E  F 10 11 12 13 14
 ```
@@ -485,7 +478,6 @@ La table ascii (American Standard Code for Information Interchange), est une nor
 
 ## Un peu de théorie
 
----
 Le XOR est un opérateur logique, on l'appelle également le **OU Exclusif** et en anglais **eXclusive OR**. Il est souvent représenté avec le symbole :  **⊕** ". En Python, on utilisera : **^**.
 
 Table de vérité :
@@ -510,7 +502,7 @@ Dans cet exercice, vous allez chiffrer des messages avec XOR. Cet opérateur log
 
 Pour mieux vous faire comprendre le processus, appliquons-le avec un exemple en binaire. Admettons que le message que l'on souhaite chiffrer est `01100101 01110000 01101001` et que la clé est `01110100 01100001 01100001`.
 
-```sh
+```text
 Étape de chiffrement
 Message :         01100101 01110000 01101001
 Clé :             01110100 01100001 01100001
@@ -531,7 +523,6 @@ Maintenant que vous connaissez le XOR, il est temps d'écrire les fonctions !
 
 ## Let's code
 
----
 Pour implémenter cette méthode de chiffrement, il va être plus simple de diviser le problème en plusieurs parties, et donc en plusieurs fonctions. Comme écrit précedemment, pour appliquer le XOR, pas besoin de passer par du binaire, nous allons utiliser de l'hexadécimal. La première fonction va donc transformer du texte en hexadécimal. La deuxième va appliquer XOR sur le message transformé en hexadecimal avec une clé en hexadecimal de la même longueur. Finalement, la troisième va transformer de l'hexadecimal en lettres, texte lisible pour nous !
 
 **Comment obtenir une clé en hexadécimal de la même longueur que le message que l'on souhaite chiffrer ?**
@@ -641,8 +632,6 @@ Les fonctions dont vous aurez besoin pour implémenter votre solution ont déjà
 À vous de jouer !
 
 ## Sources
-
----
 
 - [Table ASCII](https://computersciencewiki.org/images/3/3d/Ascii_table.png)
 
