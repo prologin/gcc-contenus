@@ -7,13 +7,13 @@
 |Clarisse 'Nyota' BLANCO|
 |Dorian 'Renji' PÉRON|
 
-# **Le chiffre de César**
+# Le chiffre de César
 
 _Prérequis : la table ASCII, modulo_
 
 ### **La table ASCII**
 
-La table ascii (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
+La table ASCII (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
 
 ![Ascii](../imgs/ascii.png "Table ASCII")
 
@@ -52,7 +52,7 @@ Pour implémenter le chiffre de César, il va être plus simple de diviser le pr
 
 Ainsi, il va falloir implémenter les fonctions `letterCaesar(l, d)` et `textCaesar(s, d)`.
 
-### La fonction ```letterCaesar(l, d)```
+### La fonction `letterCaesar(l, d)`
 
 Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre `l` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractère. Quant au paramètre `d`, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
 
@@ -60,7 +60,7 @@ Cette fonction va se charger d'appliquer le chiffre de César à seulement une l
 
 >**Bonus:** essayez de gérer les majuscules et minuscules.
 
-### La fonction ```textCaesar(t, d)```
+### La fonction `textCaesar(t, d)`
 
 Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre `t` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre `d` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
 
@@ -201,7 +201,7 @@ Essaye de décrypter ce message chiffré avec le chiffre de César !
 YRF FGNTRF TVEYF PNA PBQR! P'RFG GEBC PBBY!
 ```
 
-# **Le chiffre de Vigenère**
+# Le chiffre de Vigenère
 
 _Prérequis : avoir fini la partie sur le chiffre de César_
 
@@ -213,7 +213,7 @@ Le chiffre de Vigenère est une méthode de chiffrement par substitution imagin�
 
 ## Principe du chiffre de Vigenère
 
-Cette méthode de chiffrement est assez similaire au chiffre de César que vous avez implémentée précedemment. La différence notable est que, pour Vigenère, on applique à chaque lettre du message un décalage différent. Celui-ci dépendant d'une clé donnée au préalable, correspondant à une chaîne de caractères.
+Cette méthode de chiffrement est assez similaire au chiffre de César que vous avez implémenté précedemment. La différence notable est que, pour Vigenère, on applique à chaque lettre du message un décalage différent. Celui-ci dépendant d'une clé donnée au préalable, correspondant à une chaîne de caractères.
 
 De la clé, on en déduit ensuite les décalages successifs à appliquer (on considère que a est la "0e" lettre de l'alphabet). Exemple avec la clé **"clef"** :
 
@@ -224,7 +224,7 @@ De la clé, on en déduit ensuite les décalages successifs à appliquer (on con
 
 Si la clé est plus courte que le message, celle-ci sera répétée autant de fois que nécessaire. Voici un exemple avec la clé **"clef"** :
 
-```none
+```text
 Message :           Comment est votre blanquette ?
 Clé :               clefclefclefclefclefclefclefcl      
 
@@ -235,11 +235,11 @@ Message chiffré :   Ezqrgyx gdx xzxwg fqcyuzgexj ?
 
 Pour implémenter le chiffre de Vigenère, il va être plus simple de diviser le problème en sous-problèmes. Vous aurez également besoin de la fonction `letterCaesar(l, d)` réalisée dans la partie sur le chiffre de César.
 
-### La fonction ```keyToOffset(k)```
+### La fonction `keyToOffset(k)`
 
 Cette fonction a pour but de convertir la clé en une liste de décalages. Elle prend en paramètre `k` la clé, qui correspond à une chaîne de caractères. Elle retourne une liste de la longueur de la clé contenant les décalages correspondant à chaque lettre de la clé.
 
-### La fonction ```textVigenere(t, k)```
+### La fonction `textVigenere(t, k)`
 
 Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. Elle prend en paramètre `t`, une chaîne de caractères, qui est le message à dissimuler. L'autre paramètre `k`, est aussi une chaîne de caractères et correspond à la clé.
 
@@ -251,15 +251,15 @@ Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. El
 - [Wikipedia: Chiffre de Vigenère](https://fr.wikipedia.org/wiki/Chiffre_de_Vigen%C3%A8re)
 - [haltode.fr: Chiffre de Vigenère](https://haltode.fr/algo/chiffrement/chiffre_vigenere.html)
 
-# **La machine Enigma**
+# La machine Enigma
 
->Prérequis : maîtrise basique des classes et de l'opérateur modulo
+_Prérequis : maîtrise basique des classes et de l'opérateur modulo_
 
-## **Culture générale**
+## Culture générale
 
-Tu en as peut-être déjà entendu parler, Enigma est une machine de cryptologie mise au point et utilisée par les allemands pendant la seconde guerre mondiale. Son fonctionnement est déchiffré par le mathématicien Alan Turing, qui est aujourd'hui considéré comme le père de l'informatique moderne.
+Tu en as peut-être déjà entendu parler, Enigma est une machine de cryptologie mise au point et utilisée par les allemands pendant la seconde guerre mondiale. Après avoir longtemps été considérée comme incassable, le mathématicien Alan Turing, qui est aujourd'hui considéré comme le père de l'informatique moderne, parvint à comprendre son fonctionnement et fut en mesure de décrypter les messages chiffrés avec Enigma.
 
-## **Mais comment fontionne Enigma ?**
+## Mais comment fontionne Enigma ?
 
 ### 1. Les rotors
 
@@ -274,11 +274,11 @@ En code, on peut représenter un rotor par une chaîne de 26 caractères.
 |---|---|
 | Rotor 1 | **EKMFLGDQVZNTOWYHXUSPAIBRCJ** |
 
->Ici, on peut comprendre que le rotor 1 donnera **E** en sortie pour un **A** en entrée, un **K** pour un **B**, etc... (voir le schéma suivant)
+>Ici, on peut comprendre que le rotor 1 donnera **E** en sortie pour un **A** en entrée, un **K** pour un **B**, etc.
 
 Dernière chose, afin de changer l'état de la machine et de rendre plus complexe le déchiffrement, les rotors peuvent tourner d'un 26ième de tour. Quand cela se produit, les lettres transformées par le rotor changent. Si l'on tourne d'un cran le rotor 1 défini au dessus, le fil dans le rotor qui reliait **A** à **E** reliera désormais **B** à **F**. De la même manière, le fil qui reliait **B** à **K** reliera désormais **C** à **L**, etc...
 
-Puisque cela serait trop simple de tourner les 3 rotors à chaque fois, les cryptologues allemands ont mis au point le système suivant : Pour chaque lettre tapée, le rotor 1 tourne d'un cran. Le rotor 2 tourne lui d'un cran quand le rotor 1 a fait un tour complet (c'est-à-dire toutes les 26 lettres tapées), et le rotor 3 tourne d'un cran à chaque tour complet du rotor 2 (toutes les 676 lettres tapées).
+Puisque cela serait trop simple de tourner les 3 rotors à chaque fois, les cryptologues allemands ont mis au point le système suivant : pour chaque lettre tapée, le rotor 1 tourne d'un cran. Le rotor 2 tourne lui d'un cran quand le rotor 1 a fait un tour complet (c'est-à-dire toutes les 26 lettres tapées), et le rotor 3 tourne d'un cran à chaque tour complet du rotor 2 (toutes les 676 lettres tapées).
 
 ### 2. Le réflecteur
 
@@ -288,21 +288,19 @@ Après avoir fait passer la lettre dans les 3 rotors, on la passe dans une pièc
 
 Comme si cela n'était pas déjà assez compliqué, on rajoute une couche avec le **tableau de permutations**. Le fonctionnement de celui-ci est très simple. Il s'agit simplement de brancher des lettres 2 par 2 pour échanger leur place (on peut échanger comme cela jusqu'à 10 paires de lettres). On branche ce tableau avant le système de rotor. Par exemple, si l'on échange les lettres **A** et **O**, alors chaque **A** tapé par l'opérateur de la machine deviendra un **O** pour le système des rotors, et chaque **A** "renvoyé" par ce dernier sera un **O** pour l'opérateur (et vice-versa, le **O** devient un **A**).
 
-Schéma de fonctionnement d'Enigma
+!["Schéma de fonctionnement d'Enigma"](imgs/enigma_scheme.jpg "Schéma de fonctionnement")
 
-!["schéma fonctionnement"](imgs/enigma_scheme.jpg "Schéma de fonctionnement")
-
->Si ces explications manquent de clarté, voici [un site très pratique pour visualiser le chemin d'une lettre dans le système](https://observablehq.com/@tmcw/enigma-machine)
+>Vous pouvez aussi visualiser le fonctionnement d'Enigma sur ce site : https://observablehq.com/@tmcw/enigma-machine
 
 ### 4. Et pour décoder un message ?
 
-Tu viens d'apprendre le fonctionnement général de la machine Enigma, mais une question persiste : Avec un système aussi complexe, comment fait-on pour décoder un message crypté avec une machine Enigma ? La réponse est sûrement plus simple qu'il n'y paraît : Il suffit de taper le message chiffré sur une machine Enigma qui a les mêmes paramètres initiaux que pour encoder le message ! En effet, prenons le message "GirlsCanCode" et imaginons que tous les rotors soient sur le cran 0 au début du message. Taper **G** sur la machine donnera une lettre différente, peut-être un **V**. Mais de la même manière, si l'on avait tapé **V**, on aurait obtenu **G**, car le chemin de la lettre dans la machine est le même, seulement il est parcouru à l'envers.
+Tu viens d'apprendre le fonctionnement général de la machine Enigma, mais une question persiste : avec un système aussi complexe, comment fait-on pour déchiffrer un message chiffré avec une machine Enigma ? La réponse est sûrement plus simple qu'il n'y paraît : il suffit de taper le message chiffré sur une machine Enigma qui a les mêmes paramètres initiaux que pour chiffrer le message ! En effet, prenons le message "GirlsCanCode" et imaginons que tous les rotors soient sur le cran 0 au début du message. Taper **G** sur la machine donnera une lettre différente, peut-être un **V**. Mais de la même manière, si l'on avait tapé **V**, on aurait obtenu **G**, car le chemin de la lettre dans la machine est le même, seulement il est parcouru à l'envers.
 
-## **Exercices**
+## Exercices
 
 À ton tour de créer ton propre programme Enigma !
 
-> Afin d'implémenter notre propre machine Enigma, nous utiliserons une classe qui nous sera utile pour sauvegarder l'état actuel des rotors.
+Afin d'implémenter notre propre machine Enigma, nous utiliserons une classe qui nous sera utile pour sauvegarder l'état actuel des rotors.
 
 Voici le squelette du code:
 
@@ -342,16 +340,16 @@ class Enigma:
 
 # Exemples
 
-# on déclare notre variable Enigma (avec les rotors définis ci-dessous)
-# état initial: tous les décalages à 0
+# On déclare notre variable Enigma (avec les rotors définis ci-dessous)
+# État initial : tous les décalages à 0
 >>> en = Enigma(rotor_I, rotor_II, rotor_III, reflector_A)
 
 >>> en.encode('A')
 'N' 
-# Etat interne des rotors après opération: x1 = 1, x2 = 0, x3 = 0
+# État interne des rotors après opération : x1 = 1, x2 = 0, x3 = 0
 ```
 
-Voici également 2 simples fonctions permettant de trouver le nombre d'une lettre dans l'alphabet (en partant de `0`), et vice-versa:
+Voici également deux simples fonctions permettant de trouver l'indice d'une lettre dans l'alphabet (en partant de `0`), et vice-versa :
 
 ```py
 def letter_to_number(letter):
@@ -367,7 +365,7 @@ def number_to_letter(number):
     """
     return chr(number + ord('A'))
 
-# Examples
+# Exemples
 >>> letter_to_number('A')
 0
 >>> letter_to_number('z')
@@ -380,7 +378,7 @@ A
 X
 ```
 
-Enfin, voici des rotors et réflecteurs qui ont réellement été utilisés pendant la seconde guerre mondiale:
+Enfin, voici des rotors et réflecteurs qui ont réellement été utilisés pendant la seconde guerre mondiale :
 
 ```py
 rotor_I = "EKMFLGDQVZNTOWYHXUSPAIBRCJ"
@@ -393,35 +391,33 @@ reflector_B = "YRUHQSLDPXNGOKMIEBFZCWVJAT"
 
 ---
 
-### **Partie 1 : encode_letter()**
+### Partie 1 : encode_letter()
 
 Dans cette méthode de la classe Enigma, tu dois crypter la lettre donnée en paramètre.
 
->Entrée(s):
-
+Entrée :
 - letter: la lettre à chiffrer
 
->Sortie:
-
+Sortie :
 - La lettre chiffrée correspondante
 
 **ATTENTION**: après avoir trouvé la lettre, il ne faut pas oublier de **modifier la position des rotors**.
 
 
-### **Partie 2 : encode_message()**
+### Partie 2 : encode_message()
 
 Dans cette méthode, il te faut encoder tout un message avec le programme Enigma !
 
->Entrée(s):
-
+Entrée :
 - msg: le message à chiffrer
 
->Sortie: Le message chiffré
+Sortie :
+- Le message chiffré
 
 - N'oublie pas que tu peux utiliser la méthode `encode_letter()` dans `encode_message()`.
 - Attention aux caractères spéciaux dans ton message, les chiffres, espaces et caractères de ponctuation ne peuvent pas être chiffrés par Enigma.
 
-Une fois implémentée, tu peux tester ton code de la manière suivante:
+Une fois implémentée, tu peux tester ton code de la manière suivante :
 
 ```py
 >>> msg = 'HELLO WORLD'
@@ -435,31 +431,29 @@ Une fois implémentée, tu peux tester ton code de la manière suivante:
 # 'HELLOWORLD'
 ```
 
-Si tous fonctionne normalement, le programme devrait afficher la version chiffrée puis déchiffrée de ton message !
+Si tout fonctionne normalement, le programme devrait afficher la version chiffrée puis déchiffrée de ton message !
 
 
-### **Partie 3 : Bonus**
+### Partie 3 : Bonus
 
-Bien joué!
+Bien joué !
 
-Pour aller plus loin:
+Pour aller plus loin, tu peux modifier le programme pour ajouter la fonctionnalité du tableau de permutation, qui n'est pas montrée ici.
 
-> Tu peux modifier le programme pour ajouter la fonctionnalité du tableau de permutation, qui n'est pas montrée ici.
-
-> **Info**: une particularité de la machine Enigma qui a aidé A. Turing et son équipe de casser le code est la suivante : Enigma ne donnait jamais de lettre identique à celle donnée en entrée. Mais peux-tu expliquer pourquoi ?
+> **Info**: une particularité de la machine Enigma qui a aidé Alan Turing et son équipe pour casser le code est la suivante : Enigma ne donnait jamais de lettre identique à celle donnée en entrée. Saurais-tu expliquer pourquoi ?
 
 
-# **XOR / Ou Exclusif**
+# XOR / Ou Exclusif
 
->Prérequis : l'hexadécimal, la table ASCII
+_Prérequis : l'hexadécimal, la table ASCII_
 
 ## Quelques rappels
 
 _Explication du binaire à ajouter ?_
 
-### **L'hexadécimal**
+### L'hexadécimal
 
-L'hexadécimal est un système de comptage en base 16. Il utilise 16 symboles : les lettres de A à F (inclus) et les chiffres de 0 à 9 (inclus).
+L'hexadécimal est un système permettant d'écrire des nombres en utilisant 16 symboles : les chiffres de 0 à 9 (inclus), puis les lettres de A à F (inclus).
 
 À titre d'exemple, voici comment compter de 0 à 20 en hexadécimal :
 
@@ -470,15 +464,15 @@ base 16 : 0 1 2 3 4 5 6 7 8 9  A  B  C  D  E  F 10 11 12 13 14
 
 > **Remarque :** on utilise le système décimal, en base 10, dans la vie courante. Il utilise donc 10 symboles : les chiffres de 0 à 9.
 
-### **La table ASCII**
+### La table ASCII
 
-La table ascii (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
+La table ASCII (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
 
-![Ascii](../imgs/ascii.png "Table ASCII")
+![Table ASCII](../imgs/ascii.png "Table ASCII")
 
 ## Un peu de théorie
 
-Le XOR est un opérateur logique, on l'appelle également le **OU Exclusif** et en anglais **eXclusive OR**. Il est souvent représenté avec le symbole :  **⊕** ". En Python, on utilisera : **^**.
+Le XOR est un opérateur logique, on l'appelle également le **OU Exclusif** et en anglais **eXclusive OR**. Il est souvent représenté avec le symbole :  "**⊕** ". En Python, on utilisera : **^**.
 
 Table de vérité :
 
@@ -491,7 +485,7 @@ Table de vérité :
 |1|0|1|
 |1|1|0|
 
-En observant la table de vérité, on peut dire que le XOR peut se définir de la façon suivante:
+En observant la table de vérité, on peut dire que le XOR peut se définir de la façon suivante :
 
 - Si les deux opérandes sont différentes, alors le résultat est 1
 - Si les deux opérandes sont identiques, alors le résultat est 0
