@@ -526,14 +526,14 @@ C'est tout simple, une fonction générant des clés en hexadécimal vous est fo
 Voici la fonction :
 
 ```py
-import random
+import random  # N'oubliez pas cette ligne !
 
 def randomHexa(lenstr):
     string = ""
     for i in range(lenstr):
-        rdm_int = random.randint(0, 255) # on génère un entier entre 0 et 255
-        string += chr(rdm_int) # on convertit en caractère et on concatène
-    res = stringToHexa(string) # on convertit en hexa pour avoir une clé en hexa
+        rdm_int = random.randint(0, 255)  # on génère un entier entre 0 et 255
+        string += chr(rdm_int)  # on convertit en caractère et on concatène
+    res = stringToHexa(string)  # on convertit en hexa pour avoir une clé en hexa
     return res
 ```
 
@@ -595,7 +595,7 @@ Pour convertir une chaîne de caractères en hexadécimal. Il va falloir le fair
 
 Cette fonction va se charger d'appliquer XOR entre le message et la clé (soit message ⊕ clé). Elle prend donc en paramètre `m` une chaîne de caractères correspondant au message que l'on désire chiffrer, et **qui a déjà été converti en hexadecimal**. Elle prend également `key` qui est également une chaîne de caractères en hexadecimal et qui est de la même longueur que `m`. `msgXor(m, key)` va renvoyer une chaîne de caractères en hexadecimal.
 
-Pour appliquer XOR, voici les différentes étapes qu'il faudra implémenter:
+Pour appliquer XOR, voici les différentes étapes qu'il faudra implémenter :
 
 - Sélectionner chaque caractère des chaînes de caractère 2 par 2
 - Les convertir en nombre entier
@@ -628,5 +628,4 @@ Les fonctions dont vous aurez besoin pour implémenter votre solution ont déjà
 ## Sources
 
 - [Table ASCII](https://computersciencewiki.org/images/3/3d/Ascii_table.png)
-
 - [Infos sur la table ASCII](http://www.table-ascii.com/)
