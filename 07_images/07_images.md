@@ -1,5 +1,5 @@
 ---
-title:  Image
+title: Image
 date: 2021
 author: Clarisse Blanco / Gaëtan Mouisset
 ---
@@ -13,10 +13,15 @@ Une image matricielle est une image représentée sous forme de matrice de point
 
 
 Dans ce TP, nous utiliserons la représentation Rouge Vert Bleu (RVB ou RGB en anglais) pour donner une large palette de couleurs aux pixels de nos images. 
+Une couleur est representée sous la forme d'un triplet (R, V, B) où chaque valeur est comprise entre 0 et 255.
 
 ## Introduction à la bibliothèque PIL (Python Imaging Library)
 
-PIL est une bibliothèque de traitement d'image écrite pour Python. Nous l'utiliserons durant toute la durée du TP afin d'appliquer nos filtres et manipuler les images.
+Une bibliothèque est une collection de fonctions externes que tu peux importer pour les utiliser dans ton propre code.
+
+En écrivant :``from PIL import Image`` nous importons le module Image de la bibliothèque PIL.
+
+PIL sert au traitement d'image. Elle va nous permettre d'appliquer nos filtres et manipuler les images.
 
 Cette bibliothèque n'étant pas disponible de base sur ``mu-editor``, il est nécessaire de l'installer.
 
@@ -61,6 +66,8 @@ Maintenant, au travail !
 
 ## Les filtres
 
+Le principe d'un filtre est de modifier la valeur des pixels d'une image pour appliquer un effet (noir et blanc, flou etc...).
+
 Tout au long de ce TP nous travaillerons avec cette image de référence :
 
 <img src="figures/5.jpg" style="zoom:50%;" />
@@ -84,8 +91,8 @@ def FonctionCarre(x):
 def MaFonction(x):
 	return 5*x + 1
 
-AppliquerFonction(3, FonctionCarre) # Resultat : 9
-AppliquerFonction(3, MaFonction)    # Resultat : 16
+AppliquerFonction(3, FonctionCarre) # Résultat : 9
+AppliquerFonction(3, MaFonction)    # Résultat : 16
 ```
 
 **But : Écrire la fonction ``ApplyFilter(image, filter)`` qui applique le filtre donné en paramètre sur l'image. ``filter`` est une fonction qui prend une couleur et en retourne une nouvelle. Ce filtre sera donc à appliquer sur tous les pixels d'une image. La fonction doit retourner une nouvelle image.**
@@ -93,7 +100,7 @@ AppliquerFonction(3, MaFonction)    # Resultat : 16
 ### Exercice 2 : Filtre de niveau de gris
 
 Le niveau de gris est défini par la relation suivante : 
-``Resultat = 0.2126 * Rouge + 0.7152 * Vert + 0.0722 * Bleu``
+``Résultat = 0.2126 * Rouge + 0.7152 * Vert + 0.0722 * Bleu``
 
 
 
@@ -127,17 +134,20 @@ Résultat souhaité :
 
 ## Manipulation d'image
 
-### Exercice 5 : Symétrie en X
+### Exercice 5 : Symétrie horizontale
 
-**But : Écrire la fonction ``SymmetryX(image)`` qui applique une symétrie en X sur une image. La fonction doit retourner une nouvelle image.**
+![symetriex](figures/symetriex.png)
+
+**But : Écrire la fonction ``SymmetryX(image)`` qui applique une symétrie horizontale sur une image. La fonction doit retourner une nouvelle image.**
 
 Résultat souhaité :
 <img src="figures/9.jpg" style="zoom:50%;" />
 
+### Exercice 6 : Symétrie verticale
 
-### Exercice 6 : Symétrie en Y
+![symetriey](figures/symetriey.png)
 
-**But : Écrire la fonction ``SymmetryY(image)`` qui applique une symétrie en Y sur une image. La fonction doit retourner une nouvelle image.**
+**But : Écrire la fonction ``SymmetryY(image)`` qui applique une symétrie verticale sur une image. La fonction doit retourner une nouvelle image.**
 
 Résultat souhaité :
 <img src="figures/10.jpg" style="zoom:50%;" />
@@ -157,11 +167,33 @@ Résultat souhaité pour n = 9 :
 
 ### Exercice 8 : Pourcentage de différence
 
-**But : Écrire la fonction ``Diff(image1, image2)`` qui calcule le pourcentage de différence entre deux images. La fonction doit retourner un entier.**
+Démarche pour calculer le pourcentage de différence entre deux images :
+
+**(r1, g1, b1)** sont les valeurs correspondant aux couleurs de la première image.
+**(r2, g2, b2) **sont les valeurs correspondant aux couleurs de la deuxième image.
+**diff** est la variable à laquelle on affecte la différence entre les deux images pour chaque composante de chaque pixel.
+
+Pour chaque pixel, on calcule la différence de valeur entre **r1** et **r2** ; **g1** et **g2** ; **b1** et **b2** et on affecte tout cela à la variable **diff** de cette manière :
+
+``diff += abs(r1-r2)``
+
+La fonction abs() permet d'obtenir la valeur absolue.
+
+Faire la valeur absolue de ``r1 - r2`` permet d'avoir un résultat positif peu importe si **r1 > r2** ou **r1 < r2**.
+
+*Par exemple : abs(5 - 8) = abs(-3) = 3 et abs(8 - 5) = abs(3) = 3*.
+
+Une fois que les images ont été entièrement parcourues, il ne reste plus qu'à calculer le pourcentage. Pour cela, nous avons besoin du nombre de composantes R, G, B dans une des images et de la valeur par rapport à laquelle chaque composante est exprimée (255).
+
+**Ceci donne la formule :** 
+
+pourcentage = 100 * ((diff/255) / (width * height * 3))
+
+**But : Écrire la fonction ``Diff(image1, image2)`` qui calcule le pourcentage de différence entre deux images de même dimensions. La fonction doit retourner un entier.**
 
 ![](figures/14.jpg)
 
-Exemple : Pour ``Diff(ref_image, noisycat)`` le resultat doit être de 3%.
+Exemple : Pour ``Diff(ref_image, noisycat)``, avec ``ref_image`` étant l'image de référence et ``noisy_cat`` l'image ci-dessus contenant du bruit, le resultat doit être de 3%.
 
 ### Exercice 9 : Réduction de bruit
 
