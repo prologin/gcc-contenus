@@ -17,11 +17,11 @@ while True:
 
 
     if button_b.is_pressed():
-        radio.send(repr(images[index])[7:-3])
+        radio.send(str(index))
 
     incoming = radio.receive()
     if incoming:
-        display.show(Image(incoming))
+        display.show(images[int(incoming)])
         sleep(500)
     display.show(images[index])
 
