@@ -1,11 +1,8 @@
-|title|date|
-|---|---|
-|TP Cryptologie|2021|
-
-|authors|
-|---|
-|Clarisse 'Nyota' BLANCO|
-|Dorian 'Renji' PÉRON|
+---
+title: Cryptologie
+date: 2021
+authors: Clarisse Blanco & Dorian Péron
+---
 
 # Le chiffre de César
 
