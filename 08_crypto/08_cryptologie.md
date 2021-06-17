@@ -1,27 +1,28 @@
-|title|date|
-|---|---|
-|TP Cryptologie|2021|
+---
+title: Cryptologie
+date: 2021
+authors: Clarisse Blanco & Dorian Péron
+---
 
-|authors|
-|---|
-|Clarisse 'Nyota' BLANCO|
-|Dorian 'Renji' PÉRON|
-
-# **Le chiffre de César**
+# Le chiffre de César
 
 _Prérequis : la table ASCII, modulo_
 
+### **La table ASCII**
+
+La table ASCII (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
+
+![Ascii](../imgs/ascii.png "Table ASCII")
+
 ## Un peu d'histoire
 
----
-Ce moyen de chiffrement doit son nom à Jules César, célèbre homme d'état romain. Il aurait utilisé pour certaines de ses communications secrètes, militaires notamment, un chiffrement par substitution. Celui-ci utilisant un décalage d'une valeur trois.
+Ce moyen de chiffrement doit son nom à Jules César, célèbre homme d'état romain. Il aurait utilisé pour certaines de ses communications secrètes, militaires notamment, un chiffrement par substitution.
 
 ## Qu'est-ce qu'un chiffrement par substitution ?
 
----
-Pour faire simple, cette méthode consiste à substituer la valeur d'une lettre par une lettre, un chiffre ou autre. Dans le cas du chiffrement de César, on substitue une lettre par une autre lettre. Par exemple, si l'on décide d'effectuer un décalage de trois, voici comment la valeur de chaque lettre va évoluer :
+Pour faire simple, cette méthode consiste à échanger un caractère par un autre. Dans le cas du chiffrement de César, on remplace une lettre par la lettre trois rangs plus à droite dans l'alphabet comme vous pouvez le voir sur la figure ci-dessous.
 
-![Image not loading](imgs/shifting.jpg)
+![Chiffre de César](imgs/shifting.jpg)
 
 Voilà comment cela va se répercuter sur l'alphabet tout entier :
 
@@ -30,39 +31,37 @@ Voilà comment cela va se répercuter sur l'alphabet tout entier :
 |Alphabet|A B C D E F G H I J K L M N O P Q R S T U V W X Y Z|
 |Substitution|D E F G H I J K L M N O P Q R S T U V W X Y Z A B C|
 
-On observe donc que A (première lettre de l'alphabet) sera encodée par D (troisième lettre de l'alphabet), que B sera encodée par E, que C par F, etc. On remarque que X sera codé par A, Y par B et Z par C. Si le chiffre donné pour le décalage fait dépasser de l'alphabet, on revient au début.
+On observe donc que A (première lettre de l'alphabet) sera remplacée par D (troisième lettre de l'alphabet), B par E, C par F, etc. Dès lors que le décalage fait sortir de l'alphabet, on retourne au début, c'est pourquoi X sera remplacé par A, Y par B et Z par C.
 
-Par exemple, Z est la 26ème  lettre de l'alphabet. Si l'on applique un décalage de deux, on a alors : 26 + 3 = 29. C'est plus qu'il n'y a de lettres dans l'alphabet. Pour revenir au début, il n'y a qu'à soustraire le nombre total de lettres dans l'alphabet : 29 - 26 = 3. La troisième lettre de l'alphabet est C. Z est donc codé par C.
+Prenons l'exemple de Z, qui est la 26ème lettre de l'alphabet. Si l'on applique un décalage de trois, on a alors : 26 + 3 = 29. C'est plus qu'il n'y a de lettres dans l'alphabet. Pour revenir au début, il n'y a qu'à soustraire le nombre total de lettres dans l'alphabet : 29 - 26 = 3. La troisième lettre de l'alphabet est C, Z est donc remplacé par C.
 
 D'autres exemples:
 
->Décalage de trois : **Girls Can Code!** devient **Jluov Fdq Frgh!**
+- Décalage de trois : **Girls Can Code!** devient **Jluov Fdq Frgh!**
 
->Décalage de dix : **Hello World!** devient **Rovvy Gybvn!**
+- Décalage de dix : **Hello World!** devient **Rovvy Gybvn!**
 
 Voilà donc le principe de base du chiffrement de César.
 
 ## Place au code
 
----
-Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut en effet se dire que dans un premier temps, on va implémenter le chiffre de César pour qu'il ne soit appliqué que sur une lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, vous pouvez ne prendre en compte que les lettres majuscules ou minuscules si cela vous aide.
+Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut, dans un premier temps, appliquer le chiffrement à une seule lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, vous pouvez ne prendre en compte que les lettres majuscules ou minuscules si cela vous aide.
 
-Ainsi, il va falloir implémenter les fonctions ```letterCaesar(l, d)``` et ```textCaesar(s, d)```.
+Ainsi, il va falloir implémenter les fonctions `letterCaesar(l, d)` et `textCaesar(s, d)`.
 
-### La fonction ```letterCaesar(l, d)```
+### La fonction `letterCaesar(l, d)`
 
-Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre ```l``` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractèrer. Quant au paramètre ```d```, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
->**Bonus:** essayez de gérer les majuscules, minuscules ainsi que la ponctuation.
+Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre `l` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractère. Quant au paramètre `d`, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
 
-### La fonction ```textCaesar(t, d)```
+>**Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à `%`).
 
-Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre ```t``` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre ```d``` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
+>**Bonus:** essayez de gérer les majuscules et minuscules.
 
->**Tips :** pensez à prendre en compte les espaces, vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à ```%```).
+### La fonction `textCaesar(t, d)`
+
+Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre `t` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre `d` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
 
 ## Quelques fonctions et notions utiles
-
----
 
 ```py
 # L'opérateur + permet, quand il est appliqué à des chaînes de caractères, de concaténer celles-ci. Exemples:
@@ -125,8 +124,7 @@ False
 
 ## Déchiffrer un message
 
----
-Pour déchiffrer un message il suffit d'utiliser la clé inverse à celle utilisée pour chiffre. Par exemple:
+Pour déchiffrer un message il suffit d'utiliser la clé inverse à celle utilisée pour chiffrer. Par exemple:
 
 ```py
 msg = stringCaesar("Hello World", 10)   # chiffre "Hello World", va donner "Rovvy Gybvn"
@@ -137,16 +135,15 @@ Dans un premier temps, testez avec votre code pour observer le résultat obtenu.
 
 ## Casser le chiffre de César
 
----
 Il existe plusieurs méthodes pour casser le chiffre de César. On peut par exemple faire une analyse fréquentielle qui va compter la proportion de chaque lettre dans le message chiffré et comparer par rapport à la fréquence connue des lettres dans la langue du message. En Français, à titre d'exemple, la lettre 'e' est la plus fréquente, ainsi la lettre la plus fréquente du message chiffré doit sans doute correspondre à un 'e'. Cette méthode est très efficace sur les messages longs, le problème est donc que sur les messages dits courts, elle ne sera pas d'un grande utilité. Ce n'est donc pas celle que vous allez implémenter, mais il est toujours intéressant de savoir qu'une telle méthode existe.
 
 La méthode que vous allez implémenter consiste en du brute force.
 
 >**Qu'est-ce que le brute force ?**  Pour faire simple, cela consiste à essayer toutes les combinaisons possibles. Dans notre cas, cela revient à essayer 26 possibilités, puisqu'il y a 26 lettres dans l'alphabet.
 
-Vous allez donc implémenter la fonction ```breakCaesar(msg)```. Elle prend en paramètre une chaine de caractère (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer ```charCaesar(c, d)``` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour ```breakCaesar("Rovvy Gybvn")```:
+Vous allez donc implémenter la fonction `breakCaesar(msg)`. Elle prend en paramètre une chaîne de caractère (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer `charCaesar(c, d)` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour `breakCaesar("Rovvy Gybvn")`:
 
-```py
+```text
 Spwwz Hzcwo
 Tqxxa Iadxp
 Uryyb Jbeyq
@@ -177,11 +174,11 @@ Rovvy Gybvn
 
 Vous pouvez tout à fait améliorer l'affichage pour que cela soit davantage lisible !
 
-La fonction ```print()``` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractère, un nombre, une liste...). Par exemple :
+La fonction `print()` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractère, un nombre, une liste...). Par exemple :
 
 ```py
 >>> s = "Hello World"
->>>print(s)
+>>> print(s)
 Hello World
 >>> print("Bonjour !")
 Bonjour !
@@ -197,25 +194,23 @@ Bonjour !
 
 Essaye de décrypter ce message chiffré avec le chiffre de César !
 
-```none
-C'RXV UV XCRTV T'VJK CR MZV
+```text
+YRF FGNTRF TVEYF PNA PBQR! P'RFG GEBC PBBY!
 ```
 
-# **Le chiffre de Vigenère**
+# Le chiffre de Vigenère
 
 _Prérequis : avoir fini la partie sur le chiffre de César_
 
 ## Un peu d'histoire
 
----
 _[insert] history fact here..._
 
 Le chiffre de Vigenère est une méthode de chiffrement par substitution imaginée au XVIe siècle par Blaise de Vigenère (ou peut-être pas, mais la méthode a néanmoins le nom de Vigenère). Le général prussien Friedrich Kasiski publie en 1863 une méthode permettant de casser ce chiffre.
 
 ## Principe du chiffre de Vigenère
 
----
-Cette méthode de chiffrement est assez similaire au chiffre de César que vous avez implémentée précedemment. La différence notable est que, pour Vigenère, on applique à chaque lettre du message un décalage différent. Celui-ci dépendant d'une clé donnée au préalable, correspondant à une chaîne de caractères.
+Cette méthode de chiffrement est assez similaire au chiffre de César que vous avez implémenté précedemment. La différence notable est que, pour Vigenère, on applique à chaque lettre du message un décalage différent. Celui-ci dépendant d'une clé donnée au préalable, correspondant à une chaîne de caractères.
 
 De la clé, on en déduit ensuite les décalages successifs à appliquer (on considère que a est la "0e" lettre de l'alphabet). Exemple avec la clé **"clef"** :
 
@@ -226,7 +221,7 @@ De la clé, on en déduit ensuite les décalages successifs à appliquer (on con
 
 Si la clé est plus courte que le message, celle-ci sera répétée autant de fois que nécessaire. Voici un exemple avec la clé **"clef"** :
 
-```none
+```text
 Message :           Comment est votre blanquette ?
 Clé :               clefclefclefclefclefclefclefcl      
 
@@ -235,14 +230,13 @@ Message chiffré :   Ezqrgyx gdx xzxwg fqcyuzgexj ?
 
 ## À vos claviers
 
----
 Pour implémenter le chiffre de Vigenère, il va être plus simple de diviser le problème en sous-problèmes. Vous aurez également besoin de la fonction `letterCaesar(l, d)` réalisée dans la partie sur le chiffre de César.
 
-### La fonction ```keyToOffset(k)```
+### La fonction `keyToOffset(k)`
 
 Cette fonction a pour but de convertir la clé en une liste de décalages. Elle prend en paramètre `k` la clé, qui correspond à une chaîne de caractères. Elle retourne une liste de la longueur de la clé contenant les décalages correspondant à chaque lettre de la clé.
 
-### La fonction ```textVigenere(t, k)```
+### La fonction `textVigenere(t, k)`
 
 Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. Elle prend en paramètre `t`, une chaîne de caractères, qui est le message à dissimuler. L'autre paramètre `k`, est aussi une chaîne de caractères et correspond à la clé.
 
@@ -254,15 +248,15 @@ Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. El
 - [Wikipedia: Chiffre de Vigenère](https://fr.wikipedia.org/wiki/Chiffre_de_Vigen%C3%A8re)
 - [haltode.fr: Chiffre de Vigenère](https://haltode.fr/algo/chiffrement/chiffre_vigenere.html)
 
-# **La machine Enigma**
+# La machine Enigma
 
->Prérequis : maîtrise basique des classes et de l'opérateur modulo
+_Prérequis : maîtrise basique des classes et de l'opérateur modulo_
 
-## **Culture générale**
+## Culture générale
 
-Tu en as peut-être déjà entendu parler, Enigma est une machine de cryptologie mise au point et utilisée par les allemands pendant la seconde guerre mondiale. Son fonctionnement est déchiffré par le mathématicien Alan Turing, qui est aujourd'hui considéré comme le père de l'informatique moderne.
+Tu en as peut-être déjà entendu parler, Enigma est une machine de cryptologie mise au point et utilisée par les allemands pendant la seconde guerre mondiale. Après avoir longtemps été considérée comme incassable, le mathématicien Alan Turing, qui est aujourd'hui considéré comme le père de l'informatique moderne, parvint à comprendre son fonctionnement et fut en mesure de décrypter les messages chiffrés avec Enigma.
 
-## **Mais comment fontionne Enigma ?**
+## Mais comment fontionne Enigma ?
 
 ### 1. Les rotors
 
@@ -277,11 +271,11 @@ En code, on peut représenter un rotor par une chaîne de 26 caractères.
 |---|---|
 | Rotor 1 | **EKMFLGDQVZNTOWYHXUSPAIBRCJ** |
 
->Ici, on peut comprendre que le rotor 1 donnera **E** en sortie pour un **A** en entrée, un **K** pour un **B**, etc... (voir le schéma suivant)
+>Ici, on peut comprendre que le rotor 1 donnera **E** en sortie pour un **A** en entrée, un **K** pour un **B**, etc.
 
 Dernière chose, afin de changer l'état de la machine et de rendre plus complexe le déchiffrement, les rotors peuvent tourner d'un 26ième de tour. Quand cela se produit, les lettres transformées par le rotor changent. Si l'on tourne d'un cran le rotor 1 défini au dessus, le fil dans le rotor qui reliait **A** à **E** reliera désormais **B** à **F**. De la même manière, le fil qui reliait **B** à **K** reliera désormais **C** à **L**, etc...
 
-Puisque cela serait trop simple de tourner les 3 rotors à chaque fois, les cryptologues allemands ont mis au point le système suivant : Pour chaque lettre tapée, le rotor 1 tourne d'un cran. Le rotor 2 tourne lui d'un cran quand le rotor 1 a fait un tour complet (c'est-à-dire toutes les 26 lettres tapées), et le rotor 3 tourne d'un cran à chaque tour complet du rotor 2 (toutes les 676 lettres tapées).
+Puisque cela serait trop simple de tourner les 3 rotors à chaque fois, les cryptologues allemands ont mis au point le système suivant : pour chaque lettre tapée, le rotor 1 tourne d'un cran. Le rotor 2 tourne lui d'un cran quand le rotor 1 a fait un tour complet (c'est-à-dire toutes les 26 lettres tapées), et le rotor 3 tourne d'un cran à chaque tour complet du rotor 2 (toutes les 676 lettres tapées).
 
 ### 2. Le réflecteur
 
@@ -291,21 +285,19 @@ Après avoir fait passer la lettre dans les 3 rotors, on la passe dans une pièc
 
 Comme si cela n'était pas déjà assez compliqué, on rajoute une couche avec le **tableau de permutations**. Le fonctionnement de celui-ci est très simple. Il s'agit simplement de brancher des lettres 2 par 2 pour échanger leur place (on peut échanger comme cela jusqu'à 10 paires de lettres). On branche ce tableau avant le système de rotor. Par exemple, si l'on échange les lettres **A** et **O**, alors chaque **A** tapé par l'opérateur de la machine deviendra un **O** pour le système des rotors, et chaque **A** "renvoyé" par ce dernier sera un **O** pour l'opérateur (et vice-versa, le **O** devient un **A**).
 
-Schéma de fonctionnement d'Enigma
+!["Schéma de fonctionnement d'Enigma"](imgs/enigma_scheme.jpg "Schéma de fonctionnement")
 
-!["schéma fonctionnement"](imgs/enigma_scheme.jpg "Schéma de fonctionnement")
-
->Si ces explications manquent de clarté, voici [un site très pratique pour visualiser le chemin d'une lettre dans le système](https://observablehq.com/@tmcw/enigma-machine)
+>Vous pouvez aussi visualiser le fonctionnement d'Enigma sur ce site : <https://observablehq.com/@tmcw/enigma-machine>
 
 ### 4. Et pour décoder un message ?
 
-Tu viens d'apprendre le fonctionnement général de la machine Enigma, mais une question persiste : Avec un système aussi complexe, comment fait-on pour décoder un message crypté avec une machine Enigma ? La réponse est sûrement plus simple qu'il n'y paraît : Il suffit de taper le message chiffré sur une machine Enigma qui a les mêmes paramètres initiaux que pour encoder le message ! En effet, prenons le message "GirlsCanCode" et imaginons que tous les rotors soient sur le cran 0 au début du message. Taper **G** sur la machine donnera une lettre différente, peut-être un **V**. Mais de la même manière, si l'on avait tapé **V**, on aurait obtenu **G**, car le chemin de la lettre dans la machine est le même, seulement il est parcouru à l'envers.
+Tu viens d'apprendre le fonctionnement général de la machine Enigma, mais une question persiste : avec un système aussi complexe, comment fait-on pour déchiffrer un message chiffré avec une machine Enigma ? La réponse est sûrement plus simple qu'il n'y paraît : il suffit de taper le message chiffré sur une machine Enigma qui a les mêmes paramètres initiaux que pour chiffrer le message ! En effet, prenons le message "GirlsCanCode" et imaginons que tous les rotors soient sur le cran 0 au début du message. Taper **G** sur la machine donnera une lettre différente, peut-être un **V**. Mais de la même manière, si l'on avait tapé **V**, on aurait obtenu **G**, car le chemin de la lettre dans la machine est le même, seulement il est parcouru à l'envers.
 
-## **Exercices**
+## Exercices
 
 À ton tour de créer ton propre programme Enigma !
 
-> Afin d'implémenter notre propre machine Enigma, nous utiliserons une classe qui nous sera utile pour sauvegarder l'état actuel des rotors.
+Afin d'implémenter notre propre machine Enigma, nous utiliserons une classe qui nous sera utile pour sauvegarder l'état actuel des rotors.
 
 Voici le squelette du code:
 
@@ -345,16 +337,16 @@ class Enigma:
 
 # Exemples
 
-# on déclare notre variable Enigma (avec les rotors définis ci-dessous)
-# état initial: tous les décalages à 0
+# On déclare notre variable Enigma (avec les rotors définis ci-dessous)
+# État initial : tous les décalages à 0
 >>> en = Enigma(rotor_I, rotor_II, rotor_III, reflector_A)
 
 >>> en.encode('A')
 'N' 
-# Etat interne des rotors après opération: x1 = 1, x2 = 0, x3 = 0
+# État interne des rotors après opération : x1 = 1, x2 = 0, x3 = 0
 ```
 
-Voici également 2 simples fonctions permettant de trouver l'indice d'une lettre dans l'alphabet (en partant de `0`), et vice-versa:
+Voici également deux simples fonctions permettant de trouver l'indice d'une lettre dans l'alphabet (en partant de `0`), et vice-versa :
 
 ```py
 def letter_to_number(letter):
@@ -370,7 +362,7 @@ def number_to_letter(number):
     """
     return chr(number + ord('A'))
 
-# Examples
+# Exemples
 >>> letter_to_number('A')
 0
 >>> letter_to_number('z')
@@ -383,7 +375,7 @@ A
 X
 ```
 
-Enfin, voici des rotors et réflecteurs qui ont réellement été utilisés pendant la seconde guerre mondiale:
+Enfin, voici des rotors et réflecteurs qui ont réellement été utilisés pendant la seconde guerre mondiale :
 
 ```py
 rotor_I = "EKMFLGDQVZNTOWYHXUSPAIBRCJ"
@@ -396,36 +388,36 @@ reflector_B = "YRUHQSLDPXNGOKMIEBFZCWVJAT"
 
 ---
 
-### **Partie 1 : encode_letter()**
+### Partie 1 : encode_letter()
 
 Dans cette méthode de la classe Enigma, tu dois crypter la lettre donnée en paramètre.
 
->Entrée(s):
+Entrée :
 
 - letter: la lettre à chiffrer
 
->Sortie:
+Sortie :
 
 - La lettre chiffrée correspondante
 
 **ATTENTION**: après avoir trouvé la lettre, il ne faut pas oublier de **modifier la position des rotors**.
 
----
-
-### **Partie 2 : encode_message()**
+### Partie 2 : encode_message()
 
 Dans cette méthode, il te faut encoder tout un message avec le programme Enigma !
 
->Entrée(s):
+Entrée :
 
 - msg: le message à chiffrer
 
->Sortie: Le message chiffré
+Sortie :
+
+- Le message chiffré
 
 - N'oublie pas que tu peux utiliser la méthode `encode_letter()` dans `encode_message()`.
 - Attention aux caractères spéciaux dans ton message, les chiffres, espaces et caractères de ponctuation ne peuvent pas être chiffrés par Enigma.
 
-Une fois implémentée, tu peux tester ton code de la manière suivante:
+Une fois implémentée, tu peux tester ton code de la manière suivante :
 
 ```py
 >>> msg = 'HELLO WORLD'
@@ -439,54 +431,46 @@ Une fois implémentée, tu peux tester ton code de la manière suivante:
 # 'HELLOWORLD'
 ```
 
-Si tous fonctionne normalement, le programme devrait afficher la version chiffrée puis déchiffrée de ton message !
+Si tout fonctionne normalement, le programme devrait afficher la version chiffrée puis déchiffrée de ton message !
 
----
+### Partie 3 : Bonus
 
-### **Partie 3 : Bonus**
+Bien joué !
 
-Bien joué!
+Pour aller plus loin, tu peux modifier le programme pour ajouter la fonctionnalité du tableau de permutation, qui n'est pas montrée ici.
 
-Pour aller plus loin:
+> **Info**: une particularité de la machine Enigma qui a aidé Alan Turing et son équipe pour casser le code est la suivante : Enigma ne donnait jamais de lettre identique à celle donnée en entrée. Saurais-tu expliquer pourquoi ?
 
-> Tu peux modifier le programme pour ajouter la fonctionnalité du tableau de permutation, qui n'est pas montrée ici.
+# XOR / Ou Exclusif
 
-> **Info**: une particularité de la machine Enigma qui a aidé A. Turing et son équipe de casser le code est la suivante : Enigma ne donnait jamais de lettre identique à celle donnée en entrée. Mais peux-tu expliquer pourquoi ?
-
-
-# **XOR / Ou Exclusif**
-
->Prérequis : l'hexadécimal, la table ASCII
+_Prérequis : l'hexadécimal, la table ASCII_
 
 ## Quelques rappels
 
----
-
 _Explication du binaire à ajouter ?_
 
-### **L'hexadécimal**
+### L'hexadécimal
 
-L'hexadécimal est un système de comptage en base 16. Il utilise 16 symboles : les lettres de A à F (inclus) et les chiffres de 0 à 9 (inclus).
+L'hexadécimal est un système permettant d'écrire des nombres en utilisant 16 symboles : les chiffres de 0 à 9 (inclus), puis les lettres de A à F (inclus).
 
 À titre d'exemple, voici comment compter de 0 à 20 en hexadécimal :
 
-```sh
+```text
 base 10 : 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 base 16 : 0 1 2 3 4 5 6 7 8 9  A  B  C  D  E  F 10 11 12 13 14
 ```
 
 > **Remarque :** on utilise le système décimal, en base 10, dans la vie courante. Il utilise donc 10 symboles : les chiffres de 0 à 9.
 
-### **La table ASCII**
+### La table ASCII
 
-La table ascii (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
+La table ASCII (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
 
-![Ascii](../imgs/ascii.png "Table ASCII")
+![Table ASCII](../imgs/ascii.png "Table ASCII")
 
 ## Un peu de théorie
 
----
-Le XOR est un opérateur logique, on l'appelle également le **OU Exclusif** et en anglais **eXclusive OR**. Il est souvent représenté avec le symbole :  **⊕** ". En Python, on utilisera : **^**.
+Le XOR est un opérateur logique, on l'appelle également le **OU Exclusif** et en anglais **eXclusive OR**. Il est souvent représenté avec le symbole :  "**⊕** ". En Python, on utilisera : **^**.
 
 Table de vérité :
 
@@ -499,7 +483,7 @@ Table de vérité :
 |1|0|1|
 |1|1|0|
 
-En observant la table de vérité, on peut dire que le XOR peut se définir de la façon suivante:
+En observant la table de vérité, on peut dire que le XOR peut se définir de la façon suivante :
 
 - Si les deux opérandes sont différentes, alors le résultat est 1
 - Si les deux opérandes sont identiques, alors le résultat est 0
@@ -510,7 +494,7 @@ Dans cet exercice, vous allez chiffrer des messages avec XOR. Cet opérateur log
 
 Pour mieux vous faire comprendre le processus, appliquons-le avec un exemple en binaire. Admettons que le message que l'on souhaite chiffrer est `01100101 01110000 01101001` et que la clé est `01110100 01100001 01100001`.
 
-```sh
+```text
 Étape de chiffrement
 Message :         01100101 01110000 01101001
 Clé :             01110100 01100001 01100001
@@ -531,7 +515,6 @@ Maintenant que vous connaissez le XOR, il est temps d'écrire les fonctions !
 
 ## Let's code
 
----
 Pour implémenter cette méthode de chiffrement, il va être plus simple de diviser le problème en plusieurs parties, et donc en plusieurs fonctions. Comme écrit précedemment, pour appliquer le XOR, pas besoin de passer par du binaire, nous allons utiliser de l'hexadécimal. La première fonction va donc transformer du texte en hexadécimal. La deuxième va appliquer XOR sur le message transformé en hexadecimal avec une clé en hexadecimal de la même longueur. Finalement, la troisième va transformer de l'hexadecimal en lettres, texte lisible pour nous !
 
 **Comment obtenir une clé en hexadécimal de la même longueur que le message que l'on souhaite chiffrer ?**
@@ -541,14 +524,14 @@ C'est tout simple, une fonction générant des clés en hexadécimal vous est fo
 Voici la fonction :
 
 ```py
-import random
+import random  # N'oubliez pas cette ligne !
 
 def randomHexa(lenstr):
     string = ""
     for i in range(lenstr):
-        rdm_int = random.randint(0, 255) # on génère un entier entre 0 et 255
-        string += chr(rdm_int) # on convertit en caractère et on concatène
-    res = stringToHexa(string) # on convertit en hexa pour avoir une clé en hexa
+        rdm_int = random.randint(0, 255)  # on génère un entier entre 0 et 255
+        string += chr(rdm_int)  # on convertit en caractère et on concatène
+    res = stringToHexa(string)  # on convertit en hexa pour avoir une clé en hexa
     return res
 ```
 
@@ -610,7 +593,7 @@ Pour convertir une chaîne de caractères en hexadécimal. Il va falloir le fair
 
 Cette fonction va se charger d'appliquer XOR entre le message et la clé (soit message ⊕ clé). Elle prend donc en paramètre `m` une chaîne de caractères correspondant au message que l'on désire chiffrer, et **qui a déjà été converti en hexadecimal**. Elle prend également `key` qui est également une chaîne de caractères en hexadecimal et qui est de la même longueur que `m`. `msgXor(m, key)` va renvoyer une chaîne de caractères en hexadecimal.
 
-Pour appliquer XOR, voici les différentes étapes qu'il faudra implémenter:
+Pour appliquer XOR, voici les différentes étapes qu'il faudra implémenter :
 
 - Sélectionner chaque caractère des chaînes de caractère 2 par 2
 - Les convertir en nombre entier
@@ -642,8 +625,5 @@ Les fonctions dont vous aurez besoin pour implémenter votre solution ont déjà
 
 ## Sources
 
----
-
 - [Table ASCII](https://computersciencewiki.org/images/3/3d/Ascii_table.png)
-
 - [Infos sur la table ASCII](http://www.table-ascii.com/)
