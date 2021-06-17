@@ -354,7 +354,7 @@ class Enigma:
 # Etat interne des rotors après opération: x1 = 1, x2 = 0, x3 = 0
 ```
 
-Voici également 2 simples fonctions permettant de trouver le nombre d'une lettre dans l'alphabet (en partant de `0`), et vice-versa:
+Voici également 2 simples fonctions permettant de trouver l'indice d'une lettre dans l'alphabet (en partant de `0`), et vice-versa:
 
 ```py
 def letter_to_number(letter):
