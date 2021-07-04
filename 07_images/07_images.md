@@ -17,7 +17,7 @@ Une couleur est representée sous la forme d'un triplet (R, V, B) où chaque val
 
 ## Introduction à la bibliothèque PIL (Python Imaging Library)
 
-Une bibliothèque est une collection de fonctions externes que tu peux importer pour les utiliser dans ton propre code.
+Une bibliothèque est une collection de fonctions externes que vous pouvez importer pour les utiliser dans votre propre code.
 
 En écrivant :``from PIL import Image`` nous importons le module Image de la bibliothèque PIL.
 
@@ -51,7 +51,7 @@ Et voilà! La blibliothèque est installée. Maintenant intéressons-nous à son
 PIL est une bibliothèque assez large. Pour vous aider, voici une compilation d'instructions intéressantes que vous utiliserez durant ce TP.
 
 ```Python
-Mon_image = Image.open("cat.png") # Ouvrir une image depuis ton ordinateur.
+Mon_image = Image.open("cat.png") # Ouvrir une image depuis votre ordinateur.
 Nouvelle_image = Image.new(mode = "RGB", size = (1920, 1080)) # Créer une nouvelle image RGB de largeur 1920 pixels et de hauteur 1080 pixels.
 Largeur = Mon_image.width # Obtenir la largeur d'une image.
 Hauteur = Mon_image.height # Obtenir la hauteur d'une image.
@@ -197,28 +197,40 @@ Exemple : Pour ``Diff(ref_image, noisycat)``, avec ``ref_image`` étant l'image 
 
 ### Exercice 9 : Réduction de bruit
 
-**But : Écrire la fonction ``NoiseReduction(image)`` qui applique un filtre median sur l'image. Le filtre median remplace la couleur d'un pixel par la couleur de la valeur médiane des pixels de son voisinage et de lui-meme.**
+**But : Écrire la fonction ``NoiseReduction(image)`` qui applique un filtre median avec un voisinage de 5x5 pixels sur l'image. Le filtre median remplace la couleur d'un pixel par la couleur de la valeur médiane des pixels de son voisinage et de lui-meme.**
 **Pour des raisons de simplicité appliquez ce filtre sur les pixels dans l'intervalle ([2, largeur - 2], [2, - hauteur - 2]).**
 **La fonction doit retourner une nouvelle image. **
 
 **Voisinage d'un pixel :**
 
-Prenons une matrice avec des valeurs aleatoires pour illustrer. Ici nous nous intéressons aux voisins de 250 :
+Le voisinage d'un pixel est le nom que l'on donne à tous les pixels voisins d'un autre pixel. 
 
-<img src="figures/15.png" style="zoom:50%;" />
+Sur l'image ci-dessous les pixels ont été remplacés par des maisons, la maison jaune a un voisinage de 3x3 maisons. Ce qui fait au total 8 voisins (maisons rouges).
+
+![image-20210704205100278](/home/downvoted/Projects/gcc-resources/07_images/figures/19.png)
+
+Sur cette seconde image, la maison jaune a un voisinage de 5x5 maisons, ce qui fait un total de 24 voisins !
+
+![image-20210704205220927](/home/downvoted/Projects/gcc-resources/07_images/figures/20.png)
+
+Pour réaliser ce filtre, vous allez devoir parcourir un voisinage de 5x5 pixels pour chaque pixel d'une image et calculer la valeur mediane de chaque composante de tous les voisins d'un pixel.
+
+Prenons une matrice avec des valeurs aléatoires pour illustrer. Ici nous nous intéressons aux voisins de 250 :
+
+<img src="figures/15.png" style="zoom:67%;" />
 
 La valeur médiane ici sera de 14 car si l'on trie chaque valeur par ordre croissant on obtient:
 
-![](figures/16.png)
+![](figures/21.png)
 
-Rappel : La médiane est la la valeur qui sépare une distribution ordonnée en deux groupes de taille égale. Donc pour la retrouver dans notre cas, on trie en ordre croissant les valeurs des pixels intéressants et la médiane correspondra à la valeur au milieu de cette liste (à la position (nombre total d'éléments) / 2)
+Rappel : La médiane est la la valeur qui sépare une distribution ordonnée en deux groupes de taille égale. Donc pour la retrouver dans notre cas, on trie en ordre croissant les valeurs des pixels intéressants et la médiane correspondra à la valeur au milieu de cette liste (à la position : nombre total d'éléments / 2)
 Nous remplaçons donc **250** par **14**.
 
 ![](figures/17.png)
 
 
 
-*__Conseil__ : Tu peux utiliser la fonction sort() de python pour trier une liste.*
+*__Conseil__ : Vous pouvez utiliser la fonction sort() de python pour trier une liste.*
 
 ```Python
 ma_liste = [1, 5, 3, 7, 2, 9]
