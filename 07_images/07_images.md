@@ -207,11 +207,11 @@ Le voisinage d'un pixel est le nom que l'on donne à tous les pixels voisins d'u
 
 Sur l'image ci-dessous les pixels ont été remplacés par des maisons, la maison jaune a un voisinage de 3x3 maisons. Ce qui fait au total 8 voisins (maisons rouges).
 
-![image-20210704205100278](/home/downvoted/Projects/gcc-resources/07_images/figures/19.png)
+![image-20210704205100278](figures/19.png)
 
 Sur cette seconde image, la maison jaune a un voisinage de 5x5 maisons, ce qui fait un total de 24 voisins !
 
-![image-20210704205220927](/home/downvoted/Projects/gcc-resources/07_images/figures/20.png)
+![image-20210704205220927](figures/20.png)
 
 Pour réaliser ce filtre, vous allez devoir parcourir un voisinage de 5x5 pixels pour chaque pixel d'une image et calculer la valeur mediane de chaque composante de tous les voisins d'un pixel.
 
