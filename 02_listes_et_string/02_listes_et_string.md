@@ -1,6 +1,6 @@
 ---
 title: Listes et chaînes de caractères
-date: 2020
+date: 2021
 ---
 
 # Introduction aux listes

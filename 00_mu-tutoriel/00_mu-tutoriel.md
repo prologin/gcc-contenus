@@ -1,6 +1,6 @@
 ---
 title: Mu Editor
-date: 2020
+date: 2021
 ---
 
 ## Comment utiliser Mu Editor ?

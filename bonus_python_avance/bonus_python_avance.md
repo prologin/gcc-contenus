@@ -1,6 +1,6 @@
 ---
 title: Python avancé
-date: 2019
+date: 2021
 ---
 
 Durant ce TP, vous allez voir des notions un peu plus avancées de Python, avec

@@ -1,6 +1,6 @@
 ---
 title: Matrices
-date: 2019
+date: 2021
 author: Tanguy Segarra
 ---
 
