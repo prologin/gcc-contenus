@@ -99,7 +99,9 @@ Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de
 'HELLO WORLD'
 >>> 'a'.upper()
 'A'
+```
 
+```py
 # La méthode isalpha() permet de déterminer si un caractère est une lettre ou non.
 
 >>> c = '!'
@@ -246,6 +248,8 @@ Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. El
 - "La cryptographie militaire", Auguste Kerchkhoffs, 1883
 - [Wikipedia: Chiffre de Vigenère](https://fr.wikipedia.org/wiki/Chiffre_de_Vigen%C3%A8re)
 - [haltode.fr: Chiffre de Vigenère](https://haltode.fr/algo/chiffrement/chiffre_vigenere.html)
+
+\newpage
 
 # La machine Enigma
 
@@ -439,6 +443,8 @@ Bien joué !
 Pour aller plus loin, tu peux modifier le programme pour ajouter la fonctionnalité du tableau de permutation, qui n'est pas montrée ici.
 
 **Info**: une particularité de la machine Enigma qui a aidé Alan Turing et son équipe pour casser le code est la suivante : Enigma ne donnait jamais de lettre identique à celle donnée en entrée. Saurais-tu expliquer pourquoi ?
+
+\newpage
 
 # XOR / Ou Exclusif
 
