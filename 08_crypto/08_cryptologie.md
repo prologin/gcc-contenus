@@ -1,7 +1,7 @@
 ---
 title: Cryptologie
 date: 2021
-authors: Clarisse Blanco & Dorian Péron
+authors: Clarisse Blanco, Dorian Péron
 ---
 
 # Le chiffre de César
@@ -10,9 +10,11 @@ _Prérequis : la table ASCII, modulo_
 
 ### **La table ASCII**
 
-La table ASCII (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
+Avant de commencer, nous allons rapidement évoquer une notion qui vous sera utile tout au long de ce TP.
 
-![Ascii](../imgs/ascii.png "Table ASCII")
+La table ASCII (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le **A** correspond à la valeur $65$ et le **a** correspond à $97$. Cela permet de convertir vos lettres en nombres et inversement, ça va s'avérer très pratique dans la suite !
+
+![Table ASCII](imgs/ascii.png){height=8cm}
 
 ## Un peu d'histoire
 
@@ -31,14 +33,13 @@ Voilà comment cela va se répercuter sur l'alphabet tout entier :
 |Alphabet|A B C D E F G H I J K L M N O P Q R S T U V W X Y Z|
 |Substitution|D E F G H I J K L M N O P Q R S T U V W X Y Z A B C|
 
-On observe donc que A (première lettre de l'alphabet) sera remplacée par D (troisième lettre de l'alphabet), B par E, C par F, etc. Dès lors que le décalage fait sortir de l'alphabet, on retourne au début, c'est pourquoi X sera remplacé par A, Y par B et Z par C.
+On observe donc que A (première lettre de l'alphabet) sera remplacée par D (quatrième lettre de l'alphabet), B par E, C par F, etc. Dès lors que le décalage fait sortir de l'alphabet, on retourne au début, c'est pourquoi X sera remplacé par A, Y par B et Z par C.
 
 Prenons l'exemple de Z, qui est la 26ème lettre de l'alphabet. Si l'on applique un décalage de trois, on a alors : 26 + 3 = 29. C'est plus qu'il n'y a de lettres dans l'alphabet. Pour revenir au début, il n'y a qu'à soustraire le nombre total de lettres dans l'alphabet : 29 - 26 = 3. La troisième lettre de l'alphabet est C, Z est donc remplacé par C.
 
 D'autres exemples:
 
 - Décalage de trois : **Girls Can Code!** devient **Jluov Fdq Frgh!**
-
 - Décalage de dix : **Hello World!** devient **Rovvy Gybvn!**
 
 Voilà donc le principe de base du chiffrement de César.
@@ -53,9 +54,9 @@ Ainsi, il va falloir implémenter les fonctions `letterCaesar(l, d)` et `textCae
 
 Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre `l` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractère. Quant au paramètre `d`, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
 
->**Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à `%`).
+**Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à `%`).
 
->**Bonus:** essayez de gérer les majuscules et minuscules.
+**Bonus:** essayez de gérer les majuscules et minuscules.
 
 ### La fonction `textCaesar(t, d)`
 
@@ -135,11 +136,11 @@ Dans un premier temps, testez avec votre code pour observer le résultat obtenu.
 
 ## Casser le chiffre de César
 
-Il existe plusieurs méthodes pour casser le chiffre de César. On peut par exemple faire une analyse fréquentielle qui va compter la proportion de chaque lettre dans le message chiffré et comparer par rapport à la fréquence connue des lettres dans la langue du message. En Français, à titre d'exemple, la lettre 'e' est la plus fréquente, ainsi la lettre la plus fréquente du message chiffré doit sans doute correspondre à un 'e'. Cette méthode est très efficace sur les messages longs, le problème est donc que sur les messages dits courts, elle ne sera pas d'un grande utilité. Ce n'est donc pas celle que vous allez implémenter, mais il est toujours intéressant de savoir qu'une telle méthode existe.
+Il existe plusieurs méthodes pour casser le chiffre de César. On peut par exemple faire une analyse fréquentielle qui va compter la proportion de chaque lettre dans le message chiffré et comparer par rapport à la fréquence connue des lettres dans la langue du message. En français, à titre d'exemple, la lettre `e` est la plus fréquente, ainsi la lettre la plus fréquente du message chiffré doit sans doute correspondre à un `e`. Cette méthode est très efficace sur les messages longs, le problème est donc que sur les messages dits courts, elle ne sera pas d'un grande utilité. Ce n'est donc pas celle que vous allez implémenter, mais il est toujours intéressant de savoir qu'une telle méthode existe.
 
 La méthode que vous allez implémenter consiste en du brute force.
 
->**Qu'est-ce que le brute force ?**  Pour faire simple, cela consiste à essayer toutes les combinaisons possibles. Dans notre cas, cela revient à essayer 26 possibilités, puisqu'il y a 26 lettres dans l'alphabet.
+**Qu'est-ce que le brute force ?**  Pour faire simple, cela consiste à essayer toutes les combinaisons possibles. Dans notre cas, cela revient à essayer 26 possibilités, puisqu'il y a 26 lettres dans l'alphabet.
 
 Vous allez donc implémenter la fonction `breakCaesar(msg)`. Elle prend en paramètre une chaîne de caractère (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer `charCaesar(c, d)` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour `breakCaesar("Rovvy Gybvn")`:
 
@@ -186,8 +187,8 @@ Bonjour !
 42
 >>> print() # sans argument, print() affiche uniquement un retour à la ligne
 
->>> 
-# N'hésitez pas à essayer de votre côté ! 
+>>>
+# N'hésitez pas à essayer de votre côté !
 ```
 
 ### Challenge
@@ -203,8 +204,6 @@ YRF FGNTRF TVEYF PNA PBQR! P'RFG GEBC PBBY!
 _Prérequis : avoir fini la partie sur le chiffre de César_
 
 ## Un peu d'histoire
-
-_[insert] history fact here..._
 
 Le chiffre de Vigenère est une méthode de chiffrement par substitution imaginée au XVIe siècle par Blaise de Vigenère (ou peut-être pas, mais la méthode a néanmoins le nom de Vigenère). Le général prussien Friedrich Kasiski publie en 1863 une méthode permettant de casser ce chiffre.
 
@@ -223,7 +222,7 @@ Si la clé est plus courte que le message, celle-ci sera répétée autant de fo
 
 ```text
 Message :           Comment est votre blanquette ?
-Clé :               clefclefclefclefclefclefclefcl      
+Clé :               clefclefclefclefclefclefclefcl
 
 Message chiffré :   Ezqrgyx gdx xzxwg fqcyuzgexj ?
 ```
@@ -250,28 +249,28 @@ Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. El
 
 # La machine Enigma
 
-_Prérequis : maîtrise basique des classes et de l'opérateur modulo_
+_Prérequis : maîtrise des classes et de l'opérateur modulo_
 
 ## Culture générale
 
 Tu en as peut-être déjà entendu parler, Enigma est une machine de cryptologie mise au point et utilisée par les allemands pendant la seconde guerre mondiale. Après avoir longtemps été considérée comme incassable, le mathématicien Alan Turing, qui est aujourd'hui considéré comme le père de l'informatique moderne, parvint à comprendre son fonctionnement et fut en mesure de décrypter les messages chiffrés avec Enigma.
 
-## Mais comment fontionne Enigma ?
+## Mais comment fonctionne Enigma ?
 
 ### 1. Les rotors
 
 La machine Enigma est composée de 3 parties mobiles appelées "rotors" (visibles sur la photo ci-dessous).
 Ces rotors associent une lettre de l'alphabet à une autre. Les trois rotors sont connectés les uns aux autres. Imaginons que l'on donne un **A** au premier rotor, celui-ci pourrait par exemple le transformer en **F**. Le second rotor transforme le **F** en **O** et le troisième transforme le **O** en **E**. *Note ici que les rotors n'appliquent pas un chiffre de César, si **A** devient **F** avec le premier rotor, cela ne veut pas dire que **B** deviendra **G**.*
 
-![Machine Enigma](imgs/enigma.jpeg "Une machine Enigma")
+![Une machine Enigma](imgs/enigma.jpeg){height=6cm}
 
 En code, on peut représenter un rotor par une chaîne de 26 caractères.
 
-| Alphabet | ABCDEFGHIJKLMNOPQRSTUVWXYZ |
+| Alphabet | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z |
 |---|---|
-| Rotor 1 | **EKMFLGDQVZNTOWYHXUSPAIBRCJ** |
+| Rotor 1 | E K M F L G D Q V Z N T O W Y H X U S P A I B R C J |
 
->Ici, on peut comprendre que le rotor 1 donnera **E** en sortie pour un **A** en entrée, un **K** pour un **B**, etc.
+Ici, on peut comprendre que le rotor 1 donnera **E** en sortie pour un **A** en entrée, un **K** pour un **B**, etc.
 
 Dernière chose, afin de changer l'état de la machine et de rendre plus complexe le déchiffrement, les rotors peuvent tourner d'un 26ième de tour. Quand cela se produit, les lettres transformées par le rotor changent. Si l'on tourne d'un cran le rotor 1 défini au dessus, le fil dans le rotor qui reliait **A** à **E** reliera désormais **B** à **F**. De la même manière, le fil qui reliait **B** à **K** reliera désormais **C** à **L**, etc...
 
@@ -285,9 +284,9 @@ Après avoir fait passer la lettre dans les 3 rotors, on la passe dans une pièc
 
 Comme si cela n'était pas déjà assez compliqué, on rajoute une couche avec le **tableau de permutations**. Le fonctionnement de celui-ci est très simple. Il s'agit simplement de brancher des lettres 2 par 2 pour échanger leur place (on peut échanger comme cela jusqu'à 10 paires de lettres). On branche ce tableau avant le système de rotor. Par exemple, si l'on échange les lettres **A** et **O**, alors chaque **A** tapé par l'opérateur de la machine deviendra un **O** pour le système des rotors, et chaque **A** "renvoyé" par ce dernier sera un **O** pour l'opérateur (et vice-versa, le **O** devient un **A**).
 
-!["Schéma de fonctionnement d'Enigma"](imgs/enigma_scheme.jpg "Schéma de fonctionnement")
+![Schéma de fonctionnement d'Enigma](imgs/enigma_scheme.jpg){height=6cm}
 
->Vous pouvez aussi visualiser le fonctionnement d'Enigma sur ce site : <https://observablehq.com/@tmcw/enigma-machine>
+Vous pouvez aussi visualiser le fonctionnement d'Enigma sur ce site : <https://observablehq.com/@tmcw/enigma-machine>
 
 ### 4. Et pour décoder un message ?
 
@@ -316,22 +315,22 @@ class Enigma:
         self.r2 = r2
         self.r3 = r3
         self.ref = ref
-        
+
         # on initialise le décalage des rotors à 0
         self.x1 = 0
         self.x2 = 0
         self.x3 = 0
-    
+
     def reset_rotors(self):
         # on réinitialise le décalage des rotors à 0
         self.x1 = 0
         self.x2 = 0
         self.x3 = 0
-    
+
     def encode_letter(self, letter):
         pass # À toi de jouer !
 
-    
+
     def encode_message(self, msg):
         pass # À toi de jouer !
 
@@ -342,7 +341,7 @@ class Enigma:
 >>> en = Enigma(rotor_I, rotor_II, rotor_III, reflector_A)
 
 >>> en.encode('A')
-'N' 
+'N'
 # État interne des rotors après opération : x1 = 1, x2 = 0, x3 = 0
 ```
 
@@ -354,7 +353,7 @@ def letter_to_number(letter):
     Donne la position d'une lettre dans l'alphabet
     """
     letter = letter.upper() # on transforme la lettre en majuscule
-    return ord(letter) - ord('A') 
+    return ord(letter) - ord('A')
 
 def number_to_letter(number):
     """
@@ -388,13 +387,13 @@ reflector_B = "YRUHQSLDPXNGOKMIEBFZCWVJAT"
 
 ---
 
-### Partie 1 : encode_letter()
+### Partie 1 : `encode_letter`
 
-Dans cette méthode de la classe Enigma, tu dois crypter la lettre donnée en paramètre.
+Dans cette méthode de la classe Enigma, tu dois chiffrer la lettre donnée en paramètre.
 
 Entrée :
 
-- letter: la lettre à chiffrer
+- `letter`: la lettre à chiffrer
 
 Sortie :
 
@@ -402,22 +401,22 @@ Sortie :
 
 **ATTENTION**: après avoir trouvé la lettre, il ne faut pas oublier de **modifier la position des rotors**.
 
-### Partie 2 : encode_message()
+### Partie 2 : `encode_message`
 
 Dans cette méthode, il te faut encoder tout un message avec le programme Enigma !
 
 Entrée :
 
-- msg: le message à chiffrer
+- `msg`: le message à chiffrer
 
 Sortie :
 
 - Le message chiffré
 
-- N'oublie pas que tu peux utiliser la méthode `encode_letter()` dans `encode_message()`.
-- Attention aux caractères spéciaux dans ton message, les chiffres, espaces et caractères de ponctuation ne peuvent pas être chiffrés par Enigma.
+N'oublie pas que tu peux utiliser la méthode `encode_letter` dans `encode_message`.
+Fais attention aux caractères spéciaux dans ton message, les chiffres, espaces et caractères de ponctuation ne peuvent pas être chiffrés par Enigma.
 
-Une fois implémentée, tu peux tester ton code de la manière suivante :
+Une fois implémenté, tu peux tester ton code de la manière suivante :
 
 ```py
 >>> msg = 'HELLO WORLD'
@@ -439,7 +438,7 @@ Bien joué !
 
 Pour aller plus loin, tu peux modifier le programme pour ajouter la fonctionnalité du tableau de permutation, qui n'est pas montrée ici.
 
-> **Info**: une particularité de la machine Enigma qui a aidé Alan Turing et son équipe pour casser le code est la suivante : Enigma ne donnait jamais de lettre identique à celle donnée en entrée. Saurais-tu expliquer pourquoi ?
+**Info**: une particularité de la machine Enigma qui a aidé Alan Turing et son équipe pour casser le code est la suivante : Enigma ne donnait jamais de lettre identique à celle donnée en entrée. Saurais-tu expliquer pourquoi ?
 
 # XOR / Ou Exclusif
 
@@ -460,28 +459,22 @@ base 10 : 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 base 16 : 0 1 2 3 4 5 6 7 8 9  A  B  C  D  E  F 10 11 12 13 14
 ```
 
-> **Remarque :** on utilise le système décimal, en base 10, dans la vie courante. Il utilise donc 10 symboles : les chiffres de 0 à 9.
-
-### La table ASCII
-
-La table ASCII (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le `A` correspond à `65` et le `a` correspond à `97`.
-
-![Table ASCII](../imgs/ascii.png "Table ASCII")
+**Remarque :** on utilise le système décimal, en base 10, dans la vie courante. Il utilise donc 10 symboles : les chiffres de 0 à 9.
 
 ## Un peu de théorie
 
-Le XOR est un opérateur logique, on l'appelle également le **OU Exclusif** et en anglais **eXclusive OR**. Il est souvent représenté avec le symbole :  "**⊕** ". En Python, on utilisera : **^**.
+Le XOR est un opérateur logique, on l'appelle également le **OU Exclusif** et en anglais **eXclusive OR**. Il est souvent représenté avec le symbole :  "$\oplus$". En Python, on utilisera le caractère `^`.
 
 Table de vérité :
 
-- On définit A et B deux opérandes binaires sur lesquelles on va appliquer XOR.
+- On définit $A$ et $B$ deux opérandes binaires sur lesquelles on va appliquer XOR.
 
-|A|B|A ⊕ B|
+| $A$ | $B$ | $A \oplus B$ |
 |---|---|---|
-|0|0|0|
-|0|1|1|
-|1|0|1|
-|1|1|0|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
 
 En observant la table de vérité, on peut dire que le XOR peut se définir de la façon suivante :
 
@@ -580,9 +573,9 @@ Pour convertir une chaîne de caractères en hexadécimal. Il va falloir le fair
 >>> s[4:]
 'tique'
 
-#La fonction zfill() prend en paramètre un nombre entier. 
-#Elle permet de rajouter des 0 au début d'une chaîne de caractères 
-#si la longueur de celle-ci est inférieure au paramètre donné à la fonction. 
+#La fonction zfill() prend en paramètre un nombre entier.
+#Elle permet de rajouter des 0 au début d'une chaîne de caractères
+#si la longueur de celle-ci est inférieure au paramètre donné à la fonction.
 >>>'hello'.zfill(6)
 '0hello'
 >>> 'hello'.zfill(5) # Si le paramètre est inférieur ou égal à la taille de la chaîne de caractère, il n'y a pas de changement
@@ -602,7 +595,7 @@ Pour appliquer XOR, voici les différentes étapes qu'il faudra implémenter :
 **Quelques fonctions utiles...**
 
 ```py
-# La fonction int() va convertir un caractère ou une chaîne de caractère en un entier. Dans notre cas, nous allons renseigner deux paramètres : une chaîne de caractères en hexadécimal et la base de notre chaîne de caractères (ici, 16 car on utilise de l'hexadecimal). 
+# La fonction int() va convertir un caractère ou une chaîne de caractère en un entier. Dans notre cas, nous allons renseigner deux paramètres : une chaîne de caractères en hexadécimal et la base de notre chaîne de caractères (ici, 16 car on utilise de l'hexadecimal).
 >>> int('10', 16)
  16
 >>> int('FA', 16)
