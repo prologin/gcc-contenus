@@ -444,9 +444,25 @@ Pour aller plus loin, tu peux modifier le programme pour ajouter la fonctionnali
 
 _Prérequis : l'hexadécimal, la table ASCII_
 
-## Quelques rappels
+## Quelques rappels : le binaire
 
-_Explication du binaire à ajouter ?_
+Le binaire est un système permettant d'écrire des nombres en utilisant 2 symboles : 0 et 1.
+
+À titre d'exemple, voici comment compter de 0 à 10 en binaire :
+
+| Nombre | Binaire |
+|---|---|
+| 0 | 0 |
+| 1 | 1 |
+| 2 | 10 |
+| 3 | 11 |
+| 4 | 100 |
+| 5 | 101 |
+| 6 | 110 |
+| 7 | 111 |
+| 8 | 1000 |
+| 9 | 1001 |
+| 10 | 1010 |
 
 ### L'hexadécimal
 
