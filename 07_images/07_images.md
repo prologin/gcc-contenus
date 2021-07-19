@@ -17,7 +17,7 @@ Une couleur est representée sous la forme d'un triplet (R, V, B) où chaque val
 
 ## Introduction à la bibliothèque PIL (Python Imaging Library)
 
-Une bibliothèque est une collection de fonctions externes que vous pouvez importer pour les utiliser dans votre propre code.
+Une bibliothèque est une collection de fonctions externes que vous pouvez importer pour utiliser dans votre propre code.
 
 En écrivant :``from PIL import Image`` nous importons le module Image de la bibliothèque PIL.
 
@@ -66,7 +66,7 @@ Maintenant, au travail !
 
 ## Les filtres
 
-Le principe d'un filtre est de modifier la valeur des pixels d'une image pour appliquer un effet (noir et blanc, flou etc...).
+Le principe d'un filtre est de modifier la valeur des pixels d'une image pour appliquer un effet (noir et blanc, flou, changement de luminosité, etc...).
 
 Tout au long de ce TP nous travaillerons avec cette image de référence :
 
@@ -187,7 +187,7 @@ Une fois que les images ont été entièrement parcourues, il ne reste plus qu'�
 
 **Ceci donne la formule :** 
 
-pourcentage = 100 * ((diff/255) / (width * height * 3))
+$$pourcentage = 100 \times \frac{diff}{width \times \height \times 3 \times 255}$$
 
 **But : Écrire la fonction ``Diff(image1, image2)`` qui calcule le pourcentage de différence entre deux images de même dimensions. La fonction doit retourner un entier.**
 
