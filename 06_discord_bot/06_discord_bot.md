@@ -214,6 +214,6 @@ l’instruction `msg.channel.send`. Pour plus d'information, allez voir les ongl
 
 ![Instruction send](ims/im8.png){width=17cm height=10cm}
 
-### Bon Courage !
+### Bon courage !
 
 Lire la doc et la comprendre peut être très difficile. N’hésitez pas à tester des choses par vous même et à demander autour de vous comment faire tel ou tel truc. Bonne programmation !
