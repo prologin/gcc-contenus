@@ -96,7 +96,7 @@ Exécutez votre fichier python contenant le code du Bot. Par exemple si votre fi
 
 Si tout se passe correctement, vous devriez obtenir ce résultat :
 
-![Connection du bot](ims/im4.png){width=9cm height=1.5cm}
+![Connexion du bot](ims/im4.png){width=9cm height=1.5cm}
 
 Le terminal vous affiche `Logged in as ...` car dans le fichier que vous venez de lancer se trouve l'instruction
 
