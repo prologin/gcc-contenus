@@ -1,0 +1,1118 @@
+%!TEX TS-program = xelatex
+\documentclass[a4paper,french,11pt]{article}
+\usepackage{geometry}
+\geometry{verbose,letterpaper,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+
+% XeTex related packages
+\usepackage{fontspec,xltxtra,xunicode}
+
+\usepackage[breaklinks=true]{hyperref}
+\usepackage[french]{babel}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{mdframed}
+\usepackage{minted}
+\usepackage{titlesec}
+\usepackage{titling}
+
+% -- Pandoc latex config: https://gist.github.com/1017790
+% Paragraph format (European style)
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% Lists formatting
+% -- Redefine labelwidth for lists; otherwise, the enumerate package will cause
+% -- markers to extend beyond the left margin.
+\makeatletter\AtBeginDocument{
+  \renewcommand{\@listi}
+    {\setlength{\labelwidth}{4em}}
+}\makeatother
+\usepackage{enumerate}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+% Table formatting
+% -- This is needed because raggedright in table elements redefines \\:
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\let\PBS=\PreserveBackslash
+
+% Subscripts
+\newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
+
+% Web-style links
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\setminted{
+    breaklines=true,
+    samepage=true
+}
+
+\AtBeginEnvironment{minted}{
+  \renewcommand{\fcolorbox}[4][]{#4}
+}
+
+% -- Custom GCC related config
+% Reduce minted space
+\setlength\partopsep{-\topsep}
+\addtolength\partopsep{-\parskip}
+\addtolength\partopsep{0.3cm}
+
+% Reduce title top margin
+\setlength{\droptitle}{-5em}
+
+% Header/footer
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{GCC! }
+\lhead{}
+\cfoot{\thepage}
+\fancyfoot[L]{\includegraphics[width=2cm]{../logo_gcc_court.pdf}}
+\fancyfoot[R]{\includegraphics[width=1.2cm]{../prologin_cube_bw.pdf}}
+
+% Custom color environments
+\definecolor{grey}{RGB}{240, 240, 240}
+\setminted[text]{bgcolor=grey}
+\setminted[python]{linenos=true,frame=single,framesep=4pt}
+\setminted[html]{linenos=true,frame=single,framesep=4pt}
+\setminted[css]{linenos=true,frame=single,framesep=4pt}
+\setminted[js]{linenos=true,frame=single,framesep=4pt}
+\newenvironment{exercise}{\begin{mdframed}[nobreak=true]}{\end{mdframed}}
+
+% Remove section numbering
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\title{
+    \protect\centering\protect\includegraphics[height=3cm]{../logo_gcc_long.pdf}\\
+    {}
+}
+\author{GCC! \textendash{} Prologin}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\hypertarget{avant-de-commencer}{%
+\section{Avant de commencer}\label{avant-de-commencer}}
+
+\begin{itemize}
+\item
+  Si tu ne comprends pas quelque chose, n'hésite surtout pas à demander
+  à un orga ! Nous sommes là pour ça !
+\item
+  On te conseille de créer un fichier par exercice, tous dans le même
+  dossier.
+\item
+  On te conseille fortement de tester tous les codes présents dans ce
+  TP, même s'ils ne sont que des exemples. Si tu ne comprends pas
+  comment ils fonctionnent, ou que quelque chose cloche, n'hésite pas à
+  appeler un orga.
+\end{itemize}
+
+\hypertarget{la-commande-print}{%
+\section{La commande print}\label{la-commande-print}}
+
+D'habitude, le tout premier programme qu'on écrit quand on commence à
+apprendre un langage de programmation sert à afficher ``Hello world !''
+à l'écran. On va commencer par là nous aussi. Ouvre un nouveau fichier
+et enregistre-le sous le nom \mintinline[]{text}{hello_world.py}
+\textgreater{} On évite de mettre des espaces dans les noms de fichier.
+On les remplace par le symbole underscore \mintinline[]{text}{_}. On
+évite aussi les majuscules.
+
+\begin{quote}
+Le ``.py'' s'appelle une extension. Cela sert à préciser à l'ordinateur
+que ce qui est écrit dans le fichier est écrit dans le langage python,
+ce qui peut permettre à certains éditeurs de colorer les mots clefs de
+Python.
+\end{quote}
+
+Dans ce fichier, écris
+
+\begin{minted}[autogobble]{python}
+print("Hello world !")
+\end{minted}
+
+et enregistre.
+
+Maintenant, nous allons exécuter ce programme. Pour cela, il suffit de
+cliquer sur ``Run'' et tu verras l'écran se diviser en deux. Sur la
+partie basse, s'affiche le résultat de ton programme.
+
+Comme on le voulait, la phrase Hello world ! s'affiche. Maintenant,
+l'exécution de notre programme est terminée.
+
+\hypertarget{duxe9couverte-des-erreurs}{%
+\section{Découverte des erreurs}\label{duxe9couverte-des-erreurs}}
+
+Pour donner des instructions à l'ordinateur en utilisant Python, on doit
+utiliser un langage précis et codifié. Observons notre première
+instruction : le message qu'on veut écrire doit être entouré de
+guillemets et être entre parenthèses.
+
+Essaie d'enlever les parenthèses ou les guillemets et d'exécuter à
+nouveau le programme (n'oublie pas d'enregistrer quand tu as fini de
+modifier !).
+
+Comme tu peux le constater, au lieu d'afficher Hello world ! Python
+renvoie ce qu'on appelle une erreur : c'est un message pour expliquer
+que le programme a un problème. Le plus souvent, il précise la nature de
+l'erreur et la ligne où il l'a détectée. Mais attention, ce n'est pas
+forcément à cette ligne qu'on devra modifier quelque chose pour que le
+programme fonctionne.
+
+\hypertarget{exercice}{%
+\subsection{Exercice :}\label{exercice}}
+
+Écris un programme qui affiche la phrase :
+
+\begin{minted}[autogobble]{text}
+Bienvenue au stage d’informatique GCC! !
+\end{minted}
+
+Exécute-le pour vérifier qu'il fonctionne.
+
+\hypertarget{variables}{%
+\section{Variables}\label{variables}}
+
+Nous allons maintenant demander à Python de retenir des valeurs pour
+nous et de faire des opérations avec ces valeurs. Pour cela, on va
+utiliser ce qui s'appelle une variable.
+
+Quand on utilise Python, il faut s'imaginer qu'on a accès à un grand
+meuble avec plein de tiroirs. Ces tiroirs sont les variables. Sur chaque
+tiroir il y a une étiquette : c'est le nom de la variable.
+
+Dans un tiroir, on peut mettre une valeur. On peut aussi ouvrir le
+tiroir pour lire la valeur qu'on a mise à l'intérieur. Ou encore, on
+peut ouvrir le tiroir et remplacer la valeur qu'on y a mise par une
+autre.
+
+Pour créer une variable avec Python, on écrit par exemple :
+
+\begin{minted}[autogobble]{python}
+x = 2
+\end{minted}
+
+Cela veut dire ``ouvre le tiroir avec l'étiquette x et range la valeur 2
+à l'intérieur''.
+
+Crée un nouveau fichier \mintinline[]{text}{variable.py} et entre cette
+ligne de code, puis exécute-le.
+
+Il ne se passe rien ! C'est normal, on n'a pas demandé à Python
+d'afficher quoi que ce soit. Rajoute maintenant
+\mintinline[]{text}{print(x)}
+
+et exécute à nouveau le programme. Tu vois que Python affiche la valeur
+contenue dans la variable x, ici 2.
+
+\hypertarget{opuxe9rations}{%
+\section{Opérations}\label{opuxe9rations}}
+
+Python nous permet d'effectuer des opérations, comme une calculatrice
+très perfectionnée. Essaie le programme suivant :
+
+\begin{minted}[autogobble]{python}
+print(4+3)
+\end{minted}
+
+\begin{quote}
+Tu remarques qu'ici, il n'y a pas de guillemets, comme avant lorsqu'on a
+écrit print(x). C'est parce qu'on ne met des guillemets que lorsqu'on
+veut afficher une chaîne de caractères. Tu peux essayer de voir ce qui
+se passe si tu écris plutôt \mintinline[]{text}{print(«x»)} ou
+\mintinline[]{text}{print(«4+3»)}.
+\end{quote}
+
+Mais ce qui est encore plus pratique, c'est qu'on peut faire des
+opérations avec les valeurs contenues dans nos variables. Essaie par
+exemple le programme suivant :
+
+\begin{minted}[autogobble]{python}
+a = 4
+b = 3
+resultat = a+b
+print(resultat)
+\end{minted}
+
+\begin{quote}
+À quoi ça sert ? Ici, le calcul est très simple, mais imagine que tu
+aies beaucoup d'opérations à effectuer. En écrivant ton programme avec
+des variables, tu n'as qu'à changer leur valeur au début pour pouvoir
+refaire toutes ces opérations sans avoir à écrire de nouveau du code. Si
+tu voulais plutôt calculer 5+3 ici, il suffirait de remplacer la
+première ligne par a=5. Cela va devenir encore plus clair avec le
+prochain paragraphe, où tu verras qu'on peut demander à l'utilisateur un
+nombre de son choix qu'on mettra ensuite dans une variable.
+\end{quote}
+
+\begin{quote}
+Il s'agit de ton premier programme avec plusieurs instructions, et donc
+plusieurs lignes, car en python, on met une instruction par ligne. Une
+instruction, c'est une tâche qu'on demande à l'ordinateur d'effectuer :
+affiche ceci, mets cette valeur dans cette variable, etc.
+\end{quote}
+
+Mais Python ne permet pas seulement de faire des additions. Tu peux
+aussi utiliser les signes \mintinline[]{text}{-},
+\mintinline[]{text}{*}, \mintinline[]{text}{/} pour effectuer des
+soustractions, des multiplications et des divisions. N'hésite pas à
+essayer !
+
+\hypertarget{pour-aller-plus-loin}{%
+\subsection{Pour aller plus loin :}\label{pour-aller-plus-loin}}
+
+En plus des quatre opérations classiques, python propose deux autres
+opérateurs : \mintinline[]{text}{//} et \mintinline[]{text}{%}.
+
+Essaie-les pour comprendre ce qu'ils font.
+
+\hypertarget{exercice-1}{%
+\subsection{Exercice :}\label{exercice-1}}
+
+Voici un programme python :
+
+\begin{minted}[autogobble]{python}
+a = 7
+b = 3
+c = a*2
+d = c+b
+print(d-4)
+\end{minted}
+
+Que va afficher l'ordinateur à la fin de ce programme ? Vérifie en
+l'essayant.
+
+\hypertarget{exercice-2}{%
+\subsection{Exercice :}\label{exercice-2}}
+
+Voici un programme python :
+
+\begin{minted}[autogobble]{python}
+x = 3
+x = x – 2
+print(x)
+\end{minted}
+
+Que va afficher l'ordinateur à la fin de ce programme ? Vérifie en
+l'essayant.
+
+\hypertarget{exercice-3}{%
+\subsection{Exercice :}\label{exercice-3}}
+
+On cherche à écrire un programme python qui inverse le contenu de deux
+variables. On propose le programme suivant :
+
+\begin{minted}[autogobble]{python}
+a = 4
+b = 6
+a = b
+b = a
+print("a vaut" + str(a))
+print("b vaut" + str(b))
+\end{minted}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  À ton avis, que va afficher l'ordinateur ? Essaie pour vérifier.
+\item
+  Écris un programme qui permet d'inverser le contenu de deux variables.
+\end{enumerate}
+
+\begin{quote}
+Pour afficher une chaîne de caractères (du texte, entre guillemets) et
+un nombre dans la même phrase, on va devoir dire à l'ordinateur de
+traiter le nombre comme du texte. C'est ce que veut dire str(\ldots{})
+Le signe + entre deux morceaux de texte veut dire qu'on va les mettre
+l'une à la suite de l'autre. Cette opération s'appelle concaténer.
+\end{quote}
+
+\hypertarget{demander-une-valeur-uxe0-lutilisateur}{%
+\section{Demander une valeur à
+l'utilisateur}\label{demander-une-valeur-uxe0-lutilisateur}}
+
+Pour demander une valeur à l'utilisateur de notre programme, on va
+utiliser l'instruction \mintinline[]{text}{input}. Cette instruction dit
+à l'ordinateur de suspendre le programme jusqu'à ce que l'utilisateur
+entre une réponse et appuie sur entrée.
+
+Nous allons essayer le programme suivant :
+
+\begin{minted}[autogobble]{python}
+print("Comment t’appelles-tu ?")
+nom = input()
+print("Tu t’appelles" + nom)
+\end{minted}
+
+Maintenant, nous allons demander à l'utilisateur d'entrer une valeur
+chiffrée. Par exemple, demandons-lui son âge. Pour cela, plutôt que
+d'écrire \mintinline[]{text}{nom = input()}, on va écrire
+\mintinline[]{text}{age = int(input())}. Quand on demande un nombre à
+l'utilisateur, il faut utiliser \mintinline[]{text}{int(input())} et pas
+seulement \mintinline[]{text}{input()}.
+
+\hypertarget{pour-aller-plus-loin-pourquoi-ce-int}{%
+\subsection{\texorpdfstring{Pour aller plus loin : Pourquoi ce
+\mintinline[]{text}{int()}
+?}{Pour aller plus loin : Pourquoi ce  ?}}\label{pour-aller-plus-loin-pourquoi-ce-int}}
+
+python ne traite pas de la même manière les nombres entiers, les nombres
+à virgule, et le texte. Quand \mintinline[]{text}{input()} récupère
+l'entrée de l'utilisateur, il la traite comme une chaîne de texte. Or,
+on ne peut pas faire certaines opérations sur les chaînes de texte
+(soustraction, division, etc.) dont on aurait besoin. Le
+\mintinline[]{text}{int()} dit à l'ordinateur qu'en fait, on veut
+traiter ce que l'utilisateur entre comme un nombre. La chaîne de texte
+``4'' devient ainsi le nombre 4. C'est le même mécanisme dans l'autre
+sens qu'on a vu avec \mintinline[]{text}{str()} avant.
+
+Le programme sera alors :
+
+\begin{minted}[autogobble]{python}
+print("Quel est ton âge ?")
+age = int(input())
+print("Tu as " + str(age) + " ans.")
+\end{minted}
+
+N'oublie pas qu'une fois la valeur entrée dans une variable, on peut
+faire des opérations avec elle, et pas seulement l'afficher.
+
+\begin{quote}
+Nous allons maintenant faire quelques exercices pour manipuler les
+variables ainsi que les instructions print et input. Si tu as
+l'impression que les petits programmes que nous écrivons pour l'instant
+ne servent pas à grand-chose, ne t'inquiète pas : c'est normal ! Pour
+l'instant, on essaie simplement de bien comprendre comment tout
+fonctionne, mais tu verras qu'à la fin du stage, ou sur les exercices
+bonus de ce TP, tu seras capable d'écrire des programmes qui font des
+tâches très complexes et qui te simplifieront la vie ou te permettront
+de faire des choses impossibles sans l'informatique.
+\end{quote}
+
+\hypertarget{exercice-4}{%
+\subsection{Exercice :}\label{exercice-4}}
+
+Écris un programme qui pose trois questions à l'utilisateur : son jour
+de naissance, son mois de naissance et son année de naissance. On devra
+attendre que l'utilisateur ait répondu pour passer à la question
+suivante. Quand on aura les trois réponses, le programme doit alors
+afficher : \mintinline[]{text}{Vous êtes né le jour mois année}
+
+\hypertarget{exercice-5}{%
+\subsection{Exercice :}\label{exercice-5}}
+
+Écris un programme qui demande son âge à un utilisateur et qui affiche
+ensuite: \mintinline[]{text}{Vous aurez 18 ans dans … années}
+
+\begin{quote}
+Et si l'utilisateur rentre un nombre supérieur à 18 ? Essaie ! Ce n'est
+sans doute pas comme ça qu'on voudrait que le programme se comporte. On
+aimerait plutôt qu'il affiche ``vous avez déjà 18 ans'' ou quelque chose
+comme ça. C'est justement ce qu'on va apprendre à faire tout de suite !
+\end{quote}
+
+\hypertarget{les-conditionnelles-if-else-elif}{%
+\section{Les conditionnelles (if -- else --
+elif)}\label{les-conditionnelles-if-else-elif}}
+
+Jusqu'à maintenant, nos programmes se sont toujours déroulés en
+exécutant ligne par ligne ce qu'on leur demandait. D'abord, ils
+faisaient l'instruction donnée à la première ligne, puis celle de la
+seconde, etc. jusqu'à la dernière ligne.
+
+Mais parfois, on voudrait pouvoir écrire un morceau de programme qui
+n'est exécuté que si une certaine condition est remplie, et un autre si
+elle n'est pas remplie. Par exemple, pour reprendre l'exercice
+précédent, on voudrait faire quelque chose de différent selon que
+l'utilisateur a déjà 18 ans, ou pas encore.
+
+Pour cela, on va utiliser ce qu'on appelle une conditionnelle. En voici
+un exemple :
+
+\begin{minted}[autogobble]{python}
+print("Quel est ton âge ?")
+age = int(input())
+if age < 18 :
+    resultat = 18-age
+    print("Vous aurez 18 ans dans " + resultat + " ans.")
+else :
+    print("Vous avez déjà 18 ans.")
+\end{minted}
+
+\mintinline[]{text}{if} est un mot anglais qui veut dire ``si'' et
+\mintinline[]{text}{else} ``sinon''. Ce programme dit donc à
+l'ordinateur :
+
+\begin{itemize}
+\item
+  Si l'âge est inférieur à 18 ans : calcule le nombre d'années avant
+  d'avoir 18 ans et mets-le dans la variable résultat, puis affiche
+  ``Vous aurez 18 ans dans \mintinline[]{text}{resultat} ans.''
+\item
+  Sinon, affiche ``Vous avez déjà 18 ans.''
+\end{itemize}
+
+\begin{quote}
+Tu remarques que ce code a un aspect bien particulier. Il y a des
+\mintinline[]{text}{:} à la fin des lignes avec un if ou un else, et les
+lignes après sont indentées (on utilise la touche tab pour cela). Il
+faut respecter cela pour que le programme fonctionne.
+\end{quote}
+
+Pour écrire des conditionnelles, nous allons avoir besoin de savoir
+écrire des conditions. On les écrit globalement comme en mathématiques :
+
+\begin{itemize}
+\item
+  Pour dire ``a est inférieur à b'' on écrit \mintinline[]{text}{a < b}
+\item
+  Pour dire ``a est supérieur à b'' on écrit \mintinline[]{text}{a > b}
+\item
+  Pour dire ``a est inférieur ou égal à b'' on écrit
+  \mintinline[]{text}{a <= b}
+\item
+  Pour dire ``a est supérieur ou égal à b'' on écrit
+  \mintinline[]{text}{a >= b}
+\item
+  Pour dire ``a est égal à b'' on écrit \mintinline[]{text}{a == b}
+\item
+  Pour dire ``a est différent de b'' on écrit \mintinline[]{text}{a!=b}
+\end{itemize}
+
+\hypertarget{exercice-6}{%
+\subsection{Exercice :}\label{exercice-6}}
+
+Imaginons que nous avons un jeu auquel on gagne une fois qu'on a un
+score de 21 ou plus. Écris un programme qui demande son score à
+l'utilisatrice puis affiche selon le cas ``Tu as gagné'' ou ``Tu as
+perdu''.
+
+\hypertarget{exercice-7}{%
+\subsection{Exercice :}\label{exercice-7}}
+
+Cet exercice va nous permettre de mieux comprendre à quoi servent les
+tabulations.
+
+Pour chaque question, essaie de trouver ce que le programme python donné
+va afficher si on entre les nombres donnés, puis écris-le et exécute-le.
+Fais attention, quand tu le recopies, à bien respecter la même
+indentation que dans l'énoncé.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+\end{enumerate}
+
+\begin{minted}[autogobble]{python}
+print("Quel est ton score ?")
+score = int(input())
+if score ≥ 100:
+    print("Bravo, tu as gagné !")
+else :
+    print("Tu as perdu.")
+print("Merci d’avoir joué !")
+\end{minted}
+
+Que se passe-t-il si on entre 50 ? Et si on entre 120 ?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+\end{enumerate}
+
+\begin{minted}[autogobble]{python}
+print("À combien de stages GCC! as-tu participé ?")
+nombre_stages = int(input)
+if nombre_stages == 0:
+    print("C’est bizarre pourtant, puisque tu es là !")
+else:
+    if nombre_stages == 1:
+        print("Bienvenue !")
+    else:
+        print("Bon retour parmi nous !")
+    print("Profite bien du stage !")
+\end{minted}
+
+Que se passe-t-il si on entre 0 ? Et si on entre 1 ? Et si on entre 2 ?
+
+Que faire si l'on a plus de deux cas ? Comme tu l'as vu plus haut, on
+peut imbriquer les structures if else. Ce sera aussi le cas pour toutes
+les autres structures que nous verrons et c'est très souvent utilisé.
+
+Mais dans le cas des conditionnelles, on a un autre moyen plus facile et
+plus lisible. Voici la syntaxe :
+
+\begin{minted}[autogobble]{python}
+if condition1:
+    instructions du cas 1
+elif condition2:
+    instructions du cas 2
+elif condition3:
+    instructions du cas 3
+else:
+    instructions dans le reste des cas
+\end{minted}
+
+On peut mettre autant de elif que l'on veut. elif est la contraction de
+else if, sinon si
+
+\hypertarget{exercice-8}{%
+\subsection{Exercice :}\label{exercice-8}}
+
+Réécris le programme précédent avec des \mintinline[]{text}{elif}.
+
+\hypertarget{exercice-9}{%
+\subsection{Exercice :}\label{exercice-9}}
+
+Connais-tu le concours Prologin ? C'est un concours de programmation
+auquel on peut participer jusqu'à l'année de ses 20 ans. On voudrait
+écrire un programme qui demande à l'utilisateur ou l'utilisatrice son
+année de naissance, et dit en fonction :
+
+\begin{itemize}
+\item
+  ``Tu peux participer au concours Prologin.''
+\item
+  ``C'est la dernière année où tu peux participer au concours
+  Prologin.''
+\item
+  ``Tu ne peux plus participer au concours Prologin.'' Écris-le en
+  utilisant la structure elif. Pour cette année, les personnes nées en
+  2001 ou après peuvent participer.
+\end{itemize}
+
+Parfois, nous aurons besoin de combiner des conditions. Par exemple,
+nous voudrons écrire ``condition1 ou condition2''.
+
+Pour ce faire, en python, on utilise les mots-clefs suivants :
+
+\begin{itemize}
+\item
+  \mintinline[]{text}{or} pour OU
+\item
+  \mintinline[]{text}{and} pour ET
+\item
+  \mintinline[]{text}{not} pour NON. Cela permet d'exprimer l'inverse
+  d'une proposition. Par exemple, \mintinline[]{text}{not x>0} équivaut
+  à \mintinline[]{text}{x <= 0}.
+\end{itemize}
+
+\hypertarget{exercice-10}{%
+\subsection{Exercice :}\label{exercice-10}}
+
+Traduis les phrases suivantes avec des conditions en python.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  n est positif ou n = 5
+\item
+  a différent de 7 et a différent de 9
+\item
+  x est strictement compris entre 12 et 19
+\end{enumerate}
+
+\hypertarget{la-boucle-for}{%
+\section{La boucle for}\label{la-boucle-for}}
+
+Nous allons voir ici un moyen de demander à notre ordinateur de répéter
+plusieurs fois un même bloc d'instructions. À nouveau, notre programme
+ne va pas exécuter les instructions une par une. Il y a un bloc de
+lignes qu'il va exécuter dans l'ordre, puis exécuter à nouveau à partir
+de la première, un certain nombre de fois. C'est pour ça qu'on parle de
+boucle.
+
+\hypertarget{exercice-11}{%
+\subsection{Exercice :}\label{exercice-11}}
+
+\begin{minted}[autogobble]{python}
+for i in range(5) :
+    print("Donnez le nom d’un joueur ou d’une joueuse")
+    nom = input()
+    print("Nous avons un joueur ou une joueuse du nom de " + nom)
+\end{minted}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Que fait ce programme ?
+\end{enumerate}
+
+\begin{quote}
+Comme tu peux le constater, on retrouve la construction de la
+conditionnelle avec les~: en fin de ligne et les tabulations. Ce qu'il
+faut retenir de la boucle for, c'est que for i in range(n) permet
+d'exécuter un morceau de code n fois. On appelle une exécution du bloc
+de code indenté sous le for un tour de boucle. Ici, la première fois
+qu'on demande le nom, c'est le premier tour de boucle, la deuxième fois,
+c'est le deuxième tour de boucle, etc.
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Ce programme fonctionne si on a exatement 5 joueurs ou joueuses. Mais
+  si le nombre de joueurs ou joueuses change à chaque partie ? On ne va
+  pas réécrire un programme à chaque fois !
+\end{enumerate}
+
+Écris un programme qui demande le nombre de joueurs ou joueuses à
+l'utilisateur puis qui exécute la boucle un nombre adapté de fois.
+Indice : Rappelle-toi que dans le range, on indique un nombre, mais
+qu'un nombre peut être stocké dans une variable\ldots{}
+
+Tu remarques sans doute qu'on préférerait demander ``Quel est le nom de
+la joueuse 1 ?'' puis ``Quel est le nom de la joueuse 2 ?'' etc. Ce
+serait plus clair.
+
+Eh bien, savoir à quel tour de boucle on se trouve, c'est quelque chose
+qui sera souvent utile. C'est pour cette raison qu'on utilise un i dans
+\mintinline[]{text}{for i in range(…)}. i est une variable comme
+n'importe quelle autre, qu'on peut manipuler, afficher, etc.
+
+Attention : c'est généralement une mauvaise idée d'écrire
+\mintinline[]{text}{i =} dans le corps de la boucle. i change
+naturellement de valeur à chaque tour de boucle (il augmente de 1).
+Changer la valeur de i n'est généralement pas la bonne solution à un
+problème.
+
+Note : Nous avons tout écrit avec un i, mais en fait, on peut remplacer
+i par n'importe quel nom de variable. Essaie avec j, ou rang, par
+exemple. On appelle cette variable la variable de boucle.
+
+\hypertarget{exercice-12}{%
+\subsection{Exercice :}\label{exercice-12}}
+
+On veut modifier le programme de l'exercice précédent pour qu'il demande
+et affiche le numéro de la joueuse. On propose le programme suivant :
+
+\begin{minted}[autogobble]{python}
+print("Combien y a-t-il de joueurs ou joueuses ?")
+nombre_joueurs = int(input())
+for i in range(nombre_joueurs):
+        print("Donnez le nom du joueur ou de la joueuse " + str(i))
+        nom = input()
+        print("Le joueur ou la joueuse " + str(i) + " s’appelle" + nom)
+\end{minted}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Essaie ce programme. Est-ce qu'il donne le résultat escompté ?
+\end{enumerate}
+
+\begin{quote}
+On voit qu'avec range(n), la variable de boucle (i ici) varie entre 0 et
+n-1. La boucle est donc bien exécutée n fois, mais i ne varie pas entre
+1 et n comme on pourrait s'y attendre. C'est une source courrante
+d'erreurs.
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Modifie le programme pour qu'il ait le comportement attendu (on veut
+  que les joueurs ou joueuses soient numérotées de 1 à nombre\_joueurs
+  et non de 0 à nombre\_joueurs-1).
+\end{enumerate}
+
+\hypertarget{exercice-13}{%
+\subsection{Exercice :}\label{exercice-13}}
+
+Écris un programme qui affiche un compteur de 1 à n, où n est un nombre
+entré par l'utilisateur ou l'utilisatrice.
+
+\hypertarget{exercice-14}{%
+\subsection{Exercice :}\label{exercice-14}}
+
+Écris un programme qui affiche un compteur de 10 à 0, et termine en
+affichant ``C'est terminé !''
+
+\hypertarget{exercice-15}{%
+\subsection{Exercice :}\label{exercice-15}}
+
+Deux joueuses jouent au ping-pong. Écris un programme qui leur demande
+combien de parties elles vont faire puis, pour chaque partie, leur
+demande leurs scores et dit qui a gagné.
+
+\emph{Indice :} on peut mettre une structure if else dans une boucle
+for.
+
+\hypertarget{exercice-16}{%
+\subsection{Exercice :}\label{exercice-16}}
+
+Maintenant, ces deux joueuses jouent au tennis, et elles voudraient
+afficher un message qui dit à quel set et à quel match elles sont. Par
+exemple, s'il y a trois sets de deux matchs chacun, notre programme
+affichera :
+
+\begin{minted}[autogobble]{text}
+Nous sommes au set 1, match 1
+Nous sommes au set 1, match 2
+Nous sommes au set 2, match 1
+Nous sommes au set 2, match 2
+Nous sommes au set 3, match 1
+Nous sommes au set 3, match 2
+\end{minted}
+
+Écris un programme qui :
+
+\begin{itemize}
+\item
+  demande à l'utilisateur ou utilisatrice combien il y aura de sets
+\item
+  demande à l'utilisateur ou utilisatrice combien il y aura de matchs
+  par set
+\item
+  affiche les phrases sur le modèle ci-dessus.
+\end{itemize}
+
+\hypertarget{pour-aller-plus-loin-1}{%
+\subsection{Pour aller plus loin :}\label{pour-aller-plus-loin-1}}
+
+En fait, \mintinline[]{text}{range} peut prendre plus d'un paramètre. On
+peut utiliser \mintinline[]{text}{for i in range(a,b)} pour faire varier
+\mintinline[]{text}{i} entre a et b-1. On peut même utiliser
+\mintinline[]{text}{for i in range(a,b,p)} pour faire varier
+\mintinline[]{text}{i} entre a et b-1 avec un pas de p.~Par exemple,
+pour un compte à rebours, on peut prendre \mintinline[]{text}{p = -1} ou
+pour compter de deux en deux, \mintinline[]{text}{p = 2}.
+
+\hypertarget{la-boucle-while}{%
+\section{La boucle while}\label{la-boucle-while}}
+
+La boucle while est une structure qui ressemble à la boucle for. Comme
+avant, on va exécuter des instructions en boucle, d'où le nom de la
+structure.
+
+Cependant, dans la boucle for, on exécutait la boucle un nombre précis
+de fois. Ce nombre pouvait être entré par l'utilisateur ou
+l'utilisatrice, mais une fois qu'on commençait la boucle, il ne bougeait
+plus.
+
+Or, parfois, on a envie d'exécuter une boucle un nombre de fois qu'on ne
+peut pas déterminer à l'avance. C'est à ça que sert la boucle while.
+Elle effectue le même bloc d'instructions tant que (while en anglais)
+une certaine condition est remplie.
+
+Par exemple, on peut faire un programme qui envoie un message
+d'encouragement tant que l'utilisateur ou l'utilisatrice le demande :
+
+\begin{minted}[autogobble]{python}
+print("As-tu besoin d’encouragements ? Si oui, tape 1, si non, tape 2.")
+reponse = int(input())
+while reponse == 1 :
+    print("Tu vas y arriver ! J’ai confiance en toi !")
+    print("As-tu besoin d’encouragements ? Si oui, tape 1, si non, tape 2.")
+    reponse = int(input())
+\end{minted}
+
+La syntaxe de la boucle while est la même que celles que nous avons vues
+précédemment : le \mintinline[]{text}{:} , des indentations. Retiens
+aussi qu'on peut utiliser les structures précédentes (la boucle for et
+les conditionnelles) avec la boucle while.
+
+\hypertarget{exercice-17}{%
+\subsection{Exercice :}\label{exercice-17}}
+
+On joue à un jeu de hasard. L'utilisateur ou utilisatrice doit deviner
+un nombre entre 1 et 10. Tant qu'il ou elle n'a pas trouvé, on lui
+redemande de proposer un nombre, et on s'arrête quand il ou elle trouve
+le nombre secret. Écris un programme permettant de jouer à ce jeu.
+
+\hypertarget{exercice-18}{%
+\subsection{Exercice :}\label{exercice-18}}
+
+Maintenant, on veut que le joueur ou la joueuse devine un nombre secret
+entre 1 et 100. Mais comme c'est un peu compliqué, on va lui dire à
+chaque essai, s'il a proposé un nombre trop grand ou trop petit. Un
+exemple d'échange serait le suivant :
+
+\begin{minted}[autogobble]{text}
+Proposez un nombre
+40
+Trop petit !
+50
+Trop petit !
+83
+Trop grand !
+74
+Bravo, vous avez deviné !
+\end{minted}
+
+Écris un programme qui permet de jouer à ce jeu.
+
+Bonus : À ton avis, quelle est la meilleure stratégie pour gagner à ce
+jeu ?
+
+\hypertarget{exercice-19}{%
+\subsection{Exercice :}\label{exercice-19}}
+
+\emph{Boucle for ou boucle while}
+
+On veut écrire un programme qui affiche les entiers pairs entre 0 et 2n,
+où n est un nombre donné par l'utilisateur ou l'utilisatrice.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Écris un tel programme en utilisant une boucle for.
+\item
+  Écris un tel programme en utilisant une boucle while.
+\end{enumerate}
+
+\hypertarget{les-fonctions}{%
+\section{Les fonctions}\label{les-fonctions}}
+
+Si tu as déjà vu les fonctions en cours de mathématiques, cette partie
+devrait te rappeler quelque chose. Sinon, voilà une petite explication
+de ce que sont les fonctions en python.
+
+Une fonction est comme une boîte noire. On lui donne un ou plusieurs
+objets qu'on appelle les entrées, et elle nous donne en retour un ou
+plusieurs objets qu'on appelle sorties et/ou elles font une action
+(afficher un message par exemple). Et à l'intérieur, eh bien, on ne sait
+pas forcément ce qui se passe. Bien sûr, quand nous écrirons nos propres
+fonctions, on saura ce qu'elles font ! Mais tu as déjà utilisé des
+fonctions sans le savoir : \mintinline[]{text}{print} et
+\mintinline[]{text}{input}. Ces fonctions ne renvoient rien, elles n'ont
+pas de sortie. Cela arrive.
+
+\mintinline[]{text}{print} prend en entrée un nombre, ou du texte, et
+affiche cette entrée à l'écran.
+
+\mintinline[]{text}{input} ne prend pas d'entrée, et ne renvoie rien,
+mais permet de récupérer une valeur entrée par l'utilisatrice.
+
+On sait ce que font ces deux fonctions, mais pas comment elles le font.
+C'est ce qu'on veut dire par boîte noire. Beaucoup de lignes de code se
+cachent derrière \mintinline[]{text}{print} et
+\mintinline[]{text}{input} mais on n'a pas besoin de les connaître.
+Savoir quel effet ont ces deux fonctions suffit à les utiliser.
+
+Nous allons écrire une fonction qui prend en entrée un nombre
+\mintinline[]{text}{x} et renvoie son double.
+
+\begin{minted}[autogobble]{python}
+def double(x):
+    resultat = 2*x
+    return resultat
+\end{minted}
+
+Discutons maintenant de la forme de cette fonction :
+
+\begin{itemize}
+\item
+  On retrouve les \mintinline[]{text}{:} et les tabulations comme dans
+  toutes les autres structures
+\item
+  Les entrées, ici \mintinline[]{text}{x}, sont indiquées entre
+  parenthèses. Si on veut mettre plusieurs entrées, il faut les séparer
+  avec des virgules, par exemple : \mintinline[]{text}{f(x,y)}.
+\item
+  Le mot-clef \mintinline[]{text}{return} sert à indiquer la sortie de
+  la fonction. Quand on atteint une ligne avec return, on sort du code
+  de la fonction, le reste n'est pas exécuté.
+\end{itemize}
+
+Maintenant, si on tape \mintinline[]{text}{print(double(4))} on obtient
+:
+
+\begin{minted}[autogobble]{text}
+8
+\end{minted}
+
+Pour donner une valeur en entrée à une fonction, ici
+\mintinline[]{text}{4}, on doit aussi le mettre entre parenthèses, après
+le nom de la fonction.
+
+\hypertarget{exercice-20}{%
+\subsection{Exercice :}\label{exercice-20}}
+
+Voici une fonction.
+
+\begin{minted}[autogobble]{python}
+def f(x):
+    resultat = x + 3
+    return resultat
+\end{minted}
+
+Quel est la valeur de \mintinline[]{text}{f(17)} ? De
+\mintinline[]{text}{f(0)} ? Vérifie en écrivant la fonction sur ton
+ordinateur.
+
+\hypertarget{exercice-21}{%
+\subsection{Exercice :}\label{exercice-21}}
+
+Voici une fonction.
+
+\begin{minted}[autogobble]{python}
+def f(x):
+    if x <= 5:
+        resultat = x * x
+    else :
+        resultat = x*5
+    return resultat
+\end{minted}
+
+Quel est la valeur de \mintinline[]{text}{f(3)} ? De
+\mintinline[]{text}{f(5)} ? De \mintinline[]{text}{f(7)} ? Vérifie en
+écrivant la fonction sur ton ordinateur.
+
+\hypertarget{exercice-22}{%
+\subsection{Exercice :}\label{exercice-22}}
+
+Écris une fonction qui prend en entrée un nombre et renvoie le triple de
+ce nombre.
+
+\begin{quote}
+À quoi sert une fonction ? Pas seulement à faire des calculs ! Avoir des
+fonctions, c'est pouvoir diviser son programme en petits morceaux
+autonomes. Pour programmer avec moins d'erreurs, on va souvent découper
+notre programme en fonctions. Nous allons voir des exemples dans le
+prochain exercice, en reprenant un de nos programmes précédents pour
+l'écrire avec des fonctions.
+\end{quote}
+
+\hypertarget{exercice-23}{%
+\subsection{Exercice :}\label{exercice-23}}
+
+Reprenons le jeu où on doit deviner un nombre secret entre 1 et 100.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Écris une fonction \mintinline[]{text}{tour(secret, nombre)} qui
+  affiche selon le cas ``Trop petit !'', ``Trop grand !'' ou ``Bravo, tu
+  as gagné !''
+\end{enumerate}
+
+\emph{Indice :} cette fonction ne contiendra pas de
+\mintinline[]{text}{return}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Écris maintenant un programme qui permet de jouer au jeu en utilisant
+  ta fonction.
+\end{enumerate}
+
+\hypertarget{probluxe8me-le-jeu-de-nim}{%
+\subsection{Problème : Le jeu de Nim}\label{probluxe8me-le-jeu-de-nim}}
+
+Nous allons coder un programme qui permet à deux joueurs ou joueuses de
+s'affronter au jeu de Nim. Les règles sont très simples : on commence
+avec vingt bâtons, et chacun son tour, on en retire un, deux, ou trois
+de la pile. La personne qui prend le dernier bâton gagne. Nous voudrions
+que le résultat du programme ressemble à ça :
+
+\begin{minted}[autogobble]{text}
+Il y a 20 bâtons.
+Joueur ou joueuse 1, c'est à toi ! Combien de bâtons veux-tu enlever ?
+3
+Il y a 17 bâtons.
+Joueur ou joueuse 2, c'est à toi ! Combien de bâtons veux-tu enlever ?
+2
+Il y a 15 bâtons.
+Joueur ou joueuse 1, c'est à toi ! Combien de bâtons veux-tu enlever ?
+3
+Il y a 12 bâtons.
+Joueur ou joueuse 2, c'est à toi ! Combien de bâtons veux-tu enlever ?
+2
+Il y a 10 bâtons.
+Joueur ou joueuse 1, c'est à toi ! Combien de bâtons veux-tu enlever ?
+1
+Il y a 9 bâtons.
+Joueur ou joueuse 2, c'est à toi ! Combien de bâtons veux-tu enlever ?
+1
+Il y a 8 bâtons.
+Joueur ou joueuse 1, c'est à toi ! Combien de bâtons veux-tu enlever ?
+3
+Il y a 5 bâtons.
+Joueur ou joueuse 2, c'est à toi ! Combien de bâtons veux-tu enlever ?
+3
+Il y a 2 bâtons.
+Joueur ou joueuse 1, c'est à toi ! Combien de bâtons veux-tu enlever ?
+2
+Il ne reste plus de bâtons. Joueur ou joueuse 1, tu remportes la partie !
+\end{minted}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Crée une fonction \mintinline[]{text}{tour(numero_joueuse,nb_batons)}
+  qui permet d'afficher :
+\end{enumerate}
+
+\begin{minted}[autogobble]{text}
+Il y a nb_batons batons.
+Joueur ou joueuse numero_joueuse, c'est à toi ! Combien de bâtons veux-tu enlever ?
+\end{minted}
+
+et qui renvoie le nouveau nombre de bâtons.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Avec cette fonction, écris un programme permettant de jouer au jeu de
+  Nim.
+\end{enumerate}
+
+\emph{Indice :} Il y a un nouveau tour tant que le nombre de bâtons
+n'est pas égal à 0.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Crée une fonction \mintinline[]{text}{jeu_de_Nim} avec ton précédent
+  programme qui permet de jouer à une partie du jeu. Ensuite, crée un
+  programme qui permet de jouer tant que le joueur ou la joueuse le
+  désire.
+\end{enumerate}
+
+Bonus : Il y a une manière de gagner à coup sûr à ce jeu si on est le
+premier joueur ou la première joueuse. Essaie de la trouver.
+
+\end{document}
