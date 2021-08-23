@@ -8,7 +8,7 @@ Une image matricielle est une image représentée sous forme de matrice de point
 
 
 
-![](figures/1.gif)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/1.png}\end{center}
 
 
 
@@ -29,17 +29,19 @@ Voici la démarche à suivre :
 
 #### 1 - Aller dans les paramètres
 
-<img src="figures/2.png" style="zoom: 67%;" />
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/2.png}\end{center}
 
 
 
 #### 2 - Cliquer sur l'onglet "Third Party Packages"
-![](figures/3.png)
+
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/3.png}\end{center}
 
 
 
 #### 3 - Écrire "Pillow" puis valider
-![](figures/4.png)
+
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/4.png}\end{center}
 
 
 
@@ -70,7 +72,7 @@ Le principe d'un filtre est de modifier la valeur des pixels d'une image pour ap
 
 Tout au long de ce TP nous travaillerons avec cette image de référence :
 
-<img src="figures/5.jpg" style="zoom:50%;" />
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/5.jpg}\end{center}
 
 ### Exercice 1 : Faire appliquer un filtre
 
@@ -99,7 +101,7 @@ AppliquerFonction(3, MaFonction)    # Résultat : 16
 
 ### Exercice 2 : Filtre de niveau de gris
 
-Le niveau de gris est défini par la relation suivante : 
+Le niveau de gris est défini par la relation suivante :  
 ``Résultat = 0.2126 * Rouge + 0.7152 * Vert + 0.0722 * Bleu``
 
 
@@ -107,16 +109,19 @@ Le niveau de gris est défini par la relation suivante :
 **But : Écrire la fonction ``Grayscale(color)`` qui applique un filtre de niveau de gris sur une couleur. La fonction doit retourner la nouvelle couleur.**
 
 Résultat souhaité pour ``ApplyFilter(Grayscale, ref_image).save("Grayscale.jpg")``:
-<img src="figures/6.jpg" style="zoom:50%;" />
+
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/6.jpg}\end{center}
 
 ### Exercice 3 : Filtre cyan
 
 **But : Écrire la fonction ``Cyan(color)`` qui applique un filtre cyan sur une couleur. La fonction doit retourner la nouvelle couleur.**
 
-*__Conseil__: S'intéresser au fonctionnement de la synthèse additive : https://fr.wikipedia.org/wiki/Synth%C3%A8se_additive*
+*__Conseil__: S'intéresser au fonctionnement de la synthèse additive :  
+[https://fr.wikipedia.org/wiki/Synth%C3%A8se_additive](https://fr.wikipedia.org/wiki/Synth%C3%A8se_additive)*
 
 Résultat souhaité :
-<img src="figures/7.jpg" style="zoom:50%;" />
+
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/7.jpg}\end{center}
 
 ### Exercice 4 : Filtre négatif
 
@@ -129,28 +134,30 @@ Le négatif d'une couleur est donné par les relations suivantes:
 **But : Écrire la fonction ``Negative(color)`` qui applique un filtre négatif sur une couleur. La fonction doit retourner la nouvelle couleur.**
 
 Résultat souhaité :
-<img src="figures/8.jpg" style="zoom:50%;" />
+
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/8.jpg}\end{center}
 
 
 ## Manipulation d'image
 
 ### Exercice 5 : Symétrie horizontale
 
-![symetriex](figures/symetriex.png)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/symetriex.png}\end{center}
 
 **But : Écrire la fonction ``SymmetryX(image)`` qui applique une symétrie horizontale sur une image. La fonction doit retourner une nouvelle image.**
 
 Résultat souhaité :
-<img src="figures/9.jpg" style="zoom:50%;" />
+
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/9.jpg}\end{center}
 
 ### Exercice 6 : Symétrie verticale
 
-![symetriey](figures/symetriey.png)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/symetriey.png}\end{center}
 
 **But : Écrire la fonction ``SymmetryY(image)`` qui applique une symétrie verticale sur une image. La fonction doit retourner une nouvelle image.**
 
 Résultat souhaité :
-<img src="figures/10.jpg" style="zoom:50%;" />
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/10.jpg}\end{center}
 
 
 ### Exercice 7 : Rotation
@@ -158,10 +165,10 @@ Résultat souhaité :
 **But : Écrire la fonction ``RotateN(image, n)`` qui applique N fois une rotation droite (90 degres) sur une image. La fonction doit retourner une nouvelle image.**
 
 Résultat souhaité pour n = 2 :
-<img src="figures/11.jpg" style="zoom:50%;" />
+\begin{center}\includegraphics[width=0.75\linewidth]{figures/11.jpg}\end{center}
 
 Résultat souhaité pour n = 9 :
-<img src="figures/12.jpg" style="zoom:50%;" />
+\begin{center}\includegraphics[width=0.35\linewidth]{figures/12.jpg}\end{center}
 
 
 
@@ -169,15 +176,15 @@ Résultat souhaité pour n = 9 :
 
 Démarche pour calculer le pourcentage de différence entre deux images :
 
-**(r1, g1, b1)** sont les valeurs correspondant aux couleurs de la première image.
-**(r2, g2, b2) **sont les valeurs correspondant aux couleurs de la deuxième image.
+**(r1, g1, b1)** sont les valeurs correspondant aux couleurs de la première image.  
+**(r2, g2, b2) **sont les valeurs correspondant aux couleurs de la deuxième image.  
 **diff** est la variable à laquelle on affecte la différence entre les deux images pour chaque composante de chaque pixel.
 
 Pour chaque pixel, on calcule la différence de valeur entre **r1** et **r2** ; **g1** et **g2** ; **b1** et **b2** et on affecte tout cela à la variable **diff** de cette manière :
 
 ``diff += abs(r1-r2)``
 
-La fonction abs() permet d'obtenir la valeur absolue.
+La fonction `abs()` permet d'obtenir la valeur absolue.
 
 Faire la valeur absolue de ``r1 - r2`` permet d'avoir un résultat positif peu importe si **r1 > r2** ou **r1 < r2**.
 
@@ -191,7 +198,7 @@ $$pourcentage = 100 \times \frac{diff}{width \times height \times 3 \times 255}$
 
 **But : Écrire la fonction ``Diff(image1, image2)`` qui calcule le pourcentage de différence entre deux images de même dimensions. La fonction doit retourner un entier.**
 
-![](figures/14.jpg)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/14.jpg}\end{center}
 
 Exemple : Pour ``Diff(ref_image, noisycat)``, avec ``ref_image`` étant l'image de référence et ``noisy_cat`` l'image ci-dessus contenant du bruit, le resultat doit être de 3%.
 
@@ -207,26 +214,26 @@ Le voisinage d'un pixel est le nom que l'on donne à tous les pixels voisins d'u
 
 Sur l'image ci-dessous les pixels ont été remplacés par des maisons, la maison jaune a un voisinage de 3x3 maisons. Ce qui fait au total 8 voisins (maisons rouges).
 
-![image-20210704205100278](figures/19.png)
+\begin{center}\includegraphics[width=0.35\linewidth]{figures/19.png}\end{center}
 
 Sur cette seconde image, la maison jaune a un voisinage de 5x5 maisons, ce qui fait un total de 24 voisins !
 
-![image-20210704205220927](figures/20.png)
+\begin{center}\includegraphics[width=0.45\linewidth]{figures/20.png}\end{center}
 
 Pour réaliser ce filtre, vous allez devoir parcourir un voisinage de 5x5 pixels pour chaque pixel d'une image et calculer la valeur mediane de chaque composante de tous les voisins d'un pixel.
 
 Prenons une matrice avec des valeurs aléatoires pour illustrer. Ici nous nous intéressons aux voisins de 250 :
 
-<img src="figures/15.png" style="zoom:67%;" />
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/15.png}\end{center}
 
 La valeur médiane ici sera de 14 car si l'on trie chaque valeur par ordre croissant on obtient:
 
-![](figures/21.png)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/21.png}\end{center}
 
-Rappel : La médiane est la la valeur qui sépare une distribution ordonnée en deux groupes de taille égale. Donc pour la retrouver dans notre cas, on trie en ordre croissant les valeurs des pixels intéressants et la médiane correspondra à la valeur au milieu de cette liste (à la position : nombre total d'éléments / 2)
+Rappel : La médiane est la la valeur qui sépare une distribution ordonnée en deux groupes de taille égale. Donc pour la retrouver dans notre cas, on trie en ordre croissant les valeurs des pixels intéressants et la médiane correspondra à la valeur au milieu de cette liste (à la position : nombre total d'éléments / 2)  
 Nous remplaçons donc **250** par **14**.
 
-![](figures/17.png)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/17.png}\end{center}
 
 
 
@@ -239,7 +246,7 @@ ma_liste.sort()
 ```
 
 Résultat souhaité:
-<img src="figures/18.jpg"  />
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/18.jpg}\end{center}
 
 ## Conclusion :
 
@@ -261,7 +268,7 @@ La valeur de chaque pixel va être déterminée par ses pixels voisins. Donc il 
 
 Voici des exemples pour illustrer ces explications : 
 
-![](figures/convolution1.PNG)
+\begin{center}\includegraphics[width=0.9\linewidth]{figures/convolution1.PNG}\end{center}
 
 Dans cette illustration, le pixel sélectionné est celui en bleu, de valeur 5. C'est la valeur de ce pixel qui changera en fonction du résultat de la somme pondérée. Les pixels voisins qui seront considérés dans la somme pondérée dépendent de la taille de la matrice, ils sont grisés sur le schéma. Voici comment on effectuerait le calcul:
 
@@ -272,16 +279,16 @@ new = -7
 
 On obtient donc `-7`. Problème : cette valeur n'est pas valide pour un pixel. En effet, il faut qu'elle soit comprise entre 0 et 255. 
 
-Ainsi, dans le cas où la valeur obtenue n'est pas comprise entre 0 et 255, voici la démarche à suivre :
-- si `new < 0` alors `new = 0`
-- si `new > 255` alors `new = 255`
+Ainsi, dans le cas où la valeur obtenue n'est pas comprise entre 0 et 255, voici la démarche à suivre :  
+- si `new < 0` alors `new = 0`  
+- si `new > 255` alors `new = 255`  
 - si `0 < new < 255` alors new ne change pas
 
 Dans cet exemple, la valeur que prendra le pixel en bleu sera 0.
 
 ---
 
-![](figures/convolution2.PNG)
+\begin{center}\includegraphics[width=0.9\linewidth]{figures/convolution2.PNG}\end{center}
 
 Dans cet exemple, le pixel sélectionné est en bleu également. On remarque cependant qu'il a peu de pixels voisins comparés à l'exemple précédent. Voici comment le calcul de la somme pondérée serait effectué :
 
@@ -296,9 +303,9 @@ Ainsi, la nouvelle valeur du pixel est 29.
 
 ### À vous de coder !
 
-**But : Écrire la fonction `convolution(m, path, out)` qui applique la convolution et qui prend les paramètres suivants :**
-- `m` la matrice que l'on souhaite appliquer sur l'image
-- `path` la chaîne de caractères correspondant au nom de l'image que l'on souhaite utiliser, dans le même dossier que le script python
+**But : Écrire la fonction `convolution(m, path, out)` qui applique la convolution et qui prend les paramètres suivants :**  
+- `m` la matrice que l'on souhaite appliquer sur l'image  
+- `path` la chaîne de caractères correspondant au nom de l'image que l'on souhaite utiliser, dans le même dossier que le script python  
 - `out` le nom que l'on désire donner à l'image de sortie (chaîne de caractères)
 
 > **Conseil :** vous pouvez écrire des fonctions supplémentaires vous aidant à vérifier si des coordonnées sont valides ou renvoyant forcément une valeur valide pour un pixel (entre 0 et 255).
@@ -319,10 +326,10 @@ sharp = [[0, -1, 0],
 ```
 
 Résultat souhaité avec la matrice `edge`:
-![](figures/edge.png)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/edge.png}\end{center}
 
 Résultat souhaité avec `blurr`:
-![](figures/blurr.png)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/blurr.png}\end{center}
 
 Résultat souhaité avec `sharp`:
-![](figures/sharp.png)
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/sharp.png}\end{center}
