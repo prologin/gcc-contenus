@@ -187,7 +187,7 @@ Une fois que les images ont été entièrement parcourues, il ne reste plus qu'�
 
 **Ceci donne la formule :** 
 
-$$pourcentage = 100 \times \frac{diff}{width \times \height \times 3 \times 255}$$
+$$pourcentage = 100 \times \frac{diff}{width \times height \times 3 \times 255}$$
 
 **But : Écrire la fonction ``Diff(image1, image2)`` qui calcule le pourcentage de différence entre deux images de même dimensions. La fonction doit retourner un entier.**
 
