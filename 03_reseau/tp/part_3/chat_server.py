@@ -14,6 +14,7 @@ def _send_all(msg):
 def _handle_rclient(client_reader, client_writer):
     nickname = yield from client_reader.readline()
     nickname = nickname.decode('utf-8').strip()
+    ip = client_reader._transport.get_extra_info('socket').getpeername()[0]
     yield from _send_all('*** {} a rejoint la discussion'.format(nickname))
 
     while True:
@@ -21,7 +22,7 @@ def _handle_rclient(client_reader, client_writer):
         msg = msg.decode('utf-8')
         if not msg or msg[:5] == '/quit':
             break
-        yield from _send_all('<{}> {}'.format(nickname, msg.strip()))
+        yield from _send_all('<{} ({})> {}'.format(nickname, ip, msg.strip()))
 
     yield from _send_all('*** {} a quitté la discussion'.format(nickname))
 
