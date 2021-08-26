@@ -117,7 +117,7 @@ fichier, « style.css », dans le dossier « css ».
 Pour dire à notre page HTML d’utiliser ce document CSS, il faut ajouter dans la
 balise head la balise suivante :
 
-`<link rel="stylesheet" src="css/style.css">`
+`<link rel="stylesheet" href="css/style.css">`
 
 Comme pour les balises `<img>`, il n'est pas nécessaire les
 fermer.
