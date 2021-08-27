@@ -4,7 +4,7 @@ date: 2021
 author: Clarisse Blanco / Gaëtan Mouisset
 ---
 ## Introduction aux images matricielles
-Une image matricielle est une image représentée sous forme de matrice de points de couleurs (pixels). 
+Une image matricielle est une image représentée sous forme de matrice de petits carrés de couleurs (pixels). 
 
 
 
@@ -13,7 +13,19 @@ Une image matricielle est une image représentée sous forme de matrice de point
 
 
 Dans ce TP, nous utiliserons la représentation Rouge Vert Bleu (RVB ou RGB en anglais) pour donner une large palette de couleurs aux pixels de nos images. 
-Une couleur est representée sous la forme d'un triplet (R, V, B) où chaque valeur est comprise entre 0 et 255.
+Une couleur est représentée sous la forme d'un triplet (R, G, B) où chaque valeur est comprise entre 0 et 255.
+
+\vspace{6mm}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/palette.png}\end{center}
+
+\vspace{6mm}
+
+Avec la représentation RGB l'abscence de couleur (RGB = (0, 0, 0)) correspond au noir tandis que la totalité des couleurs (RGB = (255, 255, 255)) correspond au blanc.
+
+\begin{center}\includegraphics[width=0.8\linewidth]{figures/noir_blanc.png}\end{center}
+
+
 
 ## Introduction à la bibliothèque PIL (Python Imaging Library)
 
@@ -62,7 +74,7 @@ Matrice = Mon_image.load() # Obtenir la matrice de pixels d'une image. Un pixel 
 Matrice[0, 0] = (255, 255, 255) # Changer la couleur du pixel à la position (0, 0)
 ```
 
-Maintenant, au travail !
+Maintenant que nous avons pu voir comment installer et utiliser la blibliothèque PIL nous pouvons commencer le TP !
 
 
 
@@ -97,18 +109,20 @@ AppliquerFonction(3, FonctionCarre) # Résultat : 9
 AppliquerFonction(3, MaFonction)    # Résultat : 16
 ```
 
-**But : Écrire la fonction ``ApplyFilter(image, filter)`` qui applique le filtre donné en paramètre sur l'image. ``filter`` est une fonction qui prend une couleur et en retourne une nouvelle. Ce filtre sera donc à appliquer sur tous les pixels d'une image. La fonction doit retourner une nouvelle image.**
+**But : Écrire la fonction ``ApplyFilter(image, filter)`` qui applique le filtre donné en paramètre sur l'image. ``filter`` est une fonction qui prend une couleur et en retourne une nouvelle : ``(R2, G2, B2) = filter((R1, G1, B1))`` . Ce filtre sera donc à appliquer sur tous les pixels d'une image. La fonction doit retourner une nouvelle image.**
 
 ### Exercice 2 : Filtre de niveau de gris
 
 Le niveau de gris est défini par la relation suivante :  
 ``Résultat = 0.2126 * Rouge + 0.7152 * Vert + 0.0722 * Bleu``
 
+Pour obtenir du gris il faut que chacune des composantes ait la même valeur.
+
 
 
 **But : Écrire la fonction ``Grayscale(color)`` qui applique un filtre de niveau de gris sur une couleur. La fonction doit retourner la nouvelle couleur.**
 
-Résultat souhaité pour ``ApplyFilter(Grayscale, ref_image).save("Grayscale.jpg")``:
+Résultat souhaité pour ``ApplyFilter(ref_image, Grayscale).save("Grayscale.jpg")``:
 
 \begin{center}\includegraphics[width=0.8\linewidth]{figures/6.jpg}\end{center}
 
@@ -162,7 +176,7 @@ Résultat souhaité :
 
 ### Exercice 7 : Rotation
 
-**But : Écrire la fonction ``RotateN(image, n)`` qui applique N fois une rotation droite (90 degres) sur une image. La fonction doit retourner une nouvelle image.**
+**But : Écrire la fonction ``RotateN(image, n)`` qui applique N fois une rotation droite (90 degrés dans le sens horaire) sur une image. La fonction doit retourner une nouvelle image.**
 
 Résultat souhaité pour n = 2 :
 \begin{center}\includegraphics[width=0.75\linewidth]{figures/11.jpg}\end{center}
@@ -170,31 +184,41 @@ Résultat souhaité pour n = 2 :
 Résultat souhaité pour n = 9 :
 \begin{center}\includegraphics[width=0.35\linewidth]{figures/12.jpg}\end{center}
 
-
+\newpage
 
 ### Exercice 8 : Pourcentage de différence
 
 Démarche pour calculer le pourcentage de différence entre deux images :
 
-**(r1, g1, b1)** sont les valeurs correspondant aux couleurs de la première image.  
-**(r2, g2, b2) **sont les valeurs correspondant aux couleurs de la deuxième image.  
-**diff** est la variable à laquelle on affecte la différence entre les deux images pour chaque composante de chaque pixel.
+- Il faut commencer par calculer la différence (soustraction) entre les composantes RGB des deux pixels de chacune des images. Par exemple pour ces deux pixels:
 
-Pour chaque pixel, on calcule la différence de valeur entre **r1** et **r2** ; **g1** et **g2** ; **b1** et **b2** et on affecte tout cela à la variable **diff** de cette manière :
+  \vspace{3mm}
 
-``diff += abs(r1-r2)``
+  \begin{center}\includegraphics[width=0.8\linewidth]{figures/diff_pixel.png}\end{center}
 
-La fonction `abs()` permet d'obtenir la valeur absolue.
+  \vspace{3mm}
 
-Faire la valeur absolue de ``r1 - r2`` permet d'avoir un résultat positif peu importe si **r1 > r2** ou **r1 < r2**.
+  Vous pouvez remarquer nous rencontrons un problème lors du calcul de la différence entre les secondes composantes des deux pixels. En effet, comme 20 est plus petit que 80 le résultat est négatif, or nous voudrions que le résultat soit positif (comme si nous avions fait 80 - 20). Pour cela vous pouvez utiliser la fonction abs() qui permet d'obtenir la valeur absolue (résultat positif) d'un calcul.
+  
+  *Par exemple : abs(5 - 8) = abs(-3) = 3 et abs(8 - 5) = abs(3) = 3*.
+  
+  \vspace{3mm}
+  
+- Ensuite, il faut ajouter la différence que nous venons de calculer dans une variable, pour faire la somme des différences de chaque composante : ``diff_r``, ``diff_g``, ``diff_b``.
 
-*Par exemple : abs(5 - 8) = abs(-3) = 3 et abs(8 - 5) = abs(3) = 3*.
+  \vspace{3mm}
 
-Une fois que les images ont été entièrement parcourues, il ne reste plus qu'à calculer le pourcentage. Pour cela, nous avons besoin du nombre de composantes R, G, B dans une des images et de la valeur par rapport à laquelle chaque composante est exprimée (255).
+- Une fois que les images ont été entièrement parcourues, il ne reste plus qu'à calculer le pourcentage. Pour cela, nous avons besoin du nombre de pixels présents dans l'image, du nombre de composantes R, G, B dans une des images et de la valeur par rapport à laquelle chaque composante est exprimée (255).
 
-**Ceci donne la formule :** 
+  \vspace{3mm}
 
-$$pourcentage = 100 \times \frac{diff}{width \times height \times 3 \times 255}$$
+  **Ceci donne la formule :** 
+
+  $$pourcentage = 100 \times \frac{diff}{width \times height \times 3 \times 255}$$
+
+  Où ``diff`` =``diff_r``+ ``diff_g``+ ``diff_b``.
+
+\vspace{8mm}
 
 **But : Écrire la fonction ``Diff(image1, image2)`` qui calcule le pourcentage de différence entre deux images de même dimensions. La fonction doit retourner un entier.**
 
@@ -210,7 +234,7 @@ Exemple : Pour ``Diff(ref_image, noisycat)``, avec ``ref_image`` étant l'image 
 
 **Voisinage d'un pixel :**
 
-Le voisinage d'un pixel est le nom que l'on donne à tous les pixels voisins d'un autre pixel. 
+Le voisinage d'un pixel est le nom que l'on donne à tous les pixels voisins. 
 
 Sur l'image ci-dessous les pixels ont été remplacés par des maisons, la maison jaune a un voisinage de 3x3 maisons. Ce qui fait au total 8 voisins (maisons rouges).
 
@@ -230,7 +254,8 @@ La valeur médiane ici sera de 14 car si l'on trie chaque valeur par ordre crois
 
 \begin{center}\includegraphics[width=0.8\linewidth]{figures/21.png}\end{center}
 
-Rappel : La médiane est la la valeur qui sépare une distribution ordonnée en deux groupes de taille égale. Donc pour la retrouver dans notre cas, on trie en ordre croissant les valeurs des pixels intéressants et la médiane correspondra à la valeur au milieu de cette liste (à la position : nombre total d'éléments / 2)  
+Rappel : La médiane est la valeur qui sépare une distribution ordonnée en deux groupes de taille égale. Donc pour la retrouver dans notre cas, on trie en ordre croissant les valeurs des pixels intéressants et la médiane correspondra à la valeur au milieu de cette liste (à la position : nombre total d'éléments / 2).
+
 Nous remplaçons donc **250** par **14**.
 
 \begin{center}\includegraphics[width=0.8\linewidth]{figures/17.png}\end{center}
