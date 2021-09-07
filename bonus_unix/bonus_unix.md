@@ -239,9 +239,10 @@ Effacez une copie.
 # Raccourcis clavier
 
 De nombreux autres raccourcis existent. Par exemple lorsque vous tapez un nom de
-fichier ou de commande, la touche `TAB` peut vous aider à compléter la suite. On
-appelle cela *l'auto-complétion*. Les touches `UP` et `DOWN` peuvent également
-permettre de parcourir l'historique des commandes saisies.
+fichier ou de commande, la touche `TAB` (↹) peut vous aider à compléter la suite. On
+appelle cela *l'auto-complétion*.
+Les flèches du haut (↑) et du bas (↓) permettent de parcourir l'historique des 
+commandes saisies.
 
 ``` {.bash}
 $ cat encor[TAB]
@@ -260,18 +261,18 @@ grâce à l'équipe qui vous entoure. Quelques idées : `time`, `touch`, `tail`,
 
 # Pense-Bête
 
-|  **commande**      |  **fonction**                       | **exemple**                         |
-|  ----------------- |  ---------------------------------- | ----------------------------------- |
-|  pwd               |  dossier courant                    | pwd                                 |
-|  cd                |  changer de dossier                 | cd TP_UNIX                         |
-|  ls                |  lister le contenu                  | ls                                  |
-|  mkdir             |  créer un répertoire                | mkdir TP_UNIX                      |
-|  cat               |  afficher le contenu d'un fichier   | cat test1.txt                       |
-|  mv                |  déplacer ou renommer un fichier    | mv resultplusun.txt ../testmv.txt   |
-|  cp                |  copier un fichier                  | cp ../testmv.txt resplusun.txt      |
-|  rm                |  effacer un fichier                 | rm ../testmv.txt                    |
-|  raccourci `TAB`   |  auto-complétion                    | cat resplus`TAB`                    |
-|  `HAUT` `BAS`      |  parcourir l'historique             |                                     |
+|  **commande**       |  **fonction**                       | **exemple**                         |
+|  ------------------ |  ---------------------------------- | ----------------------------------- |
+|  pwd                |  dossier courant                    | pwd                                 |
+|  cd                 |  changer de dossier                 | cd TP_UNIX                         |
+|  ls                 |  lister le contenu                  | ls                                  |
+|  mkdir              |  créer un répertoire                | mkdir TP_UNIX                      |
+|  cat                |  afficher le contenu d'un fichier   | cat test1.txt                       |
+|  mv                 |  déplacer ou renommer un fichier    | mv resultplusun.txt ../testmv.txt   |
+|  cp                 |  copier un fichier                  | cp ../testmv.txt resplusun.txt      |
+|  rm                 |  effacer un fichier                 | rm ../testmv.txt                    |
+|  raccourci `TAB` ↹  |  auto-complétion                    | cat resplus`TAB`                    |
+|  `HAUT` ↑ / `BAS` ↓ |  parcourir l'historique             |                                     |
 
 [^1]: On les appelle les arguments
 
