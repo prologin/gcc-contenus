@@ -299,6 +299,75 @@ Modifie ta barre de chargement pour qu'au lieu d'allumer les diodes d'un coup
 (avec une intensité de 9), elles s'allument en douceur (en faisant
 progressivement varier l'intensité de 0 à 9).
 
+## L'indentation
+
+À partir de maintenant, tes programmes commenceront à être plus compliqués. Il
+est tout de même nécessaire de comprendre une partie importante de la syntaxe
+de Python : l'**indentation**.
+
+L'indentation correspond au nombre d'espaces avant le début d'une ligne. Par
+exemple, la première ligne ci-dessous à une indentation égale à **0** (pas
+d'espaces en début de ligne), et la deuxième ligne à une indentation égale à
+**4** (quatre espaces en début de ligne).
+
+```python
+for i in range(5):
+    display.scroll(str(i))
+```
+
+Cette indentation permet à Python de savoir, par exemple, quelles parties d'un
+programme sont à répéter. Comparons deux exemples.
+
+Dans l'exemple ci-dessous, la série suivante de chaînes de caractères est
+affichée :
+- 0
+- end
+- 1
+- end
+
+```python
+for i in range(2):
+    display.scroll(str(i))
+    display.scroll("end")
+```
+
+Dans l'exemple ci-dessous, la série suivante de chaînes de caractères est
+affichée :
+- 0
+- 1
+- end
+
+```python
+for i in range(2):
+    display.scroll(str(i))
+display.scroll("end")
+```
+
+La dernière ligne, `display.scroll("end")`, est en effet "en dehors" de la
+boucle `for`, et s'exécute donc une seule fois.
+
+Bien sûr, il est possible d'"emboîter" des boucles les unes dans les
+autres :
+
+```python
+# La prochaine ligne ne sera exécutée qu'une seule fois:
+display.scroll("start")
+
+for i in range(5):
+    # La prochaine ligne sera exécutée 5 fois:
+    display.scroll("i=" + str(i))
+
+    for j in range(5):
+        # La prochaine ligne sera exécutée 5*5 = 25 fois:
+        display.scroll("j=" + str(j))
+
+    # La prochaine ligne sera aussi exécutée 5 fois:
+    display.scroll("i=" + str(i))
+
+# La prochaine ligne ne sera aussi exécutée qu'une seule fois:
+display.scroll("end")
+```
+
 ## La boucle `while`
 
 La boucle **while** sert à répéter un morceau de programme tant qu'une
