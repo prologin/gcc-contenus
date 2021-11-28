@@ -353,18 +353,18 @@ autres :
 # La prochaine ligne ne sera exécutée qu'une seule fois:
 display.scroll("start")
 
-for i in range(5):  # Début du bloc for n°1
+for i in range(5):  # Début du bloc `for` n°1
     # La prochaine ligne sera exécutée 5 fois:
     display.scroll("i=" + str(i))
 
-    for j in range(5):  # Début du bloc for n°2
+    for j in range(5):  # Début du bloc `for` n°2
         # La prochaine ligne sera exécutée 5*5 = 25 fois:
         display.scroll("j=" + str(j))
-    # Fin du bloc for n°2
+    # Fin du bloc `for` n°2
 
     # La prochaine ligne sera aussi exécutée 5 fois:
     display.scroll("i=" + str(i))
-# Fin du bloc for n°1
+# Fin du bloc `for` n°1
 
 # La prochaine ligne ne sera aussi exécutée qu'une seule fois:
 display.scroll("end")
