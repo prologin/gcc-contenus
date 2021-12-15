@@ -373,7 +373,7 @@ display.scroll("end")
 ## La boucle `while`
 
 La boucle **while** sert à répéter un morceau de programme tant qu'une
-condition est vraie. Elle s'utilise comme suit :
+condition est vraie. Voici un petit jeu qui illustre son utilité :
 
 ```python
 from microbit import *
