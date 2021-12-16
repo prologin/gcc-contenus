@@ -1,6 +1,6 @@
 .PHONY: all
 
-SUBJECT = tp1
+SUBJECT = 01_decouverte_python_new
 
 all: ${SUBJECT}.pdf ${SUBJECT}.tex
 
