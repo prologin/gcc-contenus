@@ -68,7 +68,7 @@ while snake_len < 25:
 
     # TODO: Ajoute la nouvelle tete au serpent (insere la tete en position 0)
 
-    # TODO: Si la nouvelle tete est sur la pomme, agrandi la taille du serpent de 1
+    # TODO: Si la nouvelle tete est sur la pomme, agrandis la taille du serpent de 1
     # Et retire la pomme de la grille (None)
 
     # TODO: retire la derniere valeur de la queue du serpent si celui-ci

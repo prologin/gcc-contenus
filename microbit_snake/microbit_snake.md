@@ -76,8 +76,28 @@ Tu peux utiliser la méthode suivante
 liste.pop()
 ```
 
-Maintenant, tu devrais être capable de faire bouger ton serpent sur le micro:bit en appuyant du les boutons ! Mais il n'y a pas encore de challenge car le serpent de grandi pas.
+Maintenant, tu devrais être capable de faire bouger ton serpent sur le micro:bit en appuyant du les boutons ! Mais il n'y a pas encore de challenge car le serpent de grandit pas.
 
 ### La pomme
 
-J'ai pas fini
+Maintenant que le serpent peut se déplacer, nous pouvons placer des pommes sur le terrain pour le faire grandir.
+
+À chaque tour de boucle :
+
+- S'il n'y a pas de pomme sur le terrain, on en place une de manière aléatoire qui ne soit pas sur le terrain
+- Si la tête du serpent atteint une pomme, celle-ci disparait et la taille du serpent augmente de 1.
+
+
+
+
+## Tips (utiles pour certaines parties du projet)
+
+On peut vérifier qu'une valeur est présente dans une liste de la manière suivante :
+
+```py
+>>> snake = [(1, 0)]
+>>> (0, 1) in snake
+False
+>>> (1, 0) in snake
+True
+```
