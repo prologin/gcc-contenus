@@ -88,7 +88,7 @@ Maintenant que le serpent peut se déplacer, nous pouvons placer des pommes sur 
 
 À chaque tour de boucle :
 
-- S'il n'y a pas de pomme sur le terrain, on en place une de manière aléatoire qui ne soit pas sur le terrain
+- S'il n'y a pas de pomme sur le terrain, on en place une de manière aléatoire qui ne soit pas sur le serpent
 - Si la tête du serpent atteint une pomme, celle-ci disparait et la taille du serpent augmente de 1
 
 ## Astuces (utiles pour certaines parties du projet)
