@@ -16,7 +16,7 @@ APP_LIGHT = 3
 
 def draw_snake(snake):
     """
-    Draw the snake on the screen
+    Dessine le serpent sur l'ecran du micro:bit
     """
     # Intensite lumineuse pour le serpent
     SN_LIGHT = 6
@@ -28,9 +28,9 @@ def draw_snake(snake):
         display.set_pixel(j, i, SN_LIGHT)
 
 
-def new_direction(dir):
+def new_direction(direction):
     """
-    Choose the new direction
+    Choisis la nouvelle direction
     """
     # TODO: Change la direction en fonction des boutons A, B et de la
     # direction donnee
@@ -40,9 +40,9 @@ def new_direction(dir):
     pass
 
 
-def new_head(snake, dir):
+def new_head(snake, direction):
     """
-    Return the tuple (x, y) of the new head
+    Renvoie les coordonnees (x, y) de la nouvelle tete
     """
     # TODO: Choisi une nouvelle direction en fonction de la direction donnee
     # et de la tete du serpent
@@ -53,7 +53,7 @@ def new_head(snake, dir):
 # La queue est le dernier element
 snake = [(2, 2)]
 snake_len = 2
-dir = UP
+direction = UP
 apple = None
 
 # Tant que le serpent ne rempli pas toutes les cases de l'écran
