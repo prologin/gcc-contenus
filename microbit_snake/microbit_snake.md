@@ -34,13 +34,15 @@ Chaque pixel de l'écran est une LED rouge, que l'on peut allumer ou éteindre �
 
 ```py
 # Attention, la numérotation des lignes et des colonnes commence à 0
+# Cette ligne va allumer le pixel sur la 1ère ligne et 3ème colonne,
+# Avec une intensité lumineuse de 6. 
 display.set_pixel(0, 2, 6)
 ```
 
 Il pourra vous être utile de réinitialiser l'écran et d'éteindre toutes les LEDs d'un coup. Pour cela, on utilise la fonction suivante.
 
 ```py
-# Cette commande a le même effet que faire display.set_pixel(i, j, 0) 25 fois !
+# Cette commande a le même effet que faire display.set_pixel(...) 25 fois (pour chaque pixel) !
 display.clear()
 ```
 
