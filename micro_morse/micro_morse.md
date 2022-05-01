@@ -1,5 +1,5 @@
 ---
-title: Télémorse
+title: MicroMorse
 date: 2022
 ---
 
@@ -45,23 +45,15 @@ Comme vous pouvez le voir, il suffit de parcourir l'arbre (comme expliqué plus
         haut) afin de trouver la représentation correspondante. 
 
 Voici le code de base de ce TP, il vous est donné afin de vous faciliter la
-tâche, déjà suffisament complexe comme ça...
+tâche, déjà suffisament complexe comme ça... Vous pouvez aussi le retrouver dans
+le fichier `given_code.py`.
 
 ```py
-from microbit import *
-
-class BinTree:
-    def __init__(self, key, left, right):
-        """
-        Init Tree
-        """
-        self.key = key # La valeur du noeud
-        self.left = left # Le noeud gauche
-        self.right = right # Le noeud droit
+CODE DU FICHIER given_code
 ```
 
 
-# Des conventions (titre a revoir ?)
+### Des conventions (titre a revoir ?)
 Pour mener notre projet à bien, nous allons devoir poser quelques conventions 
 qui vont nous faciliter la tâche pour la suite du projet.
 Tout d'abord, un point (`·`) correspond à un appui sur le bouton `A` et un trait 
@@ -77,14 +69,46 @@ question, n'hésitez surtout pas à faire appel à un organisateur.
 Si tout est bon pour vous, nous allons pouvoir commencer ! 
 
 
-#### Exercice
-**But :** Écrire une fonction `translate_letter(s)` qui prend une chaine de
-    caractères en paramètre, et renvoie la lettre qui correspond à la chaine
-    donnée. Pensez à utiliser le fichier qui vous est donné. 
+#### Exercice 1 : Traduire une chaine de caractères
+**But :** Écrire une fonction `translate_letter(S, arbre)` qui prend en paramètre
+    une chaine de caractères ainsi que l'arbre représentant le code morse, 
+    et renvoie la lettre qui correspond à la chaine donnée. 
+    Pensez à utiliser le fichier qui vous est donné ;) 
 
-**Exemple :** `translate_into_letter("0010")` va nous renvoyer `'F'`. 
+**Exemple :** `translate_into_letter("0010", MORSE)` va nous renvoyer `'F'`. 
 
+**Aide :** Vous pouvez découper cette fonction en deux étapes : 
+        - D'abord, quel est ou quels sont le ou les cas d'arrêts ?
+        - Ensuite, si le cas d'arrêt n'est pas atteint, que faire ?
 
+# Récupérer l'entrée utilisateur
+Dans la plupart des programmes que nous allons créer, nous allons le faire pour
+qu'ils soient utilisés par un humain. Malheureusement, il n'est pas rare que
+l'utilisateur ne respecte pas parfaitement le fonctionnement de notre programme.
+Nous devons donc faire attention à ce qu'une erreur ne vienne pas provoquer une
+erreur dans notre code. 
+Il faut donc toujours vérifier les informations que l'utilisateur nous transmet,
+   c'est un bon réflexe à avoir afin de limiter les bugs. 
+
+## Pourquoi MicroMorse est concerné ?
+Bien que nous n'ayions que deux boutons, l'utilisateur doit respecter un
+alphabet bien spécifique. 
+Ici, la seule erreur que l'utilisateur peut comettre, c'est de valider une
+lettre qui n'existe pas dans l'alphabet morse.
+Modifions notre fonction précédente (`translate_into_letter`) afin de gérer les
+cas où l'entrée utilisateur (c'est à dire la chaine de caractères donnée en
+        paramètre).
+
+### Exercice 2 : Vérifier la chaine de caractères
+**But :** Modifier la fonction `translate_into_letter` pour que cela ne crée pas
+d'erreur si l'utilisateur entre une mauvaise séquence, renvoyer une chaine vide
+(`''`) si c'est le cas.
+
+**Exemple :** `translate_into_letter("0101", MORSE)` va nous renvoyer une chaine
+vide (`''`) sans produire d'erreur
+
+**Aide :** En cas de mauvaise entrée, au niveau de quelle ligne peut-on trouver
+une erreur ?
 
 
 
