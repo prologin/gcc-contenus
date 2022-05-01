@@ -1,5 +1,5 @@
-#from microbit import *
-#import radio
+from microbit import *
+import radio
 
 class Noeud:
     def __init__(self, key, left, right):
@@ -47,13 +47,13 @@ I = Noeud('I', S, U)
 A = Noeud('A', R, W)
 E = Noeud('E', I, A)
 T = Noeud('T', N, M)
-
 MORSE = Noeud(None, E, T)
 
 
 
 
-def translate_into_letter(S):
+# Iterative version
+def translate_into_letter_ite(S):
     """
     Translate a formatted string into a char
     """
@@ -65,7 +65,38 @@ def translate_into_letter(S):
         else:
             cur_root = cur_root.right
 
-    return cur_root.key
+        if cur_root == None:
+            return ''
+
+    if cur_root.key == None:
+        return ''
+
+    else:
+        return cur_root.key
+
+
+# Recursive version
+def translate_into_letter(S, tree):
+    """
+    Translate a formatted string into a char
+    """
+    if tree == None:
+        return ''
+
+    if S == "":
+        if tree.key == None:
+            return ''
+        
+        else:
+            return tree.key
+
+    elif S[0] == '0':
+        return translate_into_letter(S[1:], tree.left)
+
+    else:
+        return translate_into_letter(S[1:], tree.right)
+
+
 
 def create_message():
     message = ""
@@ -77,7 +108,7 @@ def create_message():
             if button_b.is_pressed():
                 tmp += "1"
 
-        message += translate_into_letter(tmp)
+        message += translate_into_letter(tmp, MORSE)
 
     return message
         
@@ -85,15 +116,13 @@ def create_message():
 radio.on() # Allumer la radio
 radio.config(channel=42) # Configure le canal utilise (doit etre compris entre 0 et 83)
 
-
-
 while False:
     message_recu = radio.receive() # Essaye de recevoir un message
     if message_recu != None:
         display.scroll(received_message) # Affiche le message recu s'il existe
 
     if pin_logo.is_touched() or button_a.is_pressed() or button_b.is_pressed():
-        radio.send(create_message)
+        radio.send(create_message())
 
 
 
