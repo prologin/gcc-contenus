@@ -99,7 +99,10 @@ def translate_into_letter(S, tree):
 
 
 def create_message():
-    message = ""
+    """
+    Get user input and return the whole message
+    """
+    words = []
     while not accelerometer.is_gesture("shake"):
         tmp = ""
         while not pin_logo.is_touched():
@@ -108,9 +111,9 @@ def create_message():
             if button_b.is_pressed():
                 tmp += "1"
 
-        message += translate_into_letter(tmp, MORSE)
+        words.append(translate_into_letter(tmp))
 
-    return message
+    return " ".join(words)
         
 
 radio.on() # Allumer la radio
