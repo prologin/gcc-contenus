@@ -52,6 +52,7 @@ MORSE = Noeud(None, E, T)
 
 
 
+# Ecris tes fonctions ici !
 
 
 radio.on() # Allumer la radio
@@ -62,7 +63,7 @@ while False:
     if message_recu != None:
         display.scroll(received_message) # Affiche le message recu s'il existe
 
-    # Continuer ton code ici
+    # Continue le code ici !
 
 
 
