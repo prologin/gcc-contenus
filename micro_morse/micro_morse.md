@@ -81,7 +81,39 @@ Si tout est bon pour vous, nous allons pouvoir commencer !
         - D'abord, quel est ou quels sont le ou les cas d'arrêts ?
         - Ensuite, si le cas d'arrêt n'est pas atteint, que faire ?
 
+
+
+
+
+
 # Récupérer l'entrée utilisateur
+## Lorsque tout se passe bien...
+Maintenant que nous savons traduire une chaine de caractères en lettres, nous
+allons devoir trouver un moyen de transformer des appuis sur des boutons en
+chaine de caractères. Pour ce faire, je te rappelle que nous avons mis en place
+quelques conventions que l'utilisateur doit respecter afin de pouvoir utiliser
+notre outil de communication moderne. Voici un bref rappel :
+> Le bouton A correspond à un point, il est traduit par un `'0'` dans les
+> chaines de caractères
+> Le bouton B correspond à un trait, il est traduit par un `'1'` dans les
+> chaines de caractères
+> Pour valider un mot, l'utilisateur doit toucher le logo tactile
+> Pour valider un message entier et l'envoyer, l'utilisateur doit secouer le
+> microbit
+
+Maintenant que les choses sont claires, passons à la pratique !
+
+#### Exercice 2 : l'utilisateur parle à notre programme...
+**But :** Coder une fonction `create_message()` qui ne prend aucun paramètre et
+renvoie le message (sous forme d'alphabet latin) que l'utilisateur veut envoyer.
+
+**Exemple :** _L'utilisateur appuie sur A, puis sur le logo, puis appui sur B, 
+    puis à nouveau sur le logo avant de secouer le microbit_
+    La fonction `create_message()` renvoie donc `"E T"`
+
+
+
+## ... mais que l'utilisateur est humain !
 Dans la plupart des programmes que nous allons créer, nous allons le faire pour
 qu'ils soient utilisés par un humain. Malheureusement, il n'est pas rare que
 l'utilisateur ne respecte pas parfaitement le fonctionnement de notre programme.
@@ -90,7 +122,7 @@ erreur dans notre code.
 Il faut donc toujours vérifier les informations que l'utilisateur nous transmet,
    c'est un bon réflexe à avoir afin de limiter les bugs. 
 
-## Pourquoi MicroMorse est concerné ?
+### Pourquoi MicroMorse est concerné ?
 Bien que nous n'ayions que deux boutons, l'utilisateur doit respecter un
 alphabet bien spécifique. 
 Ici, la seule erreur que l'utilisateur peut comettre, c'est de valider une
@@ -99,7 +131,7 @@ Modifions notre fonction précédente (`translate_into_letter`) afin de gérer l
 cas où l'entrée utilisateur (c'est à dire la chaine de caractères donnée en
         paramètre).
 
-### Exercice 2 : Vérifier la chaine de caractères
+#### Exercice 3 : Vérifier la chaine de caractères
 **But :** Modifier la fonction `translate_into_letter` pour que cela ne crée pas
 d'erreur si l'utilisateur entre une mauvaise séquence, renvoyer une chaine vide
 (`''`) si c'est le cas.
@@ -107,14 +139,31 @@ d'erreur si l'utilisateur entre une mauvaise séquence, renvoyer une chaine vide
 **Exemple :** `translate_into_letter("0101", MORSE)` va nous renvoyer une chaine
 vide (`''`) sans produire d'erreur
 
-**Aide :** En cas de mauvaise entrée, au niveau de quelle ligne peut-on trouver
+**Aide :** En cas de mauvaise entrée, au niveau de quelles lignes de code peut-on trouver
 une erreur ?
 
 
 
-# Améliorations possibles
-- Faire un système de sélection du `channel`
+
+
+
+# C'est déjà la fin ?
+C'est en effet la fin de ce TP. Nous espérons que cela t'as plu, et
+encore une fois si tu as des questions, n'hésite surtout pas à les poser à des
+organisateurs. 
+Tu peux désormais passer au TPs suivants, ou bien essayer d'améliorer ce
+mini-projet :)
+
+## Des améliorations ?
+Comme tu t'en doutes peut-être, ce TP est un mini-projet améliorable à l'infini
+ou presque. Si tu veux continuer à améliorer ton programme, tu es libre de faire
+ce que tu veux avec. 
+
+Si jamais tu as besoin d'idées, en voici quelques unes :
+- Possibilité de choisir son canal radio afin de pouvoir discuter _presque_
+secrètement
 - Pouvoir corriger une faute de frappe en appyuant simultanémant sur `A` et `B`
-- Visualisation du code morse déjà entré
-- Confirmation avant l'envoie
+- Visualisation du code morse déjà entré (En affichant la lettre qui a été
+        trouvée avant une confirmation par l'utilisateur par exemple)
+- Confirmation du message avant son envoie
 
