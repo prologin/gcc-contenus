@@ -119,7 +119,7 @@ def create_message():
 radio.on() # Allumer la radio
 radio.config(channel=42) # Configure le canal utilise (doit etre compris entre 0 et 83)
 
-while False:
+while True:
     message_recu = radio.receive() # Essaye de recevoir un message
     if message_recu != None:
         display.scroll(received_message) # Affiche le message recu s'il existe
