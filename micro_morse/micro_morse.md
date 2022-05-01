@@ -81,8 +81,8 @@ Si tout est bon pour vous, nous allons pouvoir commencer !
         - D'abord, quel est ou quels sont le ou les cas d'arrêts ?
         - Ensuite, si le cas d'arrêt n'est pas atteint, que faire ?
 
-
-
+**Rappels :** Vous pouvez tester vos fonctions directement dans Mu (A VERIFIER
+        ET REEXPLIQUER LA DEMARCHE !)
 
 
 
@@ -107,9 +107,9 @@ Maintenant que les choses sont claires, passons à la pratique !
 **But :** Coder une fonction `create_message()` qui ne prend aucun paramètre et
 renvoie le message (sous forme d'alphabet latin) que l'utilisateur veut envoyer.
 
-**Exemple :** _L'utilisateur appuie sur A, puis sur le logo, puis appui sur B, 
-    puis à nouveau sur le logo avant de secouer le microbit_
-    La fonction `create_message()` renvoie donc `"E T"`
+**Exemple :** _L'utilisateur appuie sur A, puis sur le logo, puis appui sur B,_
+_puis à nouveau sur le logo avant de secouer le microbit_
+La fonction `create_message()` renvoie donc `"E T"`
 
 
 
@@ -144,6 +144,24 @@ une erreur ?
 
 
 
+# Accordons nos fonctions ensemble !
+Voici le moment tant attendu, maintenant que toutes les étapes de notre projet
+fonctionnent, il est l'heure de les faire fonctionner ensemble. 
+
+## Comment mon code doit se comporter ?
+Vous l'avez peut-être vue, dans le code que nous vous avons donné, par défaut,
+notre programme est en mode _réception_, c'est-à-dire qu'il est prêt à recevoir
+le message d'un autre microbit. 
+Pour le passer en mode _émission_, il doit suffire d'appuyer sur n'importe quel
+bouton. C'est un choix très arbitraire de notre part, mais vous pourriez tout
+aussi bien faire en sorte d'entrer dans ce mode lorsque le microbit est secoué,
+ou bien de manière plus originale lorsqu'il est en chute libre ! (C'est une
+blague, ne tente pas de lacher le microbit du 4e étage, tu aurais du mal à
+envoyer un message par la suite).
+
+#### Exercice 4 : Et que le MicroMorse fut
+**But :** Ajouter une condition pour entrer en mode _émission_ dans la boucle
+principale.
 
 
 
