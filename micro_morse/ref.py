@@ -98,36 +98,34 @@ def translate_into_letter(S, tree):
 
 
 
-def create_message():
+def creer_message():
     """
     Get user input and return the whole message
     """
-    words = []
-    while not accelerometer.is_gesture("shake"):
-        tmp = ""
-        while not pin_logo.is_touched():
-            if button_a.is_pressed():
-                tmp += "0"
-            if button_b.is_pressed():
-                tmp += "1"
-
-        words.append(translate_into_letter(tmp))
-
-    return " ".join(words)
+    display.scroll("Send")
+    tmp = ""
+    
+    while not pin_logo.is_touched():
+        if button_a.get_presses():
+            tmp += "0"
         
+        if button_b.get_presses():
+            tmp += "1"
+
+
+    display.scroll(tmp)
+    return translate_into_letter(tmp, MORSE)
+
 
 radio.on() # Allumer la radio
 radio.config(channel=42) # Configure le canal utilise (doit etre compris entre 0 et 83)
 
+display.scroll("Go !")
 while True:
     message_recu = radio.receive() # Essaye de recevoir un message
     if message_recu != None:
-        display.scroll(received_message) # Affiche le message recu s'il existe
+        display.scroll(message_recu) # Affiche le message recu s'il existe
 
     if pin_logo.is_touched() or button_a.is_pressed() or button_b.is_pressed():
-        radio.send(create_message())
-
-
-
-
+        radio.send(creer_message())
 
