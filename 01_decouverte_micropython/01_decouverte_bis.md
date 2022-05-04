@@ -47,7 +47,7 @@ Si tu n'as pas réussi à bien installer `Mu`, demande aux organisateurs de t'ai
 
 # Ton premier programme
 
-Un programme en Python est constitué d'une série d'instructions qui sont exécutée par un
+Un programme en Python est constitué d'une série d'instructions qui sont exécutées par un
 ordinateur (dans notre cas, le `micro:bit`). Chaque instruction doit être écrite
 sur une nouvelle ligne, et le programme sera lu par l'ordinateur de haut en bas.
 Commençons par analyser un premier exemple de programme très basique :
@@ -78,7 +78,7 @@ Exécutons 'à la main' ce petit programme pour comprendre ce qu'il fait :
    fonctionner. 
 2. Nous avons ensuite une ligne vide. Cela n'a aucune influence sur le
    comportement de ton code, il ne faut donc pas hésiter à t'en servir pour
-   espacer son programme. Cela rend ton code plus lisible pour toi comme pour les
+   espacer ton programme. Cela rend ton code plus lisible pour toi comme pour les
    personnes qui voudront le lire.
 3. `display.set_pixel(0, 2, 9)` est une fonction propre au micro:bit, elle
    permet d'allumer le pixel situé sur la colonne n°0 et la ligne n°2. Son
@@ -100,13 +100,13 @@ le microbit. Nous allons ici te présenter les principales.
 
 ## Comment afficher quelque chose ?
 
-Il existe de nombreuses façons d'afficher quelque chose sur l'écran du microbit.
-La première, et la plus basique consiste à choisir les LEDs que l'on veut allumer
+Il existe de nombreuses façons d'afficher quelque chose sur l'écran du micro:bit.
+La première, et la plus basique, consiste à choisir les LEDs que l'on veut allumer
 et à les allumer une par une. Pour cela, tu l'as vu juste avant, on utilise la
 fonction `display.set_pixel(colonne, ligne, intensite)`, où `colonne` représente
 le numéro de la colonne de la LED à allumer, `ligne` le numéro de la ligne et
-enfin `intensite` est l'intensité avec laquelle la LED va s'allumer (ça va de 0
-        pour une LED éteinte à 9 pour une LED allumée à pleine puissance). 
+enfin `intensite` est l'intensité avec laquelle la LED va s'allumer (de 0
+pour une LED éteinte à 9 pour une LED allumée à pleine puissance). 
 
 En ce qui concerne cette fonction, voici un petit schéma qui permet de mieux 
 comprendre les coordonnées de chaque LED (la coordonnée **X** correspond au
@@ -156,13 +156,13 @@ chaine de caractères que tu veux afficher.
 
 
 ## Ça va trop vite !
-Une autre fonction bien pratique est la fonction `seep(millisecondes)` qui
-permet, comme évoqué dans la partie "Notre premier programme", de mettre en pause
+Une autre fonction bien pratique est la fonction `sleep(millisecondes)` qui
+permet, comme évoqué dans la partie "Ton premier programme", de mettre en pause
 ton programme pour, par exemple, te laisser le temps de voir ce qu'il se passe. 
 
 
 
-Nous avons vu beaucoup de choses nouvelles dans cette partie. Si jamais tu as une
+Nous avons vu beaucoup de choses nouvelles jusqu'ici. Si jamais tu as une
 question ou si tu n'as pas compris quelque chose, n'hésite surtout pas à demander
 de l'aide à un organisateur. 
 N'hésite pas non plus à relire les parties que tu n'as pas compris. 
@@ -174,5 +174,20 @@ du microbit est disponible à la toute fin de ce TP.
 pour que son microbit affiche une barre de chargement, puis affiche le message 
 `"Salut Joseph !"` suivi d'un smiley qui sourit. 
 
+
+
+
+
+# Les fonctions du `micro:bit`
+## Les fonctions d'affichage
+- `display.set_pixel(colonne, ligne, intensite)`
+- `display.scroll(message)`
+- `display.show(Image.UNE_IMAGE)` (La liste de toutes les images disponibles est
+        ici : https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes)
+
+## Les boutons
+
+## Les fonctions générales
+- `sleep(millisecondes)`
 
 
