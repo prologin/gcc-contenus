@@ -82,49 +82,80 @@ colonnes se fait à partir de 0.
 # Les fonctions de contrôle du micro:bit
 
 Comme tu l'as vu plus tôt, il existe des fonctions qui permettent de contrôler
-le microbit. En ce qui concerne la fonction `display.set_pixel(colonne, ligne,
-intensite)`, voici un petit schéma qui permet de mieux comprendre les
-corrdonnées de chaque led (la coordonnée **X** correspond au numéro de 
-**colonne** et la coordonnée **Y** correspond au numéro de **ligne**) :
+le microbit. Nous allons ici te présenter les principales. 
+
+
+## Comment afficher quelque chose ?
+Il existe de nombreuses façons d'afficher quelque chose sur l'écran du microbit.
+La première et la plus basique consiste à choisir les leds que l'on veut allumer
+et à les allumer une par une. Pour cela, tu l'as vu juste avant, on utilise la
+fonction `display.set_pixel(colonne, ligne, intensite)`, où `colonne` représente
+le numéro de la colonne de la led à allumer, `ligne` le numéro de la ligne et
+enfin `intensite` est l'intensité avec laquelle la LED va s'allumer (ça va de 0
+        pour une LED éteinte à 9 pour une LED allumée à pleine puissance). 
+
+En ce qui concerne cette fonction, voici un petit schéma qui permet de mieux 
+comprendre les corrdonnées de chaque led (la coordonnée **X** correspond au
+numéro de **colonne** et la coordonnée **Y** correspond au numéro de **ligne**) :
 
 ![Coordonnées des leds](resources/microbit_coordinates.png)
 
-## Comment afficher quelque chose ?
-Voici les principales fonctions principales permettant d'afficher quelque chose
-sur les LED :
-
-- `display.set_pixel(C, L, I)` : permet d'allumer la LED située au croisement de
-la colonne `C` et de la ligne `L` avec une intensité de `I` (l'intensité variant
-        de 0 pour une LED éteinte à 9 pour une LED allumée à pleine puissance).
-
-- `display.scroll(message)` : permet d'afficher une chaine de caractères
-- `display.show(Image)` : permet d'afficher une image pré-enregistrée. Le
-fonctionnement des images est expliquée juste après.
+### Mini-exercice
+**But :** Afficher un coeur sur l'écran
+_Ça devrait ressembler à quelque chose comme ça :_
+![](resources/empty_heart.png)
 
 
-### Les images
-Les images que l'ont peut afficher sur la matrice LED sont des sortes de smiley
-assez minimalistes. Il en existe de nombreuses qui sont déjà dessinée. On y
-accède en tapant `Image.MONIMAGE` où `MONIMAGE` est le nom de l'image. 
+## Les images
+
+Comme tu as pu le constater, c'est assez long et fasctidieux d'afficher quelque
+chose de complexe avec la fonction précédente. Pour nous faciliter la vie, il
+existe quelques autres fonctions, et une en particulier qui est faite pour
+afficher des images et des symboles : `display.show(Image.UNE_IMAGE)`. Comme tu
+peux le voir, cette fonction prend en paramètre une image, que tu peux trouver
+en faisant `Image.` suivi du nom de l'image. 
+Il en existe de nombreuses qui sont déjà dessinée. On y
+accède en tapant `Image.` suivi du nom de l'image que tu recherches. 
 Voici à quoi ressemblent les images `HEART` et `SMILE` :
 
 ![`Image.HEART` et `Image.SMILE`](resources/microbit_images.jpg)
 
+### Mini-exercice
+**But :** Afficher un smiley content sur l'écran du microbit.
+
+
+## Et le texte ?
+C'est super, tu sais maintenant comment allumer les LED une par une et afficher
+une image. Mais comment faire si jamais tu veux afficher un message sur l'écran ?
+Et bien la vie est bien faite, puisqu'il existe une fonction pour faire cela.
+Mais juste avant, il faut comprendre comment ton ordinateur fait la différence
+entre ton code et du texte que tu voudrais afficher. Ce n'est pas compliqué, il
+suffit de mettre ton texte entouré par des guillemets (`"`).
+Voici un exemple de chaine de caratères : `"Je suis Joseph Marchand !"`.
+
+Maintenant que tu sais ça, revenons à nos moutons. La fonction pour afficher du 
+texte sur l'écran s'appelle `display.scroll(message)`. Elle prend en paramètre la
+chaine de caractères que tu veux afficher. 
+
+### Mini-exercice
+**But :** Afficher le texte de ton choix sur l'écran du microbit.
+
 
 ## Ça va trop vite !
 Une autre fonction bien pratique est la fonction `seep(millisecondes)` qui
-permet, comme évoqué plus haut, de mettre en pause ton programme pour, par
-exemple, te laisser le temps de voir ce qu'il se passe. 
+permet, comme évoqué dans la partie "Notre premier programme", de mettre en pause
+ton programme pour, par exemple, te laisser le temps de voir ce qu'il se passe. 
 
 
-Nous avons déjà vu beaucoup de choses nouvelles. Si jamais tu as une question ou
-si tu n'as pas compris quelque chose, n'hésite surtout pas à demander de l'aide
-à un organisateur. 
+
+Nous avons vu beaucoup de choses nouvelles dans cette partie. Si jamais tu as une
+question ou si tu n'as pas compris quelque chose, n'hésite surtout pas à demander
+de l'aide à un organisateur. 
 N'hésite pas non plus à relire les parties que tu n'as pas compris. 
 Si jamais tu as besoin, une liste _presque_ exhaustive des fonctions de contrôle
 du microbit est disponible à la toute fin de ce TP. 
 
-# Mini-exercice
+### Exercice 1
 **But :** Essayez d'afficher une barre de chargement, puis d'afficher le message
-`"Salut !"` suivi de l'image de votre choix
+`"Salut Maxime !"` suivi de l'image de ton choix.
 
