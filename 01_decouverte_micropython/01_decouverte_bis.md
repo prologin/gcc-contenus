@@ -1,9 +1,9 @@
 ---
-title: Découverte de Python
+title: Découverte de Micropython
 date: 2022
 ---
 
-# Introduction à la programmation
+# Introduction
 
 Tous les ordinateurs ne sont rien d'autres que des composants électroniques qui
 exécutent des instructions. Lorsque tu ouvres un navigateur internet, ton
@@ -101,7 +101,7 @@ numéro de **colonne** et la coordonnée **Y** correspond au numéro de **ligne*
 ![Coordonnées des leds](resources/microbit_coordinates.png)
 
 ### Mini-exercice
-**But :** Afficher un coeur sur l'écran
+**But :** Affiche un coeur sur l'écran
 _Ça devrait ressembler à quelque chose comme ça :_
 ![](resources/empty_heart.png)
 
@@ -156,6 +156,9 @@ Si jamais tu as besoin, une liste _presque_ exhaustive des fonctions de contrôl
 du microbit est disponible à la toute fin de ce TP. 
 
 ### Exercice 1
-**But :** Essayez d'afficher une barre de chargement, puis d'afficher le message
-`"Salut Maxime !"` suivi de l'image de ton choix.
+**But :** Max, qui est un ami de Joseph, nous a demandé de créer un programme
+pour que son microbit affiche une barre de chargement, puis affiche le message 
+`"Salut Joseph !"` suivi d'un smiley qui sourit. 
+
+
 
