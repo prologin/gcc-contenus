@@ -117,7 +117,7 @@ numéro de **colonne** et la coordonnée **Y** correspond au numéro de **ligne*
 ### Mini-exercice
 **But :** Affiche un coeur sur l'écran
 _Ça devrait ressembler à quelque chose comme ça :_
-![](resources/empty_heart.png)
+![](resources/empty_heart.png){width=5cm}
 
 
 ## Les images
@@ -243,7 +243,7 @@ sur l'écran.
 - `display.set_pixel(colonne, ligne, intensite)`
 - `display.scroll(message)`
 - `display.show(Image.UNE_IMAGE)` (La liste de toutes les images disponibles est
-        ici : https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes)
+        [ici](https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes) (https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes)
 
 ## Les boutons
 
