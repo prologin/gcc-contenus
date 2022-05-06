@@ -98,7 +98,7 @@ Comme tu l'as vu plus tôt, il existe des fonctions qui permettent de contrôler
 le microbit. Nous allons ici te présenter les principales.
 
 
-## Comment afficher quelque chose ?
+## Allumer des LEDs
 
 Il existe de nombreuses façons d'afficher quelque chose sur l'écran du micro:bit.
 La première, et la plus basique, consiste à choisir les LEDs que l'on veut allumer
@@ -175,9 +175,7 @@ pour que son microbit affiche une barre de chargement, puis affiche le message
 `"Salut Joseph !"` suivi d'un smiley qui sourit. 
 
 
-# Enregistrer des valeurs
-
-## Les variables
+# Les variables
 
 Jusque là, on a vu comment faire afficher des images et du texte sur le 
 `Micro:bit`, mais il se passe toujours la même chose. Heureusement, un 
@@ -188,7 +186,7 @@ va pouvoir enregistrer des valeurs. Quand on crée une variable, on commence par
 lui donner un nom qui va être utilisé pour lire ou modifier la valeur qui lui
 a été donnée.
 
-### Utilisation des variables
+## Utilisation des variables
 
 Pour **créer une variable** il suffit d'écrire `nom_de_la_variable =
 valeur_initiale`, par exemple : `nombre_de_patates = 42`.
@@ -217,19 +215,45 @@ x = x + y
 display.scroll(x)
 ```
 
-#### Mini Exercice
+### Mini Exercice
 **But :** Crée une variable avec la valeur 42, puis ajoute-y 2 et affiche-la 
 sur l'écran.
 
-### Types de variables
+## Types de variables
 
-##### Nombres
+### Nombres
 
-##### Chaines de caractères
+### Chaines de caractères
 
-##### Booléens
+### Booléens
 
-## Et si...
+
+# Comment utiliser les boutons du microbit ?
+
+Comme tu le voir, il y a deux boutons physiques sur le microbit : le bouton A et
+le bouton B. Mais il y a aussi un bouton tactile au niveau du logo au dessus de
+l'écran. Voici un petit schéma qui te permet de repérer les différents boutons : 
+
+![](resources/microbit_buttons.png)
+
+Pour utiliser les boutons A et B, tu peux respectivement utiliser la fonction
+`button_a.get_presses()` et `button_b.get_presses()`. Ces fonctions renvoient le
+nombre d'appuis sur le bouton depuis la dernière fois qu'elles ont été appelée.
+Par exemple, ce code va prendre le nombre de fois que le bouton A a été appuyé
+au cours des 5 dernières secondes :
+
+```python
+from microbit import *
+
+sleep(5000)
+display.scroll(button_a.get_presses())
+```
+
+En ce qui concerne le bouton au tactile, tu peux détecter si tu appuies dessus
+en utilisant la fonction `pin_logo.is_touched()`, qui renvoie un booléen. 
+
+
+# Et si...
 
 (conditions)
 
@@ -246,6 +270,10 @@ sur l'écran.
         [ici](https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes) (https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes)
 
 ## Les boutons
+- `button_a.get_presses()`
+- `button_b.get_presses()`
+- `pin_logo.is_touched()`
+
 
 ## Les fonctions générales
 - `sleep(millisecondes)`
