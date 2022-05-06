@@ -252,6 +252,10 @@ display.scroll(button_a.get_presses())
 En ce qui concerne le bouton au tactile, tu peux détecter si tu appuies dessus
 en utilisant la fonction `pin_logo.is_touched()`, qui renvoie un booléen. 
 
+### Exercice 2
+**But :** Crée un programme qui affiche la somme du nombre d'appuis sur les
+boutons A et B au cours des 3 dernières secondes. 
+
 
 # Et si...
 
