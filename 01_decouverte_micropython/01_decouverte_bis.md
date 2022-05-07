@@ -226,6 +226,9 @@ sur l'écran.
 ### Chaines de caractères
 
 ### Booléens
+(expliquer qu'il permettent de stocker un booleen (lol) et en profiter pour
+expliquer ce qu'est une condition ici ? (comme ca on a pas a le reexpliquer
+dans les conditions et les boucles))
 
 
 # Comment utiliser les boutons du microbit ?
@@ -252,14 +255,143 @@ display.scroll(button_a.get_presses())
 En ce qui concerne le bouton au tactile, tu peux détecter si tu appuies dessus
 en utilisant la fonction `pin_logo.is_touched()`, qui renvoie un booléen. 
 
-### Exercice 2
+### Mini-exercice
 **But :** Crée un programme qui affiche la somme du nombre d'appuis sur les
 boutons A et B au cours des 3 dernières secondes. 
+
+## Un exemple un peu plus complexe
+
+Voici un exemple de petit programme qui déclenche un compte à rebours avant de
+donner 5 secondes pour appuyer autant de fois que possible sur le bouton de gauche.
+
+```python
+from microbit import *
+
+# Compte à rebours
+display.set_pixel(0, 2, 9)
+sleep(500)
+display.set_pixel(1, 2, 9)
+sleep(500)
+display.set_pixel(2, 2, 9)
+sleep(500)
+display.set_pixel(3, 2, 9)
+sleep(500)
+display.set_pixel(4, 2, 9)
+
+# Phase de jeu
+button_a.get_presses()     # réinitialise le compteur d'appuis
+sleep(5000)                # donne 5 secondes pour jouer
+a = button_a.get_presses() # récupère le nombre d'appuis
+
+# Affichage du score
+display.scroll("Score: " + str(a))
+```
+
+### Exercice 3
+
+**But :** Joseph voudrait connaitre le résultat de la multiplication de deux
+nombres. Pour récupérer la valeur des deux nombres tu peux donner quelques secondes
+à l'utilisateur pour appuyer le bon nombre de fois sur chaque bouton. Par exemple,
+si pendant ce temps, tu appuies 3 fois sur le bouton de gauche et 7 fois sur celui 
+de droite, le programme affichera `3 * 7 = 21` sur l'écran.
 
 
 # Et si...
 
-(conditions)
+## Avant de continuer...
+
+Avant de continuer avec les structures conditionnelles (je t'explique ça juste
+après), je dois t'expliquer une partie importante de la programmation :
+l'**indentation**. 
+L'indentation correspond au nombre d'espaces avant le début d'une ligne. Par
+exemple, la première ligne ci-dessous à une indentation égale à **0** (pas
+d'espaces en début de ligne), et la troisième ligne à une indentation égale à
+**4** (quatre espaces en début de ligne).
+
+```python
+display.scroll("Coucou") # Ligne qui n'est pas indentée
+if True:
+    display.show(Image.SMILE) # Ligne qui est indentée
+```
+
+Tu peux te demander, comment facilement faire des indentations ? 
+Et bien il te suffit simplement d'appuyer sur la touche `tabulation`. Celle qui
+ressemble à ça (c'est la touche juste au dessus de la touche `verrouillage
+majuscule`): 
+
+![](resources/tabulation.png)
+
+Pour l'instant il te suffit juste de savoir ça, je reviendrais là-dessus juste
+après. 
+
+
+## Revenons à nos conditions
+
+Maintenant que tu sais utiliser des variables et plusieurs fonctions de contrôle
+du microbit, tu dois vouloir faire réagir ton programme en fonction de toutes
+ces donnée. Et bien ça tombe bien, car Python sait faire ça grâce aux
+instructions `if`, `elif` et `else`. 
+
+L'instruction `if` permet de décider de n'exécuter un morceau de code que
+lorsqu'une condition est vraie. Ce sont les même conditions que celles décrites
+dans la section "Booléens" de la partie sur les types de variables. 
+Pour écrire une condition, la syntaxe est : `if condition:`
+suivi d'un bloc de code indenté. Le bloc de code en question ne sera alors
+exécuté que si `condition` s'évalue à `True`. Un `if` peut être accompagné
+d'un `else` qui exécute un bloc de code uniquement si la condition du `if`
+est fausse. Enfin, il y a aussi le `elif` qui est la contraction du `else` et
+du `if`. Le `elif` n'est exécuté que si sa condition est vraie et que les
+conditions précédentes sont fausses.
+
+Voici un exemple simple pour illustrer :
+
+```python
+from random import randint
+from microbit import *
+
+x = randint(0, 100)  # assigne un nombre aléatoire à x compris entre 0 et 100
+
+if x < 30:
+    display.scroll('x est inférieur à 30')
+elif x < 50:
+    display.scroll('x est inférieur à 50')
+elif x < 80:
+    display.scroll('x est inférieur à 80')
+else:
+    display.scroll('x est supérieur à 80')
+```
+
+### Mini-exercice
+**But :** Essaye de trouver ce que va afficher le programme ci-dessus pour `x =
+0`, `x = 42` et `x = 238`. 
+
+*Remarques :*
+
+- Un `if` n'est pas nécessairement accompagné d'un `else` (ou d'un `elif`).
+Dans ce cas, si sa condition est fausse, rien n'est exécuté
+- On peut ajouter autant de `elif` que l'on veut après un `if`
+
+*Tout est clair ?*
+
+Si jamais tu as une question ou s'il y a quelque chose que tu n'as pas compris,
+n'hésite pas.
+
+### Et les indentations dans tout ça ?
+
+Voici donc une deuxième partie sur les indentations. Comme tu as pu le voir dans
+les codes d'exemples, le _bloc de code_ qui est exécuté lorsque la condition du
+`if` est vérifiée est **indenté**. L'indentation permet à Python de différencier
+les différents `blocs de code`, et ainsi de savoir ce qui doit être exécuté ou
+non dans des structures plus complexes comme les structures conditionnelles (les
+`if`, `elif`, `else`).
+
+La partie sur les indentation est une partie très importante car elle ne permet
+pas seulement de permettre à Python de différencier les blocs de code, mais
+aussi de rendre ton code plus clair et plus lisible. 
+Si jamais tu as une quelconque question ou qu'il y a quelque chose que tu n'as
+pas compris, n'hésite pas à faire appel à un organisateur. 
+
+
 
 ## Ca fait beaucoup de lignes
 
