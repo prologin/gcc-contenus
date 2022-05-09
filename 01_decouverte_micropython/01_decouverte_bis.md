@@ -273,10 +273,26 @@ sa valeur.
 
 
 ### Booléens
-(expliquer qu'il permettent de stocker un booleen (lol) et en profiter pour
-expliquer ce qu'est une condition ici ? (comme ca on a pas a le reexpliquer
-dans les conditions et les boucles))
 
+Enfin, les booléens servent à exprimer le vrai ou le faux. Il n'y a que deux
+valeurs possibles pour ce type de variables : `True` (vrai) et `False` (faux).
+
+Des valeurs booléennes sont renvoyées par les opérations de comparaisons : `==`
+(égalité), `!=` (différence), `<`, `>` (les inégalités strictes), `<=` et `>=`
+(les inégalités larges). Par exemple `1 < 2` vaut `True` mais `3 != 3` vaut
+`False`.
+
+Enfin, il est possible de manipuler les valeurs booléennes avec les opérateurs
+`not`, `and` et `or` :
+
+ - `not a` vaut l'inverse de `a`, donc `True` si a vaut `False`;
+ - `a and b` vaut `True` si et seulement si `a` **et** `b` valent `True`;
+ - `a or b` vaut `True` si et seulement si `a` **ou** `b` valent `True`.
+
+#### Mini-Exercice
+**But :** Après une discussion intense avec le marchand, Joseph n'est plus sûr
+de ses calculs. Les bananes coûtant 3€, il pense que pour 7 bananes il en aura
+pour 22€. Calcule le vrai prix et affiche si celui de Joseph est le bon.
 
 # Comment utiliser les boutons du microbit ?
 
