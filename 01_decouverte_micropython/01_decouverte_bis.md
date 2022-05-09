@@ -409,7 +409,7 @@ après.
 
 Maintenant que tu sais utiliser des variables et plusieurs fonctions de contrôle
 du microbit, tu dois vouloir faire réagir ton programme en fonction de toutes
-ces donnée. Et bien ça tombe bien, car Python sait faire ça grâce aux
+ces données. Et bien ça tombe bien, car Python sait faire ça grâce aux
 instructions `if`, `elif` et `else`. 
 
 L'instruction `if` permet de décider de n'exécuter un morceau de code que
@@ -454,7 +454,7 @@ Dans ce cas, si sa condition est fausse, rien n'est exécuté
 *Tout est clair ?*
 
 Si jamais tu as une question ou s'il y a quelque chose que tu n'as pas compris,
-n'hésite pas.
+n'hésite pas à demander aux orgas.
 
 ### Et les indentations dans tout ça ?
 
