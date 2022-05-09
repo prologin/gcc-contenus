@@ -306,12 +306,26 @@ l'**indentation**.
 L'indentation correspond au nombre d'espaces avant le début d'une ligne. Par
 exemple, la première ligne ci-dessous à une indentation égale à **0** (pas
 d'espaces en début de ligne), et la troisième ligne à une indentation égale à
-**4** (quatre espaces en début de ligne).
+**4** (quatre espaces en début de ligne.
 
 ```python
 display.scroll("Coucou") # Ligne qui n'est pas indentée
 if True:
     display.show(Image.SMILE) # Ligne qui est indentée
+```
+
+**Attention**, l'indentation doit être constante tout le long du programme !
+Avec des blocs indentés de 1 3 puis 2 espaces, python a du mal a comprendre ce 
+qui se passe.
+
+```python
+display.scroll("Coucou")
+if True:
+  display.scroll("Ceci")
+ display.scroll("est un")
+   display.scroll("mauvais")
+    display.scroll("exemple")
+  display.scroll("d'indentation")
 ```
 
 Tu peux te demander, comment facilement faire des indentations ? 
@@ -378,12 +392,12 @@ n'hésite pas.
 
 ### Et les indentations dans tout ça ?
 
-Voici donc une deuxième partie sur les indentations. Comme tu as pu le voir dans
-les codes d'exemples, le _bloc de code_ qui est exécuté lorsque la condition du
-`if` est vérifiée est **indenté**. L'indentation permet à Python de différencier
-les différents `blocs de code`, et ainsi de savoir ce qui doit être exécuté ou
-non dans des structures plus complexes comme les structures conditionnelles (les
-`if`, `elif`, `else`).
+Comme tu as pu le voir dans les codes d'exemples, le _bloc de code_ qui est 
+exécuté lorsque la condition du `if` est vérifiée est **indenté**. 
+Lorsque l'on sort de la condition, le code perd son indentation. L'indentation 
+permet à Python de différencier les différents `blocs de code`, et ainsi de 
+savoir ce qui doit être exécuté ou non dans des structures plus complexes comme 
+les structures conditionnelles (les `if`, `elif`, `else`).
 
 La partie sur les indentation est une partie très importante car elle ne permet
 pas seulement de permettre à Python de différencier les blocs de code, mais
