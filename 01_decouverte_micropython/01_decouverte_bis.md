@@ -193,8 +193,8 @@ valeur_initiale`, par exemple : `nombre_de_patates = 42`.
 
 Ensuite on peut **réutiliser la valeur** stockée dans la variable en
 l'identifiant par son nom, par exemple on peut créer une nouvelle variable
-`prix` qui dépend de la variable qui a été créé précédemment : `prix =
-nombre_de_patates * 50`.
+`prix` qui dépend de la variable qui a été créée précédemment : `prix =
+nombre_de_patates + 50`.
 
 Pour **modifier une variable** on utilise aussi le symbole d'égalité, par
 exemple on peut augmenter de 1 la valeur stockée dans une variable :
@@ -223,7 +223,54 @@ sur l'écran.
 
 ### Nombres
 
+Comme leur nom l'indique, il s'agit tout simplement de nombres (positifs ou 
+négatifs). On peut donc faire des opérations dessus avec les opérateurs 
+classiques : `+`, `-`, `*` (multiplication), `/` (division).
+
+```python
+x = 3 * 4
+y = x / 2
+z = 8 + 1
+```
+
+Ici `x` vaut 12, `y` vaut 6.0, et `z` vaut 9. Nous pouvons aussi combiner
+plusieurs opérations ensemble, par exemple :
+
+```python
+a = (x - y) + z
+```
+
+#### Mini-Exercice
+**But :** Joseph a envie de bananes. Le marchand lui propose de les acheter pour
+2€ l'unité. Combien 10 bananes vont-elles lui coûter ? Affiche le résultat sur 
+le `Micro:bit`.
+
 ### Chaines de caractères
+
+On peut créer du texte en mettant son contenu entre guillemets (par exemple :
+`mon_texte = "Bonjour tous le monde !"`). On peut aussi attacher des morceaux
+de textes entre eux avec l'opérateur `+` (par exemple : `mon_texte = mon_texte +
+"!!"`).
+
+À noter qu'il est souvent très pratique de convertir un nombre en texte pour
+ensuite l'incorporer dans une phrase, on peut faire ça avec la fonction
+`str(nombre)`.
+
+```python
+from microbit import *
+
+nombre_de_patates = 42
+texte = "Il y a " + str(nombre_de_patates) + " patates !"
+display.scroll(texte)  # Affiche "Il y a 42 patates !" sur l'écran
+```
+
+#### Mini-Exercice
+**But :** Comme dans l'exercice précédent, Joseph a besoin de savoir combien 
+vont lui coûter ses bananes. Mais le marchand a augmenté le prix et les bananes 
+coûtent désormais 3€ chacunes. Après avoir calculé, affiche `"Payer (le prix) 
+pour 10 bananes ? Mais c'est beaucoup trop cher !"` en remplacant `le prix` par 
+sa valeur.
+
 
 ### Booléens
 (expliquer qu'il permettent de stocker un booleen (lol) et en profiter pour
@@ -300,7 +347,7 @@ de droite, le programme affichera `3 * 7 = 21` sur l'écran.
 
 ## Avant de continuer...
 
-Avant de continuer avec les structures conditionnelles (je t'explique ça juste
+Avant de continuer avec les conditions (je t'explique ça juste
 après), je dois t'expliquer une partie importante de la programmation :
 l'**indentation**. 
 L'indentation correspond au nombre d'espaces avant le début d'une ligne. Par
@@ -314,9 +361,12 @@ if True:
     display.show(Image.SMILE) # Ligne qui est indentée
 ```
 
+L'indentation permet surtout de définir des blocs. Chaque ligne avec la même 
+indentation fait donc partie du même bloc.
+
 **Attention**, l'indentation doit être constante tout le long du programme !
-Avec des blocs indentés de 1 3 puis 2 espaces, python a du mal a comprendre ce 
-qui se passe.
+Avec des blocs indentés de 1, 3 puis 2 espaces, python a du mal a comprendre ce 
+qui se passe. En général, on décale le code de 4 espaces à chaque fois.
 
 ```python
 display.scroll("Coucou")
@@ -395,16 +445,14 @@ n'hésite pas.
 Comme tu as pu le voir dans les codes d'exemples, le _bloc de code_ qui est 
 exécuté lorsque la condition du `if` est vérifiée est **indenté**. 
 Lorsque l'on sort de la condition, le code perd son indentation. L'indentation 
-permet à Python de différencier les différents `blocs de code`, et ainsi de 
-savoir ce qui doit être exécuté ou non dans des structures plus complexes comme 
-les structures conditionnelles (les `if`, `elif`, `else`).
+permet à Python de différencier les `blocs de code` appartenant aux conditions, 
+et ainsi de savoir ce qui doit être exécuté ou non.
 
 La partie sur les indentation est une partie très importante car elle ne permet
 pas seulement de permettre à Python de différencier les blocs de code, mais
 aussi de rendre ton code plus clair et plus lisible. 
 Si jamais tu as une quelconque question ou qu'il y a quelque chose que tu n'as
 pas compris, n'hésite pas à faire appel à un organisateur. 
-
 
 
 ## Ca fait beaucoup de lignes
