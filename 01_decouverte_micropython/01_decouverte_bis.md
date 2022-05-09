@@ -45,6 +45,11 @@ Pour écrire nos programmes, nous utiliserons `Mu`, que tu as pu découvrir dans
 
 Si tu n'as pas réussi à bien installer `Mu`, demande aux organisateurs de t'aider.
 
+
+
+
+
+
 # Ton premier programme
 
 Un programme en Python est constitué d'une série d'instructions qui sont exécutées par un
@@ -89,6 +94,11 @@ Exécutons 'à la main' ce petit programme pour comprendre ce qu'il fait :
    qu'une diode s'allume avant l'autre !
 5. La suite du programme se répète : on allume les diodes des colonnes numéro 1,
    2, 3 puis 4.
+
+
+
+
+
 
 
 
@@ -173,6 +183,13 @@ du microbit est disponible à la toute fin de ce TP.
 **But :** Max, qui est un ami de Joseph, te demande de créer un programme
 pour que son microbit affiche une barre de chargement, puis affiche le message 
 `"Salut Joseph !"` suivi d'un smiley qui sourit. 
+
+
+
+
+
+
+
 
 
 # Les variables
@@ -294,6 +311,12 @@ Enfin, il est possible de manipuler les valeurs booléennes avec les opérateurs
 de ses calculs. Les bananes coûtant 3€, il pense que pour 7 bananes il en aura
 pour 22€. Calcule le vrai prix et affiche si celui de Joseph est le bon.
 
+
+
+
+
+
+
 # Comment utiliser les boutons du microbit ?
 
 Comme tu le voir, il y a deux boutons physiques sur le microbit : le bouton A et
@@ -357,6 +380,13 @@ nombres. Pour récupérer la valeur des deux nombres tu peux donner quelques sec
 à l'utilisateur pour appuyer le bon nombre de fois sur chaque bouton. Par exemple,
 si pendant ce temps, tu appuies 3 fois sur le bouton de gauche et 7 fois sur celui 
 de droite, le programme affichera `3 * 7 = 21` sur l'écran.
+
+
+
+
+
+
+
 
 
 # Et si...
@@ -472,6 +502,14 @@ pas compris, n'hésite pas à faire appel à un organisateur.
 
 
 
+
+
+
+
+
+
+
+
 # Ca fait beaucoup de lignes
 
 Tu sais maintenant comment créer des programmes assez complexes. Mais imaginons
@@ -550,6 +588,7 @@ peux récupérer les nombres en comptant le nombre d'appuis sur le bouton A, en
 laissant quelques secondes à chaque fois. 
 
 
+
 ## Tant que 
 
 La boucle **while** est une boucle dont le bloc de code est répété tant qu'une
@@ -569,9 +608,29 @@ Nous avons sur la première ligne la déclaration de la boucle avec le mot-clé
 appuieras sur le bouton A. 
 Pour ce qui concerne les lignes suivantes, tu connais déjà leur comportement. 
 
+### Mini-exercice
+**But :** Ecris un programme qui compte et affiche le nombre d'appuis sur les
+boutons A et B avant que le logo tactile ne soit touché. 
+
+
+
+# Projet
+_Faire un exo qui met en rapport toutes les notions vu ici_
+
+
+
 
 
 # Conclusion
+
+
+
+
+
+
+
+
+
 
 
 # Continuer la programmation chez soi
