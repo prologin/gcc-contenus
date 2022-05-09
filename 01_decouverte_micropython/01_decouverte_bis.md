@@ -477,19 +477,28 @@ pas compris, n'hésite pas à faire appel à un organisateur.
 
 
 # Les fonctions du `micro:bit`
+
+Voici une petite liste non exhaustive des fonctions de contrôle du microbit. 
+Les fonctions sont notées sous la forme `nom_de_la_fonction(arguments) ->
+valeur_de_retour`. 
+Les valeurs de retour sont ce que renvoie la fonction. Cela peut être :
+- `int` pour `entier`
+- `bool` pour `booléen`
+- `void` pour signifier que la fonction ne renvoie rien
+
 ## Les fonctions d'affichage
-- `display.set_pixel(colonne, ligne, intensite)`
-- `display.scroll(message)`
-- `display.show(Image.UNE_IMAGE)` (La liste de toutes les images disponibles est
+- `display.set_pixel(colonne, ligne, intensite) -> void`
+- `display.scroll(message) -> void`
+- `display.show(Image.UNE_IMAGE) -> void` (La liste de toutes les images disponibles est
         [ici](https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes) (https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes)
 
 ## Les boutons
-- `button_a.get_presses()`
-- `button_b.get_presses()`
-- `pin_logo.is_touched()`
+- `button_a.get_presses() -> int`
+- `button_b.get_presses() -> int`
+- `pin_logo.is_touched() -> bool`
 
 
 ## Les fonctions générales
-- `sleep(millisecondes)`
+- `sleep(millisecondes) -> void`
 
 
