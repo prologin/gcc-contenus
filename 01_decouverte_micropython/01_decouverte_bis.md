@@ -616,7 +616,33 @@ boutons A et B avant que le logo tactile ne soit touché.
 
 # Projet
 
+Il est maintenant temps de mettre en pratique tout ce que vous avez appris au
+cours de ce TP avec un petit projet. Rien de compliqué, je te rassure, et puis
+si tu as des questions, les organisateurs sont là pour ça !
 
+## But
+
+Joseph est dans la panade... Il aurait besoin de deux dés à 6 faces pour jouer
+au Monopoly avec ses amis, mais il les a oublié et tout ce qu'il a à sa
+disposition est un microbit... 
+Joseph te demande alors de lui faire un programme qui simule un lancé de deux 
+dés et affiche le résultat (le résultat est donc entre 2 et 12) lorsque le
+bouton A ou le bouton B est appuyé.  
+Mais comme Joseph ne veut pas faire que ses amis pensent qu'il a simplement
+oublié les vrais dés, il voudrait donc y ajouter quelques fonctionnalités : 
+- Il voudrait que le chiffre disparaisse 5 secondes après être apparu
+- Il voudrait aussi que si le lancé est un double, un smiley content s'affiche
+juste après le chiffre
+- Il voudrait enfin que si trois doubles sont fait d'affilé, un smiley pas
+content s'affiche à la place de la valeur des dés
+
+## Tips
+
+N'hésite pas à faire ce projet étape par étape. Tu peux commencer par coder le
+lancé des deux dés, et lorsque cela fonctionne ajouter les différentes demandes
+de Joseph les une après les autres. 
+Si tu as une quelconque question, encore une fois, les organisateurs sont là
+pour y répondre. 
 
 
 
