@@ -471,34 +471,281 @@ Si jamais tu as une quelconque question ou qu'il y a quelque chose que tu n'as
 pas compris, n'hésite pas à faire appel à un organisateur. 
 
 
-## Ca fait beaucoup de lignes
 
-(boucles for/while et indentation)
+# Ca fait beaucoup de lignes
+
+Tu sais maintenant comment créer des programmes assez complexes. Mais imaginons
+que tu veuilles effectuer plusieurs fois la même action. Tu pourrais écrire un
+bout de code et le copier/coller le nombre de fois que tu veux le répéter, mais
+c'est assez long et peu efficace. Et bien ça tombe bien, il existe en Python ce
+que l'on appelle des `boucles`, c'est-à-dire des petits bouts de codes qui
+peuvent se répéter. Il en existe deux : les boucles `for` et les boucles
+`while`. Nous allons commencer par la première.
+
+## Pour un certain nombre de fois
+
+Nous allons donc ici traiter la boucle `for`. Ce type de boucle sert à répéter
+un certain nombre de fois un bloc de code. Ce nombre de répétition **doit être
+connu** d'une manière ou d'une autre. Le cas où ce nombre n'est pas connu est
+traité dans la boucle `while` un peu plus bas. 
+
+Voyons le fonctionnement de ce type de boucles à travers un exemple simple : 
+
+```python
+for i in range(5):
+    # Ce qui suit va être répété 5 fois, une variable `i` est créée,
+    # et va prendre successivement les valeurs 0, 1, 2, 3 puis 4.
+    display.scroll("Hi number " + str(i))
+    sleep(500)
+
+display.show(Image.SMILE) # Cette ligne de code n'est pas répétée
+```
+
+1. Nous avons ici la déclaration de la boucle. C'est la partie la plus complexe.
+   Nous avons d'abord le mot clé `for` qui indique que la déclaration commence.
+   Nous avons ensuite une variable `i`. Elle peut prendre n'importe quel nom,
+   ce n'a pas d'importance. Nous avons enfin le `range(5)` qui nous indique que
+   la boucle sera répétée `5` fois. Comme indiqué en commentaire, la variable
+   `i` prendra successivement les valeurs de 0 à 5 exclu. Le `5` peut être
+   remplacé par n'importe quelle valeur numérique entière. 
+2. Affiche la phrase `"Hi number "` suivi de la valeur de `i`. La fonction
+   `str()` permet de transformer un entier en une chaine de caractères. 
+3. Ici vous connaissez déjà la signification de cette fonction. 
+4. Ici aussi
+
+Voici un petit schéma pour bien différencier les différents blocs de code : 
+
+![](resources/for_loop.png)
+
+
+Bien sûr, il est possible d'"emboîter" des boucles les unes dans les
+autres :
+
+```python
+# La prochaine ligne ne sera exécutée qu'une seule fois:
+display.scroll("start")
+
+for i in range(5):  # Début du bloc `for` n°1
+    # La prochaine ligne sera exécutée 5 fois:
+    display.scroll("i=" + str(i))
+
+    for j in range(5):  # Début du bloc `for` n°2
+        # La prochaine ligne sera exécutée 5*5 = 25 fois:
+        display.scroll("j=" + str(j))
+    # Fin du bloc `for` n°2
+
+    # La prochaine ligne sera aussi exécutée 5 fois:
+    display.scroll("i=" + str(i))
+# Fin du bloc `for` n°1
+
+# La prochaine ligne ne sera aussi exécutée qu'une seule fois:
+display.scroll("end")
+```
+
+### Mini-exercice
+**But :** Comme pour l'exercice 3, Joseph voudrait connaitre le résultat de la
+multiplication de différents nombres. Sauf que cette fois-ci, il ne veut pas se
+limiter à deux nombres. Ecris un programme qui multiplie 3 nombres entre eux. Tu
+peux récupérer les nombres en comptant le nombre d'appuis sur le bouton A, en
+laissant quelques secondes à chaque fois. 
+
+
+## Tant que 
+
+La boucle **while** est une boucle dont le bloc de code est répété tant qu'une
+condition est vérifiée (d'où son nom :D). Illustrons cette boucle à travers un
+exemple de code : 
+
+```python
+while button_a.get_presses == 0:
+    display.scroll("Appuie sur le bouton A pour sortir")
+    sleep(500)
+
+display.scroll("Tu es sorti !")
+```
+
+Nous avons sur la première ligne la déclaration de la boucle avec le mot-clé
+`while` suivi de la condition d'arrêt. Ici, la boucle s'arrêtera lorsque tu 
+appuieras sur le bouton A. 
+Pour ce qui concerne les lignes suivantes, tu connais déjà leur comportement. 
+
+
+
+# Conclusion
+
+
+# Continuer la programmation chez soi
+
+Si tu souhaites installer un logiciel de programmation sur ton ordinateur
+plutôt que d'utiliser un site web, nous te recommandons vraiment [Mu
+editor](https://codewith.mu/) ([https://codewith.mu/](https://codewith.mu/)),
+disponible sur Mac, Windows et Linux, facile à utiliser et possède un mode
+spécial pour les `micro:bit`.
+
+Ce TP couvre les bases essentielles de la programmation, pour continuer nous te
+conseillons les ressources suivantes :
+
+- France ioi ([http://www.france-ioi.org/](http://www.france-ioi.org/)) : un
+  site d'entrainement à la programmation qui propose des leçons suivis de
+  problèmes à résoudre, la difficulté y est très progressive.
+- Girls Can Code! : Nous organisons des stages courts et des stages longs, tous
+  les TPs des stages sont disponibles ici :
+  https://github.com/prologin/gcc-resources et bientôt ils seront détaillés dans
+  une nouvelle section de notre site :
+  [https://gcc.prologin.org/](https://gcc.prologin.org/).
+- Prologin: un concours d'informatique pour les moins de 20 ans que nous
+  organisons en plus des stages Girls Can Code!. Candidater ou s'entraîner sur
+  les archives peuvent être un bon moyen de continuer à programmer. Si tu es
+  sélectionnée les épreuves régionales seront l'occasion de revoir les
+  organisateurs que tu as rencontré et la finale est un super événement, mais ce
+  n'est pas facile !
+
+Si un domaine de l'informatique t'intéresse en particulier n'hésite pas à
+demander aux organisateurs des références plus spécifiques.
+
+Bonne continuation !
+
 
 
 # Les fonctions du `micro:bit`
 
-Voici une petite liste non exhaustive des fonctions de contrôle du microbit. 
-Les fonctions sont notées sous la forme `nom_de_la_fonction(arguments) ->
-valeur_de_retour`. 
-Les valeurs de retour sont ce que renvoie la fonction. Cela peut être :
-- `int` pour `entier`
-- `bool` pour `booléen`
-- `void` pour signifier que la fonction ne renvoie rien
+Cette partie regroupe toutes les fonctions de contrôle du microbit que nous
+avons utilisé au cours de ce TP. Tu en verras aussi des nouvelles que nous
+n'avons pas abordé, mais leur utilisation se base sur le même principe que les
+autres. 
+Si tu souhaites aller encore plus loin on peut trouver des informations plus
+complète sur la documentation officielle en ligne trouvable ici:
+[https://bbcmicrobitmicropython.readthedocs.io/en/latest/](https://bbcmicrobitmicropython.readthedocs.io/en/latest/).
 
-## Les fonctions d'affichage
-- `display.set_pixel(colonne, ligne, intensite) -> void`
-- `display.scroll(message) -> void`
-- `display.show(Image.UNE_IMAGE) -> void` (La liste de toutes les images disponibles est
-        [ici](https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes) (https://microbit-micropython.readthedocs.io/en/v2-docs/image.html#attributes)
+Pour utiliser toutes ces fonctions il est nécessaire de les importer depuis le
+module `micro:bit` en ajoutant `from microbit import *` au début de ton
+programme.
+
+## L'écran
+
+### `display.clear()` - effacer l'écran
+
+```python
+display.clear()  # l'écran est maintenant éteint
+```
+
+### `display.set_pixel(x, y, value)` - allumer/éteindre un pixel
+
+Change la luminosité d'une diode pour une valeur allant de 0 (diode éteinte), à
+9 (luminosité maximale).
+
+La diode est identifiée par sa colonne `x` et sa ligne `y` numérotée de 0 à 4.
+
+```python
+display.set_pixel(2, 2, 9)  # allume la diode centrale
+display.set_pixel(0, 0, 5)  # allume à moitié la diode d'en haut à gauche
+display.set_pixel(4, 4, 0)  # éteint la diode d'en bas à droite
+```
+
+### `display.get_pixel(x, y)` - calcule la luminosité d'un pixel
+
+Réciproquement à `display.set_pixel(x, y, value)`, récupère la valeur de
+luminosité d'une diode identifiée par sa colonne `x` et sa ligne `y`.
+
+```python
+display.set_pixel(2, 2, 9)  # allume la diode centrale
+x = display.get_pixel(2, 2)  # `x` vaut maintenant 9
+```
+
+### `display.show(image)` - afficher une image
+
+Cette fonction sert à afficher une image, le plus simple est généralement
+d'utiliser une image parmi la liste prédéfinie : `Image.HEART`, `Image.HAPPY`,
+`Image.SMILE`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus complète
+peut être trouvée ici :
+
+<https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes)>
+
+```python
+display.show(Image.HAPPY)  # affiche un smiley
+display.show(Image.HEART)  # affiche un coeur
+```
+
+Il est aussi possible de dessiner soi-même une image à partir d'un texte en
+séparant les ligne avec `:` et assignant une luminosité entre 0 et 9 à chaque
+diode :
+
+```python
+bateau = Image('05050:'
+               '05050:'
+               '05050:'
+               '99999:'
+               '09990')
+
+# Affiche une image qui ressemblera à peu près à ça:
+#        x x
+#        x x
+#        x x
+#       OOOOO
+#        OOO
+display.show(bateau)
+```
+
+### `display.scroll(texte)` - afficher du texte
+
+Fait défiler le texte donné en entrée.
+
+```python
+display.scroll('Salut tous le monde !')  # affiche `Salut [...] !`
+display.scroll(42)  # en réalité ça ne fonctionne pas qu'avec le texte !
+```
 
 ## Les boutons
-- `button_a.get_presses() -> int`
-- `button_b.get_presses() -> int`
-- `pin_logo.is_touched() -> bool`
 
+Il y a deux boutons sur le `micro:bit`, ils sont appelés `button_a` et
+`button_b` et toute fonction qui peut être appelée pour l'un peut aussi être
+appelée pour l'autre.
+
+### `button_a.is_pressed()` - état du bouton
+
+Retourne `True` si le bouton est actuellement enfoncé.
+
+```python
+while True:
+    if button_b.is_pressed():
+        # Allume la diode centrale si le bouton de droite est enfoncé
+        display.set_pixel(2, 2, 9)
+    else:
+        # Éteint la diode si le bouton de droite n'est plus enfoncé
+        display.set_pixel(2, 2, 0)
+```
+
+### `button_a.was_pressed()` - le bouton a été enfoncé
+
+Retourne `True` si le bouton a été enfoncé depuis la dernière fois que cette
+fonction a été appelée.
+
+```python
+display.scroll('Appuyez sur le bouton de gauche pour arrêter le programme')
+
+# Si le bouton n'a pas été enfoncé pendant que le texte défilait, on peut
+# continuer le programme
+if not button_a.was_pressed():
+    display.scroll('Et bien continuons le programme ...')
+    # ...
+```
+
+### `button_a.get_presses()` - nombre d'appuis sur le bouton
+
+Retourne le nombre total d'appuis sur le bouton depuis la dernière fois que
+cette fonction a été appelée.
+
+```python
+sleep(5000)
+nb_appuis = button_b.get_presses()
+display.scroll(
+    'Vous avez appuyé '
+    + str(nb_appuis)
+    + ' fois sur le bouton b en 5 secondes.'
+)
+```
 
 ## Les fonctions générales
-- `sleep(millisecondes) -> void`
 
+### `sleep()` - Mettre en pause le programme
 
