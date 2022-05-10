@@ -5,7 +5,7 @@ date: 2022
 
 # Introduction
 
-Bonjour à toi, jeune programmeuse, 
+Bonjour à toi jeune programmeuse, 
 Je me présente, je suis Joseph Marchand, et c'est moi qui vais t'accompagner au
 travers des différents TPs afin de t'apprendre à créer tes propres programmes
 informatiques. Avant de commencer, laisse moi aussi te présenter mes fidèles
@@ -122,7 +122,8 @@ En ce qui concerne cette fonction, voici un petit schéma qui permet de mieux
 comprendre les coordonnées de chaque LED (la coordonnée **X** correspond au
 numéro de **colonne** et la coordonnée **Y** correspond au numéro de **ligne**) :
 
-![Coordonnées des leds](resources/microbit_coordinates.png)
+![Coordonnées des leds](resources/microbit_coordinates.png){width=5cm}
+
 
 ### Mini-exercice
 **But :** Affiche un coeur sur l'écran
@@ -138,8 +139,7 @@ existe quelques autres fonctions, et une en particulier qui est faite pour
 afficher des images et des symboles : `display.show(Image.UNE_IMAGE)`. Comme tu
 peux le voir, cette fonction prend en paramètre une image, que tu peux trouver
 en faisant `Image.` suivi du nom de l'image. 
-Il en existe de nombreuses qui sont déjà dessinée. On y
-accède en tapant `Image.` suivi du nom de l'image que tu recherches. 
+
 Voici à quoi ressemblent les images `HEART` et `SMILE` :
 
 ![`Image.HEART` et `Image.SMILE`](resources/microbit_images.jpg)
@@ -158,8 +158,8 @@ suffit de mettre ton texte entouré par des guillemets (`"`).
 Voici un exemple de chaine de caratères : `"Je suis Joseph Marchand !"`.
 
 Maintenant que tu sais ça, revenons à nos moutons. La fonction pour afficher du 
-texte sur l'écran s'appelle `display.scroll(message)`. Elle prend en paramètre la
-chaine de caractères que tu veux afficher. 
+texte sur l'écran s'appelle `display.scroll(message)`. Elle prend en paramètre le
+texte que tu veux afficher. 
 
 ### Mini-exercice
 **But :** Affiche le texte de ton choix sur l'écran du microbit.
@@ -195,7 +195,7 @@ pour que son microbit affiche une barre de chargement, puis affiche le message
 # Les variables
 
 Jusque là, on a vu comment faire afficher des images et du texte sur le 
-`Micro:bit`, mais il se passe toujours la même chose. Heureusement, un 
+`micro:bit`, mais il se passe toujours la même chose. Heureusement, un 
 ordinateur peut enregistrer des informations !
 
 Pour cela, on utilise des variables : un morceau de la mémoire dans lequel on
@@ -232,7 +232,7 @@ x = x + y
 display.scroll(x)
 ```
 
-### Mini Exercice
+### Mini-Exercice
 **But :** Crée une variable avec la valeur 42, puis ajoute-y 2 et affiche-la 
 sur l'écran.
 
@@ -260,7 +260,7 @@ a = (x - y) + z
 #### Mini-Exercice
 **But :** Joseph a envie de bananes. Le marchand lui propose de les acheter pour
 2€ l'unité. Combien 10 bananes vont-elles lui coûter ? Affiche le résultat sur 
-le `Micro:bit`.
+le `micro:bit`.
 
 ### Chaines de caractères
 
@@ -323,7 +323,7 @@ Comme tu le voir, il y a deux boutons physiques sur le microbit : le bouton A et
 le bouton B. Mais il y a aussi un bouton tactile au niveau du logo au dessus de
 l'écran. Voici un petit schéma qui te permet de repérer les différents boutons : 
 
-![](resources/microbit_buttons.png)
+![](resources/microbit_buttons.png){width=5cm}
 
 Pour utiliser les boutons A et B, tu peux respectivement utiliser la fonction
 `button_a.get_presses()` et `button_b.get_presses()`. Ces fonctions renvoient le
@@ -399,7 +399,7 @@ l'**indentation**.
 L'indentation correspond au nombre d'espaces avant le début d'une ligne. Par
 exemple, la première ligne ci-dessous à une indentation égale à **0** (pas
 d'espaces en début de ligne), et la troisième ligne à une indentation égale à
-**4** (quatre espaces en début de ligne.
+**4** espaces en début de ligne.
 
 ```python
 display.scroll("Coucou") # Ligne qui n'est pas indentée
@@ -484,14 +484,14 @@ Dans ce cas, si sa condition est fausse, rien n'est exécuté
 *Tout est clair ?*
 
 Si jamais tu as une question ou s'il y a quelque chose que tu n'as pas compris,
-n'hésite pas à demander aux orgas.
+n'hésite pas à demander aux organisateurs.
 
 ### Et les indentations dans tout ça ?
 
 Comme tu as pu le voir dans les codes d'exemples, le _bloc de code_ qui est 
 exécuté lorsque la condition du `if` est vérifiée est **indenté**. 
 Lorsque l'on sort de la condition, le code perd son indentation. L'indentation 
-permet à Python de différencier les `blocs de code` appartenant aux conditions, 
+permet à Python de différencier les `blocs de code` appartenants aux conditions, 
 et ainsi de savoir ce qui doit être exécuté ou non.
 
 La partie sur les indentation est une partie très importante car elle ne permet
@@ -553,7 +553,7 @@ display.show(Image.SMILE) # Cette ligne de code n'est pas répétée
 
 Voici un petit schéma pour bien différencier les différents blocs de code : 
 
-![](resources/for_loop.png)
+![](resources/for_loop.png){width=5cm}
 
 
 Bien sûr, il est possible d'"emboîter" des boucles les unes dans les
@@ -623,12 +623,12 @@ si tu as des questions, les organisateurs sont là pour ça !
 ## But
 
 Joseph est dans la panade... Il aurait besoin de deux dés à 6 faces pour jouer
-au Monopoly avec ses amis, mais il les a oublié et tout ce qu'il a à sa
+au Monopoly avec ses amis, mais il les a oubliés, et tout ce qu'il a à sa
 disposition est un microbit... 
 Joseph te demande alors de lui faire un programme qui simule un lancé de deux 
 dés et affiche le résultat (le résultat est donc entre 2 et 12) lorsque le
-bouton A ou le bouton B est appuyé.  
-Mais comme Joseph ne veut pas faire que ses amis pensent qu'il a simplement
+bouton A ou le bouton B est appuyé. 
+Mais comme Joseph ne veut pas que ses amis pensent qu'il a simplement
 oublié les vrais dés, il voudrait donc y ajouter quelques fonctionnalités : 
 - Il voudrait que le chiffre disparaisse 5 secondes après être apparu
 - Il voudrait aussi que si le lancé est un double, un smiley content s'affiche
@@ -658,7 +658,7 @@ Mais ce n'est pas parce que ce TP est terminé que tu es lachée dans la nature
 pour autant. Il te reste encore plein de trucs à découvrir, que ce soit en
 Python ou bien en rapport avec ce qui concerne le microbit. Tu as de nombreux
 autres TPs qui sont disponibles. Ils se présentent plutôt sous la forme de
-petits projets centré sur l'utilisation d'un composant en particulier du
+petits projets centrés sur l'utilisation d'un composant en particulier du
 microbit. Tu peux ainsi apprendre à utiliser pleinement le microbit pour ensuite
 créer tes propres projets ! 
 
@@ -806,7 +806,7 @@ appelée pour l'autre.
 
 ### `button_a.is_pressed()` - état du bouton
 
-Retourne `True` si le bouton est actuellement enfoncé.
+Renvoie `True` si le bouton est actuellement enfoncé.
 
 ```python
 while True:
@@ -820,7 +820,7 @@ while True:
 
 ### `button_a.was_pressed()` - le bouton a été enfoncé
 
-Retourne `True` si le bouton a été enfoncé depuis la dernière fois que cette
+Renvoie `True` si le bouton a été enfoncé depuis la dernière fois que cette
 fonction a été appelée.
 
 ```python
@@ -835,7 +835,7 @@ if not button_a.was_pressed():
 
 ### `button_a.get_presses()` - nombre d'appuis sur le bouton
 
-Retourne le nombre total d'appuis sur le bouton depuis la dernière fois que
+Renvoie le nombre total d'appuis sur le bouton depuis la dernière fois que
 cette fonction a été appelée.
 
 ```python
@@ -851,4 +851,14 @@ display.scroll(
 ## Les fonctions générales
 
 ### `sleep()` - Mettre en pause le programme
+
+### `randint(min, max)` - De l'aléatoire
+
+Renvoie un nombre entier aléatoire compris entre `min` et `max`. 
+
+```python
+from random import randint
+
+display.scroll(randint(1, 10))
+```
 
