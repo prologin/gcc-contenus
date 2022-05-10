@@ -691,9 +691,7 @@ conseillons les ressources suivantes :
   problèmes à résoudre, la difficulté y est très progressive.
 - Girls Can Code! : Nous organisons des stages courts et des stages longs, tous
   les TPs des stages sont disponibles ici :
-  https://github.com/prologin/gcc-resources et bientôt ils seront détaillés dans
-  une nouvelle section de notre site :
-  [https://gcc.prologin.org/](https://gcc.prologin.org/).
+  [https://tp.girlscancode.fr/](https://tp.girlscancode.fr/).
 - Prologin: un concours d'informatique pour les moins de 20 ans que nous
   organisons en plus des stages Girls Can Code!. Candidater ou s'entraîner sur
   les archives peuvent être un bon moyen de continuer à programmer. Si tu es
