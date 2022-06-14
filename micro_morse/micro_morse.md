@@ -30,6 +30,39 @@ chiffres :
 # Les arbres
 ## La theorie
 
+### Récursion
+
+Avant de parler d'abres, il faut parler de récursion. Quelque chose de récursif
+est quelque chose qui va s'appeler lui-même.
+
+Par exemple, une fonction récursive est donc une fonction qui s'appelle elle-même.
+
+```py
+def addition(n):
+    """
+    Renvoie le résultat de l'addition 1+2+3+...+n
+    """
+    if n == 1:
+        return 1
+    else:
+        return n + addition(n-1)
+```
+
+Regardons le code étapes par étapes pour comprendre comment il fonctionne.
+Disons que l'on souhaite calculer `addition(3)`.
+
+- 3 est différent de 1 donc la fonction va renvoyer `3 + addition(2)`
+- Il faut donc calculer `addition(2)`, qui renvoie `2 + addition(1)`.
+    En remplacant ce résultat dans l'expression précédente, on a 
+    `3 + 2 + addition(1)`
+- Comme `1 = 1`, `addition(1)` va donc renvoyer 1. Le résultat est donc `3 + 2 + 1`
+    ce qui donne `6`
+
+#### Mini-Exercice
+
+Crée une fonction qui calcule `1*2*3*...*n` avec `n` étant le paramètre de cette 
+fonction.
+
 ## Application à notre problème
 Vous avez pu lire une partie très théorique sur une représentation complexe des
 données. Il est très important que vous ayez compris la partie précédente afin
