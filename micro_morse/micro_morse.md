@@ -30,6 +30,10 @@ chiffres :
 # Les arbres
 ## La theorie
 
+Pour faire ce TP, on va utiliser ce qu'on appelle les arbres binaires. Ce sont
+des objets qui vont nous permettre de rechercher plus efficacement quelle
+lettre a été tapée.
+
 ### Récursion
 
 Avant de parler d'abres, il faut parler de récursion. Quelque chose de récursif
@@ -62,6 +66,64 @@ Disons que l'on souhaite calculer `addition(3)`.
 
 Crée une fonction qui calcule `1*2*3*...*n` avec `n` étant le paramètre de cette 
 fonction.
+
+
+### Des arbres récursifs
+
+Un arbre binaire est composé de Noeuds. Chaque Noeud contient une valeur appelée
+clé ('key' en anglais). Il va également avoir 2 enfants, qui sont eux aussi des
+Noeuds : on les nomme fils gauche et fils droit.
+
+Comme l'objet Noeud contient des variables de type Noeud, on dit que Noeud est
+un objet récursif (car il se contient lui-même).
+
+Ces arbres, on peut les parcourir, c'est-à-dire regarder les clé de chacun des
+Noeuds. Pour cela, on utilise une fonction récursive :
+
+```py
+def parcours(B):
+    if B != None:
+        print(B.key)
+        parcours(B.left)
+        parcours(B.right)
+```
+
+Ici la fonction va afficher la clé du Noeud principal et aller faire le parcours
+dans le fils gauche puis dans le fils droit. 
+
+En python, on utilise le mot-clé `None` pour indiquer qu'il n'y a pas d'arbre.
+On fait donc le parcours seulement si l'arbre existe.
+
+#### Mini-Exercice
+
+Fais une fonction de parcours qui fait le parcours dans le fils gauche, affiche
+la clé de l'arbre actuel, et fait le parcours dans le fils droit.
+
+Tu peux utiliser ce code pour représenter les Noeuds :
+
+```py
+class Noeud:
+    def __init__(self, key, left, right):
+        self.key = key
+        self.left = left
+        self.right = right
+
+# Crée un Noeud et l'enregistre dans la variable 'n'
+# Ici, le Noeud a comme clé 1, et pas de fils droit ni gauche
+n = Noeud(1, None, None)
+```
+
+Il existe plusieurs types de parcours :
+- le parcours préfixe, celui donné dans l'exemple, dans lequel on affiche la clé
+    avant d'aller voir les enfants
+- le parcours infixe, celui du mini-exercice, dans lequel on va voir le fils
+    gauche, puis on affiche la clé et on va voir le fils droit.
+- le parcours suffixe, dans lequel on va voir le fils gauche puis droit avant
+    d'afficher la clé.
+
+Pour la suite du TP, tu peux utiliser le parcours que tu préfère.
+
+
 
 ## Application à notre problème
 Vous avez pu lire une partie très théorique sur une représentation complexe des
@@ -133,7 +195,6 @@ E = Noeud('E', I, A)
 T = Noeud('T', N, M)
 
 MORSE = Noeud(None, E, T)
-
 
 
 # Ecris tes fonctions ici !
