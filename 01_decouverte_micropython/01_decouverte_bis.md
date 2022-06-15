@@ -32,16 +32,15 @@ facile à prendre en main mais très puissant.
 ## Qu'est-ce qu'un `micro:bit` ?
 
 Pour cet atelier, nous allons utiliser un `micro:bit`. C'est un microcontrôleur
-de la taille d'une carte bancaire. Nous pouvons écrire des programmes et les
+de la taille d'une carte à jouer. Nous pouvons écrire des programmes et les
 lancer dessus, ainsi qu'intéragir avec ses composants : l'écran de LED, les
 boutons, l'accéléromètre (pour détecter des mouvements), etc.
-
-Tu peux garder le microcontrôleur avec toi, et continuer à écrire tes propres
-programmes en Python dessus après l'atelier !
 
 ## Notre environnement de travail
 
 Pour écrire nos programmes, nous utiliserons `Mu`, que tu as pu découvrir dans le TP0.
+Si tu n'as pas déjà lu le TP0, tu peux aller le lire avant de continuer
+celui-ci. 
 
 Si tu n'as pas réussi à bien installer `Mu`, demande aux organisateurs de t'aider.
 
@@ -71,14 +70,15 @@ sleep(500)
 display.set_pixel(4, 2, 9)
 ```
 
-Si tu testes ce programme, il affiche une barre de chargement sur la ligne de
-diode centrale de ton `micro:bit`.
+Si flash ce programme sur ton `micro:bit`, il affiche une barre de chargement sur la ligne de
+diodes centrales de ton `micro:bit`.
 
 Exécutons 'à la main' ce petit programme pour comprendre ce qu'il fait : 
 
-1. `from microbit import *` permet d'indiquer à l'ordinateur la signification
-   des commandes propres au micro:bit. Sans cela, le programme ne sait pas ce
-   que doivent faire les commandes permettant d'utiliser le micro:bit. Cette
+1. `from microbit import *` permet de lier la bibliothèque de fonctions
+   `micro:bit` à ton programme, pour que l'ordinateur puisse comprendre ce que
+   font les fonctions que tu vas utiliser.  Sans cela, le programme ne sait pas ce
+   que doivent faire les commandes qui permettant d'utiliser le micro:bit. Cette
    ligne est très importante car sans elle, ton programme ne pourra pas
    fonctionner. 
 2. Nous avons ensuite une ligne vide. Cela n'a aucune influence sur le
@@ -105,17 +105,18 @@ Exécutons 'à la main' ce petit programme pour comprendre ce qu'il fait :
 # Les fonctions de contrôle du micro:bit
 
 Comme tu l'as vu plus tôt, il existe des fonctions qui permettent de contrôler
-le microbit. Nous allons ici te présenter les principales.
+le `micro:bit`. Nous allons ici te présenter les principales.
 
 
 ## Allumer des LEDs
 
-Il existe de nombreuses façons d'afficher quelque chose sur l'écran du micro:bit.
+Il existe de nombreuses façons d'afficher quelque chose sur l'écran du `micro:bit`.
 La première, et la plus basique, consiste à choisir les LEDs que l'on veut allumer
 et à les allumer une par une. Pour cela, tu l'as vu juste avant, on utilise la
-fonction `display.set_pixel(colonne, ligne, intensite)`, où `colonne` représente
-le numéro de la colonne de la LED à allumer, `ligne` le numéro de la ligne et
-enfin `intensite` est l'intensité avec laquelle la LED va s'allumer (de 0
+fonction `display.set_pixel(colonne, ligne, intensite)`, où : 
+- `colonne` représente le numéro de la colonne de la LED à allumer
+- `ligne` représente le numéro de la ligne
+- `intensite` représente l'intensité avec laquelle la LED va s'allumer (de 0
 pour une LED éteinte à 9 pour une LED allumée à pleine puissance). 
 
 En ce qui concerne cette fonction, voici un petit schéma qui permet de mieux 
@@ -136,10 +137,8 @@ _Ça devrait ressembler à quelque chose comme ça :_
 Comme tu as pu le constater, c'est assez long et fasctidieux d'afficher quelque
 chose de complexe avec la fonction précédente. Pour nous faciliter la vie, il
 existe quelques autres fonctions, et une en particulier qui est faite pour
-afficher des images et des symboles : `display.show(Image.UNE_IMAGE)`. Comme tu
-peux le voir, cette fonction prend en paramètre une image, que tu peux trouver
-en faisant `Image.` suivi du nom de l'image. 
-
+afficher des images et des symboles : `display.show(Image.NOM_IMAGE)`, où
+`NOM_IMAGE` est le nom anglais d'une image pré-enregistrée. 
 Voici à quoi ressemblent les images `HEART` et `SMILE` :
 
 ![`Image.HEART` et `Image.SMILE`](resources/microbit_images.jpg)
@@ -154,8 +153,9 @@ une image. Mais comment faire si jamais tu veux afficher un message sur l'écran
 Et bien la vie est bien faite, puisqu'il existe une fonction pour faire cela.
 Mais juste avant, il faut comprendre comment ton ordinateur fait la différence
 entre ton code et du texte que tu voudrais afficher. Ce n'est pas compliqué, il
-suffit de mettre ton texte entouré par des guillemets (`"`).
-Voici un exemple de chaine de caratères : `"Je suis Joseph Marchand !"`.
+suffit de mettre ton texte entouré par des guillemets (`"`). Ce texte est
+appelé `chaine de caractères`. Nous reviendrons dessus plus en détails par la suite. 
+Voici un exemple de chaine de caractères : `"Je suis Joseph Marchand !"`.
 
 Maintenant que tu sais ça, revenons à nos moutons. La fonction pour afficher du 
 texte sur l'écran s'appelle `display.scroll(message)`. Elle prend en paramètre le
@@ -175,6 +175,7 @@ ton programme pour, par exemple, te laisser le temps de voir ce qu'il se passe.
 Nous avons vu beaucoup de choses nouvelles jusqu'ici. Si jamais tu as une
 question ou si tu n'as pas compris quelque chose, n'hésite surtout pas à demander
 de l'aide à un organisateur. 
+
 N'hésite pas non plus à relire les parties que tu n'as pas compris. 
 Si jamais tu as besoin, une liste _presque_ exhaustive des fonctions de contrôle
 du microbit est disponible à la toute fin de ce TP. 
@@ -194,9 +195,11 @@ pour que son microbit affiche une barre de chargement, puis affiche le message
 
 # Les variables
 
-Jusque là, on a vu comment faire afficher des images et du texte sur le 
-`micro:bit`, mais il se passe toujours la même chose. Heureusement, un 
-ordinateur peut enregistrer des informations !
+Jusque là, on a vu comment afficher des images et du texte sur le 
+`micro:bit`, mais ces informations sont statiques : une fois écrite dans le
+code, elles ne peuvent plus être modifiées. Heureusement, un 
+ordinateur peut enregistrer des informations pour les traiter, les modifier,
+voir même en créer de nouvelles !
 
 Pour cela, on utilise des variables : un morceau de la mémoire dans lequel on
 va pouvoir enregistrer des valeurs. Quand on crée une variable, on commence par
@@ -209,9 +212,11 @@ Pour **créer une variable** il suffit d'écrire `nom_de_la_variable =
 valeur_initiale`, par exemple : `nombre_de_patates = 42`.
 
 Ensuite on peut **réutiliser la valeur** stockée dans la variable en
-l'identifiant par son nom, par exemple on peut créer une nouvelle variable
+l'identifiant par son nom. Par exemple, on peut créer une nouvelle variable
 `prix` qui dépend de la variable qui a été créée précédemment : `prix =
-nombre_de_patates + 50`.
+nombre_de_patates + 50`. Dans ce cas, comme `nombre_de_patates` vaut
+actuellement _42_, alors `prix = 42 + 50`. Donc à la fin de cette ligne, la
+variable `prix` vaut _92_. 
 
 Pour **modifier une variable** on utilise aussi le symbole d'égalité, par
 exemple on peut augmenter de 1 la valeur stockée dans une variable :
@@ -233,7 +238,7 @@ display.scroll(x)
 ```
 
 ### Mini-Exercice
-**But :** Crée une variable avec la valeur 42, puis ajoute-y 2 et affiche-la 
+**But :** Crée une variable avec la valeur 42, puis ajoutes-y 2 et affiche-la 
 sur l'écran.
 
 ## Types de variables
@@ -250,11 +255,11 @@ y = x / 2
 z = 8 + 1
 ```
 
-Ici `x` vaut 12, `y` vaut 6.0, et `z` vaut 9. Nous pouvons aussi combiner
+Ici `x` vaut _12_, `y` vaut _6.0_, et `z` vaut _9_. Nous pouvons aussi combiner
 plusieurs opérations ensemble, par exemple :
 
 ```python
-a = (x - y) + z
+a = (x - y) + z # a = (12 - 6.0) + 9 = 15.0
 ```
 
 #### Mini-Exercice
@@ -265,7 +270,7 @@ le `micro:bit`.
 ### Chaines de caractères
 
 On peut créer du texte en mettant son contenu entre guillemets (par exemple :
-`mon_texte = "Bonjour tous le monde !"`). On peut aussi attacher des morceaux
+`mon_texte = "Bonjour tout le monde !"`). On peut aussi attacher des morceaux
 de textes entre eux avec l'opérateur `+` (par exemple : `mon_texte = mon_texte +
 "!!"`).
 
@@ -284,7 +289,7 @@ display.scroll(texte)  # Affiche "Il y a 42 patates !" sur l'écran
 #### Mini-Exercice
 **But :** Comme dans l'exercice précédent, Joseph a besoin de savoir combien 
 vont lui coûter ses bananes. Mais le marchand a augmenté le prix et les bananes 
-coûtent désormais 3€ chacunes. Après avoir calculé, affiche `"Payer (le prix) 
+coûtent désormais 3€ chacune. Après avoir calculé, affiche `"Payer (le prix) 
 pour 10 bananes ? Mais c'est beaucoup trop cher !"` en remplacant `le prix` par 
 sa valeur.
 
@@ -294,7 +299,7 @@ sa valeur.
 Enfin, les booléens servent à exprimer le vrai ou le faux. Il n'y a que deux
 valeurs possibles pour ce type de variables : `True` (vrai) et `False` (faux).
 
-Des valeurs booléennes sont renvoyées par les opérations de comparaisons : `==`
+Des valeurs booléennes sont renvoyées par les opérations de comparaison : `==`
 (égalité), `!=` (différence), `<`, `>` (les inégalités strictes), `<=` et `>=`
 (les inégalités larges). Par exemple `1 < 2` vaut `True` mais `3 != 3` vaut
 `False`.
@@ -319,7 +324,7 @@ pour 22€. Calcule le vrai prix et affiche si celui de Joseph est le bon.
 
 # Comment utiliser les boutons du microbit ?
 
-Comme tu le voir, il y a deux boutons physiques sur le microbit : le bouton A et
+Comme tu peux le voir, il y a deux boutons physiques sur le microbit : le bouton A et
 le bouton B. Mais il y a aussi un bouton tactile au niveau du logo au dessus de
 l'écran. Voici un petit schéma qui te permet de repérer les différents boutons : 
 
@@ -327,7 +332,7 @@ l'écran. Voici un petit schéma qui te permet de repérer les différents bouto
 
 Pour utiliser les boutons A et B, tu peux respectivement utiliser la fonction
 `button_a.get_presses()` et `button_b.get_presses()`. Ces fonctions renvoient le
-nombre d'appuis sur le bouton depuis la dernière fois qu'elles ont été appelée.
+nombre d'appuis sur le bouton depuis la dernière fois qu'elles ont été appelées.
 Par exemple, ce code va prendre le nombre de fois que le bouton A a été appuyé
 au cours des 5 dernières secondes :
 
@@ -338,7 +343,7 @@ sleep(5000)
 display.scroll(button_a.get_presses())
 ```
 
-En ce qui concerne le bouton au tactile, tu peux détecter si tu appuies dessus
+En ce qui concerne le bouton tactile, tu peux détecter si tu appuies dessus
 en utilisant la fonction `pin_logo.is_touched()`, qui renvoie un booléen. 
 
 ### Mini-exercice
@@ -373,7 +378,7 @@ a = button_a.get_presses() # récupère le nombre d'appuis
 display.scroll("Score: " + str(a))
 ```
 
-### Exercice 3
+### Exercice 2
 
 **But :** Joseph voudrait connaitre le résultat de la multiplication de deux
 nombres. Pour récupérer la valeur des deux nombres tu peux donner quelques secondes
@@ -394,12 +399,12 @@ de droite, le programme affichera `3 * 7 = 21` sur l'écran.
 ## Avant de continuer...
 
 Avant de continuer avec les conditions (je t'explique ça juste
-après), je dois t'expliquer une partie importante de la programmation :
+après), je dois t'expliquer une partie importante de la programmation Python :
 l'**indentation**. 
-L'indentation correspond au nombre d'espaces avant le début d'une ligne. Par
-exemple, la première ligne ci-dessous à une indentation égale à **0** (pas
-d'espaces en début de ligne), et la troisième ligne à une indentation égale à
-**4** espaces en début de ligne.
+L'indentation correspond au nombre d'espaces au début d'une ligne et avant une
+instructions. Par exemple, la première ligne ci-dessous a une indentation égale
+à **0** (pas d'espace en début de ligne), et la troisième ligne a une indentation
+égale à **4** (quatre espaces en début de ligne).
 
 ```python
 display.scroll("Coucou") # Ligne qui n'est pas indentée
@@ -410,8 +415,7 @@ if True:
 L'indentation permet surtout de définir des blocs. Chaque ligne avec la même 
 indentation fait donc partie du même bloc.
 
-**Attention**, l'indentation doit être constante tout le long du programme !
-Avec des blocs indentés de 1, 3 puis 2 espaces, python a du mal a comprendre ce 
+Avec des blocs indentés de 1, 3 puis 2 espaces, Python a du mal à comprendre ce 
 qui se passe. En général, on décale le code de 4 espaces à chaque fois.
 
 ```python
@@ -431,16 +435,16 @@ majuscule`):
 
 ![](resources/tabulation.png)
 
-Pour l'instant il te suffit juste de savoir ça, je reviendrais là-dessus juste
+Pour l'instant il te suffit juste de savoir ça, je reviendrai là-dessus juste
 après. 
 
 
 ## Revenons à nos conditions
 
 Maintenant que tu sais utiliser des variables et plusieurs fonctions de contrôle
-du microbit, tu dois vouloir faire réagir ton programme en fonction de toutes
-ces données. Et bien ça tombe bien, car Python sait faire ça grâce aux
-instructions `if`, `elif` et `else`. 
+du microbit, tu vas pouvoir faire réagir ton programme en fonction de toutes
+ces données dans cette partie. Et bien ça tombe bien, car Python sait faire ça grâce
+aux instructions `if`, `elif` et `else`. 
 
 L'instruction `if` permet de décider de n'exécuter un morceau de code que
 lorsqu'une condition est vraie. Ce sont les même conditions que celles décrites
