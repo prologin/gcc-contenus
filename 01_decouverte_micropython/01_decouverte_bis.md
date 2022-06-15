@@ -25,7 +25,7 @@ pouvons créer nos propres programmes, et pour cela il nous faut un moyen
 d'écrire ces instructions : un **langage de programmation**.
 
 Il existe énormément de langages de programmation, tout comme il existe des
-milliers de langue dans le monde ! Certains sont plus connus que d'autres et
+milliers de langues dans le monde ! Certains sont plus connus que d'autres et
 nous allons, avec les organisateurs, te faire découvrir Python, un langage 
 facile à prendre en main mais très puissant.
 
