@@ -259,7 +259,7 @@ Ici `x` vaut _12_, `y` vaut _6.0_, et `z` vaut _9_. Nous pouvons aussi combiner
 plusieurs opérations ensemble, par exemple :
 
 ```python
-a = (x - y) + z # a = (12 - 6.0) + 9 = 15.0
+a = (x - y) + z # (12 - 6.0) + 9 = 15.0, donc a = 15.0
 ```
 
 #### Mini-Exercice
@@ -402,7 +402,7 @@ Avant de continuer avec les conditions (je t'explique ça juste
 après), je dois t'expliquer une partie importante de la programmation Python :
 l'**indentation**. 
 L'indentation correspond au nombre d'espaces au début d'une ligne et avant une
-instructions. Par exemple, la première ligne ci-dessous a une indentation égale
+instruction. Par exemple, la première ligne ci-dessous a une indentation égale
 à **0** (pas d'espace en début de ligne), et la troisième ligne a une indentation
 égale à **4** (quatre espaces en début de ligne).
 
