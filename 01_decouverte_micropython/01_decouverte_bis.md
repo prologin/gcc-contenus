@@ -299,9 +299,15 @@ sa valeur.
 Enfin, les booléens servent à exprimer le vrai ou le faux. Il n'y a que deux
 valeurs possibles pour ce type de variables : `True` (vrai) et `False` (faux).
 
-Des valeurs booléennes sont renvoyées par les opérations de comparaison : `==`
-(égalité), `!=` (différence), `<`, `>` (les inégalités strictes), `<=` et `>=`
-(les inégalités larges). Par exemple `1 < 2` vaut `True` mais `3 != 3` vaut
+Des valeurs booléennes sont renvoyées par les opérations de comparaison :  
+- `==` pour l'égalité. `a == b` va renvoyer `True` si a et b sont égaux
+- `!=` pour la différence. `a != b` va renvoyer `True` si a et b sont différents
+- `<` et `>` pour les inégalités strictes. `a < b` va renvoyer `True` si a est
+    strictement plus petit que b, et inversement pour `a > b`
+- `<=` et `>=` pour les inégalités larges. `a <= b` va renvoyer `True` si a est
+    plus petit ou égal à b, et inversement pour `a >= b`
+
+Par exemple `1 < 2` vaut `True` mais `3 != 3` vaut
 `False`.
 
 Enfin, il est possible de manipuler les valeurs booléennes avec les opérateurs
