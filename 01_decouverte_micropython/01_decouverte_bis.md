@@ -70,8 +70,8 @@ sleep(500)
 display.set_pixel(4, 2, 9)
 ```
 
-Si flash ce programme sur ton `micro:bit`, il affiche une barre de chargement sur la ligne de
-diodes centrales de ton `micro:bit`.
+Si tu flash ce programme sur ton `micro:bit`, il affiche une barre de chargement
+sur la ligne de diodes centrales de ton `micro:bit`.
 
 Exécutons 'à la main' ce petit programme pour comprendre ce qu'il fait : 
 
