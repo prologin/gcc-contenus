@@ -123,7 +123,7 @@ En ce qui concerne cette fonction, voici un petit schéma qui permet de mieux
 comprendre les coordonnées de chaque LED (la coordonnée **X** correspond au
 numéro de **colonne** et la coordonnée **Y** correspond au numéro de **ligne**) :
 
-![Coordonnées des leds](resources/microbit_coordinates.png){width=5cm}
+![Coordonnées des leds](resources/microbit_coordinates_bis.png){width=5cm}
 
 
 ### Mini-exercice
