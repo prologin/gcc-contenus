@@ -134,7 +134,7 @@ _Ça devrait ressembler à quelque chose comme ça :_
 
 ## Les images
 
-Comme tu as pu le constater, c'est assez long et fasctidieux d'afficher quelque
+Comme tu as pu le constater, c'est assez long et fastidieux d'afficher quelque
 chose de complexe avec la fonction précédente. Pour nous faciliter la vie, il
 existe quelques autres fonctions, et une en particulier qui est faite pour
 afficher des images et des symboles : `display.show(Image.NOM_IMAGE)`, où
