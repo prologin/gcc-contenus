@@ -78,7 +78,7 @@ Exécutons 'à la main' ce petit programme pour comprendre ce qu'il fait :
 1. `from microbit import *` permet de lier la bibliothèque de fonctions
    `micro:bit` à ton programme, pour que l'ordinateur puisse comprendre ce que
    font les fonctions que tu vas utiliser.  Sans cela, le programme ne sait pas ce
-   que doivent faire les commandes qui permettant d'utiliser le micro:bit. Cette
+   que doivent faire les commandes qui permettent d'utiliser le micro:bit. Cette
    ligne est très importante car sans elle, ton programme ne pourra pas
    fonctionner. 
 2. Nous avons ensuite une ligne vide. Cela n'a aucune influence sur le
