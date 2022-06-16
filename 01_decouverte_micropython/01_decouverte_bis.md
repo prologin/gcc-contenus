@@ -495,13 +495,13 @@ n'hésite pas à demander aux organisateurs.
 Comme tu as pu le voir dans les codes d'exemples, le _bloc de code_ qui est 
 exécuté lorsque la condition du `if` est vérifiée est **indenté**. 
 Lorsque l'on sort de la condition, le code perd son indentation. L'indentation 
-permet à Python de différencier les `blocs de code` appartenants aux conditions, 
+permet à Python de différencier les `blocs de code` appartenant aux conditions, 
 et ainsi de savoir ce qui doit être exécuté ou non.
 
-La partie sur les indentation est une partie très importante car elle ne permet
-pas seulement de permettre à Python de différencier les blocs de code, mais
+La partie sur les indentations est une partie très importante car elle ne permet
+pas seulement à Python de différencier les blocs de code, mais
 aussi de rendre ton code plus clair et plus lisible. 
-Si jamais tu as une quelconque question ou qu'il y a quelque chose que tu n'as
+Si jamais tu as une quelconque question ou s'il y a quelque chose que tu n'as
 pas compris, n'hésite pas à faire appel à un organisateur. 
 
 
@@ -514,7 +514,7 @@ pas compris, n'hésite pas à faire appel à un organisateur.
 
 
 
-# Ca fait beaucoup de lignes
+# Ça fait beaucoup de lignes
 
 Tu sais maintenant comment créer des programmes assez complexes. Mais imaginons
 que tu veuilles effectuer plusieurs fois la même action. Tu pourrais écrire un
@@ -546,7 +546,7 @@ display.show(Image.SMILE) # Cette ligne de code n'est pas répétée
 1. Nous avons ici la déclaration de la boucle. C'est la partie la plus complexe.
    Nous avons d'abord le mot clé `for` qui indique que la déclaration commence.
    Nous avons ensuite une variable `i`. Elle peut prendre n'importe quel nom,
-   ce n'a pas d'importance. Nous avons enfin le `range(5)` qui nous indique que
+   ça n'a pas d'importance. Nous avons enfin le `range(5)` qui nous indique que
    la boucle sera répétée `5` fois. Comme indiqué en commentaire, la variable
    `i` prendra successivement les valeurs de 0 à 5 exclu. Le `5` peut être
    remplacé par n'importe quelle valeur numérique entière. 
@@ -585,9 +585,9 @@ display.scroll("end")
 ```
 
 ### Mini-exercice
-**But :** Comme pour l'exercice 3, Joseph voudrait connaitre le résultat de la
+**But :** Comme pour l'exercice 2, Joseph voudrait connaitre le résultat de la
 multiplication de différents nombres. Sauf que cette fois-ci, il ne veut pas se
-limiter à deux nombres. Ecris un programme qui multiplie 3 nombres entre eux. Tu
+limiter à deux nombres. Écris un programme qui multiplie 3 nombres entre eux. Tu
 peux récupérer les nombres en comptant le nombre d'appuis sur le bouton A, en
 laissant quelques secondes à chaque fois. 
 
@@ -600,7 +600,7 @@ condition est vérifiée (d'où son nom :D). Illustrons cette boucle à travers 
 exemple de code : 
 
 ```python
-while button_a.get_presses == 0:
+while button_a.get_presses() == 0:
     display.scroll("Appuie sur le bouton A pour sortir")
     sleep(500)
 
@@ -613,7 +613,7 @@ appuieras sur le bouton A.
 Pour ce qui concerne les lignes suivantes, tu connais déjà leur comportement. 
 
 ### Mini-exercice
-**But :** Ecris un programme qui compte et affiche le nombre d'appuis sur les
+**But :** Écris un programme qui compte et affiche le nombre d'appuis sur les
 boutons A et B avant que le logo tactile ne soit touché. 
 
 
@@ -637,14 +637,14 @@ oublié les vrais dés, il voudrait donc y ajouter quelques fonctionnalités :
 - Il voudrait que le chiffre disparaisse 5 secondes après être apparu
 - Il voudrait aussi que si le lancé est un double, un smiley content s'affiche
 juste après le chiffre
-- Il voudrait enfin que si trois doubles sont fait d'affilé, un smiley pas
+- Il voudrait enfin que si trois doubles sont faits d'affilée, un smiley pas
 content s'affiche à la place de la valeur des dés
 
 ## Tips
 
 N'hésite pas à faire ce projet étape par étape. Tu peux commencer par coder le
 lancé des deux dés, et lorsque cela fonctionne ajouter les différentes demandes
-de Joseph les une après les autres. 
+de Joseph les unes après les autres. 
 Si tu as une quelconque question, encore une fois, les organisateurs sont là
 pour y répondre. 
 
@@ -691,12 +691,12 @@ Ce TP couvre les bases essentielles de la programmation, pour continuer nous te
 conseillons les ressources suivantes :
 
 - France ioi ([http://www.france-ioi.org/](http://www.france-ioi.org/)) : un
-  site d'entrainement à la programmation qui propose des leçons suivis de
+  site d'entrainement à la programmation qui propose des leçons suivies de
   problèmes à résoudre, la difficulté y est très progressive.
 - Girls Can Code! : Nous organisons des stages courts et des stages longs, tous
   les TPs des stages sont disponibles ici :
   [https://tp.girlscancode.fr/](https://tp.girlscancode.fr/).
-- Prologin: un concours d'informatique pour les moins de 20 ans que nous
+- Prologin : un concours d'informatique pour les moins de 20 ans que nous
   organisons en plus des stages Girls Can Code!. Candidater ou s'entraîner sur
   les archives peuvent être un bon moyen de continuer à programmer. Si tu es
   sélectionnée les épreuves régionales seront l'occasion de revoir les
@@ -764,7 +764,7 @@ d'utiliser une image parmi la liste prédéfinie : `Image.HEART`, `Image.HAPPY`,
 `Image.SMILE`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus complète
 peut être trouvée ici :
 
-<https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes)>
+<https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes>
 
 ```python
 display.show(Image.HAPPY)  # affiche un smiley
@@ -796,7 +796,7 @@ display.show(bateau)
 Fait défiler le texte donné en entrée.
 
 ```python
-display.scroll('Salut tous le monde !')  # affiche `Salut [...] !`
+display.scroll('Salut tout le monde !')  # affiche `Salut [...] !`
 display.scroll(42)  # en réalité ça ne fonctionne pas qu'avec le texte !
 ```
 
