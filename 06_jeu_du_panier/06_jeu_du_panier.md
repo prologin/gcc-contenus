@@ -11,13 +11,15 @@ Maintenant que vous avez appris à utiliser des **micro:bit**, il est maintenant
 
 Le but de ce projet est de faire un **jeu du panier** :
 
-![](https://s3.cri.epita.fr/hedgedoc-data.cri.epita.fr/uploads/a2ebcfd4-b862-435f-b04e-eda3c76bcd40.png){size = 200}
+
+![Jeu du panier](resources/game.png){width=5cm}
 
 
 ## Principe du jeu
 
 Le principe général est de ramasser des pommes qui tombent du ciel à l'aide d'un panier.
-![](https://s3.cri.epita.fr/hedgedoc-data.cri.epita.fr/uploads/3bca3388-02ce-4ff7-8af5-3c08772c0a6b.png){size = 200}
+
+![Jeu sur un microbit](resources/microbit_game.png){width=5cm}
 
 ### Le panier
 
@@ -84,14 +86,16 @@ Dans cette partie nous allons simplement nous occuper du panier. Le panier fait 
 Pour ce faire, commençons par créer une variable `posPanier` qui sera la position du panier en X. Au début de la partie, le panier sera au milieu de l'écran, soit en position 2 (image ci-dessous). 
 
 
-![](https://s3.cri.epita.fr/hedgedoc-data.cri.epita.fr/uploads/2087f4cc-beb7-4cef-ba8d-2c09f9211bc6.png){size = 200}
+![Le panier sur un microbit](resources/microbit_panier.png){width=5cm}
+
 
 
 Maintenant que cette variable est créée, nous allons vouloir déplacer notre panier. 
 
 Pour cela, il faut faire en sorte que tant que le joueur n'a pas perdu, alors le panier puisse bouger. Vous pouvez utiliser une variable booléenne pour cela.
 
-![](https://s3.cri.epita.fr/hedgedoc-data.cri.epita.fr/uploads/8d8fbd6c-975a-4265-960e-73997ec036a1.png){size = 200}
+![Le panier qui bouge sur un microbit](resources/microbit_panier_move.png){width=5cm}
+
 
 ### Rappel :  
 Une variable booléen représente deux valeurs : True ou False.
@@ -153,7 +157,8 @@ Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est couple de var
 
 Vous pouvez maintenant faire apparaitre une pomme de manière aléatoire, changer son emplacement. À chaque tour, la pomme doit changer de place sur l'axe y.
 
-![](https://s3.cri.epita.fr/hedgedoc-data.cri.epita.fr/uploads/8487108a-a7cf-4b8f-b6bd-2f1eaeaa958d.png){size = 200}
+![Les pommes sur un microbit](resources/microbit_pomme.png){width=5cm}
+
 
 
 Vous pouvez utiliser la fonction `sleep(time)` pour attendre entre chaque tour. Nous vous conseillons de mettre la valeur time dans une variable et de la définir au début de votre code.
