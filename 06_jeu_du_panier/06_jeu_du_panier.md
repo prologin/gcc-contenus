@@ -3,7 +3,7 @@ title: Jeu du Panier Micropython
 date: 2022
 ---
 
-# TP micro:bit 
+# Jeu du Panier
 
 
 Maintenant que vous avez appris à utiliser des **micro:bit**, il est maintenant temps de passer aux choses sérieuses avec un petit projet. Ne vous inquiétez pas, ce TP est très documenté.
