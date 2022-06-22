@@ -3,7 +3,7 @@ title: Jeu du Panier Micropython
 date: 2022
 ---
 
-# TP micro:bit 
+# Jeu du Panier
 
 
 Maintenant que vous avez appris à utiliser des **micro:bit**, il est maintenant temps de passer aux choses sérieuses avec un petit projet. Ne vous inquiétez pas, ce TP est très documenté.
@@ -56,7 +56,7 @@ display.clear()
 
 ### Les boutons
 
-Afin de pouvoir diriger notre panier, nous allons utiliser les boutons  A et B sur les côtés de l'écran. Quand on tient la carte `micro:bit` dans le bon sens, le bouton A est à gauche et le bouton B est à droite. On souhaite que l'appui sur le bouton A fasse déplacer la balle d'un pixel à gauche, et le B d'un à droite.
+Afin de pouvoir diriger notre panier, nous allons utiliser les boutons A et B sur les côtés de l'écran. Quand on tient la carte `micro:bit` dans le bon sens, le bouton A est à gauche et le bouton B est à droite. On souhaite que l'appui sur le bouton A fasse déplacer la balle d'un pixel à gauche, et le B d'un à droite.
 
 Reste à savoir comment détecter qu'un bouton a été pressé. Il existe pour cela 3 fonctions principales.
 
@@ -67,7 +67,7 @@ button_b.is_pressed()   # appuyés quand la ligne est exécutée par le micro:bi
 button_a.was_pressed()  # Ces fonctions renvoient True ou False si les boutons ont
 button_b.was_pressed()  # été appuyés depuis la dernière fois qu'elles ont été appelées
 
-button_a.get_presses()  # Ces fonctions renvoient le nombres d'appuis effectués sur
+button_a.get_presses()  # Ces fonctions renvoient le nombre d'appuis effectués sur
 button_b.get_presses()  # le bouton depuis la dernière fois qu'elles ont été appelées
 ```
 
@@ -92,17 +92,17 @@ Pour ce faire, commençons par créer une variable `posPanier` qui sera la posit
 
 Maintenant que cette variable est créée, nous allons vouloir déplacer notre panier. 
 
-Pour cela, il faut faire en sorte que tant que le joueur n'a pas perdu, alors le panier puisse bouger. Vous pouvez utiliser une variable booléenne pour cela.
+Pour cela, il faut faire en sorte que tant que le joueur n'a pas perdu, alors le panier peut bouger. Vous pouvez utiliser une variable booléenne pour cela.
 
 ![Le panier qui bouge sur un microbit](resources/microbit_panier_move.png){width=5cm}
 
 
 ### Rappel :  
-Une variable booléen représente deux valeurs : True ou False.
+Une variable booléenne représente deux valeurs : `True` ou `False`.
 Elle peut être utilisée dans une déclaration de condition ou comme condition d'une boucle. 
 
 ```python
-#on définit notre variable booléen à True à l'état initiale.
+# on définit notre variable booléen à True à l'état initial.
 vBool = true
 
 if vBool:
@@ -111,13 +111,13 @@ if vBool:
    
 while vBool: 
     # tant que la variable reste à vrai alors on évalue les 
-    # expression dans la boucle 
+    # expressions dans la boucle 
 ```
 
 
 Dès que le panier change de position il faut afficher sa nouvelle position sur l'écran. Ensuite il faut recalculer la position du panier.
 
-Afin de vous faciliter le travail, nous vous conseillons d'utiliser une variable qui sera la valeur de la position du panier. Ainsi vous pourrez plus facilement déterminer la nouvelle position du panier en fonction des boutons pressés. 
+Afin de vous faciliter le travail, nous vous conseillons d'utiliser une variable qui contiendra la position du panier. Ainsi vous pourrez plus facilement déterminer la nouvelle position du panier en fonction des boutons pressés. 
 
 ### Attention : 
 Il faut faire en sorte que le panier ne sorte pas de l'écran, sinon cela causera une erreur.
@@ -145,11 +145,11 @@ La variable `a` peut ici contenir la valeur `0`, `1`, `2`, `3`, ou `4`.
 Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est couple de variable.
 
 ```python
-# ici la varible a est un tuple contenant les variables 1 et 2.
+# ici la variable a est un tuple contenant les nombres 1 et 2.
 >>> a = (1, 2)
 >>> print (a)
 (1, 2)
-# pour changer les valeures d'un tuple, il faut le reassigmer :
+# pour changer les valeurs d'un tuple, il faut le réassigner :
 >>> a = (3, 4)
 >>> print (a)
 (3, 4)
@@ -164,12 +164,12 @@ Vous pouvez maintenant faire apparaitre une pomme de manière aléatoire, change
 Vous pouvez utiliser la fonction `sleep(time)` pour attendre entre chaque tour. Nous vous conseillons de mettre la valeur time dans une variable et de la définir au début de votre code.
 
 Si la position de la pomme est sur la dernière ligne il faut alors gérer les deux cas suivants : 
-- la position est la même que celle de la pomme alors le joueur à réussi, et il faut faire apparaitre une nouvelle pomme sur l'écran.
+- la position est la même que celle de la pomme alors le joueur a réussi, et il faut faire apparaître une nouvelle pomme sur l'écran.
 - sinon, c'est que le joueur a perdu.
 
 
 ### Compter les pommes
-Par ailleurs, il est nécessaire de compter le nombre de pommes attraper au cours de la partie. 
+Par ailleurs, il est nécessaire de compter le nombre de pommes attrapées au cours de la partie. 
 
 Pour faire cela vous pourrez utiliser une variable, vous servant de compteur. 
 
@@ -206,12 +206,12 @@ En programmation, les fonctions sont très similaires aux fonctions mathématiqu
 La première étape pour utiliser une fonction est de la définir. Pour cela nous utilisons le mot clé ```def``` suivi du nom de notre fonction puis des arguments que l'on souhaite utiliser entre parenthèses. Attention à ne pas oublier les 2 points après la parenthèse fermante. 
 
 ```python
-def nom_fonction(paramettre1,paramettre2):
+def nom_fonction(parametre1, parametre2):
 ```
-Une fois que nous avons choisi le nom de notre fonction et déterminer le nombre d'arguments néscessaire, nous pouvons définir le comportement de notre fonction. 
+Une fois que nous avons choisi le nom de notre fonction et déterminé le nombre d'arguments néscessaires, nous pouvons définir le comportement de notre fonction. 
 
 #### Exemple : 
-Essayons de faire une fonction qui effectue la somme entre deux arguments. 
+Essayons de faire une fonction qui effectue la somme de ses deux arguments. 
 ```python
 def somme(nbr1,nbr2): #ici nous avons declaré le nom de notre 
                       #fonction et ses arguments 
@@ -239,7 +239,7 @@ Vous remarquerez que l'appel de notre fonction, ne fais rien. C'est normal car c
 
 
 ##
-Maintenant que nous en avons terminé avec cette partie de cours passons à l'application directe  pour notre jeu. 
+Maintenant que nous en avons terminé avec cette partie de cours, passons à l'application directe pour notre jeu. 
 
 Une fois que le joueur a perdu, vous pouvez lui proposer de rejouer une partie. Pour cela, vous pouvez utiliser les connaissances que vous avez déjà, notamment les boucles, mais vous pouvez aussi utiliser des fonctions. 
 
