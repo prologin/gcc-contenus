@@ -56,7 +56,7 @@ display.clear()
 
 ### Les boutons
 
-Afin de pouvoir diriger notre panier, nous allons utiliser les boutons  A et B sur les côtés de l'écran. Quand on tient la carte `micro:bit` dans le bon sens, le bouton A est à gauche et le bouton B est à droite. On souhaite que l'appui sur le bouton A fasse déplacer la balle d'un pixel à gauche, et le B d'un à droite.
+Afin de pouvoir diriger notre panier, nous allons utiliser les boutons A et B sur les côtés de l'écran. Quand on tient la carte `micro:bit` dans le bon sens, le bouton A est à gauche et le bouton B est à droite. On souhaite que l'appui sur le bouton A fasse déplacer la balle d'un pixel à gauche, et le B d'un à droite.
 
 Reste à savoir comment détecter qu'un bouton a été pressé. Il existe pour cela 3 fonctions principales.
 
