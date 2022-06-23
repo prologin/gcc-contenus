@@ -763,7 +763,7 @@ luminosité d'une diode identifiée par sa colonne `x` et sa ligne `y`.
 
 ```python
 display.set_pixel(2, 2, 9)  # allume la diode centrale
-x = display.get_pixel(2, 2)  # `x` vaut maintenant 9
+a = display.get_pixel(2, 2)  # `a` vaut maintenant 9
 ```
 
 ### `display.show(image)` - afficher une image
