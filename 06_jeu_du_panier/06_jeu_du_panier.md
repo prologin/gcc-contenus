@@ -102,12 +102,12 @@ Une variable booléenne représente deux valeurs : `True` ou `False`.
 Elle peut être utilisée dans une déclaration de condition ou comme condition d'une boucle. 
 
 ```python
-# on définit notre variable booléen à True à l'état initial.
-vBool = true
+# on définit notre variable booléen à `True` à l'état initial.
+v_bool = True
 
 if vBool:
     # si la variable est vrai alors le programme évalue 
-    # les expressions à l'interieur de la condition
+    # les expressions à l'intérieur de la condition
    
 while vBool: 
     # tant que la variable reste à vrai alors on évalue les 
@@ -221,7 +221,7 @@ def somme(nbr1,nbr2): #ici nous avons declaré le nom de notre
 ```
 La fonction `somme` renvoie donc le résultat de la somme des deux nombres passés en paramètre. 
 
-Maintenant que nous avons défini notre fonction somme, nous allons vouloir l'utiliser. Pour ce faire rien de plus simple, il suffit d'appeler le nom de notre fonction avec les 2 nombres que nous voulons additionner en paramètre. 
+Maintenant que nous avons défini notre fonction `somme`, nous allons pouvoir l'utiliser. Pour ce faire rien de plus simple, il suffit d'appeler le nom de notre fonction avec les 2 nombres que nous voulons additionner en paramètre. 
 
 ```python
 >>> somme(2,4)
