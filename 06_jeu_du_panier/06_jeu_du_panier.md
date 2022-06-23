@@ -217,16 +217,16 @@ def somme(nbr1,nbr2): #ici nous avons declaré le nom de notre
                       #fonction et ses arguments 
                       
     return nbr1+nbr2 # Le mot clef return permet de renvoyer 
-                     # le resultat de l'addition
+                     # le résultat de l'addition
 ```
-La fonction somme renvoie donc le résultat de la somme des deux nombres passé en paramètre. 
+La fonction `somme` renvoie donc le résultat de la somme des deux nombres passés en paramètre. 
 
 Maintenant que nous avons défini notre fonction somme, nous allons vouloir l'utiliser. Pour ce faire rien de plus simple, il suffit d'appeler le nom de notre fonction avec les 2 nombres que nous voulons additionner en paramètre. 
 
 ```python
 >>> somme(2,4)
 ```
-Vous remarquerez que l'appel de notre fonction, ne fais rien. C'est normal car ce que nous ne faisons rien du résultat de notre fonction. Plusieurs possibilités s’offrent à nous, nous pouvons afficher le résultat, le stocker dans une variable...
+Vous remarquerez que l'appel de notre fonction ne fais rien. C'est normal car ce que nous ne faisons rien du résultat de notre fonction. Plusieurs possibilités s’offrent à nous, nous pouvons afficher le résultat, le stocker dans une variable...
 ```python
 >>> print(somme(2,3))
 5
@@ -252,5 +252,5 @@ L'idée est d'utiliser une première fonction pour retourner le résultat d'une 
 
 
 # FIN
-Bravo vous voila arrivé à la fin de ce projet !
-Vous avez maintenant un code qui fonctionne. Si vous avez des idées d’amélioration essayez de les mettre en place par vous meme !
+Bravo te voilà arrivée à la fin de ce projet !
+Vous avez maintenant un code qui fonctionne. Si vous avez des idées d’amélioration, essayez de les mettre en place par vous même !
