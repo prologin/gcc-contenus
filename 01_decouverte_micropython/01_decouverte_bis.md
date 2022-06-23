@@ -237,6 +237,9 @@ x = x + y
 display.scroll(x)
 ```
 
+![](resources/variables.png){width=5cm}
+
+
 ### Mini-Exercice
 **But :** Crée une variable avec la valeur 42, puis ajoutes-y 2 et affiche-la 
 sur l'écran.
