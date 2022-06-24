@@ -122,7 +122,7 @@ Afin de vous faciliter le travail, nous vous conseillons d'utiliser une variable
 
 ### Attention : 
 Il faut faire en sorte que le panier ne sorte pas de l'écran, sinon cela causera une erreur.
-Pour cela, n'oubliez pas de faire des conditions pour gérer les cas suivants : 
+Pour cela, n'oubliez pas de vérifier, à l'aide de conditions, les cas suivants : 
 * si la plateforme dépasse vers la droite, que faire ?
 * si la plateforme dépasse vers la gauche, que faire ?
 
@@ -148,7 +148,7 @@ Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est couple de var
 ```python
 # ici la variable a est un tuple contenant les nombres 1 et 2.
 >>> a = (1, 2)
->>> print (a)
+>>> print(a)
 (1, 2)
 # pour changer les valeurs d'un tuple, il faut le réassigner :
 >>> a = (3, 4)
@@ -162,9 +162,9 @@ Vous pouvez maintenant faire apparaitre une pomme de manière aléatoire, change
 
 
 
-Vous pouvez utiliser la fonction `sleep(time)` pour attendre entre chaque tour. Nous vous conseillons de mettre la valeur time dans une variable et de la définir au début de votre code.
+Vous pouvez utiliser la fonction `sleep(time)` pour attendre entre chaque tour. Nous vous conseillons de mettre la valeur `time` dans une variable et de la définir au début de votre code.
 
-Si la position de la pomme est sur la dernière ligne il faut alors gérer les deux cas suivants : 
+Si la position de la pomme est sur la dernière ligne, la plus basse, il faut alors gérer les deux cas suivants : 
 - la position est la même que celle de la pomme alors le joueur a réussi, et il faut faire apparaître une nouvelle pomme sur l'écran.
 - sinon, c'est que le joueur a perdu.
 
@@ -182,7 +182,7 @@ Attention, il ne faut pas comptabiliser une pomme si celle-ci tombe à côté du
 
 ## Partie III : Fin de partie
 
-Quand le joueur a perdu, il faut sortir de la boucle. Pour ce faire, il suffit de passer notre condition de boucle à False.
+Quand le joueur a perdu, il faut sortir de la boucle. Pour ce faire, il suffit de passer notre condition de boucle à `False`.
 
 Une fois sorti de la boucle, vous devrez afficher un message pour indiquer au joueur que ce dernier a perdu.
 
@@ -193,7 +193,7 @@ Une fois le jeu fini, vous pouvez ajouter plusieurs améliorations. Notez que ch
 
 ### Accélération de la chute des pommes!
 
-Pour rendre la partie plus difficile et amusante, vous pouvez faire accélérer la vitesse de chute des pommes au cours du temps. 
+Pour rendre la partie plus difficile et amusante, vous pouvez faire augmenter la vitesse de chute des pommes au cours du temps. 
 *Il faut tout de même s'assurer que le jeu reste faisable, en posant par exemple une limite de vitesse de chute.*
 
 ## Rejouer et meilleur score
