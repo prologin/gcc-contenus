@@ -481,7 +481,7 @@ elif x < 50:
 elif x < 80:
     display.scroll('x est supérieur à 50 et inférieur à 80')
 else:
-/bin/bash: line 1: q: command not found
+    display.scroll('x est supérieur à 80')
 ```
 
 ### Mini-exercice
