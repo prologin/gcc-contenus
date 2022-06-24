@@ -48,7 +48,7 @@ display.set_pixel(0, 2, 6)
 # display.set_pixel(coordonnée x, coodonnée y, intensité)
 ```
 
-Il pourra vous être utile de réinitialiser l'écran et d'éteindre toutes les LEDs d'un coup. Pour cela, on utilise la fonction suivante.
+Il pourra vous être utile de réinitialiser l'écran et d'éteindre toutes les LED d'un coup. Pour cela, on utilise la fonction suivante.
 
 ```python
 # Cette commande a le même effet que faire display.set_pixel(i, j, 0) 25 fois !
@@ -126,6 +126,7 @@ Pour cela, n'oubliez pas de vérifier, à l'aide de conditions, les cas suivants
 * si la plateforme dépasse vers la droite, que faire ?
 * si la plateforme dépasse vers la gauche, que faire ?
 
+Avant de passer à la partie suivante assurez vous d'avoir un panier pouvant bouger à droite et à gauche sur toute la ligne grâce aux boutons.
 
 ## Partie II : Les pommes
 
@@ -156,7 +157,7 @@ Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est couple de var
 (3, 4)
 ```
 
-Vous pouvez maintenant faire apparaitre une pomme de manière aléatoire, changer son emplacement. À chaque tour, la pomme doit changer de place sur l'axe y.
+Vous pouvez maintenant faire apparaitre une pomme de manière aléatoire, changer son emplacement. À chaque tour, la pomme doit descendre sur l'axe vertical.
 
 ![Les pommes sur un microbit](resources/microbit_pomme.png){width=5cm}
 
@@ -180,12 +181,19 @@ Ce compteur est initialisé à 0 et s’incrémente de 1 à chaque fois qu’une
 
 Attention, il ne faut pas comptabiliser une pomme si celle-ci tombe à côté du panier.
 
+Avant de passer à la partie suivante, veillez a vérifier ces différents points : 
+* toujours pouvoir bouger le panier dans les deux directions.
+* avoir toujours au moins une pomme qui tombe sur votre écran.
+* pouvoir attraper la pomme avec le panier.
+* avoir un score qui compte le nombre de pommes attrappées.
+
 ## Partie III : Fin de partie
 
 Quand le joueur a perdu, il faut sortir de la boucle. Pour ce faire, il suffit de passer notre condition de boucle à `False`.
 
 Une fois sorti de la boucle, vous devrez afficher un message pour indiquer au joueur que ce dernier a perdu.
 
+Pour finir cette partie, vérifier que si l'on n'attrape pas la pomme, la partie se termine bien et affiche le score.
 
 ## Partie IV : Améliorations
 
@@ -200,7 +208,7 @@ Pour rendre la partie plus difficile et amusante, vous pouvez faire augmenter la
 
 Cette partie a pour objectif d'améliorer votre jeu qui est déjà fonctionnel. Pour cette partie vous aurez besoin de faire appel à un nouveau type d'implémentation : les fonctions. 
 
-##
+---
 ### Les fonctions
 En programmation, les fonctions sont très similaires aux fonctions mathématiques. En général les fonctions prennent un ou plusieurs arguments en paramètre, et retournent un résultat. 
 
@@ -239,7 +247,7 @@ Vous remarquerez que l'appel de notre fonction ne fais rien. C'est normal car ce
 *Pro tips : Attention l'ordre dans lequel vous renseignez vos arguments peut avoir un impact sur le résultat.*
 
 
-##
+---
 Maintenant que nous en avons terminé avec cette partie de cours, passons à l'application directe pour notre jeu. 
 
 Une fois que le joueur a perdu, vous pouvez lui proposer de rejouer une partie. Pour cela, vous pouvez utiliser les connaissances que vous avez déjà, notamment les boucles, mais vous pouvez aussi utiliser des fonctions. 
@@ -250,6 +258,12 @@ L'intérêt de relancer une partie sans relancer tout le programme est que l'on 
 Ainsi, à la fin d'une partie, en plus du score réalisé, vous pourrez afficher le meilleur score réalisé jusque-là.
 
 L'idée est d'utiliser une première fonction pour retourner le résultat d'une partie et ensuite d'utiliser une seconde fonction pour traiter le résultat et gérer les autres fonctionnalités de notre jeu.
+
+Avant de finir ce projet, vérifier d'avoir bien implémenté c'est différents éléments : 
+* augmentation de la vitesse 
+* best score
+* pouvoir jouer normalement 
+* relancer la partie
 
 
 # FIN
