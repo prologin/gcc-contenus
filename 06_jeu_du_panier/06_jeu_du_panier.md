@@ -27,7 +27,7 @@ Le panier se trouve sur le sol. Il peut se déplacer sur tout l'axe horizontal (
 
 ### Les pommes
 
-Les pommes tombent du ciel depuis une position aléatoire. Il faut réussir à en attraper le plus possible pendant la partie.
+Les pommes tombent une par une du ciel, depuis une position aléatoire. Il faut réussir à en attraper le plus possible pendant la partie.
 
 
 
@@ -45,6 +45,7 @@ Chaque pixel de l'écran est une LED rouge, que l'on peut allumer ou éteindre �
 ```python
 # Attention, la numérotation des lignes et des colonnes commence à 0
 display.set_pixel(0, 2, 6)
+# display.set_pixel(coordonnée x, coodonnée y, intensité)
 ```
 
 Il pourra vous être utile de réinitialiser l'écran et d'éteindre toutes les LEDs d'un coup. Pour cela, on utilise la fonction suivante.
@@ -213,10 +214,10 @@ Une fois que nous avons choisi le nom de notre fonction et déterminé le nombre
 #### Exemple : 
 Essayons de faire une fonction qui effectue la somme de ses deux arguments. 
 ```python
-def somme(nbr1,nbr2): #ici nous avons declaré le nom de notre 
+def somme(nbr1, nbr2): # Ici nous avons déclaré le nom de notre 
                       #fonction et ses arguments 
                       
-    return nbr1+nbr2 # Le mot clef return permet de renvoyer 
+    return nbr1 + nbr2 # Le mot clef return permet de renvoyer 
                      # le résultat de l'addition
 ```
 La fonction `somme` renvoie donc le résultat de la somme des deux nombres passés en paramètre. 
@@ -224,13 +225,13 @@ La fonction `somme` renvoie donc le résultat de la somme des deux nombres pass�
 Maintenant que nous avons défini notre fonction `somme`, nous allons pouvoir l'utiliser. Pour ce faire rien de plus simple, il suffit d'appeler le nom de notre fonction avec les 2 nombres que nous voulons additionner en paramètre. 
 
 ```python
->>> somme(2,4)
+>>> somme(2, 4)
 ```
 Vous remarquerez que l'appel de notre fonction ne fais rien. C'est normal car ce que nous ne faisons rien du résultat de notre fonction. Plusieurs possibilités s’offrent à nous, nous pouvons afficher le résultat, le stocker dans une variable...
 ```python
->>> print(somme(2,3))
+>>> print(somme(2, 3))
 5
->>> resultat = somme(2,3)
+>>> resultat = somme(2, 3)
 >>> print(resultat)
 5
 ```
