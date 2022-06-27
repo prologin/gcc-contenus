@@ -103,10 +103,22 @@ Une variable booléenne représente deux valeurs : `True` ou `False`.
 Les valeurs `True` et `False` représentent respectivement les états `Vrai` et `Faux`.
 Nous sommes à l'état `Vrai` lorsque l'affirmation que l'on teste est vérifié. 
 ```python
-#on teste l'égalité 1 = 1 
+# on teste l'égalité 1 = 1 
 >>>1==1
-#ce test nous renvoie le mot clé `True` donc l'affirmation 1=1 est vrai
+# ce test nous renvoie le mot clé `True` donc l'affirmation 1=1 est vrai
 True
+```
+Une variable booléen peut  stocker le résultat de ce test ou simplement être initialisé à `True` ou `False`.
+```python
+# on initialise notre variable avec le résultat de notre test
+>>> v_bool = 1==1
+>>>print(v_bool)
+True
+# on définit maintenant notre variable avec la valeur `False`
+>>> v_bool = False
+>>> print(v_bool)
+False
+``` 
 Une variable booléenne peut donc être utilisée dans une condition ou comme condition d'une boucle. 
 Pour une utilisation dans une boucle, il faudra penser à actualiser la valeur de notre variable à l'intérieur de notre boucle. 
 
