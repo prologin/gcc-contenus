@@ -181,8 +181,10 @@ a = randint(0, 4)
 La variable `a` peut ici contenir la valeur `0`, `1`, `2`, `3`, ou `4`.
 
 
-Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est couple de variable.
-
+Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est couple de valeurs.
+Le tuple peut être vue comme une boite avec deux valeurs à l'intérieur.
+L'utilisation d'un tuple va donc nous permettre de conserver la position du panier, la position horizontale en x et la position verticale en y, dans une variable qui sera notre boite. 
+*En cas de besoin n'hésitez pas à demander de l'aide aux assistants qui sont là pour vous aider*
 ```python
 # ici la variable a est un tuple contenant les nombres 1 et 2.
 >>> a = (1, 2)
@@ -249,7 +251,12 @@ Cette partie a pour objectif d'améliorer votre jeu qui est déjà fonctionnel. 
 ### Les fonctions
 En programmation, les fonctions sont très similaires aux fonctions mathématiques. En général les fonctions prennent un ou plusieurs arguments en paramètre, et retournent un résultat. 
 
-La première étape pour utiliser une fonction est de la définir. Pour cela nous utilisons le mot clé ```def``` suivi du nom de notre fonction puis des arguments que l'on souhaite utiliser entre parenthèses. Attention à ne pas oublier les 2 points après la parenthèse fermante. 
+Plus simplement, vous pouvez voir une fonction comme une recette de cuisine. 
+Tout d'abord si vous voulez créer une nouvelle recette de cuisine, il vous faut trouver le nom de notre recette, lister les ingrédients nécessaires et ensuite écrire les étapes de préparations à suivre. 
+Pour écrire une nouvelle fonction, vous pouvez suivre le même fonctionnement. Trouver le nom de votre fonction, lister les paramètres nécessaire et écrire ce que fais votre fonction. 
+
+Cette première étape s'appelle la définition d'une fonction. Pour cela nous utilisons le mot clé ```def``` suivi du nom de notre fonction puis des arguments que l'on souhaite utiliser entre parenthèses. Attention à ne pas oublier les 2 points après la parenthèse fermante. 
+*Notez qu'il est possible de définir des fonctions sans paramètres.*
 
 ```python
 def nom_fonction(parametre1, parametre2):
