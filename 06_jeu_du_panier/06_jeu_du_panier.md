@@ -6,7 +6,7 @@ date: 2022
 # Jeu du Panier
 
 
-Maintenant que vous avez appris à utiliser des **micro:bit**, il est maintenant temps de passer aux choses sérieuses avec un petit projet. Ne vous inquiétez pas, ce TP est très documenté.
+Maintenant que vous avez appris à utiliser des **micro:bit**, il est maintenant temps de passer aux choses sérieuses avec un petit projet. Ne vous inquiétez pas, ce TP est très guidé.
 
 
 Le but de ce projet est de faire un **jeu du panier** :
@@ -93,26 +93,51 @@ Pour ce faire, commençons par créer une variable `posPanier` qui sera la posit
 
 Maintenant que cette variable est créée, nous allons vouloir déplacer notre panier. 
 
-Pour cela, il faut faire en sorte que tant que le joueur n'a pas perdu, alors le panier peut bouger. Vous pouvez utiliser une variable booléenne pour cela.
+Pour cela, tant que le joueur n'a pas perdu, on laissera le joueur faire bouger le panier. Vous pouvez utiliser une variable booléenne pour cela.
 
 ![Le panier qui bouge sur un microbit](resources/microbit_panier_move.png){width=5cm}
 
 
 ### Rappel :  
 Une variable booléenne représente deux valeurs : `True` ou `False`.
-Elle peut être utilisée dans une condition ou comme condition d'une boucle. 
+Les valeurs `True` et `False` représentent respectivement les états `Vrai` et `Faux`.
+Nous sommes à l'état `Vrai` lorsque l'affirmation que l'on teste est vérifié. 
+```python
+#on teste l'égalité 1 = 1 
+>>>1==1
+#ce test nous renvoie le mot clé `True` donc l'affirmation 1=1 est vrai
+True
+Une variable booléenne peut donc être utilisée dans une condition ou comme condition d'une boucle. 
+Pour une utilisation dans une boucle, il faudra penser à actualiser la valeur de notre variable à l'intérieur de notre boucle. 
 
 ```python
 # on définit notre variable booléen à `True` à l'état initial.
 v_bool = True
 
 if vBool:
-    # si la variable est vrai alors le programme évalue 
+    # si la variable est à vrai alors le programme évalue 
     # les expressions à l'intérieur de la condition
-   
-while vBool: 
+
+#on initialise la variable `en_cours` à `True` 
+en_cours = True   
+x = 0
+
+while en_cours: 
     # tant que la variable reste à vrai alors on évalue les 
     # expressions dans la boucle 
+   
+     # si x est égale à 5  
+    if x ==5:
+        #alors on met la variable en_cours à `False`
+        en_cours = False
+        # en_cours étant à `False` on sort de la boucle 
+   
+     # sinon on ajoute 1 à x
+    else:
+          x = x + 1
+        
+>>> print(x)
+5
 ```
 
 
