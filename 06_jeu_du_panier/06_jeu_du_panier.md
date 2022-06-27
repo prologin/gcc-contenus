@@ -35,46 +35,6 @@ Les pommes tombent une par une du ciel, depuis une position aléatoire. Il faut 
 
 La partie se finit si une pomme touche le sol. Dans ce cas nous afficherons le score du joueur.
 
-## Fonctionnement de la carte `micro:bit`
-
-
-### L'écran
-
-Chaque pixel de l'écran est une LED rouge, que l'on peut allumer ou éteindre à un certain degré d'intensité allant de 0 à 9 (0 -> éteinte, 9 -> allumée au maximum). La ligne de code ci-dessous allumera le pixel de la première ligne et troisième colonne au niveau d'intensité 6.
-
-```python
-# Attention, la numérotation des lignes et des colonnes commence à 0
-display.set_pixel(0, 2, 6)
-# display.set_pixel(coordonnée x, coodonnée y, intensité)
-```
-
-Il pourra vous être utile de réinitialiser l'écran et d'éteindre toutes les LED d'un coup. Pour cela, on utilise la fonction suivante.
-
-```python
-# Cette commande a le même effet que de mettre le degré d'intensité des 25 LED à 0.
-display.clear()
-```
-
-### Les boutons
-
-Afin de pouvoir diriger notre panier, nous allons utiliser les boutons A et B sur les côtés de l'écran. Quand on tient la carte `micro:bit` dans le bon sens, le bouton A est à gauche et le bouton B est à droite. On souhaite que l'appui sur le bouton A fasse déplacer la balle d'un pixel à gauche, et le B d'un à droite.
-
-Reste à savoir comment détecter qu'un bouton a été pressé. Il existe pour cela 3 fonctions principales.
-
-```python
-button_a.is_pressed()   # Ces fonctions renvoient True ou False si les boutons sont
-button_b.is_pressed()   # appuyés quand la ligne est exécutée par le micro:bit
-
-button_a.was_pressed()  # Ces fonctions renvoient True ou False si les boutons ont
-button_b.was_pressed()  # été appuyés depuis la dernière fois qu'elles ont été appelées
-
-button_a.get_presses()  # Ces fonctions renvoient le nombre d'appuis effectués sur
-button_b.get_presses()  # le bouton depuis la dernière fois qu'elles ont été appelées
-```
-
-Pour ce projet, nous utiliserons principalement `get_presses()` pour déplacer notre panier à l'emplacement voulu.
-
-Maintenant ce rappel fait, passons au jeu !
 
 ## Partie I : Le panier
 
