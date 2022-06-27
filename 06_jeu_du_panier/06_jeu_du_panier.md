@@ -51,7 +51,7 @@ display.set_pixel(0, 2, 6)
 Il pourra vous être utile de réinitialiser l'écran et d'éteindre toutes les LED d'un coup. Pour cela, on utilise la fonction suivante.
 
 ```python
-# Cette commande a le même effet que faire display.set_pixel(i, j, 0) 25 fois !
+# Cette commande a le même effet que de mettre le degré d'intensité des 25 LED à 0.
 display.clear()
 ```
 
@@ -100,7 +100,7 @@ Pour cela, il faut faire en sorte que tant que le joueur n'a pas perdu, alors le
 
 ### Rappel :  
 Une variable booléenne représente deux valeurs : `True` ou `False`.
-Elle peut être utilisée dans une déclaration de condition ou comme condition d'une boucle. 
+Elle peut être utilisée dans une condition ou comme condition d'une boucle. 
 
 ```python
 # on définit notre variable booléen à `True` à l'état initial.
