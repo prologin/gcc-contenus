@@ -1,0 +1,4 @@
+baseURL = "https://tp.girlscancode.fr"
+languageCode = "fr-fr"
+title = "TPs GCC!"
+theme = "prologin"
