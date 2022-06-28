@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helveticaneue.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/helvetica.woff2") format("woff2");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+:root {
+    --text-color: #282828;
+    --bg-color: #f9f9f9;
+}
+
+body {
+    font-family: "Helvetica", sans-serif;
+    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+header.site-header {
+    background-color: #35479A;
+    text-align: center;
+    color: var(--bg-color);
+    padding: 0.4em 1em;
+    display: flex;
+    align-items: center;
+    height: 3.4em;
+}
+
+header.site-header img {
+    width: 56px;
+    margin-right: 1em;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 868px;
+}
+
+h1.site-title {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+h1.article-title {
+    margin: 0;
+    font-size: 3em;
+}
+
+.article-subtitle {
+    color: #575757;
+    font-weight: 500;
+}
+
+.article-title-box {
+    height: 15em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ededed;
+    margin-bottom: 4em;
+}
+
+.article-container  {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+a.code-stub-button {
+    text-decoration: none;
+    border-radius: 6px;
+    background-color: #35479a;
+    color: white;
+    padding: 0.5em 0.8em;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    line-height: 28px;
+}
+
+.home-title-box {
+    background-color: #222;
+    color: whitesmoke;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.site-header-title {
+    margin: 0;
+    font-size: 5em;
+}
+
+.site-header-subtitle {
+    color: #ccc;
+}
+
+.article-list {
+    list-style-type: none;
+    max-width: 690px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1em;
+}
+
+.article-item {
+    display: block;
+    background: lightgray;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+.article-item h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.article-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.header-home-link {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+
+.header-home-link:visited {
+    color: inherit;
+}
