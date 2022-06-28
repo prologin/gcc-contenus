@@ -6,7 +6,7 @@ date: 2022
 # Jeu du Panier
 
 
-Maintenant que vous avez appris à utiliser des **micro:bit**, il est maintenant temps de passer aux choses sérieuses avec un petit projet. Ne vous inquiétez pas, ce TP est très guidé.
+Maintenant que vous avez appris à utiliser des **micro:bit**, il est temps de passer aux choses sérieuses avec un petit projet. Ne vous inquiétez pas, ce TP est très guidé.
 
 
 Le but de ce projet est de faire un **jeu du panier** :
@@ -89,13 +89,14 @@ v_bool = True
 if vBool:
     # si la variable est à vrai alors le programme évalue 
     # les expressions à l'intérieur de la condition
+    print("Condition réalisée") 
 
 # on initialise la variable `en_cours` à `True` 
 en_cours = True   
 x = 0
 
 while en_cours: 
-    # tant que la variable reste à vrai alors on évalue les 
+    # tant que la variable reste à `True`, on évalue les 
     # expressions dans la boucle 
    
      # si x est égale à 5  
@@ -108,8 +109,9 @@ while en_cours:
     else:
           x = x + 1
         
->>> print(x)
-5
+print(x)
+# Vous pouvez constater qu'à la fin de cette boucle 
+# la variable x a une nouvelle valeur : 5
 ```
 
 
@@ -120,8 +122,8 @@ Afin de vous faciliter le travail, nous vous conseillons d'utiliser une variable
 ### Attention : 
 Il faut faire en sorte que le panier ne sorte pas de l'écran, sinon cela causera une erreur.
 Pour cela, n'oubliez pas de vérifier, à l'aide de conditions, les cas suivants : 
-* si la plateforme dépasse vers la droite, que faire ?
-* si la plateforme dépasse vers la gauche, que faire ?
+* si la panier dépasse vers la droite, que faire ?
+* si la panier dépasse vers la gauche, que faire ?
 
 Avant de passer à la partie suivante, assurez-vous d'avoir un panier pouvant bouger à droite et à gauche sur toute la ligne grâce aux boutons.
 
@@ -143,7 +145,7 @@ La variable `a` peut ici contenir la valeur `0`, `1`, `2`, `3`, ou `4`.
 
 Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est couple de valeurs.
 Le tuple peut être vu comme une boite avec deux valeurs à l'intérieur.
-L'utilisation d'un tuple va donc nous permettre de conserver la position du panier, la position horizontale en x et la position verticale en y, dans une variable qui sera notre boite. 
+L'utilisation d'un tuple va donc nous permettre de conserver la position des pommes, la position horizontale en x et la position verticale en y, dans une variable qui sera notre boite. 
 *En cas de besoin n'hésitez pas à demander de l'aide aux organisateurs qui sont là pour vous aider*
 ```python
 # ici la variable a est un tuple contenant les nombres 1 et 2.
@@ -237,15 +239,16 @@ La fonction `somme` renvoie donc le résultat de la somme des deux nombres pass�
 Maintenant que nous avons défini notre fonction `somme`, nous allons pouvoir l'utiliser. Pour ce faire rien de plus simple, il suffit d'appeler le nom de notre fonction avec les 2 nombres que nous voulons additionner en paramètre. 
 
 ```python
->>> somme(2, 4)
+somme(2, 4)
 ```
 Vous remarquerez que l'appel de notre fonction ne fais rien. C'est normal car ce que nous ne faisons rien du résultat de notre fonction. Plusieurs possibilités s’offrent à nous, nous pouvons afficher le résultat, le stocker dans une variable...
 ```python
->>> print(somme(2, 3))
-5
->>> resultat = somme(2, 3)
->>> print(resultat)
-5
+print(somme(2, 3))
+# résultat affiché dans la console : 5
+
+resultat = somme(2, 3)
+print(resultat)
+# résultat affiché dans la console : 5
 ```
 
 *Pro tips : Attention l'ordre dans lequel vous renseignez vos arguments peut avoir un impact sur le résultat.*
@@ -265,7 +268,7 @@ L'idée est d'utiliser une première fonction pour retourner le résultat d'une 
 
 Avant de finir ce projet, vérifiez d'avoir bien implémenté ces différents éléments : 
 * augmentation de la vitesse 
-* best score
+* meilleur score
 * pouvoir jouer normalement 
 * relancer la partie
 
