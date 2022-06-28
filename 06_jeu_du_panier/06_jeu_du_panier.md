@@ -61,25 +61,25 @@ Pour cela, tant que le joueur n'a pas perdu, on laissera le joueur faire bouger 
 ### Rappel :  
 Une variable booléenne représente deux valeurs : `True` ou `False`.
 Les valeurs `True` et `False` représentent respectivement les états `Vrai` et `Faux`.
-Nous sommes à l'état `Vrai` lorsque l'affirmation que l'on teste est vérifié. 
+Nous sommes à l'état `Vrai` lorsque l'affirmation que l'on teste est vérifiée. 
 ```python
 # on teste l'égalité 1 = 1 
->>>1==1
-# ce test nous renvoie le mot clé `True` donc l'affirmation 1=1 est vrai
+>>> 1 == 1
+# ce test nous renvoie le mot clé `True` donc l'affirmation 1=1 est vraie
 True
 ```
-Une variable booléen peut  stocker le résultat de ce test ou simplement être initialisé à `True` ou `False`.
+Une variable booléenne peut stocker le résultat de ce test ou simplement être initialisée à `True` ou `False`.
 ```python
 # on initialise notre variable avec le résultat de notre test
 >>> v_bool = 1==1
->>>print(v_bool)
+>>> print(v_bool)
 True
 # on définit maintenant notre variable avec la valeur `False`
 >>> v_bool = False
 >>> print(v_bool)
 False
 ``` 
-Une variable booléenne peut donc être utilisée dans une condition ou comme condition d'une boucle. 
+Une variable booléenne peut donc être utilisée dans une condition ou comme condition d'arrêt d'une boucle. 
 Pour une utilisation dans une boucle, il faudra penser à actualiser la valeur de notre variable à l'intérieur de notre boucle. 
 
 ```python
@@ -90,7 +90,7 @@ if vBool:
     # si la variable est à vrai alors le programme évalue 
     # les expressions à l'intérieur de la condition
 
-#on initialise la variable `en_cours` à `True` 
+# on initialise la variable `en_cours` à `True` 
 en_cours = True   
 x = 0
 
@@ -99,10 +99,10 @@ while en_cours:
     # expressions dans la boucle 
    
      # si x est égale à 5  
-    if x ==5:
-        #alors on met la variable en_cours à `False`
+    if x == 5:
+        # alors on met la variable `en_cours` à `False`
         en_cours = False
-        # en_cours étant à `False` on sort de la boucle 
+        # `en_cours` étant à `False` on sort de la boucle 
    
      # sinon on ajoute 1 à x
     else:
@@ -123,7 +123,7 @@ Pour cela, n'oubliez pas de vérifier, à l'aide de conditions, les cas suivants
 * si la plateforme dépasse vers la droite, que faire ?
 * si la plateforme dépasse vers la gauche, que faire ?
 
-Avant de passer à la partie suivante assurez vous d'avoir un panier pouvant bouger à droite et à gauche sur toute la ligne grâce aux boutons.
+Avant de passer à la partie suivante, assurez-vous d'avoir un panier pouvant bouger à droite et à gauche sur toute la ligne grâce aux boutons.
 
 ## Partie II : Les pommes
 
@@ -134,7 +134,7 @@ Dans un premier temps, voici comment créer un nombre aléatoire en python :
 # importer la librairie aléatoire :
 from random import *
 
-# générer un nombre entier "a" entre 0 et 4 inclus :
+# générer un nombre entier `a` entre 0 et 4 inclus :
 a = randint(0, 4)
 ```
 
@@ -142,9 +142,9 @@ La variable `a` peut ici contenir la valeur `0`, `1`, `2`, `3`, ou `4`.
 
 
 Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est couple de valeurs.
-Le tuple peut être vue comme une boite avec deux valeurs à l'intérieur.
+Le tuple peut être vu comme une boite avec deux valeurs à l'intérieur.
 L'utilisation d'un tuple va donc nous permettre de conserver la position du panier, la position horizontale en x et la position verticale en y, dans une variable qui sera notre boite. 
-*En cas de besoin n'hésitez pas à demander de l'aide aux assistants qui sont là pour vous aider*
+*En cas de besoin n'hésitez pas à demander de l'aide aux organisateurs qui sont là pour vous aider*
 ```python
 # ici la variable a est un tuple contenant les nombres 1 et 2.
 >>> a = (1, 2)
@@ -156,7 +156,7 @@ L'utilisation d'un tuple va donc nous permettre de conserver la position du pani
 (3, 4)
 ```
 
-Vous pouvez maintenant faire apparaitre une pomme de manière aléatoire, changer son emplacement. À chaque tour, la pomme doit descendre sur l'axe vertical.
+Vous pouvez maintenant faire apparaître une pomme de manière aléatoire et changer son emplacement. À chaque tour, la pomme doit descendre sur l'axe vertical.
 
 ![Les pommes sur un microbit](resources/microbit_pomme.png){width=5cm}
 
@@ -180,7 +180,7 @@ Ce compteur est initialisé à 0 et s’incrémente de 1 à chaque fois qu’une
 
 Attention, il ne faut pas comptabiliser une pomme si celle-ci tombe à côté du panier.
 
-Avant de passer à la partie suivante, veillez a vérifier ces différents points : 
+Avant de passer à la partie suivante, veillez à vérifier ces différents points : 
 * toujours pouvoir bouger le panier dans les deux directions.
 * avoir toujours au moins une pomme qui tombe sur votre écran.
 * pouvoir attraper la pomme avec le panier.
@@ -192,7 +192,7 @@ Quand le joueur a perdu, il faut sortir de la boucle. Pour ce faire, il suffit d
 
 Une fois sorti de la boucle, vous devrez afficher un message pour indiquer au joueur que ce dernier a perdu.
 
-Pour finir cette partie, vérifier que si l'on n'attrape pas la pomme, la partie se termine bien et affiche le score.
+Pour finir cette partie, vérifiez que si l'on n'attrape pas la pomme, la partie se termine bien et affiche le score.
 
 ## Partie IV : Améliorations
 
@@ -227,10 +227,10 @@ Une fois que nous avons choisi le nom de notre fonction et déterminé le nombre
 Essayons de faire une fonction qui effectue la somme de ses deux arguments. 
 ```python
 def somme(nbr1, nbr2): # Ici nous avons déclaré le nom de notre 
-                      #fonction et ses arguments 
+                       # fonction et ses arguments 
                       
     return nbr1 + nbr2 # Le mot clef return permet de renvoyer 
-                     # le résultat de l'addition
+                      # le résultat de l'addition
 ```
 La fonction `somme` renvoie donc le résultat de la somme des deux nombres passés en paramètre. 
 
@@ -257,13 +257,13 @@ Maintenant que nous en avons terminé avec cette partie de cours, passons à l'a
 Une fois que le joueur a perdu, vous pouvez lui proposer de rejouer une partie. Pour cela, vous pouvez utiliser les connaissances que vous avez déjà, notamment les boucles, mais vous pouvez aussi utiliser des fonctions. 
 
 Ainsi, le joueur pourra relancer une partie en cliquant sur un bouton, ou arrêter le jeu en cliquant sur un autre. 
-L'intérêt de relancer une partie sans relancer tout le programme est que l'on peut conserver des données des parties précédentes, comme le **meilleur score**.
+L'intérêt de relancer une partie sans relancer tout le programme est que l'on peut conserver les données des parties précédentes, comme le **meilleur score**.
 
 Ainsi, à la fin d'une partie, en plus du score réalisé, vous pourrez afficher le meilleur score réalisé jusque-là.
 
 L'idée est d'utiliser une première fonction pour retourner le résultat d'une partie et ensuite d'utiliser une seconde fonction pour traiter le résultat et gérer les autres fonctionnalités de notre jeu.
 
-Avant de finir ce projet, vérifier d'avoir bien implémenté c'est différents éléments : 
+Avant de finir ce projet, vérifiez d'avoir bien implémenté ces différents éléments : 
 * augmentation de la vitesse 
 * best score
 * pouvoir jouer normalement 
@@ -271,5 +271,5 @@ Avant de finir ce projet, vérifier d'avoir bien implémenté c'est différents 
 
 
 # FIN
-Bravo te voilà arrivée à la fin de ce projet !
+Bravo vous voilà arrivée à la fin de ce projet !
 Vous avez maintenant un code qui fonctionne. Si vous avez des idées d’amélioration, essayez de les mettre en place par vous même !
