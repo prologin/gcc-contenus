@@ -33,7 +33,7 @@ Les pommes tombent une par une du ciel, depuis une position aléatoire. Il faut 
 
 ### Fin de la partie
 
-La partie se finit si une pomme touche le sol. Dans ce cas nous afficherons le score du joueur.
+La partie se finit lorsqu'une pomme touche le sol. Dans ce cas nous afficherons le score du joueur.
 
 
 ## Partie I : Le panier
