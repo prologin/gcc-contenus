@@ -166,8 +166,10 @@ Vous pouvez maintenant faire apparaître une pomme de manière aléatoire et cha
 
 Vous pouvez utiliser la fonction `sleep(time)` pour attendre entre chaque tour. Nous vous conseillons de mettre la valeur `time` dans une variable et de la définir au début de votre code.
 
+Mettre cette valeur dans une variable nous permettra de la changer, ce qui va nous etre utile dans la suite du programme.
+
 Si la position de la pomme est sur la dernière ligne, la plus basse, il faut alors gérer les deux cas suivants : 
-- la position est la même que celle de la pomme alors le joueur a réussi, et il faut faire apparaître une nouvelle pomme sur l'écran.
+- la position est la même que celle du panier alors le joueur a réussi, et il faut faire apparaître une nouvelle pomme sur l'écran.
 - sinon, c'est que le joueur a perdu.
 
 
@@ -199,13 +201,14 @@ Pour finir cette partie, vérifiez que si l'on n'attrape pas la pomme, la partie
 ## Partie IV : Améliorations
 
 Une fois le jeu fini, vous pouvez ajouter plusieurs améliorations. Notez que chaque amélioration est réalisable indépendamment des autres. 
-
+Avant de commencer cette partie vérifiez que votre jeu fonctionne correctement. Si ce n'est pas le cas n'hésitez pas à demander de l'aide aux organisateurs !
+`
 ### Accélération de la chute des pommes!
 
 Pour rendre la partie plus difficile et amusante, vous pouvez faire augmenter la vitesse de chute des pommes au cours du temps. 
 *Il faut tout de même s'assurer que le jeu reste faisable, en posant par exemple une limite de vitesse de chute.*
 
-## Rejouer et meilleur score
+### Rejouer et meilleur score
 
 Cette partie a pour objectif d'améliorer votre jeu qui est déjà fonctionnel. Pour cette partie vous aurez besoin de faire appel à un nouveau type d'implémentation : les fonctions. 
 
