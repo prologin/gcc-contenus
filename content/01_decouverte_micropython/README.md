@@ -1,3 +1,6 @@
+# THIS TP IS REWRITED ! IT DOES NOT FIT THE CORRECT ARCHITECTURE BUT IT'S NORMAL
+
+
 # TP Découverte Python
 
 Le pdf est disponible
