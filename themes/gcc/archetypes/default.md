@@ -1,7 +1,7 @@
----
++++
 title: "{{ replace .Name "-" " " | title }}"
-weight: FIXME
+date: {{ .Date }}
 authors: ["FIXME"]
-summary: FIXME
-code_stub_url: FIXME (or not)
----
+subtitle: FIXME
+code_stub_url: FIXME
++++

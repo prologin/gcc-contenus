@@ -9,7 +9,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
 }
 
 h1 {
@@ -20,8 +20,6 @@ h1 {
 :root {
     --text-color: #282828;
     --bg-color: #f9f9f9;
-    --header-color: #35479A;
-    --bg-codeblock-color: #272822;
 }
 
 body {
@@ -33,53 +31,25 @@ body {
     background-color: var(--bg-color);
 }
 
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/********************/
-/****** header ******/
-/********************/
-
 header.site-header {
-    background-color: var(--header-color);
+    background-color: #35479A;
+    text-align: center;
     color: var(--bg-color);
     padding: 0.4em 1em;
     display: flex;
     align-items: center;
     height: 3.4em;
-    justify-content: space-between;
 }
 
 header.site-header img {
-    height: 45px;
+    width: 56px;
     margin-right: 1em;
 }
-
-header.site-header ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: space-around;
-}
-
-header.site-header li {
-    padding: 0 15px;
-}
-
-/********************/
-/****** content *****/
-/********************/
 
 .container {
     margin-left: auto;
     margin-right: auto;
     width: 868px;
-}
-
-.content :is(h1, h2, h3, h4, h5, h6) {
-    padding-top: 25px;
 }
 
 h1.site-title {
@@ -110,17 +80,15 @@ h1.article-title {
 
 .article-container  {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     align-content: flex-start;
     justify-content: flex-start;
-    flex-direction: row-reverse;
-    margin-left: 50px;
 }
 
 a.code-stub-button {
     text-decoration: none;
     border-radius: 6px;
-    background-color: var(--header-color);
+    background-color: #35479a;
     color: white;
     padding: 0.5em 0.8em;
     font-weight: 600;
@@ -184,132 +152,4 @@ img {
 
 .header-home-link:visited {
     color: inherit;
-}
-
-h1.header-menu {
-    margin: 0;
-    font-size: 1em;
-    color: #d3d3d3;
-}
-
-/********************/
-/* table of content */
-/********************/
-.toc {
-    position: sticky;
-    top: 50px;
-    margin: 20px;
-    list-style:none;
-    border-left: 4px solid var(--header-color);
-    padding-left: 15px;
-    border-radius: 5px;
-}
-
-.toc-title {
-    font-weight: bold;
-    font-size: 1.4em;
-    color: var(--header-color);
-    margin-top: 5px
-}
-
-.toc ul {
-    list-style: none;
-    padding: 15px;
-    margin: 0;
-    max-height: 75vh;
-    overflow-y: auto;
-}
-
-.toc li {
-    margin-bottom: 10px;
-    margin-left: 0;
-}
-
-.toc a:any-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.toc a:hover {
-    color: grey;
-}
-
-.toc ul ul a:any-link {
-    text-decoration: none;
-    font-weight: normal;
-}
-
-
-
-/********************/
-/**** code block ****/
-/********************/
-
-.code {
-    background-color: var(--bg-codeblock-color);
-    overflow-x: scroll;
-    max-width: 100%;
-    min-width: 100px;
-    padding-left: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    place-content: space-between;
-    padding: 10px;
-}
-
-code:not(pre>code) {
-    background-color: #CECECE;
-    white-space: nowrap;
-    border-radius: 5px;
-    border: 1px solid #BCBEC0;
-    padding: 1px;
-    padding-bottom: .3px;
-    font:.75em Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
-}
-
-.copy-button {
-    background-color: var(--header-color);
-    border-radius: 8px;
-    border-style: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    height: 40px;
-    line-height: 20px;
-    padding: 10px 16px;
-    right: 10px;
-    position: sticky;
-}
-
-pre {
-    margin: 0;
-    padding-right: 10px;
-}
-
-pre code {
-    white-space: pre;
-    padding: 0;
-    margin: 0;
-}
-
-
-.code::-webkit-scrollbar {
-    height: 0;
-}
-
-/********************/
-/**** responsive ****/
-/********************/
-
-@media screen and (max-width: 1400px) {
-    .article-container {
-        display: block;
-    }
-    .toc {
-        position: relative;
-        margin: 10%;
-    }
 }
