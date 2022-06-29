@@ -168,7 +168,7 @@ Vous pouvez utiliser la fonction `sleep(time)` pour attendre entre chaque tour. 
 
 Mettre cette valeur dans une variable nous permettra de la changer, ce qui va nous etre utile dans la suite du programme.
 
-Si la position de la pomme est sur la dernière ligne, la plus basse, il faut alors gérer les deux cas suivants : 
+Si la pomme est sur la dernière ligne, la plus basse, il faut alors gérer les deux cas suivants : 
 - la position est la même que celle du panier alors le joueur a réussi, et il faut faire apparaître une nouvelle pomme sur l'écran.
 - sinon, c'est que le joueur a perdu.
 
@@ -205,7 +205,7 @@ Avant de commencer cette partie vérifiez que votre jeu fonctionne correctement.
 `
 ### Accélération de la chute des pommes!
 
-Pour rendre la partie plus difficile et amusante, vous pouvez faire augmenter la vitesse de chute des pommes au cours du temps. 
+Pour rendre la partie plus difficile et amusante, vous pouvez augmenter la vitesse de chute des pommes au fur et à mesure de l'avancement de la partie. 
 *Il faut tout de même s'assurer que le jeu reste faisable, en posant par exemple une limite de vitesse de chute.*
 
 ### Rejouer et meilleur score
