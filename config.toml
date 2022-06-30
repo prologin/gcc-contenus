@@ -2,3 +2,9 @@ baseURL = "https://tp.girlscancode.fr"
 languageCode = "fr-fr"
 title = "TPs GCC!"
 theme = "gcc"
+
+[Menu]
+[[Menu.header]]
+    Name = "Home page"
+    URL = "/"
+
