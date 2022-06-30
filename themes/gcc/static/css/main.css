@@ -144,13 +144,17 @@ img {
     max-width: 100%;
 }
 
-.header-link {
+.header-home-link {
     display: flex;
     text-decoration: none;
     align-items: center;
 }
 
-.header-link:visited {
+.header-home-link:visited {
     color: inherit;
 }
 
+h1.header-menu {
+    margin: 0;
+    font-size: 1em;
+}
