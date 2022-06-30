@@ -115,7 +115,7 @@ print(x)
 ```
 
 
-Dès que le panier change de position il faut afficher sa nouvelle position sur l'écran. Ensuite il faut recalculer la position du panier.
+Dès que le panier change de position, il faut calculer la nouvelle position du panier.  Ensuite il faut afficher sa nouvelle position sur l'écran.
 
 Afin de vous faciliter le travail, nous vous conseillons d'utiliser une variable qui contiendra la position du panier. Ainsi vous pourrez plus facilement déterminer la nouvelle position du panier en fonction des boutons pressés. 
 
