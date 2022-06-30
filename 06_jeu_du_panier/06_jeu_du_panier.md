@@ -44,7 +44,7 @@ from microbit import *
 ```
 
 Dans cette partie nous allons simplement nous occuper du panier. Le panier fait 1 pixel de large.
-Pour ce faire, commençons par créer une variable `posPanier` qui sera la position du panier en X. Au début de la partie, le panier sera au milieu de l'écran, soit en position 2 (image ci-dessous). 
+Pour ce faire, commençons par créer une variable `pos_panier` qui sera la position du panier en X. Au début de la partie, le panier sera au milieu de l'écran, soit en position 2 (image ci-dessous). 
 
 
 ![Le panier sur un microbit](resources/microbit_panier.png){width=5cm}
@@ -65,13 +65,13 @@ Nous sommes à l'état `Vrai` lorsque l'affirmation que l'on teste est vérifié
 ```python
 # on teste l'égalité 1 = 1 
 >>> 1 == 1
-# ce test nous renvoie le mot clé `True` donc l'affirmation 1=1 est vraie
+# ce test nous renvoie le mot clé `True` donc l'affirmation 1 = 1 est vraie
 True
 ```
 Une variable booléenne peut stocker le résultat de ce test ou simplement être initialisée à `True` ou `False`.
 ```python
 # on initialise notre variable avec le résultat de notre test
->>> v_bool = 1==1
+>>> v_bool = 1 == 1
 >>> print(v_bool)
 True
 # on définit maintenant notre variable avec la valeur `False`
@@ -83,10 +83,10 @@ Une variable booléenne peut donc être utilisée dans une condition ou comme co
 Pour une utilisation dans une boucle, il faudra penser à actualiser la valeur de notre variable à l'intérieur de notre boucle. 
 
 ```python
-# on définit notre variable booléen à `True` à l'état initial.
+# on définit notre variable booléenne à `True` à l'état initial
 v_bool = True
 
-if vBool:
+if v_bool:
     # si la variable est à vrai alors le programme évalue 
     # les expressions à l'intérieur de la condition
     print("Condition réalisée") 
@@ -115,7 +115,7 @@ print(x)
 ```
 
 
-Dès que le panier change de position, il faut calculer la nouvelle position du panier.  Ensuite il faut afficher sa nouvelle position sur l'écran.
+Dès que le panier se déplace, il faut calculer sa nouvelle position. Il faut ensuite le redessiner à l'écran à sa nouvelle position.
 
 Afin de vous faciliter le travail, nous vous conseillons d'utiliser une variable qui contiendra la position du panier. Ainsi vous pourrez plus facilement déterminer la nouvelle position du panier en fonction des boutons pressés. 
 
@@ -133,8 +133,8 @@ Cette partie va comprendre l'ajout des pommes.
 
 Dans un premier temps, voici comment créer un nombre aléatoire en python : 
 ```python
-# importer la librairie aléatoire :
-from random import *
+# importer la fonction permettant de tirer un nombre aléatoire
+from random import randint
 
 # générer un nombre entier `a` entre 0 et 4 inclus :
 a = randint(0, 4)
@@ -166,7 +166,7 @@ Vous pouvez maintenant faire apparaître une pomme de manière aléatoire et cha
 
 Vous pouvez utiliser la fonction `sleep(time)` pour attendre entre chaque tour. Nous vous conseillons de mettre la valeur `time` dans une variable et de la définir au début de votre code.
 
-Mettre cette valeur dans une variable nous permettra de la changer, ce qui va nous etre utile dans la suite du programme.
+Mettre cette valeur dans une variable nous permettra de la changer, ce qui va nous être utile dans la suite du programme.
 
 Si la pomme est sur la dernière ligne, la plus basse, il faut alors gérer les deux cas suivants : 
 - la position est la même que celle du panier alors le joueur a réussi, et il faut faire apparaître une nouvelle pomme sur l'écran.
@@ -178,7 +178,7 @@ Par ailleurs, il est nécessaire de compter le nombre de pommes attrapées au co
 
 Pour faire cela vous pourrez utiliser une variable, vous servant de compteur. 
 
-À l’aide de ce compteur, vous pourrez compter le nombre de pommes qui ont été attrapées et afficher ce score.
+À la fin de la partie, vous pourrez, à l’aide de ce compteur, afficher le nombre de pommes attrapées.
 
 Ce compteur est initialisé à 0 et s’incrémente de 1 à chaque fois qu’une pomme touche le panier.
 
@@ -188,7 +188,7 @@ Avant de passer à la partie suivante, veillez à vérifier ces différents poin
 * toujours pouvoir bouger le panier dans les deux directions.
 * avoir toujours au moins une pomme qui tombe sur votre écran.
 * pouvoir attraper la pomme avec le panier.
-* avoir un score qui compte le nombre de pommes attrappées.
+* avoir un score qui compte le nombre de pommes attrapées.
 
 ## Partie III : Fin de partie
 
@@ -202,7 +202,6 @@ Pour finir cette partie, vérifiez que si l'on n'attrape pas la pomme, la partie
 
 Une fois le jeu fini, vous pouvez ajouter plusieurs améliorations. Notez que chaque amélioration est réalisable indépendamment des autres. 
 Avant de commencer cette partie vérifiez que votre jeu fonctionne correctement. Si ce n'est pas le cas n'hésitez pas à demander de l'aide aux organisateurs !
-`
 ### Accélération de la chute des pommes!
 
 Pour rendre la partie plus difficile et amusante, vous pouvez augmenter la vitesse de chute des pommes au fur et à mesure de l'avancement de la partie. 
@@ -214,19 +213,16 @@ Cette partie a pour objectif d'améliorer votre jeu qui est déjà fonctionnel. 
 
 ---
 ### Les fonctions
-En programmation, les fonctions sont très similaires aux fonctions mathématiques. En général les fonctions prennent un ou plusieurs arguments en paramètre, et retournent un résultat. 
+En programmation, les fonctions sont très similaires aux fonctions mathématiques. En général les fonctions prennent un ou plusieurs arguments et retournent un résultat. 
 
 Plus simplement, vous pouvez voir une fonction comme une recette de cuisine. 
 Tout d'abord si vous voulez créer une nouvelle recette de cuisine, il vous faut trouver le nom de notre recette, lister les ingrédients nécessaires et ensuite écrire les étapes de préparations à suivre. 
-Pour écrire une nouvelle fonction, vous pouvez suivre le même fonctionnement. Trouver le nom de votre fonction, lister les paramètres nécessaire et écrire ce que fais votre fonction. 
+Pour écrire une nouvelle fonction, vous pouvez suivre le même fonctionnement. Trouver le nom de votre fonction, lister les arguments nécessaires et écrire ce que fait votre fonction. 
 
 Cette première étape s'appelle la définition d'une fonction. Pour cela nous utilisons le mot clé ```def``` suivi du nom de notre fonction puis des arguments que l'on souhaite utiliser entre parenthèses. Attention à ne pas oublier les 2 points après la parenthèse fermante. 
-*Notez qu'il est possible de définir des fonctions sans paramètres.*
+*Notez qu'il est possible de définir des fonctions sans argument.*
 
-```python
-def nom_fonction(parametre1, parametre2):
-```
-Une fois que nous avons choisi le nom de notre fonction et déterminé le nombre d'arguments néscessaires, nous pouvons définir le comportement de notre fonction. 
+Une fois que nous avons choisi le nom de notre fonction et déterminé ses arguments, nous pouvons définir le comportement de notre fonction. 
 
 #### Exemple : 
 Essayons de faire une fonction qui effectue la somme de ses deux arguments. 
@@ -237,9 +233,9 @@ def somme(nbr1, nbr2): # Ici nous avons déclaré le nom de notre
     return nbr1 + nbr2 # Le mot clef return permet de renvoyer 
                       # le résultat de l'addition
 ```
-La fonction `somme` renvoie donc le résultat de la somme des deux nombres passés en paramètre. 
+La fonction `somme` renvoie donc le résultat de la somme des deux nombres passés en arguments. 
 
-Maintenant que nous avons défini notre fonction `somme`, nous allons pouvoir l'utiliser. Pour ce faire rien de plus simple, il suffit d'appeler le nom de notre fonction avec les 2 nombres que nous voulons additionner en paramètre. 
+Maintenant que nous avons défini notre fonction `somme`, nous allons pouvoir l'utiliser. Pour ce faire rien de plus simple, il suffit d'appeler le nom de notre fonction avec les 2 nombres que nous voulons additionner en arguments. 
 
 ```python
 somme(2, 4)
@@ -262,7 +258,7 @@ Maintenant que nous en avons terminé avec cette partie de cours, passons à l'a
 
 Une fois que le joueur a perdu, vous pouvez lui proposer de rejouer une partie. Pour cela, vous pouvez utiliser les connaissances que vous avez déjà, notamment les boucles, mais vous pouvez aussi utiliser des fonctions. 
 
-Ainsi, le joueur pourra relancer une partie en cliquant sur un bouton, ou arrêter le jeu en cliquant sur un autre. 
+Ainsi, à la fin d'une partie, le joueur pourra décider d'en relancer une en cliquant sur un bouton, ou d'arrêter le jeu en cliquant sur un autre. 
 L'intérêt de relancer une partie sans relancer tout le programme est que l'on peut conserver les données des parties précédentes, comme le **meilleur score**.
 
 Ainsi, à la fin d'une partie, en plus du score réalisé, vous pourrez afficher le meilleur score réalisé jusque-là.
@@ -270,10 +266,10 @@ Ainsi, à la fin d'une partie, en plus du score réalisé, vous pourrez afficher
 L'idée est d'utiliser une première fonction pour retourner le résultat d'une partie et ensuite d'utiliser une seconde fonction pour traiter le résultat et gérer les autres fonctionnalités de notre jeu.
 
 Avant de finir ce projet, vérifiez d'avoir bien implémenté ces différents éléments : 
-* augmentation de la vitesse 
-* meilleur score
 * pouvoir jouer normalement 
+* augmentation de la vitesse
 * relancer la partie
+* meilleur score
 
 
 # FIN
