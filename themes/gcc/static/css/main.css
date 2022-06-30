@@ -9,7 +9,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "Helvetica", sans-serif;
 }
 
 h1 {
@@ -144,12 +144,13 @@ img {
     max-width: 100%;
 }
 
-.header-home-link {
+.header-link {
     display: flex;
     text-decoration: none;
     align-items: center;
 }
 
-.header-home-link:visited {
+.header-link:visited {
     color: inherit;
 }
+
