@@ -1,4 +1,4 @@
 ---
 title: TPs GCC!
-subtitle: Tu pourras trouver ici tous les TPs des stages GCC!
+summary: Tu pourras trouver ici tous les TPs des stages GCC!
 ---
