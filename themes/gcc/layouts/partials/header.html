@@ -1,6 +1,13 @@
 <header class="site-header">
-    <a href="/" class="header-home-link">
+    <a href="/" class="header-link">
         <img src="/gcc-logo.svg" alt="Girls Can Code! Logo">
         <h1 class="site-title">{{ .Site.Title }}</h1>
     </a>
+    <ul>
+    {{ range .Site.Menus.header }}
+        <a href="{{ .URL }}" class="header-link">
+            <h1 class="header-menu">{{ .Name }}</h1>
+        </a>
+    {{ end }}
+    </ul>
 </header>
