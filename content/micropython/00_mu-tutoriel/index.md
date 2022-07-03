@@ -1,5 +1,6 @@
 ---
-title: 00_mu_tutoriel
+title: Tutoriel Mu Editor
+weight: 1
 date: 2021
 ---
 
@@ -25,19 +26,19 @@ Cliquez donc sur `Python3` et validez.
 Si vous faites un stage court, et que vous allez utiliser les microbits, alors
 choisissez le mode `BBC micro:bit`.
 
-\begin{center}\includegraphics[width=0.85\linewidth]{resources/onstartup.png}\end{center}
+![](resources/images/onstartup.png)
 
 ## La barre d'outils
 
 Mu Editor possède une barre remplie d'outils et de fonctionnalités pour vous
 permettre de faire à peu près tout ce qui est possible dans un éditeur de code.
 
-\begin{center}\includegraphics[width=0.8\linewidth]{resources/toolbar.png}\end{center}
+![](resources/images/toolbar.png)
 
 
 ### Le bouton 'Mode'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/modes.png}\end{center}
+![](resources/images/modes.png)
 
 Le bouton `Mode` permet de changer le mode dans lequel sera interprété votre
 programme Python.
@@ -61,7 +62,7 @@ temps d'apprendre le language.
 
 ### Le bouton 'Nouveau'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/new.png}\end{center}
+![](resources/images/new.png)
 
 Le bouton `Nouveau` ouvre un nouvel onglet, dans lequel vous pourrez coder un
 autre bout de votre projet ou simplement autre chose.
@@ -69,7 +70,7 @@ Pensez à enregistrer le travail effectué dans ce nouvel onglet !
 
 ### Le bouton 'Charger'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/load.png}\end{center}
+![](resources/images/load.png)
 
 Le bouton `Charger` vous permet d'ouvrir dans un nouvel onglet un fichier
 contenant du code Python, déjà présent sur votre ordinateur. Par exemple, quand
@@ -77,7 +78,7 @@ vous reprenez un projet pour y ajouter du code.
 
 ### Le bouton 'Enregistrer'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/save.png}\end{center}
+![](resources/images/save.png)
 
 Le bouton `Enregistrer` vous permet d'enregistrer votre code (celui contenu dans
 l'onglet dans lequel vous codez actuellement) dans un fichier dont vous
@@ -89,7 +90,7 @@ Pensez à sauvegarder souvent !
 
 ### Le bouton 'Lancer'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/run.png}\end{center}
+![](resources/images/run.png)
 
 Si votre programme n'a pas encore été enregistré, cliquez sur le bouton `Lancer`
 vous forcera à enregistrer votre fichier au préalable. Une fois cela fait, Mu
@@ -98,13 +99,13 @@ console qui s'est ouverte en bas de votre écran.
 
 ### Le bouton 'Déboguer'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/debug.png}\end{center}
+![](resources/images/debug.png)
 
 Cette partie arrive bientôt. D'ici là, n'hésitez pas à nous demander !
 
 ### Le bouton 'REPL'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/repl.png}\end{center}
+![](resources/images/repl.png)
 
 Un REPL (à prononcer REPEL) est un interpréteur interactif de Python.
 Vous pouvez y entrer du code Python "à la volée" et observer le résultat
@@ -125,11 +126,11 @@ D'ailleurs, pour les plus curieux, REPL signifie:
 
 Par exemple :
 
-\begin{center}\includegraphics[width=0.9\linewidth]{resources/repl-example.png}\end{center}
+![](resources/images/repl-example.png)
 
 ### Le bouton 'Graphique'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/plotter.png}\end{center}
+![](resources/images/plotter.png)
 
 Le bouton `Graphique` permet de générer des graphiques grâce à du code Python.
 Cela est particulièrement utile quand on fait du traitement de données, ou des
@@ -138,21 +139,21 @@ débute donc oubliez-le !
 
 ### Le bouton 'Zoomer'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/zoom-in.png}\end{center}
+![](resources/images/zoom-in.png)
 
 Le bouton `Zoomer` permet comme son nom l'indique d'agrandir la taille du texte
 dans l'éditeur. Aussi simple que ça !
 
 ### Le bouton 'Dé-zoomer'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/zoom-out.png}\end{center}
+![](resources/images/zoom-out.png)
 
 Le bouton `Dé-zoomer` fait l'inverse du bouton `Zoomer` et permet de diminuer la
 taille du texte dans l'éditeur.
 
 ### Le bouton 'Thème'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/theme.png}\end{center}
+![](resources/images/theme.png)
 
 Le bouton `Thème` permet de changer le thème visuel de Mu.
 
@@ -169,7 +170,7 @@ les graphiques sont en thème lumineux.
 
 ### Le bouton 'Vérifier'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/check.png}\end{center}
+![](resources/images/check.png)
 
 Le bouton `Vérifier` vous permet de passer une fois sur votre code pour chercher
 des erreurs de syntaxe, sans avoir besoin de lancer l'exécution de votre
@@ -185,7 +186,7 @@ corriger.
 
 ### Le bouton 'Tidy'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/tidy.png}\end{center}
+![](resources/images/tidy.png)
 
 Le bouton `Tidy` permet d'aligner correctement les indentations dans votre code
 mais n'est pas toujours très fonctionnel et à du mal à détecter les erreurs donc
@@ -193,7 +194,7 @@ on vous conseille plutôt de faire bien attention quand vous codez !
 
 ### Le bouton 'Aide'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/help.png}\end{center}
+![](resources/images/help.png)
 
 Le bouton `Aide` ouvre une page web sur votre navigateur mais n'apporte pas
 d'aide pour coder en Python, uniquement pour vous montrer comment mieux utiliser
@@ -205,7 +206,7 @@ pour les francophones.
 
 ### Le bouton 'Quitter'
 
-\begin{center}\includegraphics[width=0.1\linewidth]{resources/quit.png}\end{center}
+![](resources/images/quit.png)
 
 Le bouton `Quitter` ferme directement le logiciel Mu Editor si votre travail a
 bien été enregistré, sinon vous demande si vous souhaitez enregistrer avant de

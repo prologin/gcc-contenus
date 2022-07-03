@@ -1,5 +1,6 @@
 ---
-title: 02_listes_et_string
+title: Listes et chaîne de caractères
+weight: 5
 date: 2021
 ---
 

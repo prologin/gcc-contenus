@@ -1,10 +1,11 @@
 ---
-title: 01_decouverte
+title: Découverte de Python
+weight: 1
 date: 2021
 ---
 
 
-Alice se réjouit du tournoi de sport qui s'organise en ce moment.  Seulement,
+Alice se réjouit du tournoi de sport qui s'organise en ce moment. Seulement,
 Alice déteste une chose : compter les points. Alice décide donc qu'elle va
 apprendre à se servir du langage informatique Python, pour que son ordinateur
 garde le compte à sa place.
