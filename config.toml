@@ -5,6 +5,12 @@ theme = "gcc"
 
 [Menu]
 [[Menu.header]]
-    Name = "Home page"
-    URL = "/"
+    Name = "Micropython"
+    URL = "/micropython"
 
+[[Menu.header]]
+    Name = "Divers"
+    URL = "/divers"
+[[Menu.header]]
+    Name = "Documentation"
+    URL = "/documentation"
