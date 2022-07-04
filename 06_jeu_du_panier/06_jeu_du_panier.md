@@ -211,7 +211,6 @@ Pour rendre la partie plus difficile et amusante, vous pouvez augmenter la vites
 
 Cette partie a pour objectif d'améliorer votre jeu qui est déjà fonctionnel. Pour cette partie vous aurez besoin de faire appel à un nouveau type d'implémentation : les fonctions. 
 
----
 ### Les fonctions
 En programmation, les fonctions sont très similaires aux fonctions mathématiques. En général les fonctions prennent un ou plusieurs arguments et retournent un résultat. 
 
@@ -230,7 +229,7 @@ Essayons de faire une fonction qui effectue la somme de ses deux arguments.
 def somme(nbr1, nbr2): # Ici nous avons déclaré le nom de notre 
                        # fonction et ses arguments 
                       
-    return nbr1 + nbr2 # Le mot clef return permet de renvoyer 
+    return nbr1 + nbr2 # Le mot clé `return` permet de renvoyer 
                       # le résultat de l'addition
 ```
 La fonction `somme` renvoie donc le résultat de la somme des deux nombres passés en arguments. 
