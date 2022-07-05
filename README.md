@@ -53,11 +53,23 @@ particularité du TP.
 
 
 # Fonctionnement de Hugo
-Pour lancer le site en local, il suffit de faire 
+Pour lancer le site en local, il suffit dhugo server --renderToDisk --noHTTPCachee faire 
 ```bash
 hugo server --renderToDisk --noHTTPCache
 ```
 Il est alors marqué sur quel port trouver le site en local (souvent le port `1313`).
+
+
+## Formatter du code pour un TP
+Pour écrire du code dans un TP, plusieurs paramètres sont possibles.
+Par exemple, ceux usuels sont : 
+```
+```python {linenos=true}
+        // linenos permet d'avoir les numeros de ligne 
+        // votre code va ici
+```     // ferme la zone de code
+```
+Pour plus de détails la documentation est [ici](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)
 
 
 # Matériel utilié
@@ -65,7 +77,6 @@ Accessoirement, pendant nos stages nous utilisons l'éditeur
 [Mu](https://codewith.mu/) que nous recommandons vivement. Pour l'utilisation
 des microbits une version en ligne est également disponible
 [ici](https://python.microbit.org/v/2.0).
-
 
 
 # License
