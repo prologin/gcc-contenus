@@ -3,6 +3,15 @@ languageCode = "fr-fr"
 title = "TPs GCC!"
 theme = "gcc"
 
+# Table of content level
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 1
+
+
+# Here are the header menus
 [Menu]
 [[Menu.header]]
     Name = "Micropython"
@@ -14,3 +23,6 @@ theme = "gcc"
 [[Menu.header]]
     Name = "Documentation"
     URL = "/documentation"
+
+
+
