@@ -42,6 +42,30 @@ de maintenir une organisation claire pour les participantes :
 - `20` si c'est quelque chose de vraiment très complexe
 
 
+## Quelques précisions supplémentaires
+
+### Formatter du code pour un TP
+
+Pour écrire du code dans un TP, plusieurs paramètres sont possibles.
+Par exemple, ceux usuels sont : 
+```
+```python {linenos=true}
+        // linenos permet d'avoir les numeros de ligne 
+        // votre code va ici
+```     // ferme la zone de code
+```
+Pour plus de détails la documentation est [ici](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)
+
+### Insérer une image
+
+Pour insérer une image c'est très simple, il suffit de tapper cette commande à
+l'endroit où vous voulez ajouter l'image dans votre sujet : 
+```go
+{{< figure src="la_source" >}}
+```
+Pour connaître toutes les options possibles de cette commandes, vous pouvez
+trouver la documentation [ici](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes)
+
 
 ## À vous de jouer !
 
@@ -59,17 +83,6 @@ hugo server --renderToDisk --noHTTPCache
 ```
 Il est alors marqué sur quel port trouver le site en local (souvent le port `1313`).
 
-
-## Formatter du code pour un TP
-Pour écrire du code dans un TP, plusieurs paramètres sont possibles.
-Par exemple, ceux usuels sont : 
-```
-```python {linenos=true}
-        // linenos permet d'avoir les numeros de ligne 
-        // votre code va ici
-```     // ferme la zone de code
-```
-Pour plus de détails la documentation est [ici](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)
 
 
 # Matériel utilié
