@@ -5,9 +5,11 @@
     </a>
     <ul>
     {{ range .Site.Menus.header }}
-        <a href="{{ .URL }}" class="header-home-link">
-            <h1 class="header-menu">{{ .Name }}</h1>
-        </a>
+        <li>
+                <a href="{{ .URL }}" class="header-home-link">
+                    <h1 class="header-menu">{{ .Name }}</h1>
+                </a>
+        </li>
     {{ end }}
     </ul>
 </header>
