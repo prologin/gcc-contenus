@@ -159,3 +159,50 @@ h1.header-menu {
     font-size: 1em;
     color: #d3d3d3;
 }
+
+.code {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    display: block;
+    white-space: pre;
+    overflow-x: scroll;
+    max-width: 100%;
+    min-width: 100px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+.highlight {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    place-content: space-between;
+}
+
+.copy-button {
+    background-color: #35479A;
+    border-radius: 8px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 16px;
+    margin: 10px;
+    right: 10px;
+    position: sticky;
+}
+
+pre {
+    margin-bottom: 0;
+}
+
+pre code {
+    white-space: pre;
+    padding: 0;
+    margin: 0;
+}
+
+.code::-webkit-scrollbar {
+    height: 0;
+}
