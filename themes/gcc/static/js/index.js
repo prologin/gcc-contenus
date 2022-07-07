@@ -45,7 +45,7 @@
   }
 
   // Add copy button to code blocks
-  var highlightBlocks = document.querySelectorAll('.highlight');
+  var highlightBlocks = document.querySelectorAll('.code:not(.text)');
   console.log(highlightBlocks.length)
 
   Array.prototype.forEach.call(highlightBlocks, addCopyButton);
