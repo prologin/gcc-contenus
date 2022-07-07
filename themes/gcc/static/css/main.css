@@ -20,6 +20,7 @@ h1 {
 :root {
     --text-color: #282828;
     --bg-color: #f9f9f9;
+    --header-color: #35479A;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
 }
 
 header.site-header {
-    background-color: #35479A;
+    background-color: var(--header-color);
     text-align: center;
     color: var(--bg-color);
     padding: 0.4em 1em;
@@ -80,7 +81,7 @@ h1.article-title {
 
 .article-container  {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     align-content: flex-start;
     justify-content: flex-start;
 }
@@ -88,7 +89,7 @@ h1.article-title {
 a.code-stub-button {
     text-decoration: none;
     border-radius: 6px;
-    background-color: #35479a;
+    background-color: var(--header-color);
     color: white;
     padding: 0.5em 0.8em;
     font-weight: 600;
@@ -160,27 +161,62 @@ h1.header-menu {
     color: #d3d3d3;
 }
 
+
+/* table of content */
+.toc {
+    position: sticky;
+    top: 20%;
+    margin: 20px;
+    list-style:none;
+    border-left: 4px solid var(--header-color);
+    border-radius: 5px;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+}
+
+.toc a:-webkit-any-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toc ul ul a:-webkit-any-link {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.toc ul ul ul a:-webkit-any-link {
+    text-decoration: none;
+}
+
+
+
+/* code block */
 .code {
     background-color: var(--text-color);
     color: var(--bg-color);
-    display: block;
     white-space: pre;
     overflow-x: scroll;
     max-width: 100%;
     min-width: 100px;
     padding-left: 20px;
     border-radius: 10px;
-}
-
-.highlight {
+    margin: 10px;
     display: flex;
     flex-direction: row;
     position: relative;
     place-content: space-between;
+    padding-bottom: 10px;
 }
 
+
+
 .copy-button {
-    background-color: #35479A;
+    background-color: var(--header-color);
     border-radius: 8px;
     border-style: none;
     color: #FFFFFF;
@@ -195,6 +231,7 @@ h1.header-menu {
 
 pre {
     margin-bottom: 0;
+    padding-right: 10px;
 }
 
 pre code {
