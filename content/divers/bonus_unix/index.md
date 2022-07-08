@@ -36,8 +36,8 @@ d'éviter d'avoir une gigantesque liste sous les yeux.
 
 Le nom des dossiers se termine parfois par une barre oblique.
 
-{{<figure src="resources/images/fs.png" width=260 height=260 caption="Système de
-    fichiers">}}
+{{<figure src="resources/images/fs.png" width=260 height=260 
+    caption="Système de fichiers">}}
 
 Pour désigner un dossier ou un fichier, on utilise un *chemin*. Chaque chemin
 part du dossier de plus haut niveau, appelé *racine*.
