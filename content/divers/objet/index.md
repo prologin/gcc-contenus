@@ -1,5 +1,7 @@
 ---
-title: 04_objet
+title: Programmation Orientée Object
+weight: 10
+summary: 
 date: 2021
 ---
 
@@ -167,7 +169,7 @@ Créer une fonction `generer` qui génère des Pokémons aux caractéristiques
 aléatoires avec le module `random`.
 
 Pour ce faire, importe d'abord le module avec
-```
+```python
 import random
 ```
 
@@ -192,7 +194,7 @@ De plus, `Boss Archer` hérite de la classe `Archer`.
 Le `Boss Archer` est donc un archer particulier, par exemple avec des
 caractéristiques (attributs) supplémentaires.
 
-```
+```text
 Ennemi
 |-- Archer
 |   |- Boss Archer
