@@ -2,6 +2,7 @@
 title: Listes et chaîne de caractères
 weight: 5
 date: 2021
+summary: 
 ---
 
 # Introduction aux listes
@@ -398,7 +399,7 @@ est entre les deux !
 
 **Principe :**
 
-```
+```text
 recherche_dichotomique_récursive(élément, liste_triée):
    m = longueur de liste triée / 2 ;
    si liste triée[m] = élément :
