@@ -107,7 +107,7 @@ obtient :
 
 # Attrapez les tous !
 
-![Pika !](pika.png){width=6cm height=6cm}
+{{<figure src="resources/images/pika.png" width=230 height=230 caption="Pika !">}}
 
 ### Exercice 1
 
