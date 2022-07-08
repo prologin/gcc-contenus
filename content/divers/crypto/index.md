@@ -2,6 +2,8 @@
 title: Cryptologie
 date: 2021
 authors: Clarisse Blanco, Dorian Péron
+weight: 15
+summary: 
 ---
 
 # Le chiffre de César
@@ -14,7 +16,7 @@ Avant de commencer, nous allons rapidement évoquer une notion qui vous sera uti
 
 La table ASCII (American Standard Code for Information Interchange), est une norme d'encodage des caractères. C'est une représentation qu'utilisent les ordinateurs pour garder en mémoire des caractères. Par exemple, avec la table ASCII, le **A** correspond à la valeur $65$ et le **a** correspond à $97$. Cela permet de convertir vos lettres en nombres et inversement, ça va s'avérer très pratique dans la suite !
 
-![Table ASCII](imgs/ascii.png){height=8cm}
+{{<figure src="resources/images/ascii.png" height=300 caption="Table ASCII">}}
 
 ## Un peu d'histoire
 
@@ -24,7 +26,7 @@ Ce moyen de chiffrement doit son nom à Jules César, célèbre homme d'état ro
 
 Pour faire simple, cette méthode consiste à échanger un caractère par un autre. Dans le cas du chiffrement de César, on remplace une lettre par la lettre trois rangs plus à droite dans l'alphabet comme vous pouvez le voir sur la figure ci-dessous.
 
-![Chiffre de César](imgs/shifting.jpg)
+{{<figure src="resources/images/shifting.jpg" caption="Chiffrement de César">}}
 
 Voilà comment cela va se répercuter sur l'alphabet tout entier :
 
