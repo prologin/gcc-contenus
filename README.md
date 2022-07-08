@@ -3,7 +3,7 @@ Ce dépôt contient tous les travaux pratiques [des stages Girls Can
 Code!](https://girlscancode.fr/). Les stages se concentrent autour de 
 l'apprentissage du Python mais couvrent de nombreux sujets comme le réseau,
 la programmation web (html, css), unix ou encore la programmation orientée
-objet. 
+objet.
 
 Nous encourageons vivement la réutilisation, modification et amélioration de
 ce contenu pédagogique. En particulier si vous souhaitez vous servir de ces
@@ -21,10 +21,10 @@ la bonne architecture :
 hugo new -k subject [type_de_TP]/[nom_du_tp]
 ```
 
-Par exemple, pour créer une nouveau sujet micropython s'appelant _"Usine"_, il
+Par exemple, pour créer un nouveau sujet micropython s'appelant _"Usine"_, il
 faut faire 
 ```bash
-huho new -k subject micropython/usine
+hugo new -k subject micropython/usine
 ```
 
 ## Remplir les meta-data
@@ -52,26 +52,29 @@ de maintenir une organisation claire pour les participantes :
 
 ### Insérer une image
 
-Pour insérer une image c'est très simple, il suffit de tapper cette commande à
-l'endroit où vous voulez ajouter l'image dans votre sujet : 
+Vous pouvez insérer une image dans votre sujet grâce à cette ligne, que vous
+devez placer à l'endroit où l'image doit se situer : 
 ```go
 {{< figure src="la_source" >}}
 ```
-Pour connaître toutes les options possibles de cette commandes, vous pouvez
+
+Pour connaître toutes les options possibles de cette commande, vous pouvez
 trouver la documentation [ici](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes)
 
 
 ## À vous de jouer !
 
-Il ne reste plus qu'a écrire le sujet dans le fichier `index.md`, ainsi
-que d'écrire un `README.md` décrivant rapidement le sujet. Ce fichier sera
-essentiellement destiné aux organisateurs et permet d'éclaicir certaines
+Il ne reste plus qu'à écrire le sujet dans le fichier `index.md`. Vous pouvez
+aussi écrire un `README.md` additionnel si jamais certaines informations doivent
+être transmises aux organisateurs mais pas aux participantes. 
+Ce fichier sera essentiellement destiné aux organisateurs et permet d'éclaicir certaines
 particularité du TP. 
 
 
 
 # Fonctionnement de Hugo
-Pour lancer le site en local, il suffit dhugo server --renderToDisk --noHTTPCachee faire 
+Pour lancer le site en local, il suffit de taper cette commande dans un
+terminal : 
 ```bash
 hugo server --renderToDisk --noHTTPCache
 ```
