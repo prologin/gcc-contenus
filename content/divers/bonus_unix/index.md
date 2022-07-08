@@ -1,5 +1,7 @@
 ---
-title: bonus_unix
+title: Bonus Unix
+weight: 20
+summary: 
 date: 2021
 ---
 
@@ -34,7 +36,8 @@ d'éviter d'avoir une gigantesque liste sous les yeux.
 
 Le nom des dossiers se termine parfois par une barre oblique.
 
-![Système de fichiers](fs.png){width="7cm" height="7cm"}
+{{<figure src="resources/images/fs.png" width=260 height=260 caption="Système de
+    fichiers">}}
 
 Pour désigner un dossier ou un fichier, on utilise un *chemin*. Chaque chemin
 part du dossier de plus haut niveau, appelé *racine*.
