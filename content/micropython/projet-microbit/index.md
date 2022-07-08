@@ -1,6 +1,7 @@
 ---
-title: 05_projet_microbit
+title: Projet microbit
 date: 2021
+weight: 10
 ---
 
 # Introduction

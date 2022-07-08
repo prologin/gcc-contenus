@@ -1,10 +1,10 @@
 ---
 title: Tutoriel Mu Editor
-weight: 1
 date: 2021
+weight: 1
 ---
 
-## Comment utiliser Mu Editor ?
+# Comment utiliser Mu Editor ?
 Mu est un éditeur de texte pour développer en Python.
 Il est complet mais reste minimaliste pour que tout le monde puisse le prendre
 en main facilement.
@@ -14,7 +14,7 @@ Vous pouvez le télécharger [ici](https://codewith.mu/en/download).
 Ce tutoriel présente toutes les fonctionnalités du logiciel, une par une pour
 que vous puissez vous y retrouvez facilement !
 
-## Au démarrage
+# Au démarrage
 
 Au démarrage, Mu devrait vous demander dans quel mode vous souhaitez
 développer. Vous trouverez une présentation plus détaillée des différents modes
@@ -28,7 +28,7 @@ choisissez le mode `BBC micro:bit`.
 
 ![](resources/images/onstartup.png)
 
-## La barre d'outils
+# La barre d'outils
 
 Mu Editor possède une barre remplie d'outils et de fonctionnalités pour vous
 permettre de faire à peu près tout ce qui est possible dans un éditeur de code.
@@ -213,7 +213,7 @@ bien été enregistré, sinon vous demande si vous souhaitez enregistrer avant d
 fermer.
 
 
-## Devrais-je coder toute ma vie sur Mu ?
+# Devrais-je coder toute ma vie sur Mu ?
 
 On ne l'espère pas !
 

@@ -1,6 +1,7 @@
 ---
-title: 01_decouverte_micropython
+title: Decouverte micropython
 date: 2021
+weight: 5
 ---
 
 # Introduction à la programmation
