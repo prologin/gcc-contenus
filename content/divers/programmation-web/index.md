@@ -1,5 +1,5 @@
 ---
-title: 04_web
+title: Web
 date: 2021
 ---
 
@@ -7,7 +7,7 @@ date: 2021
 Ce TP va vous apprendre à créer une page HTML basique, puis à la personnaliser
 avec du CSS. Vous devriez obtenir le résultat suivant :
 
-\begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_text-align.png}\end{center}
+{{<figure src="resources/images/screenshot_text-align.png">}}
 
 ## Fonctionnement du TP
 Les solutions de chaque partie de ce TP se trouvent dans le dossier source.
@@ -34,7 +34,7 @@ de la façon suivante : `<a href="gcc.prologin.org">Le site de GCC!</a>`
 Pour commencer toutes pages HTML valides, il faut au moins le code suivant :
 
 
-``` {.html}
+```html
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -48,7 +48,7 @@ Pour commencer toutes pages HTML valides, il faut au moins le code suivant :
 ```
 
 
-``` {.text}
+```text
 Il s’agit d’une page HTML5
 Début du document HTML
   Début de la section « head »
@@ -91,7 +91,7 @@ obligatoire d’ajouter un attribut alt, contenant une description de la photo.
 
 # Notre plan de page
 Notre plan de page sera le suivant :
-```
+```text
 html
 + head (voir partie 1)
 ` body
@@ -108,7 +108,7 @@ Je vous laisse essayer de créer le document HTML correspondant. Une fois que
 vous aurez fait de votre mieux vous pourrez regarder la correction.
 
 Vous devriez arriver au résultat suivant :
-\begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_html.png}\end{center}
+{{<figure src="resources/images/screenshot_html.png">}}
 
 # Du CSS pour sauver nos yeux
 ## Insérer du CSS dans la page
@@ -121,11 +121,13 @@ balise head la balise suivante :
 
 Comme pour les balises `<img>`, il n'est pas nécessaire les
 fermer.
+
 ## Écriture du CSS
 Le CSS est un langage basé sur les sélecteurs. Une fois qu’on a sélectionné un
 ou plusieurs éléments HTML avec les sélecteurs, on peut modifier son apparence
 en changeant ses attributs.
-```
+
+```css
 sélecteur {
         attribut: valeur;
 }
@@ -136,12 +138,10 @@ sélecteur {
 Tout au long de ce chapitre je vais utiliser différentes unités de mesures. En
 voici quelques unes :
 
-px
-: L'unité px permet de définir la taille d'un élément en pixels. C'est cette
+- `px` : L'unité px permet de définir la taille d'un élément en pixels. C'est cette
 même unité que vous utiliserez dans le projet python.
 
-\%
-: Les pourcentages permettent de définir la taille d'un élément en fonction de
+- `%` : Les pourcentages permettent de définir la taille d'un élément en fonction de
 la taille de son élément parent.
 
 ### Les sélecteurs
@@ -168,7 +168,7 @@ nous y retrouver plus facilement, des outils comme
 [le sélecteur de couleur DuckDuckGo](https://duckduckgo.com/?q=color+picker\&t=ffab\&ia=answer) sont là.
 
 
-\begin{center}\includegraphics[width=.8\linewidth]{img/ddgo_color_picker.png}\end{center}
+{{<figure src="resources/images/ddgo_color_picker.png">}}
 
 Cet outil nous permet de récupérer le code hexadécimal (en bleu) des couleurs
 ainsi que leur représentation RGB (en rouge). Nous ne verrons pour l'instant que
@@ -178,12 +178,12 @@ Le code hexadécimal peut être utilisé tel quel dans le code CSS.
 
 Un petit exemple : on va faire en sorte que le texte des figcaptions soit rouge.
 
-``` {.css}
+```css
 figcaption {
   color: \#FF0000;
 }
 ```
-``` {.text}
+```text
 On sélectionne les éléments figcaption
   On leur applique une couleur rouge
 On ferme le bloc
@@ -194,20 +194,18 @@ Maintenant que nous avons vu comment sélectionner les balises que nous
 souhaitons modifier, nous allons voir comment changer leur attributs pour
 modifier leur taille, leur position et leurs couleurs.
 
-color
-: L'attribut color permet de changer la couleur du texte. Elle prend en argument
+- `color` : L'attribut color permet de changer la couleur du texte. Elle prend en argument
 une couleur, qui sera appliqué à cet élément ainsi qu'à tout ses sous-éléments.
 
-background
-: L'attribut background permet quand à lui de changer la couleur de fond d'un
+- `background` : L'attribut background permet quand à lui de changer la couleur de fond d'un
 élément.
 
-``` {.css}
+```css
 figure {
   background: #008AFF;
 }
 ```
-``` {.text}
+```text
 On sélectionne les élements figure
   On leur applique un fond couleur cyan
 Fin du bloc
@@ -216,7 +214,7 @@ Fin du bloc
 L'attribut background peut aussi définir une image de fond, par exemple, le site
 final utilise le code suivant :
 
-``` {.css}
+```css
 html {
   background:
       fixed
@@ -225,7 +223,7 @@ html {
     ;
 }
 ```
-``` {.text}
+```text
 On sélectionne le document HTML entier
   On va modifier le fond
       Le fond ne bougera pas avec la page
@@ -238,20 +236,19 @@ On ferme le bloc
 Ici nous ne changerons que 3 fonds : le fond de la page, le fond des figures et
 le fond du footer. Vous devrez appliquer un fond blanc aux éléments figure et
 footer, et copier le code pour le fond de la page afin d'obtenir ce résultat :
-\begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_background.png}\end{center}
+{{<figure src="resources/images/screenshot_background">}}
 
-width et height
-: Les attributs width (largeur) et height (hauteur) permettent de faire en sorte
+- `width` et `height` : Les attributs `width` (largeur) et `height` (hauteur) permettent de faire en sorte
 qu'un élément ait une certaine taille.
 
-Il existe aussi min-height, max-height,
-et les mêmes attributs pour width, qui permettent de définir des valeurs minimum
+Il existe aussi `min-height`, `max-height`,
+et les mêmes attributs pour `width`, qui permettent de définir des valeurs minimum
 et maximum pour les éléments.
 
-Par exemple, dans le code final, l'élément main contient ces attributs :
+Par exemple, dans le code final, l'élément `main` contient ces attributs :
 
 
-``` {.css}
+```css
 main {
   width: 900px;
   max-width: 80%;
@@ -259,7 +256,7 @@ main {
 ```
 
 
-``` {.text}
+```text
 
 largeur de base de 900px
 si la fenêtre est trop petite, 80% max
@@ -269,20 +266,19 @@ si la fenêtre est trop petite, 80% max
 
 Pour le moment nous ne changerons que 3 largeurs : la largeur de main, que vous
 avez eu en exemple, la largeur de figure que nous définirons à 280px, et enfin
-la largeur des éléments img dans des figure, que nous définirons à 100\%.
+la largeur des éléments img dans des figure, que nous définirons à 100%.
 
-\begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_width.png}\end{center}
+{{<figure src="resources/images/screenshot_width.png">}}
 
-padding et margin
-: Ces deux attributs permettent de modifier la "marge" et le "remplissage" des
+- `padding` et `margin` : Ces deux attributs permettent de modifier la "marge" et le "remplissage" des
 éléments. Pour mieux comprendre à quoi correspondent la marge et le remplissage,
 voici un diagramme réalisé par les contributeurs Mozilla, disponible
 [à l'addresse suivante](https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Le_mod%C3%A8le_de_bo%C3%AEte).
 
-\begin{center}\includegraphics[width=.8\linewidth]{img/box_model.png}\end{center}
+{{<figure src="resources/images/box_model.png">}}
 
 Ici, j'utilise des marges et du padding pour le pied de page :
-``` {.css}
+```css
 footer {
     ...
     padding: 20px;
@@ -293,11 +289,11 @@ footer {
 Ce code permet de rajouter du remplissage tout autours du texte du pied de page,
 et de rajouter une marge afin de séparer les photos du pied de page.
 
--top permet de n’appliquer la marge que sur le coté supérieur du pied de page.
-Il existe aussi -left (gauche) -right (droite) et -bottom (bas).
+- `-top` permet de n’appliquer la marge que sur le coté supérieur du pied de page.
+Il existe aussi `-left` (gauche) `-right` (droite) et `-bottom` (bas).
 
 Les marges peuvent aussi être utilisées pour centrer un élément sur la page :
-``` {.css}
+```css
 main {
     ...
     margin-left: auto;
@@ -315,17 +311,16 @@ Ici vous devrez:
 - Ajouter un padding de 20px au footer, et aussi un margin-top de
 30px
 
-\begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_padding.png}\end{center}
+{{<figure src="resources/images/screenshot_padding.png">}}
 
-text-align
-: L'attribut text-align permet de choisir comment sera aligné le texte. Par
+- `text-align` : L'attribut text-align permet de choisir comment sera aligné le texte. Par
 défaut text-align a pour valeur "left" car en français le texte va de gauche à
 droite.
 
-Ici, vous ajouterez "text-align: center" à l'élément header, au footer et aux
+Ici, vous ajouterez `text-align: center` à l'élément `header`, au `footer` et aux
 éléments figure figcaption.
 
-\begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_text-align.png}\end{center}
+{{<figure src="resources/images/screenshot_text-align.png">}}
 
 # La fin! (?)
 
