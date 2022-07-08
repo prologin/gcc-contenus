@@ -1,5 +1,7 @@
 ---
-title: bonus_python_avance
+title: Bonus Python avancé
+weight: 20
+summary: 
 date: 2021
 ---
 
@@ -33,7 +35,7 @@ l'ensemble des éléments de cette liste.
 Les exemples suivants montrent différentes manières de créer des sets, qui sont
 tous identiques et équivalents au set contenant 1, 2 et 3.
 
-``` {.python}
+```python
 {1, 2, 3}
 {1, 2, 2, 3}
 {3, 2, 1}
@@ -59,7 +61,7 @@ Cet exemple vient de l'interpréteur Python. Une ligne commençant par `>>>`
 représente du code Python, et si ce code a une valeur, il sera affiché en
 dessous.
 
-``` {.python}
+```python
 >>> s = {1, 2, 3}
 >>> s.add(42)
 >>> s
@@ -94,7 +96,7 @@ valeur est associée à chaque clé.
 Un dict peut être créé de différentes manières. Pour en créer un directement à
 partir des valeurs, on peut l'écrire ainsi :
 
-``` {.python}
+```python
 {
     "one": 1,
     "two": 2
@@ -123,7 +125,7 @@ comporte comme un set de ses *clés*.
 
 ## Exemple
 
-``` {.python}
+```python
 >>> d = {"one" : 1}
 >>> d
 {'one': 1}
@@ -147,7 +149,7 @@ entré sous forme de dictionnaire. Les caractères présents dans l'entrée sont
 clés, et le nombre de fois où le caractère est présent est la valeur associée.
 Par exemple :
 
-``` {.python}
+```python
 >>> histogramme("bonjour")
 {'b': 1, 'o': 2, 'n': 1, 'j': 1, 'u': 1, 'r': 1}
 ```
