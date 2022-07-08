@@ -2,6 +2,8 @@
 title: Cryptologie 2
 date: 2021
 authors: Clarisse Blanco, Dorian Péron
+weight: 15
+summary: 
 ---
 
 # Cryptologie avancée
@@ -23,7 +25,8 @@ Tu en as peut-être déjà entendu parler, Enigma est une machine de cryptologie
 La machine Enigma est composée de 3 parties mobiles appelées "rotors" (visibles sur la photo ci-dessous).
 Ces rotors associent une lettre de l'alphabet à une autre. Les trois rotors sont connectés les uns aux autres. Imaginons que l'on donne un **A** au premier rotor, celui-ci pourrait par exemple le transformer en **F**. Le second rotor transforme le **F** en **O** et le troisième transforme le **O** en **E**. *Note ici que les rotors n'appliquent pas un chiffre de César, si **A** devient **F** avec le premier rotor, cela ne veut pas dire que **B** deviendra **G**.*
 
-![Une machine Enigma](imgs/enigma.jpeg){height=6cm}
+{{<figure src="resources/images/enigma.jpeg" height=230 caption="Une machine
+    Enigma">}}
 
 En code, on peut représenter un rotor par une chaîne de 26 caractères.
 
@@ -45,7 +48,8 @@ Après avoir fait passer la lettre dans les 3 rotors, on la passe dans une pièc
 
 Comme si cela n'était pas déjà assez compliqué, on rajoute une couche avec le **tableau de permutations**. Le fonctionnement de celui-ci est très simple. Il s'agit simplement de brancher des lettres 2 par 2 pour échanger leur place (on peut échanger comme cela jusqu'à 10 paires de lettres). On branche ce tableau avant le système de rotor. Par exemple, si l'on échange les lettres **A** et **O**, alors chaque **A** tapé par l'opérateur de la machine deviendra un **O** pour le système des rotors, et chaque **A** "renvoyé" par ce dernier sera un **O** pour l'opérateur (et vice-versa, le **O** devient un **A**).
 
-![Schéma de fonctionnement d'Enigma](imgs/enigma_scheme.jpg){height=6cm}
+{{<figure src="resources/images/enigma_scheme.jpg" caption="Schéma de
+    fonctionnement d'Enigma" height=230>}}
 
 Vous pouvez aussi visualiser le fonctionnement d'Enigma sur ce site : <https://observablehq.com/@tmcw/enigma-machine>
 
