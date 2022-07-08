@@ -10,11 +10,12 @@
     {{ end }}
 </div>
 <div class="article-container">
+    <aside class="toc">
+        <div class="toc-title">Table des matières</div>
+        {{ .TableOfContents }}
+    </aside>
     <article class="container">
         {{ .Content }}
     </article>
-    <aside class="toc">
-        {{ .TableOfContents }}
-    </aside>
 </div>
 {{ end }}
