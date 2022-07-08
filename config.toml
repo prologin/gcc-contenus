@@ -6,7 +6,7 @@ theme = "gcc"
 # Table of content level
 [markup]
   [markup.tableOfContents]
-    endLevel = 3
+    endLevel = 2
     ordered = false
     startLevel = 1
 
