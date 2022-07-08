@@ -1,5 +1,6 @@
 ---
-title: 04_web_boni
+title: Web Boni
+weight: 10
 date: 2021
 ---
 
@@ -8,7 +9,7 @@ Ce chapitre contient des bonus. Vous serez moins guidées, et des vous aurez des
 liens vers les pages de documentation pour vous aider à avancer.
 
 En réalisant ces boni, vous pourrez arriver à un résultat proche de celui-ci :
-\begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_final.png}\end{center}
+{{<figure src="resources/images/screenshot_final.png">}}
 
 ## Une police d'écriture plus sympathique
 Grâce à la propriété CSS font-family il est possible de définir une autre police
@@ -26,7 +27,7 @@ pour le footer.
 Grâce au site [Google Fonts](https://fonts.google.com), vous pouvez trouver
 plus de polices à utiliser dans votre site.
 
-\begin{center}\includegraphics[width=.8\linewidth]{img/screenshot_google_fonts.png}\end{center}
+{{<figure src="resources/images/screenshot_google_fonts.png">}}
 
 Comme vous pouvez le voir dans cette capture d'écran, Indie Flower, la police
 utilisée par les éléments figcaption dans la solution, est la première de la
@@ -90,13 +91,15 @@ espacement "gap".
 La documentation des grilles se trouve [ici](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout#CSS).
 
 ### Une grille par photo
-\begin{center}\includegraphics[width=.5\linewidth]{img/grid_figure.png}\end{center}
+
+{{<figure src="resources/images/grid_figure.png">}}
+
 Ici, j'ai appliqué une grille de deux lignes avec grid-template-rows, où la
 première fais 4fr la seconde 1fr, et le grid-row-gap est de 10px.
 
 ### La grille principale
 Ici, la grille est définie avec
-``` {.css}
+```css
 grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 ```
 Cela permet de faire en sorte qu'il y ait autant de photos que possible, mais
