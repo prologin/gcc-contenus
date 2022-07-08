@@ -21,6 +21,12 @@ la bonne architecture :
 hugo new -k subject [type_de_TP]/[nom_du_tp]
 ```
 
+Par exemple, pour créer une nouveau sujet micropython s'appelant _"Usine"_, il
+faut faire 
+```bash
+huho new -k subject micropython/usine
+```
+
 ## Remplir les meta-data
 
 ### `code_stub_url`
