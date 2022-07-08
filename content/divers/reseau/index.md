@@ -1,5 +1,7 @@
 ---
-title: 03_reseau
+title: Réseau
+weight: 10
+summary: 
 date: 2021
 ---
 
@@ -49,53 +51,53 @@ sont expliqués plus en détail dans la suite de ce TP.
 Permet l'utilisation des sockets, à n'utiliser qu'une seule fois, tout au début
 du code source :
 
-``` {.python}
+```python
 import socket
 ```
 
 Initialise une nouvelle socket utilisant les protocoles TCP et IP :
 
-``` {.python}
+```python
 tcpsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
 ```
 
 Initie une connexion avec le serveur situé à l'adresse 1.2.3.4 sur le port 4242
 :
 
-``` {.python}
+```python
 tcpsock.connect(("1.2.3.4", 4242))
 ```
 
 Crée un fichier associé à la socket. Ce fichier ne pourra servir que pour des
 lectures :
 
-``` {.python}
+```python
 rfile = tcpsock.makefile("r", encoding="utf-8")
 ```
 
 Lit une ligne de texte sur la socket :
 
-``` {.python}
+```python
 texte = rfile.readline()
 ```
 
 Crée un fichier associé à la socket. Ce fichier ne pourra servir que pour des
 écritures :
 
-``` {.python}
+```python
 wfile = tcpsock.makefile("w", encoding="utf-8")
 ```
 
 Envoie au serveur la chaîne de caractères « coucou » suivie d’un saut de ligne :
 
-``` {.python}
+```python
 wfile.write("coucou\n")
 wfile.flush()
 ```
 
 Termine la connexion et libère les ressources allouées pour la socket :
 
-``` {.python}
+```python
 rfile.close()
 wfile.close()
 tcpsock.shutdown(socket.SHUT_RDWR)
@@ -115,13 +117,13 @@ l'on veut avoir accès à ces fonctions. On utilise pour cela la directive
 « `import` ». Toutes les fonctions et constantes ajoutées par cette
 directive commenceront par « `socket.` ».
 
-``` {.python}
+```python
 import socket
 ```
 
 On va ensuite créer une socket utilisant les protocoles TCP et IP :
 
-``` {.python}
+```python
 tcpsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
 ```
 
@@ -130,7 +132,7 @@ utiliser un protocole orienté connexion en mode flux (on peut envoyer des
 données de façon continue), ça correspond bien aux caractéristiques du protocole
 TCP.
 
-``` {.python}
+```python
 tcpsock.connect(("<ADRESSE>", 2000))
 ```
 
@@ -140,7 +142,7 @@ Sous UNIX, une entité avec laquelle on peut écrire et lire des informations es
 un fichier (indépendamment du fait qu'il soit stocké sur le disque dur), on peut
 donc récupérer un fichier lié à la socket afin de pouvoir lire et écrire dessus.
 
-``` {.python}
+```python
 rfile = tcpsock.makefile("r", encoding="utf-8")
 ```
 
@@ -150,14 +152,14 @@ sur le réseau.
 
 On peut maintenant lire une ligne de texte sur ce fichier et l'afficher :
 
-``` {.python}
+```python
 print(rfile.readline())
 ```
 
 Une fois que c'est fait, on peut fermer la connexion et libérer les
 ressources allouées pour la socket :
 
-``` {.python}
+```python
 rfile.close()
 tcpsock.shutdown(socket.SHUT_RDWR) # Termine la connexion
 tcpsock.close()
@@ -192,7 +194,7 @@ pseudonyme à l'utilisateur (avec la fonction input()) et qui l'envoie au serveu
 en utilisant la fonction write sur le fichier lié à la socket. Le pseudo doit
 être suivi d'un caractère « retour à la ligne » :
 
-``` {.python}
+```python
 wfile.write(pseudo + "\n")
 wfile.flush()
 ```
