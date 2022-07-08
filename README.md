@@ -44,18 +44,6 @@ de maintenir une organisation claire pour les participantes :
 
 ## Quelques précisions supplémentaires
 
-### Formatter du code pour un TP
-
-Pour écrire du code dans un TP, plusieurs paramètres sont possibles.
-Par exemple, ceux usuels sont : 
-```
-```python {linenos=true}
-        // linenos permet d'avoir les numeros de ligne 
-        // votre code va ici
-```     // ferme la zone de code
-```
-Pour plus de détails la documentation est [ici](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)
-
 ### Insérer une image
 
 Pour insérer une image c'est très simple, il suffit de tapper cette commande à
