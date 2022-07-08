@@ -1,10 +1,10 @@
 ---
-title: 04_matrices
+title: Matrices
 date: 2021
 author: Tanguy Segarra
 ---
 
-## Introduction aux matrices
+# Introduction aux matrices
 
 Une matrice est un tableau à deux dimensions, une sorte de grille, dans laquelle
 chaque case est accessible grâce à ses coordonnées.
@@ -17,7 +17,7 @@ matrice.
 De cette facon, comme pour les listes, les indices dans les matrices commencent
 à 0.
 
-```
+```text
 1  2  3
 4  5  6
 7  8  9
@@ -28,10 +28,10 @@ La valeur 1 se trouve alors aux coordonnées (0, 0).
 La valeur 9 se trouve aux coordonnées (2, 2)
 
 
-![](figures/1.svg)
+{{<figure src="resources/images/1.svg">}}
 
 
-### Alors en python, ca donne quoi ?
+## Alors en python, ca donne quoi ?
 
 **Initialiser une matrice**
 
@@ -84,7 +84,7 @@ certain que cette ligne existe à priori.
 
 Soit la matrice M
 
-```
+```text
 1  2  3
 4  5  6
 7  8  9
@@ -93,7 +93,8 @@ Soit la matrice M
 Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
 coordonnées (1, 2).
 
-![](figures/2.svg)
+
+{{<figure src="resources/images/2.svg">}}
 
 On peut aussi changer la valeur d'une case directement.
 Par exemple, la valeur dans le coin supérieur gauche peut être mise à 42 avec
@@ -107,7 +108,7 @@ On peut aussi accéder à toute la première ligne de la matrice avec `M[0]`.
 Vous avez maintenant tous les outils pour vous lancer dans les exercices !
 Bon courage et n'hésitez pas à poser des questions !
 
-## Testez votre code!
+# Testez votre code!
 
 Avec ce sujet est fourni un fichier vous permettant de vérifier que votre code
 fonctionne comme il le devrait.
@@ -117,7 +118,7 @@ Pour que la vérification se passe bien, il faudra
 - Lancer les tests avec `./tests-matrices.py <votre-fichier>` dans le terminal
 
 
-## Pratiquons !
+# Pratiquons !
 
 Pour certains de ces exercices, on représente le terrain de chasse d'un loup
 dans une matrice P.  Le caractère 'M' représente alors un mouton, et le
@@ -125,13 +126,12 @@ caractere 'L' représente le loup.  Un '.' représente simplement une case du
 terrain qui est vide, de l'herbe !  Le loup ne peut manger que les moutons qui
 se situent autour de lui directement.
 
-### Exercice 1 : présence dans une matrice
+## Exercice 1 : présence dans une matrice
 
 On représente une prairie dans une matrice.
 Le caractère 'M' représente un mouton. On souhaite savoir s'il y a au moins un
 mouton dans la prairie P, soit au moins une fois le caractère 'M' dans la
 matrice.
-
 
 **But** : écrire la fonction `is_in_matrix(P, val)` qui renvoie `True` si la
 valeur 'val' est présente dans la matrice, `False` sinon.
@@ -150,7 +150,7 @@ prairie = [
 print(is_in_matrix(prairie, 'M'))
 ```
 
-![](figures/3.svg)
+{{<figure src="resources/images/3.svg">}}
 
 affichera `True`
 
@@ -171,7 +171,7 @@ print(is_in_matrix(prairie_vide, 'M'))
 affichera `False`.
 
 
-### Exercice 2 : coordonnées dans une matrice
+## Exercice 2 : coordonnées dans une matrice
 
 On représente encore une prairie P dans une matrice, et on cherche toujours le
 mouton 'M' sauf que cette fois on veut connaitre sa position exacte !
@@ -201,7 +201,7 @@ print(search_matrix(prairie, 'M')
 affichera `[2, 1]` car 8 se situe sur la ligne 2 et la colonne 1.
 
 
-### Exercice 3 : toutes les coordonnées !
+## Exercice 3 : toutes les coordonnées !
 
 Cette fois-ci, la matrice qui représente la prairie P peut contenir plusieurs
 moutons 'M'.
@@ -230,7 +230,7 @@ affichera `[[0, 2], [2, 1]]` car il y a un 'M' sur la ligne 0 et la colonne 2,
 et un autre sur la ligne 2 et la colonne 1.
 
 
-### Exercice 4 : compter les moutons...
+## Exercice 4 : compter les moutons...
 
 On veut savoir combien de moutons se trouvent dans la prairie.
 
@@ -255,7 +255,7 @@ print(count(prairie, 'M'))
 affichera `2`.
 
 
-### Exercice 5 : initialiser une matrice
+## Exercice 5 : initialiser une matrice
 
 **But** : écrire la fonction `init_matrix(lines, cols, val)` qui crée une
 matrice de dimensions 'lines' par 'cols', parcourt la matrice et met chaque
@@ -269,14 +269,14 @@ init_matrix(3, 2, 42)
 
 créera la matrice
 
-```
+```text
 42 42
 42 42
 42 42
 ```
 
 
-### Exercice 6 : afficher une matrice
+## Exercice 6 : afficher une matrice
 
 **But** : écrire la fonction `print_matrix(M)` qui affichera la matrice prise en
 paramètre en séparant chaque terme affiché par un espace, et un retour à la
@@ -301,7 +301,7 @@ affichera
 ```
 
 
-### Exercice 7 : somme des éléments de la matrice
+## Exercice 7 : somme des éléments de la matrice
 
 **But** : écrire la fonction `sum_matrix(M)` qui prend une matrice en paramètre,
 et renvoie la somme de tous ses éléments.
@@ -321,7 +321,7 @@ print(sum_matrix(M))
 affichera `22`.
 
 
-### Exercice 8 : ajouter deux matrices
+## Exercice 8 : ajouter deux matrices
 
 **But** : écrire la fonction `add_matrix(a, b)` qui ajoute les valeurs des deux
 matrices a et b dans une nouvelle matrice **si et seulement si** elles sont de
@@ -367,7 +367,7 @@ affichera
 ```
 
 
-### Exercice 9 : symétrie sur la diagonale
+## Exercice 9 : symétrie sur la diagonale
 
 **But** : écrire la fonction `sym_diago(m)` qui renvoie `True` si la matrice
 est symétrique par rapport à l'axe de sa diagonale (du coin en haut à gauche, à
@@ -400,7 +400,7 @@ print(sym_diago(a))
 affichera `False`.
 
 
-### Exercice 10 : minimax
+## Exercice 10 : minimax
 
 **But**: écrire la fonction `minimax(m)` qui calcule les maximums de chaque
 ligne de la matrice passée en paramètre puis renvoie la valeur minimum entre
@@ -427,7 +427,7 @@ peut écrire une fonction qui permet de déterminer le maximum d'une seule ligne
 et une fonction qui permet de trouver le minimum parmi tous ces maximums.*
 
 
-### Exercice 11 : une faim de loup
+## Exercice 11 : une faim de loup
 
 
 **But** : écrire la fonction `eat(P)` qui prend une matrice représentant le
@@ -437,7 +437,7 @@ cases qui se trouvent autour de la case cible.
 
 **Exemple** :
 
-```
+```text
 ..................
 ..M...............
 .............M....
@@ -455,7 +455,7 @@ Si la matrice ne contient pas de loup, ou pas de moutons, ou aucun des deux,
 alors votre fonction doit renvoyer `0`.
 
 
-### Exercice 12 : les cratères de la Lune
+## Exercice 12 : les cratères de la Lune
 
 On représente une partie de la Lune vue de haut dans une matrice.
 Les cercles dans la matrice représentent les cratères formés à la surface de la
@@ -468,7 +468,7 @@ dessinés dans la matrice passée en argument.
 
 **Exemple** :
 
-```
+```text
 .........................................
 .........................................
 ....#####................................
