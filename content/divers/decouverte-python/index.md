@@ -2,6 +2,7 @@
 title: Découverte de Python
 weight: 1
 date: 2021
+summary: 
 ---
 
 
