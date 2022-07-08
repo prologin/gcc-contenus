@@ -84,6 +84,7 @@ h1.article-title {
     align-items: baseline;
     align-content: flex-start;
     justify-content: flex-start;
+    flex-direction: row-reverse;
 }
 
 a.code-stub-button {
@@ -161,15 +162,22 @@ h1.header-menu {
     color: #d3d3d3;
 }
 
-
+/********************/
 /* table of content */
+/********************/
 .toc {
     position: sticky;
     top: 20%;
     margin: 20px;
     list-style:none;
     border-left: 4px solid var(--header-color);
+    padding-left: 15px;
     border-radius: 5px;
+}
+
+.toc-title {
+    font-weight: bold;
+    font-size: 1.4em;
 }
 
 .toc ul {
