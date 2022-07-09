@@ -9,6 +9,10 @@ theme = "gcc"
     endLevel = 2
     ordered = false
     startLevel = 1
+  [markup.highlight]
+    lineNos = true
+
+
 
 
 # Here are the header menus
