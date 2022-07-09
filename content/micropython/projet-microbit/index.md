@@ -2,6 +2,7 @@
 title: Projet microbit
 date: 2021
 weight: 10
+summary: 
 ---
 
 # Introduction
@@ -17,7 +18,7 @@ le `Micro:bit` pour utiliser tous ces composants comme on le souhaite : faire
 clignoter les diodes, détecter la vitesse du `Micro:bit`, ou encore faire
 communiquer plusieurs `Micro:bit` entre eux.
 
-![Un `Micro:bit`](img/microbit.jpg){width=5cm height=5cm}
+{{<figure src="resources/images/microbit.jpg" height=190 width=190 caption="Un `Micro:bit`">}}
 
 Ce TP est libre : nous allons vous présenter différentes choses que l’on peut
 faire avec les `Micro:bit`, et vous devrez choisir comment vous souhaitez
@@ -30,13 +31,14 @@ Vous devriez voir apparaître dans votre explorateur de fichiers un appareil
 “MICROBIT”, comme si vous aviez branché une clé USB. Cliquez dessus, et vérifiez
 que vous pouvez voir son contenu.
 
-![Gestionnaire de fichiers](img/explorer.png){width=7cm height=7cm}
+{{<figure src="resources/images/explorer.png" height=265 width=265
+    caption="Gestionnaire de fichiers">}}
 
 Une fois que vous avez vérifié que le `Micro:bit` est bien branché, ouvrez
 l’éditeur de Python **Mu Editor** (en ligne de commande, tapez `mu-editor`),
 puis passez le en mode `Micro:bit`.
 
-![Mu Editor](img/mu.png){width=7cm height=5cm}
+{{<figure src="resources/images/mu.png" height=190 width=265 caption="Mu Editor">}}
 
 Une fois que tout est en place, nous pouvons écrire le premier programme à
 lancer sur notre `Micro:bit`. Pour commencer, nous allons faire un programme
