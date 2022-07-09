@@ -227,7 +227,6 @@ h1.header-menu {
 
 .code {
     background-color: var(--text-color);
-    white-space: pre;
     overflow-x: scroll;
     max-width: 100%;
     min-width: 100px;
@@ -238,7 +237,7 @@ h1.header-menu {
     flex-direction: row;
     position: relative;
     place-content: space-between;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 
@@ -258,7 +257,7 @@ h1.header-menu {
 }
 
 pre {
-    margin-bottom: 0;
+    margin: 0;
     padding-right: 10px;
 }
 
@@ -267,6 +266,7 @@ pre code {
     padding: 0;
     margin: 0;
 }
+
 
 .code::-webkit-scrollbar {
     height: 0;
