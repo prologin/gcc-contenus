@@ -238,7 +238,8 @@ On ferme le bloc
 Ici nous ne changerons que 3 fonds : le fond de la page, le fond des figures et
 le fond du footer. Vous devrez appliquer un fond blanc aux éléments figure et
 footer, et copier le code pour le fond de la page afin d'obtenir ce résultat :
-{{<figure src="resources/images/screenshot_background">}}
+
+{{<figure src="resources/images/screenshot_background.png">}}
 
 - `width` et `height` : Les attributs `width` (largeur) et `height` (hauteur) permettent de faire en sorte
 qu'un élément ait une certaine taille.
