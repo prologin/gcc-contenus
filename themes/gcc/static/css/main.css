@@ -212,7 +212,7 @@ h1.header-menu {
 }
 
 .toc ul ul a:any-link {
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: normal;
 }
 
