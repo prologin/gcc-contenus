@@ -477,11 +477,11 @@ x = randint(0, 100)  # assigne un nombre aléatoire à x compris entre 0 et 100
 if x < 30:
     display.scroll('x est inférieur à 30')
 elif x < 50:
-    display.scroll('x est supérieur à 30 et inférieur à 50')
+    display.scroll('x est supérieur ou égal à 30 et inférieur à 50')
 elif x < 80:
-    display.scroll('x est supérieur à 50 et inférieur à 80')
+    display.scroll('x est supérieur ou égal à 50 et inférieur à 80')
 else:
-    display.scroll('x est supérieur à 80')
+    display.scroll('x est supérieur ou égal à 80')
 ```
 
 ### Mini-exercice
