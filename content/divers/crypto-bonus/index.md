@@ -205,8 +205,6 @@ Pour aller plus loin, tu peux modifier le programme pour ajouter la fonctionnali
 
 **Info**: une particularité de la machine Enigma qui a aidé Alan Turing et son équipe pour casser le code est la suivante : Enigma ne donnait jamais de lettre identique à celle donnée en entrée. Saurais-tu expliquer pourquoi ?
 
-\newpage
-
 # XOR / Ou Exclusif
 
 _Prérequis : l'hexadécimal, la table ASCII_
