@@ -276,7 +276,7 @@ pre code {
 /**** responsive ****/
 /********************/
 
-@media screen and (max-device-width: 1400px) {
+@media screen and (max-width: 1400px) {
     .article-container {
         display: block;
     }
