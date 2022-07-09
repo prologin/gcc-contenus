@@ -25,7 +25,7 @@
   function addCopyButton(containerEl) {
     var copyBtn = document.createElement("button");
     copyBtn.className = "copy-button";
-    copyBtn.textContent = "Copy";
+    copyBtn.textContent = "Copier";
 
     var codeEl = containerEl.firstElementChild;
     copyBtn.addEventListener('click', function() {
@@ -34,10 +34,10 @@
         document.execCommand('copy');
         selection.removeAllRanges();
 
-        flashCopyMessage(copyBtn, 'Copied!')
+        flashCopyMessage(copyBtn, 'Copié !')
       } catch(e) {
         console && console.log(e);
-        flashCopyMessage(copyBtn, 'Failed :\'(')
+        flashCopyMessage(copyBtn, 'Raté :\'(')
       }
     });
 
