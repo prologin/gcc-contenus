@@ -104,6 +104,7 @@ h1.article-title {
     align-content: flex-start;
     justify-content: flex-start;
     flex-direction: row-reverse;
+    margin-left: 50px;
 }
 
 a.code-stub-button {
@@ -186,7 +187,7 @@ h1.header-menu {
 /********************/
 .toc {
     position: sticky;
-    top: 20%;
+    top: 50px;
     margin: 20px;
     list-style:none;
     border-left: 4px solid var(--header-color);
@@ -198,6 +199,7 @@ h1.header-menu {
     font-weight: bold;
     font-size: 1.4em;
     color: var(--header-color);
+    margin-top: 5px
 }
 
 .toc ul {
@@ -206,10 +208,19 @@ h1.header-menu {
     margin: 0;
 }
 
+.toc li {
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
 .toc a:any-link {
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
+}
+
+.toc a:hover {
+    color: grey;
 }
 
 .toc ul ul a:any-link {
