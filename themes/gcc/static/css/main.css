@@ -197,6 +197,7 @@ h1.header-menu {
 .toc-title {
     font-weight: bold;
     font-size: 1.4em;
+    color: var(--header-color);
 }
 
 .toc ul {
