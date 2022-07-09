@@ -205,18 +205,18 @@ h1.header-menu {
     margin: 0;
 }
 
-.toc a:-webkit-any-link {
+.toc a:any-link {
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
 }
 
-.toc ul ul a:-webkit-any-link {
+.toc ul ul a:any-link {
     text-decoration: underline;
     font-weight: normal;
 }
 
-.toc ul ul ul a:-webkit-any-link {
+.toc ul ul ul a:any-link {
     text-decoration: none;
 }
 
