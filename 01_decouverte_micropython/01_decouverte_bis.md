@@ -623,7 +623,7 @@ Pour ce qui concerne les lignes suivantes, tu connais déjà leur comportement.
 
 ### Mini-exercice
 **But :** Écris un programme qui compte et affiche le nombre d'appuis sur les
-boutons A et B avant que le logo tactile ne soit touché. 
+boutons A et B avant que le bouton tactile ne soit touché. 
 
 
 
