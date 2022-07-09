@@ -36,7 +36,7 @@ d'éviter d'avoir une gigantesque liste sous les yeux.
 
 Le nom des dossiers se termine parfois par une barre oblique.
 
-{{<figure src="resources/images/fs.png" width=260 height=260 
+{{<figure src="resources/images/fs.png" width=450 height=450 
     caption="Système de fichiers">}}
 
 Pour désigner un dossier ou un fichier, on utilise un *chemin*. Chaque chemin
@@ -73,7 +73,7 @@ Une fois que votre ordre est prêt, validez-le avec la touche `entrée`.
 Première étape : s'orienter. La commande permet d'afficher le nom du dossier
 actuel :
 
-``` {.bash}
+```bash
 $ pwd
 /home/fnareoh
 ```
@@ -95,7 +95,7 @@ vous êtes perdues.
 `cd` peut également être utilisé avec un argument, qui est le chemin du dossier
 dans lequel aller.
 
-``` {.bash}
+```bash
 $ cd /
 $ pwd
 /
@@ -108,7 +108,7 @@ $ pwd
 
 Entrez la commande `cd /home`, puis la commande `pwd` et observez le résultat.
 
-``` {.bash}
+```bash
 $ cd /home
 $ pwd
 /home
@@ -127,7 +127,7 @@ Par défaut, `ls` liste le contenu du dossier courant. La commande `ls` peut
 également être utilisée avec des arguments pour lister le contenu d'autres
 dossiers.
 
-``` {.bash}
+```bash
 $ ls /
 bin  boot  dev  etc  home  lib  lib64 …
 $ ls /home
@@ -143,7 +143,7 @@ l'option `-a` permet d'afficher les fichiers cachés. Un fichier caché est un
 fichier commençant par un point. Les fichiers nommés `.bash_history` et
 `.bashrc` dans l'exemple qui suit sont des fichiers cachés.
 
-``` {.bash}
+```bash
 $ cd
 $ ls
 afs
@@ -159,7 +159,7 @@ Entrez la commande `ls -a` et observez le résultat.
 
 La commande `mkdir` permet de créer un dossier.
 
-``` {.bash}
+```bash
 $ cd
 $ mkdir TP_UNIX
 $ ls
@@ -173,14 +173,14 @@ Créez un dossier `TP_UNIX` dans votre espace personnel.
 Vous pouvez utiliser la commande `gedit` pour lancer un éditeur de texte. Vous
 pouvez donner en argument le chemin du fichier à éditer.
 
-``` {.bash}
+```bash
 $ gedit mon_fichier
 * un éditeur apparaît *
 ```
 
 La commande `cat` permet d'afficher le contenu d'un fichier.
 
-``` {.bash}
+```bash
 $ cat mon_fichier
 du texte tapé dans gedit !
 ```
@@ -192,7 +192,7 @@ Le premier argument de `mv` est le chemin actuel du fichier ou dossier à
 déplacer.  Son second argument est le nouveau chemin du fichier, **ou** le
 chemin du dossier dans lequel le déplacer.
 
-``` {.bash}
+```bash
 $ mv mon_fichier autre_fichier
 $ mv autre_fichier TP_UNIX/encore_un_autre
 $ mv TP_UNIX/encore_un_autre ./
@@ -209,7 +209,7 @@ l'opération étant en fait similaire.
 
 De plus, la commande `cp` permet de dupliquer - **c**o**p**ier - un fichier.
 
-``` {.bash}
+```bash
 $ cat encore_un_autre
 du texte tapé dans gedit !
 $ cp encore_un_autre heyhey
@@ -227,7 +227,7 @@ La commande `rm` permet de supprimer [^3] un fichier. Attention, soyez prudentes
 ou vous risqueriez de perdre des fichiers importants: il n'y a pas de Corbeille
 où récupérer les fichiers supprimés.
 
-``` {.bash}
+```bash
 $ ls
 afs encore_un_autre heyhey TP_UNIX
 $ rm heyhey
@@ -246,7 +246,7 @@ fichier ou de commande, la touche `TAB` peut vous aider à compléter la suite. 
 appelle cela *l'auto-complétion*. Les touches `UP` et `DOWN` peuvent également
 permettre de parcourir l'historique des commandes saisies.
 
-``` {.bash}
+```bash
 $ cat encor[TAB]
 $ cat encore_un_autre
 ```
@@ -264,11 +264,11 @@ grâce à l'équipe qui vous entoure. Quelques idées : `time`, `touch`, `tail`,
 # Pense-Bête
 
 |  **commande**      |  **fonction**                       | **exemple**                         |
-|  ----------------- |  ---------------------------------- | ----------------------------------- |
+|--------------------|-------------------------------------|-------------------------------------|
 |  pwd               |  dossier courant                    | pwd                                 |
-|  cd                |  changer de dossier                 | cd TP_UNIX                         |
+|  cd                |  changer de dossier                 | cd TP_UNIX                          |
 |  ls                |  lister le contenu                  | ls                                  |
-|  mkdir             |  créer un répertoire                | mkdir TP_UNIX                      |
+|  mkdir             |  créer un répertoire                | mkdir TP_UNIX                       |
 |  cat               |  afficher le contenu d'un fichier   | cat test1.txt                       |
 |  mv                |  déplacer ou renommer un fichier    | mv resultplusun.txt ../testmv.txt   |
 |  cp                |  copier un fichier                  | cp ../testmv.txt resplusun.txt      |
