@@ -22,6 +22,7 @@ h1 {
     --text-color: #282828;
     --bg-color: #f9f9f9;
     --header-color: #35479A;
+    --bg-codeblock-color: #272822;
 }
 
 body {
@@ -236,7 +237,7 @@ h1.header-menu {
 /********************/
 
 .code {
-    background-color: var(--text-color);
+    background-color: var(--bg-codeblock-color);
     overflow-x: scroll;
     max-width: 100%;
     min-width: 100px;
