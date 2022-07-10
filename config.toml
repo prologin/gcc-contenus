@@ -20,13 +20,17 @@ theme = "gcc"
 [[Menu.header]]
     Name = "Micropython"
     URL = "/micropython"
+    weight = 1
 
 [[Menu.header]]
-    Name = "Divers"
+    Name = "Python et autre"
     URL = "/divers"
+    weight = 5
+
 [[Menu.header]]
     Name = "Documentation"
     URL = "/documentation"
+    weight = 10
 
 
 
