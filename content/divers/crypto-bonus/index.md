@@ -3,7 +3,7 @@ title: Cryptologie 2
 date: 2021
 authors: Clarisse Blanco, Dorian Péron
 weight: 15
-summary: 
+subtitle: 
 ---
 
 # Cryptologie avancée
