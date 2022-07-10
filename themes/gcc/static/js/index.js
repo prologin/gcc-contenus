@@ -9,7 +9,7 @@
   function flashCopyMessage(el, msg) {
     el.textContent = msg;
     setTimeout(function() {
-      el.textContent = "Copy";
+      el.textContent = "Copier";
     }, 1000);
   }
 
