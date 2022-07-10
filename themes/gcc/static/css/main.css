@@ -10,7 +10,6 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Helvetica", sans-serif;
-    padding-top: 25px;
 }
 
 h1 {
@@ -72,6 +71,10 @@ header.site-header li {
     margin-left: auto;
     margin-right: auto;
     width: 868px;
+}
+
+.content :is(h1, h2, h3, h4, h5, h6) {
+    padding-top: 25px;
 }
 
 h1.site-title {
