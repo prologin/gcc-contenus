@@ -211,6 +211,8 @@ h1.header-menu {
     list-style: none;
     padding: 15px;
     margin: 0;
+    max-height: 75vh;
+    overflow-y: auto;
 }
 
 .toc li {
