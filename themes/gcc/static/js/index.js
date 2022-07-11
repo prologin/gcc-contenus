@@ -1,11 +1,6 @@
 (function() {
   'use strict';
 
-  if(!document.queryCommandSupported('copy')) {
-    return;
-  }
-  
-
   function flashCopyMessage(el, msg) {
     el.textContent = msg;
     setTimeout(function() {
