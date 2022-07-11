@@ -157,7 +157,21 @@ L'utilisation d'un tuple va donc nous permettre de conserver la position des pom
 >>> print (a)
 (3, 4)
 ```
+Par ailleurs, vous pourriez avoir besoin d'acceder à un seul élément d'un tuple.
 
+Pour cela, vous devez indiquer le nom de votre tuple puis, ouvrir des crochets pour indiquer l'élément auquel vous souhaitez accéder, et refermer les crochets.
+*Attention vous devez indiquer le numéro auquel vous souhaitez accéder en lui soustrayant 1.*
+
+```python
+>>> a  =  (1,2)
+>>> print(a[0])
+# ici on affiche le première élément du tuple
+1
+>>> b = a[1]
+# on stock le second élément du tuple dans une variable
+>>> print(b)
+# puis on affiche la valeur dans la variable 
+2
 Vous pouvez maintenant faire apparaître une pomme de manière aléatoire et changer son emplacement. À chaque tour, la pomme doit descendre sur l'axe vertical.
 
 ![Les pommes sur un microbit](resources/microbit_pomme.png){width=5cm}
