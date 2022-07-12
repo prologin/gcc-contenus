@@ -256,7 +256,13 @@ h1.header-menu {
     padding: 10px;
 }
 
-
+code:not(pre>code) {
+    padding-top: 6px;
+    border-radius: 4px;
+    background-color: #CECECE;
+    color: var(--text-color);
+    font-size: 120%;
+}
 
 .copy-button {
     background-color: var(--header-color);
