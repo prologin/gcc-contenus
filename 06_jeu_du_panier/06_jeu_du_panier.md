@@ -172,6 +172,7 @@ Pour cela, vous devez indiquer le nom de votre tuple puis, ouvrir des crochets p
 >>> print(b)
 # puis on affiche la valeur dans la variable 
 2
+```
 Vous pouvez maintenant faire apparaître une pomme de manière aléatoire et changer son emplacement. À chaque tour, la pomme doit descendre sur l'axe vertical.
 
 ![Les pommes sur un microbit](resources/microbit_pomme.png){width=5cm}
