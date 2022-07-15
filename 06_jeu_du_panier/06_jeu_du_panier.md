@@ -53,7 +53,7 @@ Pour ce faire, commençons par créer une variable `pos_panier` qui sera la posi
 
 Maintenant que cette variable est créée, nous allons vouloir déplacer notre panier. 
 
-Pour cela, tant que le joueur n'a pas perdu, on laissera le joueur faire bouger le panier. Vous pouvez utiliser une variable booléenne pour cela.
+Pour cela, tant que le joueur n'a pas perdu, on laissera le joueur faire bouger le panier. Vous pouvez utiliser une variable booléenne.
 
 ![Le panier qui bouge sur un microbit](resources/microbit_panier_move.png){width=5cm}
 
@@ -157,20 +157,20 @@ L'utilisation d'un tuple va donc nous permettre de conserver la position des pom
 >>> print (a)
 (3, 4)
 ```
-Par ailleurs, vous pourriez avoir besoin d'acceder à un seul élément d'un tuple.
+Par ailleurs, vous pourriez avoir besoin d'accéder à un seul élément d'un tuple.
 
 Pour cela, vous devez indiquer le nom de votre tuple puis, ouvrir des crochets pour indiquer l'élément auquel vous souhaitez accéder, et refermer les crochets.
 *Attention vous devez indiquer le numéro auquel vous souhaitez accéder en lui soustrayant 1.*
 
 ```python
->>> a  =  (1,2)
+>>> a = (1, 2)
 >>> print(a[0])
-# ici on affiche le première élément du tuple
+# ici on affiche le premier élément du tuple
 1
 >>> b = a[1]
 # on stock le second élément du tuple dans une variable
 >>> print(b)
-# puis on affiche la valeur dans la variable 
+# puis on affiche la valeur de la variable 
 2
 ```
 Vous pouvez maintenant faire apparaître une pomme de manière aléatoire et changer son emplacement. À chaque tour, la pomme doit descendre sur l'axe vertical.
@@ -217,7 +217,7 @@ Pour finir cette partie, vérifiez que si l'on n'attrape pas la pomme, la partie
 
 Une fois le jeu fini, vous pouvez ajouter plusieurs améliorations. Notez que chaque amélioration est réalisable indépendamment des autres. 
 Avant de commencer cette partie vérifiez que votre jeu fonctionne correctement. Si ce n'est pas le cas n'hésitez pas à demander de l'aide aux organisateurs !
-### Accélération de la chute des pommes!
+### Accélération de la chute des pommes !
 
 Pour rendre la partie plus difficile et amusante, vous pouvez augmenter la vitesse de chute des pommes au fur et à mesure de l'avancement de la partie. 
 *Il faut tout de même s'assurer que le jeu reste faisable, en posant par exemple une limite de vitesse de chute.*
@@ -254,7 +254,7 @@ Maintenant que nous avons défini notre fonction `somme`, nous allons pouvoir l'
 ```python
 somme(2, 4)
 ```
-Vous remarquerez que l'appel de notre fonction ne fais rien. C'est normal car ce que nous ne faisons rien du résultat de notre fonction. Plusieurs possibilités s’offrent à nous, nous pouvons afficher le résultat, le stocker dans une variable...
+Vous remarquerez que l'appel de notre fonction ne fait rien. C'est normal car nous ne faisons rien du résultat de notre fonction. Plusieurs possibilités s’offrent à nous, nous pouvons afficher le résultat, le stocker dans une variable...
 ```python
 print(somme(2, 3))
 # résultat affiché dans la console : 5
