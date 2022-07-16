@@ -33,6 +33,11 @@ body {
     background-color: var(--bg-color);
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /********************/
 /****** header ******/
 /********************/
