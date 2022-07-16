@@ -1,6 +1,9 @@
 ---
 title: Découverte de Micropython
 date: 2022
+weight: 1
+subtitle: Au cours de ce TP, tu vas découvrir comment utiliser le micro:bit et 
+comment coder en micropython. 
 ---
 
 # Introduction
@@ -123,13 +126,13 @@ En ce qui concerne cette fonction, voici un petit schéma qui permet de mieux
 comprendre les coordonnées de chaque LED (la coordonnée **X** correspond au
 numéro de **colonne** et la coordonnée **Y** correspond au numéro de **ligne**) :
 
-![Coordonnées des leds](resources/microbit_coordinates_bis.png){width=5cm}
+{{<figure src="resources/images/microbit_coordinates_bis.png" width=200 caption="Coordonnées des LEDs">}}
 
 
 ### Mini-exercice
 **But :** Affiche un coeur sur l'écran
 _Ça devrait ressembler à quelque chose comme ça :_
-![](resources/empty_heart.png){width=5cm}
+{{<figure src="resources/images/empty_heart.png" width=200 caption="">}}
 
 
 ## Les images
@@ -141,7 +144,7 @@ afficher des images et des symboles : `display.show(Image.NOM_IMAGE)`, où
 `NOM_IMAGE` est le nom anglais d'une image pré-enregistrée. 
 Voici à quoi ressemblent les images `HEART` et `SMILE` :
 
-![`Image.HEART` et `Image.SMILE`](resources/microbit_images.jpg)
+{{<figure src="resources/images/microbit_images.jpg" width=200 caption="`Image.HEART` et `Image.SMILE`">}}
 
 ### Mini-exercice
 **But :** Affiche un smiley content sur l'écran du microbit.
@@ -237,7 +240,7 @@ x = x + y
 display.scroll(x)
 ```
 
-![](resources/variables.png){width=5cm}
+{{<figure src="resources/images/variables.png" width=200>}}
 
 
 ### Mini-Exercice
@@ -337,7 +340,7 @@ Comme tu peux le voir, il y a deux boutons physiques sur le microbit : le bouton
 le bouton B. Mais il y a aussi un bouton tactile au niveau du logo au dessus de
 l'écran. Voici un petit schéma qui te permet de repérer les différents boutons : 
 
-![](resources/microbit_buttons.png){width=5cm}
+{{<figure src="resources/images/microbit_buttons.png" width=200>}}
 
 Pour utiliser les boutons A et B, tu peux respectivement utiliser la fonction
 `button_a.get_presses()` et `button_b.get_presses()`. Ces fonctions renvoient le
@@ -442,7 +445,7 @@ Et bien il te suffit simplement d'appuyer sur la touche `tabulation`. Celle qui
 ressemble à ça (c'est la touche juste au dessus de la touche `verrouillage
 majuscule`): 
 
-![](resources/tabulation.png)
+{{<figure src="resources/images/tabulation.png" width=200>}}
 
 Pour l'instant il te suffit juste de savoir ça, je reviendrai là-dessus juste
 après. 
@@ -566,7 +569,7 @@ display.show(Image.SMILE) # Cette ligne de code n'est pas répétée
 
 Voici un petit schéma pour bien différencier les différents blocs de code : 
 
-![](resources/for_loop.png){width=5cm}
+{{<figure src="resources/images/for_loop.png" width=200>}}
 
 
 Bien sûr, il est possible d'"emboîter" des boucles les unes dans les
