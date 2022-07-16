@@ -32,13 +32,13 @@ programme.
 
 Contenu du fichier `score.py` :
 
-``` {.python}
+```python
 print("Bonjour !")
 ```
 
 Résultat à l'exécution dans la console :
 
-``` {.text}
+```text
 Bonjour !
 ```
 
@@ -47,14 +47,14 @@ s'affichent dans le même ordre dans le terminal. Et elle apprend également que
 si elle commence une ligne par un `#` la ligne n'est pas prise en compte. On
 s'en sert généralement pour laisser des commentaires dans son code :
 
-``` {.python}
+```python
 print("Bonjour,")
 # print("Ceci ne va pas être affiché")
 # C'est juste pour l'exemple !
 print("Bienvenue au stage informatique GCC! !")
 ```
 
-``` {.text}
+```text
 Bonjour,
 Bienvenue au stage informatique GCC! !
 ```
@@ -66,51 +66,51 @@ guillemets, elle peut obtenir toutes ces erreurs :
 
 Il manque une parenthèse :
 
-``` {.python}
+```python
 print("Score :"
 ```
 
-``` {.text}
+```text
 SyntaxError: unexpected EOF while parsing
 ```
 
 Il manque une parenthèse :
 
-``` {.python}
+```python
 print"Score :")
 ```
 
-``` {.text}
+```text
 SyntaxError: invalid syntax
 ```
 
 Il manque un guillemet :
 
-``` {.python}
+```python
 print("Score :)
 ```
 
-``` {.text}
+```text
 SyntaxError: EOL while scanning string literal
 ```
 
 Il manque des guillemets :
 
-``` {.python}
+```python
 print(Score)
 ```
 
-``` {.text}
+```text
 NameError: name 'Score' is not defined
 ```
 
 Il manque des guillemets :
 
-``` {.python}
+```python
 print(Score :)
 ```
 
-``` {.text}
+```text
 SyntaxError: invalid syntax
 ```
 
@@ -124,7 +124,7 @@ ce qui peut te donner une idée d'où se trouve la faute.
 Essaie de créer un fichier `score.py` qui, quand on le lance dans la console,
 affiche :
 
-``` {.text}
+```text
 Le score est de 3 contre 1 !
 ```
 
@@ -143,14 +143,14 @@ n'appuieras pas sur la touche *entrée*.
 
 Seulement, si on écrit juste :
 
-``` {.python}
+```python
 input()
 ```
 
 On perd instantanément ce que l'utilisateur a écrit, car on n'a pas fait en
 sorte de le sauvegarder ! Pour le sauvegarder on peut par exemple écrire :
 
-``` {.python}
+```python
 entree = input()
 ```
 
@@ -159,7 +159,7 @@ Ici, grâce au `=`, on écrit qu'on sauvegarde le résultat de `input()` dans la
 que l'utilisateur a écrit. Par exemple, on peut afficher les variables, et donc
 écrire un programme qui recopie ce que l'utilisateur lui donne :
 
-``` {.python}
+```python
 entree = input()
 print(entree)
 ```
@@ -170,14 +170,14 @@ compter les points, elle va avoir besoin de variables (par exemple `score` et
 multiplier ou encore diviser. Par exemple, si elle lance le programme suivant,
 elle obtient :
 
-``` {.python}
+```python
 score = 1
 points_marques = 2
 score_total = score + points_marques
 print(score_total)
 ```
 
-``` {.text}
+```text
 3
 ```
 
@@ -191,26 +191,26 @@ est à l'aide de la fonction `int`. Cette fonction permet de convertir ce que
 l'on récupère, c'est-à-dire des chaînes de caractères, en des entiers. Mais ça
 ne marche pas si la chaîne n'est pas un entier :
 
-``` {.python}
+```python
 print(int("4") + 1)
 ```
 
-``` {.text}
+```text
 5
 ```
 
-``` {.python}
+```python
 int("a")
 ```
 
-``` {.text}
+```text
 ValueError: invalid literal for int() with base 10: 'a'
 ```
 
 Pour récupérer un entier, tu peux donc écrire l'instruction ci-dessous ; mais si
 tu ne donnes pas un entier quand tu exécutes le programme, tu auras une erreur :
 
-``` {.python}
+```python
 nombre = int(input())
 ```
 
@@ -222,7 +222,7 @@ l'équipe et les points qu'elle a marqués, et affiche le nouveau total.
 Par exemple si je lance le programme, que j'écris `5` puis `2`, le programme
 devra écrire `7`, car $5 + 2 = 7$. Mon terminal ressemblera alors à :
 
-``` {.text}
+```text
 5
 2
 7
@@ -231,7 +231,7 @@ devra écrire `7`, car $5 + 2 = 7$. Mon terminal ressemblera alors à :
 Alice se dit qu'elle aimerait bien avoir une présentation un peu plus jolie.
 Elle voudrait que ce qui s'affiche dans le terminal soit au final :
 
-``` {.text}
+```text
 Le score est ?
 5
 Le nombre de points marqués est ?
@@ -243,11 +243,11 @@ Alors le score est :
 `Astuce :` Si tu as stocké le score dans la variable `score` qui vaut par
 exemple 3, tu peux aussi faire :
 
-``` {.python}
+```python
 print("Le score est", score)
 ```
 
-``` {.text}
+```text
 Le score est 3
 ```
 
@@ -280,7 +280,7 @@ test est vrai.
 
 Par exemple :
 
-``` {.python}
+```python
 n = int(input())
 if n < 0:
     print("le nombre est négatif !")
@@ -301,7 +301,7 @@ Elle découvre alors qu'il est possible de faire cela en Python, grâce aux
 Si on utilise `or`, le test sera *vrai* si l'un des deux tests qui le composent
 ou les deux sont *vrais*. On l'utilise comme suit :
 
-``` {.python}
+```python
 if TEST1 or TEST2:
   # ce que je fais si l'un des deux tests ou les deux sont vrais
 ```
@@ -310,7 +310,7 @@ C'est exactement la même chose dans le cas du *et*. La seule différence est qu
 pour que le test soit *vrai*, il faut que les deux tests qui le composent soient
 *vrais* tous les deux ! En Python, on écrit :
 
-``` {.python}
+```python
 if TEST1 and TEST2:
   # ce que je fais si les deux tests sont vrais
 ```
@@ -332,7 +332,7 @@ j'ai des sandales je les mets, sinon je mets des chaussettes.* .
 
 Avec l'indentation, le schéma reste toujours :
 
-``` {.python}
+```python
 if TEST1:
     # ce que je fais si le test 1 est vrai
 elif TEST2:
@@ -350,7 +350,7 @@ else:
 
 Par exemple, le programme suivant respecte ce schéma :
 
-``` {.python}
+```python
 print("Quel est le nombre ?")
 n = int(input())
 
@@ -364,19 +364,19 @@ else:
 
 Et il donne les exécutions suivantes :
 
-``` {.text}
+```text
 Quel est le nombre ?
 3
 le nombre est positif !
 ```
 
-``` {.text}
+```text
 Quel est le nombre ?
 -1
 le nombre est négatif !
 ```
 
-``` {.text}
+```text
 Quel est le nombre ?
 0
 le nombre est zéro !
@@ -388,7 +388,7 @@ Alice et toi avez maintenant toutes les armes en main pour faire un programme
 qui prend en entrée deux nombres, et affiche en sortie l'équipe qui a gagné,
 comme sur l'exemple qui suit. Lance toi !
 
-``` {.text}
+```text
 5
 7
 L'équipe 2 gagne !
@@ -414,12 +414,12 @@ enfin `3`.
 Par exemple, si je veux afficher 4 fois le texte *Je ne veux pas compter les
 points du match* , je peux écrire le code :
 
-``` {.python}
+```python
 for i in range(4):
     print("Je ne veux pas compter les points du match")
 ```
 
-``` {.text}
+```text
 Je ne veux pas compter les points du match
 Je ne veux pas compter les points du match
 Je ne veux pas compter les points du match
@@ -429,12 +429,12 @@ Je ne veux pas compter les points du match
 Par contre le code suivant donne un résultat qui n'est pas identique les 4 fois
 :
 
-``` {.python}
+```python
 for i in range(4):
     print("Je ne veux pas compter les points du match", i)
 ```
 
-``` {.text}
+```text
 Je ne veux pas compter les points du match 0
 Je ne veux pas compter les points du match 1
 Je ne veux pas compter les points du match 2
@@ -449,7 +449,7 @@ boucle.
 Si je veux répéter un nombre `n` fois un bout de code, on écrira selon le schéma
 suivant. Rappelle-toi, le décalage visuel (*indentation*) est important:
 
-``` {.python}
+```python
 for i in range(n):
     # ce que je veux répéter n fois (où i peut intervenir)
 
@@ -462,7 +462,7 @@ Alice et toi êtes désormais prêtes pour écrire une fonction qui demande d'ab
 le nombre de manches, puis les résultats des manches, et enfin le programme
 annonçant le vainqueur du match :
 
-``` {.text}
+```text
 Combien de manches ?
 3
 Qui gagne les manches ?
@@ -487,7 +487,7 @@ traduit en français par *tant que*.
 
 On s'en servira comme cela :
 
-``` {.python}
+```python
 while condition: # tant que la condition est vraie
     # ce que je veux répéter
 
@@ -497,7 +497,7 @@ while condition: # tant que la condition est vraie
 Par exemple, le programme suivant va demander à l'utilisateur ce que vaut 2+2
 tant qu'il n'aura pas répondu 4 :
 
-``` {.python}
+```python
 resultat = 0
 
 while resultat != 4:
@@ -514,7 +514,7 @@ emploie cette boucle.
 Par exemple, *à cause d'une erreur* d'inattention ce programme ne terminera
 jamais car on ne change pas la variable `resultat` utilisée dans la condition :
 
-``` {.python}
+```python
 resultat = 0
 
 while resultat != 4:
@@ -531,7 +531,7 @@ Maintenant, essaie d'écrire un programme qui demande qui a marqué le point tan
 que la manche n'est pas finie (personne n'a atteint 6 points) et annonce le
 gagnant à la fin :
 
-``` {.text}
+```text
 1
 1
 1
@@ -557,7 +557,7 @@ fait, ce n'est pas la première fois que l'on utilise des fonctions : `print` et
 premier multiplié par deux, et auquel on a ajouté 1. En Python, on peut l'écrire
 comme cela :
 
-``` {.python}
+```python
 def f(x):
     return 2 * x + 1
 ```
@@ -566,7 +566,7 @@ Puis, après avoir défini la fonction, on peut l'utiliser. On dit qu'on *appell
 la fonction. Par exemple, l'exécution du programme suivant donnera comme
 résultat :
 
-``` {.python}
+```python
 def f(x):
     return 2 * x + 1
 
@@ -574,7 +574,7 @@ print(f(0))
 print(f(1))
 ```
 
-``` {.text}
+```text
 1
 3
 ```
@@ -591,7 +591,7 @@ définir la fonction `dix_etoiles` ci-dessous. Par contre, nous pourrions aussi
 avoir besoin d'afficher souvent une ligne d'étoiles mais avec un nombre
 d'étoiles qui varie. Dans ce cas là, on définit la fonction `n_etoiles`.
 
-``` {.python}
+```python
 def dix_etoiles():
     for i in range(10):
         print("*", end="")
@@ -608,7 +608,7 @@ n_etoiles(6)
 print() # retour à la ligne
 ```
 
-``` {.text}
+```text
 **********
 ***
 ******
@@ -623,7 +623,7 @@ encore `x` dans `f` ; il peut y en avoir plusieurs. Dans ce cas, on les énumèr
 connaissait leur valeur. Puis vient le : , suivi d'un retour à la ligne et d'une
 indentation, comme pour les boucles. En résumé, la syntaxe des fonctions est :
 
-``` {.python}
+```python
 def nom_de_ma_fonction(arg1, arg2,..., dernier_arg):
     # Le code de ma fonction
     # on peut utiliser les arguments
@@ -638,21 +638,21 @@ après l'appel de la fonction, alors que si j'utilise `print`, je ne fais
 qu'afficher le résultat dans la console, et je ne peux pas m'en servir après.
 Par exemple, si j'écris le code suivant j'obtiens l'erreur :
 
-``` {.python}
+```python
 def f(x):
     print(2 * x + 1)
 
 print(f(2) + 1)
 ```
 
-``` {.text}
+```text
 TypeError: unsupported operand type(s) for +: 'NoneType' and
 'int'
 ```
 
 Ce qu'il faut faire est :
 
-``` {.python}
+```python
 def f(x):
     return 2 * x + 1
 print(f(2) + 1)
@@ -664,7 +664,7 @@ Maintenant, avec tout ce que tu as appris, écris une fonction `manche` qui pren
 en entrée le score à atteindre, et qui renvoie le gagnant (`1` ou `2`). Ainsi le
 programme suivant pourra organiser un match et annoncer le gagnant !
 
-``` {.python}
+```python
 nb_manches = int(input("Combien de manches ? "))
 score_j1 = 0
 score_j2 = 0
