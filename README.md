@@ -68,7 +68,7 @@ Il ne reste plus qu'à écrire le sujet dans le fichier `index.md`. Vous pouvez
 aussi écrire un `README.md` additionnel si jamais certaines informations doivent
 être transmises aux organisateurs mais pas aux participantes. 
 Ce fichier sera essentiellement destiné aux organisateurs et permet d'éclaicir certaines
-particularité du TP. 
+particularités du TP. 
 
 
 

@@ -1,7 +1,7 @@
 # Directory where Hugo builds the site
 public/
 
-resources/
+/resources/
 .hugo_build.lock
 go.mod
 go.sum
