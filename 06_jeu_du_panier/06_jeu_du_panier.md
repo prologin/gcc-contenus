@@ -38,7 +38,7 @@ La partie se finit lorsqu'une pomme touche le sol. Dans ce cas nous afficherons 
 
 ## Partie I : Le panier
 
-*Attention pensez à bien importer la bibliothèque **microbit** avant de commencer.*
+*Attention, pensez à bien importer la bibliothèque **microbit** avant de commencer.*
 ```python
 from microbit import *
 ```
@@ -264,7 +264,7 @@ print(resultat)
 # résultat affiché dans la console : 5
 ```
 
-*Pro tips : Attention l'ordre dans lequel vous renseignez vos arguments peut avoir un impact sur le résultat.*
+*Pro tips : Attention, l'ordre dans lequel vous renseignez vos arguments peut avoir un impact sur le résultat.*
 
 
 ---
