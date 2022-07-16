@@ -19,11 +19,13 @@ matrice.
 De cette facon, comme pour les listes, les indices dans les matrices commencent
 à 0.
 
-```text
-1  2  3
-4  5  6
-7  8  9
-```
+$$
+\begin{bmatrix}
+    1 & 2 & 3 \\\\
+    4 & 5 & 6 \\\\
+    7 & 8 & 9
+\end{bmatrix}
+$$
 
 Dans cette matrice, la valeur 5 se trouve aux coordonnées (1, 1).
 La valeur 1 se trouve alors aux coordonnées (0, 0).
@@ -86,11 +88,13 @@ certain que cette ligne existe à priori.
 
 Soit la matrice M
 
-```text
-1  2  3
-4  5  6
-7  8  9
-```
+$$
+\begin{bmatrix}
+    1 & 2 & 3 \\\\
+    4 & 5 & 6 \\\\
+    7 & 8 & 9
+\end{bmatrix}
+$$
 
 Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
 coordonnées (1, 2).
