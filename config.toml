@@ -1,0 +1,36 @@
+baseURL = "https://tp.girlscancode.fr"
+languageCode = "fr-fr"
+title = "TPs GCC!"
+theme = "gcc"
+
+# Table of content level
+[markup]
+  [markup.tableOfContents]
+    endLevel = 2
+    ordered = false
+    startLevel = 1
+  [markup.highlight]
+    lineNos = true
+
+
+
+
+# Here are the header menus
+[Menu]
+[[Menu.header]]
+    Name = "Micropython"
+    URL = "/micropython"
+    weight = 1
+
+[[Menu.header]]
+    Name = "Python et autre"
+    URL = "/divers"
+    weight = 5
+
+[[Menu.header]]
+    Name = "Documentation"
+    URL = "/documentation"
+    weight = 10
+
+
+

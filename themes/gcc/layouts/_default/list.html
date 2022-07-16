@@ -1,0 +1,18 @@
+{{ define "main" }}
+<header class="home-title-box">
+    <h1 class="site-header-title"> {{ .Title }}</h1>
+    <p class="site-header-subtitle">
+    {{ .Params.subtitle }}
+    </p>
+</header>
+
+<div class="container">
+    <ul class="article-list">
+        {{ range .Pages }}
+        <li class="article-item">
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
