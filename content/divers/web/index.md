@@ -283,10 +283,10 @@ voici un diagramme réalisé par les contributeurs Mozilla, disponible
 Ici, j'utilise des marges et du padding pour le pied de page :
 ```css
 footer {
-    ...
+    /* ... */
     padding: 20px;
     margin-top: 30px;
-    ...
+    /* ... */
 }
 ```
 Ce code permet de rajouter du remplissage tout autours du texte du pied de page,
@@ -298,9 +298,10 @@ Il existe aussi `-left` (gauche) `-right` (droite) et `-bottom` (bas).
 Les marges peuvent aussi être utilisées pour centrer un élément sur la page :
 ```css
 main {
-    ...
+    /* ... */
     margin-left: auto;
     margin-right: auto;
+    /* ... */
 }
 ```
 En indiquant que la marge gauche et droite doivent être calculées
@@ -325,7 +326,7 @@ Ici, vous ajouterez `text-align: center` à l'élément `header`, au `footer` et
 
 {{<figure src="resources/images/screenshot_text-align.png">}}
 
-# La fin! (?)
+# La fin!
 
 Félicitations, vous avez terminé ce TP !
 
