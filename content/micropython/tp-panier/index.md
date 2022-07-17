@@ -1,6 +1,7 @@
 ---
-title: Jeu du Panier Micropython
+title: TP - Jeu du Panier
 date: 2022
+weight: 100
 ---
 
 # Jeu du Panier
@@ -12,14 +13,14 @@ Maintenant que vous avez appris à utiliser des **micro:bit**, il est temps de p
 Le but de ce projet est de faire un **jeu du panier** :
 
 
-![Jeu du panier](resources/game.png){width=5cm}
+![Jeu du panier](resources/game.png)
 
 
 ## Principe du jeu
 
 Le principe général est de ramasser des pommes qui tombent du ciel à l'aide d'un panier.
 
-![Jeu sur un microbit](resources/microbit_game.png){width=5cm}
+![Jeu sur un microbit](resources/microbit_game.png)
 
 ### Le panier
 
@@ -47,7 +48,7 @@ Dans cette partie nous allons simplement nous occuper du panier. Le panier fait 
 Pour ce faire, commençons par créer une variable `pos_panier` qui sera la position du panier en X. Au début de la partie, le panier sera au milieu de l'écran, soit en position 2 (image ci-dessous). 
 
 
-![Le panier sur un microbit](resources/microbit_panier.png){width=5cm}
+![Le panier sur un microbit](resources/microbit_panier.png)
 
 
 
@@ -55,7 +56,7 @@ Maintenant que cette variable est créée, nous allons vouloir déplacer notre p
 
 Pour cela, tant que le joueur n'a pas perdu, on laissera le joueur faire bouger le panier. Vous pouvez utiliser une variable booléenne.
 
-![Le panier qui bouge sur un microbit](resources/microbit_panier_move.png){width=5cm}
+![Le panier qui bouge sur un microbit](resources/microbit_panier_move.png)
 
 
 ### Rappel :  
@@ -175,7 +176,7 @@ Pour cela, vous devez indiquer le nom de votre tuple puis, ouvrir des crochets p
 ```
 Vous pouvez maintenant faire apparaître une pomme de manière aléatoire et changer son emplacement. À chaque tour, la pomme doit descendre sur l'axe vertical.
 
-![Les pommes sur un microbit](resources/microbit_pomme.png){width=5cm}
+![Les pommes sur un microbit](resources/microbit_pomme.png)
 
 
 
