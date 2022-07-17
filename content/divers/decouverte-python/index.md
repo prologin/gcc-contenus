@@ -2,7 +2,8 @@
 title: Découverte de Python
 weight: 1
 date: 2021
-subtitle: 
+subtitle:
+draft: true
 ---
 
 
@@ -22,7 +23,7 @@ s'exécute que si elle rentre la commande `python3 score.py` dans le terminal
 depuis le dossier où se trouve son fichier `score.py`.
 
 Au passage, l'extension `.py` sert à préciser à l'ordinateur que ce qui est
-écrit dans le fichier est écrit dans le langage python, ce qui peut permettre à
+écrit dans le fichier est écrit dans le langage Python, ce qui peut permettre à
 certains éditeurs de colorer les mots clefs de Python.
 
 Ensuite elle veut voir si elle peut afficher un texte ou un nombre en sortie
@@ -182,9 +183,9 @@ print(score_total)
 ```
 
 Plus précisément, elle veut écrire un programme qui attend de l'utilisateur (on
-dit aussi qui prend en entrée) le nombre de points qu'a l'équipe en ce moment,
+dit aussi qui *prend en entrée*) le nombre de points qu'a l'équipe en ce moment,
 puis prend en entrée le nombre de points marqués, et ensuite affiche dans le
-terminal (on dit aussi qu'il écrit en sortie) le nouveau total.
+terminal (on dit aussi qu'il *écrit en sortie*) le nouveau total.
 
 Pour cela, son programme va devoir récupérer des entiers. Une façon de le faire
 est à l'aide de la fonction `int`. Cette fonction permet de convertir ce que
@@ -265,11 +266,12 @@ du résultat. En Python, on peut écrire des tests dont les résultats seront so
 *vrai* soit *faux*, ou plus précisément soit `True`, soit `False`. Ce sont des
 types spéciaux : des *booléens*.
 
-Il existe plein de façons de faire des tests : une comparaison stricte entre
-deux entiers, qui dit vrai si `a` est plus petit que `b` (`a < b`), une
-comparaison large, qui dit vrai si `a` est plus petit ou égal à `b` (`a <= b`),
-un test d'égalité, qui dit vrai si `a` est égal à `b` (`a == b`) ou encore un
-test de différence, qui dit vrai si a est différent de b (`a != b`).
+Il existe plein de façons de faire des tests :
+- une comparaison stricte entre deux entiers, qui dit vrai si `a` est plus
+petit que `b` (`a < b`),
+- une comparaison large, qui dit vrai si `a` est plus petit ou égal à `b` (`a <= b`),
+- un test d'égalité, qui dit vrai si `a` est égal à `b` (`a == b`)
+- ou encore, un test de différence, qui dit vrai si a est différent de b (`a != b`).
 
 Ces tests, combinés à ce qu'on appelle des structures conditionnelles,
 permettent à un programme, qui est toujours écrit de la même façon, de
@@ -551,8 +553,8 @@ demander à jouer un nombre variable de manches dans un même match. Pour cela, 
 va utiliser un nouvel outil, les *fonctions*. Une fonction, c'est un bout de
 code qui prend en entrée des choses, et donne en sortie d'autres choses. En
 fait, ce n'est pas la première fois que l'on utilise des fonctions : `print` et
-`input` étaient des fonctions.  Alice a aussi vu en cours de maths des fonctions
-, comme $f(x) = 2x + 1$, et se dit qu'on pourrait l'écrire en informatique aussi
+`input` étaient des fonctions.  Alice a aussi vu en cours de maths des fonctions,
+comme $f(x) = 2x + 1$, et se dit qu'on pourrait l'écrire en informatique aussi
 ! Ici, l'entrée est un premier nombre, et la sortie un autre nombre, égal au
 premier multiplié par deux, et auquel on a ajouté 1. En Python, on peut l'écrire
 comme cela :
@@ -620,7 +622,7 @@ objets que la fonction prend en entrée (que l'on appelle aussi
 *arguments/paramètres*), comme par exemple `n` dans la fonction `n_etoiles` ou
 encore `x` dans `f` ; il peut y en avoir plusieurs. Dans ce cas, on les énumère
 à l'aide de virgules. On pourra les utiliser dans la fonction, comme si on
-connaissait leur valeur. Puis vient le : , suivi d'un retour à la ligne et d'une
+connaissait leur valeur. Puis vient le `:`, suivi d'un retour à la ligne et d'une
 indentation, comme pour les boucles. En résumé, la syntaxe des fonctions est :
 
 ```python
@@ -665,6 +667,8 @@ en entrée le score à atteindre, et qui renvoie le gagnant (`1` ou `2`). Ainsi 
 programme suivant pourra organiser un match et annoncer le gagnant !
 
 ```python
+# écrire la fonction `manche(score)`
+
 nb_manches = int(input("Combien de manches ? "))
 score_j1 = 0
 score_j2 = 0
