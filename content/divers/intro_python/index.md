@@ -35,7 +35,7 @@ Essaie d'enlever les parenthèses ou les guillemets et d'exécuter à nouveau le
 
 Comme tu peux le constater, au lieu d'afficher "Hello world!" Python renvoie ce que l'on appelle une erreur : c'est un message pour expliquer que le programme a un problème. Le plus souvent, il précise la nature de l'erreur et la ligne où il l'a détectée. Mais attention, ce n'est pas forcément à cette ligne que l'on devra modifier quelque chose pour que le programme fonctionne.
 
-## Exercice :
+## Exercice 1
 Écris un programme qui affiche la phrase :
 ```text
 Bienvenue au stage d'informatique GCC! !
@@ -88,13 +88,13 @@ Il s'agit de ton premier programme avec plusieurs instructions, et donc plusieur
 
 Mais Python ne permet pas seulement de faire des additions. Tu peux aussi utiliser les signes `-`, `*`, `/` pour effectuer des soustractions, des multiplications et des divisions. N'hésite pas à essayer !
 
-## Pour aller plus loin :
+## Pour aller plus loin
 
 En plus des quatre opérations classiques, Python propose deux autres opérateurs : `//` et `%`.
 
 Essaie-les pour comprendre ce qu'ils font.
 
-## Exercice :
+## Exercice 2
 Voici un programme Python :
 ```python
 a = 7
@@ -105,16 +105,16 @@ print(d - 4)
 ```
 Que va afficher l'ordinateur à la fin de ce programme ? Vérifie en l'essayant.
 
-## Exercice :
+## Exercice 3
 Voici un programme Python :
 ```python
 x = 3
-x = x – 2
+x = x - 2
 print(x)
 ```
 Que va afficher l'ordinateur à la fin de ce programme ? Vérifie en l'essayant.
 
-## Exercice :
+## Exercice 4
 On cherche à écrire un programme Python qui inverse le contenu de deux variables. On propose le programme suivant :
 ```python
 a = 4
@@ -130,7 +130,7 @@ print("b vaut", b)
 Comme tu l'as vu précédemment, on peut afficher une chaîne de caractères (du texte, entre guillemets) ou le contenu d'une variable grâce à `print`. `print` permet aussi d'afficher à la fois une chaîne de caractères et le contenu d'une variable. Pour cela, on va séparer nos différents éléments par des virgules. Essaie le programme suivant :
 
 ```python
-nom = "Natalie"
+nom = "Nathalie"
 age = 15
 print(nom, "a", age, "ans")
 ```
@@ -146,12 +146,11 @@ nom = input()
 print("Tu t'appelles", nom)
 ```
 
-Maintenant, nous allons demander à l'utilisateur d'entrer une valeur chiffrée. Par exemple, demandons-lui son âge.
+Maintenant, nous allons demander à l'utilisateur d'entrer un nombre. Par exemple, demandons-lui son âge.
 Pour cela, plutôt que d'écrire `nom = input()`, on va écrire `age = int(input())`. Quand on demande un nombre à l'utilisateur, il faut utiliser `int(input())` et pas seulement `input()`.
 
 ## Pour aller plus loin : pourquoi ce `int()` ?
 Python ne traite pas de la même manière les nombres entiers, les nombres à virgule, et le texte. Quand `input()` récupère l'entrée de l'utilisateur, il la traite comme une chaîne de caractères. Or, on ne peut pas faire certaines opérations sur les chaînes de caractères (soustraction, division, etc.) dont on aurait besoin. Le `int()` dit à l'ordinateur qu'en fait, on veut traiter ce que l'utilisateur entre comme un nombre. La chaîne de caractères "4" devient ainsi le nombre 4.
-C'est le même mécanisme dans l'autre sens que l'on a vu avec `str()` avant.
 
 Le programme sera alors :
 ```python
@@ -163,13 +162,13 @@ N'oublie pas qu'une fois la valeur entrée dans une variable, on peut faire des 
 
 Nous allons maintenant faire quelques exercices pour manipuler les variables ainsi que les instructions `print` et `input`. Si tu as l'impression que les petits programmes que nous écrivons pour l'instant ne servent pas à grand-chose, ne t'inquiète pas : c'est normal ! Pour l'instant, on essaie simplement de bien comprendre comment tout fonctionne, mais tu verras qu'à la fin du stage, ou sur les exercices bonus de ce TP, tu seras capable d'écrire des programmes qui font des tâches très complexes et qui te simplifieront la vie ou te permettront de faire des choses impossibles sans l'informatique.
 
-## Exercice :
+## Exercice 5
 Écris un programme qui pose trois questions à l'utilisateur : son jour de naissance, son mois de naissance et son année de naissance. On devra attendre que l'utilisateur ait répondu pour passer à la question suivante. Quand on aura les trois réponses, le programme doit alors afficher :
 ```text
 Vous êtes né le <jour> <mois> <année>
 ```
 
-## Exercice :
+## Exercice 6
 Écris un programme qui demande son âge à un utilisateur et qui affiche ensuite :
 ```text
 Vous aurez 18 ans dans … années
@@ -212,11 +211,11 @@ Pour écrire des conditionnelles, nous allons avoir besoin de savoir écrire des
 - Pour dire "a est égal à b" on écrit `a == b`
 - Pour dire "a est différent de b" on écrit `a != b`
 
-## Exercice :
+## Exercice 7
 Imaginons que nous avons un jeu auquel on gagne une fois que l'on a un score de 21 ou plus.
-Écris un programme qui demande son score à l'utilisatrice puis affiche selon le cas "Tu as gagné" ou "Tu as perdu".
+Écris un programme qui demande son score à l'utilisateur ou l'utilisatrice puis affiche selon le cas "Tu as gagné :)" ou "Tu as perdu :(".
 
-## Exercice :
+## Exercice 8
 Cet exercice va nous permettre de mieux comprendre à quoi servent les tabulations.
 
 Pour chaque question, essaie de trouver ce que le programme Python donné va afficher si on entre les nombres donnés, puis écris-le et exécute-le. Fais attention, quand tu le recopies, à bien respecter la même indentation que dans l'énoncé.
@@ -265,10 +264,10 @@ else:
 
 On peut mettre autant de `elif` que l'on veut. `elif` est la contraction de `else if` (sinon si).
 
-## Exercice :
+## Exercice 9
 Réécris le programme précédent avec des `elif`.
 
-## Exercice :
+## Exercice 10
 Connais-tu le concours Prologin ? C'est un concours de programmation auquel on peut participer jusqu'à l'année de ses 20 ans. On voudrait écrire un programme qui demande à l'utilisateur ou l'utilisatrice son année de naissance, et dit en fonction :
 
 - "Tu peux participer au concours Prologin."
@@ -284,7 +283,7 @@ Pour ce faire, en Python, on utilise les mots-clefs suivants :
 - `and` pour ET
 - `not` pour NON. Cela permet d'exprimer l'inverse d'une proposition. Par exemple, `not x > 0` équivaut à `x <= 0`.
 
-## Exercice :
+## Exercice 11
 
 Traduis les phrases suivantes avec des conditions en Python.
 
@@ -296,7 +295,7 @@ Traduis les phrases suivantes avec des conditions en Python.
 
 Nous allons voir ici un moyen de demander à notre ordinateur de répéter plusieurs fois un même bloc d'instructions. À nouveau, notre programme ne va pas exécuter les instructions une par une. Il y a un bloc de lignes qu'il va exécuter dans l'ordre, puis exécuter à nouveau à partir de la première, un certain nombre de fois. C'est pour ça que l'on parle de boucle.
 
-## Exercice :
+## Exercice 12
 ```python
 for i in range(5) :
 	print("Donnez le nom d'un joueur ou d'une joueuse")
@@ -311,7 +310,7 @@ Ce programme fonctionne si on a exactement 5 joueurs ou joueuses. Mais si le nom
 
 *Comment penses-tu que l'on pourrait résoudre ce problème ?*
 
-## Exercice :
+## Exercice 13
 
 Écris un programme qui demande le nombre de joueurs ou joueuses à l'utilisateur puis qui exécute la boucle un nombre adapté de fois.
 
@@ -325,7 +324,7 @@ Eh bien, savoir à quel tour de boucle on se trouve, c'est quelque chose qui ser
 
 Note : Nous avons tout écrit avec un $i$, mais en fait, on peut remplacer $i$ par n'importe quel nom de variable. Essaie avec $j$, ou *rang*, par exemple. On appelle cette variable la variable de boucle.
 
-## Exercice :
+## Exercice 14
 On veut modifier le programme de l'exercice précédent pour qu'il demande et affiche le numéro de la joueuse. On propose le programme suivant :
 ```python
 print("Combien y a-t-il de joueurs ou joueuses ?")
@@ -339,15 +338,15 @@ Essaie ce programme. Est-ce qu'il donne le résultat escompté ?
 
 On voit qu'avec `range(n)`, la variable de boucle ($i$ ici) varie entre $0$ et $n - 1$. La boucle est donc bien exécutée $n$ fois, mais $i$ ne varie pas entre $1$ et $n$ comme on pourrait s'y attendre. C'est important de garder cela en tête !
 
-## Exercice :
+## Exercice 15
 Écris un programme qui affiche un compteur de $1$ à $n$, où $n$ est un nombre entré par l'utilisateur ou l'utilisatrice.
 
-## Exercice :
+## Exercice 16
 Deux joueuses jouent au ping-pong. Écris un programme qui leur demande combien de parties elles vont faire puis, pour chaque partie, leur demande leurs scores et dit qui a gagné.
 
 *Indice :* on peut mettre une structure `if else` dans une boucle `for`.
 
-## Exercice :
+## Exercice 17
 Maintenant, ces deux joueuses jouent au tennis, et elles voudraient afficher un message qui dit à quel match et à quel set elles sont. Par exemple, s'il y a trois matchs de deux sets chacun, notre programme affichera :
 
 ```text
@@ -369,7 +368,7 @@ Nous sommes au match 3, set 2
 En fait, `range` peut prendre plus d'un paramètre. On peut utiliser `for i in range(a, b)` pour faire varier $i$ entre $a$ et $b - 1$.
 On peut même utiliser `for i in range(a, b, p)` pour faire varier `i` entre $a$ et $b - 1$ avec un pas de $p$. Par exemple, pour un compte à rebours, on peut prendre `p = -1` ou pour compter de deux en deux, `p = 2`.
 
-## Exercice :
+## Exercice 18
 Écris un programme qui affiche un compteur de $10$ à $0$, et termine en affichant "C'est terminé !".
 
 # La boucle `while`
@@ -392,10 +391,10 @@ while reponse == 1 :
 ```
 La syntaxe de la boucle `while` est la même que celles que nous avons vues précédemment : le `:`, des indentations. Retiens aussi que l'on peut utiliser les structures précédentes (la boucle `for` et les conditionnelles) avec la boucle `while`.
 
-## Exercice :
+## Exercice 19
 On joue à un jeu de hasard. L'utilisateur ou utilisatrice doit deviner un nombre entre 1 et 100. Tant qu'il ou elle n'a pas trouvé, on lui redemande de proposer un nombre, et on s'arrête quand il ou elle trouve le nombre secret. Mais comme c'est un peu compliqué, on va lui dire, à chaque essai, s'il a proposé un nombre trop grand ou trop petit. Un exemple d'échange serait le suivant :
 
-```{.text}
+```text
 Proposez un nombre
 40
 Trop petit !
@@ -414,12 +413,12 @@ Bravo, vous avez deviné !
 
 Si tu as déjà vu les fonctions en cours de mathématiques, cette partie devrait te rappeler quelque chose. Sinon, voilà une petite explication de ce que sont les fonctions en Python.
 
-Une fonction est comme une boîte noire. On lui donne un ou plusieurs objets que l'on appelle les entrées, et elle nous donne en retour un ou plusieurs objets que l'on appelle sorties et/ou elles font une action (afficher un message par exemple). Et à l'intérieur, eh bien, on ne sait pas forcément ce qui se passe. Bien sûr, quand nous écrirons nos propres fonctions, on saura ce qu'elles font !
+Une fonction est comme une boîte noire. On lui donne un ou plusieurs objets que l'on appelle les entrées (on peut également ne pas lui donner d'entrée), et elle nous donne en retour un objet que l'on appelle sorties et/ou elles font une action (afficher un message par exemple). Et à l'intérieur, eh bien, on ne sait pas forcément ce qui se passe. Bien sûr, quand nous écrirons nos propres fonctions, on saura ce qu'elles font !
 Mais tu as déjà utilisé des fonctions sans le savoir : `print` et `input`. Ces fonctions ne renvoient rien, elles n'ont pas de sortie. Cela arrive.
 
-`print` prend en entrée un nombre, ou du texte, et affiche cette entrée à l'écran.
+`print` prend un nombre infini d'objet (1 ou plus) en entrée et les affiche à l'écran. Ces objets peuvent être des nombres, du texte, etc.
 
-`input` ne prend pas d'entrée, et ne renvoie rien, mais permet de récupérer une valeur entrée par l'utilisatrice.
+`input` prend en entrée un texte (qu'elle affiche) et renvoie la valeur entrée par l'utilisateur ou l'utilisatrice.
 
 On sait ce que font ces deux fonctions, mais pas comment elles le font. C'est ce que l'on veut dire par boîte noire. Beaucoup de lignes de code se cachent derrière `print` et `input` mais on n'a pas besoin de les connaître. Savoir quel effet ont ces deux fonctions suffit à les utiliser.
 
@@ -438,12 +437,13 @@ Discutons maintenant de la forme de cette fonction :
 - Le mot-clé `return` sert à indiquer la sortie de la fonction. Quand on atteint une ligne avec return, on sort du code de la fonction, le reste n'est pas exécuté.
 
 Maintenant, si on tape `print(double(4))` on obtient :
-```{.text}
+```text
 8
 ```
 Pour donner une valeur en entrée à une fonction, ici `4`, on doit aussi le mettre entre parenthèses, après le nom de la fonction.
 
-## Exercice :
+## Exercice 20
+
 Voici une fonction.
 ```python
 def f(x):
@@ -452,7 +452,8 @@ def f(x):
 ```
 Quel est la valeur de `f(17)` ? De `f(0)` ? Vérifie en écrivant la fonction sur ton ordinateur.
 
-## Exercice :
+## Exercice 21
+
 Voici une fonction.
 ```python
 def f(x):
@@ -464,12 +465,12 @@ def f(x):
 ```
 Quel est la valeur de `f(3)` ? De `f(5)` ? De `f(7)` ? Vérifie en écrivant la fonction sur ton ordinateur.
 
-## Exercice :
+## Exercice 22
 Écris une fonction qui prend en entrée un nombre et renvoie le triple de ce nombre.
 
 À quoi sert une fonction ? Pas seulement à faire des calculs ! Avoir des fonctions, c'est pouvoir diviser son programme en petits morceaux autonomes. Pour programmer avec moins d'erreurs, on va souvent découper notre programme en fonctions. Nous allons voir des exemples dans le prochain exercice, en reprenant un de nos programmes précédents pour l'écrire avec des fonctions.
 
-## Exercice :
+## Exercice 23
 
 Reprenons le jeu où on doit deviner un nombre secret entre 1 et 100.
 
@@ -482,7 +483,7 @@ Reprenons le jeu où on doit deviner un nombre secret entre 1 et 100.
 ## Ton premier projet : Le jeu de Nim
 
 Nous allons coder un programme qui permet à deux joueurs ou joueuses de s'affronter au jeu de Nim. Les règles sont très simples : on commence avec vingt-et-un bâtons, et chacun son tour, on en retire un, deux, ou trois de la pile. La personne qui prend le dernier bâton gagne. Nous voudrions que le résultat du programme ressemble à ça :
-```{.text}
+```text
 Il y a 21 bâtons.
 Joueur ou joueuse 1, c'est à toi ! Combien de bâtons veux-tu enlever ?
 3
