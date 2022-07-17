@@ -218,7 +218,7 @@ Imaginons que nous avons un jeu auquel on gagne une fois que l'on a un score de 
 ## Exercice 8
 Cet exercice va nous permettre de mieux comprendre à quoi servent les tabulations.
 
-Pour chaque question, essaie de trouver ce que le programme Python donné va afficher si on entre les nombres donnés, puis écris-le et exécute-le. Fais attention, quand tu le recopies, à bien respecter la même indentation que dans l'énoncé.
+Pour chaque question, essaie de trouver ce que le programme Python donné va afficher, écris-le puis exécute-le. Fais attention, quand tu le recopies, à bien respecter la même indentation que dans l'énoncé.
 
 ```python
 print("Quel est ton score ?")
