@@ -31,7 +31,7 @@ contient pas d'éléments.
 
 Ensuite, **L.append(x)** ajoute l'élément x à la fin de la liste L.  On ajoute
 alors le caractère 'x' à la liste L avec `L.append('x')`. Maintenant, **len(L)**
-affiche 1 et `L = ['x']`.
+renvoie 1 et `L = ['x']`.
 
 Également, `L[i]` accède à l'élément à la place i dans la liste L. Ainsi, si on
 veut accéder à l'élément 'x', on écrit `L[0]` car 'x' se trouve à l'indice 0. En
@@ -68,7 +68,7 @@ list_mix = ['a', 1, 26, 'z']
 En Python, on peut aussi *concaténer* deux listes, c'est-à-dire les mettre l'une
 à la suite de l'autre pour n'en créer qu'une.
 
-Pour ce faire, on utilise le signe `+`.
+Pour ce faire, on utilise l'opérateur `+`.
 
 Par exemple, on crée deux listes L1 et L2, on les fusionne dans une troisième
 liste L3, puis on affiche L3 :
@@ -166,7 +166,7 @@ renvoie `2`.
 
 ### Exercice 6 : ²
 
-**But :** écrire la fonction `square(L)` qui retourne une liste LS contenant les
+**But :** écrire la fonction `square(L)` qui retourne une liste contenant les
 éléments de la liste L au carré (multipliés par eux-mêmes).
 
 **Exemple :** $2^2 = 2 * 2 = 4$ et le code suivant :
@@ -228,7 +228,7 @@ s = "Hello World!"
 print(s[0])
 ```
 
-Nous renverra 'H'.
+Affiche 'H'.
 
 Comme vous avez pu le voir, les strings s'écrivent entre guillemets `"` mais
 peuvent aussi s'écrire entre apostrophes `'`.
@@ -241,7 +241,7 @@ s = "girls can code"
 print(s[0:5])
 ```
 
-Nous renverra "girls".
+Affiche "girls".
 
 On récupère donc le segment de chaîne entre l'indice 0 compris et l'indice 5
 exclu !
@@ -262,7 +262,6 @@ nouvelle ligne")
 # une nouvelle instruction.
 ```
 
-\pagebreak
 
 Le caractère `"` ou `'`, qui est interprété comme le caractère de fin d'une
 string.
@@ -302,7 +301,7 @@ La phrase "Engage le jeu que je le gagne." de l'écrivain Alain Damasio est un
 palindrome.
 
 **But :** écrire la fonction `palindrome(s)` qui renvoie `True` si la chaîne de
-caractères `s` est un palindrome, et `False` autrement.
+caractères `s` est un palindrome, et `False` autrement, sans retirer les espaces.
 
 ### Exercice 2 : occurrences
 
@@ -313,7 +312,7 @@ trouve le caractère `c` dans la chaîne `s`.
 
 ### Exercice 1 : faire le tri !
 
-Nous chez Prologin, on aime bien que nos affaires soient rangées, classées, bien
+Chez Prologin, on aime bien que nos affaires soient rangées, classées, bien
 ordonnées ! Pour ça, on utilise des algorithmes de tri.
 
 **But :** écrire la fonction `trier(L)`  qui trie une liste L en ordre croissant
@@ -405,7 +404,7 @@ recherche_dichotomique_récursive(élément, liste_triée):
    si liste triée[m] = élément :
        renvoyer m ;
    si liste triée[m] > élément :
-       renvoyer recherche_dichotomique_récursive(élément, liste_triée[1:m]) ;
+       renvoyer recherche_dichotomique_récursive(élément, liste_triée[0:m]) ;
    sinon :
        renvoyer recherche_dichotomique_récursive(élément, liste_triée[m:l]) ;
 ```
@@ -414,7 +413,7 @@ Pour en savoir plus, tu peux aller sur cette page :
 <https://fr.wikipedia.org/wiki/Recherche_dichotomique>
 
 **But :** implémenter la fonction `bin_search(k, L)` qui prend en paramètre une
-liste *triée par ordre croissant* `L` et retourne la position de `e` dans la
+liste *triée par ordre croissant* `L` et retourne la position de `k` dans la
 liste s'il y est présent, -1 sinon. Cette fonction devra implémenter une
 recherche dichotomique.
 
