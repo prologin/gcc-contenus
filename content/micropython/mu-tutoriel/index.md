@@ -24,7 +24,7 @@ le mode `Python3` le temps de découvrir et bien maîtriser le langage.
 
 Cliquez donc sur `Python3` et validez.
 
-Si vous allez utiliser les microbits, alors choisissez le mode `BBC micro:bit`.
+Si vous allez utiliser les micro:bits, alors choisissez le mode `BBC micro:bit`.
 
 ![](resources/images/onstartup.png)
 
@@ -45,7 +45,7 @@ programme Python.
 
 Il peut être :
 
-* `BBC micro:bit` si vous développez pour les cartes électroniques microbit ;
+* `BBC micro:bit` si vous développez pour les cartes électroniques micro:bit ;
 
 * `CircuitPython` si vous développez pour des cartes électroniques qui tournent
 sur CircuitPython ;
