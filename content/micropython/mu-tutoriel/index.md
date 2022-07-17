@@ -19,13 +19,12 @@ que vous puissez vous y retrouvez facilement !
 
 Au démarrage, Mu devrait vous demander dans quel mode vous souhaitez
 développer. Vous trouverez une présentation plus détaillée des différents modes
-plus bas, mais sachez qu'il est préférable de commencer par le mode `Python3` le
-temps de découvrir et bien maîtriser le language.
+plus bas dans ce tutoriel, mais sachez qu'il est préférable de commencer par
+le mode `Python3` le temps de découvrir et bien maîtriser le langage.
 
 Cliquez donc sur `Python3` et validez.
 
-Si vous faites un stage court, et que vous allez utiliser les microbits, alors
-choisissez le mode `BBC micro:bit`.
+Si vous allez utiliser les micro:bits, alors choisissez le mode `BBC micro:bit`.
 
 ![](resources/images/onstartup.png)
 
@@ -56,10 +55,10 @@ sur CircuitPython ;
 * `Python3` si vous développez simplement un programme sur votre ordinateur
 (c'est celui-ci que nous utiliserons le plus souvent !) ;
 
-* `Web` si vous développez un site web a l'aide du cadriciel Flask.
+* `Web` si vous développez un site web à l'aide du cadriciel Flask.
 
 Donc retenez-bien, vous développerez le plus souvent dans le mode Python3, le
-temps d'apprendre le language.
+temps d'apprendre le langage.
 
 ### Le bouton 'Nouveau'
 
@@ -93,7 +92,7 @@ Pensez à sauvegarder souvent !
 
 ![](resources/images/run.png)
 
-Si votre programme n'a pas encore été enregistré, cliquez sur le bouton `Lancer`
+Si votre programme n'a pas encore été enregistré, cliquer sur le bouton `Lancer`
 vous forcera à enregistrer votre fichier au préalable. Une fois cela fait, Mu
 exécutera simplement votre code, et vous pourrez observer le résultat dans la
 console qui s'est ouverte en bas de votre écran.
@@ -181,7 +180,7 @@ Le plus souvent, si vous faites une erreur grossière comme par exemple ajouter
 une parenthèse en trop, Mu vous le signalera directement en la surlignant en
 rouge.
 
-Il est évident que de toute facon, si vous exécutez votre programme et qu'il
+Il est évident que de toute façon, si vous exécutez votre programme et qu'il
 contient des erreurs, Python vous le dira et s'arrêtera pour que vous puissiez
 corriger.
 
@@ -190,7 +189,7 @@ corriger.
 ![](resources/images/tidy.png)
 
 Le bouton `Tidy` permet d'aligner correctement les indentations dans votre code
-mais n'est pas toujours très fonctionnel et à du mal à détecter les erreurs donc
+mais n'est pas toujours très fonctionnel et a du mal à détecter les erreurs donc
 on vous conseille plutôt de faire bien attention quand vous codez !
 
 ### Le bouton 'Aide'
