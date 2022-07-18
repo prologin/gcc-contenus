@@ -140,6 +140,8 @@ print(nom, "a", age, "ans")
 
 Pour demander une valeur à l'utilisateur de notre programme, on va utiliser l'instruction `input`. Cette instruction dit à l'ordinateur de suspendre le programme jusqu'à ce que l'utilisateur entre une réponse et appuie sur entrée.
 
+*Astuce : Si tu es sur VSCode, tu peux écrire ta réponse dans le terminal qui s'ouvre en bas de ton écran après que tu as appuyé sur le bouton vert de lancement.*
+
 Nous allons essayer le programme suivant :
 ```python
 print("Comment t'appelles-tu ?")
