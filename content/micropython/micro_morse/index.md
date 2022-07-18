@@ -1,18 +1,15 @@
 ---
 title: MicroMorse
 date: 2022
+weight: 15
+subtitle: Ce TP te permettra de découvrir la récursivité et de pouvoir communiquer en morse avec les autres participantes !
+code_stub_url: resources/given_resources/given_code.py
 ---
 
 # Introduction
-Les Micro:bit sont de tout petits ordinateurs embarqués, conçus pour s’entraîner à program-
-mer. Ils ont beaucoup de composants en plus de leur processeur : un carré de 5x5 diodes élec-
-troluminescentes, un capteur de mouvement, une boussole 3D, des boutons programmables,
-une antenne Bluetooth et un port USB.
-En utilisant MicroPython, une version simplifiée de Python, on peut programmer le Micro:bit
-pour utiliser tous ces composants comme on le souhaite. 
 Pour ce TP, nous allons vous accompagner dans la création d'un nouveau moyen de
 communiquer avec vos amis : le code morse ! 
-Vous avez déjà dû en entendre parler, mais ici vous allez pouvoir l'utiliser !
+Vous avez déjà dû en entendre parler, et ici vous allez pouvoir l'utiliser !
 
 ## Le code morse, qu'est-ce que c'est ?
 Voilà la définition de Wikipédia :
@@ -25,14 +22,14 @@ lettre correspond à une suite de points et de traits dont l'ordre permet de
 donner un sens à chaque séquence. 
 Voici un tableau représentant les traductions de toutes les lettres et tous les
 chiffres :
-![Code Morse International](resources/International_Morse_Code.png){width=9cm height=11.6cm}
+{{<figure src="resources/images/International_Morse_Code.svg" caption="Code Morse International">}}
 
 # Les arbres
-## La theorie
+## La théorie
 
 Pour faire ce TP, on va utiliser ce qu'on appelle les arbres binaires. Ce sont
 des objets qui vont nous permettre de rechercher plus efficacement quelle
-lettre a été tapée.
+lettre a été tapée. 
 
 ### Récursion
 
