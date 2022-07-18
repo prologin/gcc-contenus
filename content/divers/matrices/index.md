@@ -13,10 +13,10 @@ chaque case est accessible grâce à ses coordonnées.
 
 Toutes les lignes de la matrice doivent avoir la même longueur.
 
-En python, les matrices sont représentées par une liste de listes : soit une
+En Python, les matrices sont représentées par une liste de listes : soit une
 grande liste qui est elle-même la matrice et qui contient chaque ligne de la
 matrice.
-De cette facon, comme pour les listes, les indices dans les matrices commencent
+De cette façon, comme pour les listes, les indices dans les matrices commencent
 à 0.
 
 $$
@@ -35,7 +35,7 @@ La valeur 9 se trouve aux coordonnées (2, 2)
 {{<figure src="resources/images/1.svg">}}
 
 
-## Alors en python, ca donne quoi ?
+## Alors en Python, ca donne quoi ?
 
 **Initialiser une matrice**
 
@@ -62,7 +62,7 @@ for lig in range(nb_lignes):
     matrice.append(ligne)
 ```
 
-ou alors de facon plus rapide et "pythonesque" :
+ou alors de façon plus rapide et "pythonesque" :
 
 ```python
 M = [[0 for i in range(2)] for j in range(3)]
@@ -79,7 +79,7 @@ On peut calculer la hauteur de la matrice (nombre de lignes) dans la matrice M,
 en utilisant `len(M)`, qui correspond à la longueur de la liste principale qui
 constitue la matrice.
 
-De la même facon, on peut calculer la largeur de la matrice en faisant
+De la même façon, on peut calculer la largeur de la matrice en faisant
 `len(M[0])` qui correspond à la longueur de la première ligne de la matrice.
 Le fait que ce soit la première ligne n'a pas tant d'importance, mais on est
 certain que cette ligne existe à priori.
@@ -204,7 +204,7 @@ prairie = [
 print(search_matrix(prairie, 'M')
 ```
 
-affichera `[2, 1]` car 8 se situe sur la ligne 2 et la colonne 1.
+affichera `[2, 1]` car 'M' se situe sur la ligne 2 et la colonne 1.
 
 
 ## Exercice 3 : toutes les coordonnées !
@@ -361,7 +361,7 @@ b = [
 
 resultat = add_matrix(a, b)
 
-printMat(resultat)
+print_matrix(resultat)
 ```
 
 affichera
