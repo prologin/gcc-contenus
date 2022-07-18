@@ -1,5 +1,6 @@
 ---
 title: Introduction à Python
+weight: 1
 date: 2021
 ---
 
@@ -198,21 +199,19 @@ else:
 
 - Sinon, affiche "Vous avez déjà 18 ans."
 
-Tu remarques que ce code a un aspect bien particulier. Il y a des `:` à la fin des lignes avec un if ou un else, et les lignes après sont *indentées*[^1]. Il faut respecter cela pour que le programme fonctionne.
-
-[^1]: Cela signifie que la texte a été "décalé" vers la droite, on utilise la touche de tabulation pour cela.
+Tu remarques que ce code a un aspect bien particulier. Il y a des `:` à la fin des lignes avec un if ou un else, et les lignes après sont *indentées* (le texte a été "décalé" vers la droite, on utilise la touche de tabulationcela). Il est **très important** de respecter ces éléments pour que le programme fonctionne.
 
 Pour écrire des conditionnelles, nous allons avoir besoin de savoir écrire des conditions. On les écrit globalement comme en mathématiques :
 
-- Pour dire "a est inférieur à b" on écrit `a < b`
-- Pour dire "a est supérieur à b" on écrit `a > b`
-- Pour dire "a est inférieur ou égal à b" on écrit `a <= b`
-- Pour dire "a est supérieur ou égal à b" on écrit `a >= b`
-- Pour dire "a est égal à b" on écrit `a == b`
-- Pour dire "a est différent de b" on écrit `a != b`
+- Pour vérifier "a est inférieur à b" on écrit `a < b`
+- Pour vérifier "a est supérieur à b" on écrit `a > b`
+- Pour vérifier "a est inférieur ou égal à b" on écrit `a <= b`
+- Pour vérifier "a est supérieur ou égal à b" on écrit `a >= b`
+- Pour vérifier "a est égal à b" on écrit `a == b`
+- Pour vérifier "a est différent de b" on écrit `a != b`
 
 ## Exercice 7
-Imaginons que nous avons un jeu auquel on gagne une fois que l'on a un score de 21 ou plus.
+Imaginons que nous avons un jeu auquel on gagne si l'on a un score de 21 ou plus.
 Écris un programme qui demande son score à l'utilisateur ou l'utilisatrice puis affiche selon le cas "Tu as gagné :)" ou "Tu as perdu :(".
 
 ## Exercice 8
@@ -268,7 +267,7 @@ On peut mettre autant de `elif` que l'on veut. `elif` est la contraction de `els
 Réécris le programme précédent avec des `elif`.
 
 ## Exercice 10
-Connais-tu le concours Prologin ? C'est un concours de programmation auquel on peut participer jusqu'à l'année de ses 20 ans. On voudrait écrire un programme qui demande à l'utilisateur ou l'utilisatrice son année de naissance, et dit en fonction :
+Connais-tu le concours Prologin ? C'est un concours de programmation auquel on peut participer jusqu'à l'année de ses 20 ans. On voudrait écrire un programme qui demande à l'utilisateur ou l'utilisatrice son année de naissance et affiche la bonne phrase en fonction de son âge :
 
 - "Tu peux participer au concours Prologin."
 - "C'est la dernière année où tu peux participer au concours Prologin."
@@ -414,7 +413,7 @@ Bravo, vous avez deviné !
 Si tu as déjà vu les fonctions en cours de mathématiques, cette partie devrait te rappeler quelque chose. Sinon, voilà une petite explication de ce que sont les fonctions en Python.
 
 Une fonction est comme une boîte noire. On lui donne un ou plusieurs objets que l'on appelle les entrées (on peut également ne pas lui donner d'entrée), et elle nous donne en retour un objet que l'on appelle sorties et/ou elles font une action (afficher un message par exemple). Et à l'intérieur, eh bien, on ne sait pas forcément ce qui se passe. Bien sûr, quand nous écrirons nos propres fonctions, on saura ce qu'elles font !
-Mais tu as déjà utilisé des fonctions sans le savoir : `print` et `input`. Ces fonctions ne renvoient rien, elles n'ont pas de sortie. Cela arrive.
+Mais tu as déjà utilisé des fonctions sans le savoir : `print` et `input`.
 
 `print` prend un nombre infini d'objet (1 ou plus) en entrée et les affiche à l'écran. Ces objets peuvent être des nombres, du texte, etc.
 
@@ -450,7 +449,7 @@ def f(x):
 	resultat = x + 3
 	return resultat
 ```
-Quel est la valeur de `f(17)` ? De `f(0)` ? Vérifie en écrivant la fonction sur ton ordinateur.
+Quelle est la valeur de `f(17)` ? De `f(0)` ? Vérifie en écrivant la fonction sur ton ordinateur.
 
 ## Exercice 21
 
@@ -463,7 +462,7 @@ def f(x):
 		resultat = x * 5
 	return resultat
 ```
-Quel est la valeur de `f(3)` ? De `f(5)` ? De `f(7)` ? Vérifie en écrivant la fonction sur ton ordinateur.
+Quelle est la valeur de `f(3)` ? De `f(5)` ? De `f(7)` ? Vérifie en écrivant la fonction sur ton ordinateur.
 
 ## Exercice 22
 Écris une fonction qui prend en entrée un nombre et renvoie le triple de ce nombre.
@@ -476,7 +475,7 @@ Reprenons le jeu où on doit deviner un nombre secret entre 1 et 100.
 
 1. Écris une fonction `tour(secret, nombre)` qui affiche selon le cas "Trop petit !", "Trop grand !" ou "Bravo, tu as gagné !"
 
-*Indice :* cette fonction ne contiendra pas de `return` puisqu'elle se content d'afficher du texte et ne renvoie rien.
+*Indice :* cette fonction ne contiendra pas de `return` puisqu'elle se contente d'afficher du texte et ne renvoie rien.
 
 2. Écris maintenant un programme qui permet de jouer au jeu en utilisant ta fonction.
 
