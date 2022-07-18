@@ -233,7 +233,7 @@ print("Merci d'avoir joué !")
 
 ```python
 print("À combien de stages GCC! as-tu participé ?")
-nombre_stages = int(input)
+nombre_stages = int(input())
 if nombre_stages == 0:
 	print("C'est bizarre pourtant, puisque tu es là !")
 else:
