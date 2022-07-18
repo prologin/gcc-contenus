@@ -80,7 +80,21 @@ hugo server --renderToDisk --noHTTPCache
 ```
 Il est alors marqué sur quel port trouver le site en local (souvent le port `1313`).
 
+# Les shortcodes
+3 différents shortcodes existent :
+* exemple
+* exercice
+* info
 
+Il permettent de differencier les parties du tp. Pour les utiliser, il faut mettre :
+```
+{{< Insérer_le_nom_du_shortcode >}}
+```
+au debut de la partie a mettre dans ce style, et 
+```
+{{< \Insérer_le_nom_du_shortcode >}}
+```
+a la fin
 
 # Matériel utilié
 Accessoirement, pendant nos stages nous utilisons l'éditeur
