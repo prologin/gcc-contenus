@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-import sys, importlib
+import importlib
+import sys
 
 if len(sys.argv) != 2:
     print(f"Usage: {sys.argv[0]} [FILE]")
@@ -10,7 +11,6 @@ tp = sys.argv[1]
 if tp[-3:] == ".py":
     tp = tp[:-3]
 tp = importlib.import_module(tp)
-
 
 
 def test(f, inp, out):
@@ -25,6 +25,7 @@ def test(f, inp, out):
             print(f"| Attendu: {out} \033[0;31m [KO]\033[0m")
     except Exception as e:
         print(e, "\033[0;31m [K0] \033[0m")
+
 
 try:
     test(tp.init_list, [5], [0, 1, 2, 3, 4, 5])
@@ -85,7 +86,7 @@ print()
 try:
     test(tp.fact, [4], [1, 1, 2, 6])
     test(tp.fact, [3], [1, 1, 2])
-    test(tp.fact,  [0], [])
+    test(tp.fact, [0], [])
 except Exception as e:
     print(e)
 
@@ -111,9 +112,9 @@ except Exception as e:
 print()
 
 try:
-    test(tp.count, ['c', "girls can code"], 2)
-    test(tp.count, ['r', "girls can code"], 1)
-    test(tp.count, ['w', "girls can code"], 0)
+    test(tp.count, ["c", "girls can code"], 2)
+    test(tp.count, ["r", "girls can code"], 1)
+    test(tp.count, ["w", "girls can code"], 0)
 except Exception as e:
     print(e)
 
@@ -122,7 +123,11 @@ print()
 try:
     test(tp.trier, [[3, 1, 9, 5, 2]], [1, 2, 3, 5, 9])
     test(tp.trier, [[]], [])
-    test(tp.trier, [["garance", "paul", "martin", "thibault", "leo"]], ["garance", "leo", "martin", "paul", "thibault"])
+    test(
+        tp.trier,
+        [["garance", "paul", "martin", "thibault", "leo"]],
+        ["garance", "leo", "martin", "paul", "thibault"],
+    )
 except Exception as e:
     print(e)
 
@@ -147,4 +152,3 @@ try:
     tp.tictac(5)
 except Exception as e:
     print(e)
-
