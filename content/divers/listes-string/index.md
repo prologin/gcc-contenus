@@ -2,7 +2,6 @@
 title: Listes et chaîne de caractères
 weight: 5
 date: 2021
-subtitle: 
 ---
 
 # Introduction aux listes
@@ -31,7 +30,7 @@ contient pas d'éléments.
 
 Ensuite, **L.append(x)** ajoute l'élément x à la fin de la liste L.  On ajoute
 alors le caractère 'x' à la liste L avec `L.append('x')`. Maintenant, **len(L)**
-affiche 1 et `L = ['x']`.
+renvoie 1 et `L = ['x']`.
 
 Également, `L[i]` accède à l'élément à la place i dans la liste L. Ainsi, si on
 veut accéder à l'élément 'x', on écrit `L[0]` car 'x' se trouve à l'indice 0. En
@@ -68,7 +67,7 @@ list_mix = ['a', 1, 26, 'z']
 En Python, on peut aussi *concaténer* deux listes, c'est-à-dire les mettre l'une
 à la suite de l'autre pour n'en créer qu'une.
 
-Pour ce faire, on utilise le signe `+`.
+Pour ce faire, on utilise l'opérateur `+`.
 
 Par exemple, on crée deux listes L1 et L2, on les fusionne dans une troisième
 liste L3, puis on affiche L3 :
@@ -103,7 +102,7 @@ print(L)
 
 Ce qui affichera `[2, 4, 6, 9, 13, 42]`.
 
-### Testez votre code!
+## Testez votre code!
 
 Testez votre code le plus régulièrement possible. C'est important pour savoir où
 se trouve le bug, car bug il y aura !
@@ -116,17 +115,18 @@ faudra respecter quelques règles :
 
 - Créer un fichier dans lequel vous mettrez vos fonctions (*tp_listes.py* par exemple)
 - Respecter les noms de fonctions précisés dans les énoncés suivants
-- Exécuter le fichier test avec `./tests.py` suivi du nom de votre fichier dans le terminal
-  (`./tests.py tp_listes.py` par exemple)
+- Télécharger le fichier [`tests.py`](resources/tests.py)
+- Exécuter le fichier test avec suivi du nom de votre fichier dans le terminal
+  (`python tests.py tp_listes.py` par exemple)
 
-### Exercice 1 : commençons par le commencement !
+## Exercice 1 : commençons par le commencement !
 
 **But :** écrire la fonction `init_list(n)` qui stocke dans une liste les
 entiers de 0 inclus à n inclus, et la retourne.
 
 **Exemple :** `init_list(5)` renvoie `[0, 1, 2, 3, 4, 5]`.
 
-### Exercice 2 : À la recherche de k
+## Exercice 2 : À la recherche de k
 
 **But :** écrire la fonction `is_in(k, L)` qui traverse la liste non triée L et
 retourne `True` si k est dans la liste, ou `False` autrement.
@@ -134,7 +134,7 @@ retourne `True` si k est dans la liste, ou `False` autrement.
 **Exemple :** `is_in(2, [1, 2, 3])` renvoie `True` (2 est dans la liste) et
 `is_in(5, [1, 2, 3])` renvoie `False` (5 n'est pas dans la liste).
 
-### Exercice 3 : Où se trouve k ?
+## Exercice 3 : Où se trouve k ?
 
 **But :** écrire la fonction `pos(k, L)` qui retourne la position de k dans la
 liste si k est présent, ou -1 si k n'est pas dans la liste.
@@ -142,7 +142,7 @@ liste si k est présent, ou -1 si k n'est pas dans la liste.
 **Exemple :** `pos(2, [3, 1, 2])` renvoie `2` et `pos(2, [4, 5, 6])` renvoie
 -1. N'oublie pas que les indices commencent à 0.
 
-### Exercice 4 : Maximum
+## Exercice 4 : Maximum
 
 **But :** écrire la fonction `maximum(L)` qui retourne le plus grand des
 éléments de la liste non triée L.
@@ -156,7 +156,7 @@ non triée L.
 **Exemple :** `pos_max([1, 2, 5, 3])` renvoie `2`, `pos_max([12, 3, 8, 1])`
 renvoie `0`.
 
-### Exercice 5 : Somme
+## Exercice 5 : Somme
 
 **But :** écrire la fonction `sum_list(L)` qui retourne la valeur de la somme de
 tous les éléments de la liste L.
@@ -164,9 +164,9 @@ tous les éléments de la liste L.
 **Exemple :** `sum_list([1, 2, 3])` renvoie `6`, `sum_list([0, 1, 1, 0, 0])`
 renvoie `2`.
 
-### Exercice 6 : ²
+## Exercice 6 : ²
 
-**But :** écrire la fonction `square(L)` qui retourne une liste LS contenant les
+**But :** écrire la fonction `square(L)` qui retourne une liste contenant les
 éléments de la liste L au carré (multipliés par eux-mêmes).
 
 **Exemple :** $2^2 = 2 * 2 = 4$ et le code suivant :
@@ -181,7 +181,7 @@ Affiche `[1, 4, 9]`.
 
 Autre exemple, `square([2, 5, 6])` renvoie `[4, 25, 36]`.
 
-### Exercice 7 : facto-quoi ?
+## Exercice 7 : facto-quoi ?
 
 **But :** écrire la fonction `fact(n)` qui remplit une liste avec les valeurs
 factorielles de 0 à n et qui la retourne.
@@ -199,7 +199,7 @@ Par exemple :
 
 **Exemple :** `fact(4)` renvoie `[1, 1, 2, 6]`.
 
-### Exercice 8 : double trouble
+## Exercice 8 : double trouble
 
 **But :** écrire la fonction `double(L)` qui renvoie `True` si on peut trouver
 deux doublons **consécutifs** dans la liste L, ou `False` autrement.
@@ -228,7 +228,7 @@ s = "Hello World!"
 print(s[0])
 ```
 
-Nous renverra 'H'.
+Affiche 'H'.
 
 Comme vous avez pu le voir, les strings s'écrivent entre guillemets `"` mais
 peuvent aussi s'écrire entre apostrophes `'`.
@@ -241,7 +241,7 @@ s = "girls can code"
 print(s[0:5])
 ```
 
-Nous renverra "girls".
+Affiche "girls".
 
 On récupère donc le segment de chaîne entre l'indice 0 compris et l'indice 5
 exclu !
@@ -262,8 +262,6 @@ nouvelle ligne")
 # une nouvelle instruction.
 ```
 
-\pagebreak
-
 Le caractère `"` ou `'`, qui est interprété comme le caractère de fin d'une
 string.
 
@@ -271,7 +269,7 @@ string.
 print("Le canard m'a dit "Bonjour !"")
 
 # Erreur !
-# Python considère que si vous écrivez ", c'est pour indiquer que la 
+# Python considère que si vous écrivez ", c'est pour indiquer que la
 # string est terminée.
 ```
 
@@ -289,7 +287,7 @@ print("Le canard m'a dit \"Bonjour !\"")
 Il existe d'autres caractères spéciaux comme *la tabulation* (qui permet
 d'insérer un grand espace avec `\t`) ou encore les emojis (`\u265E`).
 
-### Exercice 1 : les palindromes!
+## Exercice 1 : les palindromes!
 
 Les palindromes sont des mots qui peuvent se lire dans les deux sens.  Par
 exemple, les mots "kayak", "radar" et "php" (le langage informatique !) sont des
@@ -302,9 +300,9 @@ La phrase "Engage le jeu que je le gagne." de l'écrivain Alain Damasio est un
 palindrome.
 
 **But :** écrire la fonction `palindrome(s)` qui renvoie `True` si la chaîne de
-caractères `s` est un palindrome, et `False` autrement.
+caractères `s` est un palindrome, et `False` autrement, sans retirer les espaces.
 
-### Exercice 2 : occurrences
+## Exercice 2 : occurrences
 
 **But :** écrire la fonction `count(c, s)` qui retourne le nombre de fois qu'on
 trouve le caractère `c` dans la chaîne `s`.
@@ -313,7 +311,7 @@ trouve le caractère `c` dans la chaîne `s`.
 
 ### Exercice 1 : faire le tri !
 
-Nous chez Prologin, on aime bien que nos affaires soient rangées, classées, bien
+Chez Prologin, on aime bien que nos affaires soient rangées, classées, bien
 ordonnées ! Pour ça, on utilise des algorithmes de tri.
 
 **But :** écrire la fonction `trier(L)`  qui trie une liste L en ordre croissant
@@ -405,7 +403,7 @@ recherche_dichotomique_récursive(élément, liste_triée):
    si liste triée[m] = élément :
        renvoyer m ;
    si liste triée[m] > élément :
-       renvoyer recherche_dichotomique_récursive(élément, liste_triée[1:m]) ;
+       renvoyer recherche_dichotomique_récursive(élément, liste_triée[0:m]) ;
    sinon :
        renvoyer recherche_dichotomique_récursive(élément, liste_triée[m:l]) ;
 ```
@@ -414,7 +412,7 @@ Pour en savoir plus, tu peux aller sur cette page :
 <https://fr.wikipedia.org/wiki/Recherche_dichotomique>
 
 **But :** implémenter la fonction `bin_search(k, L)` qui prend en paramètre une
-liste *triée par ordre croissant* `L` et retourne la position de `e` dans la
+liste *triée par ordre croissant* `L` et retourne la position de `k` dans la
 liste s'il y est présent, -1 sinon. Cette fonction devra implémenter une
 recherche dichotomique.
 
