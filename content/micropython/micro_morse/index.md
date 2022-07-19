@@ -31,9 +31,14 @@ Pour faire ce TP, on va utiliser ce qu'on appelle les arbres binaires. Ce sont
 des objets qui vont nous permettre de rechercher plus efficacement quelle
 lettre a été tapée. 
 
+Pour vous aider à vous en représenter un, voici l'arbre binaire que nous allons
+utiliser dans la suite de ce TP (aller vers la gauche équivaut à un point, et
+vers la droite à un trait) : 
+{{<figure src="resources/images/bintree_morse_code.png">}}
+
 ### Récursion
 
-Avant de parler d'abres, il faut parler de récursion. Quelque chose de récursif
+Avant de parler d'arbres, il faut parler de récursion. Quelque chose de récursif
 est quelque chose qui va s'appeler lui-même.
 
 Par exemple, une fonction récursive est donc une fonction qui s'appelle elle-même.
@@ -52,30 +57,31 @@ def addition(n):
 Regardons le code étapes par étapes pour comprendre comment il fonctionne.
 Disons que l'on souhaite calculer `addition(3)`.
 
-- 3 est différent de 1 donc la fonction va renvoyer `3 + addition(2)`
-- Il faut donc calculer `addition(2)`, qui renvoie `2 + addition(1)`.
-    En remplacant ce résultat dans l'expression précédente, on a 
-    `3 + 2 + addition(1)`
-- Comme `1 = 1`, `addition(1)` va donc renvoyer 1. Le résultat est donc `3 + 2 + 1`
+1. 3 est différent de 1 donc la fonction va renvoyer `3 + addition(2)`
+2. Il faut donc calculer `addition(2)`, qui renvoie `2 + addition(1)`. 
+   En remplacant ce résultat dans l'expression précédente, on a donc 
+   `3 + 2 + addition(1)`
+3. Comme `1 = 1`, `addition(1)` va donc renvoyer 1. Le résultat est donc `3 + 2 + 1`
     ce qui donne `6`
 
 #### Mini-Exercice
 
-Crée une fonction qui calcule `1*2*3*...*n` avec `n` étant le paramètre de cette 
+Écris une fonction qui calcule `1*2*3*...*n` avec `n` étant le paramètre de cette 
 fonction.
 
 
 ### Des arbres récursifs
 
-Un arbre binaire est composé de Noeuds. Chaque Noeud contient une valeur appelée
-clé ('key' en anglais). Il va également avoir 2 enfants, qui sont eux aussi des
-Noeuds : on les nomme fils gauche et fils droit.
+Un arbre binaire est composé de `noeuds`. Chaque `noeud` contient une valeur appelée
+`clé` (`key` en anglais). Il va également avoir 2 `enfants`, qui sont eux aussi des
+`noeuds` : on les nomme `fils gauche` et `fils droit`. Le tout premier `noeud`
+est appelé `racine` de l'arbre. 
 
-Comme l'objet Noeud contient des variables de type Noeud, on dit que Noeud est
+Comme l'objet `noeud` contient des variables de type `noeud`, on dit que `noeud` est
 un objet récursif (car il se contient lui-même).
 
-Ces arbres, on peut les parcourir, c'est-à-dire regarder les clé de chacun des
-Noeuds. Pour cela, on utilise une fonction récursive :
+Ces arbres, on peut les parcourir, c'est-à-dire regarder les `clés` de chacun des
+`noeuds`. Pour cela, on utilise une fonction récursive :
 
 ```py
 def parcours(B):
@@ -85,7 +91,7 @@ def parcours(B):
         parcours(B.right)
 ```
 
-Ici la fonction va afficher la clé du Noeud principal et aller faire le parcours
+Ici la fonction va afficher la clé du `noeud` principal et aller faire le parcours
 dans le fils gauche puis dans le fils droit. 
 
 En python, on utilise le mot-clé `None` pour indiquer qu'il n'y a pas d'arbre.
@@ -94,9 +100,9 @@ On fait donc le parcours seulement si l'arbre existe.
 #### Mini-Exercice
 
 Fais une fonction de parcours qui fait le parcours dans le fils gauche, affiche
-la clé de l'arbre actuel, et fait le parcours dans le fils droit.
+la clé du `noeud` actuel, et fait le parcours dans le `fils droit`.
 
-Tu peux utiliser ce code pour représenter les Noeuds :
+Tu peux utiliser ce code pour représenter les `noeuds` :
 
 ```py
 class Noeud:
@@ -105,8 +111,8 @@ class Noeud:
         self.left = left
         self.right = right
 
-# Crée un Noeud et l'enregistre dans la variable 'n'
-# Ici, le Noeud a comme clé 1, et pas de fils droit ni gauche
+# Crée un noeud et l'enregistre dans la variable 'n'
+# Ici, le noeud a comme clé 1, et pas de fils droit ni gauche
 n = Noeud(1, None, None)
 ```
 
