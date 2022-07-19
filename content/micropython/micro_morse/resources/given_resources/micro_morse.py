@@ -50,6 +50,23 @@ T = Noeud('T', N, M)
 
 MORSE = Noeud(None, E, T)
 
+#####################################################################
+
+def translate_into_letter(S, arbre):
+    """
+    Traduit une chaine de caracteres de 0 et de 1 en une lettre
+    grace a l'arbre passe en parametre
+    """
+    pass
+
+def create_message():
+    """
+    Renvoie le message que l'utilisateur veut envoyer en fonction des appuis sur
+    les differents boutons
+    """
+    pass
+
+
 
 
 # Ecris tes fonctions ici !
