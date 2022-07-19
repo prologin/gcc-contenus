@@ -313,3 +313,59 @@ pre code {
         margin: 10%;
     }
 }
+
+
+/********************/
+/**** shortcodes ***/
+/********************/
+
+.exercice {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    border-left: 8px solid limegreen;
+    padding-left: 12px;
+    border-radius: 5px;
+}
+
+.exercice :is(h1, h2)  {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.info {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    border-left: 8px solid blue;
+    padding-left: 12px;
+    border-radius: 5px;
+}
+
+.info :is(h1, h2, h3)  {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.info h4 {
+    margin-top: 0;
+    padding-top: 0;
+    color: blue;
+    font-size: 150%;
+    
+}
+
+.exemple {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    border-left: 8px solid gray;
+    padding-left: 12px;
+    border-radius: 5px;
+}
+
+.exemple :is(h1, h2)  {
+    margin-top: 0;
+    padding-top: 0;
+    color: gray;
+}
