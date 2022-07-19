@@ -3,17 +3,17 @@ title: Micro-Morse
 date: 2022
 weight: 15
 subtitle: Ce TP te permettra de découvrir la récursivité et de pouvoir communiquer en morse avec les autres participantes !
-code_stub_url: resources/given_resources/given_code.py
+code_stub_url: resources/given_resources/micro_morse.py
 ---
 
 # Introduction
-Pour ce TP, nous allons vous accompagner dans la création d'un nouveau moyen de
-communiquer avec vos amis : le code morse ! 
-Vous avez déjà dû en entendre parler, et ici vous allez pouvoir l'utiliser !
+Pour ce TP, nous allons t'accompagner dans la création d'un nouveau moyen de
+communiquer avec tes amis : le code morse ! 
+Tu as déjà dû en entendre parler, et ici tu vas pouvoir l'utiliser !
 
 ## Le code morse, qu'est-ce que c'est ?
 Voilà la définition de Wikipédia :
-> Le code Morse international, ou l’alphabet Morse international, est un code permettant de transmettre un texte à l’aide de séries d’impulsions courtes et longues, qu’elles soient produites par des signes, une lumière, un son ou un geste. 
+> « Le code Morse international, ou l’alphabet Morse international, est un code permettant de transmettre un texte à l’aide de séries d’impulsions courtes et longues, qu’elles soient produites par des signes, une lumière, un son ou un geste. »
 > Wikipedia
 
 On est d'accord, ce n'est pas très clair... Pour faire simple, c'est un nouvel
@@ -28,14 +28,13 @@ chiffres :
 ## La théorie
 
 Pour faire ce TP, on va utiliser ce qu'on appelle les arbres binaires. Ce sont
-des structure de données, c'est-à-dire une organisation particulière de données,
+des structure de donnée, c'est-à-dire une organisation particulière des données,
 qui vont nous permettre de rechercher plus efficacement quelle lettre a été
-envoyée. 
+entrée sur le `micro:bit`. 
 
-Pour t'aider à t'en représenter un, voici l'arbre binaire que nous allons
-utiliser dans la suite de ce TP (aller vers la gauche équivaut à un point, et
-vers la droite à un trait) : 
-{{<figure src="resources/images/bintree_example.png">}}
+Pour t'aider à t'en représenter un, voici un arbre binaire que nous allons
+utiliser dans les exemples de cette partie cours : 
+{{<figure src="resources/images/bintree_example.png" width=500 >}}
 
 ### Récursion
 
@@ -78,14 +77,16 @@ Pas tout à fait, mais on appelle cette structure de donnée un _arbre_ car elle
 lui ressemble (très rapidement). Et on le qualifie de _binaire_ car il y a deux
 chemins possibles au maximum. 
 Voici un petit peu de vocabulaire qui pourra nous être utile dans la suite de ce
-TP. Dans un arbre binaire est composé de `noeuds`. Chaque `noeud` contient une valeur appelée
-`clé` (`key` en anglais). Ce noeud va également avoir 2 `enfants`, qui sont eux aussi des
-`noeuds` : on les nomme `fils gauche` lorsqu'il se trouve à gauche de son `père` 
+TP. 
+
+Un arbre binaire est composé de `noeuds`. Chaque `noeud` contient une valeur appelée
+`clé` (`key` en anglais). Ce noeud va également avoir 2 `fils`, qui sont eux aussi des
+`noeuds` : on le nomme `fils gauche` lorsqu'il se trouve à gauche de son `père` 
 et `fils droit` lorsqu'il est à droite. Le tout premier `noeud`
 est appelé `racine` de l'arbre. 
 
 Prenons l'exemple de l'arbre binaire que tu peux voir plus haut. La `racine` est
-le `noeud` le plus haut. Sa `clé` est _A_. Il possède 2 `enfants`. Un `fils
+le `noeud` le plus haut. Sa `clé` est _A_. Il possède 2 `fils`. Un `fils
 gauche` dont la `clé` est _B_, et un `fils droit` dont la `clé` est _F_. 
 
 Si jamais tu as une quelconque question ou bien quelque chose que tu n'as pas
@@ -95,18 +96,27 @@ Ils sont là pour t'aider ;).
 #### Quel est le rapport avec un ordinateur ?
 En python, on représente un arbre comme un objet récursif, car il se contient lui-même.
 En fait, nous manipulerons une variable de type `Noeud`, qui contiendra une
-`clé`, ainsi que deux autres objets de type `Noeud` qui sont ses enfants. 
+`clé`, ainsi que deux autres objets de type `Noeud` qui sont ses fils. 
 Tu peux voir les objets de type `Noeud` comme un nouveau type de variable, un
-peu comme `int`, `string` ou `list`. 
+peu comme `int`, `string` ou `list`. C'est un peu comme une boite contenant
+trois compartiments : un permettant de stocker la `clé`, un autre permettant de
+stocker la localisation du `fils gauche` et un dernier avec la localisation du
+`fils droit`. Ces localisation nous permettent de retrouver leur boite
+respective. 
 
 #### Et comment parcourir un arbre ? 
 Ces arbres, on peut les parcourir, c'est-à-dire regarder les `clés` de chacun des
-`noeuds`. Pour cela, on utilise une fonction récursive :
+`noeuds`. Pour parcourir un arbre, il nous suffit d'ouvrir la première boite (la
+`racine`), puis d'effectuer un traitement ou non sur la `clé` avant de
+rechercher la boite du `fils gauche` puis celle du `fils droit`. 
+
+Pour cela, on utilise une fonction récursive :
 
 Ici la fonction qui suit va afficher la `clé` du `noeud` courant et aller va continuer le parcours
 dans le `fils gauche` puis dans le `fils droit`. 
 
-En python, on utilise le mot-clé `None` pour indiquer qu'il n'y a pas d'arbre.
+En python, on utilise le mot-clé `None` pour indiquer qu'il n'y a pas d'arbre,
+   pour dire que le compartiment de la boite est vide. 
 On fait donc le parcours seulement si l'arbre existe. 
 
 ```py
@@ -122,8 +132,8 @@ l'écran du terminal.
 
 #### Mini-Exercice
 
-Écris une fonction de parcours qui fait le parcours dans le fils gauche, affiche
-la `clé` du `noeud` actuel, et fait le parcours dans le `fils droit`.
+**But :** Écris une fonction de parcours qui fait le parcours dans le fils gauche, affiche
+la `clé` du `noeud` actuel, et fait le parcours dans le `fils droit`. 
 
 Tu peux utiliser ce code pour représenter les `Noeuds` et tester ton code avec
 l'arbre `ARBRE` donné en exemple :
@@ -143,11 +153,19 @@ Ta fonction devrait afficher _CEBDAIGFHJ_.
 
 Il existe plusieurs types de parcours :
 - le parcours préfixe, celui donné dans l'exemple, dans lequel on affiche la clé
-    avant d'aller voir les enfants
+    avant d'aller voir les enfants. 
+    Lorsque l'on ouvre une boite, on commence par traiter le compartiment de la
+    `clé` avant de rechercher la localisation de la boite du `fils droit` puis
+    celle du `fils gauche`
 - le parcours infixe, celui du mini-exercice, dans lequel on va voir le fils
     gauche, puis on affiche la clé et on va voir le fils droit.
+    Lorsque l'on ouvre une boite, on commence par rechercher la localisation du
+    `fils gauche` avant de revenir sur la boite actuelle, de traiter le
+    compartiment de la `clé` et de continuer avec la boite du `fils droit`. 
 - le parcours suffixe, dans lequel on va voir le fils gauche puis droit avant
     d'afficher la clé.
+    Lorsque l'on ouvre une boite, on commence par traiter les compartiments des
+    fils gauche et droit avant de traiter celui de la `clé`
 
 Pour la suite du TP, nous allons utiliser le parcours préfixe. Si tu n'as pas
 bien compris ce que c'était, n'hésite pas à demander de l'aide à un organisateur
