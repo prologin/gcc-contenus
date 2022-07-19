@@ -86,15 +86,15 @@ Il est alors marqué sur quel port trouver le site en local (souvent le port `13
 * exercice
 * info
 
-Il permettent de differencier les parties du tp. Pour les utiliser, il faut mettre :
+Il permettent de différencier les parties du TP. Pour les utiliser, il faut mettre :
 ```
 {{< Insérer_le_nom_du_shortcode >}}
 ```
-au debut de la partie a mettre dans ce style, et 
+au début de la partie à mettre dans ce style, et 
 ```
 {{< \Insérer_le_nom_du_shortcode >}}
 ```
-a la fin
+à la fin
 
 # Matériel utilié
 Accessoirement, pendant nos stages nous utilisons l'éditeur
