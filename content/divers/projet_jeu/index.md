@@ -1,6 +1,7 @@
 ---
 title: Projet Jeu
 weight: 20
+code_stub_url: /resources/sprites.tar
 subtitle: 
 date: 2019
 ---
@@ -82,7 +83,7 @@ L'écran peut être vu comme une grille de pixels, la particularité étant que 
 
 
 La première étape que vous allez tester est l'ouverture d'une fenêtre.
-Pour ce faire vous utiliserez la fonction `pygame.display.set_mode` qui prend en argument une paire d'entiers: $(`largeur`, `hauteur`)$, la taille de la nouvelle fenêtre.
+Pour ce faire vous utiliserez la fonction `pygame.display.set_mode` qui prend en argument une paire d'entiers: (`largeur`, `hauteur`), la taille de la nouvelle fenêtre.
 Cette fonction renvoie un objet représentant la fenêtre ainsi créée, il sera nécessaire de passer cet objet à d'autres fonctions pour pouvoir dessiner dedans, gardez le dans une variable!
 Il n'est nécessaire de créer qu'une seule fenêtre au début du programme, cet appel de fonction va donc dans la partie initialisation.
 
@@ -387,6 +388,10 @@ horloge = pygame.time.Clock()
 ```
 Puis à la fin de la boucle de jeu vous pouvez faire:
 
+```python
+horloge.tick(60)
+```
+
 Où 60 est le nombre de tour de boucle qui seront effectués chaque seconde.
 Ce nombre doit généralement être plus grand que 30 pour obtenir un jeu un minimum fluide.
 C'est ce que l'on appelle couramment les *FPS* (*frames per second*, images par seconde).
@@ -567,16 +572,16 @@ Toutes ces images se trouvent dans `sprites/anime` et sont de taille $50\times 7
 Vous trouverez à peu prêt les mêmes sprites pour les deux personnages suivant:
 
 |
-|---|---|
-| {{< figure src="./resources/sprites/anime/p2/standing/frame-1.png" >}} |  {{< figure src="./resources/sprites/anime/p3/standing/frame-1.png" >}}
-| p2/standing/frame-1.png | p3/standing/frame-1.png 
-| p2/standing/frame-2.png | p3/standing/frame-2.png 
-| p2/running/frame-1.png  | p3/running/frame-1.png 
-| p2/running/frame-2.png  | p3/running/frame-2.png 
-| p2/running/frame-3.png  | p3/running/frame-3.png 
-| p2/running/frame-4.png  | p3/running/frame-4.png 
-| p2/running/frame-5.png  | p3/running/frame-5.png 
-| p2/running/frame-6.png  | p3/running/frame-6.png 
-| p2/jump/jump_up.png    | p3/jump/jump_up.png 
-| p2/jump/jump_fall.png  | p3/jump/jump_fall.png 
-| | p3/got_hit/frame.png
+|---|---|---|
+| {{< figure src="./resources/sprites/anime/p2/standing/frame-1.png" >}} |  {{< figure src="./resources/sprites/anime/p3/standing/frame-1.png" >}} | {{< figure src="./resources/sprites/anime/p4/standing/frame-1.png" >}}
+| p2/standing/frame-1.png | p3/standing/frame-1.png  | p4/got_hit/frame-1.png
+| p2/standing/frame-2.png | p3/standing/frame-2.png  | p4/got_hit/frame-2.png
+| p2/running/frame-1.png  | p3/running/frame-1.png   | p4/running/frame-1.png
+| p2/running/frame-2.png  | p3/running/frame-2.png   | p4/running/frame-2.png
+| p2/running/frame-3.png  | p3/running/frame-3.png   | p4/running/frame-3.png
+| p2/running/frame-4.png  | p3/running/frame-4.png   | p4/running/frame-4.png
+| p2/running/frame-5.png  | p3/running/frame-5.png   | p4/running/frame-5.png
+| p2/running/frame-6.png  | p3/running/frame-6.png   | p4/running/frame-6.png
+| p2/jump/jump_up.png     | p3/jump/jump_up.png      | p4/jump/jump_up.png
+| p2/jump/jump_fall.png   | p3/jump/jump_fall.png    | p4/jump/jump_fall.png
+|                         | p3/got_hit/frame.png     | p4/got_hit/frame.png
