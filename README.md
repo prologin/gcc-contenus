@@ -88,11 +88,11 @@ Il est alors marqué sur quel port trouver le site en local (souvent le port `13
 
 Il permettent de différencier les parties du TP. Pour les utiliser, il faut mettre :
 ```
-{{< Insérer_le_nom_du_shortcode >}}
+{{% Insérer_le_nom_du_shortcode %}}
 ```
 au début de la partie à mettre dans ce style, et 
 ```
-{{< \Insérer_le_nom_du_shortcode >}}
+{{% \Insérer_le_nom_du_shortcode }}
 ```
 à la fin
 
