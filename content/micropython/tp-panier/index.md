@@ -80,7 +80,7 @@ True
 >>> print(v_bool)
 False
 ```
-Une variable booléenne peut donc être utilisée dans une condition ou comme condition d'arrêt d'une boucle.
+Une variable booléenne peut donc être utilisée dans une condition (`if`) ou comme condition d'arrêt d'une boucle (`while`).
 Pour une utilisation dans une boucle, il faudra penser à actualiser la valeur de notre variable à l'intérieur de notre boucle.
 
 ```python
@@ -123,8 +123,8 @@ Afin de vous faciliter le travail, nous vous conseillons d'utiliser une variable
 
 Il faut faire en sorte que le panier ne sorte pas de l'écran, sinon cela causera une erreur.
 Pour cela, n'oubliez pas de vérifier, à l'aide de conditions, les cas suivants :
-* si la panier dépasse vers la droite, que faire ?
-* si la panier dépasse vers la gauche, que faire ?
+* si le panier dépasse vers la droite, que faire ?
+* si le panier dépasse vers la gauche, que faire ?
 
 Avant de passer à la partie suivante, assurez-vous d'avoir un panier pouvant bouger à droite et à gauche sur toute la ligne grâce aux boutons.
 
@@ -132,7 +132,7 @@ Avant de passer à la partie suivante, assurez-vous d'avoir un panier pouvant bo
 
 Cette partie va comprendre l'ajout des pommes.
 
-Dans un premier temps, voici comment créer un nombre aléatoire en python :
+Dans un premier temps, voici comment créer un nombre aléatoire en Python :
 
 ```python
 # importer la fonction permettant de tirer un nombre aléatoire
@@ -157,7 +157,7 @@ L'utilisation d'un tuple va donc nous permettre de conserver la position des pom
 (1, 2)
 # pour changer les valeurs d'un tuple, il faut le réassigner :
 >>> a = (3, 4)
->>> print (a)
+>>> print(a)
 (3, 4)
 ```
 Par ailleurs, vous pourriez avoir besoin d'accéder à un seul élément d'un tuple.
