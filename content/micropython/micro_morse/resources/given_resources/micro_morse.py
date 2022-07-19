@@ -1,5 +1,5 @@
-#from microbit import *
-#import radio
+from microbit import *
+import radio
 
 class Noeud:
     def __init__(self, key, left, right):
@@ -7,8 +7,8 @@ class Noeud:
         Cree le noeud
         """
         self.key = key # La valeur du noeud
-        self.left = left # Le noeud gauche
-        self.right = right # Le noeud droit
+        self.left = left # Le fils gauche
+        self.right = right # Le fils droit
 
 # Arbre permettant de traduire du morse
 NEUF = Noeud('9', None, None)
@@ -55,7 +55,7 @@ MORSE = Noeud(None, E, T)
 # Ecris tes fonctions ici !
 
 
-radio.on() # Allumer la radio
+radio.on() # Allume la radio
 radio.config(channel=42) # Configure le canal utilise (doit etre compris entre 0 et 83)
 
 while True:
