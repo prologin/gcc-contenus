@@ -51,11 +51,28 @@
 
   function divide(sections, avancement) {
     var i = 0
+    var state = document.querySelector(".footer-list")
+    state.replaceChildren();
     for (const el of sections) {
+      var check = document.createElement("div");
+
       if (i == avancement)
+      {
         el.style.display = 'block';
-      else
+        check.className = "footer-circle started";
+      }
+      else if (i > avancement)
+      {
         el.style.display = 'none';
+        check.className = "footer-circle";
+      }
+      else
+      {
+        el.style.display = 'none';
+        check.className = "footer-circle ended";
+      }
+
+      state.appendChild(check)   
       i += 1
     }
 
@@ -63,23 +80,11 @@
   }
 
   function addBtn(sections) {
-    for (const el of sections) {
-      var div = document.createElement("div");
-      div.style = "display: flex; place-content: space-between;"
+    var next = document.querySelector(".next-button")
+    next.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) - 1) });
+    var prev = document.querySelector(".prev-button")
+    prev.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) + 1) });
 
-      var prevBtn = document.createElement("next");
-      prevBtn.className = "copy-button";
-      prevBtn.textContent = "Prev";
-      prevBtn.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) - 1) });
-      div.appendChild(prevBtn);
-
-      var nextBtn = document.createElement("next");
-      nextBtn.className = "copy-button";
-      nextBtn.textContent = "Next";
-      nextBtn.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) + 1) });
-      div.appendChild(nextBtn);
-      el.appendChild(div)
-    }
   }
 
   var sectionBlock = document.querySelectorAll('[id^=section]');

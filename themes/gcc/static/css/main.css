@@ -206,11 +206,41 @@ h1.header-menu {
 /****** footer ******/
 /********************/
 .footer {
-    position: absolute;
+    position: fixed;
     display: flex;
-    justify-content: center;
-    bottom: 20px;
+    justify-content: space-around;
+    bottom: 0;
+    padding: 15px 0 10px 0;
+    width: 100%;
 }
+
+.fas {
+    color: black;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-circle {
+    border-radius: 20px;
+    border: solid var(--header-color) 4px;
+    height: 25px;
+    width: 25px;
+    margin: 0 2px 0 2px;
+}
+
+.started {
+    background-color: #575757;
+}
+
+.ended {
+    background-color: green;
+}
+
 
 
 /********************/
