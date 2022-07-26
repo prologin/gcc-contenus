@@ -92,7 +92,7 @@ Il permettent de différencier les parties du TP. Pour les utiliser, il faut met
 ```
 au début de la partie à mettre dans ce style, et 
 ```
-{{% \Insérer_le_nom_du_shortcode }}
+{{% \Insérer_le_nom_du_shortcode %}}
 ```
 à la fin
 
