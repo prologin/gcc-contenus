@@ -328,7 +328,7 @@ pre code {
     border-radius: 5px;
 }
 
-.exercice :is(h1, h2)  {
+.exercice :is(h1, h2, h3, h4, h5, h6)  {
     margin-top: 0;
     padding-top: 0;
 }
@@ -342,18 +342,11 @@ pre code {
     border-radius: 5px;
 }
 
-.info :is(h1, h2, h3)  {
+.info :is(h1, h2, h3, h4, h5, h6))  {
     margin-top: 0;
     padding-top: 0;
 }
 
-.info h4 {
-    margin-top: 0;
-    padding-top: 0;
-    color: blue;
-    font-size: 150%;
-    
-}
 
 .exemple {
     padding: 15px;
@@ -364,8 +357,7 @@ pre code {
     border-radius: 5px;
 }
 
-.exemple :is(h1, h2)  {
+.exemple :is(h1, h2, h3, h4, h5, h6))  {
     margin-top: 0;
     padding-top: 0;
-    color: gray;
 }
