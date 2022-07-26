@@ -16,7 +16,22 @@
     </aside>
     <article class="container">
         <div class="content">
-            {{ .Content }}
+                {{- $sectionDelimiter := "[SECTION-BREAK]" -}}
+                {{- $ContentSections := split .Content $sectionDelimiter -}}
+                {{- if gt (len $ContentSections) 1 -}}
+                    <ol>
+                        {{ range $i, $num := (seq (len $ContentSections)) }}
+                            <li id="section-{{ $num }}">
+                                {{ index $ContentSections $i | safeHTML }}
+                            </li>
+                        {{ end }}
+                    </ol>
+                {{- else -}}
+                    <div id="content-not-split-into-sections">
+                    {{ .Content }}
+                    </div>
+                {{- end -}}
+            </ol>
         </div>
     </article>
 </div>
