@@ -38,6 +38,15 @@ table {
     margin-right: auto;
 }
 
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+[id^=section] {
+    list-style: none;
+}
+
 /********************/
 /****** header ******/
 /********************/
@@ -191,6 +200,18 @@ h1.header-menu {
     font-size: 1em;
     color: #d3d3d3;
 }
+
+
+/********************/
+/****** footer ******/
+/********************/
+.footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 20px;
+}
+
 
 /********************/
 /* table of content */

@@ -44,4 +44,41 @@
   var highlightBlocks = document.querySelectorAll('.code:not(.text)');
 
   Array.prototype.forEach.call(highlightBlocks, addCopyButton);
+
+
+  function divide(sections, avancement) {
+    var i = 0
+    for (const el of sections) {
+      if (i == avancement)
+      {
+        el.style.display = 'block'
+
+        var div = document.createElement("div");
+        div.style = "position: sticky; bottom: 20px;"
+
+        var prevBtn = document.createElement("next");
+        prevBtn.className = "copy-button";
+        prevBtn.textContent = "Prev";
+        prevBtn.onclick = function () { divide(sections, avancement - 1) };
+        div.appendChild(prevBtn);
+        
+        var nextBtn = document.createElement("next");
+        nextBtn.className = "copy-button";
+        nextBtn.textContent = "Next";
+        nextBtn.onclick = function () { divide(sections, avancement + 1) };
+        div.appendChild(nextBtn);
+        el.appendChild(div)
+      }
+      else
+      {
+        el.style.display = 'none';
+      }
+      i += 1
+    }
+  }
+
+
+  var sectionBlock = document.querySelectorAll('[id^=section]');
+
+  divide(sectionBlock, 0)
 })();
