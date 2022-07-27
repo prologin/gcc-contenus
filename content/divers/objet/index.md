@@ -44,13 +44,14 @@ décrivent la manière d’interagir avec ces informations.
 
 ```python
 class Ennemi:
-    def __init__(self, vie, x, y): # un constructeur a plusieurs arguments
+    def __init__(self, vie, x, y): # un constructeur à plusieurs arguments
         self.vie = vie
         self.coord_x = x
         self.coord_y = y
 
 boss = Ennemi(200, 0, 0)
-# on cree un objet boss de type Ennemi avec un attribut 'vie' qui vaut 200
+# on crée un objet boss de type Ennemi avec un attribut 'vie' qui vaut 200
+
 minion = Ennemi(50, 10, 10)
 ```
 
@@ -58,7 +59,7 @@ Cela crée un ennemi `boss` qui a 200 points de vie, et se situe aux coordonnée
 (0,0) et un ennemi "classique" qui possède 50 points de vie et se situe en
 (10, 10).
 
-On peut donc accéder à la vie du boss avec `boss.vie` et ses coordonnées avec
+On peut accéder à la vie du boss avec `boss.vie` et ses coordonnées avec
 `boss.coord_x` et `boss.coord_y`.
 
 À chaque coup que prend le boss, on peut donc lui enlever de la vie avec
@@ -91,7 +92,7 @@ class Humain:
         self.nom = nom # Ceci est un autre attribut
 
     def info(self): # Ceci est une méthode
-        print("Mon nom est " + self.nom + " et j'ai " + str(self.age) + " ans.")
+        print("Mon nom est", self.nom, "et j'ai", self.age, "ans.")
 
     def anniversaire(self): # Ceci est une autre méthode
         self.age += 1
