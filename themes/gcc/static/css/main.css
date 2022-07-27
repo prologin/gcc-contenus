@@ -1,15 +1,7 @@
-@font-face {
-    font-family: "Helvetica Neue";
-    src: url("/fonts/helveticaneue.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Helvetica";
-    src: url("/fonts/helvetica.woff2") format("woff2");
-}
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica", sans-serif;
+    font-family: "Verdana", sans-serif;
+    font-weight: 440;
 }
 
 h1 {
@@ -25,7 +17,7 @@ h1 {
 }
 
 body {
-    font-family: "Helvetica", sans-serif;
+    font-family: "Verdana", sans-serif;
     font-size: 1.3em;
     margin: 0;
     padding: 0;
