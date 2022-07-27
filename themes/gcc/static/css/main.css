@@ -207,10 +207,8 @@ h1.header-menu {
 /********************/
 .footer {
     position: fixed;
-    display: flex;
-    justify-content: space-around;
     bottom: 0;
-    padding: 15px 0 10px 0;
+    padding: 15px 0 0px 0;
     width: 100%;
 }
 
@@ -218,19 +216,23 @@ h1.header-menu {
     color: black;
 }
 
+.footer-element {
+    display: flex;
+    justify-content: space-around;
+}
+
 .footer-list {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: stretch;
+    align-items: end;
 }
 
 .footer-circle {
-    border-radius: 20px;
-    border: solid var(--header-color) 4px;
-    height: 25px;
-    width: 25px;
-    margin: 0 2px 0 2px;
+    height: 4px;
+    width: auto;
+    bottom: 0;
+    width: 100%;
 }
 
 .started {
@@ -240,6 +242,8 @@ h1.header-menu {
 .ended {
     background-color: green;
 }
+
+
 
 
 
