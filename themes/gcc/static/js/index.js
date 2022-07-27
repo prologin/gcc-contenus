@@ -46,13 +46,20 @@
   Array.prototype.forEach.call(highlightBlocks, addCopyButton);
 
 
+  // display TPs in sections
   if (localStorage.getItem("index") === null)
     localStorage.setItem('index', JSON.stringify(0))
 
   function divide(sections, avancement) {
+    if (avancement < 0)
+      avancement = 0;
+    if (avancement >= sections.length)
+      avancement = sections.length - 1;
+      
     var i = 0
     var state = document.querySelector(".footer-list")
     state.replaceChildren();
+
     for (const el of sections) {
       var check = document.createElement("div");
 
