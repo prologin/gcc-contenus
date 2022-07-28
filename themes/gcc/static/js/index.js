@@ -86,7 +86,8 @@
 
   function addState(sections) {
     var list = document.querySelector(".footer-list")
-    for (let i = 0; i < sections.length; i++) {
+    let i = 0
+    for (; i < sections.length - 1; i++) {
       var state = document.createElement("div");
       state.className = "footer-state-" + i;
 
@@ -100,6 +101,15 @@
 
       list.appendChild(state)
     }
+
+    var state = document.createElement("div");
+    state.className = "footer-state-" + i;
+
+    var bar = document.createElement("div");
+    bar.className = "footer-bar";
+    state.appendChild(bar)
+
+    list.appendChild(state)
 
   }
 
