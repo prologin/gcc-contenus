@@ -55,47 +55,64 @@
       avancement = 0;
     if (avancement >= sections.length)
       avancement = sections.length - 1;
-      
+
     var i = 0
-    var state = document.querySelector(".footer-list")
-    state.replaceChildren();
 
     for (const el of sections) {
-      var check = document.createElement("div");
-
+      var check = document.querySelector(".footer-state-" + i)
+      
+      check.className
       if (i == avancement)
       {
         el.style.display = 'block';
-        check.className = "footer-circle started";
+        check.className = "footer-state-" + i + " started";
       }
       else if (i > avancement)
       {
         el.style.display = 'none';
-        check.className = "footer-circle";
+        check.className = "footer-state-" + i;
       }
       else
       {
         el.style.display = 'none';
-        check.className = "footer-circle ended";
+        check.className = "footer-state-" + i + " ended";
       }
 
-      state.appendChild(check)   
       i += 1
     }
 
     localStorage.setItem('index', JSON.stringify(avancement));
   }
 
-  function addBtn(sections) {
+  function addState(sections) {
+    var list = document.querySelector(".footer-list")
+    for (let i = 0; i < sections.length; i++) {
+      var state = document.createElement("div");
+      state.className = "footer-state-" + i;
+
+      var bar = document.createElement("div");
+      bar.className = "footer-bar";
+      state.appendChild(bar)
+      
+      var round = document.createElement('div')
+      round.className = "footer-round";
+      state.appendChild(round)
+
+      list.appendChild(state)
+    }
+
+  }
+
+  function switchBtn(sections) {
     var next = document.querySelector(".next-button")
     next.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) - 1) });
     var prev = document.querySelector(".prev-button")
     prev.addEventListener('click', function() { divide(sections, JSON.parse(localStorage.getItem('index')) + 1) });
-
   }
 
   var sectionBlock = document.querySelectorAll('[id^=section]');
 
+  addState(sectionBlock)
   divide(sectionBlock, 0)
-  addBtn(sectionBlock)
+  switchBtn(sectionBlock)
 })();
