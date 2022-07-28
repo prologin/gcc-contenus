@@ -61,6 +61,16 @@ devez placer à l'endroit où l'image doit se situer :
 Pour connaître toutes les options possibles de cette commande, vous pouvez
 trouver la documentation [ici](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes)
 
+### Diviser votre TP
+
+Un tp peut être long à lire... Nous vous conseillons donc de le sous-diviser en différentes parties.
+Pour cela il suffit de rajouter ceci à l'endroit de la sépareration :
+```
+[SECTION-BREAK]
+```
+
+Attention à bien passer des lignes avant et après cette balise pour éviter tout problème.
+
 
 ## À vous de jouer !
 
