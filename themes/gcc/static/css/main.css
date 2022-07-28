@@ -342,7 +342,7 @@ pre code {
     border-radius: 5px;
 }
 
-.info :is(h1, h2, h3, h4, h5, h6))  {
+.info :is(h1, h2, h3, h4, h5, h6)  {
     margin-top: 0;
     padding-top: 0;
 }
@@ -357,7 +357,22 @@ pre code {
     border-radius: 5px;
 }
 
-.exemple :is(h1, h2, h3, h4, h5, h6))  {
+.exemple :is(h1, h2, h3, h4, h5, h6)  {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+.cours {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    border-left: 8px solid red;
+    padding-left: 12px;
+    border-radius: 5px;
+}
+
+.cours :is(h1, h2, h3, h4, h5, h6)  {
     margin-top: 0;
     padding-top: 0;
 }
