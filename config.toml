@@ -12,7 +12,8 @@ theme = "gcc"
   [markup.highlight]
     lineNos = true
 
-
+[markup.goldmark.renderer]
+unsafe = true
 
 
 # Here are the header menus
