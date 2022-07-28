@@ -26,6 +26,11 @@ body {
     overflow-y:scroll;
 }
 
+main {
+    margin-bottom: 100px;
+
+}
+
 
 table {
     margin-left: auto;
@@ -202,7 +207,7 @@ h1.header-menu {
 .footer {
     position: fixed;
     bottom: 0;
-    padding: 15px 0 0px 0;
+    padding: 15px 0 10px 0;
     width: 100%;
 }
 
