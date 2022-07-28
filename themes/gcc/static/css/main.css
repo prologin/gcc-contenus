@@ -231,34 +231,31 @@ h1.header-menu {
 .footer-bar {
     height: 6px;
     bottom: 0;
-    width: 50px;
     margin-bottom: 10px;
     background-color: #C5C5C5;
+    width: 100%;
 }
 
+.footer-round {
+    height: 25px;
+    width: 25px;
+    border-radius: 20px;
+    border: solid #575757 4px;
+    bottom: 0;
+    margin-bottom: 10px;
+}
 
 .started > .footer-bar {
     background-color: var(--header-color);
 }
-.started > .footer-round {
-}
+
 .ended > .footer-bar {
     background-color: var(--header-color);
 }
 .ended > .footer-round {
     background-color: green;
+    border: solid var(--header-color) 4px;
 }
-
-
-.footer-round {
-    height: 16px;
-    width: 16px;
-    border-radius: 20px;
-    border: solid #575757 1px;
-    bottom: 0;
-    margin-bottom: 10px;
-}
-
 
 
 
