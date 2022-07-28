@@ -96,7 +96,7 @@ au début de la partie à mettre dans ce style, et
 ```
 à la fin
 
- # Matériel utilisé
+# Matériel utilisé
 Accessoirement, pendant nos stages nous utilisons l'éditeur
 [Mu](https://codewith.mu/) que nous recommandons vivement. Pour l'utilisation
 des microbits une version en ligne est également disponible
