@@ -219,6 +219,7 @@ h1.header-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: -webkit-fill-available;
 }
 
 .footer-list {
@@ -238,7 +239,8 @@ h1.header-menu {
 
 .footer-round {
     height: 25px;
-    width: 25px;
+    min-width: 25px;
+    max-width: 25px;
     border-radius: 20px;
     border: solid #575757 4px;
     bottom: 0;
