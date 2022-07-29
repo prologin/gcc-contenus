@@ -24,13 +24,12 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     overflow-y:scroll;
+    position: relative;
 }
 
 main {
-    margin-bottom: 100px;
-
+    margin-bottom: 150px;
 }
-
 
 table {
     margin-left: auto;
@@ -205,7 +204,7 @@ h1.header-menu {
 /****** footer ******/
 /********************/
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     padding: 15px 0 10px 0;
     width: 100%;
@@ -217,7 +216,8 @@ h1.header-menu {
 
 .footer-element {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
 }
 
 [class^=footer-state] {
