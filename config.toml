@@ -28,10 +28,11 @@ unsafe = true
     URL = "/divers"
     weight = 5
 
-[[Menu.header]]
-    Name = "Documentation"
-    URL = "/documentation"
-    weight = 10
+# not yet used
+#[[Menu.header]]
+#    Name = "Documentation"
+#    URL = "/documentation"
+#    weight = 10
 
 
 
