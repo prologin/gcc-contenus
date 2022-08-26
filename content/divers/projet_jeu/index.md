@@ -566,7 +566,7 @@ tombe = pygame.transform.rotate(personnage, 45)
 
 # Sprites
 
-Vous pouvez télécharger toutes les ressources de cette partie en cliquant [ici](https://girlscancode.fr/pygame.tgz).
+Vous pouvez télécharger toutes les ressources de cette partie en cliquant [ici](./resources.tar.gz).
 
 ## Terrains
 

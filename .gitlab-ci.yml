@@ -4,19 +4,29 @@ default:
 variables:
   HUGO_ENV: production
 
-build:
-  stage: build
+stages:
+  - build
+  - deploy
+
+.hugo:
   script:
+    - |
+      cd content/divers/projet_jeu
+      tar czvf resources.tar.gz resources/sprites
+      cd $CI_PROJECT_DIR
     - hugo
+
+build:
+  extends: .hugo
+  stage: build
   rules:
     - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
 
 pages:
-  script:
-    - hugo
+  extends: .hugo
+  stage: deploy
   artifacts:
     paths:
       - public
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-
