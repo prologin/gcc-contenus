@@ -76,8 +76,9 @@ sont pas survolées
 Sa documentation se trouve [ici](https://developer.mozilla.org/fr/docs/Web/CSS/filter#sepia%28%29_2).
 
 ## Les grilles CSS
-Les grilles CSS sont une technologie très récentes, moins d'un an, mais elles
-permettent de créer des designs web complexes assez rapidement.
+Les grilles CSS sont une technologie assez récentes, elles ont été introduites à
+partir de 2017, mais elles permettent de créer des designs web complexes assez
+rapidement.
 
 Pour voir ce que permettent les grilles CSS, vous pouvez regarder
 [le site de Jen Simmons](https://labs.jensimmons.com/), développeuse et
