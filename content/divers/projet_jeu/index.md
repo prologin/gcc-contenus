@@ -267,7 +267,7 @@ Elle se notera en python :
 ```python
 M = [[1, 2, 3],
      [4, 5, 6],
-     [7, 8, 9]
+     [7, 8, 9]]
 ```
 
 Pour accéder à la valeur 6, on appelera `M[1][2]` car 6 se trouve aux
@@ -282,7 +282,7 @@ M[0][0] = 42
 # La matrice sera donc égale à :
 M = [[42, 2, 3],
      [4, 5, 6],
-     [7, 8, 9]
+     [7, 8, 9]]
 ```
 
 
