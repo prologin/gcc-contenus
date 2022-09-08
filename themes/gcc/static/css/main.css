@@ -192,6 +192,37 @@ h1.header-menu {
     color: #d3d3d3;
 }
 
+details {
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    border: 1px solid #aaa;
+    background-color: rgba(0, 0, 0, .04);
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details summary { 
+    cursor: pointer;
+}
+  
+details summary > * {
+    display: inline;
+}  
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+
 /********************/
 /* table of content */
 /********************/
@@ -199,7 +230,7 @@ h1.header-menu {
     position: sticky;
     top: 50px;
     margin: 20px;
-    list-style:none;
+    list-style: none;
     border-left: 4px solid var(--header-color);
     padding-left: 15px;
     border-radius: 5px;
@@ -376,3 +407,4 @@ pre code {
     margin-top: 0;
     padding-top: 0;
 }
+
