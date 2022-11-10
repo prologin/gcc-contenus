@@ -176,6 +176,16 @@ img {
     max-width: 100%;
 }
 
+figure {
+  text-align: center;
+}
+
+figcaption {
+    color: gray;
+    font-size: 0.9em;
+    margin-top: -15px;
+}
+
 .header-home-link {
     display: flex;
     text-decoration: none;
@@ -407,4 +417,3 @@ pre code {
     margin-top: 0;
     padding-top: 0;
 }
-
