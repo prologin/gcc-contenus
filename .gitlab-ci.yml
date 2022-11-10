@@ -9,11 +9,11 @@ stages:
   - deploy
 
 .hugo:
+  before_script:
+    - apk add yarn bash
   script:
-    - |
-      cd content/divers/projet_jeu
-      tar czvf resources.tar.gz resources/sprites
-      cd $CI_PROJECT_DIR
+    - yarn install
+    - yarn build
     - hugo
 
 build:

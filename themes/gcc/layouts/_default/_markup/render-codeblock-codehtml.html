@@ -1,0 +1,43 @@
+<div class="exec">
+    Écris ton code ici :
+    <div class="exec-yourcode" style="color: white; display: block;">
+        <textarea id="yourcode" cols="90" rows="5" >{{ .Inner}}</textarea>
+
+        <button class="yourcode-button" type="button" onclick="runit()">Run</button>
+        <iframe style="background-color: white;" id="html-result"></iframe>
+    </div>
+</div>
+
+<!-- Imports for Codemirror. Must be before initializing the codeblock -->
+<script type="text/javascript" src="/js/codemirror/codemirror.js"></script>
+<script type="text/javascript" src="/js/codemirror/mode/xml.js"></script>
+<script type="text/javascript" src="/js/codemirror/mode/css.js"></script>
+<script type="text/javascript" src="/js/codemirror/mode/javascript.js"></script>
+<script type="text/javascript" src="/js/codemirror/mode/htmlmixed.js"></script>
+
+<script type="text/javascript">
+    //// Codemirror
+    // Code text area
+    var textArea = document.getElementById("yourcode");
+
+    // Codemirror object
+    // Replace previous text area
+    var codeBlock = CodeMirror(function(elt) {
+        textArea.parentNode.replaceChild(elt, textArea);
+    },
+    {
+        value:          textArea.value,
+        mode:           "htmlmixed",
+        lineNumbers:    true,
+        tabSize:        4,
+        theme:          "monokai",
+    })
+
+    function runit() {
+        let prog = codeBlock.getValue();
+        let result = document.getElementById("html-result").contentWindow.document;
+        result.open();
+        result.write(prog);
+        result.close();
+    }
+</script>

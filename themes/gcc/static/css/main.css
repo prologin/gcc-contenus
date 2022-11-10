@@ -1,15 +1,7 @@
-@font-face {
-    font-family: "Helvetica Neue";
-    src: url("/fonts/helveticaneue.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Helvetica";
-    src: url("/fonts/helvetica.woff2") format("woff2");
-}
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica", sans-serif;
+    font-family: "Verdana", sans-serif;
+    font-weight: 440;
 }
 
 h1 {
@@ -25,17 +17,32 @@ h1 {
 }
 
 body {
-    font-family: "Helvetica", sans-serif;
+    font-family: "Verdana", sans-serif;
     font-size: 1.3em;
     margin: 0;
     padding: 0;
     color: var(--text-color);
     background-color: var(--bg-color);
+    overflow-y:scroll;
+    position: relative;
+}
+
+main {
+    margin-bottom: 200px;
 }
 
 table {
     margin-left: auto;
     margin-right: auto;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+[id^=section] {
+    list-style: none;
 }
 
 /********************/
@@ -108,7 +115,7 @@ h1.article-title {
     margin-bottom: 4em;
 }
 
-.article-container  {
+#article-container  {
     display: flex;
     align-items: baseline;
     align-content: flex-start;
@@ -232,6 +239,57 @@ details[open] summary {
     margin-bottom: .5em;
 }
 
+/********************/
+/****** footer ******/
+/********************/
+.footer {
+    position: sticky;
+    bottom: 45%;
+    width: 100%;
+}
+
+#article-container ~ .footer {
+    display: none;
+}
+
+.fas {
+    color: black;
+}
+
+.footer-element {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+[class^=footer-state] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10px;
+    bottom: 0;
+    background-color: var(--bg-color);
+    width: 100%;
+}
+
+.started {
+    background-color: var(--header-color);
+}
+.ended {
+    background-color: var(--header-color);
+}
+
+
+
 
 /********************/
 /* table of content */
@@ -341,12 +399,58 @@ pre code {
     height: 0;
 }
 
+/* exec */
+.exec {
+    background-color: #2e2e2e;
+    max-width: 100%;
+    min-width: 100px;
+    margin-top: 10px;
+    padding-left: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--bg-color);
+    margin: 10px;
+    position: relative;
+    place-content: space-between;
+    padding: 10px;
+    color: var(--bg-color);
+}
+
+#yourcode {
+    background-color: var(--bg-codeblock-color);
+    color: var(--bg-color);
+}
+
+.exec-yourcode {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.yourcode-button {
+    background-color: var(--header-color);
+    border-radius: 8px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 16px;
+    right: 20px;
+    position: absolute;
+}
+
+.result {
+    color: var(--bg-color);
+    margin: 15px;
+}
+
 /********************/
 /**** responsive ****/
 /********************/
 
 @media screen and (max-width: 1400px) {
-    .article-container {
+    #article-container {
         display: block;
     }
     .toc {

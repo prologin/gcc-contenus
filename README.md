@@ -61,6 +61,21 @@ devez placer à l'endroit où l'image doit se situer :
 Pour connaître toutes les options possibles de cette commande, vous pouvez
 trouver la documentation [ici](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes)
 
+### Diviser votre TP
+
+Un tp peut être long à lire... Nous vous conseillons donc de le sous-diviser en différentes parties.
+Pour cela il suffit de rajouter ceci à l'endroit de la séparation :
+
+```
+[SECTION-BREAK]
+```
+
+Attention à bien laisser au moins une ligne vide avant et après cette balise pour éviter tout problème.
+
+### Code interactif
+
+Pour que l'élève puisse exécuter et modifier du code python directement sur le navigateur, il faut créer un codeblock de type `codepython` et mettre le code rempli/à remplir dedans.
+Cette fonctionnalité existe aussi pour le html avec un codeblock `codehtml`
 
 ## À vous de jouer !
 
