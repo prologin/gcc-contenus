@@ -1,7 +1,7 @@
 ---
 title: "Découverte de Micropython"
 date: 2022
-weight: 1
+weight: 5
 subtitle: "Au cours de ce TP, tu vas découvrir comment utiliser le `micro:bit` et comment coder en micropython."
 ---
 
@@ -45,6 +45,7 @@ Si tu n'as pas déjà lu le TP0, tu peux aller le lire avant de continuer
 celui-ci. 
 
 
+[SECTION-BREAK]
 
 
 # Ton premier programme
@@ -134,6 +135,7 @@ grise.
 
 
 
+[SECTION-BREAK]
 
 
 
@@ -160,14 +162,14 @@ En ce qui concerne cette fonction, voici un petit schéma qui permet de mieux
 comprendre les coordonnées de chaque LED (la coordonnée **X** correspond au
 numéro de **colonne** et la coordonnée **Y** correspond au numéro de **ligne**) :
 
-{{<figure src="resources/images/microbit_coordinates_bis.png" width=200 caption="Coordonnées des LEDs">}}
+{{<figure src="resources/images/microbit_coordinates_bis.png" width=400 caption="Coordonnées des LEDs">}}
 
 
 ### Mini-exercice
 **But :** Affiche un coeur sur l'écran.
 
 _Ça devrait ressembler à quelque chose comme ça :_
-{{<figure src="resources/images/empty_heart.png" width=200 caption="">}}
+{{<figure src="resources/images/empty_heart.png" width=400 caption="">}}
 
 
 ## Les images
@@ -182,7 +184,7 @@ Tu peux trouver la liste des images pré-enregistrées
 
 Voici à quoi ressemblent les images `HEART` et `SMILE` :
 
-{{<figure src="resources/images/microbit_images.jpg" width=200 caption="`Image.HEART` et `Image.SMILE`">}}
+{{<figure src="resources/images/microbit_images.jpg" width=600 caption="`Image.HEART` et `Image.SMILE`">}}
 
 ### Mini-exercice
 **But :** Affiche un smiley content sur l'écran du `micro:bit`.
@@ -233,6 +235,7 @@ puis affiche le message `"Salut Joseph !"` suivi d'un smiley qui sourit.
 
 
 
+[SECTION-BREAK]
 
 
 
@@ -281,7 +284,7 @@ x = x + y
 display.scroll(x)
 ```
 
-{{<figure src="resources/images/variables.png" width=200 >}}
+{{<figure src="resources/images/variables.png" width=850 >}}
 
 ### Mini-Exercice
 **But :** Crée une variable avec la valeur 42, puis ajoutes-y 2 et affiche-la 
@@ -384,6 +387,7 @@ pour 22€. Calcule le vrai prix et affiche si celui de Joseph est le bon.
 
 
 
+[SECTION-BREAK]
 
 
 
@@ -396,7 +400,7 @@ l'écran qui a été ajouté avec la version 2 du `micro:bit`.
 
 Voici un petit schéma qui te permet de repérer les différents boutons : 
 
-{{<figure src="resources/images/microbit_buttons.png" width=200 >}}
+{{<figure src="resources/images/microbit_buttons.png" width=600 >}}
 
 Pour utiliser les boutons A et B, tu peux respectivement utiliser la fonction
 `button_a.get_presses()` et `button_b.get_presses()`. Ces fonctions renvoient le
@@ -578,6 +582,7 @@ pas compris, n'hésite pas à faire appel à un organisateur.
 
 
 
+[SECTION-BREAK]
 
 
 
@@ -627,7 +632,7 @@ display.show(Image.SMILE) # Cette ligne de code n'est pas répétée
 
 Voici un petit schéma pour bien différencier les différents blocs de code : 
 
-{{<figure src="resources/images/for_loop.png" width=200 >}}
+{{<figure src="resources/images/for_loop.png" width=400 >}}
 
 
 Bien sûr, il est possible d'"emboîter" des boucles les unes dans les
@@ -687,6 +692,7 @@ Pour ce qui concerne les lignes suivantes, tu connais déjà leur comportement.
 boutons A et B avant que le bouton tactile ne soit touché. 
 
 
+[SECTION-BREAK]
 
 # Projet
 
@@ -776,6 +782,7 @@ demander aux organisateurs des références plus spécifiques.
 Bonne continuation !
 
 
+[SECTION-BREAK]
 
 
 
