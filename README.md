@@ -112,6 +112,24 @@ au début de la partie à mettre dans ce style, et
 ```
 à la fin
 
+# Ajouter le support d'un langage pour les codeblocks intéractifs.
+
+Pour l'instant, les langages suivants sont supportés:
+
+- Python (module Turtle inclus)
+- HTML
+
+Dans le cas où en ajouter un nouveau serait intéressant, voici les étapes à suivre:
+
+1. Ajouter le langage dans LANGS dans `themes/gcc/static/js/codemirror_global.js`.
+2. Ajouter le script du mode _CodeMirror_ correspondant dans `themes/gcc/layouts/_default/single.html`
+3. Ajouter un fichier `themes/gcc/layouts/_default/_markup/render-codeblock-code<langage>.html`. S'inspirer de ceux existant.
+4. Nommer le placeholder du code `code-<lang>-input-{{.Ordinal}}`. `{{.Ordinal}}` est une macro de Hugo qui est remplacée par son numéro de codeblock. C'est très important, car c'est ce qui permet au code de savoir le code de quel codeblock exécuter, et sur quel codeblock afficher la sortie.
+5. Dans la partie JS, récupérer les textAreas et output dont on a besoin, créer un objet CodeMirror (se référer au code existant), et ensuite enregistrer le block en suivant le nom `<lang>{{.Ordinal}}`.
+6. Dans `.../codemirror_global.js`, ajouter un commentaire `// === <lang> related ===` et créer la fonction `runItLang(content)`, où `content` est le deuxième argument passé à `addBlock()`.
+7. Toujours dans `.../codemirror_global.js`, ajouter un appel à la fonction `runItLang()` dans `runIt()`.
+8. Enfin, débugger pour fix les étapes que j'ai oubliées de citer.
+
 # Matériel utilisé
 Accessoirement, pendant nos stages nous utilisons l'éditeur
 [Mu](https://codewith.mu/) que nous recommandons vivement. Pour l'utilisation

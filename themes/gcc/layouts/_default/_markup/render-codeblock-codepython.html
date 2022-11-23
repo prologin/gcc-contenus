@@ -1,85 +1,51 @@
 <div class="exec">
     Écris ton code ici :
-    <div class="exec-yourcode" style="color: white;">
-        <textarea id="yourcode" cols="90" rows="5" >{{ .Inner}}</textarea>
-        
-        <button class="yourcode-button" type="button" onclick="runit()">Run</button>
+    <div class="exec-yourcode" style="color: white; display: block">
+        <textarea id="code-python-input-{{.Ordinal}}" cols="90" rows="5">
+{{ .Inner}}</textarea
+        >
+        <button
+            class="yourcode-button"
+            type="button"
+            onclick="runIt(LANGS.PYTHON, {{.Ordinal}})"
+        >
+            Run
+        </button>
     </div>
     Le résultat :
     <div class="result">
-        <pre id="output" ></pre>
-        <pre id="mycanvas" ></pre>
+        <pre id="code-python-output-{{.Ordinal}}"></pre>
+        <pre id="code-python-canvas-{{.Ordinal}}"></pre>
     </div>
 </div>
 
-<!-- Imports for Codemirror. Must be before initializing the codeblock -->
-
-<script src="/js/codemirror/codemirror.js"></script>
-<script src="/js/codemirror/mode/python.js"></script>
-
 <script type="text/javascript">
-    //// Codemirror
-    // Code text area
-    var textArea = document.getElementById("yourcode");
-
-    // Codemirror object
-    // Replace previous text area
-    var codeBlock = CodeMirror(function(elt) {
-        textArea.parentNode.replaceChild(elt, textArea);
-    },
     {
-        value:          textArea.value,
-        mode:           "python",
-        lineNumbers:    true,
-        tabSize:        4,
-        theme:          "monokai",
-    })
+        const textArea = document.getElementById(
+            "code-python-input-{{.Ordinal}}"
+        );
+        // Codemirror object
+        // Replace previous text area
+        const codemirror = CodeMirror(
+            function (elt) {
+                textArea.parentNode.replaceChild(elt, textArea);
+            },
+            {
+                value: textArea.value,
+                mode: "python",
+                lineNumbers: true,
+                tabSize: 4,
+                theme: "monokai",
+            }
+        );
+        const outputArea = document.getElementById(
+            "code-python-output-{{.Ordinal}}"
+        );
+        var canvas = "code-python-canvas-{{.Ordinal}}";
 
-    //// Skulpt
-    // Dict with external libs and init.js source code
-    var externalLibs = {}
+        const name = LANGS.PYTHON + "{{.Ordinal}}";
+        const content = [codemirror, outputArea, canvas];
 
-    // output functions are configurable.  This one just appends some text
-    // to a pre element.
-    function outf(text) { 
-        var mypre = document.getElementById("output"); 
-        mypre.innerHTML = mypre.innerHTML + text; 
-    } 
-    function builtinRead(x) {
-        if (externalLibs[x] !== undefined) {
-            return Sk.misceval.promiseToSuspension(
-            fetch(externalLibs[x]).then(
-                function (resp){ return resp.text(); }
-            ));
-        }
-        
-        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-                throw "File not found: '" + x + "'";
-
-        return Sk.builtinFiles["files"][x];
+        addBlock(name, content);
     }
-    
-    // Here's everything you need to run a python program in skulpt
-    // grab the code from your textarea
-    // get a reference to your pre element for output
-    // configure the output function
-    // call Sk.importMainWithBody()
-    function runit() { 
-       var prog = codeBlock.getValue(); 
-       var mypre = document.getElementById("output"); 
-       mypre.innerHTML = ''; 
-       Sk.pre = "output";
-       Sk.configure({output:outf, read:builtinRead});
-       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
-       var myPromise = Sk.misceval.asyncToPromise(function() {
-           return Sk.importMainWithBody("<stdin>", false, prog, true);
-       });
-       myPromise.then(function(mod) {
-           console.log('success');
-       },
-           function(err) {
-           console.log('failed');
-           mypre.innerText = err.toString()
-       });
-    } 
 </script>
