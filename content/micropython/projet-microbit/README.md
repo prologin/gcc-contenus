@@ -1,5 +1,5 @@
-Le pdf est disponible
-[ici](https://github.com/prologin/gcc-resources/blob/gh-pages/05_projet_microbit.pdf).
+Le TP est disponible
+[ici](https://tp.girlscancode.fr/micropython/projet-microbit).
 
 Le TP est basé sur l’utilisation des [microbits](https://microbit.org/) et
 l'implémentation de petits programmes dessus. Il vous guide dans l’utilisation
