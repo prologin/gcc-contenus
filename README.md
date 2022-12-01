@@ -27,6 +27,19 @@ faut faire
 hugo new -k subject micropython/usine
 ```
 
+## Cheat-sheet
+Une cheat-sheet existe aussi pour présenter toutes les possibilités qui existent
+pour créer un nouveau TP. 
+Le code source de cette cheat-sheet se situe dans
+`content/draft/exemple/index.md`. Vous pouvez visualiser le rendu, vous
+pouvez lancer `hugo` avec les commandes : 
+```bash
+yarn install
+yarn build
+hugo server --buildDrafts
+```
+Il vous suffit alors de chercher la cheat-sheet dans `Draft folders/TP Exemple`
+
 ## Remplir les meta-data
 
 ### `code_stub_url`
@@ -90,8 +103,11 @@ particularités du TP.
 # Fonctionnement de Hugo
 Pour lancer le site en local, il suffit de taper cette commande dans un
 terminal : 
+
 ```bash
-hugo server --renderToDisk --noHTTPCache
+yarn install
+yarn build
+hugo server
 ```
 Il est alors marqué sur quel port trouver le site en local (souvent le port `1313`).
 
