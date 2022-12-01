@@ -36,11 +36,6 @@ table {
     margin-right: auto;
 }
 
-ol {
-    margin: 0;
-    padding: 0;
-}
-
 [id^=section] {
     list-style: none;
 }
