@@ -2,12 +2,12 @@
 title: "Découverte de Micropython"
 date: 2022
 weight: 5
-subtitle: "Au cours de ce TP, tu vas découvrir comment utiliser le `micro:bit` et comment coder en micropython."
+subtitle: "Au cours de ce TP, tu vas découvrir comment utiliser le micro:bit et comment coder en micropython."
 ---
 
 # Introduction
 
-Bonjour à toi jeune programmeuse, 
+Bonjour à toi jeune programmeuse,  
 Je me présente, je suis Joseph Marchand, et c'est moi qui vais t'accompagner au
 travers des différents TPs afin de t'apprendre à créer tes propres programmes
 informatiques. Avant de commencer, laisse moi aussi te présenter mes fidèles
@@ -182,9 +182,9 @@ afficher des images et des symboles : `display.show(Image.NOM_IMAGE)`, où
 Tu peux trouver la liste des images pré-enregistrées
 [ici](https://microbit-micropython.readthedocs.io/fr/latest/tutorials/images.html).
 
-Voici à quoi ressemblent les images `HEART` et `SMILE` :
+Voici à quoi ressemblent les images `HEART` et `HAPPY` :
 
-{{<figure src="resources/images/microbit_images.jpg" width=600 caption="`Image.HEART` et `Image.SMILE`">}}
+{{<figure src="resources/images/microbit_images.jpg" width=600 caption="`Image.HEART` et `Image.HAPPY`">}}
 
 ### Mini-exercice
 **But :** Affiche un smiley content sur l'écran du `micro:bit`.
@@ -353,7 +353,7 @@ display.scroll(texte)  # Affiche "Il y a 42 patates !" sur l'écran
 **But :** Comme dans l'exercice précédent, Joseph a besoin de savoir combien 
 vont lui coûter ses bananes. Mais le marchand a augmenté le prix et les bananes 
 coûtent désormais 3€ chacune. Après avoir calculé, affiche `"Payer (le prix) 
-pour 10 bananes ? Mais c'est beaucoup trop cher !"` en remplacant `le prix` par 
+pour 10 bananes ? Mais c'est beaucoup trop cher !"` en remplaçant `le prix` par 
 sa valeur.
 
 
@@ -481,7 +481,7 @@ instruction. Par exemple, la première ligne ci-dessous a une indentation égale
 ```python
 display.scroll("Coucou") # Ligne qui n'est pas indentée
 if True:
-    display.show(Image.SMILE) # Ligne qui est indentée
+    display.show(Image.HAPPY) # Ligne qui est indentée
 ```
 
 L'indentation permet surtout de définir des blocs. Chaque ligne avec la même 
@@ -615,7 +615,7 @@ for i in range(5):
     display.scroll("Coucou numéro " + str(i))
     sleep(500)
 
-display.show(Image.SMILE) # Cette ligne de code n'est pas répétée
+display.show(Image.HAPPY) # Cette ligne de code n'est pas répétée
 ```
 
 - _Ligne 1_ : Ici, c'est la déclaration de la boucle. C'est la partie la plus complexe.
@@ -666,6 +666,9 @@ limiter à deux nombres. Écris un programme qui multiplie 3 nombres entre eux. 
 peux récupérer les nombres en comptant le nombre d'appuis sur le bouton A, en
 laissant quelques secondes à chaque fois. 
 
+_Aide :_ Pour savoir quand tu passes au nombre suivant, tu peux allumer la LED
+de coordonnée `(0, i)` à chaque début de boucle. 
+
 
 
 ## Tant que 
@@ -691,6 +694,9 @@ Pour ce qui concerne les lignes suivantes, tu connais déjà leur comportement.
 **But :** Écris un programme qui compte et affiche le nombre d'appuis sur les
 boutons A et B avant que le bouton tactile ne soit touché. 
 
+_Aide :_ Tu peux utiliser `display.show(Image.ALL_CLOCKS)` pour afficher une
+horloge d'attente. 
+
 
 [SECTION-BREAK]
 
@@ -710,17 +716,23 @@ dés et affiche le résultat (le résultat est donc entre 2 et 12) lorsque le
 bouton A ou le bouton B est appuyé. 
 Mais comme Joseph ne veut pas que ses amis pensent qu'il a simplement
 oublié les vrais dés, il voudrait donc y ajouter quelques fonctionnalités : 
-- Il voudrait que le chiffre disparaisse 5 secondes après être apparu
-- Il voudrait aussi que si le lancé est un double, un smiley content s'affiche
+- Il voudrait que si le lancé est un double, un smiley content s'affiche
 juste après le chiffre
-- Il voudrait enfin que si trois doubles sont faits d'affilée, un smiley pas
-content s'affiche à la place de la valeur des dés
+- Par contre, il voudrait que si trois doubles sont faits d'affilée, un smiley pas
+content s'affiche à la place du smiley content
+- Il voudrait enfin que le smiley disparaisse 2 secondes après être apparu
 
 ## Tips
 
 N'hésite pas à faire ce projet étape par étape. Tu peux commencer par coder le
 lancé des deux dés, et lorsque cela fonctionne, ajouter les différentes demandes
 de Joseph les unes après les autres. 
+
+Pense aussi à remettre le nombre de doubles à zéro lorsque le `micro:bit` change
+de joueur ! 
+
+Tu peux aussi utiliser la fonction `display.clear()` pour effacer l'écran.
+
 Si tu as une quelconque question, encore une fois, les organisateurs sont là
 pour y répondre. 
 
@@ -836,7 +848,7 @@ a = display.get_pixel(2, 2)  # `a` vaut maintenant 9
 
 Cette fonction sert à afficher une image, le plus simple est généralement
 d'utiliser une image parmi la liste prédéfinie : `Image.HEART`, `Image.HAPPY`,
-`Image.SMILE`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus complète
+`Image.HAPPY`, `Image.SAD`, `Image.YES`, `Image.NO`, ... Une liste plus complète
 peut être trouvée [ici](https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes).
 
 ```python
