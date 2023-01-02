@@ -17,6 +17,17 @@ faut faire
 hugo new -k subject micropython/usine
 ```
 
+### D'autres ressources ?
+
+Dans l'architecture de votre projet, le dossier `resources/images` est là pour
+stocker les images de votre sujet. 
+Vous pouvez aussi avoir d'autres types de ressources, comme une référence (`ref`), que vous
+pouvez placer dans le dossier `resources/ref`, ou des ressources que les filles peuvent
+télécharger, que vous pouvez placer dans le dossier `resources/given_resources`. 
+
+Pour les autres types de resources, vous êtes libres de les placer où vous
+voulez dans le dossier `resources`. 
+
 
 ## Cheat-sheet
 
@@ -40,7 +51,7 @@ Il vous suffit alors de chercher la cheat-sheet dans `Draft folders/TP Exemple`
 ### `code_stub_url`
 
 Toutes les meta-data du squelette sont nécessaires, sauf le champs
-`code_stub_url`, qui n'est utile que s'il y a un skeleton à transmettre aux
+`code_stub_url`, qui n'est utile que s'il y a un `skeleton` à transmettre aux
 participantes. Le cas échéant, ce champs doit contenir un lien vers un fichier
 (`zip` s'il y a plus d'un fichier à transmettre). 
 
@@ -117,7 +128,7 @@ au début de la partie à mettre dans ce style, et
 ## À vous de jouer !
 
 Il ne reste plus qu'à écrire le sujet dans le fichier `index.md`. Vous pouvez
-aussi écrire un `README.md` additionnel si jamais certaines informations doivent
+aussi écrire un fichier `README.md` additionnel si jamais certaines informations doivent
 être transmises aux organisateurs mais pas aux participantes. 
 Ce fichier sera essentiellement destiné aux organisateurs et permet d'éclaicir certaines
 particularités du TP. 
