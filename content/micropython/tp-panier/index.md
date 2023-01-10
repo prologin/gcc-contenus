@@ -168,37 +168,19 @@ a = randint(0, 4)
 La variable `a` peut ici contenir la valeur `0`, `1`, `2`, `3`, ou `4`.
 
 
-Pour créer la pomme nous allons utiliser un `tuple`. Un tuple est un couple de valeurs.  
-Le tuple peut être vu comme une liste contenant des valeurs à l'intérieur.  
-L'utilisation d'un tuple va donc nous permettre de conserver la position des pommes, la position horizontale en x et la position verticale en y, dans une variable qui sera notre boîte.  
+Pour créer notre pomme nous allons utiliser deux variables `pomme_x` et `pomme_y`.
+L'utilisation de ces deux variables va nous permettre de conserver la position des pommes, la position horizontale en x et la position verticale en y, dans deux variables (ou boîte).
 *En cas de besoin, n'hésite pas à demander de l'aide aux organisateurs qui sont là pour t'aider.*
 
-```python
-# ici la variable a est un tuple contenant les nombres 1 et 2.
->>> a = (1, 2)
->>> print(a)
-(1, 2)
-# pour changer les valeurs d'un tuple, il faut le réassigner :
->>> a = (3, 4)
->>> print(a)
-(3, 4)
-```
-Par ailleurs, tu peux avoir besoin d'accéder à un seul élément d'un tuple.
 
-Pour cela, il faut indiquer le nom du tuple puis, ouvrir des crochets pour indiquer la position de l'élément auquel tu souhaites accéder, et refermer les crochets.  
-*Attention le premier élément se situe à l'index `0` !!!*
-
-```python
->>> a = (1, 2)
->>> print(a[0])
-# ici on affiche le premier élément du tuple
-1
->>> b = a[1]
-# on stock le second élément du tuple dans une variable
->>> print(b)
-# puis on affiche la valeur de la variable
-2
+```codepython
+# ici les variables contiennent les nombres 1 et 2.
+pomme_x = 1
+pomme_y = 2
+# Pour afficher la pomme, qui est en 2e colonne, 3e ligne
+display.set_pixel(pomme_x, pomme_y, 9)
 ```
+
 Tu peux maintenant faire apparaître une pomme de manière aléatoire et changer son emplacement. À chaque tour, la pomme doit descendre sur l'axe vertical.
 
 {{<figure src="resources/microbit_pomme.png" width=500 caption="Les pommes sur un microbit">}}
