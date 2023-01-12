@@ -84,7 +84,7 @@ trouver la documentation [ici](https://gohugo.io/content-management/shortcodes/#
 
 On peut par exemple définir la taille de l'image :
 ```go
-`{{<figure src="resources/images/img.png" width=400>}}`
+{{<figure src="resources/images/img.png" width=400>}}
 ```
 
 ### Diviser votre TP
@@ -119,10 +119,10 @@ Il permettent de différencier les parties du TP. Pour les utiliser, il faut met
 au début de la partie à mettre dans ce style, et
 
 ```
-{{% \Insérer_le_nom_du_shortcode %}}
+{{% /Insérer_le_nom_du_shortcode %}}
 ```
 
-à la fin
+à la fin.
 
 
 ## À vous de jouer !
