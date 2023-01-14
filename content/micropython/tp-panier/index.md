@@ -173,7 +173,7 @@ L'utilisation de ces deux variables va nous permettre de conserver la position d
 *En cas de besoin, n'hésite pas à demander de l'aide aux organisateurs qui sont là pour t'aider.*
 
 
-```codepython
+```python
 # ici les variables contiennent les nombres 1 et 2.
 pomme_x = 1
 pomme_y = 2
