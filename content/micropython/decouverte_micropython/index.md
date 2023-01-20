@@ -276,15 +276,14 @@ après chaque ligne du programme :
 ```python
 from microbit import *
 
-x = 3
-y = 5
-y = 2 * y
-x = x + y
+panier_pommes = 3
+panier_poires = 5
+panier_poires = 2 * panier_poires # panier_poires vaut 2 * 5 = 10
+panier_fruits = panier_pommes + panier_poires # panier_fruits vaut 10 + 3 = 13
 
-display.scroll(x)
+display.scroll(panier_fruits)
 ```
 
-{{<figure src="resources/images/variables.png" width=850 >}}
 
 ### Mini-Exercice
 **But :** Crée une variable avec la valeur 42, puis ajoutes-y 2 et affiche-la 
