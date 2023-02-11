@@ -12,17 +12,16 @@ stages:
   before_script:
     - apk add yarn bash
   script:
-    - yarn install
-    - yarn build
+    - ./build.sh
     - hugo
+  variables:
+      GIT_SUBMODULE_STRATEGY: recursive
 
 build:
   extends: .hugo
   stage: build
   rules:
     - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
-  variables:
-      GIT_SUBMODULE_STRATEGY: recursive
 
 pages:
   extends: .hugo
