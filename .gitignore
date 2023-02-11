@@ -8,11 +8,3 @@ go.sum
 
 /node_modules/
 
-# files import with yarn
-/themes/gcc/static/js/codemirror/
-/themes/gcc/static/js/jquery.min.js
-/themes/gcc/static/js/skulpt-stdlib.js
-/themes/gcc/static/js/skulpt.min.js
-/themes/gcc/static/js/tex-svg.js
-
-/themes/gcc/static/css/codemirror/
