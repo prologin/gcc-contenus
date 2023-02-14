@@ -87,3 +87,10 @@ Voici un shortcode _exemple_.
 {{% exercice %}}
 Voici un shortcode _exercice_.
 {{% /exercice %}}
+
+## Un block spoiler
+
+La phrase suivante contient un spoiler. Il cache une zone de texte, qui est
+révélée quand on appuie dessus.
+Qu'est-ce qui est jaune et qui attend ? {{< spoiler >}}Un citron
+dans un ascenseur{{</ spoiler >}}.
