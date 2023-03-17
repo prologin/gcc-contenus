@@ -408,6 +408,11 @@ Bravo, vous avez deviné !
 ```
 Écris un programme qui permet de jouer à ce jeu.
 
+La première chose à faire est de choisir un nombre aléatoirement.
+Tu auras besoin de la bibliothèque `random`  de python (_random_ signifie _aléatoire_ en anglais).
+Pour l'utiliser, ajoute au début du fichier `from random import *`. Cela te permettra de pouvoir utiliser
+la fonction `randint(a,b)` avec `a` et `b` deux nombres entier. Cette fonction renvoie un nombre entier aléatoire compris entre `a` et `b` inclus.
+
 *Bonus :* À ton avis, quelle est la meilleure stratégie pour gagner à ce jeu ?
 
 # Les fonctions
