@@ -8,8 +8,6 @@ subtitle:
 
 # Le chiffre de César
 
-_Prérequis : la table ASCII, modulo_
-
 ### **La table ASCII**
 
 Avant de commencer, nous allons rapidement évoquer une notion qui vous sera utile tout au long de ce TP.
@@ -65,7 +63,7 @@ letterCaesar('e', 6)
 'k'
 ```
 
-**Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à `%`).
+**Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos.
 Des astuces se trouvent un peu plus bas dans "Quelques fonctions et notions utiles".
 
 Exemples :
@@ -75,6 +73,22 @@ letterCaesar('!', 1)
 
 letterCaesar('z', 2)
 'b'
+```
+
+L'opérateur modulo s'écrit '%' en Python. Il permet de retourner le reste de la division entière.
+Par exemple :
+```py
+6 % 4
+2     # parce que 6 = 4 * 1 + 2
+
+5 % 2
+1     # parce que 5 = 2 * 2 + 1
+
+29 % 26
+3     # parce que 29 = 26 * 1 + 3
+
+26 % 26
+0     # parce que 26 = 26 * 1 + 0
 ```
 
 **Bonus:** essayez de gérer les majuscules et minuscules.
