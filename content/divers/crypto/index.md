@@ -56,74 +56,126 @@ Ainsi, il va falloir implémenter les fonctions `letterCaesar(l, d)` et `textCae
 
 Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre `l` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractère. Quant au paramètre `d`, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
 
+Exemples :
+```py
+letterCaesar('a', 1)    # entrée
+'b'                     # sortie
+
+letterCaesar('e', 6)
+'k'
+```
+
 **Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos si vous savez ce que c'est (en python, cela correspond à `%`).
+Des astuces se trouvent un peu plus bas dans "Quelques fonctions et notions utiles".
+
+Exemples :
+```py
+letterCaesar('!', 1)
+'!'
+
+letterCaesar('z', 2)
+'b'
+```
 
 **Bonus:** essayez de gérer les majuscules et minuscules.
+
+Exemples :
+```py
+letterCaesar('A', 1)
+'B'
+
+letterCaesar('Z', 2)
+'B'
+```
+
 
 ### La fonction `textCaesar(t, d)`
 
 Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre `t` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre `d` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
 
+Exemples :
+```py
+textCaesar('hello', 1)
+'ifmmp'
+```
+
+
 ## Quelques fonctions et notions utiles
 
 ```py
-# L'opérateur + permet, quand il est appliqué à des chaînes de caractères, de concaténer celles-ci. Exemples:
+# L'opérateur + permet, quand il est appliqué à des chaînes de caractères,
+# de concaténer celles-ci. Exemples:
 
->>> 'Hello' + 'World'
+'Hello' + 'World'
 'HelloWorld'
->>> 'O' + 'K'
+
+'O' + 'K'
 'OK'
 
 
-# La fonction len() permet de connaître la longueur d'une chaîne de caractère.
+# La fonction len() permet de connaître la longueur d'une chaîne de caractères.
 
->>> len('Hello World')
+len('Hello World')
 11
->>> s = 'ABCD'
->>> len(s)
+
+s = 'ABCD'
+
+len(s)
 4
 
 
-# Les fonctions ord() et chr() permettent de transformer un caractère en son code ASCII et vice-versa.
+# Les fonctions ord() et chr() permettent de transformer un caractère en son
+# code ASCII et vice-versa.
 
->>> ord('A')
+ord('A')
 65
->>> ord('C')
+
+ord('C')
 67
->>> chr(65)
+
+chr(65)
 'A'
 
 
 # La méthode upper() permet de tranformer une chaîne de caractères en majuscules.
 
->>> s = 'hello World'
->>> s.upper()
-'HELLO WORLD'
->>> 'a'.upper()
-'A'
-```
+s = 'hello World'
 
-```py
+s.upper()
+'HELLO WORLD'
+
+'a'.upper()
+'A'
+
+
 # La méthode isalpha() permet de déterminer si un caractère est une lettre ou non.
 
->>> c = '!'
->>> c.isalpha()
+c = '!'
+
+c.isalpha()
 False
->>> c = 'a'
->>> c.isalpha()
+
+c = 'a'
+
+c.isalpha()
 True
 
 
 # La méthode isupper() permet de savoir si un caractère est une majuscule ou non.
 
->>> c = 'G'
->>> c.isupper()
+c = 'G'
+
+c.isupper()
 True
->>> c = "HELLO"
->>> c.isupper()
+
+c = "HELLO"
+
+c.isupper()
 True
->>> c = 'g'
->>> c.isupper()
+
+c = 'g'
+
+c.isupper()
 False
 ```
 
@@ -133,7 +185,9 @@ Pour déchiffrer un message il suffit d'utiliser la clé inverse à celle utilis
 
 ```py
 msg = stringCaesar("Hello World", 10)   # chiffre "Hello World", va donner "Rovvy Gybvn"
-stringCaesar(msg, -10)                  # déchiffre msg, va donner "Hello World"
+
+stringCaesar(msg, -10)                  # déchiffre msg
+"Hello World"
 ```
 
 Dans un premier temps, testez avec votre code pour observer le résultat obtenu. Puis, adaptez votre code pour prendre en compte les décalages négatifs.
@@ -146,7 +200,7 @@ La méthode que vous allez implémenter consiste en du brute force.
 
 **Qu'est-ce que le brute force ?**  Pour faire simple, cela consiste à essayer toutes les combinaisons possibles. Dans notre cas, cela revient à essayer 26 possibilités, puisqu'il y a 26 lettres dans l'alphabet.
 
-Vous allez donc implémenter la fonction `breakCaesar(msg)`. Elle prend en paramètre une chaîne de caractère (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer `charCaesar(c, d)` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour `breakCaesar("Rovvy Gybvn")`:
+Vous allez donc implémenter la fonction `breakCaesar(msg)`. Elle prend en paramètre une chaîne de caractères (chiffrée) et ne renvoie rien. Son but va être d'afficher toutes les possibilités de déchiffrement du message. C'est à dire, à appliquer `charCaesar(c, d)` avec différentes valeurs de décalage. Voici un exemple de ce qu'elle devrait afficher pour `breakCaesar("Rovvy Gybvn")`:
 
 ```text
 Spwwz Hzcwo
@@ -179,19 +233,23 @@ Rovvy Gybvn
 
 Vous pouvez tout à fait améliorer l'affichage pour que cela soit davantage lisible !
 
-La fonction `print()` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractère, un nombre, une liste...). Par exemple :
+La fonction `print()` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractères, un nombre, une liste...). Par exemple :
 
 ```py
->>> s = "Hello World"
->>> print(s)
-Hello World
->>> print("Bonjour !")
-Bonjour !
->>> print(42)
-42
->>> print() # sans argument, print() affiche uniquement un retour à la ligne
+s = "Hello World"
 
->>>
+print(s)
+Hello World
+
+print("Bonjour !")
+Bonjour !
+
+print(42)
+42
+
+print() # sans argument, print() affiche uniquement un retour à la ligne
+
+
 # N'hésitez pas à essayer de votre côté !
 ```
 
@@ -213,16 +271,16 @@ Le chiffre de Vigenère est une méthode de chiffrement par substitution imagin�
 
 ## Principe du chiffre de Vigenère
 
-Cette méthode de chiffrement est assez similaire au chiffre de César que vous avez implémenté précedemment. La différence notable est que, pour Vigenère, on applique à chaque lettre du message un décalage différent. Celui-ci dépendant d'une clé donnée au préalable, correspondant à une chaîne de caractères.
+Cette méthode de chiffrement est assez similaire au chiffre de César que vous avez implémenté précédemment. La différence notable est que, pour Vigenère, on applique à chaque lettre du message un décalage différent. Ce décalage est donné par une clé, sous forme de chaîne de caractères.
 
-De la clé, on en déduit ensuite les décalages successifs à appliquer (on considère que a est la "0e" lettre de l'alphabet). Exemple avec la clé **"clef"** :
+Pour chaque lettre de la chaîne de caractères clé, nous déduisons un décalage à appliquer (on considère que a est la "0e" lettre de l'alphabet). Exemple avec la clé **"clef"** :
 
 - **c** est la 2e lettre de l'alphabet, le décalage correspond ici à 2
 - **l** est la 11e lettre de l'alphabet, ici ce sera 11
 - **e** est la 4e lettre de l'alphabet, ici ce sera 4
 - **f** est la 5e lettre de l'alphabet, ici ce sera 5
 
-Si la clé est plus courte que le message, celle-ci sera répétée autant de fois que nécessaire. Voici un exemple avec la clé **"clef"** :
+Si la chaîne de caractères clé est plus courte que la chaîne de caractères message, elle sera répétée autant de fois que nécessaire. Voici un exemple avec la clé **"clef"** :
 
 ```text
 Message :           Comment est votre blanquette ?
@@ -237,11 +295,50 @@ Pour implémenter le chiffre de Vigenère, il va être plus simple de diviser le
 
 ### La fonction `keyToOffset(k)`
 
-Cette fonction a pour but de convertir la clé en une liste de décalages. Elle prend en paramètre `k` la clé, qui correspond à une chaîne de caractères. Elle retourne une liste de la longueur de la clé contenant les décalages correspondant à chaque lettre de la clé.
+Cette fonction a pour but de convertir la clé en une liste de décalages. Elle prend en paramètre `k` la clé, qui correspond à une chaîne de caractères. Elle retourne une liste, ayant pour taille le nombre de caractères de la clé, contenant les décalages correspondant à chaque lettre de la clé.
+
+#### Les listes
+
+Les listes permettent de stocker plusieurs éléments dans une même variable.
+
+Tu peux les manipuler aisément :
+
+```py
+L[0]    # récupère le premier élément de la liste
+L[i]    # récupère l'élément à la i-eme position (i allant de 0 à la longueur de la liste)
+
+len(L)  # calcule la longueur de la liste
+
+L.append(1)  # ajoute le nombre 1 à la fin de la liste L
+
+# Pour passer sur tous les éléments de la liste, pour les afficher par exemple, on peut faire :
+for i in range(0, len(L)):   # ici on a `i` de prendre les valeurs de 0 à len(L)-1
+    print(L[i])
+```
+
+#### Exemples pour la fonction `keyToOffset(k)`
+
+```py
+keyToOffset("ae")
+[0, 4]
+
+keyToOffset("atest")
+[0, 19, 4, 18, 19]
+
+keyToOffset("clef")
+[2, 11, 4, 5]
+```
 
 ### La fonction `textVigenere(t, k)`
 
 Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. Elle prend en paramètre `t`, une chaîne de caractères, qui est le message à dissimuler. L'autre paramètre `k`, est aussi une chaîne de caractères et correspond à la clé.
+
+#### Exemples pour la fonction `textVigenere(t, k)`
+
+```py
+textVigenere("hello!", "ae")
+"hilpo!"
+```
 
 ## Annexe
 
