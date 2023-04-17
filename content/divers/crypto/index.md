@@ -56,11 +56,8 @@ Cette fonction va se charger d'appliquer le chiffre de César à seulement une l
 
 Exemples :
 ```py
-letterCaesar('a', 1)    # entrée
-'b'                     # sortie
-
-letterCaesar('e', 6)
-'k'
+letterCaesar('a', 1)      # Renvoie 'b'
+letterCaesar('e', 6)      # Renvoie 'k'
 ```
 
 **Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos.
@@ -68,38 +65,25 @@ Des astuces se trouvent un peu plus bas dans "Quelques fonctions et notions util
 
 Exemples :
 ```py
-letterCaesar('!', 1)
-'!'
-
-letterCaesar('z', 2)
-'b'
+letterCaesar('!', 1)      # Renvoie '!'
+letterCaesar('z', 2)      # Renvoie 'b'
 ```
 
 L'opérateur modulo s'écrit '%' en Python. Il permet de retourner le reste de la division entière.
 Par exemple :
-```py
-6 % 4
-2     # parce que 6 = 4 * 1 + 2
-
-5 % 2
-1     # parce que 5 = 2 * 2 + 1
-
-29 % 26
-3     # parce que 29 = 26 * 1 + 3
-
-26 % 26
-0     # parce que 26 = 26 * 1 + 0
+```codepython
+print(6 % 4)              # Affiche 2 (6 = 4 * 1 + 2)
+print(5 % 2)              # Affiche 1 (5 = 2 * 2 + 1)
+print(29 % 26)            # Affiche 3 (29 = 26 * 1 + 3)
+print(26 % 26)            # Affiche 0 (26 = 26 * 1 + 0)
 ```
 
 **Bonus:** essayez de gérer les majuscules et minuscules.
 
 Exemples :
 ```py
-letterCaesar('A', 1)
-'B'
-
-letterCaesar('Z', 2)
-'B'
+letterCaesar('A', 1)      # Renvoie 'B'
+letterCaesar('Z', 2)      # Renvoie 'B'
 ```
 
 
@@ -109,88 +93,63 @@ Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de
 
 Exemples :
 ```py
-textCaesar('hello', 1)
-'ifmmp'
+textCaesar('hello', 1)    # Renvoie 'ifmmp'
 ```
 
 
 ## Quelques fonctions et notions utiles
 
-```py
+```codepython
 # L'opérateur + permet, quand il est appliqué à des chaînes de caractères,
 # de concaténer celles-ci. Exemples:
 
-'Hello' + 'World'
-'HelloWorld'
-
-'O' + 'K'
-'OK'
+print('Hello' + 'World')  # Affiche 'HelloWorld'
+print('O' + 'K')          # Affiche 'OK'
 
 
 # La fonction len() permet de connaître la longueur d'une chaîne de caractères.
 
-len('Hello World')
-11
+print(len('Hello World')) # Affiche 11
 
 s = 'ABCD'
-
-len(s)
-4
+print(len(s))             # Affiche 4
 
 
 # Les fonctions ord() et chr() permettent de transformer un caractère en son
 # code ASCII et vice-versa.
 
-ord('A')
-65
+print(ord('A'))           # Affiche 65
+print(ord('C'))           # Affiche 67
 
-ord('C')
-67
-
-chr(65)
-'A'
+print(chr(65))            # Affiche 'A'
 
 
 # La méthode upper() permet de tranformer une chaîne de caractères en majuscules.
 
 s = 'hello World'
-
-s.upper()
-'HELLO WORLD'
-
-'a'.upper()
-'A'
+print(s.upper())          # Affiche 'HELLO WORLD'
+print('a'.upper())        # Affiche 'A'
 
 
 # La méthode isalpha() permet de déterminer si un caractère est une lettre ou non.
 
 c = '!'
-
-c.isalpha()
-False
+print(c.isalpha())        # Affiche False
 
 c = 'a'
-
-c.isalpha()
-True
+print(c.isalpha())        # Affiche True
 
 
 # La méthode isupper() permet de savoir si un caractère est une majuscule ou non.
 
 c = 'G'
-
-c.isupper()
-True
+print(c.isupper())        # Affiche True
 
 c = "HELLO"
-
-c.isupper()
-True
+print(c.isupper())        # Affiche True
 
 c = 'g'
-
-c.isupper()
-False
+print(c.isupper())        # Affiche False
 ```
 
 ## Déchiffrer un message
@@ -198,10 +157,11 @@ False
 Pour déchiffrer un message il suffit d'utiliser la clé inverse à celle utilisée pour chiffrer. Par exemple:
 
 ```py
-msg = stringCaesar("Hello World", 10)   # chiffre "Hello World", va donner "Rovvy Gybvn"
+msg = stringCaesar("Hello World", 10)   # Chiffre "Hello World" et
+                                        # affiche "Rovvy Gybvn"
 
-stringCaesar(msg, -10)                  # déchiffre msg
-"Hello World"
+stringCaesar(msg, -10)                  # Déchiffre msg et
+                                        # affiche "Hello World"
 ```
 
 Dans un premier temps, testez avec votre code pour observer le résultat obtenu. Puis, adaptez votre code pour prendre en compte les décalages négatifs.
@@ -232,7 +192,7 @@ Dahhk Sknhz
 Ebiil Tloia
 Fcjjm Umpjb
 Gdkkn Vnqkc
-Hello World     # message déchiffré !
+Hello World     # Message déchiffré !
 Ifmmp Xpsme
 Jgnnq Yqtnf
 Khoor Zruog
@@ -249,19 +209,14 @@ Vous pouvez tout à fait améliorer l'affichage pour que cela soit davantage lis
 
 La fonction `print()` va vous être utile. Elle permet d'afficher ce qu'on lui donne en paramètre (une chaîne de caractères, un nombre, une liste...). Par exemple :
 
-```py
+```codepython
 s = "Hello World"
+print(s)                  # Affiche "Hello World"
 
-print(s)
-Hello World
+print("Bonjour !")        # Affiche "Bonjour !"
+print(42)                 # Affiche 42
 
-print("Bonjour !")
-Bonjour !
-
-print(42)
-42
-
-print() # sans argument, print() affiche uniquement un retour à la ligne
+print() # Sans argument, print() affiche uniquement un retour à la ligne
 
 
 # N'hésitez pas à essayer de votre côté !
@@ -287,7 +242,7 @@ Le chiffre de Vigenère est une méthode de chiffrement par substitution imagin�
 
 Cette méthode de chiffrement est assez similaire au chiffre de César que vous avez implémenté précédemment. La différence notable est que, pour Vigenère, on applique à chaque lettre du message un décalage différent. Ce décalage est donné par une clé, sous forme de chaîne de caractères.
 
-Pour chaque lettre de la chaîne de caractères clé, nous déduisons un décalage à appliquer (on considère que a est la "0e" lettre de l'alphabet). Exemple avec la clé **"clef"** :
+Pour chaque lettre de la chaîne de caractères clé, nous déduisons un décalage à appliquer (on considère que `a` est la zerotième lettre de l'alphabet). Exemple avec la clé **"clef"** :
 
 - **c** est la 2e lettre de l'alphabet, le décalage correspond ici à 2
 - **l** est la 11e lettre de l'alphabet, ici ce sera 11
@@ -317,30 +272,30 @@ Les listes permettent de stocker plusieurs éléments dans une même variable.
 
 Tu peux les manipuler aisément :
 
-```py
-L[0]    # récupère le premier élément de la liste
-L[i]    # récupère l'élément à la i-eme position (i allant de 0 à la longueur de la liste)
+```codepython
+L = ['a', 'b', True, 'C', 42, 'd']  # Exemple de liste quelconque
 
-len(L)  # calcule la longueur de la liste
+print(L[0])    # Affiche le premier élément de la liste
 
-L.append(1)  # ajoute le nombre 1 à la fin de la liste L
+i = 2
+print(L[i])    # Affiche l'élément à la i-ème position (i allant de 0 à la longueur de la liste)
 
-# Pour passer sur tous les éléments de la liste, pour les afficher par exemple, on peut faire :
-for i in range(0, len(L)):   # ici on a `i` de prendre les valeurs de 0 à len(L)-1
+print(len(L))  # Calcule la longueur de la liste
+
+L.append(1)    # Ajoute le nombre 1 à la fin de la liste L
+print(L)
+
+# Pour passer sur tous les éléments de la liste et les afficher par exemple, on peut faire :
+for i in range(0, len(L)):   # Ici on a `i` qui prend les valeurs de 0 à len(L)-1
     print(L[i])
 ```
 
 #### Exemples pour la fonction `keyToOffset(k)`
 
 ```py
-keyToOffset("ae")
-[0, 4]
-
-keyToOffset("atest")
-[0, 19, 4, 18, 19]
-
-keyToOffset("clef")
-[2, 11, 4, 5]
+keyToOffset("ae")         # Renvoie [0, 4]
+keyToOffset("atest")      # Renvoie [0, 19, 4, 18, 19]
+keyToOffset("clef")       # Renvoie [2, 11, 4, 5]
 ```
 
 ### La fonction `textVigenere(t, k)`
@@ -350,8 +305,7 @@ Cette fonction va chiffrer le texte donné à l'aide du chiffre du Vigenère. El
 #### Exemples pour la fonction `textVigenere(t, k)`
 
 ```py
-textVigenere("hello!", "ae")
-"hilpo!"
+textVigenere("hello!", "ae")  # Renvoie "hilpo!"
 ```
 
 ## Annexe
