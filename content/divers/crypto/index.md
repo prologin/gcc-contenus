@@ -46,13 +46,36 @@ Voilà donc le principe de base du chiffrement de César.
 
 ## Place au code
 
-Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut, dans un premier temps, appliquer le chiffrement à une seule lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, vous pouvez ne prendre en compte que les lettres majuscules ou minuscules si cela vous aide.
+Pour implémenter le chiffre de César, il va être plus simple de diviser le problème en deux parties. On peut, dans un premier temps, appliquer le chiffrement à une seule lettre, puis ensuite appliquer cela à une chaîne de caractères. Pour l'instant, on va prendre en compte que les lettres minuscules.
 
-Ainsi, il va falloir implémenter les fonctions `letterCaesar(l, d)` et `textCaesar(s, d)`.
+### Utilisation de la table ASCII
+
+Pour pouvoir effectuer un décalage, par exemple +1, il est plus simple de travailler avec des nombres entiers.
+Pour cela, nous pouvons utiliser la table ASCII. Elle associe un nombre à chaque caractère.
+
+Nous pouvons utiliser la fonction `ord(CHAR)` qui retourne le nombre associé à la lettre donnée en paramètre (ici `CHAR`).
+Par exemple :
+```codepython
+print(ord('a'))     # affiche 97
+print(ord('e'))     # affiche 101
+```
+
+Et l'opération inverse, pour retrouver une lettre à partir de son nombre ASCII, nous utilisons `chr(NB)`.
+```codepython
+print(chr(97))      # affiche 'a'
+print(chr(100))     # affiche 'd'
+```
+
+Ainsi, nous pouvons décaler une lettre avec :
+- transformer la lettre en nombre
+- appliquer le décalage sur le nombre
+- transformer le nombre en lettre
 
 ### La fonction `letterCaesar(l, d)`
 
-Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre, elle va renvoyer un caractère. Elle prend en paramètre `l` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractère. Quant au paramètre `d`, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
+Cette fonction va se charger d'appliquer le chiffre de César à seulement une lettre minuscule, elle va renvoyer un caractère.
+Elle prend en paramètre `l` qui correspond à la lettre sur laquelle on va appliquer le chiffrement, c'est un caractère.
+Quant au paramètre `d`, il s'agit du décalage qui va être appliqué, c'est un nombre entier.
 
 Exemples :
 ```py
@@ -60,84 +83,125 @@ letterCaesar('a', 1)      # Renvoie 'b'
 letterCaesar('e', 6)      # Renvoie 'k'
 ```
 
-**Conseil :** pensez à prendre en compte les espaces et la ponctuation : ils ne doivent pas être modifiés. Vous pouvez également utiliser des modulos.
-Des astuces se trouvent un peu plus bas dans "Quelques fonctions et notions utiles".
+Une fonction est très utile en programmation, pour pouvoir réutiliser une portion de code très facilement, avec parfois des mini changements.
+Ces changements sont donnés par les paramètres de la fonction.
+Par exemple, dans cette fonction, nous avons 2 changements possibles. Il est possible de changer la lettre (d'abord on veut transformer la lettre 'a', puis la lettre 'e'), et il est possible changer le décalage (d'abord on veut décaler de 1, puis de 6).
 
-Exemples :
-```py
-letterCaesar('!', 1)      # Renvoie '!'
-letterCaesar('z', 2)      # Renvoie 'b'
+Pour définir une fonction en Python, il faut utiliser le mot clé `def`.
+Par exemple :
+```codepython
+def letterCaesar(l, d):
+	# TODO
+	print(l)
+	print(d)
+
+letterCaesar('a', 1)
 ```
+
+Une fonction est également capable de retourner ce qu'elle veut, avec le mot clé `return`.
+Par exemple :
+```codepython
+def letterCaesar(l, d):
+	# TODO
+	return l
+
+lettre = letterCaesar('a', 1)  # récupère la lettre renvoyée par la fonction
+print(lettre)                  # affiche la lettre renvoyée
+```
+
+Attention, une fonction définit avec `def` ne fait rien, si elle n'est jamais appelée :
+```codepython
+def letterCaesar(l, d):
+	# TODO
+	return l
+
+# ne fait rien
+```
+
+### Les caractères spéciaux
+
+Lors du chiffrement des messages de ce TP, nous ne voulons pas transformer les caractères spéciaux tels que les espaces, la ponctuation, etc.
+Pour cela, il nous faut rajouter une condition dans la fonction précédente.
+Nous voulons transformer le caractère donné en paramètre, uniquement si celui-ci est une lettre.
+Et ça tombe bien, Python nous donne ceci très facilement avec :
+```codepython
+caractere = 'a'
+print(caractere.isalpha())    # affiche True
+
+caractere2 = '!'
+print(caractere2.isalpha())    # affiche False
+```
+
+Pour résumer, nous voulons :
+- si le caractère est une lettre :
+	- transformer la lettre en nombre
+	- appliquer le décalage sur le nombre
+	- transformer le nombre décalé en lettre
+	- retourner la lettre décalée
+- sinon :
+	- retourner le caractère non modifié
+
+
+### Le dépassement de l'alphabet
+
+Que se passe-t-il si nous décalons la lettre 'z' une fois ?
+Nous souhaitons avoir la lettre 'a'.
+Cependant si on regarde la table ASCII, la lettre 'a' ne se trouve pas après la lettre 'z'....
+
+Nous devons donc gérer ce cas supplémentaire, le dépassement de l'alphabet.
+
+Revenons à ce que nous savons :
+- Il y a 26 lettres dans l'alphabet
+- La première lettre de l'alphabet est le 'a'
+- Lors du décalage, nous voulons passer du 'z' au 'a'
+
+Pour rendre la tâche plus simple, nous allons associer la lettre 'a' au nombre 0, la lettre 'b' au nombre 1, etc jusqu'à la lettre 'z' au nombre 25.
+Donc pour passer de la lettre 'z' à la lettre 'a' lors d'un décalage, nous passons de 25 à 0.
+Cette opération correspond au modulo.
 
 L'opérateur modulo s'écrit '%' en Python. Il permet de retourner le reste de la division entière.
 Par exemple :
 ```codepython
 print(6 % 4)              # Affiche 2 (6 = 4 * 1 + 2)
 print(5 % 2)              # Affiche 1 (5 = 2 * 2 + 1)
-print(29 % 26)            # Affiche 3 (29 = 26 * 1 + 3)
+
+print(4 % 26)            # Affiche 4 (4 = 26 * 0 + 4)
 print(26 % 26)            # Affiche 0 (26 = 26 * 1 + 0)
+print(29 % 26)            # Affiche 3 (29 = 26 * 1 + 3)
+
+print(25 % 26)      # Affiche 0 (25 = 26 * 0 + 25)
+print((25 + 1) % 26)      # Affiche 0 (26 = 26 * 1 + 0)
+print((25 + 2) % 26)      # Affiche 1 (27 = 26 * 1 + 1)
 ```
 
-**Bonus:** essayez de gérer les majuscules et minuscules.
+Pour résumer, nous voulons :
+- si le caractère est une lettre :
+	- transformer la lettre en nombre
+	- transformer ce nombre pour qu'il soit entre 0 et 25 (en soustrayant la valeur ASCII de la lettre 'a')
+	- appliquer le décalage sur le nombre réduit
+	- revenir à un nombre de la table ASCII (en ajoutant la valeur ASCII de la lettre 'a')
+	- transformer le nombre décalé en lettre
+	- retourner la lettre décalée
+- sinon :
+	- retourner le caractère non modifié
+
+### Bonus: Lettres minuscules et majuscules
 
 Exemples :
 ```py
+letterCaesar('a', 1)      # Renvoie 'b'
 letterCaesar('A', 1)      # Renvoie 'B'
 letterCaesar('Z', 2)      # Renvoie 'B'
 ```
 
-
-### La fonction `textCaesar(t, d)`
-
-Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre `t` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre `d` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
-
-Exemples :
-```py
-textCaesar('hello', 1)    # Renvoie 'ifmmp'
-```
-
-
-## Quelques fonctions et notions utiles
+Plusieurs fonctions Python sont disponibles pour tester ou transformer un caractère ou une chaîne de caractères en majuscule.
 
 ```codepython
-# L'opérateur + permet, quand il est appliqué à des chaînes de caractères,
-# de concaténer celles-ci. Exemples:
-
-print('Hello' + 'World')  # Affiche 'HelloWorld'
-print('O' + 'K')          # Affiche 'OK'
-
-
-# La fonction len() permet de connaître la longueur d'une chaîne de caractères.
-
-print(len('Hello World')) # Affiche 11
-
-s = 'ABCD'
-print(len(s))             # Affiche 4
-
-
-# Les fonctions ord() et chr() permettent de transformer un caractère en son
-# code ASCII et vice-versa.
-
-print(ord('A'))           # Affiche 65
-print(ord('C'))           # Affiche 67
-
-print(chr(65))            # Affiche 'A'
-
-
 # La méthode upper() permet de tranformer une chaîne de caractères en majuscules.
 
-s = 'hello World'
-print(s.upper())          # Affiche 'HELLO WORLD'
+s = "hello World"
+print(s.upper())          # Affiche "HELLO WORLD"
 print('a'.upper())        # Affiche 'A'
-
-
-# La méthode isalpha() permet de déterminer si un caractère est une lettre ou non.
-
-c = '!'
-print(c.isalpha())        # Affiche False
-
-c = 'a'
-print(c.isalpha())        # Affiche True
 
 
 # La méthode isupper() permet de savoir si un caractère est une majuscule ou non.
@@ -150,6 +214,46 @@ print(c.isupper())        # Affiche True
 
 c = 'g'
 print(c.isupper())        # Affiche False
+```
+
+Attention à changer la lettre sur laquelle on réduit et augmente la valeur ascii pour revenir à un nombre entre 0 et 25.
+
+
+### La fonction `textCaesar(text, d)`
+
+Cette fonction va se charger d'appliquer le chiffre de César sur une chaîne de caractères, elle va renvoyer une chaîne de caractères. Elle prend en paramètre `text` qui correspond à une chaîne de caractères que l'on souhaite chiffrer. Elle prend également un autre paramètre `d` qui correspond au décalage qui doit être appliqué, c'est un nombre entier.
+
+Exemple :
+```py
+textCaesar("hello", 1)    # Renvoie "ifmmp"
+```
+
+Quelques fonctions et notions utiles :
+
+```codepython
+# Pour créer une chaîne de caractères :
+variable_text = ""
+print(variable_text)      # Affiche une chaîne vide
+
+
+# L'opérateur + permet, quand il est appliqué à des chaînes de caractères,
+# de concaténer celles-ci. Exemples:
+
+print("Hello" + "World")  # Affiche "HelloWorld"
+print("O" + "K")          # Affiche "OK"
+
+variable_text = variable_text + 'a'
+print(variable_text)      # Affiche "a"
+
+variable_text = variable_text + "bcd"
+print(variable_text)      # Affiche "abcd"
+
+
+# Pour passer sur tous les caractères d'une chaîne de caractères
+for caractere in variable_text:
+	# Utiliser le caractere. Exemple :
+	print(caractere)
+# Affiche "a", "b", "c", "d", un par ligne
 ```
 
 ## Déchiffrer un message
