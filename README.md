@@ -11,12 +11,12 @@ sujets pour des cours ou pour monter un club d'informatique, faites-le sans
 scrupules !
 
 # Fonctionnement de Hugo
-Pour lancer le site en local, il suffit de taper cette commande dans un
+Pour lancer le site en local, il suffit de taper ces commandes dans un
 terminal : 
 
 ```bash
-yarn install
-yarn build
+git submodule update --init themes/gcc
+./build.sh
 hugo server
 ```
 Il est alors marqué sur quel port trouver le site en local (souvent le port `1313`).

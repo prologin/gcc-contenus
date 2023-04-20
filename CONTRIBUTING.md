@@ -37,9 +37,10 @@ Le code source de cette cheat-sheet se situe dans
 `content/draft/exemple/index.md`. Vous pouvez visualiser le rendu, vous
 pouvez lancer `hugo` avec les commandes :
 
+
 ```bash
-yarn install
-yarn build
+git submodule update --init themes/gcc
+./build.sh
 hugo server --buildDrafts
 ```
 
