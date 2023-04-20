@@ -20,9 +20,12 @@ encore du texte. Du texte à foison afin d'expliquer complètement aux filles le
 différentes notions abordées... 
 
 Nous avons ici du texte en **gras**, _italique_, ~~barré~~, `inline codeblock`,
-**_gras et italique_**, [un lien vers google](https://www.google.fr), etc...
+**_gras et italique_**, [un lien vers google](https://www.google.fr),
+<u>souligné</u>, etc...
 Toutes les balises markdown sont prises en compte par Hugo (si ce n'est pas le
 cas, vous pouvez ouvrir une issue sur [gitlab](https://www.gitlab.com/prologin/gcc/contenus)). 
+
+> Nous avons aussi ici une citation.
 
 ```python
 def function():
