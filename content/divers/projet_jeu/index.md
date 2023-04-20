@@ -3,6 +3,7 @@ title: Projet Jeu
 weight: 16
 subtitle: 
 date: 2019
+code_stub_url: ./resources/given_resources/projet_jeu.zip
 ---
 
 # Introduction
@@ -566,7 +567,7 @@ tombe = pygame.transform.rotate(personnage, 45)
 
 # Sprites
 
-Vous pouvez télécharger toutes les ressources de cette partie en cliquant [ici](./resources.tar.gz).
+Vous pouvez télécharger toutes les ressources de cette partie en cliquant [ici](./resources/given_resources/projet_jeu.zip).
 
 ## Terrains
 
