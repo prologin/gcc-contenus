@@ -65,28 +65,47 @@ marquent une séparation plus nette que de simples changements de titres.
 Cette balise peut, par exemple, séparer une partie assez théorique d'une partie au
 contraire très pratique. 
 
-{{% info %}}
+{{% box type="info" title="Un titre" %}}
 Il est aussi possible de mettre en valeur certaines parties d'un
 TP, pour que celui-ci soit plus lisible et agréable à lire. 
 Ils sont appelés des `shortcodes`. 
-{{% /info %}}
+{{% /box %}}
 
-Voici la fin du shortcode _info_.
+Voici la fin d'une boite _info_.
 
-{{% cours %}}
-Voici un shortcode _cours_.
+{{% box type="info" %}}
+Une box _info_ sans titre.
+{{% /box %}}
+
+
+{{% box type="warning" title="Un titre" %}}
+Voici une boite _warning_.
 Nous pouvons ajouter toutes sortes de balises Markdown dans des shortcodes.
 # Comme des titres
 ## Des sous-titres, etc...
-{{% /cours %}}
+> Et des citations
+{{% /box %}}
 
-{{% exemple %}}
-Voici un shortcode _exemple_.
-{{% /exemple %}}
+{{% box type="warning" %}}
+Une box _warning_ sans titre.
+{{% /box %}}
 
-{{% exercice %}}
-Voici un shortcode _exercice_.
-{{% /exercice %}}
+
+{{% box type="error" title="Un titre" %}}
+Voici une box _error_.
+{{% /box %}}
+
+{{% box type="error" %}}
+Voici une box _error_ sans titre.
+{{% /box %}}
+
+{{% box type="exercice" title="Un titre" %}}
+Voici une box _exercice_.
+{{% /box %}}
+
+{{% box type="exercice" %}}
+Voici une box _exercice_ sans titre.
+{{% /box %}}
 
 ## Un block spoiler
 
