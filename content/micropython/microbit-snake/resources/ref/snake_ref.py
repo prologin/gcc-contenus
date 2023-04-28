@@ -79,10 +79,10 @@ while longueur_serpent < 25:
             pomme = (x, y)
 
     # TODO: Change la direction
-    dir = nouvelle_direction(dir)
+    direction = nouvelle_direction(direction)
 
     # TODO: Trouve la nouvelle tete du serpent
-    head = nouvelle_position_tete(serpent, dir)
+    head = nouvelle_position_tete(serpent, direction)
 
     # TODO: Ajoute la nouvelle tete au serpent (insere la tete en position 0)
     serpent.insert(0, head)
