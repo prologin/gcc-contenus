@@ -152,7 +152,7 @@ Maintenant que les fonctions `nouvelle_direction()` et `nouvelle_position_tete()
 
 ```py
 # Ajoute l'élément en première place de la liste
-liste.insert(element, 0)
+liste.insert(0, element)
 ```
 
 Tu peux exécuter ce petit code pour mieux comprendre :
