@@ -1,5 +1,5 @@
 default:
-  image: registry.gitlab.com/pages/hugo/hugo_extended:0.111.3
+  image: registry.gitlab.com/pages/hugo/hugo_extended:0.112.5
 
 variables:
   HUGO_ENV: production
