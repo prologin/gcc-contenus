@@ -10,7 +10,7 @@ stages:
 
 .hugo:
   before_script:
-    - apk add yarn bash
+    - apk add yarn bash zip
   script:
     - ./build.sh
     - hugo
