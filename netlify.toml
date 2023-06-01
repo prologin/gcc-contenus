@@ -1,0 +1,12 @@
+[build]
+    command = "./build && hugo"
+    publish = "public"
+
+[build.environment]
+    HUGO_VERSION = "0.111.3"
+
+[context.production.environment]
+    HUGO_ENV = "production"
+
+[context.deploy-preview]
+    command = "./build.sh && hugo --buildDrafts"
