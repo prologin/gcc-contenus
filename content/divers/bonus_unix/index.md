@@ -66,9 +66,11 @@ permettant au programme de savoir quoi faire[^1]. Ce programme pourra à son tou
 afficher du texte. Lorsque le programme correspondant à votre ordre termine, le
 shell, qui l'a démarré, vous redemande quoi faire.
 
-Une fois que votre ordre est prêt, validez-le avec la touche `entrée`.
+Une fois que votre ordre est prêt, validez-le avec la touche `Entrée` (⏎).
 
 # Afficher et se déplacer
+
+## Le chemin actuel
 
 Première étape : s'orienter. La commande permet d'afficher le nom du dossier
 actuel :
@@ -78,14 +80,20 @@ $ pwd
 /home/fnareoh
 ```
 
-#### Exercice 1
+<br />
+
+{{% box type="exercise" title="Exercice 1" %}}
 
 Entrez la commande `pwd` et observez le résultat.
+
+{{% /box %}}
 
 En fait, `pwd` affiche le chemin vers le dossier actuel, depuis la racine. La
 `racine`, c'est le dossier de plus haut niveau, qui contient tous les autres
 dossiers et fichiers. Si un chemin ne commence pas par un `/`, c'est un chemin
 depuis le dossier actuel.
+
+## Se déplacer dans les dossiers
 
 À propos de dossier actuel, baladons-nous un peu. La commande `cd` permet de
 changer de dossier. Seule, la commande `cd` permet de revenir à votre espace
@@ -104,9 +112,14 @@ $ pwd
 /home
 ```
 
-#### Exercice 2
+<br />
+
+{{% box type="exercise" title="Exercice 2" %}}
 
 Entrez la commande `cd /home`, puis la commande `pwd` et observez le résultat.
+
+{{% /box %}}
+
 
 ```bash
 $ cd /home
@@ -117,9 +130,15 @@ $ pwd
 /home/shloub
 ```
 
-#### Exercice 3
+<br />
+
+{{% box type="exercise" title="Exercice 3" %}}
 
 Retournez dans votre dossier personnel.
+
+{{% /box %}}
+
+## Afficher les fichiers dans un dossier
 
 La commande `ls` permet de lister le contenu d'un dossier.
 
@@ -151,11 +170,17 @@ $ ls -a
 . .. afs .bash_history .bashrc
 ```
 
-#### Exercice 4
+<br />
+
+{{% box type="exercise" title="Exercice 4" %}}
 
 Entrez la commande `ls -a` et observez le résultat.
 
+{{% /box %}}
+
 # Créer et modifier
+
+## Créer des dossiers
 
 La commande `mkdir` permet de créer un dossier.
 
@@ -166,9 +191,16 @@ $ ls
 afs TP_UNIX
 ```
 
-#### Exercice 5
+<br />
+
+{{% box type="exercise" title="Exercice 5" %}}
 
 Créez un dossier `TP_UNIX` dans votre espace personnel.
+
+{{% /box %}}
+
+
+{{% box type="info" title="Écrire dans un fichier" %}}
 
 Vous pouvez utiliser la commande `gedit` pour lancer un éditeur de texte. Vous
 pouvez donner en argument le chemin du fichier à éditer.
@@ -178,12 +210,18 @@ $ gedit mon_fichier
 * un éditeur apparaît *
 ```
 
+{{% /box %}}
+
+## Lire un fichier
+
 La commande `cat` permet d'afficher le contenu d'un fichier.
 
 ```bash
 $ cat mon_fichier
 du texte tapé dans gedit !
 ```
+
+## Déplacer des éléments
 
 Beaucoup d'autres commandes sont disponibles pour manipuler les fichiers. Par
 exemple, `mv` permet de déplacer [^2] des fichiers ou des dossiers.
@@ -200,12 +238,18 @@ $ ls
 afs encore_un_autre TP_UNIX
 ```
 
-#### Exercice 6
+<br />
+
+{{% box type="exercise" title="Exercice 6" %}}
 
 Renommez un de vos fichiers, puis déplacez-le.
 
 La commande pour renommer un fichier est la même que pour déplacer un fichier,
 l'opération étant en fait similaire.
+
+{{% /box %}}
+
+## Copier un fichier
 
 De plus, la commande `cp` permet de dupliquer - **c**o**p**ier - un fichier.
 
@@ -219,9 +263,15 @@ $ cat heyhey
 du texte tapé dans gedit !
 ```
 
-#### Exercice 7
+<br />
+
+{{% box type="exercise" title="Exercice 7" %}}
 
 Copiez un de vos fichiers.
+
+{{% /box %}}
+
+## Supprimer des fichiers
 
 La commande `rm` permet de supprimer [^3] un fichier. Attention, soyez prudentes
 ou vous risqueriez de perdre des fichiers importants: il n'y a pas de Corbeille
@@ -235,25 +285,35 @@ $ ls
 afs encore_un_autre TP_UNIX
 ```
 
-#### Exercice 8
+<br />
+
+{{% box type="exercise" title="Exercice 8" %}}
 
 Effacez une copie.
+
+{{% /box %}}
+
 
 # Raccourcis clavier
 
 De nombreux autres raccourcis existent. Par exemple lorsque vous tapez un nom de
-fichier ou de commande, la touche `TAB` peut vous aider à compléter la suite. On
-appelle cela *l'auto-complétion*. Les touches `UP` et `DOWN` peuvent également
-permettre de parcourir l'historique des commandes saisies.
+fichier ou de commande, la touche `TAB` (↹) peut vous aider à compléter la suite. On
+appelle cela *l'auto-complétion*.
+Les flèches du haut (↑) et du bas (↓) permettent de parcourir l'historique des
+commandes saisies.
 
 ```bash
 $ cat encor[TAB]
 $ cat encore_un_autre
 ```
 
-#### Exercice 9
+<br />
+
+{{% box type="exercise" title="Exercice 9" %}}
 
 Parcourez vos anciennes commandes et essayez l'auto-complétion.
+
+{{% /box %}}
 
 # Pour aller plus loin
 
@@ -273,8 +333,8 @@ grâce à l'équipe qui vous entoure. Quelques idées : `time`, `touch`, `tail`,
 |  mv                |  déplacer ou renommer un fichier    | mv resultplusun.txt ../testmv.txt   |
 |  cp                |  copier un fichier                  | cp ../testmv.txt resplusun.txt      |
 |  rm                |  effacer un fichier                 | rm ../testmv.txt                    |
-|  raccourci `TAB`   |  auto-complétion                    | cat resplus`TAB`                    |
-|  `HAUT` `BAS`      |  parcourir l'historique             |                                     |
+|  raccourci `TAB` ↹  |  auto-complétion                    | cat resplus`TAB`                    |
+|  `HAUT` ↑ / `BAS` ↓ |  parcourir l'historique             |                                     |
 
 [^1]: On les appelle les arguments
 
