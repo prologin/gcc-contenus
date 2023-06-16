@@ -20,23 +20,3 @@ theme = "gcc"
 
 [markup.goldmark.renderer]
 unsafe = true
-
-
-# Here are the header menus
-[Menu]
-[[Menu.header]]
-    Name = "Micropython"
-    URL = "/micropython"
-    weight = 1
-
-[[Menu.header]]
-    Name = "Python et autre"
-    URL = "/divers"
-    weight = 5
-
-# not yet used
-#[[Menu.header]]
-#    Name = "Documentation"
-#    URL = "/documentation"
-#    weight = 10
-
