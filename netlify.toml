@@ -1,5 +1,5 @@
 [build]
-    command = "./build && hugo"
+    command = "make -C themes/gcc && hugo"
     publish = "public"
 
 [build.environment]
@@ -9,4 +9,4 @@
     HUGO_ENV = "production"
 
 [context.deploy-preview]
-    command = "./build.sh && hugo --buildDrafts"
+    command = "make -C themes/gcc && hugo --buildDrafts"

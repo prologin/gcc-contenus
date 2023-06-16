@@ -2,6 +2,9 @@
 title: Listes et chaîne de caractères
 weight: 5
 date: 2021
+tags:
+    - python
+    - easy
 ---
 
 # Introduction aux listes

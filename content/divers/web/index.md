@@ -3,6 +3,9 @@ title: Web
 weight: 10
 subtitle: 
 date: 2021
+tags:
+    - html
+    - css
 ---
 
 # Introduction

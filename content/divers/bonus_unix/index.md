@@ -3,6 +3,10 @@ title: Bonus Unix
 weight: 20
 subtitle: 
 date: 2021
+tags:
+    - Unix
+    - teminal
+    - bash
 ---
 
 # Introduction

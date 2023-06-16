@@ -1,7 +1,12 @@
 ---
 title: TP - Jeu du Panier
 date: 2022
-weight: 100
+weight: 30
+tags:
+    - micropython
+    - boucles
+    - conditions
+    - easy
 ---
 
 # Jeu du Panier

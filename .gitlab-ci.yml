@@ -10,9 +10,9 @@ stages:
 
 .hugo:
   before_script:
-    - apk add yarn bash zip
+    - apk add yarn zip make
   script:
-    - ./build.sh
+    - make -C themes/gcc
     - hugo
   variables:
       GIT_SUBMODULE_STRATEGY: recursive

@@ -4,6 +4,10 @@ weight: 16
 subtitle: 
 date: 2019
 code_stub_url: ./resources/given_resources/projet_jeu.zip
+tags:
+    - python
+    - pygame
+    - projets
 ---
 
 # Introduction

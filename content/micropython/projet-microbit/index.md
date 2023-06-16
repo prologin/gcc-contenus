@@ -1,8 +1,10 @@
 ---
 title: Projet microbit
 date: 2021
-weight: 10
-subtitle: 
+weight: 100
+tags:
+    - micropython
+    - projets
 ---
 
 # Introduction

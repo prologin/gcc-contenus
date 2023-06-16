@@ -3,6 +3,11 @@ title: Bonus Python avancé
 weight: 20
 subtitle: 
 date: 2021
+tags:
+    - python
+    - dictionnaires
+    - sets
+    - bonus
 ---
 
 Durant ce TP, vous allez voir des notions un peu plus avancées de Python, avec

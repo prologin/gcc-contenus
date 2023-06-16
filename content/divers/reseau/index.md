@@ -3,6 +3,9 @@ title: Réseau
 weight: 12
 subtitle: 
 date: 2021
+tags:
+    - python
+    - reseau
 ---
 
 # Introduction

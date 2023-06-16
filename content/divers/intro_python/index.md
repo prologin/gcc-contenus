@@ -2,6 +2,9 @@
 title: Introduction à Python
 weight: 1
 date: 2021
+tags:
+    - python
+    - easy
 ---
 
 # Avant de commencer

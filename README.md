@@ -16,16 +16,24 @@ terminal :
 
 ```bash
 git submodule update --init themes/gcc
-./build.sh
+make -C themes/gcc
 hugo server
 ```
 Il est alors marqué sur quel port trouver le site en local (souvent le port `1313`).
+
+Il est aussi possible d'avoir un aperçu d'un sujet d'exemple avec ces
+commandes :
+
+```bash
+cd themes/gcc
+make preview
+```
 
 # Matériel utilisé
 Accessoirement, pendant nos stages nous utilisons l'éditeur
 [Mu](https://codewith.mu/) que nous recommandons vivement. Pour l'utilisation
 des microbits une version en ligne est également disponible
-[ici](https://python.microbit.org/v/2.0).
+[ici](https://python.microbit.org/).
 
 
 # License

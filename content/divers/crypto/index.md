@@ -4,6 +4,9 @@ date: 2021
 authors: Clarisse Blanco, Dorian Péron
 weight: 15
 subtitle: 
+tags:
+    - cryptographie
+    - medium
 ---
 
 # Le chiffre de César

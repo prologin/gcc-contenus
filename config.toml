@@ -3,6 +3,11 @@ languageCode = "fr-fr"
 title = "TPs GCC!"
 theme = "gcc"
 
+[params]
+    logo = "gcc.svg"
+    favicon = "favicon.svg"
+    logoText = "Girls Can Code!'s logo"
+
 [params.style]
   primaryColor = "#212730"
   secondaryColor = "#00afd4"

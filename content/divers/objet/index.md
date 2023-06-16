@@ -3,6 +3,9 @@ title: Programmation Orientée Object
 weight: 10
 subtitle: 
 date: 2021
+tags:
+    - python
+    - class
 ---
 
 # Introduction

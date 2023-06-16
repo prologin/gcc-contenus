@@ -33,29 +33,26 @@ voulez dans le dossier `resources`.
 
 Une cheat-sheet existe aussi pour présenter toutes les possibilités qui existent
 pour créer un nouveau TP. 
-Le code source de cette cheat-sheet se situe dans
-`content/draft/exemple/index.md`. Vous pouvez visualiser le rendu, vous
-pouvez lancer `hugo` avec les commandes :
-
+Le code source de cette cheat-sheet se situe dans le theme. Pour le visualiser,
+vous pouvez écrire ces commandes dans un terminal : 
 
 ```bash
-git submodule update --init themes/gcc
-./build.sh
-hugo server --buildDrafts
+cd theme/gcc
+make preview
 ```
+Et vous rendre ensuite sur le port indiqué par Hugo.
 
-Il vous suffit alors de chercher la cheat-sheet dans `Draft folders/TP Exemple`
+## Le thème
 
-N'hésitez pas à aller faire un tour sur : https://gitlab.com/prologin/tech/packages/hugo-base-theme/ pour améliorer le thème, ou voir ce qu'il est possible de faire.
+N'hésitez pas à aller faire un tour sur 
+[le repo du thème](https://gitlab.com/prologin/tech/packages/hugo-base-theme/)
+pour améliorer le thème, faire remonter les bugs, ou voir ce qu'il est possible
+de faire.
 
 ## Remplir les meta-data
 
-### `code_stub_url`
-
-Toutes les meta-data du squelette sont nécessaires, sauf le champs
-`code_stub_url`, qui n'est utile que s'il y a un `skeleton` à transmettre aux
-participantes. Le cas échéant, ce champs doit contenir un lien vers un fichier
-(`zip` s'il y a plus d'un fichier à transmettre). 
+N'hésitez pas à aller lire le [README](https://gitlab.com/prologin/tech/packages/hugo-base-theme/-/blob/main/README.md?plain=1&ref_type=heads)
+du thème pour voir comment remplir les meta-data. 
 
 ### `weight`
 
@@ -72,12 +69,16 @@ de maintenir une organisation claire pour les participantes :
 
 ## À vous de jouer !
 
-Il ne reste plus qu'à écrire le sujet. Pour connaître le format d'un TP plus en détails, consultez (ce fichier)[https://gitlab.com/prologin/tech/packages/hugo-base-theme/-/blob/main/README.md?plain=1&ref_type=heads]. Vous pouvez
+Il ne reste plus qu'à écrire le sujet. N'hésitez pas à lire le README du thème
+et de ce repo pour en savoir plus. N'hésitez pas non plus à poser vos questions
+sur le discord de l'Association ! 
 
-aussi écrire un fichier `README.md` additionnel si jamais certaines informations doivent
-être transmises aux organisateurs mais pas aux participantes. 
-Ce fichier sera essentiellement destiné aux organisateurs et permet d'éclaicir certaines
-particularités du TP. 
+Vous pouvez aussi écrire un fichier `README.md` additionnel si jamais certaines 
+informations doivent être transmises aux organisateurs mais pas aux participantes. 
+Ce fichier sera essentiellement destiné aux organisateurs et permet d'éclaircir 
+certaines particularités du TP. 
+
+Bref, surtout, amusez-vous et faites des TPs les plus intéractifs possibles !
 
 
 # Quelques conventions
