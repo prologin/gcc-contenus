@@ -46,6 +46,7 @@ hugo server --buildDrafts
 
 Il vous suffit alors de chercher la cheat-sheet dans `Draft folders/TP Exemple`
 
+N'hésitez pas à aller faire un tour sur : https://gitlab.com/prologin/tech/packages/hugo-base-theme/ pour améliorer le thème, ou voir ce qu'il est possible de faire.
 
 ## Remplir les meta-data
 
@@ -69,66 +70,10 @@ de maintenir une organisation claire pour les participantes :
 - `20` si c'est quelque chose de vraiment très complexe
 
 
-## Quelques précisions supplémentaires
-
-### Insérer une image
-
-Vous pouvez insérer une image dans votre sujet grâce à cette ligne, que vous
-devez placer à l'endroit où l'image doit se situer : 
-
-```go
-{{<figure src="la_source">}}
-```
-
-Pour connaître toutes les options possibles de cette commande, vous pouvez
-trouver la documentation [ici](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes)
-
-On peut par exemple définir la taille de l'image :
-```go
-{{<figure src="resources/images/img.png" width=400>}}
-```
-
-### Diviser votre TP
-
-Un tp peut être long à lire... Nous vous conseillons donc de le sous-diviser en différentes parties.
-Pour cela il suffit de rajouter ceci à l'endroit de la séparation :
-
-```
-[SECTION-BREAK]
-```
-
-Attention à bien laisser au moins une ligne vide avant et après cette balise pour éviter tout problème.
-
-### Code interactif
-
-Pour que l'élève puisse exécuter et modifier du code python directement sur le navigateur, il faut créer un codeblock de type `codepython` et mettre le code rempli/à remplir dedans.
-Cette fonctionnalité existe aussi pour le html avec un codeblock `codehtml`
-
-### Les shortcodes
-
-4 différents shortcodes existent :
-* exemple
-* exercice
-* info
-* cours
-
-Il permettent de différencier les parties du TP. Pour les utiliser, il faut mettre :
-
-```
-{{% Insérer_le_nom_du_shortcode %}}
-```
-au début de la partie à mettre dans ce style, et
-
-```
-{{% /Insérer_le_nom_du_shortcode %}}
-```
-
-à la fin.
-
-
 ## À vous de jouer !
 
-Il ne reste plus qu'à écrire le sujet dans le fichier `index.md`. Vous pouvez
+Il ne reste plus qu'à écrire le sujet. Pour connaître le format d'un TP plus en détails, consultez (ce fichier)[https://gitlab.com/prologin/tech/packages/hugo-base-theme/-/blob/main/README.md?plain=1&ref_type=heads]. Vous pouvez
+
 aussi écrire un fichier `README.md` additionnel si jamais certaines informations doivent
 être transmises aux organisateurs mais pas aux participantes. 
 Ce fichier sera essentiellement destiné aux organisateurs et permet d'éclaicir certaines
@@ -140,4 +85,4 @@ particularités du TP.
 Dans le but de maintenir une harmonie et que la forme des TPs soit cohérente entre tous les sujets, il est nécessaire de respecter ces quelques conventions : 
 - Utiliser le tutoiement
 - S'adresser aux participantes comme si on leur parlait directement
-- chaîne 👀
+- chaîne et non chaine 👀
