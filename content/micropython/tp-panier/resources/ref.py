@@ -1,65 +1,55 @@
 from microbit import *
 from random import randint
+import music
 
-MAX_Y = 4
 MIN_X = 0
 MAX_X = 4
+MAX_Y = 4
 
-def show_joueur(x:int, show: bool):
-    display.set_pixel(x, MAX_Y, 9 if show else 0)
+pos_panier = 2
+perdu = False
 
-def show_pomme(x:int, y:int, show:bool):
-    display.set_pixel(x, y, 9 if show else 0)
+pomme_x, pomme_y = randint(MIN_X, MAX_X), 0
+tour = 0
+tour_max = 8
 
-alive = True
 score = 0
 
-panier_x = 2  # milieu
+while not perdu:
+    # Affichage et mouvements du panier
+    display.set_pixel(pos_panier, MAX_Y, 0)
 
-pomme_x = randint(MIN_X, MAX_X)
-pomme_y = 0
-show_pomme(pomme_x, pomme_y, True)
+    if button_a.was_pressed() and pos_panier > MIN_X:
+        pos_panier -= 1
+    if button_b.was_pressed() and pos_panier < MAX_X:
+        pos_panier += 1
 
-NB_TICKS = 5
-current_ticks = 0
+    display.set_pixel(pos_panier, 4, 9)
 
-SCORE_INCREASE_LEVEL = 5
 
-while alive:
-    show_joueur(panier_x, False)
-    if button_a.was_pressed():
-        panier_x -= 1
-        if panier_x < MIN_X:
-            panier_x = MIN_X
-    if button_b.was_pressed():
-        panier_x += 1
-        if panier_x > MAX_X:
-            panier_x = MAX_X
-    show_joueur(panier_x, True)
+    # Affichage et mouvements de la pomme
+    display.set_pixel(pomme_x, pomme_y, 0)
 
-    current_ticks += 1
-    if current_ticks == NB_TICKS:
-        current_ticks = 0
-        show_pomme(pomme_x, pomme_y, False)
+    if tour < tour_max:
+        tour += 1
+    else:
+        tour = 0
         pomme_y += 1
-        show_pomme(pomme_x, pomme_y, True)
 
-        if pomme_y == MAX_Y:
-            if panier_x == pomme_x:
-                score += 1
-                # reset panier
-                pomme_x = randint(MIN_X, MAX_X)
-                pomme_y = 0
-                show_pomme(pomme_x, pomme_y, True)
+    if pomme_y == MAX_Y:
+        if pomme_x == pos_panier:
+            pomme_x, pomme_y = randint(MIN_X, MAX_X), 0
+            score += 1
+            music.play("F:2")
+            
+            if score % 4 == 0 and tour_max >= 0:
+                tour_max -= 1
 
-                if score % SCORE_INCREASE_LEVEL == 0:
-                    NB_TICKS -= 1
-                    if NB_TICKS == 0:
-                        NB_TICKS = 1
-            else:
-                alive = False
+        else:
+            perdu = True
+
+    display.set_pixel(pomme_x, pomme_y, 5)
 
     sleep(150)
 
-
-display.scroll("Perdu ! Score = " + str(score))
+display.scroll("Perdu ! " + str(score))
