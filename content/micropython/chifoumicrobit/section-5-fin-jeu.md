@@ -1,5 +1,7 @@
 ## Afficher le choix du joueur
 
+{{% box type="exercise" title="Exercice 6 : Affichage des choix" %}}
+
 Comme pour le début de la boucle, on souhaite réafficher le choix du joueur
 après le `display.clear()` qui éteint tous les pixels.
 
@@ -7,7 +9,11 @@ Après l'affichage du texte "VS", tu dois afficher maintenant le choix
 de l'adversaire en prenant une image dans la liste `possibilites` à l'indice
 `choix_adversaire`.
 
+{{% /box %}}
+
 ## Gagnant et perdant
+
+{{% box type="exercise" title="Exercice 7 : Qui a gagné ? Qui a perdu ?" %}}
 
 Maintentant qu'on a le choix du joueur et celui de l'adversaire, on peut savoir
 qui a gagner et qui a perdu ! Pour ce faire, on va d'abord vérifier s'il y a
@@ -34,6 +40,8 @@ d'affichage de 50. Les conditions sont les suivantes :
 Sinon, si toutes les conditions au-dessus ne sont pas remplies,
 cela veut dire que tu as perdu et il faut que tu affiches "Perdu..." avec
 une vitesse d'affichage de 50.
+
+{{% /box %}}
 
 {{% box type="info" title="La vitesse d'affichage ?" %}}
 

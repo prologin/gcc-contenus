@@ -1,5 +1,6 @@
 from microbit import *
 from random import randint
+import radio
 
 # TODO: Créer la liste des possibilités
 possibilites = []

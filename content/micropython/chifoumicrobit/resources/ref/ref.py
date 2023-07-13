@@ -1,5 +1,6 @@
 from microbit import *
 from random import randint
+import radio
 
 # La liste des possibilités
 possibilites = [Image.SKULL, Image.PACMAN, Image.GHOST]

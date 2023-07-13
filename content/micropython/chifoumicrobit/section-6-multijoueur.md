@@ -16,14 +16,9 @@ compris, n'hésite pas à demander de l'aide aux organisateurs.
 Pour faire un jeu multijoueur, nous allons avoir besoin de faire communiquer les
 `micro:bit` ensemble. Pour ce faire, nous allons utiliser la radio.
 
-Avant tout, comme pour la première partie, il faut importer les fonctions
-pré-écrites en ajoutant cette ligne au début de ton fichier :
-
-```py
-import radio
-```
-
 ## Choix du mode de jeu
+
+{{% box type="exercise" title="Exercice 8 : Le mode de jeu" %}}
 
 Pour commencer, nous voulons que Skeleton puisse s'entraîner contre
 l'ordinateur, ou bien jouer en multijoueur avec ses amis.
@@ -45,11 +40,15 @@ Tu peux utiliser une boucle qui s'arrête lorsque le joueur a fait son choix.
 Par convention, on dira qu'un appui sur le bouton A activera le mode
 _multijoueur_, et un appui sur B activera le mode _local_.
 
+{{% /box %}}
+
 ## Ton choix
 
 En ce qui concerne ton propre choix, tu n'as rien besoin de changer.
 
 ## Choix de l'ordinateur
+
+{{% box type="exercise" title="Exercice 9 : Le choix de l'ordinateur" %}}
 
 Tu vas d'abord devoir initialiser le choix de l'adversaire à 0 pour qu'on puisse
 y accéder par la suite.
@@ -58,10 +57,16 @@ Pour le choix de l'ordinateur, une toute petite modification est nécessaire.
 En effet, le `micro:bit` doit faire un choix seulement si le programme est en
 mode _local_.
 
+{{% /box %}}
+
+## Choix de l'adversaire
+
 Si le mode choisi est _multijoueur_, juste après avoir fait notre choix,
 nous allons devoir l'envoyer à l'adversaire, et recevoir le sien.
 
 ### Activons la radio
+
+{{% box type="info" title="Activer et configurer la radio" %}}
 
 Avant de pouvoir envoyer ou recevoir des informations, nous devons allumer et
 configurer la radio. Pour ce faire, nous devons l'allumer et choisir un canal
@@ -81,6 +86,7 @@ Pour montrer au joueur que tout s'est bien passé jusqu'ici, tu peux afficher un
 image de ton choix (toutes les images sont disponibles
 [ici](https://microbit-micropython.readthedocs.io/fr/latest/tutorials/images.html)).
 
+{{% /box %}}
 
 ### Envoi et réception du message
 
@@ -140,10 +146,30 @@ nos différents choix entre les deux `micro:bit` et les utiliser.
 Cette partie est un peu complexe, si jamais tu n'as pas compris quelque chose,
 n'hésite pas à demander de l'aide aux organisateurs.
 
+{{% box type="exercise" title="Exercice 10 : Le message de l'adversaire" %}}
+
 Nous voulons donc que tant qu'aucun message n'est reçu, on envoie notre choix
 et on essaye de recevoir celui de l'adversaire.
 
+{{% /box %}}
+
+Ton code concernant cette partie devrait ressembler à ça :
+
+```python
+message_adversaire = None
+
+while message_adversaire == None:
+    # TODO: Recevoir un message et le stocker
+    # dans `message_adversaire`
+    
+
+    # TODO: Envoyer le choix du joueur
+    
+```
+
 ### J'ai reçu son choix !
+
+{{% box type="exercise" title="Exercice 11 : Le choix de l'adversaire" %}}
 
 Une dernière étape pour ce qui concerne le multijoueur est de convertir le choix
 de l'adversaire en nombre entier et le stocker dans la variable `choix_adversaire`
@@ -155,6 +181,8 @@ fonction :
 ```py
 radio.off()
 ```
+
+{{% /box %}}
 
 ## Afficher le résultat
 
