@@ -12,6 +12,7 @@ theme = "gcc"
   primaryColor = "#212730"
   secondaryColor = "#00afd4"
   colorScheme = ["#e6006c", "#a7c80e", "#00afd4"]
+  hideTags = true
 
 # Table of content level
 [markup]

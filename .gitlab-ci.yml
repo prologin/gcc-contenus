@@ -10,7 +10,7 @@ stages:
 
 .hugo:
   before_script:
-    - apk add yarn zip make
+    - apk add yarn zip make bash
   script:
     - make -C themes/gcc
     - hugo
