@@ -141,7 +141,7 @@ Le score étant déjà calculé dans la partie précédente, nous avons juste à
 Si le joueur a effectivement un score de 21, nous le félicitons !
 Sinon, le jeu continue, avec la prochaine section.
 
-{{<figure src="resources/images/blackjack21.jpg" height=300 caption="21 points !">}}
+{{<figure src="resources/images/Blackjack21.jpg" height=300 caption="21 points !">}}
 
 ## Choix du joueur
 
