@@ -27,7 +27,7 @@ réimplémenter un jeu classique : pacman, tetris, bomberman, mario, snake, morp
 
 |
 |-------------------------------------------------|-------------------------------------------------
-|  {{< figure src="./resources/images/zelda.png" caption="(a) Capture d'écran de *The Legend of Zelda* avec une vue d’en haut." >}} |  {{< figure src="./resources/images/mario.png" caption="(b) Capture d’écran de *Super Mario Bros*. avec une vue de coté." >}}
+|  {{< figure src="./resources/given_resources/images/zelda.png" caption="(a) Capture d'écran de *The Legend of Zelda* avec une vue d’en haut." >}} |  {{< figure src="./resources/given_resources/images/mario.png" caption="(b) Capture d’écran de *Super Mario Bros*. avec une vue de coté." >}}
 
 *Comparaison des deux points de vue classiquement rencontrés dans les jeux2D.*
 
@@ -89,7 +89,7 @@ Pour ce faire vous utiliserez la fonction `pygame.display.set_mode` qui prend en
 Cette fonction renvoie un objet représentant la fenêtre ainsi créée, il sera nécessaire de passer cet objet à d'autres fonctions pour pouvoir dessiner dedans, gardez-le dans une variable !
 Il n'est nécessaire de créer qu'une seule fenêtre au début du programme, cet appel de fonction va donc dans la partie initialisation.
 
-{{< figure src="./resources/images/schema.png" caption="Illustration du système de coordonnées d'un écran de 1920 pixels de largeur et 1080 pixels de hauteur. Le point $(700, 300)$ est marqué en bleu." >}}
+{{< figure src="./resources/given_resources/images/schema.png" caption="Illustration du système de coordonnées d'un écran de 1920 pixels de largeur et 1080 pixels de hauteur. Le point $(700, 300)$ est marqué en bleu." >}}
 
 La seconde fonction dont vous aurez besoin est `pygame.display.update`.
 Cette fonction (qui ne prend pas d'argument) va dessiner le contenu de la fenêtre à l'écran.
@@ -308,7 +308,7 @@ En effet la fonction **blit** prend le rectangle où dessiner l'image en paramè
 Il faudra donc faire dépendre les coordonnées de ce rectangle des indices des deux boucles **for**.
 Le résultat que vous devriez obtenir est donné ci dessous.
 
-{{< figure src="./resources/images/carte.png" width="400" height="300" caption="Rendu du tableau **carte** dans une fenêtre de taille $800 * 600$ en utilisant les **sprites** **grassCenter.png** pour **image1** et **snowCenter.png** pour **image2**." >}}
+{{< figure src="./resources/given_resources/images/carte.png" width="400" height="300" caption="Rendu du tableau **carte** dans une fenêtre de taille $800 * 600$ en utilisant les **sprites** **grassCenter.png** pour **image1** et **snowCenter.png** pour **image2**." >}}
 
 ## Gestion des collisions
 
@@ -579,11 +579,11 @@ Toutes ces images se trouvent dans `sprites/terrain` et sont de taille $64\times
 
 |
 |---|---|---|
-| {{< figure src="./resources/sprites/terrain/box.png" caption="box.png">}} |  {{< figure src="./resources/sprites/terrain/boxItem.png" caption="boxItem.png">}} | {{< figure src="./resources/sprites/terrain/boxItem_disabled.png" caption="boxItem_disabled.png">}}
-| {{< figure src="./resources/sprites/terrain/grassCenter.png" caption="grassCenter.png">}}| {{< figure src="./resources/sprites/terrain/grassMid.png" caption="grassMid.png">}}| {{< figure src="./resources/sprites/terrain/snowCenter.png" caption="snowCenter.png">}}
-| {{< figure src="./resources/sprites/terrain/snowMid.png" caption="snowMid.png">}}| {{< figure src="./resources/sprites/terrain/liquidWater.png" caption="liquidWater.png">}}| {{< figure src="./resources/sprites/terrain/liquidLava.png" caption="liquidLava.png">}}  
-| {{< figure src="./resources/sprites/terrain/brick.png" caption="brick.png" >}}| {{< figure src="./resources/sprites/terrain/water.png" caption="water.png">}}| {{< figure src="./resources/sprites/terrain/grass.png" caption="grass.png">}}
-| {{< figure src="./resources/sprites/terrain/dirt.png" caption="dirt.png" >}}|  
+| {{< figure src="./resources/given_resources/sprites/terrain/box.png" caption="box.png">}} |  {{< figure src="./resources/given_resources/sprites/terrain/boxItem.png" caption="boxItem.png">}} | {{< figure src="./resources/given_resources/sprites/terrain/boxItem_disabled.png" caption="boxItem_disabled.png">}}
+| {{< figure src="./resources/given_resources/sprites/terrain/grassCenter.png" caption="grassCenter.png">}}| {{< figure src="./resources/given_resources/sprites/terrain/grassMid.png" caption="grassMid.png">}}| {{< figure src="./resources/given_resources/sprites/terrain/snowCenter.png" caption="snowCenter.png">}}
+| {{< figure src="./resources/given_resources/sprites/terrain/snowMid.png" caption="snowMid.png">}}| {{< figure src="./resources/given_resources/sprites/terrain/liquidWater.png" caption="liquidWater.png">}}| {{< figure src="./resources/given_resources/sprites/terrain/liquidLava.png" caption="liquidLava.png">}}  
+| {{< figure src="./resources/given_resources/sprites/terrain/brick.png" caption="brick.png" >}}| {{< figure src="./resources/given_resources/sprites/terrain/water.png" caption="water.png">}}| {{< figure src="./resources/given_resources/sprites/terrain/grass.png" caption="grass.png">}}
+| {{< figure src="./resources/given_resources/sprites/terrain/dirt.png" caption="dirt.png" >}}|  
 
 
 ## Personnages
@@ -592,8 +592,8 @@ Toutes ces images se trouvent dans `sprites/personnage` et sont de taille $35\ti
 
 |
 |---|---|---|
-| {{< figure src="./resources/sprites/personnage/gnu.png" caption="gnu.png" >}}| {{< figure src="./resources/sprites/personnage/kisi.png" caption="kisi.png" >}} | {{< figure src="./resources/sprites/personnage/kit.png" caption="kit.png" >}}
-| {{< figure src="./resources/sprites/personnage/sara.png" caption="sara.png" >}}| {{< figure src="./resources/sprites/personnage/tux.png" caption="tux.png" >}} | {{< figure src="./resources/sprites/personnage/wilber.png" caption="wilber.png" >}}
+| {{< figure src="./resources/given_resources/sprites/personnage/gnu.png" caption="gnu.png" >}}| {{< figure src="./resources/given_resources/sprites/personnage/kisi.png" caption="kisi.png" >}} | {{< figure src="./resources/given_resources/sprites/personnage/kit.png" caption="kit.png" >}}
+| {{< figure src="./resources/given_resources/sprites/personnage/sara.png" caption="sara.png" >}}| {{< figure src="./resources/given_resources/sprites/personnage/tux.png" caption="tux.png" >}} | {{< figure src="./resources/given_resources/sprites/personnage/wilber.png" caption="wilber.png" >}}
 
 
 ## Objets
@@ -602,9 +602,9 @@ Toutes ces images se trouvent dans `sprites/objet` et sont de taille $64\times 6
 
 |
 |-----------------------|-----------------------|-----------------------
-| {{< figure src="./resources/sprites/objet/bomb.png" caption="bomb.png" >}} | {{< figure src="./resources/sprites/objet/coinGold.png" caption="coinGold.png" >}} | {{< figure src="./resources/sprites/objet/flagRed.png" caption="flagRed.png" >}}
-| {{< figure src="./resources/sprites/objet/star.png" caption="star.png" >}} | {{< figure src="./resources/sprites/objet/switchLeft.png" caption="switchLeft.png" >}} | {{< figure src="./resources/sprites/objet/switchMid.png" caption="switchMid.png" >}}
-| {{< figure src="./resources/sprites/objet/barrel.png" caption="barrel.png" >}} | {{< figure src="./resources/sprites/objet/bush.png" caption="bush.png" >}} | {{< figure src="./resources/sprites/objet/box.png" caption="box.png" >}}
+| {{< figure src="./resources/given_resources/sprites/objet/bomb.png" caption="bomb.png" >}} | {{< figure src="./resources/given_resources/sprites/objet/coinGold.png" caption="coinGold.png" >}} | {{< figure src="./resources/given_resources/sprites/objet/flagRed.png" caption="flagRed.png" >}}
+| {{< figure src="./resources/given_resources/sprites/objet/star.png" caption="star.png" >}} | {{< figure src="./resources/given_resources/sprites/objet/switchLeft.png" caption="switchLeft.png" >}} | {{< figure src="./resources/given_resources/sprites/objet/switchMid.png" caption="switchMid.png" >}}
+| {{< figure src="./resources/given_resources/sprites/objet/barrel.png" caption="barrel.png" >}} | {{< figure src="./resources/given_resources/sprites/objet/bush.png" caption="bush.png" >}} | {{< figure src="./resources/given_resources/sprites/objet/box.png" caption="box.png" >}}
 
 
 ## Personnages animés
@@ -613,13 +613,13 @@ Toutes ces images se trouvent dans `sprites/anime` et sont de taille $50\times 7
 
 |
 |---|---|---|
-| {{< figure src="./resources/sprites/anime/p1/standing/frame-1.png">}}  | {{< figure src="./resources/sprites/anime/p1/standing/frame-2.png" >}}  | {{< figure src="./resources/sprites/anime/p1/running/frame-1.png">}}
+| {{< figure src="./resources/given_resources/sprites/anime/p1/standing/frame-1.png">}}  | {{< figure src="./resources/given_resources/sprites/anime/p1/standing/frame-2.png" >}}  | {{< figure src="./resources/given_resources/sprites/anime/p1/running/frame-1.png">}}
 | p1/standing/frame-1.png | p1/standing/frame-2.png | p1/running/frame-1.png
-| {{< figure src="./resources/sprites/anime/p1/running/frame-2.png" >}}  | {{< figure src="./resources/sprites/anime/p1/running/frame-3.png" >}}  | {{< figure src="./resources/sprites/anime/p1/running/frame-4.png" >}}
+| {{< figure src="./resources/given_resources/sprites/anime/p1/running/frame-2.png" >}}  | {{< figure src="./resources/given_resources/sprites/anime/p1/running/frame-3.png" >}}  | {{< figure src="./resources/given_resources/sprites/anime/p1/running/frame-4.png" >}}
 | p1/running/frame-2.png | p1/running/frame-3.png | p1/running/frame-4.png
-| {{< figure src="./resources/sprites/anime/p1/running/frame-5.png" >}} | {{< figure src="./resources/sprites/anime/p1/running/frame-6.png" >}}  | {{< figure src="./resources/sprites/anime/p1/jump/jump_up.png" >}} 
+| {{< figure src="./resources/given_resources/sprites/anime/p1/running/frame-5.png" >}} | {{< figure src="./resources/given_resources/sprites/anime/p1/running/frame-6.png" >}}  | {{< figure src="./resources/given_resources/sprites/anime/p1/jump/jump_up.png" >}} 
 | p1/running/frame-5.png | p1/running/frame-6.png | p1/jump/jump_up.png
-| {{< figure src="./resources/sprites/anime/p1/jump/jump_fall.png" >}} | {{< figure src="./resources/sprites/anime/p1/got_hit/frame.png" >}}
+| {{< figure src="./resources/given_resources/sprites/anime/p1/jump/jump_fall.png" >}} | {{< figure src="./resources/given_resources/sprites/anime/p1/got_hit/frame.png" >}}
 | p1/jump/jump_fall.png | p1/got_hit/frame.png |
 
 
@@ -627,7 +627,7 @@ Vous trouverez à peu près les mêmes sprites pour les trois personnages suivan
 
 |
 |---|---|---|
-| {{< figure src="./resources/sprites/anime/p2/standing/frame-1.png" >}} |  {{< figure src="./resources/sprites/anime/p3/standing/frame-1.png" >}} | {{< figure src="./resources/sprites/anime/p4/standing/frame-1.png" >}}
+| {{< figure src="./resources/given_resources/sprites/anime/p2/standing/frame-1.png" >}} |  {{< figure src="./resources/given_resources/sprites/anime/p3/standing/frame-1.png" >}} | {{< figure src="./resources/given_resources/sprites/anime/p4/standing/frame-1.png" >}}
 | p2/standing/frame-1.png | p3/standing/frame-1.png  | p4/got_hit/frame-1.png
 | p2/standing/frame-2.png | p3/standing/frame-2.png  | p4/got_hit/frame-2.png
 | p2/running/frame-1.png  | p3/running/frame-1.png   | p4/running/frame-1.png
