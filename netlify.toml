@@ -1,12 +1,9 @@
 [build]
-    command = "make -C themes/gcc && hugo"
     publish = "public"
+    command = "make -C themes/prolotheme && hugo"
 
 [build.environment]
     HUGO_VERSION = "0.111.3"
 
-[context.production.environment]
-    HUGO_ENV = "production"
-
 [context.deploy-preview]
-    command = "make -C themes/gcc && hugo --buildDrafts"
+    command = "make -C themes/prolotheme && hugo --buildDrafts"

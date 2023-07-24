@@ -1,7 +1,7 @@
 baseURL = "https://tp.girlscancode.fr"
 languageCode = "fr-fr"
 title = "TPs GCC!"
-theme = "gcc"
+theme = "prolotheme"
 
 [params]
     logo = "gcc.svg"

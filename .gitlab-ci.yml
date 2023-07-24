@@ -1,5 +1,5 @@
 default:
-  image: registry.gitlab.com/pages/hugo/hugo_extended:0.112.5
+  image: registry.gitlab.com/pages/hugo/hugo_extended:latest
 
 variables:
   HUGO_ENV: production
@@ -12,7 +12,7 @@ stages:
   before_script:
     - apk add yarn zip make bash
   script:
-    - make -C themes/gcc
+    - make -C themes/prolotheme
     - hugo
   variables:
       GIT_SUBMODULE_STRATEGY: recursive
