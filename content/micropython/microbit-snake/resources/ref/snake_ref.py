@@ -37,13 +37,10 @@ def nouvelle_direction(direction):
 
     # Si on appuie sur le bouton A, on tourne a gauche.
     # Si on appuie sur le bouton B, on tourne a droite.
-    btn_a = [GAUCHE, HAUT, DROITE, BAS]
-    btn_b = [DROITE, BAS, GAUCHE, HAUT]
-
     if button_a.was_pressed():
-        return btn_a[direction]
+        return (direction-1)%4
     elif button_b.was_pressed():
-        return btn_b[direction]
+        return (direction+1)%4
     else:
         return direction
 
@@ -54,10 +51,12 @@ def nouvelle_position_tete(serpent, direction):
     """
     # TODO: Choisi une nouvelle direction en fonction de la direction donnee
     # et de la tete
+
+    ## ce que les filles feront surement c'est 4 if/elif/else.
     offsets = [(-1, 0), (0, 1), (1, 0), (0, -1)]
     off = offsets[direction]
 
-    new = ((serpent[0][0] + off[0] + 5) % 5, (serpent[0][1] + off[1] + 5) % 5)
+    new = ((serpent[0][0] + off[0]) % 5, (serpent[0][1] + off[1])% 5)
     return new
 
 

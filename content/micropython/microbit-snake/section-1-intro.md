@@ -12,7 +12,7 @@ Dans Snake, le joueur contrôle un serpent dans une zone quadrillée. Le serpent
 
 ### Les pommes
 
-Pendant la partie, des "pommes" vont apparaître à des endroits aléatoires sur l'écran, représentées sous la forme de simples pixels. Quand le serpent mange une pomme (c'est-à-dire quand la tête du serpent arrive sur une pomme), il grandit d'une case, et une nouvelle pomme apparaît sur l'écran.
+Pendant la partie, des _pommes_ vont apparaître à des endroits aléatoires sur l'écran, représentées sous la forme de simples pixels. Quand le serpent mange une pomme (c'est-à-dire quand la tête du serpent arrive sur une pomme), il grandit d'une case, et une nouvelle pomme apparaît sur l'écran.
 
 Sur notre `micro:bit`, ça ressemble à ça :
 
@@ -24,7 +24,10 @@ On distingue que la tête du serpent (entourée en blanc) est plus lumineuse que
 
 La partie s'arrête quand le serpent se mord la queue (c'est-à-dire quand la tête du serpent arrive sur une case de son corps). Le score du joueur est la taille du serpent. En général, on considère la partie comme gagnée si le score est égal au nombre de pixels sur l'écran (ça veut dire que le serpent a complètement rempli l'écran).
 
-Pour coder notre jeu Snake, nous allons utiliser une carte `micro:bit`. Sur la carte, il y a 2 boutons (A et B) ainsi que l'écran qui nous intéressent. L'écran est composé de 25 pixels rouges répartis sur 5 lignes et 5 colonnes. Les sections suivantes expliquent comment les utiliser.
+### Notions
+
+Dans ce TP tu apprendras deux nouvelles notions un peu complexe mais très utile : les _fonctions_ et les _tuples_.
+
+On te le répètera tout au long du TP, mais n'hésite surtout pas à appeler un organisateur en cas de besoin, que ce soit pour corriger les erreurs de ton code, te réexpliquer une ancienne notion ou même pour t'expliquer plus en détail les fonctions et les tuples si tu n'as pas compris.
 
 Passe à la section suivante pour apprendre comment utiliser ton `micro:bit` !
-
