@@ -5,10 +5,13 @@ import radio
 def morse_vers_lettre(code, arbre):
     """
     Traduit la chaîne `code` formatté en un caractère de l'alphabet classique
-    On considère que `code` est correctement formatté
+    Si le code n'est pas correctement formatté, renvoyer None
     """
     if code == "":
-        return arbre.cle
+        if arbre == None:
+            return None
+        else:
+            return arbre.cle
 
     elif code[0] == '.':
         return morse_vers_lettre(code[1:], arbre.gauche)
@@ -16,36 +19,50 @@ def morse_vers_lettre(code, arbre):
     else:
         return morse_vers_lettre(code[1:], arbre.droit)
 
-
-
 def creer_message():
     """
     Récupère l'entrée utilisateur et retourne le caractère formé
     """
-    display.scroll("Send")
+    display.scroll("Envoi !")
     message = ""
-    display.show(Image.HEART)
 
-    while not (button_a.was_pressed() and button_b.was_pressed()):
-        letter = ""
+    valider = False
+    while not valider:
+        code = ""
+        display.show(Image.GHOST)
+
         while not pin_logo.is_touched():
-            if button_a.was_pressed():
-                letter += "."
-            
-            if button_b.was_pressed():
-                letter += "-"
+            if accelerometer.was_gesture('shake'):
+                valider = True
+                break
 
-        message += morse_vers_lettre(letter, MORSE)
+            if button_a.was_pressed():
+                code += "."
+
+            if button_b.was_pressed():
+                code += "-"
+
+        lettre = morse_vers_lettre(code, MORSE)
+        
+        if lettre != None:
+            display.show(Image.HAPPY)
+            message += lettre
+
+        elif code != "":
+            display.show(Image.ANGRY)
+
         sleep(1000)
     
     display.scroll(message)
     return message
 
 
+# Partie principale
+
 radio.on() # Allume la radio
 radio.config(channel=42) # Configure le canal utilisé (doit être compris entre 0 et 83)
 
-display.scroll("Go !")
+display.scroll("Allumage...", delay=50)
 while True:
     message_recu = radio.receive() # Essaye de recevoir un message
     if message_recu != None:

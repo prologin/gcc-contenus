@@ -2,11 +2,10 @@ from microbit import *
 from morse import *
 import radio
 
-
 def morse_vers_lettre(code, arbre):
     """
     Traduit la chaîne `code` formatté en un caractère de l'alphabet classique
-    On considère que `code` est correctement formatté
+    Si le code n'est pas correctement formatté, renvoyer None
     """
     pass
 
@@ -22,7 +21,7 @@ def creer_message():
 radio.on() # Allume la radio
 radio.config(channel=42) # Configure le canal utilisé (doit être compris entre 0 et 83)
 
-display.scroll("Go!")
+display.scroll("Allumage...", delay=50)
 while True:
     message_recu = radio.receive() # Essaye de recevoir un message
     if message_recu != None:

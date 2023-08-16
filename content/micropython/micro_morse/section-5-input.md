@@ -10,30 +10,29 @@ Enfin il nous reste quand même un petit problème : comment fait-il pour faire 
 
 Grâce à un système de télépathie que seul Joseph et les organisateurs maîtrisent,
 Joseph nous a transmis ce dont il avait besoin pour communiquer avec sa soeur.
-Il nous a dit qu'il voudrait une fonction qui, lorsqu'il appuie sur le logo :
+Il nous a dit qu'il voudrait que la fonction `creer_message()` réponde aux
+critères suivants :
 
-- Affiche une image de son choix
-- Lui permet d'entrer ce qu'il voit sur le mur (c'est la fonction
-  `creer_message()` de ton fichier de code). Cela permettra d'utiliser la
-  fonction `morse_vers_lettre()`.
+- Avec le bouton `A`, on pourra écrire un point ('`.`').
+- Avec le bouton `B`, on pourra écrire un tiret ('`-`').
+- En appuyant sur le logo, on validera le code morse actuel pour le convertir
+  en lettre et l'ajouter au message.
+- Pour terminer notre message, on devra secouer le micro:bit.
 
-Il nous a aussi dit qu'il voudrait pouvoir :
-
-- Écrire un point (`'.'`) en appuyant sur le bouton `A`
-- Écrire un trait (`'-'`) en appuyant sur le bouton `B`
-- Valider l'encodage en appuyant à nouveau sur le logo
-- Valider son message en appuyant sur les boutons `A` et `B` en même temps. Cela
-  devra afficher sur le `micro:bit` le message validé.
+Si notre lettre déchiffrée est invalide (est égale à `None`), il faudra afficher
+un smiley `ANGRY`. Dans le cas contraire, si elle est valide, il faudra
+afficher un smiley `HAPPY` et rajouter notre lettre au message.
 
 <details>
 <summary>Besoin d'aide ? Clique ici !</summary>
 
 Si tu ne vois pas comment faire, tu peux commencer par répondre à ces questions :
 
-- Comment je récupère et stocke les appuis de Joseph sur les boutons ?
+- Comment je vérifie si le micro:bit est secoué ou non ?
 - Comment je détecte si le logo est appuyé ?
 - Comment je peux traduire chaque lettre en morse ?
 - Comment je peux concaténer des lettres ?
+- Comment je peux sortir d'une boucle avec un seul mot-clé ?
 
 </details>
 

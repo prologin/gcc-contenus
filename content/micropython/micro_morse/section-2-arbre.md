@@ -1,9 +1,9 @@
 # Utilisons les arbres !
 
-En informatique, une structure est particulièrement adaptée pour utiliser cette
-notion de **préfixe commun** : les arbres.
-Les arbres permettent en fait d'organiser des données et de les lier facilement.
-morse, les **lettres** ont un préfixe commun.
+En morse, les **lettres** ont un préfixe commun. On va alors utiliser une
+structure adaptée à cette notion de préfixe commun :
+les **arbres**. Les arbres permettent d'organiser des données et de les lier
+facilement.
 
 {{% box type="info" title="Un peu de vocabulaire" %}}
 
@@ -89,6 +89,18 @@ Si tu n'as pas compris quelque chose, n'hésite pas à demander de l'aide aux
 organisateurs.
 
 </details>
+
+{{% /box %}}
+
+{{% box type="warning" title="Mais il y a des noeuds vides !" %}}
+
+Si tu regardes un peu plus l'arbre que l'on te donne pour traduire des lettres
+en morse, tu vas remarquer qu'il y a des noeuds vides ! C'est tout à fait
+normal. Il existe 26 lettres dans l'alphabet latin et sur un arbre binaire à 4
+niveaux, on a 30 places ; donc 4 noeuds sont vides !
+
+Si tu tombes sur un noeud vide, cela veut dire que le code morse n'est pas
+correct !
 
 {{% /box %}}
 
