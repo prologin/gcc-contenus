@@ -8,7 +8,7 @@ Dans notre code, nous allons représenter le serpent comme une liste de coordonn
 
 {{<figure src="resources/images/microbit_axes.png" width=500 caption="Le pixel aux coordonnées (2, 4) est allumé">}}
 
-Sur le `micro:bit`, on représente l'axe X à l'horizontal et l'axe Y à la verticale. Le pixel en haut à gauche est aux coordonnées `(0, 0)``.
+Sur le `micro:bit`, on représente l'axe X à l'horizontal et l'axe Y à la verticale. Le pixel en haut à gauche est aux coordonnées `(0, 0)`.
 
 {{% box type="info" title="Les tuples en bref" %}}
 
@@ -44,7 +44,7 @@ print(mon_tuple)
 
 
 {{% box type="warning" %}}
-Attention, tu ne peux pas modifier une seul valeur d'un tuple !
+Attention, tu ne peux pas modifier une seule valeur d'un tuple !
 ```codepython
 mon_tuple = (5, 6)
 mon_tuple[0] = 8 #Erreur
@@ -65,7 +65,7 @@ L'exemple ci-dessus correspond au serpent sur l'image suivante (la tête est le 
 {{< figure src="resources/images/snake_0.png" >}}
 
 {{% box type="exercise" title="Mission 1 : As-tu tout compris ?" %}}
-Tout ce que tu as à faire dans cette partie est de t'assurer que tu as bien tout compris sur ce que l'on t'a expliqué précédemment. N'oublie pas de lire le code fourni aussi, il n'y a pas grand chose mais assure toi de bien comprendre ce que chaque parti fait et fera.
+Tout ce que tu as à faire dans cette partie est de t'assurer que tu as bien tout compris sur ce que l'on t'a expliqué précédemment. N'oublie pas de lire le code fourni aussi. Il n'y a pas grand chose mais assure toi de bien comprendre ce que chaque partie fait et fera.
 
 Si tu n'es pas sûre, n'hésite pas à demander à un organisateur.
 {{% /box %}}
@@ -105,9 +105,14 @@ GAUCHE = 3
 Tu peux utiliser des conditions ou t'aider de modulos pour connaître la prochaine direction !
 Si tu te demandes ce qu'est un modulo, c'est simplement le reste d'une division. 
 
-Prenons un exemple, lorsqu'on divise 13 par 5 on obtient 2 au quotient et il nous reste 3. Ainsi le modulo de 13 par 5 est 3. Si la notion n'est pas encore claire pour toi tu peux essayer de dessiner un schéma de l'exemple ci dessus ou appeler un organisateur. 
+Prenons un exemple, lorsqu'on divise 13 par 5 on obtient 2 au quotient et il nous reste 3. Ainsi le modulo de 13 par 5 est 3. En Python, cela ressemblerait à ça :
 
-Dans notre cas, nous allons utiliser les modulos afin de ne pas sortir des coordonnées utiliser pour allumer les LEDs sur la carte micro:bit.
+```codepython
+reste = 13 % 5
+print(reste)
+```
+
+Si la notion n'est pas encore claire pour toi tu peux essayer de dessiner un schéma de l'exemple ci dessus ou appeler un organisateur.
 {{% /box %}}
 
 ### Déplacement
@@ -124,7 +129,7 @@ Implémente la fonction `nouvelle_position_tete()` qui :
 1. prend en paramètres le serpent et sa direction actuelle
 2. renvoie les coordonnées de sa nouvelle tête
 
-_Attention :_ Si le serpent arrive contre le bord il passe de l'autre côté de l'écran !
+_Attention :_ Si le serpent arrive contre le bord, il passe de l'autre côté de l'écran !
 {{% /box %}}
 
 ### Le coeur du code

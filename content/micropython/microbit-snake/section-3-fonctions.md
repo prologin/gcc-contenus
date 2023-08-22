@@ -19,13 +19,13 @@ Pour créer une fonction, il faut 5 éléments :
 - le mot-clé `def`
 - le nom de la fonction
 - des parenthèses
-- deux points
+- deux points (`:`)
 - une indentation à la suite
 
 Voici un exemple de déclaration de fonction : `def hello_world():`.
 
-*L'indentation est l'espace que l'on mets devant une parti de code pour le considérer dans un block.*
-*N'hésite pas à appeler un organisateur si tu n'est plus sûr de ce que c'est.*
+*L'indentation est l'espace que l'on mets devant une parti de code pour le considérer dans un bloc.*
+*N'hésite pas à appeler un organisateur si tu n'est plus sûre de ce que c'est.*
 
 
 Prenons un exemple:
@@ -40,7 +40,7 @@ def trop_bas():
 x = 0
 
 while x < 5:
-    # Ici on appelle la fonction 'trop_bas()' que l'on a défini ci-dessus
+    # Ici on appelle la fonction 'trop_bas()' que l'on a définie ci-dessus
     trop_bas()
     x += 1
 
@@ -49,12 +49,12 @@ print("x est égal à 5")
 
 Les fonctions sont très utiles et utilisées car elles peuvent aussi prendre des _paramètres_ et _renvoyer une valeur_.
 
-Les paramètres : à l'intérieur des parenthèses qui suivent le nom de la fonction, on peut mettre un ou plusieurs paramètres qui seront utilisées comme des variables dans la fonction. Le résultat de la fonction peut dépendre ainsi des paramètres donnés.
+Les paramètres : à l'intérieur des parenthèses qui suivent le nom de la fonction, on peut mettre un ou plusieurs paramètres qui seront utilisés comme des variables dans la fonction. Le résultat de la fonction peut dépendre ainsi des paramètres donnés.
 
 Le `return`: ce mot-clé se trouve à la fin d'une fonction et permet de renvoyer une valeur.
 
 ```codepython
-# La fonction prend une valeur et renvoie sa puissance de 2
+# La fonction prend une valeur et renvoie sa valeur au carré
 # Ici on va utiliser le paramètre 'nombre' pour faire nos opérations
 def puissance_2(nombre):
     carre = nombre * nombre
@@ -63,7 +63,7 @@ def puissance_2(nombre):
     # Tout ce qui est écrit après le 'return' ne sera pas lu
 
 
-# Attention : on entre la valeur 5 en paramètres et on
+# Attention : on entre la valeur 5 en paramètre et on
 # récupère la valeur retournée par la fonction dans la variable 'resultat'
 resultat = puissance_2(5)
 print(resultat)

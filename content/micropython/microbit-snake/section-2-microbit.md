@@ -29,7 +29,7 @@ display.scroll(message)
 
 ### Les boutons
 
-Les boutons nous seront utile pour faire tourner le serpent. Lorsque l'on appuiera sur le bouton A, on voudra faire tourner dans le sens anti-horaire, tandis que lorsque l'on appuiera sur le bouton B, on fera tourner le serpent dans le sens horaire.
+Les boutons nous seront utiles pour faire tourner le serpent. Lorsque l'on appuiera sur le bouton A, on voudra faire tourner dans le sens anti-horaire, tandis que lorsque l'on appuiera sur le bouton B, on fera tourner le serpent dans le sens horaire.
 
 {{< codestep steps=3 lang="py" >}}
 
@@ -52,6 +52,6 @@ button_b.get_presses()
 
 {{< /codestep >}}
 
-Si tu veux t'amuser à tester la fonction idéale à utiliser pour le déplacement fait toi plaisir. Sinon, clique sur la bande noir ci-dessous pour voir celle qu'on utilisera.
+Si tu veux t'amuser à tester la fonction idéale à utiliser pour le déplacement fais toi plaisir. Sinon, clique sur la bande noire ci-dessous pour voir celle qu'on utilisera.
 
-{{< spoiler >}} La fonction idéale pour le déplacmeent sera le `was_pressed`. {{< /spoiler >}}
+{{< spoiler >}} La fonction idéale pour le déplacement sera la fonction `was_pressed()`. {{< /spoiler >}}
