@@ -51,7 +51,7 @@ def nouvelle_position_tete(serpent, direction):
 
 # La tete du serpent est le premier element de la liste
 # La queue est le dernier element
-serpent = [(2, 2)]
+serpent = [(2, 2), (2, 3)]
 longueur_serpent = 2
 direction = HAUT
 pomme = None
