@@ -1,7 +1,3 @@
----
-show_toc: true
----
-
 # Améliorations
 Maintenant, ton système de balise devrait être parfaitement fonctionnel.
 Tu peux continuer à améliorer ce projet en rajoutant encore d'autres

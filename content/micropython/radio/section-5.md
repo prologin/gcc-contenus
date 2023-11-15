@@ -1,7 +1,3 @@
----
-show_toc: true
----
-
 # Toujours plus loin !
 
 ## Générer un identifiant pour chaque client

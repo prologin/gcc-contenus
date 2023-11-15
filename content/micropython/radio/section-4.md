@@ -1,7 +1,3 @@
----
-show_toc: true
----
-
 # Aller plus loin
 
 Maintenant que tu as un système de balises fonctionel, il serait intéressant de

@@ -1,7 +1,3 @@
----
-show_toc: true
----
-
 # Le module radio
 
 
