@@ -16,7 +16,7 @@ de l'adversaire en prenant une image dans la liste `possibilites` à l'indice
 {{% box type="exercise" title="Exercice 7 : Qui a gagné ? Qui a perdu ?" %}}
 
 Maintentant qu'on a le choix du joueur et celui de l'adversaire, on peut savoir
-qui a gagner et qui a perdu ! Pour ce faire, on va d'abord vérifier s'il y a
+qui a gagné et qui a perdu ! Pour ce faire, on va d'abord vérifier s'il y a
 égalité entre les deux joueurs.
 
 Il y a égalité entre les deux joueurs dans notre jeu quand le choix de
