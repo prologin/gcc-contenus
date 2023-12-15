@@ -15,8 +15,8 @@ Pour lancer le site en local, il suffit de taper ces commandes dans un
 terminal : 
 
 ```bash
-git submodule update --init themes/gcc
-make -C themes/gcc
+git submodule update --init themes/prolotheme
+make -C themes/prolotheme
 hugo server
 ```
 Il est alors marqué sur quel port trouver le site en local (souvent le port `1313`).
