@@ -1,8 +1,9 @@
 ---
 title: Tutoriel Mu Editor
+draft: true
 date: 2021
 weight: 1
-subtitle: 
+subtitle:
 ---
 
 # Comment utiliser Mu Editor ?
