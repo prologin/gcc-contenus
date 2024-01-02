@@ -2,10 +2,13 @@
 title: Micro Morse
 date: 2023
 weight: 60
-subtitle: Joseph est encore dans de beaux draps... Aide le grâce aux arbres et à la récursivité !
+description: "Communique avec tes amis avec vos micro:bit en code morce ! 📡🖲️"
 code_stub_url: ./resources/given_resources/micro_morse.zip
 layout: multiple_sections
+showcase: ./resources/showcase.webp
 tags:
-    - micropython
-    - easy
+score: 60
+tags:
+    - radio
+    - algorithmique
 ---

@@ -13,7 +13,7 @@ stages:
     - apk add yarn zip make bash
   script:
     - make -C themes/prolotheme
-    - hugo
+    - hugo --environment production
   variables:
       GIT_SUBMODULE_STRATEGY: recursive
 

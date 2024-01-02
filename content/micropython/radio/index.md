@@ -5,10 +5,10 @@ date: 2023
 authors: ["midugh"]
 code_stub_url: resources/given_resources/skeleton.py
 layout: multiple_sections
-subtitle: Voici un TP permettant de comprendre le fonctionnement du module radio.
+showcase: ./resources/showcase.webp
 tags:
-    - micropython
+score: 40
+description: "Fais communiquer des micro:bit entre eux à l'aide de la radio ! 📡"
+tags:
     - radio
-    - reseau
-    - hard
 ---

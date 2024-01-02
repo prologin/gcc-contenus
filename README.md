@@ -25,7 +25,7 @@ Il est aussi possible d'avoir un aperçu d'un sujet d'exemple avec ces
 commandes :
 
 ```bash
-cd themes/gcc
+cd themes/prolotheme
 make preview
 ```
 

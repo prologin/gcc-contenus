@@ -1,14 +1,12 @@
 ---
 title: "Découverte de Micropython"
+description: "Découvre ce qu'est un micro:bit et le micropython, puis créer ton premier programme ! 💻👩‍💻"
 date: 2022
-weight: 10
-subtitle: "Au cours de ce TP, tu vas découvrir comment utiliser le micro:bit et comment coder en micropython."
 layout: multiple_sections
+score: 15
+showcase: ./resources/showcase.webp
+weight: 10
 tags:
-    - micropython
-    - variables
-    - boucles
-    - conditions
-    - easy
+    - game
 ---
 
