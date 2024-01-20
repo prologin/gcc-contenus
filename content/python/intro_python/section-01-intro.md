@@ -16,20 +16,20 @@ show_toc: true
 Derrière toutes les applications et les logiciels que vous utilisez sur votre ordinateur ou votre téléphone se cache en réalité des centaines de lignes de codes dans des fichiers.
 Ces dernières ne sont qu'un ensemble d'instructions dictant le fonctionnement du programme.
 
-Votre ordinateur est capable d'exécuter pleins d'opérations très rapidement mais ne comprend qu'un seul langage, le langage machine.
+Votre ordinateur est capable d'exécuter plein d'opérations très rapidement mais ne comprend qu'un seul langage, le langage machine.
 
 
-Les humains étant incapable de comprendre ce langage, nous passons donc par des langages de programmation qui sont plus lisibles pour nous. Puis ce langage est traduit pour l'ordinateur. Pour cela, il existe des programmes dédiés à la traduction du code en langage machine, qui demande de respecter une syntaxe précise sinon il ne peut pas fonctionner. Nous utiliserons le langage Python pour ce stage.
+Les humains étant incapable de comprendre ce langage, nous passons donc par des langages de programmation qui sont plus lisibles pour nous. Puis ce langage est traduit pour l'ordinateur. Pour cela, il existe des programmes dédiés à la traduction du code en langage machine, qui demande de respecter une syntaxe précise sans quoi il ne peut pas fonctionner. Nous utiliserons le langage Python pour ce stage.
 
 ## Types de données
 
-En Python il existe plusieurs types de données, de valeurs comprises par l'ordinateur, les plus connus sont :
+En Python il existe plusieurs types de données, de valeurs comprises par l'ordinateur, les plus connues sont :
 - Les entiers qui sont juste des nombres.
 - Les chaînes de caractères utilisées pour stocker du texte. L'intérêt est de préciser à l'ordinateur que les mots ou nombres qui suivent sont à prendre littéralement. On reconnait une chaîne quand elle commence et se termine par des guillemets.
 ```python {nocopy=true}
 "Ceci est une chaîne de caractères."
-"1"
-1
+"1" # Ici il s'agit d'une chaine avec le caractères '1'
+1 # Ici il s'agit de l'entier 1
 
 # Ici, il faut noter la différence entre `1` et `"1"`,
 # même si elles représentent toutes les deux la valeur 1,
@@ -50,28 +50,28 @@ False
 
 # La fonction print
 
-Dans notre fichier on peut donc écrire plusieurs de données et d'opérations à la suite ainsi :
+Dans notre fichier on peut donc écrire plusieurs types de données et d'opérations à la suite ainsi :
 ```codepython
 1 + 2
 3
 "ceci est du texte"
 ```
 Si on lance le code avec le bouton Run, rien ne se passe.
-En réalité, l'ordinateur a exécuté les opérations et a aussi pris en compte ce qu'on a écrit, on n'a juste pas pu les observer.
+En réalité, l'ordinateur a exécuté les opérations et a aussi pris en compte le code écrit. Néanmoins, les résultats de ses opérations ne sont ici par observables car l'utilisateur n'a pas demandé de les afficher.
 
 Il existe une différence entre ton fichier et la console (qu'on appelle aussi terminal).
-La console permet d'**afficher** si on le désire certaines données lors de l'exécution du code grâce à ce qu'on appelle des fonctions.
+La console permet d'**afficher** certaines données lors de l'exécution du code grâce à ce qu'on appelle des fonctions.
 
 On reconnait une fonction par les parenthèses qui sont après le nom de cette dernière.
 
 Elle peut ou non prendre des arguments. Un argument de fonction c'est une valeur qui sera utile à l'intérieur de la fonction.
-Lorsque des arguments sont requis, on les place entre les parenthèses et séparés de virgules, si y'en a plusieurs.
+Lorsque des arguments sont requis, ils sont passés entre parenthèses et séparés par des virgules s'il y en a plusieurs.
 ```python {nocopy=true}
 fonction_sans_arguments() # Ce sont juste des exemples
 fonction_avec_argument(2) # Ces fonctions n'existent pas
 fonction_plusieurs_arguments(1, 2, "oui")
 ```
-Python met à disposition plusieurs fonctions pratiques dont `print` qui permet d'afficher des valeurs dans la console. Si l'on reprend le code au début mais en rajoutant la fonction `print` :
+Python met à disposition plusieurs fonctions pratiques dont `print` qui permet d'afficher des valeurs dans la console. En reprenant le code du dessus mais en rajoutant la fonction `print`, les résultats seront observables :
 ```codepython
 print(1 + 2) # Cette fonction existe, essayez la !
 print(3)
@@ -92,7 +92,7 @@ print(1, "2", 3, "oui")
 
 {{% /box %}}
 
-# Les operateurs
+# Les opérateurs
 
 Python nous permet d’effectuer des opérations, comme une calculatrice très perfectionnée. Essaie le programme suivant :
 
@@ -113,31 +113,33 @@ En plus des quatre opérations classiques, Python propose d'autres opérateurs c
 Essaie-les pour comprendre ce qu'ils font.
 
 # Variables
-Pour l'instant nous avons nos valeurs un peu éparpillées au travers de notre programme.
+Pour l'instant, nos valeurs sont un peu éparpillées au travers de notre programme.
 Si on faisait un lien avec la vraie vie, ça serait comme avoir ses affaires éparpillées partout dans sa chambre, c'est pas très propre et ça peut devenir difficile de s'y retrouver.
 
-L'idéal ça serait de pouvoir ranger tout ça et éventuellement avoir un moyen de retrouver ce qu'on veut facilement. 
+L'idéal serait de pouvoir ranger tout ça et éventuellement avoir un moyen de retrouver ce qu'on veut facilement. 
 
 En programmation, c'est pareil et nous utilisons pour cette raison des **variables**. On peut voir les variables comme des tiroirs avec des étiquettes dessus.
 
 ```codepython
 a = 1
 b = 2
-d = "Hello World !"
+c = "Hello World !"
 
-print(d)
+print(a)
+print(b)
+print(c)
 ```
 {{% box type="info" title="Bonne pratique" %}}
 
-Dans la pratique on privilégie des noms courts mais compréhensibles, le but étant après tout de se retrouver dans notre code.
+Dans la pratique on privilégie des noms courts et pertinents pour nommer ses variables. Bien nommer ses variables permet de grandement simplifier la compréhension du code généré.
 
-Avec la variable `d`, par exemple, n'a pas le nom le plus claire. Ca pourrait etre n'importe quoi au final. Ne serait-ce pas plus clair de l'appeler `hello` à la place ?
+Par exemple, le nom de la variable `c` n'est pas le plus clair. Il pourrait contenir n'importe quel type de données, ce nom complique la compréhension du code. Ne serait-ce pas plus clair de l'appeler `hello` à la place ?
 
 {{% /box %}}
 
 ## Opérations avec des variables
 
-Mais ce qui est encore plus pratique, c’est que l’on peut faire des opérations avec les valeurs contenues dans nos variables. Essaie par exemple le programme suivant :
+Mais ce qui est encore plus pratique, c’est que l’on peut effectuer des opérations avec les valeurs contenues dans nos variables. Essaie par exemple le programme suivant :
 
 ```codepython
 a = 4
@@ -147,16 +149,16 @@ print(resultat)
 ```
 À quoi ça sert ? Ici, le calcul est très simple, mais imagine que tu aies beaucoup d'opérations à effectuer.
 
-En écrivant ton programme avec des variables, tu n'as qu'à changer leur valeur au début pour pouvoir refaire toutes ces opérations sans avoir à écrire de nouveau du code.
+En écrivant ton programme avec des variables, tu n'as qu'à changer leurs valeurs au début pour pouvoir refaire toutes ces opérations sans avoir à écrire de nouveau du code.
 
 Si tu voulais plutôt calculer 5 + 3 ici, il suffirait de remplacer la première ligne par `a = 5`.
 
-Il s’agit de ton premier programme avec plusieurs instructions, et donc plusieurs lignes, car en Python, on met une instruction par ligne. Une instruction, c’est une tâche que l’on demande à l’ordinateur d’effectuer : affiche ceci, mets cette valeur dans cette variable, etc.
+Il s’agit de ton premier programme avec plusieurs instructions, et donc plusieurs lignes. En Python, avoir une seule instruction par ligne est une bonne pratique. Une instruction, c’est une tâche que l’on demande à l’ordinateur d’effectuer : affiche ceci, mets cette valeur dans cette variable, etc.
 
 ## Pour aller plus loin
 <!-- à voir pour reformuler la phrase -->
-En Python, on peut utiliser les variables de différentes manières. On peut ajouter à une variable une autre variable ou tout simplement lui ajouter un certain nombre.
-Ces deux opérations peuvent s'écrirent de deux façons différentes mais qui correspondent à la même chose. Essaie par exemple le programme suivant :
+En Python, on peut utiliser les variables de différentes manières. Il est possible d'effectuer des opérations diverses sur le contenu de chaque variable en fonction de son type de données. Par exemple, si une variable contient un entier, il sera possible d'effectuer des opérations mathématiques diverses.
+Ces deux opérations peuvent s'écrire de deux façons différentes, bien que le comportement soit fondamentalement le même. Essaie par exemple le programme suivant :
 
 ```codepython
 a = 10
