@@ -69,16 +69,16 @@ Voici un exemple simple pour illustrer :
 from random import randint
 from microbit import *
 
-x = randint(0, 100)  # assigne un nombre aléatoire à x compris entre 0 et 100
+x = 0
 
 if x < 30:
-    display.scroll('x est inférieur à 30')
+    display.scroll("Pomme")
 elif x < 50:
-    display.scroll('x est supérieur ou égal à 30 et inférieur à 50')
+    display.scroll("Poire")
 elif x < 80:
-    display.scroll('x est supérieur ou égal à 50 et inférieur à 80')
+    display.scroll("Banane")
 else:
-    display.scroll('x est supérieur ou égal à 80')
+    display.scroll("Orange")
 ```
 
 ### Mini-exercice
