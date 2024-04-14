@@ -22,10 +22,10 @@ def dessiner_serpent(serpent):
     """
 
     # Affiche la tete avec plus d'intensite
-    display.set_pixel(serpent[0][1], serpent[0][0], 9)
+    display.set_pixel(serpent[0][0], serpent[0][1], 9)
 
-    for (i, j) in serpent[1:]:
-        display.set_pixel(j, i, INTENSITE_SERPENT)
+    for (x, y) in serpent[1:]:
+        display.set_pixel(x, y, INTENSITE_SERPENT)
 
 
 def nouvelle_direction(direction):
@@ -107,7 +107,7 @@ while longueur_serpent < 25:
     # TODO: Affiche la pomme
     # TODO: Affiche le serpent
     if pomme is not None:
-        display.set_pixel(pomme[1], pomme[0], INTENSITE_POMME)
+        display.set_pixel(pomme[0], pomme[1], INTENSITE_POMME)
     dessiner_serpent(serpent)
     sleep(500)
 

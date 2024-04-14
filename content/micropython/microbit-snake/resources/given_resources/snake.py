@@ -22,10 +22,10 @@ def dessiner_serpent(serpent):
     """
 
     # Affiche la tete avec plus d'intensite
-    display.set_pixel(serpent[0][1], serpent[0][0], 9)
+    display.set_pixel(serpent[0][0], serpent[0][1], 9)
 
-    for (i, j) in serpent[1:]:
-        display.set_pixel(j, i, INTENSITE_SERPENT)
+    for (x, y) in serpent[1:]:
+        display.set_pixel(x, y, INTENSITE_SERPENT)
 
 
 def nouvelle_direction(direction):
