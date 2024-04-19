@@ -50,7 +50,7 @@ code :
 # Importe une fonction pour faire de l'aléatoire
 from random import randint
 
-# Crée un nombre aléatoire `x` entre 1 et 5
+# Crée un nombre aléatoire `x` entre 0 et 5
 x = randint(0, 5)
 
 # Affiche `x` dans la console

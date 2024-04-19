@@ -32,7 +32,7 @@ display.scroll("Tu es sortie !")
 
 <br>
 
-{{% box type="exercise" title="Mini-mission 9 : Nombre d'appuis" %}}
+{{% box type="exercise" title="Mini-mission 8 : Nombre d'appuis" %}}
 
 Écris un programme qui compte et affiche le nombre d'appuis sur les
 boutons A et B avant que le bouton tactile ne soit touché.
@@ -110,7 +110,7 @@ Voici un petit schéma pour bien différencier les différents blocs de code :
 
 {{<figure src="resources/images/for_loop.png" >}}
 
-{{% box type="exercise" title="Mini-mission 8 : Multiplication fois trois !" %}}
+{{% box type="exercise" title="Mini-mission 9 : Multiplication fois trois !" %}}
 
 Comme pour l'exercice 2, Joseph voudrait connaître le résultat de la
 multiplication de différents nombres. Sauf que cette fois-ci, il ne veut pas se
