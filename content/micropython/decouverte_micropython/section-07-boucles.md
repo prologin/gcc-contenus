@@ -1,108 +1,125 @@
 # Ça fait beaucoup de lignes
 
-Tu sais maintenant comment créer des programmes assez complexes. Mais imaginons
-que tu veuilles effectuer plusieurs fois la même action. Tu pourrais écrire un
-bout de code et le copier/coller le nombre de fois que tu veux le répéter, mais
-c'est assez long et peu efficace. Eh bien ça tombe bien, il existe en Python ce
-que l'on appelle des `boucles`, c'est-à-dire des petits bouts de codes qui
-peuvent se répéter. Il en existe deux : les boucles `for` et les boucles
-`while`. Nous allons commencer par la première.
-
-## Pour un certain nombre de fois
-
-Nous allons donc ici traiter la boucle `for`. Ce type de boucle sert à répéter
-un certain nombre de fois un bloc de code. Ce nombre de répétitions **doit être
-connu** d'une manière ou d'une autre. Le cas où ce nombre n'est pas connu est
-traité dans la boucle `while` un peu plus bas. 
-
-Voyons le fonctionnement de ce type de boucles à travers un exemple simple : 
-
-```python
-for i in range(5):
-    # Ce qui suit va être répété 5 fois, une variable `i` est créée,
-    # et va prendre successivement les valeurs 0, 1, 2, 3 puis 4.
-    display.scroll("Coucou numéro " + str(i))
-    sleep(500)
-
-display.show(Image.HAPPY) # Cette ligne de code n'est pas répétée
-```
-
-- _Ligne 1_ : Ici, c'est la déclaration de la boucle. C'est la partie la plus complexe.
-              Le mot clé `for` indique que la déclaration commence.
-              Ensuite, il y a une variable `i`. Elle peut prendre n'importe quel nom,
-              ça n'a pas d'importance. Il y a enfin le `range(5)` qui nous indique que
-              la boucle sera répétée `5` fois. Comme indiqué en commentaire, la variable
-              `i` prendra successivement les valeurs de 0 à 5 exclu. Le `5` peut être
-              remplacé par n'importe quelle valeur numérique entière. 
-- _Ligne 4_ : Affiche la phrase `"Coucou numéro "` suivie de la valeur de `i`. La fonction
-              `str()` permet de transformer un entier en une chaîne de caractères. 
-- _Ligne 5_ : Met en pause le programme pendant _500_ millisecondes
-- _Ligne 7_ : Affiche un smiley souriant
-
-Voici un petit schéma pour bien différencier les différents blocs de code : 
-
-{{<figure src="resources/images/for_loop.png" width=400 >}}
-
-
-Bien sûr, il est possible d'"emboîter" des boucles les unes dans les
-autres :
-
-```python
-# La prochaine ligne ne sera exécutée qu'une seule fois:
-display.scroll("start")
-
-for i in range(5):  # Début du bloc `for` n°1
-    # La prochaine ligne sera exécutée 5 fois:
-    display.scroll("i=" + str(i))
-
-    for j in range(5):  # Début du bloc `for` n°2
-        # La prochaine ligne sera exécutée 5*5 = 25 fois:
-        display.scroll("j=" + str(j))
-    # Fin du bloc `for` n°2
-
-    # La prochaine ligne sera aussi exécutée 5 fois:
-    display.scroll("i=" + str(i))
-# Fin du bloc `for` n°1
-
-# La prochaine ligne ne sera aussi exécutée qu'une seule fois:
-display.scroll("end")
-```
-
-### Mini-exercice
-**But :** Comme pour l'exercice 2, Joseph voudrait connaître le résultat de la
-multiplication de différents nombres. Sauf que cette fois-ci, il ne veut pas se
-limiter à deux nombres. Écris un programme qui multiplie 3 nombres entre eux. Tu
-peux récupérer les nombres en comptant le nombre d'appuis sur le bouton A, en
-laissant quelques secondes à chaque fois. 
-
-_Aide :_ Pour savoir quand tu passes au nombre suivant, tu peux allumer la LED
-de coordonnée `(0, i)` à chaque début de boucle. 
-
-
+Tu sais maintenant comment créer des programmes assez complexes. Pour répéter
+une action et t'éviter de copier-coller des bouts de code, il existe en Python
+ce que l'on appelle des **boucles**. Il en existe deux : les boucles `for` et les
+boucles `while`. Nous allons commencer par la dernière.
 
 ## Tant que 
 
-La boucle **while** est une boucle dont le bloc de code est répété tant qu'une
-condition est vérifiée (d'où son nom :D). Illustrons cette boucle à travers un
-exemple de code : 
+La boucle **while** ("tant que") est une boucle dont le bloc de code est répété
+tant qu'une condition est vérifiée (d'où son nom). On l'écrit similairement à
+des conditions `while condition:`. Illustrons cette boucle à travers un exemple
+de code :
+
+{{< codestep steps=3 lang="py" >}}
+
+{{< codestep-block desc="Déclaration de la boucle avec le mot-clé `while` avec comme condition `button_a.get_presses() == 0`" >}}
+while button_a.get_presses() == 0:
+{{< /codestep-block >}}
+
+{{< codestep-block desc="Affiche l'image `ANGRY` tant qu'on reste dans la boucle" >}}
+    # Ce qui suit va être répété tant que le button A n'a pas été appuyé
+    display.show(Image.ANGRY)
+ 
+{{< /codestep-block >}}
+
+{{< codestep-block desc="Affiche \"Tu es sortie !\" une seule fois" >}}
+display.scroll("Tu es sortie !")
+{{< /codestep-block >}}
+
+{{< /codestep >}}
+
+<br>
+
+{{% box type="exercise" title="Mini-mission 9 : Nombre d'appuis" %}}
+
+Écris un programme qui compte et affiche le nombre d'appuis sur les
+boutons A et B avant que le bouton tactile ne soit touché.
+
+<br>
+
+_Aide :_ Tu peux utiliser `pin_logo.is_touched()` pour vérifier si le bouton
+tactile a été appuyé.
+
+{{% /box %}}
+
+{{% box type="info" title="Les boucles infinies" %}}
+
+Pour utiliser les boutons des `micro:bit`, on va souvent vouloir vérifier **tout
+le temps** si une condition est vérifiée (comme `button_a.is_pressed()`). Pour
+cela, on va utiliser une **boucle infinie** qui ne s'arrête jamais. Dans ce cas là
+on utilisera la boucle `while True` comme dans cet exemple :
 
 ```python
-while button_a.get_presses() == 0:
-    display.scroll("Appuie sur le bouton A pour sortir")
-    sleep(500)
+# Importe les fonctions pour le micro:bit
+from microbit import *
 
-display.scroll("Tu es sorti !")
+while True:
+    # Vérifie tout le temps si le bouton A est appuyé ou non
+    if button_a.is_pressed():
+        display.show(Image.HAPPY)
+
+    else:
+        # Affiche `ANGRY` si le bouton n'est pas appuyé
+        display.show(Image.ANGRY)
 ```
 
-Nous avons sur la première ligne la déclaration de la boucle avec le mot-clé
-`while` suivi de la condition d'arrêt. Ici, la boucle s'arrêtera lorsque tu 
-appuieras sur le bouton A. 
-Pour ce qui concerne les lignes suivantes, tu connais déjà leur comportement. 
+{{% /box %}}
 
-### Mini-exercice
-**But :** Écris un programme qui compte et affiche le nombre d'appuis sur les
-boutons A et B avant que le bouton tactile ne soit touché. 
+## Pour un certain nombre de fois
 
-_Aide :_ Tu peux utiliser `display.show(Image.ALL_CLOCKS)` pour afficher une
-horloge d'attente. 
+La boucle `for` est un peu différente de la boucle `while`, car elle permet de
+répéter un bloc de code un nombre fini de fois. Ce nombre de répétitions **doit
+être connu** pour pouvoir utiliser ce type de boucle.
 
+Voyons le fonctionnement de ce type de boucles à travers de plusieurs exemples.
+Tu peux cliquer sur les flèches pour avoir les explications et à la fin, lancer
+les programmes !
+
+### Les boucles simples
+
+Le nombre dans les parenthèses de `range` indique le nombre de répétitions, ici
+la boucle répète 3 fois le bloc de code en-dessous.
+
+```python
+for i in range(3):
+    # Affiche "Test."
+    print("Test.")
+```
+
+### La variable de la boucle `for`
+
+La variable `i` indique le numéro de la répétition, en partant de 0, la boucle
+fera 5 répétitions.
+
+```codepython
+for i in range(5):
+    # Affiche la valeur de `i` à chaque tour de boucle
+    print("Numéro de répétition :", i)
+```
+
+`i` étant une variable, tu peux changer son nom si tu as envie :
+
+```codepython
+for un_autre_nom in range(3):
+    print(un_autre_nom)
+```
+
+Voici un petit schéma pour bien différencier les différents blocs de code : 
+
+{{<figure src="resources/images/for_loop.png" >}}
+
+{{% box type="exercise" title="Mini-mission 8 : Multiplication fois trois !" %}}
+
+Comme pour l'exercice 2, Joseph voudrait connaître le résultat de la
+multiplication de différents nombres. Sauf que cette fois-ci, il ne veut pas se
+limiter à deux nombres. Écris un programme qui multiplie 3 nombres entre eux. Tu
+peux récupérer les nombres en comptant le nombre d'appuis sur le bouton A, en
+laissant quelques secondes à chaque fois.
+
+
+> _Petite astuce :_ Pour savoir quand tu passes au nombre suivant, tu peux allumer la LED
+> de coordonnée `(0, i)` à chaque début de boucle pour différencier les nombres.
+
+{{% /box %}}

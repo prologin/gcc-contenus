@@ -1,144 +1,204 @@
 # Les variables
 
-Jusque là, on a vu comment afficher des images et du texte sur le 
-`micro:bit`, mais ces informations sont statiques : une fois écrites dans le
-code, elles ne peuvent plus être modifiées. Heureusement, un 
-ordinateur peut enregistrer des informations pour les traiter, les modifier,
-voire même en créer de nouvelles !
+La plupart du temps, nous avons besoin de stocker des informations dans notre
+code. On parle alors de variables. Elles permettent de ranger des choses et de
+pouvoir les ressortir quand on le souhaite. Ce sont des éléments qui associent
+un nom à une valeur. C'est comme si on utilisait des boîtes pour ranger des
+éléments !
 
-Pour cela, on utilise des variables : un morceau de la mémoire dans lequel on
-va pouvoir enregistrer des valeurs. Quand on crée une variable, on commence par
-lui donner un nom qui va être utilisé pour lire ou modifier la valeur qui lui
-a été donnée.
+{{<figure src="resources/images/variable.png" width=400 alt="Variable en Python" >}}
 
-## Utilisation des variables
-
-Pour **créer une variable**, il suffit d'écrire `nom_de_la_variable =
-valeur_initiale`, par exemple : `nombre_de_patates = 42`.
-
-Ensuite on peut **réutiliser la valeur** stockée dans la variable en
-l'identifiant par son nom. Par exemple, on peut créer une nouvelle variable
-`prix` qui dépend de la variable qui a été créée précédemment : `prix =
-nombre_de_patates + 50`. Dans ce cas, comme `nombre_de_patates` vaut
-actuellement _42_, alors `prix = 42 + 50`. Donc à la fin de cette ligne, la
-variable `prix` vaut _92_. 
-
-Pour **modifier une variable** on utilise aussi le symbole d'égalité, par
-exemple on peut augmenter de 1 la valeur stockée dans une variable :
-`nombre_de_patates = nombre_de_patates + 1`.
-
-Voici un exemple de programme complet que tu peux tester sur ton `micro:bit`
-suivi d'un petit schéma qui représente ce qui est enregistré dans les variables
-après chaque ligne du programme :
+Pour déclarer une variable en Python, on procède de la sorte :
 
 ```python
+# Importe les fonctions pour le micro:bit
 from microbit import *
 
-panier_pommes = 3
-panier_poires = 5
-panier_poires = 2 * panier_poires # panier_poires vaut 2 * 5 = 10
-panier_fruits = panier_pommes + panier_poires # panier_fruits vaut 10 + 3 = 13
+# Déclaration de `ma_variable`, qui stocke la valeur 42
+ma_variable = 42
 
-display.scroll(panier_fruits)
+# Affiche la valeur de `ma_variable`
+display.scroll(ma_variable)
 ```
 
+Tu peux mettre à jour une variable grâce à sa valeur actuelle. Pour comprendre
+un peu mieux, voici un petit exemple :
 
-### Mini-Exercice
-**But :** Crée une variable avec la valeur 42, puis ajoutes-y 2 et affiche-la 
-sur l'écran.
+{{< codestep steps=5 lang="py" >}}
+
+{{< codestep-block desc="Importe les fonctions pour utiliser le `micro:bit`" >}}
+from microbit import *
+ 
+{{< /codestep-block >}}
+
+{{< codestep-block desc="La variable `nombre` stocke la valeur de 10" >}}
+nombre = 10
+{{< /codestep-block >}}
+
+{{< codestep-block desc="Affiche la valeur de la variable `nombre`" >}}
+display.scroll(nombre)
+ 
+{{< /codestep-block >}}
+
+{{< codestep-block desc="Rajoute 1 à la variable `nombre`" >}}
+nombre = nombre + 1
+{{< /codestep-block >}}
+
+{{< codestep-block desc="Affiche la nouvelle valeur de `nombre`" >}}
+display.scroll(nombre)
+{{< /codestep-block >}}
+
+{{< /codestep >}}
+
+On peut caractériser les variables en différents types.
 
 ## Types de variables
 
 ### Nombres
 
 Comme leur nom l'indique, il s'agit tout simplement de nombres (positifs ou 
-négatifs). On peut donc faire des opérations dessus avec les opérateurs 
-classiques : `+`, `-`, `*` (multiplication), `/` (division), `//` (division
-entière), `%` (modulo). 
+négatifs). On peut donc faire des opérations dessus avec les opérateurs
+suivants :
+
+| Nom | Opérateur | Exemple | Résultat |
+|:--:|:--:|:--:|--:|
+| Addition | `+` | 7 + 2 | 9 |
+| Soustraction | `-` | 7 - 2 | 5 |
+| Multiplication | `*` | 7 * 2 | 14 |
+| Division | `/` | 7 / 2 | 3.5 |
+| Division entière | `//` | 7 // 2 | 3 |
+| Modulo | `%` | 7 % 2 | 1 |
+
+<br>
+
+<details>
+<summary>C'est quoi une division entière et un modulo ?</summary>
 
 Les deux dernières opérations ne te sont peut-être pas familières, et c'est
-normal, mais elles ne sont pas compliquées. 
+normal, mais elles ne sont pas compliquées. Elles correspondent aux résultats
+de la division euclidienne. Voici un petit exemple :
 
-La division entière (`//`) et le modulo (`%`) correspondent respectivement au
-quotient et au reste de la division euclidienne. 
-Pour faire simple, la division entière renvoie la partie entière de la division
-classique (la partie avant la virgule), tandis que le modulo correspond à ce
-qu'il reste. 
+{{<figure src="resources/images/division.png" height=60% width=60% alt="Liste en Python">}}
 
-Voici un petit mémo qui te permettra de comprendre ces opérations. 
+- La division entière (`//`) correspond au <font color=#A459D1>
+quotient </font>de la division, ici <font color=#A459D1>3</font>.
+- Le modulo (`%`) correspondent au <font color=#F266AB>reste </font>de la
+division, ici <font color=#F266AB>2</font>. 
 
-```python
-a = 2 * 5 + 3  # a vaut 13
-b = a / 5      # b vaut 13 / 5  = 2.6
-c = a // 5     # c vaut 13 // 5 = 2
-d = a % 5      # d vaut 13 % 5  = 3
+Voici un petit mémo qui te permettra de comprendre ces opérations, avec le même
+exemple.
+
+```codepython
+# Importe les fonctions pour le micro:bit
+from microbit import *
+
+a = 17
+b = 5
+
+print("Quotient = ")
+print(a // b)
+
+print("Reste = ")
+print(a % b)
 ```
+
+{{% box type="info" title="C'est quoi `print()` ?" %}}
+
+La fonction `print()` correspond à la fonction `display.scroll()` que tu as déjà
+pu voir avec les `micro:bit`. On l'utilise ici pour afficher quelque chose dans
+la console de notre site !
+
+{{% /box %}}
+
+</details>
 
 Si tu as des questions, n'hésite pas à demander de l'aide à un organisateur. 
 
-Nous pouvons aussi combiner plusieurs opérations ensemble. Par exemple :
+{{% box type="exercise" title="Mini-mission 4 : Joseph au marché" %}}
 
-```python
-e = (a - b) + c * d # (13 - 2.6) + 2 * 3 = 16.4, donc e = 16.4
-```
-
-#### Mini-Exercice
-**But :** Joseph a envie de bananes. Le marchand lui propose de les acheter pour
+Joseph a envie de bananes. Le marchand lui propose de les acheter pour
 2€ l'unité. Combien 10 bananes vont-elles lui coûter ? Affiche le résultat sur 
 le `micro:bit`.
+
+{{% /box %}}
 
 ### Chaînes de caractères
 
 On peut créer du texte en mettant son contenu entre guillemets (par exemple :
-`mon_texte = "Bonjour tout le monde !"`). On peut aussi attacher des morceaux
-de textes entre eux avec l'opérateur `+` (par exemple : `mon_texte = mon_texte +
-"!!"`).
+`mon_texte = "Bonjour tout le monde !"`). On peut aussi attacher des morceaux de
+texte entre eux avec le symbole `+` (par exemple : `mon_texte = "Bonjour" +
+"!"`).
 
 À noter qu'il est souvent très pratique de convertir un nombre en texte pour
 ensuite l'incorporer dans une phrase, on peut faire ça avec la fonction
 `str(nombre)`.
 
 ```python
+# Importe les fonctions pour le micro:bit
 from microbit import *
 
 nombre_de_patates = 42
 texte = "Il y a " + str(nombre_de_patates) + " patates !"
-display.scroll(texte)  # Affiche "Il y a 42 patates !" sur l'écran
+display.scroll(texte)
 ```
 
-#### Mini-Exercice
-**But :** Comme dans l'exercice précédent, Joseph a besoin de savoir combien 
+<br>
+
+{{% box type="exercise" title="Mini-mission 5 : Augmentation de prix !" %}}
+
+Comme dans l'exercice précédent, Joseph a besoin de savoir combien 
 vont lui coûter ses bananes. Mais le marchand a augmenté le prix et les bananes 
-coûtent désormais 3€ chacune. Après avoir calculé, affiche `"Payer (le prix) 
-pour 10 bananes ? Mais c'est beaucoup trop cher !"` en remplaçant `le prix` par 
+coûtent désormais 3€ chacune.
+
+Après avoir calculé le prix que devrait payer Joseph, affiche `"Payer (le prix)
+pour 10 bananes ? Mais c'est beaucoup trop cher !"` en remplaçant `le prix` par
 sa valeur.
 
+{{% /box %}}
 
 ### Booléens
 
 Enfin, les booléens servent à exprimer le vrai ou le faux. Il n'y a que deux
 valeurs possibles pour ce type de variables : `True` (vrai) et `False` (faux).
 
-Des valeurs booléennes sont renvoyées par les opérations de comparaison :  
-- `==` pour l'égalité. `a == b` va renvoyer `True` si a et b sont égaux
-- `!=` pour la différence. `a != b` va renvoyer `True` si a et b sont différents
-- `<` et `>` pour les inégalités strictes. `a < b` va renvoyer `True` si a est
-    strictement plus petit que b, et inversement pour `a > b`
-- `<=` et `>=` pour les inégalités larges. `a <= b` va renvoyer `True` si a est
-    plus petit ou égal à b, et inversement pour `a >= b`
+Comme pour les nombres, il existe différentes opérations qui te renverront un
+booléen :
 
-Par exemple `1 < 2` vaut `True` mais `3 != 3` vaut
-`False`.
+| Nom | Opérateur | Exemple | Résultat |
+|:--:|:--:|:--:|--:|
+| Égalité | `==` | 2 == 3 | False |
+| Différence | `!=` | 2 != 3 | True |
+| Inférieur strict | `<` | 2 < 3 | True |
+| Inférieur ou égal | `<=` | 2 <= 3 | True |
+| Supérieur strict | `>` | 2 > 3 | False |
+| Supérieur ou égal | `>=` | 2 >= 3 | False |
 
-Enfin, il est possible de manipuler les valeurs booléennes avec les opérateurs
-`not`, `and` et `or` :
+<br>
 
- - `not a` vaut l'inverse de `a`, donc `True` si a vaut `False`;
- - `a and b` vaut `True` si et seulement si `a` **et** `b` valent `True`;
- - `a or b` vaut `True` si et seulement si `a` **ou** `b` valent `True`.
+```python
+# Importe les fonctions pour le micro:bit
+from microbit import *
 
-#### Mini-Exercice
-**But :** Après une discussion intense avec le marchand, Joseph n'est plus sûr
-de ses calculs. Les bananes coûtant 3€, il pense que pour 7 bananes il en aura
+# Affiche si 42 est égal à 42
+display.scroll(42 == 42)
+```
+
+Tu vas pouvoir également utiliser des opérateurs directement sur des valeurs
+booléennes :
+
+| Nom | Opérateur | Exemple | Résultat | Commentaire |
+|:--:|:--:|:--:|--:|:--|
+| Inverse | `not` | not True | False | Renvoie l'inverse de la valeur |
+| Et | `and` | True and True | True | Vaut vrai si et seulement si les deux conditions sont vraies |
+| Ou | `or` | True or False | True | Vaut vrai si et seulement si une des conditions est vraie |
+
+<br>
+
+{{% box type="exercise" title="Mini-mission 6 : Les calculs ne sont pas bons !" %}}
+
+Après une discussion intense avec le marchand, Joseph n'est plus sûr
+de ses calculs. Chaque banane coûtant 3€, il pense que pour 7 bananes il en aura
 pour 22€. Calcule le vrai prix et affiche si celui de Joseph est le bon.
+
+{{% /box %}}
 
