@@ -1,0 +1,68 @@
+#conwayContainer {
+    padding-bottom: 10px;
+}
+
+/*this is a table*/
+table {
+    background-color: #a7c80e;
+    border-spacing: 0;
+}
+
+/*this is a cell*/
+td { 
+    border: 1px solid #F1F5DA;
+    border-radius: 3px;
+    width: 10px;
+    height: 5px;
+}
+
+/*start button*/
+#start {
+    width: 9%;
+    height: 11%;
+    color: white;
+    padding: .75em;
+    border-radius: 5px;
+    border: none;    
+    background: linear-gradient(
+        to bottom right,	
+        #00afd4, #00afd4);
+}
+
+/*clear button*/
+#clear {
+    width: 9%;
+    height: 11%;
+    color: white;
+    padding: .75em;
+    border-radius: 5px;
+    border: none;    
+    background: linear-gradient(
+        to bottom right,
+        #e6006c, #e6006c);
+}
+
+/*random button*/
+#random {
+    width: 9%;
+    height: 11%;
+    color: white;
+    padding: .75em;
+    border-radius: 5px;
+    border: none;    
+    background: linear-gradient(
+        to bottom right,
+        #a7c80e, #a7c80e);
+}
+
+/*dead cell property*/
+td.dead {
+    background-color: transparent;
+}
+
+/*alive cell property*/
+td.live {
+
+    background-color:#00afd4;
+    border-radius: 0px;
+}
