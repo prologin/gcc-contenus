@@ -3,7 +3,7 @@
 Bonjour à toi jeune programmeuse !  
 
 Je suis Joseph Marchand, c'est moi qui vais t'apprendre à créer tes propres
-programmes informatiques à travers différents TPs. Avant de commencer, sache
+programmes informatiques à travers différents TP. Avant de commencer, sache
 que tu seras accompagnée par mes fidèles acolytes : les organisateurs. Ce sont
 eux qui me remplacent pour répondre à tes questions alors n'hésite pas ! Tout
 au long du stage, tu vas pouvoir jouer avec un `micro:bit` !

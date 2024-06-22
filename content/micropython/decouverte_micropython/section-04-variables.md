@@ -116,9 +116,9 @@ Si tu as des questions, n'hésite pas à demander de l'aide à un organisateur.
 
 {{% box type="exercise" title="Mini-mission 4 : Joseph au marché" %}}
 
-Joseph a envie de bananes. Le marchand lui propose de les acheter pour
-2€ l'unité. Combien 10 bananes vont-elles lui coûter ? Affiche le résultat sur 
-le `micro:bit`.
+Joseph a envie de manger des bananes. Le marchand lui propose de les acheter
+pour 2€ l'unité. Combien 10 bananes vont-elles lui coûter ? Affiche le résultat
+sur le `micro:bit`.
 
 {{% /box %}}
 
