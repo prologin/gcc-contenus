@@ -37,6 +37,9 @@ display.scroll("Tu es sortie !")
 Écris un programme qui compte et affiche le nombre d'appuis sur les
 boutons A et B avant que le bouton tactile ne soit touché.
 
+Pendant que tu attendes avant que tu appuies le bouton tactile, tu peux afficher
+l'image `Image.CLOCKS`.
+
 <br>
 
 _Aide :_ Tu peux utiliser `pin_logo.is_touched()` pour vérifier si le bouton

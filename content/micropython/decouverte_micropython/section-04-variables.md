@@ -71,8 +71,27 @@ suivants :
 
 <br>
 
+```codepython
+# N'hésite pas à modifier le code pour tester
+# les différentes opérations
+
+a = 7
+b = 2
+
+# Affiche le calcul entre a et b
+print(a * b)
+```
+
+{{% box type="info" title="C'est quoi `print()` ?" %}}
+
+La fonction `print()` correspond à la fonction `display.scroll()` que tu as déjà
+pu voir avec les `micro:bit`. On l'utilise ici pour afficher quelque chose dans
+la console de notre site !
+
+{{% /box %}}
+
 <details>
-<summary>C'est quoi une division entière et un modulo ?</summary>
+<summary>Clique ici pour découvrir ce que sont une division entière et un modulo !</summary>
 
 Les deux dernières opérations ne te sont peut-être pas familières, et c'est
 normal, mais elles ne sont pas compliquées. Elles correspondent aux résultats
@@ -101,14 +120,6 @@ print(a // b)
 print("Reste = ")
 print(a % b)
 ```
-
-{{% box type="info" title="C'est quoi `print()` ?" %}}
-
-La fonction `print()` correspond à la fonction `display.scroll()` que tu as déjà
-pu voir avec les `micro:bit`. On l'utilise ici pour afficher quelque chose dans
-la console de notre site !
-
-{{% /box %}}
 
 </details>
 
@@ -151,8 +162,8 @@ vont lui coûter ses bananes. Mais le marchand a augmenté le prix et les banane
 coûtent désormais 3€ chacune.
 
 Après avoir calculé le prix que devrait payer Joseph, affiche `"Payer (le prix)
-pour 10 bananes ? Mais c'est beaucoup trop cher !"` en remplaçant `le prix` par
-sa valeur.
+euros pour 10 bananes ? Mais c'est beaucoup trop cher !"` en remplaçant
+`le prix` par sa valeur.
 
 {{% /box %}}
 

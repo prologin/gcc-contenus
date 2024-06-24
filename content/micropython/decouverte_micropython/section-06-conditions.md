@@ -47,16 +47,25 @@ Essaye d'exécuter ce code en cliquant sur le bouton `Run` !
 # Importe une fonction pour faire de l'aléatoire
 from random import randint
 
-# Crée un nombre aléatoire `x` entre 0 et 1
-x = randint(0, 1)
+# Crée un nombre aléatoire `x` entre 0 et 4
+# Les nombres possibles sont 0, 1, 2, 3 et 4
+x = randint(0, 4)
 
-# Affiche "Bonjour !" seulement quand `x` est égal à 1
-if x == 1:
+# Affiche "Bonjour !" seulement quand `x` est inférieur à 3
+if x < 3:
     print("Bonjour !")
 
 # Affiche tout le temps x
 print(x)
 ```
+
+{{% box type="info" title="Qu'est-ce que c'est `randint()` ?" %}}
+
+La fonction `randint()` permet de générer un nombre aléatoire entre deux
+nombres. Par exemple, si tu appelles la fonction avec `randint(1, 4)`, les
+nombres possibles seront 1, 2, 3 et 4.
+
+{{% /box %}}
 
 <br>
 
