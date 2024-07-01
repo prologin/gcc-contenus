@@ -12,7 +12,12 @@ tant qu'une condition est vérifiée (d'où son nom). On l'écrit similairement 
 des conditions `while condition:`. Illustrons cette boucle à travers un exemple
 de code :
 
-{{< codestep steps=3 lang="py" >}}
+{{< codestep steps=4 lang="py" >}}
+
+{{< codestep-block desc="Importe les fonctions pour utiliser le `micro:bit`" >}}
+from microbit import *
+ 
+{{< /codestep-block >}}
 
 {{< codestep-block desc="Déclaration de la boucle avec le mot-clé `while` avec comme condition `button_a.get_presses() == 0`" >}}
 while button_a.get_presses() == 0:
@@ -34,11 +39,11 @@ display.scroll("Tu es sortie !")
 
 {{% box type="exercise" title="Mini-mission 8 : Nombre d'appuis" %}}
 
-Écris un programme qui compte et affiche le nombre d'appuis sur les
-boutons A et B avant que le bouton tactile ne soit touché.
+Écris un programme qui compte le nombre d'appuis sur les boutons A et B et qui 
+affiche ce nombre lorsque le bouton tactile est touché.
 
-Pendant que tu attendes avant que tu appuies le bouton tactile, tu peux afficher
-l'image `Image.CLOCKS`.
+Pendant que le programme attends (avant que tu appuies le bouton tactile), tu 
+peux afficher l'image `Image.ALL_CLOCKS`.
 
 <br>
 
@@ -115,9 +120,11 @@ Voici un petit schéma pour bien différencier les différents blocs de code :
 
 {{% box type="exercise" title="Mini-mission 9 : Multiplication fois trois !" %}}
 
-Comme pour l'exercice 2, Joseph voudrait connaître le résultat de la
+Comme pour la mini-mission 2, Joseph voudrait connaître le résultat de la
 multiplication de différents nombres. Sauf que cette fois-ci, il ne veut pas se
-limiter à deux nombres. Écris un programme qui multiplie 3 nombres entre eux. Tu
+limiter à deux nombres. 
+
+Écris un programme qui multiplie 3 nombres entre eux. Tu
 peux récupérer les nombres en comptant le nombre d'appuis sur le bouton A, en
 laissant quelques secondes à chaque fois.
 
