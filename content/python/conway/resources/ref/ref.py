@@ -129,7 +129,8 @@ def next_generation(board):
 
 def run_game(nb):
     # ici tu dois initialiser le plateau du jeu
-    board = init_board(nb)
+    board = create_board()
+    board = init_board(board, nb)
 
     while True:
         display(board)
