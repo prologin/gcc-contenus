@@ -1,6 +1,6 @@
 ---
 title: Ensembles et dictionnaires
-weight: 20
+weight: 30
 date: 2021
 showcase: ./resources/showcase.webp
 description: Explore la puissance des ensembles et des dictionnaires en Python. Apprends à optimiser ton code avec ces outils.

@@ -1,7 +1,7 @@
 ---
 title: Listes
 weight: 5
-date: 2023
+date: 2024
 layout: multiple_sections
 showcase: ./resources/showcase.webp
 tags:

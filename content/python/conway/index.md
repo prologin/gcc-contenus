@@ -1,6 +1,6 @@
 ---
 title: Game of Life
-weight: 6
+weight: 20
 date: 2024
 tags:
     - python

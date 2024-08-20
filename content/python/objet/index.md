@@ -1,6 +1,6 @@
 ---
 title: "Objet : Pokemon"
-weight: 10
+weight: 25
 date: 2023
 layout: multiple_sections
 showcase: ./resources/showcase.webp

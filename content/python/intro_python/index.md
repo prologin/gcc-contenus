@@ -1,7 +1,7 @@
 ---
 title: Introduction à Python
 weight: 1
-date: 2023
+date: 2024
 tags:
     - python
 score: 20

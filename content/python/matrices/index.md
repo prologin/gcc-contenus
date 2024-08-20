@@ -1,6 +1,6 @@
 ---
 title: Matrices
-weight: 5
+weight: 15
 date: 2021
 author: Tanguy Segarra
 code_stub_url: ./resources/given_resources/matrices.zip
