@@ -1,45 +1,42 @@
-solution = "girlscancode"
-tentatives = 7
-mot = ["_"] * len(solution)
+# Partie 1 : Initialiser le jeu
+pendu = ["\n===========Y=\n ||/\n ||\n ||\n ||\n/||\n==============\n", "\n===========Y=\n ||/       |\n ||\n ||\n ||\n/||\n==============\n", "\n===========Y=\n ||/       |\n ||        0\n ||\n ||\n/||\n==============\n", "\n===========Y=\n ||/       |\n ||        0\n ||       /|\n ||\n/||\n==============\n", "\n===========Y=\n ||/       |\n ||        0\n ||       /|\\\n ||\n/||\n==============\n", "\n===========Y=\n ||/       |\n ||        0\n ||       /|\\\n ||       /\n/||\n==============\n", "\n===========Y=\n ||/       |\n ||        0\n ||       /|\\\n ||       / \\\n/||\n==============\n"]
 
+solution = "prologin"
+partie = ['_'] * len(solution)
+vies = 7
 
-print(">> Bienvenue dans le pendu <<")
+print("Bienvenue dans le jeu du Pendu !")
 
-while tentatives > 0 and "_" in mot:
-    print("\nMot à deviner :", " ".join(mot))
-    proposition = input("Proposez une lettre : ")[0].lower()
+# Partie 2 : Créer la boucle de jeu
+while '_' in partie and vies > 0:
+    # Partie 3 : Afficher l'avancement actuel et
+    # demander une propostion
+    mot = ' '.join(partie)
+    print("Mot à deviner :", mot)
 
-    if proposition in solution:
-        print("-> Bien vu!")
+    proposition = input("Quelle lettre souhaites-tu proposer ? ")
+    lettre = proposition[0]
 
-        # Decouverte de la lettre dans `mot`
+    # Partie 4 : Vérifier si la proposition
+    # est dans la solution
+    if lettre in solution:
+        print("Tu viens de trouver une lettre !\n")
+
         for i in range(len(solution)):
-            if solution[i] == proposition:
-                mot[i] = proposition
+            if lettre == solution[i]:
+                partie[i] = solution[i]
 
+    # Partie 5 : Enlever une vie si la
+    # proposition n'est pas bonne
     else:
-        print("-> Nope\n")
-        tentatives = tentatives - 1
+        print("Tu viens de perdre une vie !")
+        vies -= 1
+        print(pendu[7 - vies - 1])
 
-        # Affichage du pendu
-        if tentatives == 0:
-            print(" ==========Y= ")
-        if tentatives <= 1:
-            print(" ||/       |  ")
-        if tentatives <= 2:
-            print(" ||        0  ")
-        if tentatives <= 3:
-            print(" ||       /|\ ")
-        if tentatives <= 4:
-            print(" ||       /|  ")
-        if tentatives <= 5:
-            print("/||           ")
-        if tentatives <= 6:
-            print("==============\n")
+# Partie 6 : Afficher la solution
+print("Le mot à trouver était :", solution)
 
-if not "_" in mot:
-    print(">>> Gagné! <<<")
-
-print("\n    * Fin de la partie *    ")
-
-
+if vies == 0:
+    print("Tu n'as pas pu trouver le mot...")
+else:
+    print("Bravo, tu as gagné !")
