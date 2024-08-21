@@ -31,24 +31,18 @@ Si tu n'as pas compris cette méthode, n'hésite pas à appeler un organisateur 
 à revoir la partie des boucles `for` du sujet
 [Introduction à Python](https://tp.girlscancode.fr/python/intro_python/).
 
-{{% box type="exercise" title="Mission 9 : Porte-monnaie" %}}
+{{% box type="exercise" title="Mission 9 : Trier les bonbons !" %}}
 
-Avant d'embarquer, Julie voudrait compter l'argent qu'elle a dans son
-porte-monnaie. Cependant, Julie est très minutieuse et il a rangé correctement
-l'ensemble de ses pièces dans différents compartiments de son porte-monnaie en
-fonction de leur valeur. Elle ne voudrait surtout pas devoir tout trier une
-nouvelle fois !
+En se promenant dans les magasins de l'aéroport, tu remarques qu'un vendeur
+a besoin d'aide pour trier ses articles. Il voudrait séparer tous les paquets de
+*Prolobonbons* d'un grand carton.
 
-Dans la liste `porte_monnaie`, l'élément à l'indice `i` correspond au nombre de
-pièces de valeur `i + 1`. Par exemple, à l'indice 2, tu retrouveras le nombre de
-pièces de 3 *Prolomonnaie* qu'a Julie dans son porte-monnaie.
+Il voudrait que tu l'aides à retrouver tous les indices (positions) dans la liste
+`carton_bonbons` où l'on trouve l'élément `"Prolobonbons"` et à mettre ces indices dans une
+nouvelle liste ! À la fin, tu pourras afficher cette nouvelle liste.
 
-Sers-toi de la liste `porte_monnaie` pour calculer la somme de tout l'argent
-qu'a Julie en faisant attention à la valeur de chaque pièce. Tu peux utiliser
-une variable qui comptabilise petit à petit la somme d'argent.
-
-```python
-porte_monnaie = [6, 10, 4, 5, 10, 8]
+```codepython
+carton_bonbons = ["Schtroumpf", "Tagada", "Pompote", "Smarties", "Smarties", "Pompote", "Kinder", "Schtroumpf", "Kinder", "Prolobonbons", "Tagada", "Pompote", "Prolobonbons", "Pompote", "Schtroumpf", "Crocodiles", "Smarties", "Prolobonbons", "Prolobonbons", "Prolobonbons", "Smarties", "Schtroumpf", "Prolobonbons", "Crocodiles", "Tagada", "Pompote", "Crocodiles", "Smarties", "Kinder", "Prolobonbons", "Pompote", "Smarties", "Pompote", "Kinder", "Crocodiles", "Tagada", "Pompote", "Kinder", "Pompote", "Kinder", "Kinder", "Kinder", "Kinder", "Kinder", "Schtroumpf", "Kinder", "Schtroumpf", "Pompote", "Prolobonbons", "Pompote"]
 ```
 
 {{% /box %}}

@@ -75,18 +75,18 @@ sac_gouter.remove("kouign-amann")
 sac_gouter.remove("pain au chocolat")
 print(sac_gouter)
 
-# Mission 9 : Porte-monnaie
+# Mission 9 : Trier les bonbons !
 # `for`
 
-porte_monnaie = [6, 10, 4, 5, 10, 8]
+carton_bonbons = ["Schtroumpf", "Tagada", "Pompote", "Smarties", "Smarties", "Pompote", "Kinder", "Schtroumpf", "Kinder", "Prolobonbons", "Tagada", "Pompote", "Prolobonbons", "Pompote", "Schtroumpf", "Crocodiles", "Smarties", "Prolobonbons", "Prolobonbons", "Prolobonbons", "Smarties", "Schtroumpf", "Prolobonbons", "Crocodiles", "Tagada", "Pompote", "Crocodiles", "Smarties", "Kinder", "Prolobonbons", "Pompote", "Smarties", "Pompote", "Kinder", "Crocodiles", "Tagada", "Pompote", "Kinder", "Pompote", "Kinder", "Kinder", "Kinder", "Kinder", "Kinder", "Schtroumpf", "Kinder", "Schtroumpf", "Pompote", "Prolobonbons", "Pompote"]
 
-somme = 0
-longueur = len(porte_monnaie)
+indices = []
 
-for i in range(longueur):
-    somme += porte_monnaie[i] * (i + 1)
+for i in range(len(carton_bonbons)):
+    if carton_bonbons[i] == "Prolobonbons":
+        indices.append(i)
 
-print(somme)
+print(indices)
 
 # Mission 10 : Embarquement :
 # `for`
