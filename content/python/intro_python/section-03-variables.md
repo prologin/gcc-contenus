@@ -197,7 +197,7 @@ exemples. Tu peux cliquer sur la flèche pour faire défiler les images.
 
 {{% box type="exercise" title="Mission 3 : Argent de poche" %}}
 
-Avant de te téléporter dans ce nouveau monde, Juie t'as donné quelques pièces.
+Avant de te téléporter dans ce nouveau monde, Julie t'as donné quelques pièces.
 Tu commences à avoir faim... Tu te rends alors dans une taverne, qui se nomme la
 *Prolotaverne*, et tu te rends compte que les prix sont en euros (quelle
 chance) !

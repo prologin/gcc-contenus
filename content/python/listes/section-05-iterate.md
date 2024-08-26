@@ -41,7 +41,7 @@ Il voudrait que tu l'aides à retrouver tous les indices (positions) dans la lis
 `carton_bonbons` où l'on trouve l'élément `"Prolobonbons"` et à mettre ces indices dans une
 nouvelle liste ! À la fin, tu pourras afficher cette nouvelle liste.
 
-```codepython
+```python
 carton_bonbons = ["Schtroumpf", "Tagada", "Pompote", "Smarties", "Smarties", "Pompote", "Kinder", "Schtroumpf", "Kinder", "Prolobonbons", "Tagada", "Pompote", "Prolobonbons", "Pompote", "Schtroumpf", "Crocodiles", "Smarties", "Prolobonbons", "Prolobonbons", "Prolobonbons", "Smarties", "Schtroumpf", "Prolobonbons", "Crocodiles", "Tagada", "Pompote", "Crocodiles", "Smarties", "Kinder", "Prolobonbons", "Pompote", "Smarties", "Pompote", "Kinder", "Crocodiles", "Tagada", "Pompote", "Kinder", "Pompote", "Kinder", "Kinder", "Kinder", "Kinder", "Kinder", "Schtroumpf", "Kinder", "Schtroumpf", "Pompote", "Prolobonbons", "Pompote"]
 ```
 

@@ -102,7 +102,7 @@ longueur de la liste - 1** (dans l'exemple, entre 0 et 2).
 
 {{% box type="exercise" title="Mission 1 : On part pour l'aventure !" %}}
 
-Julie t'informe que tu vas partir en voyage avec lui pour présenter les stages
+Julie t'informe que tu vas partir en voyage avec elle pour présenter les stages
 Girls Can Code! aux quatre coins du monde ! Pour ne pas perdre les valises que
 vous allez prendre, il voudrait écrire "GCC!" dessus.
 

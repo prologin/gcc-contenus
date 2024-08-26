@@ -55,7 +55,7 @@ if "A" == "A":
 
 {{% /box %}}
 
-{{% box type="info" title="Identation et création de blocs de code" %}}
+{{% box type="info" title="Indentation et création de blocs de code" %}}
 
 Python utilise l'indentation pour isoler certains bouts de codes et créer
 des **blocs de code**.
