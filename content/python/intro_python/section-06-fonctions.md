@@ -109,12 +109,26 @@ qu'ils t'aident à creuser dans le sol et révéler le secret !
 > Diggy diggy hole, diggy diggy hole
 
 > Après avoir affiché ces paroles, affiche la phrase suivante en utilisant la
-> variable `nom` à la place de `{nom}` !
+> variable `nom` à la place de <font color=#F54110>**nom**</font> !
 > 
 > </br>
-> "Come {nom} and sing with me!"
+> "Come <font color=#F54110>nom</font> and sing with me!"
 
 Appelle ta fonction avec ton prénom puis avec *"Julie"* et enfin avec *"Joseph"*
 en paramètre et le secret se dévoilera !
+
+<details>
+<summary>Clique pour voir un rappel sur la fonction print</summary>
+
+En *Python* pour intégrer une variable dans le texte affiché par `print` on peut utliser des virgules (`,`).
+
+```codepython
+nom = "Marchand"
+
+# Affiche la variable avec `print`
+print("Salut", nom , "! Comment vas-tu ?")
+```
+
+</details>
 
 {{% /box %}}
