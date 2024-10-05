@@ -50,7 +50,7 @@ En ce qui concerne ton propre choix, tu n'as rien besoin de changer.
 
 {{% box type="exercise" title="Exercice 9 : Le choix de l'ordinateur" %}}
 
-Tu vas d'abord devoir initialiser le choix de l'adversaire à 0 pour qu'on puisse
+Tu vas d'abord devoir initialiser `choix_adversaire` à 0 pour qu'on puisse
 y accéder par la suite.
 
 Pour le choix de l'ordinateur, une toute petite modification est nécessaire.

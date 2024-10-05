@@ -138,7 +138,19 @@ sur le `micro:bit`.
 On peut créer du texte en mettant son contenu entre guillemets (par exemple :
 `mon_texte = "Bonjour tout le monde !"`). On peut aussi attacher des morceaux de
 texte entre eux avec le symbole `+` (par exemple : `mon_texte = "Bonjour" +
-"!"`).
+" !"`).
+
+{{< codestep steps=2 lang="py" run=true >}}
+
+{{< codestep-block desc="Concatène le texte \"Bonjour\" et le texte \" !\"." >}}
+texte  = "Bonjour" + " !"
+{{< /codestep-block >}}
+
+{{< codestep-block desc="Affiche le texte concaténé." >}}
+print(texte)
+{{< /codestep-block >}}
+
+{{< /codestep >}}
 
 À noter qu'il est souvent très pratique de convertir un nombre en texte pour
 ensuite l'incorporer dans une phrase, on peut faire ça avec la fonction
@@ -152,6 +164,15 @@ nombre_de_patates = 42
 texte = "Il y a " + str(nombre_de_patates) + " patates !"
 display.scroll(texte)
 ```
+
+{{< gallery steps=4 >}}
+
+{{< gallery-img src="./resources/images/patate_1.png" desc="Création Variable `nombre_de_patates`." >}}
+{{< gallery-img src="./resources/images/patate_2.png" desc="Conversion de `nombre_de_patates` en texte." >}}
+{{< gallery-img src="./resources/images/patate_3.png" desc="Concaténation des textes." >}}
+{{< gallery-img src="./resources/images/patate_4.png" desc="Le résultat." >}}
+
+{{< /gallery >}}
 
 <br>
 
