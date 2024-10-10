@@ -49,7 +49,7 @@ sur la ligne de diodes centrales.
 {{% box type="info" title="C'est quoi les lignes qui commencent par un `#` ?" %}}
 
 Les lignes qui commencent par un `#` sont des commentaires. Ces lignes vont être
-ignoréees par le `micro:bit`. Ils sont écrits par les développeurs et pour les
+ignorées par le `micro:bit`. Ils sont écrits par les développeurs et pour les
 développeurs afin de mieux comprendre ce que fait un programme.
 
 {{% /box %}}
