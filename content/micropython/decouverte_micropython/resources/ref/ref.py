@@ -116,7 +116,7 @@ display.scroll(a * b)
 #*** LES BOUTONS ***
 
 """
-Mini-mission 8 : Multiplication 3 fois !
+Mini-mission 7 : Multiplication 3 fois !
 """
 
 resultat = 1
@@ -132,14 +132,14 @@ display.scroll(resultat)
 #----------
 
 """
-Mini-mission 9 : Nombre d'appuis
+Mini-mission 8 : Nombre d'appuis
 """
 
 while not pin_logo.is_touched():
     display.show(Image.CLOCKS)
 
-display.show("A :" + str(button_a.get_presses()))
-display.show("B :" + str(button_b.get_presses()))
+display.scroll("A :" + str(button_a.get_presses()))
+display.scroll("B :" + str(button_b.get_presses()))
 
 #*** PROJET ***
 
