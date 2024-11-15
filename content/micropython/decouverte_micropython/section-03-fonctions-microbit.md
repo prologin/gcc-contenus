@@ -35,8 +35,9 @@ résultat :
 
 {{<figure src="resources/images/microbit_coordinates.png" width=400 caption="Coordonnées des LEDs">}}
 
-Comme tu peux le remarquer avec l'image ci-dessous, les lignes et les colonnes
-sont numérotées entre 0 et 4 !
+Comme tu peux le remarquer avec l'image ci-dessus, les lignes et les colonnes
+sont numérotées entre 0 et 4 ! Cela signifie donc que la première ligne est
+numérotée 0, la deuxième est numérotée 1, etc.
 
 <br>
 

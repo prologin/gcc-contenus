@@ -120,7 +120,7 @@ Voici un petit schéma pour bien différencier les différents blocs de code :
 
 {{% box type="exercise" title="Mini-mission 9 : Multiplication fois trois !" %}}
 
-Comme pour la mini-mission 2, Joseph voudrait connaître le résultat de la
+Comme pour la mission 3, Joseph voudrait connaître le résultat de la
 multiplication de différents nombres. Sauf que cette fois-ci, il ne veut pas se
 limiter à deux nombres. 
 
