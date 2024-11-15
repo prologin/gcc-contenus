@@ -9,7 +9,7 @@ te retrouver en pleine mer.
 
 {{% box type="info" %}}
 
-La fonction `send(mesage)` du module `radio` permet d'envoyer un
+La fonction `send(message)` du module `radio` permet d'envoyer un
 message via la radio du `micro:bit`.
 {{% /box %}}
 
@@ -118,13 +118,13 @@ recu = radio.receive_full()
 # dans ce cas, le message reçu serait None.
 if recu is not None:
     # le premier élément du tuple est le contenu du message
-    # Içi SOS par exemple.
+    # Ici SOS par exemple.
     message = recu[0]
 
     # le deuxième élément est la puissance du signal.
     puissance = recu[1]
 
-    # Affiche le message reçu par la balise client (émétteur).
+    # Affiche le message reçu par la balise client (émetteur).
     display.scroll(message)
 
     # Affiche la puissance du signal.
