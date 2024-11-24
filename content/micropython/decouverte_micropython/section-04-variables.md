@@ -108,9 +108,6 @@ Voici un petit mémo qui te permettra de comprendre ces opérations, avec le mê
 exemple.
 
 ```codepython
-# Importe les fonctions pour le micro:bit
-from microbit import *
-
 a = 17
 b = 5
 
