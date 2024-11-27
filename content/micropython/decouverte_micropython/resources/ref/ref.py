@@ -74,7 +74,8 @@ Mini-mission 5 : Augmentation de prix !
 prix = 3
 nombre_de_bananes = 10
 total = nombre_de_bananes * prix
-display.scroll("Payer " + str(prix) + " pour 10 bananes ? Mais c'est beaucoup trop cher !")
+texte = "Payer " + str(prix) + " pour 10 bananes ? Mais c'est beaucoup trop cher !"
+display.scroll(texte)
 
 #----------
 
