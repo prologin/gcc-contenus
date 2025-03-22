@@ -3,22 +3,21 @@
 Comme tu l'as vu plus tôt, il existe des fonctions qui permettent de contrôler
 le `micro:bit`. Nous allons ici te présenter les principales.
 
-
 ## Allumer des LEDs
 
 Il existe de nombreuses façons d'afficher quelque chose sur l'écran du
 `micro:bit`. La première, et la plus basique, consiste à choisir les LEDs que
-l'on veut allumer et à les allumer une par une. 
+l'on veut allumer et à les allumer une par une.
 
 {{<figure src="resources/images/leds.gif" width=400 caption="LEDs qui s'allument">}}
 
 Pour cela, tu l'as vu juste avant, on utilise la
-fonction `display.set_pixel(colonne, ligne, intensite)`, où : 
+fonction `display.set_pixel(colonne, ligne, intensite)`, où :
 
 - `colonne` représente le numéro de la colonne de la LED à allumer
 - `ligne` représente le numéro de la ligne de la LED à allumer
 - `intensite` représente l'intensité avec laquelle la LED va s'allumer (de 0
-pour éteindre la LED à 9 pour l'allumer à pleine puissance). 
+pour éteindre la LED à 9 pour l'allumer à pleine puissance).
 
 Voici un petit exemple de l'utilisation de la fonction :
 
@@ -26,7 +25,8 @@ Voici un petit exemple de l'utilisation de la fonction :
 # Importe les fonctions pour le micro:bit
 from microbit import *
 
-# Allume le pixel de la 4ème colonne et 2ème ligne à une intensité de 9
+# Allume le pixel de la 5ème colonne et 3ème ligne à une intensité de 9
+# car on commence à compter à partir de 0
 display.set_pixel(4, 2, 9)
 ```
 
@@ -114,7 +114,6 @@ que tu n'as pas comprises.
 {{% box type="exercise" title="Mission 1 : Salut Joseph !" %}}
 
 Max, un ami de Joseph, te demande de créer un programme
-pour que son `micro:bit` affiche une barre de chargement sur la ligne du milieu (en allumant simplement les LEDs de la 3e ligne une par une), 
-puis affiche le message `"Salut Joseph !"` suivi d'un smiley qui sourit. 
+pour que son `micro:bit` affiche une barre de chargement sur la ligne du milieu (en allumant simplement les LEDs de la 3e ligne une par une),
+puis affiche le message `"Salut Joseph !"` suivi d'un smiley qui sourit.
 {{% /box %}}
-
