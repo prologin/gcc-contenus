@@ -1,6 +1,6 @@
 ---
 title: "Formulaire de fin de stage Girls Can Code!"
-slug: "end"
+slug: "fin"
 hidden: true
 ---
 
