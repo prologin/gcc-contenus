@@ -227,7 +227,8 @@ booléennes :
 
 Après une discussion intense avec le marchand, Joseph n'est plus sûr
 de ses calculs. Chaque banane coûtant 3€, il pense que pour 7 bananes il en aura
-pour 22€. Calcule le vrai prix et affiche si celui de Joseph est le bon.
+pour 22€. Calcule le vrai prix et affiche si Joseph avait raison ou non.
+
 
 {{% /box %}}
 
