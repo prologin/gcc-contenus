@@ -48,9 +48,9 @@ while not (button_a.is_pressed() and button_b.is_pressed()):
     # le temps de lire l'entrée du joueur
     sleep(100)
 
-# On initialise le choix de l'adversaire à 0
+# On initialise le choix de l'adversaire à -1
 # par défaut
-choix_adversaire = 0
+choix_adversaire = -1
 
 if multijoueur == 0:
     # Choix aléatoire du microbit

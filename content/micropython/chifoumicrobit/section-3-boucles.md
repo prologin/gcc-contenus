@@ -8,11 +8,11 @@ appuyer sur les deux boutons du `micro:bit` en même temps.
 {{% box type="exercise" title="Exercice 2 : La sélection du personnage" %}}
 
 Dans la condition de ta boucle, à la place du booléen `False`, il faut vérifier
-si les boutons A et B ne sont pas pressés. Tu vas devoir alors utiliser le `and`
-et le `not`, deux mots-clés utilisés pour les variables booléennes et les
-conditions. Comme pour les calculs mathématiques, tu peux également utiliser
-des parenthèses dans ta condition pour effectuer une opération sur un groupe
-de conditions.
+si les boutons A et B ne sont pas pressés simultanément. Tu vas devoir alors
+utiliser le `and` et le `not`, deux mots-clés utilisés pour les variables
+booléennes et les conditions. Comme pour les calculs mathématiques, tu peux
+également utiliser des parenthèses dans ta condition pour effectuer une
+opération sur un groupe de conditions.
 
 N'hésite pas à appeler un organisateur si tu ne te souviens plus !
 
