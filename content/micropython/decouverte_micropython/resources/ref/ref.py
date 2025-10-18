@@ -1,6 +1,6 @@
 from microbit import *
 
-#*** LES FONCTIONS MICRO:BIT ***
+# *** LES FONCTIONS MICRO:BIT ***
 
 """
 Mini-mission 1 : Dessiner un coeur
@@ -17,7 +17,7 @@ display.set_pixel(3, 3, 9)
 display.set_pixel(4, 1, 9)
 display.set_pixel(4, 2, 9)
 
-#----------
+# ----------
 
 """
 Mini-mission 2 : Afficher une image
@@ -25,7 +25,7 @@ Mini-mission 2 : Afficher une image
 
 display.show(Image.PACMAN)
 
-#----------
+# ----------
 
 """
 Mini-exercice 3 : Afficher du texte
@@ -33,7 +33,7 @@ Mini-exercice 3 : Afficher du texte
 
 display.scroll("Prologin for the win!")
 
-#----------
+# ----------
 
 """
 Mission 1 : Salut Joseph !
@@ -54,7 +54,7 @@ sleep(500)
 display.scroll("Salut Joseph !")
 display.show(Image.HAPPY)
 
-#*** LES VARIABLES ***
+# *** LES VARIABLES ***
 
 """
 Mini-mission 4 : Joseph au marché
@@ -65,7 +65,7 @@ nombre_de_bananes = 10
 total = nombre_de_bananes * prix
 display.scroll(total)
 
-#----------
+# ----------
 
 """
 Mini-mission 5 : Augmentation de prix !
@@ -77,7 +77,7 @@ total = nombre_de_bananes * prix
 texte = "Payer " + str(prix) + " pour 10 bananes ? Mais c'est beaucoup trop cher !"
 display.scroll(texte)
 
-#----------
+# ----------
 
 """
 Mini-exercice 6 : Les calculs ne sont pas bons !
@@ -85,7 +85,7 @@ Mini-exercice 6 : Les calculs ne sont pas bons !
 
 display.scroll(3 * 7 == 22)
 
-#*** LES BOUTONS ***
+# *** LES BOUTONS ***
 
 """
 Mission 2 : Addition
@@ -96,7 +96,7 @@ a = button_a.get_presses()
 b = button_b.get_presses()
 display.scroll(a + b)
 
-#----------
+# ----------
 
 """
 Mission 3 : Calculatrice compacte
@@ -112,25 +112,21 @@ b = button_b.get_presses()
 
 display.scroll(a * b)
 
-#----------
+# ----------
 
-#*** LES BOUTONS ***
+# *** LES BOUTONS ***
 
 """
-Mini-mission 7 : Multiplication 3 fois !
+Mini-mission 7 : Diagonale de pixel en 4 lignes !
 """
 
-resultat = 1
-for i in range(3):
-    display.set_pixel(0, i, 9)
-    sleep(2000)
+# 4 lignes avec le `import`
 
-    a = button_a.get_presses()
-    resultat = resultat * a
+for i in range(5):
+    display.set_pixel(i, i, 9)
+    sleep(500)
 
-display.scroll(resultat)
-
-#----------
+# ----------
 
 """
 Mini-mission 8 : Nombre d'appuis
@@ -142,7 +138,7 @@ while not pin_logo.is_touched():
 display.scroll("A :" + str(button_a.get_presses()))
 display.scroll("B :" + str(button_b.get_presses()))
 
-#*** PROJET ***
+# *** PROJET ***
 
 from random import randint
 
@@ -151,18 +147,18 @@ while True:
     if button_a.was_pressed() or button_b.was_pressed():
         de_1 = randint(1, 6)
         de_2 = randint(1, 6)
-        
+
         display.scroll(de_1 + de_2)
-        
+
         if de_1 == de_2:
             nb_double += 1
             if nb_double < 3:
                 display.show(Image.HAPPY)
-            else: 
+            else:
                 display.show(Image.SAD)
 
         else:
             nb_double = 0
-        
+
         sleep(2000)
         display.clear()

@@ -2,15 +2,20 @@
 
 Tu sais maintenant comment créer des programmes assez complexes. Pour répéter
 une action et t'éviter de copier-coller des bouts de code, il existe en Python
-ce que l'on appelle des **boucles**. Il en existe deux : les boucles `for` et les
-boucles `while`. Nous allons commencer par la dernière.
+ce que l'on appelle des **boucles**.
+
+Il existe deux types de boucles : les boucles `for` et les
+boucles `while`.
 
 ## Tant que 
 
-La boucle **while** ("tant que") est une boucle dont le bloc de code est répété
-tant qu'une condition est vérifiée (d'où son nom). On l'écrit similairement à
-des conditions `while condition:`. Illustrons cette boucle à travers un exemple
-de code :
+La boucle `while` (*tant que* 🇫🇷) est une boucle dont le bloc de code est répété
+tant qu'une condition est vérifiée (d'où son nom). On l'écrit `while condition:`.
+On peut trouver des examples dans la vie courante :
+
+{{<figure src="resources/images/algo-while.webp" caption="Algorithme avec l'utilisation d'une boucle tant que" >}}
+
+Illustrons cette boucle à travers un exemple de code :
 
 {{< codestep steps=4 lang="py" >}}
 
@@ -37,41 +42,47 @@ display.scroll("Tu es sortie !")
 
 <br>
 
-{{% box type="exercise" title="Mini-mission 8 : Nombre d'appuis" %}}
+{{% box type="exercise" %}}
 
 Écris un programme qui compte le nombre d'appuis sur les boutons A et B et qui 
 affiche ce nombre lorsque le bouton tactile est touché.
 
 Pendant que le programme attends (avant que tu appuies le bouton tactile), tu 
-peux afficher l'image `Image.ALL_CLOCKS`.
+peux afficher l'image `Image.CLOCK1`.
 
-<br>
+{{% /box %}}
 
-_Aide :_ Tu peux utiliser `pin_logo.is_touched()` pour vérifier si le bouton
-tactile a été appuyé.
+{{% box type="hint" %}}
+
+Tu peux utiliser `pin_logo.is_touched()` pour vérifier si le bouton
+tactile a été appuyé qui renvoie un booléen (`True` ou `False`).
 
 {{% /box %}}
 
 {{% box type="info" title="Les boucles infinies" %}}
 
-Pour utiliser les boutons des `micro:bit`, on va souvent vouloir vérifier **tout
-le temps** si une condition est vérifiée (comme `button_a.is_pressed()`). Pour
-cela, on va utiliser une **boucle infinie** qui ne s'arrête jamais. Dans ce cas là
-on utilisera la boucle `while True` comme dans cet exemple :
+Pour que le programme ne s'arrête jamais, comme dans un jeu par exemple, nous
+pouvons utiliser une **boucle infinie**.
+
+La boucle `while` s'arrête si la condition est fausse, donc utiliser `True` comme
+condition, permet de créer une boucle infinie :
 
 ```python
 # Importe les fonctions pour le micro:bit
 from microbit import *
 
 while True:
-    # Vérifie tout le temps si le bouton A est appuyé ou non
-    if button_a.is_pressed():
+    # Vérifie si le bouton A a été appuyé
+    if button_a.get_presses() > 0:
         display.show(Image.HAPPY)
 
-    else:
-        # Affiche `ANGRY` si le bouton n'est pas appuyé
+    # Vérifie si le bouton B a été appuyé
+    if button_b.get_presses() > 0:
         display.show(Image.ANGRY)
 ```
+
+Ce programme affiche donc l'image `HAPPY` si le bouton A est le dernier à être
+appuyé, l'image `ANGRY` si c'est le bouton B.
 
 {{% /box %}}
 
@@ -80,10 +91,6 @@ while True:
 La boucle `for` est un peu différente de la boucle `while`, car elle permet de
 répéter un bloc de code un nombre fini de fois. Ce nombre de répétitions **doit
 être connu** pour pouvoir utiliser ce type de boucle.
-
-Voyons le fonctionnement de ce type de boucles à travers de plusieurs exemples.
-Tu peux cliquer sur les flèches pour avoir les explications et à la fin, lancer
-les programmes !
 
 ### Les boucles simples
 
@@ -116,20 +123,51 @@ for un_autre_nom in range(3):
 
 Voici un petit schéma pour bien différencier les différents blocs de code : 
 
-{{<figure src="resources/images/for_loop.png" >}}
+{{<figure src="resources/images/for_loop.webp" >}}
 
-{{% box type="exercise" title="Mini-mission 9 : Multiplication fois trois !" %}}
+{{% box type="exercise" %}}
 
-Comme pour la mission 3, Joseph voudrait connaître le résultat de la
-multiplication de différents nombres. Sauf que cette fois-ci, il ne veut pas se
-limiter à deux nombres. 
+Cette fois-ci, Lily veut impressionner ses amis en écrivant son programme en 4
+lignes maximum ! Elle veut que sa carte affiche une diagonale (comme sur l'image
+ci-dessous) pixel par pixel en partant du coin haut-gauche avec une pause de
+500ms entre chaque pixel qui s'allume.
 
-Écris un programme qui multiplie 3 nombres entre eux. Tu
-peux récupérer les nombres en comptant le nombre d'appuis sur le bouton A, en
-laissant quelques secondes à chaque fois.
+{{<figure src="resources/images/microbit_diagonal.webp" width=400 caption="LED en diagonales">}}
 
 
-> _Petite astuce :_ Pour savoir quand tu passes au nombre suivant, tu peux allumer la LED
-> de coordonnée `(0, i)` à chaque début de boucle pour différencier les nombres.
+Écris un programme qui récupère le nombre d'appuis sur le bouton A après 3 secondes,
+et affiche ce nombre juste après, le tout 3 fois.
 
+{{% /box %}}
+
+
+## Une variable score
+
+Comme dans un jeu vidéo, on peut combiner les variables avec les boucles, pour calculer
+des scores, ou tout autre donnée dont on a besoin toute la partie.
+
+Pour faire ça, on crée une variable avant la boucle, et on met à jour sa valeur, dans la
+boucle. Par exemple :
+
+```codepython
+total = 0
+for tour in range(10):
+    print("Tour numéro " + str(tour))
+    total = total + 2
+    print("Total = " + str(total))
+print("Final :")
+print(total)
+```
+
+{{% box type="exercise" %}}
+
+Lily te demande d'afficher le nombre total de pixels situés à gauche de la
+diagonale à la fin du programme.
+
+{{<figure src="resources/images/microbit_diagonal_sum.webp" width=400 caption="LED en diagonales">}}
+
+Tu peux reprendre ton programme précédent en utilisant une variable `total`
+qui va compter au fil de la boucle le nombre de pixels situés à gauche du pixel
+que tu as allumé.
+ 
 {{% /box %}}
