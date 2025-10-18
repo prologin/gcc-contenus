@@ -134,10 +134,6 @@ ci-dessous) pixel par pixel en partant du coin haut-gauche avec une pause de
 
 {{<figure src="resources/images/microbit_diagonal.webp" width=400 caption="LED en diagonales">}}
 
-
-Écris un programme qui récupère le nombre d'appuis sur le bouton A après 3 secondes,
-et affiche ce nombre juste après, le tout 3 fois.
-
 {{% /box %}}
 
 
