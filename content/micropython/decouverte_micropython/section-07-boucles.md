@@ -11,7 +11,7 @@ boucles `while`.
 
 La boucle `while` (*tant que* 🇫🇷) est une boucle dont le bloc de code est répété
 tant qu'une condition est vérifiée (d'où son nom). On l'écrit `while condition:`.
-On peut trouver des examples dans la vie courante :
+On peut trouver des exemples dans la vie courante :
 
 {{<figure src="resources/images/algo-while.webp" caption="Algorithme avec l'utilisation d'une boucle tant que" >}}
 
