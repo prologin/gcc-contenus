@@ -6,7 +6,6 @@ authors: ["midugh"]
 code_stub_url: resources/given_resources/skeleton.py
 layout: multiple_sections
 showcase: ./resources/showcase.webp
-tags:
 score: 40
 description: "Fais communiquer des micro:bit entre eux à l'aide de la radio ! 📡"
 tags:

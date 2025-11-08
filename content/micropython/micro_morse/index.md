@@ -6,7 +6,6 @@ description: "Communique avec tes amis avec vos micro:bit en code morse ! ðŸ“¡ðŸ
 code_stub_url: ./resources/given_resources/micro_morse.zip
 layout: multiple_sections
 showcase: ./resources/showcase.webp
-tags:
 score: 60
 tags:
     - radio
