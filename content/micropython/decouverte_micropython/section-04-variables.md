@@ -238,16 +238,10 @@ des guillemets en quelque sorte), on utilise `str` :
 
 ```py
 variable = 42             # contient le nombre 42
-type(variable)            # Affiche `<class 'int'>` car c'est un entier
+print(type(variable))            # Affiche `<class 'int'>` car c'est un entier
 variable2 = str(variable) # contient le texte "42"
-type(variable2)            # Affiche `<class 'str'>` car c'est un entier
+print(type(variable2))            # Affiche `<class 'str'>` car c'est une string
 ```
-
-{{% box hint %}}
-
-Tu peux cliquer sur `Run` pour voir ce que le code au-dessus va afficher !
-
-{{% /box %}}
 
 Pour transformer le texte en nombre, on utilise `int` à la place de `str`.
 
