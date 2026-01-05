@@ -97,7 +97,7 @@ répéter un bloc de code un nombre fini de fois. Ce nombre de répétitions **d
 Le nombre dans les parenthèses de `range` indique le nombre de répétitions, ici
 la boucle répète 3 fois le bloc de code en-dessous.
 
-```python
+```codepython
 for i in range(3):
     # Affiche "Test."
     print("Test.")
