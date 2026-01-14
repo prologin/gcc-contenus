@@ -87,14 +87,16 @@ while True:
 
     # TODO 1 : Appeler la fonction `deplace_oiseau` 
 
-    if # TODO 3 : Regarder la collision entre l'oiseau et un tuyau :
+    # TODO 3 : Regarder la collision entre l'oiseau et un tuyau
+    if False :
         # Sortir de la boucle
         pass
 
     # Cette ligne arrête le programme pendant 'temps' millisecondes
     sleep(temps)
 
-    if # TODO 4 : Vérifier si les tuyaux sont derrière l'oiseau :
+    # TODO 4 : Vérifier si les tuyaux sont derrière l'oiseau
+    if False :
         # Augmenter le score de 1
         # Générer un nouveau trou
         # Effacer les tuyaux
