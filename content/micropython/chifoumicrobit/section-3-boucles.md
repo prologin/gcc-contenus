@@ -35,7 +35,7 @@ choix du joueur, il ne reste plus qu'à augmenter ou diminuer `choix_joueur` pou
 changer notre choix.
 
 Si le bouton A a été appuyé, il faut enlever 1 au nombre désignant le choix du
-joueur. Cependant, il se peut qu'à un moment donné, tu sors en dehors ta liste.
+joueur. Cependant, il se peut qu'à un moment donné, tu sortes en dehors ta liste.
 Pour éviter cela, tu peux utiliser des conditions ou des modulos (`%`).
 
 Nous allons voir en détails les conditions, mais si tu souhaites utiliser Les

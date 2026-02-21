@@ -53,7 +53,7 @@ while not (button_a.is_pressed() and button_b.is_pressed()):
 choix_adversaire = -1
 
 if multijoueur == 0:
-    # Choix aléatoire du microbit
+    # Choix aléatoire du micro:bit
     # entre 0 et `NB_POSSIBILITES` exclu
     choix_adversaire = randint(0, NB_POSSIBILITES - 1)
 
