@@ -47,7 +47,7 @@ Que souhaites-tu faire :
 
 {{<figure src="resources/images/PokeCenter.png" height=300 caption="">}}
 
-Si la réponse du joueur est "pokecenter", alors nous pouvons l'emmener au centre Pokémon, en utilisant la fonction `visite_PokeCenter`.
+Si la réponse du joueur est "pokecenter", alors nous pouvons l'emmener au centre Pokémon, en utilisant la fonction `visite_pokecenter`.
 
 ### Voyager
 
@@ -55,10 +55,10 @@ Si le joueur choisit l'action "voyager", alors celui-ci se balade dans les haute
 
 {{<figure src="resources/images/voyager.gif" height=250 caption="">}}
 
-Sur le chemin, il peut **croiser un Pokemon sauvage ou un Dresseur ennemi**.
+Sur le chemin, il peut **croiser un Pokémon sauvage ou un Dresseur ennemi**.
 
 Pour choisir entre les 2, nous pouvons utiliser de l'aléatoire.  
-Générons un **nombre aléatoirement** entre 1 et 2, si celui-ci est égal à 1, alors le joueur rencontre un Pokemon sauvage, sinon le joueur rencontre un dresseur de la Team Rocket !
+Générons un **nombre aléatoirement** entre 1 et 2, si celui-ci est égal à 1, alors le joueur rencontre un Pokémon sauvage, sinon le joueur rencontre un dresseur de la Team Rocket !
 
 {{% box type="info" %}}
 
@@ -74,17 +74,17 @@ print(nombre)
 
 {{% /box %}}
 
-#### Pokemon sauvage
+#### Pokémon sauvage
 
-Si le joueur rencontre un Pokemon sauvage, plusieurs choix s'offrent à lui :
+Si le joueur rencontre un Pokémon sauvage, plusieurs choix s'offrent à lui :
 - le capturer
 - le combattre
 - fuire
 
-Tout d'abord, créons un Pokemon, celui qui vient d'apparaître devant le joueur.  
-Par exemple, ce Pokemon peut s'appeler "Rattata", et avoir 20 points de vie et 8 points de dégâts.
+Tout d'abord, créons un Pokémon, celui qui vient d'apparaître devant le joueur.  
+Par exemple, ce Pokémon peut s'appeler "Rattata", et avoir 20 points de vie et 8 points de dégâts.
 
-On peut également afficher au joueur quel Pokemon il vient de rencontrer :
+On peut également afficher au joueur quel Pokémon il vient de rencontrer :
 ```text
 Un [nom du pokemon] sauvage apparaît !
 ```
@@ -94,14 +94,14 @@ Ensuite, nous lui demandons ce qu'il veut faire :
 Souhaites-tu le 'capturer', se 'battre' ou 'fuire' ?
 ```
 
-Si le joueur souhaite capturer le Pokemon, on peut simplement appeler la méthode `capture` de la classe `Dresseur` avec ce Pokemon.
+Si le joueur souhaite capturer le Pokémon, on peut simplement appeler la méthode `capture` de la classe `Dresseur` avec ce Pokémon.
 ```text
 Tu as capturé [nom du pokemon] !
 ```
 
-Si le joueur souhaite se battre contre le Pokemon, on peut appeler la méthode `combat` de la classe `Dresseur` avec ce Pokemon.
+Si le joueur souhaite se battre contre le Pokémon, on peut appeler la méthode `combat` de la classe `Dresseur` avec ce Pokémon.
 
-Sinon, le joueur fuit le Pokemon, aucune action n'est faite.
+Sinon, le joueur fuit le Pokémon, aucune action n'est faite.
 ```text
 Tu as pris la fuite...
 ```
@@ -110,19 +110,19 @@ Tu as pris la fuite...
 
 Si le joueur rencontre un dresseur ennemi sur son chemin, celui-ci provient certainement de la Team Rocket !
 
-Créons ce dresseur, et donnons lui de nouveaux Pokemons, disons 2 Pokemons assez faibles : 25 points de vie et 10 points de dégâts.
+Créons ce dresseur, et donnons lui de nouveaux Pokémon, disons 2 Pokémon assez faibles : 25 points de vie et 10 points de dégâts.
 
 Ensuite appelons la méthode `duel` de la classe `Dresseur` pour le battre !
 
 #### Après un combat
 
-Le joueur peut se retrouver avec tous ses Pokemon KO suite à un combat, contre un Pokemon sauvage, ou un dresseur de la Team Rocket.
+Le joueur peut se retrouver avec tous ses Pokémon KO suite à un combat, contre un Pokémon sauvage, ou un dresseur de la Team Rocket.
 
-Dans cette éventualité, le joueur doit courir vers le centre Pokemon le plus proche pour les soigner, ce que nous pouvons forcer :
+Dans cette éventualité, le joueur doit courir vers le centre Pokémon le plus proche pour les soigner, ce que nous pouvons forcer :
 ```text
-Tu cours vers un centre Pokémon pour soigner tes Pokemon.
+Tu cours vers un centre Pokémon pour soigner tes Pokémon.
 ```
-Ensuite, on appelle la fonction `visite_PokeCenter`.
+Ensuite, on appelle la fonction `visite_pokecenter`.
 
 ### Autre
 
@@ -170,7 +170,7 @@ Ne connaissant pas le nombre de tours de boucle que le joueur souhaite faire à 
 
 On peut créer **une variable `en_cours` qui décide si le jeu doit continuer, ou s'arrêter**.
 
-Elle sera la condition de la boucle `while`, ainsi les instructions de la boucle se répéterons tant que `en_cours` vaut `True`, et la boucle s'arrête lorsque `en_cours` vaut `False`.
+Elle sera la condition de la boucle `while`, ainsi les instructions de la boucle se répéteront tant que `en_cours` vaut `True`, et la boucle s'arrête lorsque `en_cours` vaut `False`.
 
 La variable `en_cours` est initialisée à `True` au début du jeu.
 
@@ -182,11 +182,11 @@ Tout d'abord, nous avons créé un dresseur, avec le nom du joueur.
 Est ce qu'il faut créer plusieurs dresseurs pour le joueur pendant la partie ?  
 Non, un seul suffit. Donc cette partie ne sera pas dans la boucle.
 
-Ensuite, nous avons défini le Pokemon de départ du joueur.  
-Est ce qu'il aura plusieurs Pokemon de départ ?  
+Ensuite, nous avons défini le Pokémon de départ du joueur.  
+Est ce qu'il aura plusieurs Pokémon de départ ?  
 Non, il peut ensuite en capturer lors de ses voyages. Donc cette partie ne sera pas dans la boucle.
 
-Après, nous demandons au joueur quelle action il souhaite faire (voyage ou centre Pokemon).  
+Après, nous demandons au joueur quelle action il souhaite faire (voyage ou centre Pokémon).  
 Est ce qu'il peut faire plusieurs actions lors du jeu ?  
 Oui ! **Donc nous allons commencer la boucle juste avant de demander l'action que le joueur souhaite faire**.
 

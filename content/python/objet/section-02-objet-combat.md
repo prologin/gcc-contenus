@@ -1,9 +1,9 @@
-## Pokemon
+## Pokémon
 
-Grâce à notre nouvelle classe Pokemon, nous pouvons commencer à jouer avec eux !
+Grâce à notre nouvelle classe `Pokemon`, nous pouvons commencer à jouer avec eux !
 
-Crée un premier Pokemon, pourquoi pas Pikachu ?  
-Crée un autre Pokemon, un Piafabec ?
+Crée un premier Pokémon, pourquoi pas Pikachu ?  
+Crée un autre Pokémon, un Piafabec ?
 
 Attention, le Piafabec sauvage attaque Pikachu !
 
@@ -11,15 +11,15 @@ Attention, le Piafabec sauvage attaque Pikachu !
 
 ### À l'attaque !
 
-Pour savoir comment coder l'attaque du Pokemon, il faut **d'abord réfléchir** à ce qu'on veut.
+Pour savoir comment coder l'attaque du Pokémon, il faut **d'abord réfléchir** à ce qu'on veut.
 
-Qu'est ce que ça signifie qu'un Pokemon attaque un autre Pokemon ?  
+Qu'est ce que ça signifie qu'un Pokémon attaque un autre Pokémon ?  
 Qu'avons nous comme paramètre ? Que faut-il regarder ?
 
-On peut dire que lorsqu'un Pokemon attaque un autre, il va retirer des points de vie à celui-ci.
+On peut dire que lorsqu'un Pokémon attaque un autre, il va retirer des points de vie à celui-ci.
 
 Mais combien ?  
-On peut par exemple, utiliser le nombre de points de dégâts du Pokemon attaquant.
+On peut par exemple, utiliser le nombre de points de dégâts du Pokémon attaquant.
 
 En mathématiques, ça donnerait
 ```text
@@ -27,14 +27,14 @@ vie du pokemon attaqué = vie du pokemon avant attaque
                          - points de dégâts du pokemon attaquant
 ```
 
-**Créons une nouvelle méthode dans la classe Pokemon**, qui se nomme `attaque`.
+**Créons une nouvelle méthode dans la classe `Pokemon`**, qui se nomme `attaque`.
 
-Cette méthode sera appelée depuis le Pokemon attaquant, sur le Pokemon attaqué. Si on reprend l'exemple donné :
+Cette méthode sera appelée depuis le Pokémon attaquant, sur le Pokémon attaqué. Si on reprend l'exemple donné :
 ```python
 piafabec.attaque(pikachu)
 ```
 
-Donc la méthode `attaque` aura un paramètre : le Pokemon attaqué.  
+Donc la méthode `attaque` aura un paramètre : le Pokémon attaqué.  
 Elle sera donc de la forme :
 ```codepython
 class Pokemon:
@@ -48,7 +48,7 @@ Remplace l'instruction `pass` par le calcul pour retirer des points de vie à `p
 
 {{% /box %}}
 
-Tu peux également afficher une phrase lorsqu'un Pokemon en attaque un autre, comme :
+Tu peux également afficher une phrase lorsqu'un Pokémon en attaque un autre, comme :
 ```text
 [...] attaque [...].
 ```
@@ -58,17 +58,17 @@ Tu peux également afficher une phrase lorsqu'un Pokemon en attaque un autre, co
 ### Combat
 
 Suite à l'attaque du Piafabec, Pikachu replique !  
-S'en suit un combat entre les 2 Pokemon, jusqu'à ce que l'un d'entre tombe KO.
+S'en suit un combat entre les 2 Pokémon, jusqu'à ce que l'un d'entre tombe KO.
 
 Créons une fonction `combat`, en dehors de la classe `Pokemon`, pour appliquer leur combat.
 
-Cette fonction prend en paramètres les 2 Pokemon.
+Cette fonction prend en paramètres les 2 Pokémon.
 
-Un combat est un enchaînement d'attaques de chaque Pokemon l'un vers l'autre, le tout répété tant que les 2 Pokemon sont encore en vie.
+Un combat est un enchaînement d'attaques de chaque Pokémon l'un vers l'autre, le tout répété tant que les 2 Pokémon sont encore en vie.
 
-Dès qu'un Pokemon est KO, le combat est arrêté, c'est le Pokemon opposant qui gagne le combat.
+Dès qu'un Pokémon est KO, le combat est arrêté, c'est le Pokémon opposant qui gagne le combat.
 
-Si on traduit ces contraintes en programmation, on peut voir la structure d'une boucle, et celle-ci s'arrête lorsqu'un Pokemon est KO, donc lorsque sa vie tombe à 0. Il s'agit d'une boucle `while`.
+Si on traduit ces contraintes en programmation, on peut voir la structure d'une boucle, et celle-ci s'arrête lorsqu'un Pokémon est KO, donc lorsque sa vie tombe à 0. Il s'agit d'une boucle `while`.
 
 {{% box type="info" %}}
 
@@ -88,8 +88,8 @@ Si un des conditions, ou les 2, sont fausses alors l'opérateur `and` remvoit Fa
 {{% /box %}}
 
 Enfin, pour donner le résultat du combat, la fonction retournera :
-- `1` si le Pokemon gagnant est le premier donné,
-- `2` si le Pokemon gagnant est le deuxième paramètre de la fonction.
+- `1` si le Pokémon gagnant est le premier donné,
+- `2` si le Pokémon gagnant est le deuxième paramètre de la fonction.
 
 {{% box type="info" %}}
 
@@ -104,4 +104,4 @@ print(a)
 
 {{% /box %}}
 
-On peut également afficher la phrase "[nom du Pokemon] est KO, [nom de l'autre Pokemon] a gagné !" à la fin du combat.
+On peut également afficher la phrase "[nom du Pokémon] est KO, [nom de l'autre Pokémon] a gagné !" à la fin du combat.

@@ -4,7 +4,7 @@ Suite à autant de combats Pokémon, votre équipe peut avoir du mal à continue
 
 Créons un **centre Pokémon pour les soigner** !
 
-Nous allons définir le passage dans un Centre Pokémon comme une simple fonction, `visite_PokeCenter()`.
+Nous allons définir le passage dans un centre Pokémon comme une simple fonction, `visite_pokecenter`.
 
 {{% box type="info" %}}
 
@@ -14,7 +14,7 @@ Pour cette partie, tu auras besoin des fonctions `print` et `input`, ainsi que d
 
 ### Dialogue
 
-Tout d'abord, lorsqu'un dresseur entre dans un Centre Pokémon, l'infirmière Joëlle l'acceuille avec le texte :
+Tout d'abord, lorsqu'un dresseur entre dans un Centre Pokémon, l'infirmière Joëlle l'accueille avec le texte :
 ```text
 Bienvenue au centre Pokémon. Nous pouvons soigner vos Pokémon.
 ```
@@ -49,9 +49,9 @@ if poke2 == poke3:
 
 Pour soigner les Pokémon du dresseur, l'infirmière va avoir besoin d'accéder à l'équipe du dresseur.
 
-Pour cela, nous pouvons **ajouter un paramètre** `dresseur` à la fonction `visite_PokeCenter`.
+Pour cela, nous pouvons **ajouter un paramètre** `dresseur` à la fonction `visite_pokecenter`.
 
-Grace au dresseur, nous pouvons accéder à la liste de Pokémon, avec :
+Grâce au dresseur, nous pouvons accéder à la liste de Pokémon, avec :
 ```python
 dresseur.pokemons
 ```
@@ -66,7 +66,7 @@ Pour résoudre ce problème, **ajoutons un attribut** `vie_max` à la classe `Po
 
 Il sera défini lors de la création d'un Pokémon, avec la même valeur que l'attribut `vie`.
 
-Mais la valeur `vie_max` ne sera jamais modifiée lors d'un combat, contrairement à `vie`. Donc nous pouvons l'utiliser dans la fonction `visite_PokeCenter` pour remettre `vie` du Pokémon à sa valeur initiale.
+Mais la valeur `vie_max` ne sera jamais modifiée lors d'un combat, contrairement à `vie`. Donc nous pouvons l'utiliser dans la fonction `visite_pokecenter` pour remettre `vie` du Pokémon à sa valeur initiale.
 
 {{<figure src="resources/images/soin.gif" height=300 caption="">}}
 

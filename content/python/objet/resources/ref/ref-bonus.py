@@ -25,7 +25,7 @@ class Pokemon:
         pokemon_adv.vie = max(0, pokemon_adv.vie - self.degats)
         print(f"{self.nom} attaque {pokemon_adv.nom}.")
 
-    def level_up(self):
+    def evolue(self):
         self.lvl += 1
         self.xp = 0
         self.vie_max += self.lvl
@@ -51,7 +51,7 @@ def combat(poke1: Pokemon, poke2: Pokemon):
         print(f"{poke2.nom} est KO, {blue}{poke1.nom} a gagné !{reset}")
         poke1.xp += poke2.vie_max
         if poke1.xp > 100:
-            poke1.level_up()
+            poke1.evolue()
         return 1
     else:
         print(f"{poke1.nom} est KO, {red}{poke2.nom} a gagné !{reset}")
@@ -148,7 +148,7 @@ def duel_auto(dresseur1: Dresseur, dresseur2: Dresseur):
         return True
 
 
-def visite_PokeCenter(dresseur: Dresseur, quiet=False):
+def visite_pokecenter(dresseur: Dresseur, quiet=False):
     print("Bienvenue au centre Pokemon. Nous pouvons soigner vos Pokemons")
 
     if quiet or input("Voulez-vous les soigner ? 'oui' / 'non'\n") == "oui":
@@ -247,12 +247,12 @@ while not fin:
 
         if moi.pokemon_en_vie() == 0:
             print(f"{red}Tu cours vers un centre Pokemon pour soigner tes Pokemons{reset}")
-            visite_PokeCenter(moi, True)
+            visite_pokecenter(moi, True)
 
     elif choix == "ville":
         choix2 = input("Souhaites-tu aller au 'pokecenter' ou au 'shop' ?'\n")
         if choix2 == "pokecenter":
-            visite_PokeCenter(moi)
+            visite_pokecenter(moi)
         elif choix2 == "shop":
             visite_shop(moi)
 

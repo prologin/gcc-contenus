@@ -1,6 +1,6 @@
 ## Un Pokémon sauvage apparaît !
 
-Fort de ton premier Pokémon, tu te sens confiante pour t'aventurer dans les hautes herbes.
+Forte de ton premier Pokémon, tu te sens confiante pour t'aventurer dans les hautes herbes.
 
 Oh ! Un Pokémon sauvage !
 
@@ -83,7 +83,7 @@ Par exemple :
 1 Salamèche
 ```
 
-Affiche uniquement les Pokemon qui ne sont pas KO.
+Affiche uniquement les Pokémon qui ne sont pas KO.
 
 Après cet affichage, nous allons **demander quel Pokémon** le dresseur choisit pour combattre le Pokémon sauvage.
 

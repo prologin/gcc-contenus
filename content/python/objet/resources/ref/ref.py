@@ -119,7 +119,7 @@ def duel_auto(dresseur1: Dresseur, dresseur2: Dresseur):
         print(f"{dresseur1.nom} a gagné !")
 
 
-def visite_PokeCenter(dresseur: Dresseur, quiet=False):
+def visite_pokecenter(dresseur: Dresseur, quiet=False):
     print("Bienvenue au centre Pokémon. Nous pouvons soigner vos Pokémon.")
 
     if quiet or input("Voulez-vous les soigner ? 'oui' / 'non'\n") == "oui":
@@ -193,10 +193,10 @@ while not fin:
 
         if moi.pokemon_en_vie() == 0:
             print("Tu cours vers un centre Pokémon pour soigner tes Pokemon")
-            visite_PokeCenter(moi, True)
+            visite_pokecenter(moi, True)
 
     elif choix == "pokecenter":
-        visite_PokeCenter(moi)
+        visite_pokecenter(moi)
     elif choix == "quitter":
         fin = True
     else:
