@@ -138,6 +138,6 @@ ma_liste = ['a', 'b', 'c']
 # qui est la liste repétée 10 fois
 liste_repetee = ma_liste * 10
 
-# Affifche `liste_repetee`
+# Affiche `liste_repetee`
 print(liste_repetee)
 ```
