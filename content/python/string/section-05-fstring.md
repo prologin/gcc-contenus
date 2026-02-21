@@ -66,7 +66,7 @@ for x in range(1, 11):
 
 {{% box type="warning" title="Beaucoup de détails..." %}}
 
-Nous allons pas rentrer dans le détail sur les différentes options possibles,
+Nous n'allons pas rentrer dans le détail sur les différentes options possibles,
 mais si tu souhaites en savoir plus, n'hésite pas à contacter un organisateur !
 
 <!-- Plus d'informations sur https://he-arc.github.io/livre-python/fstrings/index.html -->

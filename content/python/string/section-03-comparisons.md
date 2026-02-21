@@ -13,7 +13,7 @@ caractère**, on l'appelle la *Table ASCII*.
 {{< figure src="./resources/images/ascii.png" caption="Table ASCII" >}}
 
 Dans le tableau donné, les colonnes *Decimal* et *Char* sont celles qui vont le
-plus nous intéressées.
+plus nous intéresser.
 
 {{% box type="info" title="Récupérer le numéro associé à un caractère dans la table ASCII" %}}
 

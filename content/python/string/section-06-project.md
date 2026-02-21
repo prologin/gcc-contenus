@@ -40,7 +40,7 @@ appeler cette liste `pendu`.
 ```
 
 Il est totalement normal que tu ne comprennes pas trop les différents dessins
-d'un premier coup d'oeil. Tu peux essayer d'en afficher un en utilisant
+d'un premier coup d'œil. Tu peux essayer d'en afficher un en utilisant
 l'opérateur `[]`.
 
 {{% /box %}}
@@ -86,7 +86,7 @@ répéter tant que l'on reste en vie.
 {{% box type="exercise" title="Créer la boucle de jeu" %}}
 
 La boucle `while` du jeu doit permettre de répéter certaines actions. Deux
-conditions sont mises en oeuvre :
+conditions sont mises en œuvre :
 
 - que le caractère `'_'` **existe** dans la liste `partie` ;
 - que le nombre de vies soit **supérieur** à 0.
