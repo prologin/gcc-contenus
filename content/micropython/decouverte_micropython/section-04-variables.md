@@ -23,7 +23,7 @@ nom d'une fonction et que le nom ne contient pas d'espace.
 
 {{% /box %}}
 
-Lorsqu'on écrit `ma_variable = 10`, voici ce qui se passe dans l'ordinateur :
+Lorsqu'on écrit `ma_variable = 10`, voici ce qu'il se passe dans l'ordinateur :
 
 {{< gallery steps=3 >}}
 

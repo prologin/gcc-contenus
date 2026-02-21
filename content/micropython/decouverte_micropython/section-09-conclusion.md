@@ -1,9 +1,8 @@
 # Conclusion
 
 Voili voilou, je crois que mon rôle touche à sa fin. Si quelque chose ne te
-semble pas clair, pose la question aux orgas ! Tu peux
-nous faire part de tes remarques pour améliorer ce TP et le rendre encore plus
-clair.
+semble pas clair, pose tes questions aux orgas ! Tu peux nous faire part de tes
+remarques pour améliorer ce TP et le rendre plus clair.
 
 Mais ce n'est pas parce que ce TP est terminé que tu es lachée dans la nature
 pour autant. Il te reste encore plein de trucs à découvrir, que ce soit en

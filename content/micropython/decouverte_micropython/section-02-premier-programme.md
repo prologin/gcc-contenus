@@ -1,6 +1,6 @@
 # Analysons un programme
 
-Un programme c'est simplement une série de d'instructions, de choses à faire.
+Un programme c'est simplement une série d'instructions, de choses à faire.
 
 Si les `micro:bit` parlaient français, voici à quoi ressemblerait un programme :
 
@@ -20,7 +20,7 @@ Comme premier exemple, analysons ce programme :
 {{< codestep steps=4 lang="py" >}}
 
 {{< codestep-block desc="Permet à ton programme d'utiliser le `micro:bit`. Elle doit toujours être écrite en haut de ton programme 1 fois." >}}
-# Indique qu'on va écrire des commandes pour le microbit
+# Indique qu'on va écrire des commandes pour le micro:bit
 from microbit import *
  
 {{< /codestep-block >}}

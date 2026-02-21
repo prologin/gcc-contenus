@@ -15,7 +15,7 @@ l'écran.
 
 ## Allumer des LED
 
-Comme tu as pu le remarquer, au centre du `micro:bit` se trouvent 25 petit
+Comme tu as pu le remarquer, au centre du `micro:bit` se trouvent 25 petits
 carrés lumineux. Ils sont appelés *LED* (ou pixels).
 
 La première méthode pour afficher quelque chose consiste à choisir une LED sur
@@ -128,7 +128,7 @@ display.show(Image.HAPPY)
 
 Sauf que l'exécution de ces 2 lignes est beaucoup trop rapide !
 Le `micro:bit` affiche la 1ere image en 1 milliseconde, puis la deuxième.
-Ce qui est pas suffisant pour qu'on puisse nous-même apercevoir l'image.
+Ce qui n'est pas suffisant pour qu'on puisse nous-même apercevoir l'image.
 
 Tu peux dire au `micro:bit` d'attendre un certain temps avec la commande
 `sleep(TEMPS)`, avec `TEMPS` un nombre de millisecondes.
