@@ -26,7 +26,7 @@ La partie s'arrête quand le serpent se mord la queue (c'est-à-dire quand la t�
 
 ### Notions
 
-Dans ce TP tu apprendras deux nouvelles notions un peu complexes mais très utile : les _fonctions_ et les _tuples_.
+Dans ce TP, tu apprendras deux nouvelles notions un peu complexes mais très utiles : les **fonctions** et les **tuples**.
 
 On te le répètera tout au long du TP, mais n'hésite surtout pas à appeler un organisateur en cas de besoin, que ce soit pour corriger les erreurs de ton code, te réexpliquer une ancienne notion ou même pour t'expliquer plus en détail les fonctions et les tuples si tu n'as pas compris.
 
