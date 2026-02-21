@@ -120,7 +120,7 @@ en paramètre et le secret se dévoilera !
 <details>
 <summary>Clique pour voir un rappel sur la fonction print</summary>
 
-En *Python* pour intégrer une variable dans le texte affiché par `print` on peut utliser des virgules (`,`).
+En *Python* pour intégrer une variable dans le texte affiché par `print` on peut utiliser des virgules (`,`).
 
 ```codepython
 nom = "Marchand"

@@ -12,7 +12,7 @@ seulement **si** une condition est vraie, ou effectuer un autre bout de code si
 cette dernière n'est pas vraie.
 
 Commençons d'abord par regarder des exemples que tu pourrais rencontrer dans la
-**vie courante** de l'utilisation des condititons.
+**vie courante** de l'utilisation des conditions.
 
 {{< gallery steps=3 >}}
 

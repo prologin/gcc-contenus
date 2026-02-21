@@ -123,7 +123,7 @@ print(a % b)
 
 </details>
 
-On peut alors reprendre les fonctions `print` et `input` qu'on a vu précémment
+On peut alors reprendre les fonctions `print` et `input` qu'on a vu précédemment
 pour calculer le nombre d'années depuis la création de l'association Prologin et
 de ton année de naissance ! Utilise les flèches ci-dessous pour découvrir le
 code et le lancer à la fin !

@@ -46,7 +46,7 @@ print("Girls", "Can", "Code!")
 
 {{% box type="info" title="Des arguments et des fonctions ?" %}}
 
-En programmation, on parle d'arguments lorqu'on **appelle une fonction** ! Les
+En programmation, on parle d'arguments lorsqu'on **appelle une fonction** ! Les
 fonctions sont des instructions qui font une chose spécifique par rapport à des
 éléments qu'on donne en entrée. Ces entrées représentent les **arguments** de la
 fonction.
