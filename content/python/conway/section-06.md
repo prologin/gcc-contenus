@@ -15,7 +15,7 @@ def run_game(nb_cells):
 
     while True:
         display(board)
-        # Mets ici le code pour mettre à jour le plateau du jeu
+        # Ecris ici le code pour mettre à jour le plateau du jeu
 
         time.sleep(0.2)
 ```

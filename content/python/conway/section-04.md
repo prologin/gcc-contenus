@@ -31,7 +31,7 @@ Une fois que le plateau du jeu est créé, il faut l'initialiser en utilisant la
 
 {{% box type="exercise" title="`init_board(board, nb_cell)`" %}}
 
-La fonction `init_board(board, nb_cell)` permet de placer **EXACTEMENT** `nb_cellules` vivantes dans le plateau donné.
+La fonction `init_board(board, nb_cell)` permet de placer **EXACTEMENT** `nb_cell` cellules vivantes dans le plateau donné.
 
 {{% /box %}}
 

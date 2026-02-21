@@ -7,7 +7,7 @@ show_toc: false
 
 Dans ce jeu, chaque case représente une cellule qui peut avoir deux états : mort ou vivant.
 
-On appelle chaque tour du jeu une *génération*, c'est-à-dire lorsque le plateau est mis-à-jour.
+On appelle chaque tour du jeu une *génération*, c'est-à-dire lorsque le plateau est mis à jour.
 
 Le *Jeu de la Vie* suit trois règles importantes qui permettent au jeu de :
 - Faire naître une cellule
@@ -71,4 +71,4 @@ Si une cellule ne naît pas ou ne survit pas, elle meurt.
 {{< gallery-img src="./resources/images/section02/ConwayOver2.png" desc="La cellule en rouge meurt donc !" >}}
 
 {{< /gallery >}}
-# 
+#
