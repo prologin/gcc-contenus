@@ -325,8 +325,8 @@ Ils peuvent être combinés autant qu'on veut :
 Les boulangers se sont trompés sur le calcul du prix.
 
 Lily commande à la boulangerie :
-- 4 pains au chocolat à 1€ 25 unité
-- 10 croissants à 1€ 20 unité
+- 4 pains au chocolat à 1,25 € l'unité
+- 10 croissants à 1,20 € l'unité
 
 On lui demande 18€.
 
