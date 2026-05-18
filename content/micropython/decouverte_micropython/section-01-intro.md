@@ -11,7 +11,7 @@ Tu pourras aussi découvrir Lily, une jeune fille curieuse d'en apprendre plus, 
 
 {{% box type="info" %}}
 
-Si tu as des questions en cours de route, les organisateurs et organistatrices
+Si tu as des questions en cours de route, les organisateurs et organisatrices
 sont là pour t’aider et t’accompagner à chaque étape. N'hésite pas à leur poser
 *toutes* tes questions.
 

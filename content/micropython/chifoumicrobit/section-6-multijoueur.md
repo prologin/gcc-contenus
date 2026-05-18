@@ -23,7 +23,7 @@ Pour faire un jeu multijoueur, nous allons avoir besoin de faire communiquer les
 Pour commencer, nous voulons que Skeleton puisse s'entraîner contre
 l'ordinateur, ou bien jouer en multijoueur avec ses amis.
 Pour stocker le mode de jeu choisi, nous allons utiliser une variable,
-que nous appelerons `multijoueur`.
+que nous appellerons `multijoueur`.
 Cette variable va prendre trois états différents :
 - `-1` si le joueur n'a pas encore fait son choix
 - `0` si le joueur veut jouer contre l'ordinateur (mode _local_)

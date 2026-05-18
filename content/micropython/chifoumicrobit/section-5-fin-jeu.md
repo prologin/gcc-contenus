@@ -54,7 +54,7 @@ rajouter un paramètre à la fonction comme dans l'exemple suivant qui va affich
 display.scroll("Hello World", delay=50)
 ```
 
-Si la valeur du paramètre est inférieure à 150, le texte sera afficher plus
+Si la valeur du paramètre est inférieure à 150, le texte sera affiché plus
 rapidement ; sinon, il sera plus lent.
 
 {{% /box %}}

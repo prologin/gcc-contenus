@@ -51,7 +51,7 @@ variables !
 
 ## Un exemple un peu plus complexe
 
-À toi de jouer ! Que fais le programme d'après toi ? Essaye de le lancer sur ton
+À toi de jouer ! Que fait le programme d'après toi ? Essaye de le lancer sur ton
 `micro:bit` !
 
 
@@ -85,7 +85,7 @@ a = button_a.get_presses()
 display.scroll("Et ici ?" + str(a))
 ```
 
-Si tu ne comprends pas ce qu'il se passe n'hésites surtout pas à demander aux organisateurs !
+Si tu ne comprends pas ce qu'il se passe, n'hésite surtout pas à demander aux organisateurs !
 
 {{% box type="exercise" %}}
 

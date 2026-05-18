@@ -38,7 +38,7 @@ Si le bouton A a été appuyé, il faut enlever 1 au nombre désignant le choix 
 joueur. Cependant, il se peut qu'à un moment donné, tu sortes en dehors ta liste.
 Pour éviter cela, tu peux utiliser des conditions ou des modulos (`%`).
 
-Nous allons voir en détails les conditions, mais si tu souhaites utiliser Les
+Nous allons voir en détails les conditions, mais si tu souhaites utiliser les
 modulos, n'hésite pas à appeler un organisateur pour qu'il puisse t'aider !
 
 Il faut vérifier si `choix_joueur` n'est plus dans ta liste, c'est-à-dire si

@@ -47,7 +47,7 @@ display.scroll("Tu es sortie !")
 Écris un programme qui compte le nombre d'appuis sur les boutons A et B et qui 
 affiche ce nombre lorsque le bouton tactile est touché.
 
-Pendant que le programme attends (avant que tu appuies le bouton tactile), tu 
+Pendant que le programme attend (avant que tu appuies le bouton tactile), tu 
 peux afficher l'image `Image.CLOCK1`.
 
 {{% /box %}}
