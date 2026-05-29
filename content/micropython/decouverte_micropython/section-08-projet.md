@@ -22,10 +22,10 @@ smiley content s'affiche juste après les chiffres :
 
 {{<figure src="resources/images/project_first.gif" width=400 caption="Lancé avec un double">}}
 
-- Par contre, elle voudrait que si deux doubles sont faits d'affilée, un smiley
-pas content s'affiche à la place du smiley content :
+- Par contre, elle voudrait que si trois doubles sont faits d'affilée, un
+smiley pas content s'affiche à la place du smiley content :
 
-{{<figure src="resources/images/project.gif" width=400 caption="2 doubles obtenus">}}
+{{<figure src="resources/images/project.gif" width=400 caption="3 doubles obtenus">}}
 
 - Elle voudrait enfin que le smiley disparaisse 2 secondes après être apparu
 
@@ -33,31 +33,111 @@ On te conseille vivement de faire ce projet étape par étape. Tu peux commencer
 par coder le lancer des deux dés, et lorsque cela fonctionne, ajouter les
 différentes demandes de Lily les unes après les autres.
 
+*Peu importe ton avancé sur le projet, n'hésite pas à poser des questions si
+tu es bloquée, les organisatrices et organisateurs seront très content·e·s de
+t'aider !*
 
-De plus, n'hésite pas à poser des questions si tu es bloquée, les orgas seront
-très contents de t'aider !
+{{% box type="exercise" title="Projet partie 1 : Lancé simple" %}}
 
-{{< details summary="Besoin d'aide ? Clique ici !" >}}
+Tout d'abord, il faut détecter quand le bouton **A ou B** est appuyé.
 
-1. Tu peux utiliser la fonction `display.clear()` pour effacer l'écran.
-2. Pour générer un nombre aléatoire, tu peux utiliser et essayer ce bout de
-code :
+Lorsque l'un des deux boutons (A ou B) est pressé, tu peux lancer les deux dés,
+stocker leurs valeurs, puis les afficher.
 
-```codepython
-# Importe une fonction pour faire de l'aléatoire
+{{% /box %}}
+
+{{% box type="info" title="Nombres aléatoires" %}}
+
+Pour obtenir un nombre aléatoire, tu peux utiliser ce code :
+
+{{< codestep steps=3 lang="py" >}}
+
+{{< codestep-block desc="Importe les fonctions pour utiliser l'aléatoire" >}}
 from random import randint
+{{< /codestep-block >}}
 
-# Crée un nombre aléatoire `x` entre 0 et 3
-x = randint(0, 3)
+{{< codestep-block desc="Génère un nombre aléatoire entre 0 et 2 et le stocke dans la variable `nb_aleatoire`" >}}
+nb_aleatoire = randint(0, 2)
+{{< /codestep-block >}}
 
-# Affiche `x` dans la console
-print(x)
-```
+{{< codestep-block desc="Affiche le contenu de la variable `nb_aleatoire` sur l'écran du `micro:bit`" >}}
+display.scroll(nb_aleatoire)
+{{< /codestep-block >}}
 
-3. On va avoir besoin de la notion de boucle infinie de la page précédente pour
-vérifier si on a appuyé sur un bouton !
-4. Si tu veux vérifier que le bouton A (ou le bouton B respectivement) a
-été pressé, tu peux utiliser la fonction `button_a.was_pressed()`
-(ou `button_b.was_pressed()`).
+{{< /codestep >}}
 
-{{< /details >}}
+{{% /box %}}
+
+<details>
+<summary>Besoin d'aide ? Clique ici !</summary>
+
+Si tu es bloquée, n'hésites pas à appeler quelqu'un pour venir t'aider et même
+te réexpliquer une page que tu n'aurais pas bien comprise. On est là pour ça !
+
+Tu peux aussi revoir dans les pages précédentes comment détecter le clic d'un
+bouton (la page s'appelle *« Comment utiliser les boutons du micro:bit ? »*).
+
+Tu auras aussi besoin de la notion de boucle infinie, expliquée dans la page
+(*« Ça fait beaucoup de lignes »*).
+
+</details>
+
+{{% box type="exercise" title="Projet partie 2 : Double" %}}
+
+Lors d'un lancer, si les deux dés ont la même valeur (on appelle ça un
+*double*), Lily aimerait qu'un smiley content s'affiche sur l'écran.
+
+Elle aimerait aussi que ce smiley disparaisse au bout de 2 secondes. 
+
+{{<figure src="resources/images/project_first.gif" width=400 caption="Lancé avec un double">}}
+
+{{% /box %}}
+
+{{% box type="info" title="Effacer l'écran" %}}
+Pour effacer l'écran du micro:bit, tu peux utiliser la fonction
+`display.clear()`.
+{{% /box %}}
+
+<details>
+<summary>Besoin d'aide ? Clique ici !</summary>
+
+Maintenant qu'on a les valeurs des deux dés, il te suffit de regarder si le
+lancer est un double, et d'afficher un smiley si besoin.
+
+Si tu ne voit pas comment faire, tu peux relire les parties sur les
+conditions (sur la page *« Et si... »*) et les booléens (sur la page
+*« Une mémoire de poisson rouge »* dans la partie *« J’affirme ! »*).
+
+Encore une fois, n'hésites pas à nous demander de l'aide pour t'aider à
+comprendre. (Promis c'est pas fun de se tourner les pouces en vous regardant
+coder haha !)
+
+</details>
+
+{{% box type="exercise" title="Projet partie 3 : Trois doubles d'affilés" %}}
+
+En plus de tout ça, Lily aimerait que si trois lancers de suite sont des
+*doubles*, un smiley **pas content** s'affiche à la place du smiley **content**.
+
+Ce nouveau smiley doit aussi disparaître après 2 secondes.
+
+{{<figure src="resources/images/project.gif" width=400 caption="3 doubles obtenus">}}
+
+{{% /box %}}
+
+<details>
+<summary>Besoin d'aide ? Clique ici !</summary>
+
+La première chose à faire est de connaître le nombre de doubles qui ont été
+obtenus **d'affilée**. C'est-à-dire l'un à la suite de l'autre.
+
+Une fois que c'est fait, tu peux afficher le smiley **pas content** lorsqu'il
+y a **3** doubles d'affilés.
+
+Tu auras besoin d'une **variable** pour compter le nombre de doubles qui ont
+été obtenus d'affilée. Comme dans la partie *« Une variable score »* à la fin
+de la page précédente.
+
+Cette partie peut être compliquée, n'hésite pas à appeler un·e orga !
+
+</details>
