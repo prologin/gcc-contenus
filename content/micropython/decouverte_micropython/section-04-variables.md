@@ -45,7 +45,7 @@ Voici un petit exemple pour illustrer :
 
 {{< codestep steps=2 lang="py" >}}
 
-{{< codestep-block desc="On crée notre variable `ma_variable` et on enregistre 10 dedans" >}}
+{{< codestep-block desc="On crée notre variable `ma_variable` et on enregistre `10` dedans" >}}
 ma_variable = 10
 {{< /codestep-block >}}
 
@@ -61,21 +61,45 @@ Pour mettre à jour une variable, il suffit d'en créer une autre du même nom.
 
 L'ancienne boîte est automatiquement supprimée.
 
-{{< codestep steps=2 lang=py >}}
+{{< codestep steps=3 lang=py >}}
 
-{{< codestep-block desc="On crée une boîte `nombre` avec 10 à l'intérieur" >}}
+{{< codestep-block desc="On crée une boîte `nombre` avec `10` à l'intérieur" >}}
 nombre = 10
 {{< /codestep-block >}}
 
-{{< codestep-block desc="On crée une nouvelle boîte `nombre` dans laquelle on met 2, et on supprime celle avec 10" >}}
+{{< codestep-block desc="On crée une nouvelle boîte `nombre` dans laquelle on met `2`, et on supprime celle avec `10`" >}}
 nombre = 1 + 1
+{{< /codestep-block >}}
+
+{{< codestep-block desc="On demande d'afficher `nombre`. La boîte existe, donc on affiche son contenu : `2`" >}}
+display.scroll(nombre)
 {{< /codestep-block >}}
 
 {{< /codestep >}}
 
 {{% box info %}}
 
-Tu peux utiliser l'ancienne boîte pour calculer la valeur de la nouvelle comme au-dessus.
+Tu peux utiliser l'ancienne boîte pour calculer la valeur de la nouvelle comme ci-dessous.
+
+{{< codestep steps=4 lang=py >}}
+
+{{< codestep-block desc="On crée une boîte `compteur` avec `0` à l'intérieur" >}}
+compteur = 0
+{{< /codestep-block >}}
+
+{{< codestep-block desc="On crée une nouvelle boîte `compteur` dans laquelle on additionne l'ancienne valeur de `compteur` (`0`) et `1`, et on supprime celle avec `0`" >}}
+compteur = compteur + 1
+{{< /codestep-block >}}
+
+{{< codestep-block desc="On crée une nouvelle boîte `compteur` dans laquelle on additionne l'ancienne valeur de `compteur` (`1`) et `66`, et on supprime celle avec `1`" >}}
+compteur = compteur + 66
+{{< /codestep-block >}}
+
+{{< codestep-block desc="On demande d'afficher `compteur`. La boîte existe, donc on affiche son contenu : `67`" >}}
+display.scroll(compteur)
+{{< /codestep-block >}}
+
+{{< /codestep >}}
 
 {{% /box %}}
 

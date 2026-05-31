@@ -107,13 +107,13 @@ Voici un petit exemple pour illustrer :
 # Importe les fonctions pour le micro:bit
 from microbit import *
 
-x = 0
+toto = 0
 
-if x < 30:
+if toto < 30:
     display.scroll("Pomme")
-elif x < 50:
+elif toto < 50:
     display.scroll("Poire")
-elif x < 80:
+elif toto < 80:
     display.scroll("Banane")
 else:
     display.scroll("Orange")
@@ -124,7 +124,7 @@ else:
 {{% box type="exercise" %}}
 
 Essaye de trouver ce que va afficher le programme en remplaçant
-la ligne 4 par `x = 0`, `x = 42` et `x = 238`.
+la ligne 4 par `toto = 0`, `toto = 42` et `toto = 238`.
 
 {{% /box %}}
 

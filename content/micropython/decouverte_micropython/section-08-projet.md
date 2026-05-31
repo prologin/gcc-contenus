@@ -114,7 +114,7 @@ coder haha !)
 
 </details>
 
-{{% box type="exercise" title="Projet partie 3 : Trois doubles d'affilés" %}}
+{{% box type="exercise" title="Projet partie 3 : Trois doubles d'affilée" %}}
 
 En plus de tout ça, Lily aimerait que si trois lancers de suite sont des
 *doubles*, un smiley **pas content** s'affiche à la place du smiley **content**.
@@ -132,7 +132,7 @@ La première chose à faire est de connaître le nombre de doubles qui ont été
 obtenus **d'affilée**. C'est-à-dire l'un à la suite de l'autre.
 
 Une fois que c'est fait, tu peux afficher le smiley **pas content** lorsqu'il
-y a **3** doubles d'affilés.
+y a **3** doubles d'affilée.
 
 Tu auras besoin d'une **variable** pour compter le nombre de doubles qui ont
 été obtenus d'affilée. Comme dans la partie *« Une variable score »* à la fin
