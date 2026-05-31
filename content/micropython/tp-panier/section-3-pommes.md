@@ -13,7 +13,7 @@ L'utilisation de ces deux variables te permet de conserver la position horizonta
 
 ```python
 pomme_x = 1
-pomme_y = 4
+pomme_y = 0
 
 # Pour afficher la pomme en 2e colonne, 1re ligne (celle du haut).
 display.set_pixel(pomme_x, pomme_y, 9)
