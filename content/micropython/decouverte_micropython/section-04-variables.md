@@ -253,6 +253,8 @@ Bien sûr, la même chose s'applique lorsque les valeurs sont stockées dans des
 
 `int` est un raccourci de *integer*, qui signifie *nombre entier* en anglais, et `str` est un raccourci de *string*, qui signifie *chaîne de caractères*.
 
+{{<figure src="resources/images/variable_types.webp" caption="Comparaison du type `int` et du type `str`" >}}
+
 {{% /box %}}
 
 {{% box info %}}
@@ -262,9 +264,7 @@ des guillemets en quelque sorte), on utilise `str` :
 
 ```py
 variable = 42             # contient le nombre 42
-print(type(variable))            # Affiche `<class 'int'>` car c'est un entier
 variable2 = str(variable) # contient le texte "42"
-print(type(variable2))            # Affiche `<class 'str'>` car c'est une string
 ```
 
 Pour transformer le texte en nombre, on utilise `int` à la place de `str`.
