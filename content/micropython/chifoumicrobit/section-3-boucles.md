@@ -18,6 +18,13 @@ N'hésite pas à appeler un organisateur si tu ne te souviens plus !
 
 {{% /box %}}
 
+{{% box type="hint" %}}
+
+Tu peux utiliser `button_a.is_pressed()` pour savoir si le bouton A est
+actuellement pressé.
+
+{{% /box %}}
+
 {{% box type="exercise" title="Exercice 3 : Affichage du choix actuel" %}}
 
 Tant qu'on reste dans notre boucle `while`, il va falloir afficher le choix
