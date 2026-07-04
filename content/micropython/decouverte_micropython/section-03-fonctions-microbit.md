@@ -51,7 +51,7 @@ ci-dessus, voici ce qu'il faudrait écrire :
 # Indique qu'on va écrire des commandes pour le microbit
 from microbit import *
 
-# Allume la LED de la 4ème colonne et 2ème ligne à une intensité de 9
+# Allume la LED qui est colonne 4 et ligne 2 à une intensité de 9.
 # car on commence à compter à partir de 0
 display.set_pixel(4, 2, 9)
 ```
