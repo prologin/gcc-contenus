@@ -57,3 +57,11 @@ cette fois-ci, si le bouton B a été appuyé, il faut rajouter 1 au nombre
 désignant le choix du joueur. N'oublie pas le modulo !
 
 {{% /box %}}
+
+{{% box type="info" title="Rappel : les trois super fonctions des boutons 😎" %}}
+
+* `get_presses` : **nombre d'appuis** sur un bouton **depuis la dernière fois** qu'on a appelé la fonction.
+* `is_pressed` : est-ce que le bouton **est en train d'être appuyé** ?
+* `was_pressed` : est-ce que le bouton **a été appuyé** ?
+
+{{% /box %}}
